@@ -1,0 +1,1260 @@
+
+> leadops-ai@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 552ms
+
+ GET / 200 in 2.0s (next.js: 1457ms, application-code: 559ms)
+ GET /dashboard 200 in 2.0s (next.js: 1592ms, application-code: 434ms)
+ GET /demo 200 in 2.0s (next.js: 1893ms, application-code: 122ms)
+ GET / 200 in 201ms (next.js: 4ms, application-code: 197ms)
+ GET / 200 in 108ms (next.js: 4ms, application-code: 104ms)
+✓ Compiled in 49ms
+✓ Compiled in 43ms
+ GET /api/lead 200 in 162ms (next.js: 150ms, application-code: 12ms)
+ POST /api/lead 201 in 8ms (next.js: 3ms, application-code: 6ms)
+ GET / 200 in 255ms (next.js: 110ms, application-code: 145ms)
+ GET /demo 200 in 396ms (next.js: 115ms, application-code: 281ms)
+ GET /dashboard 200 in 398ms (next.js: 254ms, application-code: 144ms)
+ GET / 200 in 111ms (next.js: 4ms, application-code: 107ms)
+ GET / 200 in 78ms (next.js: 3ms, application-code: 75ms)
+ GET /demo 200 in 135ms (next.js: 7ms, application-code: 128ms)
+ GET /dashboard 200 in 138ms (next.js: 42ms, application-code: 95ms)
+✓ Compiled in 30ms
+✓ Compiled in 28ms
+✓ Compiled in 29ms
+✓ Compiled in 28ms
+✓ Compiled in 45ms
+✓ Compiled in 31ms
+ GET /dashboard 200 in 228ms (next.js: 105ms, application-code: 123ms)
+ GET /demo 200 in 438ms (next.js: 119ms, application-code: 319ms)
+ GET / 200 in 440ms (next.js: 255ms, application-code: 185ms)
+ GET / 200 in 93ms (next.js: 4ms, application-code: 89ms)
+✓ Compiled in 39ms
+✓ Compiled in 39ms
+ GET /demo 200 in 548ms (next.js: 161ms, application-code: 387ms)
+✓ Compiled in 30ms
+ GET /demo 200 in 307ms (next.js: 109ms, application-code: 198ms)
+ GET /demo 200 in 142ms (next.js: 4ms, application-code: 138ms)
+✓ Compiled in 148ms
+ GET /demo 200 in 312ms (next.js: 108ms, application-code: 204ms)
+ GET /demo 200 in 106ms (next.js: 3ms, application-code: 102ms)
+ POST /api/lead 201 in 37ms (next.js: 25ms, application-code: 12ms)
+✓ Compiled in 177ms
+ GET /demo 200 in 260ms (next.js: 103ms, application-code: 156ms)
+ GET /demo 200 in 285ms (next.js: 114ms, application-code: 171ms)
+ GET / 200 in 145ms (next.js: 99ms, application-code: 47ms)
+ GET /dashboard 200 in 131ms (next.js: 92ms, application-code: 39ms)
+ GET / 200 in 38ms (next.js: 3ms, application-code: 35ms)
+✓ Compiled in 35ms
+ GET / 200 in 328ms (next.js: 122ms, application-code: 206ms)
+ GET / 200 in 151ms (next.js: 4ms, application-code: 148ms)
+ GET / 200 in 87ms (next.js: 4ms, application-code: 82ms)
+ GET / 200 in 87ms (next.js: 44ms, application-code: 43ms)
+✓ Compiled in 69ms
+✓ Compiled in 50ms
+ GET / 404 in 505ms (next.js: 341ms, application-code: 164ms)
+ GET / 404 in 625ms (next.js: 396ms, application-code: 229ms)
+ GET / 404 in 104ms (next.js: 12ms, application-code: 92ms)
+ GET / 404 in 179ms (next.js: 36ms, application-code: 142ms)
+ GET / 200 in 766ms (next.js: 146ms, application-code: 620ms)
+ GET / 200 in 500ms (next.js: 4ms, application-code: 496ms)
+ GET / 200 in 580ms (next.js: 195ms, application-code: 385ms)
+ GET / 200 in 582ms (next.js: 5ms, application-code: 577ms)
+ GET / 200 in 582ms (next.js: 113ms, application-code: 469ms)
+ GET / 200 in 582ms (next.js: 285ms, application-code: 297ms)
+ GET / 200 in 741ms (next.js: 4ms, application-code: 737ms)
+ GET / 200 in 553ms (next.js: 354ms, application-code: 199ms)
+ GET / 200 in 554ms (next.js: 262ms, application-code: 292ms)
+ GET / 200 in 204ms (next.js: 92ms, application-code: 112ms)
+ GET / 200 in 653ms (next.js: 4ms, application-code: 649ms)
+ GET / 200 in 566ms (next.js: 4ms, application-code: 562ms)
+ GET / 200 in 474ms (next.js: 93ms, application-code: 382ms)
+ GET / 200 in 475ms (next.js: 185ms, application-code: 290ms)
+ GET / 200 in 476ms (next.js: 388ms, application-code: 88ms)
+ GET / 200 in 1365ms (next.js: 646ms, application-code: 718ms)
+ GET / 200 in 599ms (next.js: 6ms, application-code: 593ms)
+ GET / 200 in 497ms (next.js: 5ms, application-code: 492ms)
+✓ Compiled in 40ms
+ GET / 200 in 617ms (next.js: 128ms, application-code: 489ms)
+ GET / 200 in 395ms (next.js: 4ms, application-code: 391ms)
+ GET / 200 in 300ms (next.js: 5ms, application-code: 295ms)
+ GET / 200 in 300ms (next.js: 113ms, application-code: 187ms)
+ GET / 200 in 300ms (next.js: 200ms, application-code: 100ms)
+ GET / 200 in 189ms (next.js: 3ms, application-code: 185ms)
+ GET /demo 200 in 495ms (next.js: 168ms, application-code: 327ms)
+ GET /audit 200 in 500ms (next.js: 426ms, application-code: 74ms)
+✓ Compiled in 46ms
+✓ Compiled in 86ms
+ GET / 200 in 2.2s (next.js: 469ms, application-code: 1751ms)
+ GET / 200 in 618ms (next.js: 72ms, application-code: 545ms)
+ GET / 200 in 528ms (next.js: 80ms, application-code: 448ms)
+ GET / 200 in 529ms (next.js: 4ms, application-code: 525ms)
+ GET / 200 in 530ms (next.js: 160ms, application-code: 371ms)
+ GET / 200 in 530ms (next.js: 229ms, application-code: 302ms)
+ GET / 200 in 558ms (next.js: 35ms, application-code: 523ms)
+ GET / 200 in 436ms (next.js: 4ms, application-code: 432ms)
+ GET / 200 in 443ms (next.js: 89ms, application-code: 355ms)
+ GET / 200 in 517ms (next.js: 4ms, application-code: 513ms)
+ GET / 200 in 363ms (next.js: 13ms, application-code: 350ms)
+ GET / 200 in 363ms (next.js: 92ms, application-code: 271ms)
+ GET / 200 in 489ms (next.js: 4ms, application-code: 485ms)
+ GET / 200 in 400ms (next.js: 4ms, application-code: 396ms)
+ GET / 200 in 488ms (next.js: 4ms, application-code: 484ms)
+ GET / 200 in 422ms (next.js: 5ms, application-code: 417ms)
+ GET / 200 in 421ms (next.js: 70ms, application-code: 352ms)
+ GET / 200 in 356ms (next.js: 81ms, application-code: 275ms)
+ GET / 200 in 469ms (next.js: 4ms, application-code: 464ms)
+ GET / 200 in 377ms (next.js: 4ms, application-code: 373ms)
+ GET / 200 in 388ms (next.js: 5ms, application-code: 383ms)
+ GET / 200 in 473ms (next.js: 74ms, application-code: 399ms)
+ GET / 200 in 338ms (next.js: 15ms, application-code: 323ms)
+ GET / 200 in 327ms (next.js: 68ms, application-code: 259ms)
+ GET / 200 in 190ms (next.js: 3ms, application-code: 187ms)
+ GET / 200 in 97ms (next.js: 5ms, application-code: 92ms)
+ GET / 200 in 481ms (next.js: 5ms, application-code: 476ms)
+ GET / 200 in 254ms (next.js: 9ms, application-code: 245ms)
+✓ Compiled in 365ms
+ GET / 200 in 272ms (next.js: 111ms, application-code: 160ms)
+ GET / 200 in 77ms (next.js: 3ms, application-code: 74ms)
+ GET / 200 in 285ms (next.js: 4ms, application-code: 281ms)
+✓ Compiled in 250ms
+ GET / 200 in 293ms (next.js: 122ms, application-code: 171ms)
+ GET / 200 in 81ms (next.js: 3ms, application-code: 78ms)
+ GET / 200 in 180ms (next.js: 3ms, application-code: 177ms)
+✓ Compiled in 232ms
+ GET / 200 in 280ms (next.js: 117ms, application-code: 163ms)
+ GET / 200 in 76ms (next.js: 3ms, application-code: 73ms)
+ GET /dashboard 200 in 139ms (next.js: 99ms, application-code: 40ms)
+ GET / 200 in 252ms (next.js: 4ms, application-code: 248ms)
+ GET / 200 in 117ms (next.js: 3ms, application-code: 114ms)
+ GET / 200 in 120ms (next.js: 3ms, application-code: 116ms)
+✓ Compiled in 255ms
+ GET /dashboard 200 in 171ms (next.js: 50ms, application-code: 121ms)
+ GET /dashboard 200 in 69ms (next.js: 5ms, application-code: 64ms)
+ GET / 200 in 354ms (next.js: 125ms, application-code: 229ms)
+ GET / 200 in 89ms (next.js: 4ms, application-code: 85ms)
+ GET / 200 in 402ms (next.js: 4ms, application-code: 398ms)
+ GET /demo 200 in 561ms (next.js: 221ms, application-code: 341ms)
+ GET /audit 200 in 238ms (next.js: 125ms, application-code: 113ms)
+ GET / 200 in 133ms (next.js: 3ms, application-code: 130ms)
+✓ Compiled in 61ms
+✓ Compiled in 49ms
+ GET / 200 in 472ms (next.js: 61ms, application-code: 412ms)
+ GET / 200 in 682ms (next.js: 122ms, application-code: 560ms)
+ GET / 200 in 246ms (next.js: 177ms, application-code: 69ms)
+ GET / 200 in 247ms (next.js: 116ms, application-code: 132ms)
+ GET / 200 in 248ms (next.js: 9ms, application-code: 239ms)
+ GET / 200 in 499ms (next.js: 4ms, application-code: 496ms)
+ GET /audit 404 in 134ms (next.js: 109ms, application-code: 25ms)
+ GET /audit 404 in 78ms (next.js: 6ms, application-code: 72ms)
+✓ Compiled in 72ms
+ GET /audit 200 in 728ms (next.js: 226ms, application-code: 502ms)
+ GET /audit 200 in 151ms (next.js: 95ms, application-code: 56ms)
+ GET /audit 200 in 723ms (next.js: 165ms, application-code: 558ms)
+ GET /audit 200 in 89ms (next.js: 3ms, application-code: 86ms)
+ POST /api/lead 201 in 243ms (next.js: 230ms, application-code: 13ms)
+ GET / 200 in 358ms (next.js: 121ms, application-code: 237ms)
+ GET /audit 200 in 250ms (next.js: 5ms, application-code: 245ms)
+ GET /audit 200 in 157ms (next.js: 5ms, application-code: 152ms)
+✓ Compiled in 225ms
+ GET /audit 200 in 237ms (next.js: 125ms, application-code: 112ms)
+ GET /audit 200 in 50ms (next.js: 3ms, application-code: 47ms)
+ GET /audit 200 in 286ms (next.js: 4ms, application-code: 281ms)
+ GET /audit 200 in 289ms (next.js: 144ms, application-code: 145ms)
+ GET /audit 200 in 79ms (next.js: 3ms, application-code: 76ms)
+ GET /audit 200 in 129ms (next.js: 4ms, application-code: 125ms)
+ GET /audit 200 in 8ms (next.js: 3ms, application-code: 4ms)
+ GET /audit 200 in 35ms (next.js: 3ms, application-code: 32ms)
+ GET /audit 200 in 38ms (next.js: 3ms, application-code: 34ms)
+ GET /audit 200 in 84ms (next.js: 3ms, application-code: 81ms)
+✓ Compiled in 521ms
+ GET /audit 200 in 278ms (next.js: 127ms, application-code: 150ms)
+ GET /audit 200 in 94ms (next.js: 4ms, application-code: 90ms)
+✓ Compiled in 276ms
+ GET /audit 200 in 184ms (next.js: 126ms, application-code: 58ms)
+ GET /audit 200 in 166ms (next.js: 5ms, application-code: 161ms)
+ GET /audit 200 in 90ms (next.js: 3ms, application-code: 86ms)
+ GET /audit 200 in 87ms (next.js: 4ms, application-code: 84ms)
+ GET /audit 200 in 75ms (next.js: 3ms, application-code: 72ms)
+ GET / 200 in 67ms (next.js: 11ms, application-code: 57ms)
+ GET /audit 200 in 34ms (next.js: 3ms, application-code: 31ms)
+ GET /audit 200 in 293ms (next.js: 72ms, application-code: 221ms)
+ GET /audit 200 in 149ms (next.js: 4ms, application-code: 144ms)
+ GET /audit 200 in 57ms (next.js: 4ms, application-code: 53ms)
+ GET /audit 200 in 308ms (next.js: 79ms, application-code: 229ms)
+ GET /audit 200 in 165ms (next.js: 3ms, application-code: 162ms)
+ GET /audit 200 in 112ms (next.js: 53ms, application-code: 59ms)
+ GET /audit 200 in 113ms (next.js: 3ms, application-code: 109ms)
+✓ Compiled in 59ms
+ GET /audit 200 in 581ms (next.js: 145ms, application-code: 436ms)
+ GET /audit 200 in 381ms (next.js: 42ms, application-code: 339ms)
+ GET /audit 200 in 183ms (next.js: 8ms, application-code: 175ms)
+ GET /audit 200 in 182ms (next.js: 139ms, application-code: 44ms)
+ GET /audit 200 in 183ms (next.js: 98ms, application-code: 85ms)
+ GET /audit 200 in 389ms (next.js: 4ms, application-code: 385ms)
+ GET /audit 200 in 352ms (next.js: 71ms, application-code: 280ms)
+ GET /audit 200 in 270ms (next.js: 3ms, application-code: 266ms)
+ GET /audit 200 in 224ms (next.js: 4ms, application-code: 220ms)
+ GET /audit 200 in 224ms (next.js: 87ms, application-code: 137ms)
+ GET /audit 200 in 226ms (next.js: 50ms, application-code: 176ms)
+ GET /audit 200 in 225ms (next.js: 130ms, application-code: 95ms)
+ GET /audit 200 in 315ms (next.js: 3ms, application-code: 312ms)
+ GET /audit 200 in 270ms (next.js: 5ms, application-code: 265ms)
+ GET /audit 200 in 269ms (next.js: 4ms, application-code: 265ms)
+ GET /audit 200 in 269ms (next.js: 43ms, application-code: 226ms)
+ GET /audit 200 in 306ms (next.js: 82ms, application-code: 224ms)
+ GET /audit 200 in 228ms (next.js: 46ms, application-code: 182ms)
+ GET /audit 200 in 128ms (next.js: 4ms, application-code: 124ms)
+ GET /audit 200 in 86ms (next.js: 4ms, application-code: 82ms)
+ GET /audit 200 in 46ms (next.js: 3ms, application-code: 44ms)
+✓ Compiled in 73ms
+ GET /audit 500 in 848ms (next.js: 694ms, application-code: 154ms)
+ GET /audit 500 in 20ms (next.js: 8ms, application-code: 12ms)
+ GET /audit 500 in 23ms (next.js: 17ms, application-code: 6ms)
+✓ Compiled in 94ms
+ GET /audit 200 in 291ms (next.js: 130ms, application-code: 161ms)
+ GET /audit 500 in 15ms (next.js: 8ms, application-code: 7ms)
+ GET /audit 500 in 18ms (next.js: 8ms, application-code: 9ms)
+ GET /audit 500 in 26ms (next.js: 11ms, application-code: 15ms)
+ GET /audit 500 in 35ms (next.js: 24ms, application-code: 11ms)
+✓ Compiled in 78ms
+ GET /audit 200 in 197ms (next.js: 60ms, application-code: 137ms)
+✓ Compiled in 51ms
+ GET /audit 200 in 187ms (next.js: 130ms, application-code: 57ms)
+ POST /api/lead 400 in 63ms (next.js: 48ms, application-code: 14ms)
+ POST /api/lead 400 in 6ms (next.js: 1809µs, application-code: 4ms)
+ POST /api/lead 201 in 5ms (next.js: 1289µs, application-code: 4ms)
+ POST /api/lead 201 in 5ms (next.js: 1479µs, application-code: 3ms)
+ GET /api/lead 200 in 6ms (next.js: 2ms, application-code: 4ms)
+ GET /api/lead 200 in 5ms (next.js: 1612µs, application-code: 4ms)
+ GET /api/lead?id=apex_wheel_repair_demo_1778035681008_q2s0je 200 in 5ms (next.js: 1725µs, application-code: 3ms)
+ GET /api/lead?id=missing_lead 404 in 5ms (next.js: 1646µs, application-code: 3ms)
+ GET /audit 200 in 127ms (next.js: 3ms, application-code: 124ms)
+ GET /api/lead 200 in 9ms (next.js: 5ms, application-code: 3ms)
+ GET /demo 200 in 334ms (next.js: 137ms, application-code: 197ms)
+ GET /api/lead 200 in 6ms (next.js: 1746µs, application-code: 4ms)
+ GET /audit 200 in 112ms (next.js: 58ms, application-code: 54ms)
+ POST /api/lead 201 in 55ms (next.js: 48ms, application-code: 7ms)
+ POST /api/lead 400 in 6ms (next.js: 1663µs, application-code: 4ms)
+ POST /api/lead 400 in 5ms (next.js: 1625µs, application-code: 3ms)
+ POST /api/lead 201 in 4ms (next.js: 1363µs, application-code: 3ms)
+ GET /api/lead?id=leadops_audit_form_1778035794740_7gopfg 200 in 5ms (next.js: 1558µs, application-code: 3ms)
+ GET /api/lead 200 in 4ms (next.js: 1531µs, application-code: 3ms)
+ GET /audit 200 in 134ms (next.js: 3ms, application-code: 131ms)
+ GET /api/lead?id=missing_lead 404 in 113ms (next.js: 110ms, application-code: 3ms)
+ GET /demo 200 in 121ms (next.js: 9ms, application-code: 112ms)
+ GET /audit 200 in 122ms (next.js: 64ms, application-code: 58ms)
+ GET /api/lead 200 in 65ms (next.js: 56ms, application-code: 9ms)
+ GET /audit 200 in 290ms (next.js: 3ms, application-code: 286ms)
+ GET /demo 200 in 298ms (next.js: 157ms, application-code: 141ms)
+ GET /demo 200 in 44ms (next.js: 3ms, application-code: 41ms)
+ GET /demo 200 in 136ms (next.js: 64ms, application-code: 72ms)
+ GET /demo 200 in 248ms (next.js: 65ms, application-code: 183ms)
+ GET /demo 200 in 115ms (next.js: 4ms, application-code: 111ms)
+ GET /demo 200 in 61ms (next.js: 3ms, application-code: 57ms)
+ GET /demo 200 in 134ms (next.js: 65ms, application-code: 69ms)
+✓ Compiled in 71ms
+ GET /demo 200 in 103ms (next.js: 48ms, application-code: 55ms)
+✓ Compiled in 53ms
+ GET /demo 200 in 171ms (next.js: 116ms, application-code: 55ms)
+ GET /demo 200 in 107ms (next.js: 54ms, application-code: 54ms)
+ POST /api/lead 201 in 57ms (next.js: 49ms, application-code: 8ms)
+ POST /api/lead 400 in 5ms (next.js: 1816µs, application-code: 4ms)
+ POST /api/lead 400 in 5ms (next.js: 1829µs, application-code: 3ms)
+ POST /api/lead 201 in 5ms (next.js: 1309µs, application-code: 4ms)
+ GET /api/lead?id=leadops_audit_form_1778036452570_kk7i18 200 in 5ms (next.js: 1624µs, application-code: 3ms)
+ GET /audit 200 in 233ms (next.js: 104ms, application-code: 130ms)
+ GET /api/lead 200 in 51ms (next.js: 48ms, application-code: 3ms)
+ GET /demo 200 in 167ms (next.js: 6ms, application-code: 161ms)
+ GET /dashboard 200 in 159ms (next.js: 121ms, application-code: 38ms)
+✓ Compiled in 59ms
+ GET /dashboard 500 in 90ms (next.js: 77ms, application-code: 14ms)
+ GET /dashboard 500 in 21ms (next.js: 9ms, application-code: 12ms)
+ GET /dashboard 500 in 23ms (next.js: 17ms, application-code: 6ms)
+ GET /dashboard 500 in 76ms (next.js: 69ms, application-code: 7ms)
+✓ Compiled in 113ms
+ GET /dashboard 200 in 249ms (next.js: 119ms, application-code: 130ms)
+ GET /api/lead 200 in 41ms (next.js: 34ms, application-code: 7ms)
+✓ Compiled in 55ms
+ GET /dashboard 200 in 165ms (next.js: 116ms, application-code: 49ms)
+ GET /dashboard 200 in 26ms (next.js: 4ms, application-code: 22ms)
+ GET /api/lead 200 in 36ms (next.js: 29ms, application-code: 7ms)
+ GET /dashboard 200 in 135ms (next.js: 38ms, application-code: 97ms)
+ GET /dashboard 200 in 135ms (next.js: 4ms, application-code: 131ms)
+ GET /dashboard 200 in 78ms (next.js: 4ms, application-code: 74ms)
+ GET /api/lead 200 in 6ms (next.js: 2ms, application-code: 4ms)
+✓ Compiled in 232ms
+ GET /dashboard 200 in 213ms (next.js: 184ms, application-code: 28ms)
+✓ Compiled in 118ms
+ GET /dashboard 200 in 142ms (next.js: 119ms, application-code: 23ms)
+✓ Compiled in 124ms
+ GET /dashboard 200 in 138ms (next.js: 112ms, application-code: 26ms)
+✓ Compiled in 154ms
+ GET /dashboard 200 in 155ms (next.js: 128ms, application-code: 27ms)
+ GET /dashboard 200 in 231ms (next.js: 6ms, application-code: 225ms)
+ GET /dashboard 200 in 123ms (next.js: 5ms, application-code: 118ms)
+ GET /api/lead 200 in 91ms (next.js: 74ms, application-code: 17ms)
+✓ Compiled in 269ms
+ GET /dashboard 200 in 144ms (next.js: 122ms, application-code: 23ms)
+ GET /dashboard 200 in 120ms (next.js: 4ms, application-code: 115ms)
+✓ Compiled in 273ms
+ GET /dashboard 200 in 137ms (next.js: 115ms, application-code: 22ms)
+ GET /dashboard 200 in 119ms (next.js: 4ms, application-code: 115ms)
+ GET /api/lead 200 in 51ms (next.js: 42ms, application-code: 8ms)
+ GET /dashboard 200 in 56ms (next.js: 4ms, application-code: 52ms)
+ GET /api/lead 200 in 6ms (next.js: 1874µs, application-code: 4ms)
+ GET /dashboard 200 in 49ms (next.js: 3ms, application-code: 45ms)
+ GET / 200 in 172ms (next.js: 108ms, application-code: 64ms)
+✓ Compiled in 90ms
+✓ Compiled in 88ms
+ GET / 200 in 673ms (next.js: 121ms, application-code: 552ms)
+ GET / 200 in 454ms (next.js: 183ms, application-code: 270ms)
+ GET / 200 in 270ms (next.js: 207ms, application-code: 64ms)
+ GET / 200 in 272ms (next.js: 5ms, application-code: 267ms)
+ GET / 200 in 272ms (next.js: 137ms, application-code: 135ms)
+ GET / 200 in 530ms (next.js: 4ms, application-code: 526ms)
+✓ Compiled in 82ms
+ GET / 200 in 553ms (next.js: 122ms, application-code: 430ms)
+ GET / 200 in 351ms (next.js: 4ms, application-code: 348ms)
+ GET / 200 in 285ms (next.js: 5ms, application-code: 280ms)
+ GET / 200 in 284ms (next.js: 198ms, application-code: 86ms)
+ GET / 200 in 285ms (next.js: 138ms, application-code: 147ms)
+ GET / 200 in 286ms (next.js: 80ms, application-code: 206ms)
+ GET /how-it-works 200 in 306ms (next.js: 193ms, application-code: 113ms)
+ GET /how-it-works 200 in 54ms (next.js: 4ms, application-code: 51ms)
+ GET /how-it-works 200 in 47ms (next.js: 3ms, application-code: 44ms)
+ GET /how-it-works 200 in 50ms (next.js: 3ms, application-code: 47ms)
+ GET /how-it-works 200 in 49ms (next.js: 3ms, application-code: 46ms)
+ GET /how-it-works 200 in 50ms (next.js: 3ms, application-code: 47ms)
+ GET /how-it-works 200 in 10ms (next.js: 4ms, application-code: 6ms)
+ GET /how-it-works 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /how-it-works 200 in 7ms (next.js: 3ms, application-code: 4ms)
+ GET /how-it-works 200 in 15ms (next.js: 3ms, application-code: 13ms)
+ GET /demo 200 in 161ms (next.js: 108ms, application-code: 52ms)
+ GET /demo 200 in 354ms (next.js: 65ms, application-code: 289ms)
+ GET /demo 200 in 213ms (next.js: 3ms, application-code: 209ms)
+ GET /demo 200 in 144ms (next.js: 70ms, application-code: 74ms)
+ GET /demo 200 in 145ms (next.js: 5ms, application-code: 140ms)
+ GET /demo 200 in 348ms (next.js: 70ms, application-code: 278ms)
+ GET /demo 200 in 212ms (next.js: 3ms, application-code: 208ms)
+ GET /demo 200 in 141ms (next.js: 3ms, application-code: 138ms)
+ GET /demo 200 in 137ms (next.js: 62ms, application-code: 75ms)
+ POST /api/lead 201 in 76ms (next.js: 63ms, application-code: 13ms)
+ GET /api/lead 200 in 8ms (next.js: 3ms, application-code: 5ms)
+ GET /demo 200 in 388ms (next.js: 3ms, application-code: 385ms)
+ GET /dashboard 200 in 227ms (next.js: 109ms, application-code: 117ms)
+ GET / 200 in 80ms (next.js: 12ms, application-code: 68ms)
+  Reload env: .env.local
+✓ Compiled in 33ms
+ GET / 200 in 909ms (next.js: 162ms, application-code: 748ms)
+ GET / 200 in 647ms (next.js: 231ms, application-code: 417ms)
+ GET / 200 in 318ms (next.js: 147ms, application-code: 172ms)
+ GET / 200 in 318ms (next.js: 230ms, application-code: 88ms)
+ GET / 200 in 320ms (next.js: 8ms, application-code: 312ms)
+ GET / 200 in 661ms (next.js: 4ms, application-code: 657ms)
+ GET / 200 in 374ms (next.js: 65ms, application-code: 309ms)
+ GET / 200 in 197ms (next.js: 4ms, application-code: 193ms)
+ GET / 200 in 100ms (next.js: 4ms, application-code: 96ms)
+ GET / 200 in 478ms (next.js: 66ms, application-code: 411ms)
+ GET / 200 in 326ms (next.js: 3ms, application-code: 323ms)
+ GET / 200 in 241ms (next.js: 5ms, application-code: 237ms)
+ GET / 200 in 241ms (next.js: 162ms, application-code: 79ms)
+ GET / 200 in 242ms (next.js: 77ms, application-code: 165ms)
+ GET / 200 in 157ms (next.js: 60ms, application-code: 97ms)
+ GET / 200 in 145ms (next.js: 59ms, application-code: 86ms)
+✓ Compiled in 95ms
+ GET / 200 in 637ms (next.js: 72ms, application-code: 566ms)
+ GET / 200 in 468ms (next.js: 233ms, application-code: 235ms)
+ GET / 200 in 468ms (next.js: 375ms, application-code: 92ms)
+ GET / 200 in 470ms (next.js: 315ms, application-code: 155ms)
+ GET / 200 in 1830ms (next.js: 716ms, application-code: 1114ms)
+ GET / 200 in 486ms (next.js: 5ms, application-code: 481ms)
+  Reload env: .env.local
+ GET / 200 in 265ms (next.js: 5ms, application-code: 260ms)
+ GET / 200 in 265ms (next.js: 78ms, application-code: 187ms)
+ GET / 200 in 264ms (next.js: 161ms, application-code: 103ms)
+ GET / 200 in 633ms (next.js: 291ms, application-code: 341ms)
+ GET / 200 in 881ms (next.js: 150ms, application-code: 731ms)
+ GET / 200 in 651ms (next.js: 5ms, application-code: 647ms)
+ GET /demo 200 in 320ms (next.js: 135ms, application-code: 185ms)
+ GET /dashboard 200 in 249ms (next.js: 122ms, application-code: 127ms)
+ POST /api/lead 201 in 1142ms (next.js: 114ms, application-code: 1028ms)
+ GET / 200 in 276ms (next.js: 54ms, application-code: 222ms)
+ GET / 200 in 147ms (next.js: 3ms, application-code: 144ms)
+ GET / 200 in 68ms (next.js: 3ms, application-code: 65ms)
+ GET / 200 in 119ms (next.js: 50ms, application-code: 68ms)
+ GET /demo 200 in 63ms (next.js: 12ms, application-code: 51ms)
+[LeadOps mock integration] {
+  leadId: '38949613-2ea6-4668-b90a-14f323f61f75',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '38949613-2ea6-4668-b90a-14f323f61f75',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '38949613-2ea6-4668-b90a-14f323f61f75',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '38949613-2ea6-4668-b90a-14f323f61f75',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '38949613-2ea6-4668-b90a-14f323f61f75',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 561ms (next.js: 69ms, application-code: 492ms)
+ GET /dashboard 200 in 221ms (next.js: 106ms, application-code: 115ms)
+ GET / 200 in 54ms (next.js: 3ms, application-code: 51ms)
+ GET /dashboard 200 in 15ms (next.js: 3ms, application-code: 13ms)
+ GET /api/lead 200 in 498ms (next.js: 1866µs, application-code: 496ms)
+ GET /api/lead 200 in 517ms (next.js: 1383µs, application-code: 516ms)
+ GET / 200 in 56ms (next.js: 3ms, application-code: 53ms)
+✓ Compiled in 156ms
+ GET / 200 in 3.6s (next.js: 1699ms, application-code: 1920ms)
+ GET / 200 in 377ms (next.js: 54ms, application-code: 323ms)
+ GET / 200 in 377ms (next.js: 110ms, application-code: 268ms)
+ GET / 200 in 378ms (next.js: 309ms, application-code: 69ms)
+ GET / 200 in 504ms (next.js: 49ms, application-code: 455ms)
+ GET / 200 in 393ms (next.js: 3ms, application-code: 390ms)
+✓ Compiled in 114ms
+ GET / 200 in 471ms (next.js: 273ms, application-code: 198ms)
+ GET / 200 in 194ms (next.js: 125ms, application-code: 69ms)
+ GET / 200 in 196ms (next.js: 6ms, application-code: 191ms)
+ GET / 200 in 197ms (next.js: 62ms, application-code: 134ms)
+ GET / 200 in 2.8s (next.js: 1172ms, application-code: 1673ms)
+ GET / 200 in 580ms (next.js: 57ms, application-code: 523ms)
+✓ Compiled in 94ms
+ GET / 200 in 378ms (next.js: 189ms, application-code: 189ms)
+ GET / 200 in 2.5s (next.js: 1165ms, application-code: 1381ms)
+ GET / 200 in 380ms (next.js: 254ms, application-code: 126ms)
+ GET / 200 in 380ms (next.js: 313ms, application-code: 67ms)
+ GET / 200 in 535ms (next.js: 69ms, application-code: 466ms)
+ GET / 200 in 393ms (next.js: 4ms, application-code: 389ms)
+✓ Compiled in 71ms
+ GET / 200 in 342ms (next.js: 113ms, application-code: 228ms)
+ GET / 200 in 150ms (next.js: 4ms, application-code: 146ms)
+✓ Compiled in 70ms
+ GET / 200 in 181ms (next.js: 52ms, application-code: 130ms)
+ GET / 200 in 65ms (next.js: 3ms, application-code: 62ms)
+ GET / 200 in 127ms (next.js: 49ms, application-code: 78ms)
+✓ Compiled in 77ms
+ GET / 200 in 190ms (next.js: 51ms, application-code: 139ms)
+ GET / 200 in 79ms (next.js: 4ms, application-code: 75ms)
+ GET / 200 in 131ms (next.js: 51ms, application-code: 81ms)
+ GET / 200 in 126ms (next.js: 49ms, application-code: 77ms)
+ GET / 200 in 265ms (next.js: 3ms, application-code: 262ms)
+✓ Compiled in 90ms
+ GET / 200 in 691ms (next.js: 143ms, application-code: 548ms)
+ GET / 200 in 552ms (next.js: 4ms, application-code: 548ms)
+ GET / 200 in 469ms (next.js: 5ms, application-code: 465ms)
+ GET / 200 in 469ms (next.js: 90ms, application-code: 379ms)
+ GET / 200 in 469ms (next.js: 261ms, application-code: 208ms)
+ GET / 200 in 470ms (next.js: 183ms, application-code: 287ms)
+ GET / 200 in 104ms (next.js: 4ms, application-code: 99ms)
+✓ Compiled in 110ms
+ GET / 200 in 599ms (next.js: 252ms, application-code: 347ms)
+ GET / 200 in 860ms (next.js: 158ms, application-code: 702ms)
+ GET / 200 in 351ms (next.js: 278ms, application-code: 74ms)
+ GET / 200 in 354ms (next.js: 6ms, application-code: 348ms)
+ GET / 200 in 353ms (next.js: 194ms, application-code: 159ms)
+ GET / 200 in 691ms (next.js: 4ms, application-code: 687ms)
+✓ Compiled in 120ms
+ GET / 200 in 590ms (next.js: 239ms, application-code: 352ms)
+ GET / 200 in 861ms (next.js: 160ms, application-code: 701ms)
+ GET / 200 in 267ms (next.js: 170ms, application-code: 97ms)
+ GET / 200 in 269ms (next.js: 6ms, application-code: 262ms)
+ GET / 200 in 268ms (next.js: 93ms, application-code: 175ms)
+ GET / 200 in 622ms (next.js: 4ms, application-code: 618ms)
+ GET / 200 in 118ms (next.js: 3ms, application-code: 115ms)
+ GET /demo 200 in 460ms (next.js: 112ms, application-code: 348ms)
+ GET /audit 200 in 290ms (next.js: 105ms, application-code: 185ms)
+ GET /dashboard 200 in 224ms (next.js: 108ms, application-code: 116ms)
+ GET /how-it-works 200 in 223ms (next.js: 107ms, application-code: 116ms)
+ GET /privacy 200 in 243ms (next.js: 190ms, application-code: 52ms)
+ GET /terms 200 in 218ms (next.js: 171ms, application-code: 47ms)
+[LeadOps mock integration] {
+  leadId: '3b6b3909-1c21-4a84-81ff-9975151b2c35',
+  source: 'qa-api-test',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3b6b3909-1c21-4a84-81ff-9975151b2c35',
+  source: 'qa-api-test',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3b6b3909-1c21-4a84-81ff-9975151b2c35',
+  source: 'qa-api-test',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3b6b3909-1c21-4a84-81ff-9975151b2c35',
+  source: 'qa-api-test',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3b6b3909-1c21-4a84-81ff-9975151b2c35',
+  source: 'qa-api-test',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 721ms (next.js: 58ms, application-code: 663ms)
+ POST /api/lead 400 in 6ms (next.js: 1785µs, application-code: 4ms)
+ GET /api/lead 200 in 90ms (next.js: 1569µs, application-code: 89ms)
+ GET /api/lead 200 in 194ms (next.js: 1876µs, application-code: 192ms)
+ GET /api/lead?id=3b6b3909-1c21-4a84-81ff-9975151b2c35 200 in 102ms (next.js: 1694µs, application-code: 101ms)
+ GET /api/lead?id=missing-lead 404 in 89ms (next.js: 1694µs, application-code: 88ms)
+ GET / 200 in 150ms (next.js: 3ms, application-code: 147ms)
+ GET /demo 200 in 106ms (next.js: 3ms, application-code: 103ms)
+ GET /audit 200 in 112ms (next.js: 3ms, application-code: 109ms)
+ GET /dashboard 200 in 73ms (next.js: 3ms, application-code: 70ms)
+ GET /api/lead 200 in 12ms (next.js: 5ms, application-code: 7ms)
+ GET /how-it-works 200 in 67ms (next.js: 3ms, application-code: 64ms)
+ GET /privacy 200 in 54ms (next.js: 3ms, application-code: 51ms)
+ GET /terms 200 in 44ms (next.js: 3ms, application-code: 42ms)
+ GET / 200 in 70ms (next.js: 3ms, application-code: 67ms)
+ GET / 200 in 58ms (next.js: 3ms, application-code: 55ms)
+ GET /audit 200 in 83ms (next.js: 3ms, application-code: 80ms)
+[LeadOps mock integration] {
+  leadId: 'df3ecb11-2bf1-4100-ae90-cd31cdce496a',
+  source: 'leadops-audit-form',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'df3ecb11-2bf1-4100-ae90-cd31cdce496a',
+  source: 'leadops-audit-form',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'df3ecb11-2bf1-4100-ae90-cd31cdce496a',
+  source: 'leadops-audit-form',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'df3ecb11-2bf1-4100-ae90-cd31cdce496a',
+  source: 'leadops-audit-form',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'df3ecb11-2bf1-4100-ae90-cd31cdce496a',
+  source: 'leadops-audit-form',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 257ms (next.js: 2ms, application-code: 254ms)
+ GET /demo 200 in 115ms (next.js: 3ms, application-code: 112ms)
+[LeadOps mock integration] {
+  leadId: '5e09235a-5ca2-484a-9ef3-4bdfb60cb719',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '5e09235a-5ca2-484a-9ef3-4bdfb60cb719',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '5e09235a-5ca2-484a-9ef3-4bdfb60cb719',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '5e09235a-5ca2-484a-9ef3-4bdfb60cb719',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '5e09235a-5ca2-484a-9ef3-4bdfb60cb719',
+  source: 'apex-wheel-repair-demo',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 198ms (next.js: 2ms, application-code: 196ms)
+✓ Compiled in 82ms
+ GET /demo 200 in 481ms (next.js: 127ms, application-code: 354ms)
+ GET /demo 200 in 352ms (next.js: 3ms, application-code: 349ms)
+ GET /demo 200 in 290ms (next.js: 55ms, application-code: 235ms)
+ GET /demo 200 in 291ms (next.js: 4ms, application-code: 287ms)
+ GET /demo 200 in 292ms (next.js: 108ms, application-code: 184ms)
+ GET /demo 200 in 291ms (next.js: 160ms, application-code: 131ms)
+ GET /demo 200 in 237ms (next.js: 3ms, application-code: 234ms)
+ GET /demo 200 in 175ms (next.js: 4ms, application-code: 171ms)
+ GET /demo 200 in 117ms (next.js: 4ms, application-code: 113ms)
+ GET /demo 200 in 116ms (next.js: 56ms, application-code: 61ms)
+✓ Compiled in 67ms
+ GET /demo 200 in 189ms (next.js: 60ms, application-code: 130ms)
+ GET /demo 200 in 71ms (next.js: 3ms, application-code: 67ms)
+✓ Compiled in 66ms
+ GET /demo 200 in 179ms (next.js: 118ms, application-code: 61ms)
+✓ Compiled in 69ms
+ GET /demo 200 in 196ms (next.js: 54ms, application-code: 142ms)
+ GET /demo 200 in 65ms (next.js: 4ms, application-code: 61ms)
+✓ Compiled in 69ms
+ GET /demo 200 in 172ms (next.js: 52ms, application-code: 120ms)
+ GET /demo 200 in 55ms (next.js: 3ms, application-code: 52ms)
+✓ Compiled in 70ms
+ GET /demo 200 in 264ms (next.js: 126ms, application-code: 138ms)
+ GET /demo 200 in 61ms (next.js: 4ms, application-code: 57ms)
+ GET /demo 200 in 114ms (next.js: 50ms, application-code: 64ms)
+✓ Compiled in 108ms
+ GET /demo 200 in 204ms (next.js: 5ms, application-code: 199ms)
+ GET /demo 200 in 608ms (next.js: 341ms, application-code: 267ms)
+ GET /demo 200 in 614ms (next.js: 126ms, application-code: 489ms)
+✓ Compiled in 68ms
+ GET /demo 200 in 185ms (next.js: 56ms, application-code: 129ms)
+ GET /demo 200 in 69ms (next.js: 4ms, application-code: 65ms)
+ GET /demo 200 in 131ms (next.js: 56ms, application-code: 75ms)
+ GET /demo 200 in 131ms (next.js: 61ms, application-code: 70ms)
+ GET / 200 in 350ms (next.js: 135ms, application-code: 216ms)
+ GET /demo 200 in 132ms (next.js: 3ms, application-code: 128ms)
+ GET /audit 200 in 308ms (next.js: 121ms, application-code: 187ms)
+ GET /dashboard 200 in 257ms (next.js: 120ms, application-code: 137ms)
+ GET /api/lead 200 in 114ms (next.js: 96ms, application-code: 18ms)
+ GET /how-it-works 200 in 338ms (next.js: 116ms, application-code: 222ms)
+ GET /privacy 200 in 276ms (next.js: 136ms, application-code: 140ms)
+ GET /terms 200 in 240ms (next.js: 114ms, application-code: 126ms)
+ GET / 200 in 121ms (next.js: 3ms, application-code: 118ms)
+ GET /demo 200 in 114ms (next.js: 3ms, application-code: 111ms)
+ GET /audit 200 in 84ms (next.js: 3ms, application-code: 81ms)
+ GET /dashboard 200 in 58ms (next.js: 3ms, application-code: 55ms)
+ GET /how-it-works 200 in 47ms (next.js: 3ms, application-code: 44ms)
+ GET /privacy 200 in 52ms (next.js: 3ms, application-code: 49ms)
+ GET /terms 200 in 51ms (next.js: 3ms, application-code: 48ms)
+ GET /how-it-works 200 in 46ms (next.js: 3ms, application-code: 43ms)
+ GET /demo 200 in 97ms (next.js: 3ms, application-code: 94ms)
+ GET /dashboard 200 in 59ms (next.js: 3ms, application-code: 56ms)
+ GET /audit 200 in 79ms (next.js: 3ms, application-code: 76ms)
+ GET /privacy 200 in 51ms (next.js: 3ms, application-code: 49ms)
+ GET /terms 200 in 48ms (next.js: 3ms, application-code: 45ms)
+ GET / 200 in 137ms (next.js: 3ms, application-code: 134ms)
+[LeadOps mock integration] {
+  leadId: '3fcbf15c-73ba-425d-8d48-1b69f3e07ec6',
+  source: 'qa-final-test',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3fcbf15c-73ba-425d-8d48-1b69f3e07ec6',
+  source: 'qa-final-test',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3fcbf15c-73ba-425d-8d48-1b69f3e07ec6',
+  source: 'qa-final-test',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3fcbf15c-73ba-425d-8d48-1b69f3e07ec6',
+  source: 'qa-final-test',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '3fcbf15c-73ba-425d-8d48-1b69f3e07ec6',
+  source: 'qa-final-test',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 319ms (next.js: 8ms, application-code: 311ms)
+ GET /demo 200 in 117ms (next.js: 3ms, application-code: 114ms)
+ POST /api/lead 400 in 5ms (next.js: 1756µs, application-code: 4ms)
+ GET /api/lead 200 in 93ms (next.js: 1367µs, application-code: 91ms)
+ GET /audit 200 in 80ms (next.js: 3ms, application-code: 77ms)
+ GET /api/lead?id=3fcbf15c-73ba-425d-8d48-1b69f3e07ec6 200 in 113ms (next.js: 1698µs, application-code: 111ms)
+ GET /dashboard 200 in 55ms (next.js: 4ms, application-code: 51ms)
+ GET /how-it-works 200 in 48ms (next.js: 3ms, application-code: 45ms)
+ GET /privacy 200 in 43ms (next.js: 3ms, application-code: 40ms)
+ GET /terms 200 in 47ms (next.js: 3ms, application-code: 44ms)
+✓ Compiled in 79ms
+ GET /terms 200 in 299ms (next.js: 119ms, application-code: 180ms)
+ GET /terms 200 in 174ms (next.js: 3ms, application-code: 171ms)
+ GET /terms 200 in 144ms (next.js: 37ms, application-code: 107ms)
+ GET /terms 200 in 145ms (next.js: 7ms, application-code: 139ms)
+ GET /terms 200 in 144ms (next.js: 89ms, application-code: 55ms)
+ GET /terms 200 in 146ms (next.js: 62ms, application-code: 84ms)
+ GET /terms 200 in 107ms (next.js: 3ms, application-code: 104ms)
+ GET /terms 200 in 78ms (next.js: 4ms, application-code: 74ms)
+ GET /terms 200 in 50ms (next.js: 3ms, application-code: 47ms)
+ GET /terms 200 in 50ms (next.js: 25ms, application-code: 26ms)
+✓ Compiled in 105ms
+ GET /terms 200 in 348ms (next.js: 140ms, application-code: 209ms)
+ GET /terms 200 in 515ms (next.js: 130ms, application-code: 385ms)
+ GET /terms 200 in 202ms (next.js: 6ms, application-code: 196ms)
+ GET /terms 200 in 201ms (next.js: 38ms, application-code: 163ms)
+ GET /terms 200 in 201ms (next.js: 174ms, application-code: 27ms)
+ GET /terms 200 in 383ms (next.js: 3ms, application-code: 380ms)
+ GET /roi-calculator 200 in 264ms (next.js: 208ms, application-code: 56ms)
+ GET /roi-calculator 200 in 46ms (next.js: 3ms, application-code: 43ms)
+ GET /roi-calculator 200 in 43ms (next.js: 3ms, application-code: 40ms)
+ GET /roi-calculator 200 in 41ms (next.js: 3ms, application-code: 38ms)
+ GET /roi-calculator 200 in 42ms (next.js: 3ms, application-code: 39ms)
+✓ Compiled in 92ms
+ GET /roi-calculator 200 in 269ms (next.js: 129ms, application-code: 140ms)
+ GET /roi-calculator 200 in 139ms (next.js: 4ms, application-code: 135ms)
+ GET /roi-calculator 200 in 117ms (next.js: 5ms, application-code: 112ms)
+ GET /roi-calculator 200 in 117ms (next.js: 25ms, application-code: 92ms)
+ GET /roi-calculator 200 in 118ms (next.js: 46ms, application-code: 72ms)
+ GET /roi-calculator 200 in 139ms (next.js: 68ms, application-code: 71ms)
+ GET /roi-calculator 200 in 92ms (next.js: 3ms, application-code: 88ms)
+ GET /roi-calculator 200 in 64ms (next.js: 4ms, application-code: 60ms)
+ GET /roi-calculator 200 in 42ms (next.js: 21ms, application-code: 21ms)
+ GET /roi-calculator 200 in 42ms (next.js: 3ms, application-code: 39ms)
+✓ Compiled in 103ms
+ GET /roi-calculator 200 in 317ms (next.js: 148ms, application-code: 169ms)
+ GET /roi-calculator 200 in 162ms (next.js: 3ms, application-code: 158ms)
+ GET /roi-calculator 200 in 130ms (next.js: 29ms, application-code: 102ms)
+ GET /roi-calculator 200 in 131ms (next.js: 5ms, application-code: 126ms)
+ GET /roi-calculator 200 in 156ms (next.js: 52ms, application-code: 104ms)
+ GET /roi-calculator 200 in 156ms (next.js: 75ms, application-code: 81ms)
+ GET /roi-calculator 200 in 151ms (next.js: 4ms, application-code: 147ms)
+ GET /roi-calculator 200 in 123ms (next.js: 4ms, application-code: 119ms)
+ GET /roi-calculator 200 in 96ms (next.js: 4ms, application-code: 92ms)
+ GET /roi-calculator 200 in 96ms (next.js: 25ms, application-code: 70ms)
+ GET /roi-calculator 200 in 48ms (next.js: 4ms, application-code: 45ms)
+ GET /roi-calculator 200 in 48ms (next.js: 24ms, application-code: 24ms)
+✓ Compiled in 91ms
+ GET /roi-calculator 200 in 339ms (next.js: 157ms, application-code: 182ms)
+ GET /roi-calculator 200 in 171ms (next.js: 4ms, application-code: 167ms)
+ GET /roi-calculator 200 in 142ms (next.js: 30ms, application-code: 112ms)
+ GET /roi-calculator 200 in 143ms (next.js: 4ms, application-code: 139ms)
+ GET /roi-calculator 200 in 172ms (next.js: 56ms, application-code: 115ms)
+ GET /roi-calculator 200 in 172ms (next.js: 81ms, application-code: 91ms)
+ GET /roi-calculator 200 in 154ms (next.js: 4ms, application-code: 151ms)
+ GET /roi-calculator 200 in 128ms (next.js: 5ms, application-code: 123ms)
+ GET /roi-calculator 200 in 96ms (next.js: 4ms, application-code: 92ms)
+ GET /roi-calculator 200 in 96ms (next.js: 26ms, application-code: 70ms)
+ GET /roi-calculator 200 in 96ms (next.js: 45ms, application-code: 51ms)
+ GET /roi-calculator 200 in 74ms (next.js: 44ms, application-code: 31ms)
+✓ Compiled in 122ms
+ GET /roi-calculator 200 in 125ms (next.js: 62ms, application-code: 63ms)
+ GET /roi-calculator 200 in 30ms (next.js: 4ms, application-code: 26ms)
+✓ Compiled in 91ms
+ GET /roi-calculator 200 in 124ms (next.js: 63ms, application-code: 61ms)
+ GET /roi-calculator 200 in 30ms (next.js: 4ms, application-code: 26ms)
+✓ Compiled in 97ms
+ GET /roi-calculator 200 in 126ms (next.js: 64ms, application-code: 62ms)
+ GET /roi-calculator 200 in 34ms (next.js: 4ms, application-code: 30ms)
+ GET /roi-calculator 200 in 90ms (next.js: 60ms, application-code: 30ms)
+✓ Compiled in 107ms
+ GET /roi-calculator 200 in 208ms (next.js: 59ms, application-code: 149ms)
+ GET /roi-calculator 200 in 151ms (next.js: 4ms, application-code: 147ms)
+ GET /roi-calculator 200 in 122ms (next.js: 4ms, application-code: 117ms)
+ GET /roi-calculator 200 in 122ms (next.js: 27ms, application-code: 95ms)
+ GET /roi-calculator 200 in 121ms (next.js: 73ms, application-code: 49ms)
+ GET /roi-calculator 200 in 122ms (next.js: 50ms, application-code: 72ms)
+ GET /roi-calculator 200 in 29ms (next.js: 4ms, application-code: 25ms)
+✓ Compiled in 123ms
+ GET /roi-calculator 200 in 123ms (next.js: 62ms, application-code: 61ms)
+ GET /roi-calculator 200 in 32ms (next.js: 4ms, application-code: 28ms)
+✓ Compiled in 98ms
+ GET /roi-calculator 200 in 139ms (next.js: 66ms, application-code: 73ms)
+ GET /roi-calculator 200 in 31ms (next.js: 4ms, application-code: 27ms)
+ GET / 200 in 208ms (next.js: 128ms, application-code: 80ms)
+ GET / 200 in 145ms (next.js: 55ms, application-code: 89ms)
+✓ Compiled in 93ms
+ GET / 200 in 123ms (next.js: 53ms, application-code: 70ms)
+ GET / 200 in 117ms (next.js: 52ms, application-code: 65ms)
+ GET / 200 in 125ms (next.js: 50ms, application-code: 75ms)
+ GET / 200 in 155ms (next.js: 62ms, application-code: 93ms)
+✓ Compiled in 145ms
+ GET / 200 in 365ms (next.js: 73ms, application-code: 292ms)
+ GET / 200 in 188ms (next.js: 4ms, application-code: 185ms)
+ GET / 200 in 98ms (next.js: 4ms, application-code: 94ms)
+✓ Compiled in 83ms
+ GET / 200 in 254ms (next.js: 69ms, application-code: 185ms)
+ GET / 200 in 91ms (next.js: 4ms, application-code: 87ms)
+ GET / 200 in 145ms (next.js: 61ms, application-code: 84ms)
+✓ Compiled in 86ms
+ GET / 200 in 279ms (next.js: 77ms, application-code: 202ms)
+ GET / 200 in 92ms (next.js: 4ms, application-code: 88ms)
+✓ Compiled in 79ms
+ GET / 200 in 159ms (next.js: 67ms, application-code: 92ms)
+✓ Compiled in 88ms
+ GET / 200 in 686ms (next.js: 146ms, application-code: 540ms)
+ GET / 200 in 664ms (next.js: 4ms, application-code: 660ms)
+ GET / 200 in 577ms (next.js: 5ms, application-code: 573ms)
+ GET / 200 in 578ms (next.js: 89ms, application-code: 488ms)
+ GET / 200 in 646ms (next.js: 257ms, application-code: 390ms)
+ GET / 200 in 648ms (next.js: 180ms, application-code: 468ms)
+ GET / 200 in 604ms (next.js: 4ms, application-code: 600ms)
+ GET / 200 in 391ms (next.js: 4ms, application-code: 387ms)
+ GET / 200 in 320ms (next.js: 4ms, application-code: 315ms)
+ GET / 200 in 256ms (next.js: 4ms, application-code: 251ms)
+ GET / 200 in 255ms (next.js: 157ms, application-code: 98ms)
+ GET / 200 in 256ms (next.js: 83ms, application-code: 173ms)
+ GET / 200 in 151ms (next.js: 71ms, application-code: 80ms)
+✓ Compiled in 110ms
+ GET / 200 in 608ms (next.js: 132ms, application-code: 475ms)
+ GET / 200 in 481ms (next.js: 3ms, application-code: 477ms)
+ GET / 200 in 399ms (next.js: 4ms, application-code: 395ms)
+ GET / 200 in 487ms (next.js: 153ms, application-code: 334ms)
+ GET / 200 in 488ms (next.js: 90ms, application-code: 398ms)
+ GET / 200 in 356ms (next.js: 4ms, application-code: 352ms)
+ GET / 200 in 524ms (next.js: 5ms, application-code: 520ms)
+ GET / 200 in 511ms (next.js: 4ms, application-code: 508ms)
+ GET / 200 in 422ms (next.js: 4ms, application-code: 418ms)
+ GET / 200 in 341ms (next.js: 6ms, application-code: 335ms)
+ GET / 200 in 340ms (next.js: 80ms, application-code: 260ms)
+ GET / 200 in 267ms (next.js: 4ms, application-code: 264ms)
+ GET / 200 in 168ms (next.js: 4ms, application-code: 164ms)
+ GET / 200 in 89ms (next.js: 4ms, application-code: 85ms)
+✓ Compiled in 116ms
+ GET / 200 in 650ms (next.js: 147ms, application-code: 503ms)
+ GET / 200 in 496ms (next.js: 4ms, application-code: 492ms)
+ GET / 200 in 414ms (next.js: 97ms, application-code: 318ms)
+ GET / 200 in 415ms (next.js: 4ms, application-code: 411ms)
+ GET / 200 in 501ms (next.js: 165ms, application-code: 336ms)
+ GET / 200 in 274ms (next.js: 4ms, application-code: 270ms)
+ GET / 200 in 493ms (next.js: 3ms, application-code: 490ms)
+ GET / 200 in 406ms (next.js: 5ms, application-code: 401ms)
+ GET / 200 in 385ms (next.js: 5ms, application-code: 380ms)
+ GET / 200 in 385ms (next.js: 70ms, application-code: 315ms)
+ GET / 200 in 349ms (next.js: 9ms, application-code: 340ms)
+ GET / 200 in 276ms (next.js: 4ms, application-code: 272ms)
+ GET / 200 in 255ms (next.js: 4ms, application-code: 252ms)
+ GET / 200 in 187ms (next.js: 5ms, application-code: 183ms)
+ GET / 200 in 87ms (next.js: 4ms, application-code: 83ms)
+ GET / 200 in 310ms (next.js: 3ms, application-code: 307ms)
+ GET /api/lead 200 in 665ms (next.js: 71ms, application-code: 594ms)
+ GET / 200 in 143ms (next.js: 3ms, application-code: 140ms)
+[LeadOps mock integration] {
+  leadId: '93bb0446-863f-42e0-9556-a371b4c3e472',
+  source: 'qa-smoke-test',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '93bb0446-863f-42e0-9556-a371b4c3e472',
+  source: 'qa-smoke-test',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '93bb0446-863f-42e0-9556-a371b4c3e472',
+  source: 'qa-smoke-test',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '93bb0446-863f-42e0-9556-a371b4c3e472',
+  source: 'qa-smoke-test',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: '93bb0446-863f-42e0-9556-a371b4c3e472',
+  source: 'qa-smoke-test',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 215ms (next.js: 7ms, application-code: 208ms)
+ GET /demo 200 in 580ms (next.js: 135ms, application-code: 445ms)
+ GET /audit 200 in 337ms (next.js: 121ms, application-code: 216ms)
+ GET /dashboard 200 in 258ms (next.js: 116ms, application-code: 141ms)
+ GET /how-it-works 200 in 282ms (next.js: 135ms, application-code: 148ms)
+ GET /roi-calculator 200 in 238ms (next.js: 115ms, application-code: 123ms)
+ GET /privacy 200 in 220ms (next.js: 107ms, application-code: 112ms)
+ GET /terms 200 in 253ms (next.js: 129ms, application-code: 124ms)
+ GET / 200 in 12ms (next.js: 4ms, application-code: 8ms)
+ GET / 200 in 88ms (next.js: 3ms, application-code: 85ms)
+ GET / 200 in 61ms (next.js: 3ms, application-code: 58ms)
+ GET / 200 in 59ms (next.js: 3ms, application-code: 56ms)
+ GET / 200 in 59ms (next.js: 3ms, application-code: 56ms)
+ GET /demo 200 in 45ms (next.js: 3ms, application-code: 43ms)
+ GET / 200 in 92ms (next.js: 4ms, application-code: 88ms)
+✓ Compiled in 109ms
+ GET / 200 in 536ms (next.js: 59ms, application-code: 478ms)
+ GET / 200 in 1824ms (next.js: 819ms, application-code: 1006ms)
+ GET / 200 in 400ms (next.js: 273ms, application-code: 128ms)
+ GET / 200 in 400ms (next.js: 326ms, application-code: 74ms)
+ GET / 200 in 401ms (next.js: 204ms, application-code: 197ms)
+ GET / 200 in 422ms (next.js: 5ms, application-code: 418ms)
+✓ Compiled in 127ms
+✓ Compiled in 127ms
+ GET / 200 in 906ms (next.js: 171ms, application-code: 735ms)
+ GET / 200 in 632ms (next.js: 297ms, application-code: 335ms)
+ GET / 200 in 268ms (next.js: 6ms, application-code: 263ms)
+ GET / 200 in 268ms (next.js: 168ms, application-code: 100ms)
+ GET / 200 in 269ms (next.js: 95ms, application-code: 174ms)
+ GET / 200 in 672ms (next.js: 4ms, application-code: 668ms)
+✓ Compiled in 94ms
+ GET / 200 in 664ms (next.js: 143ms, application-code: 521ms)
+ GET / 200 in 638ms (next.js: 4ms, application-code: 634ms)
+ GET / 200 in 552ms (next.js: 5ms, application-code: 547ms)
+ GET / 200 in 552ms (next.js: 90ms, application-code: 462ms)
+ GET / 200 in 552ms (next.js: 160ms, application-code: 392ms)
+ GET / 200 in 617ms (next.js: 227ms, application-code: 391ms)
+ GET / 200 in 605ms (next.js: 4ms, application-code: 602ms)
+ GET / 200 in 384ms (next.js: 4ms, application-code: 379ms)
+ GET / 200 in 315ms (next.js: 4ms, application-code: 311ms)
+ GET / 200 in 315ms (next.js: 76ms, application-code: 239ms)
+ GET / 200 in 243ms (next.js: 72ms, application-code: 171ms)
+ GET / 200 in 243ms (next.js: 143ms, application-code: 101ms)
+✓ Compiled in 85ms
+ GET / 200 in 346ms (next.js: 144ms, application-code: 202ms)
+ GET / 200 in 113ms (next.js: 4ms, application-code: 109ms)
+ POST /api/live-demo 200 in 142ms (next.js: 131ms, application-code: 11ms)
+ GET /live-demo 200 in 427ms (next.js: 253ms, application-code: 174ms)
+ GET / 200 in 323ms (next.js: 4ms, application-code: 320ms)
+ POST /api/live-demo 400 in 13ms (next.js: 9ms, application-code: 4ms)
+✓ Compiled in 109ms
+ GET / 200 in 636ms (next.js: 149ms, application-code: 487ms)
+ GET / 200 in 487ms (next.js: 3ms, application-code: 483ms)
+ GET / 200 in 397ms (next.js: 5ms, application-code: 392ms)
+ GET / 200 in 398ms (next.js: 80ms, application-code: 317ms)
+ GET / 200 in 496ms (next.js: 219ms, application-code: 277ms)
+ GET / 200 in 497ms (next.js: 143ms, application-code: 353ms)
+ GET / 200 in 499ms (next.js: 4ms, application-code: 495ms)
+ GET / 200 in 495ms (next.js: 4ms, application-code: 491ms)
+ GET / 200 in 397ms (next.js: 5ms, application-code: 392ms)
+ GET / 200 in 397ms (next.js: 73ms, application-code: 324ms)
+ GET / 200 in 329ms (next.js: 71ms, application-code: 258ms)
+ GET / 200 in 505ms (next.js: 80ms, application-code: 424ms)
+ GET / 200 in 344ms (next.js: 4ms, application-code: 340ms)
+ GET / 200 in 256ms (next.js: 5ms, application-code: 250ms)
+✓ Compiled in 95ms
+ GET / 200 in 265ms (next.js: 64ms, application-code: 201ms)
+ GET / 200 in 103ms (next.js: 4ms, application-code: 99ms)
+ GET / 200 in 184ms (next.js: 64ms, application-code: 121ms)
+ GET / 200 in 183ms (next.js: 80ms, application-code: 103ms)
+✓ Compiled in 89ms
+ GET / 200 in 363ms (next.js: 147ms, application-code: 216ms)
+ GET / 200 in 100ms (next.js: 4ms, application-code: 97ms)
+ GET / 200 in 155ms (next.js: 60ms, application-code: 94ms)
+✓ Compiled in 104ms
+ GET / 200 in 736ms (next.js: 151ms, application-code: 585ms)
+ GET / 200 in 576ms (next.js: 3ms, application-code: 573ms)
+ GET / 200 in 480ms (next.js: 184ms, application-code: 296ms)
+ GET / 200 in 482ms (next.js: 5ms, application-code: 477ms)
+ GET / 200 in 482ms (next.js: 98ms, application-code: 384ms)
+ GET / 200 in 483ms (next.js: 278ms, application-code: 205ms)
+ GET / 200 in 520ms (next.js: 4ms, application-code: 516ms)
+ GET / 200 in 651ms (next.js: 4ms, application-code: 646ms)
+ GET / 200 in 565ms (next.js: 5ms, application-code: 560ms)
+ GET / 200 in 565ms (next.js: 77ms, application-code: 488ms)
+ GET / 200 in 413ms (next.js: 83ms, application-code: 329ms)
+ GET / 200 in 565ms (next.js: 155ms, application-code: 410ms)
+ GET / 200 in 306ms (next.js: 5ms, application-code: 302ms)
+ GET / 200 in 82ms (next.js: 3ms, application-code: 78ms)
+✓ Compiled in 90ms
+ GET / 200 in 301ms (next.js: 77ms, application-code: 225ms)
+ GET / 200 in 120ms (next.js: 4ms, application-code: 116ms)
+✓ Compiled in 86ms
+ GET / 200 in 282ms (next.js: 74ms, application-code: 208ms)
+ GET / 200 in 104ms (next.js: 4ms, application-code: 100ms)
+ GET / 200 in 195ms (next.js: 71ms, application-code: 124ms)
+ GET / 200 in 188ms (next.js: 74ms, application-code: 114ms)
+✓ Compiled in 86ms
+ GET / 200 in 364ms (next.js: 146ms, application-code: 218ms)
+ GET / 200 in 111ms (next.js: 3ms, application-code: 107ms)
+ GET /audit 200 in 561ms (next.js: 128ms, application-code: 432ms)
+ GET / 200 in 567ms (next.js: 175ms, application-code: 392ms)
+[LeadOps mock integration] {
+  leadId: 'c28342e8-d967-4e61-9b58-651012b1fea2',
+  source: 'leadops-missed-lead-checkup',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'c28342e8-d967-4e61-9b58-651012b1fea2',
+  source: 'leadops-missed-lead-checkup',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'c28342e8-d967-4e61-9b58-651012b1fea2',
+  source: 'leadops-missed-lead-checkup',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'c28342e8-d967-4e61-9b58-651012b1fea2',
+  source: 'leadops-missed-lead-checkup',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'c28342e8-d967-4e61-9b58-651012b1fea2',
+  source: 'leadops-missed-lead-checkup',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 697ms (next.js: 107ms, application-code: 590ms)
+ GET / 200 in 171ms (next.js: 3ms, application-code: 168ms)
+ GET /audit 200 in 110ms (next.js: 10ms, application-code: 99ms)
+ GET / 500 in 20ms (next.js: 8ms, application-code: 12ms)
+ GET / 500 in 16ms (next.js: 9ms, application-code: 7ms)
+ GET / 500 in 17ms (next.js: 7ms, application-code: 10ms)
+ GET / 500 in 25ms (next.js: 15ms, application-code: 10ms)
+✓ Compiled in 94ms
+ GET / 200 in 293ms (next.js: 61ms, application-code: 231ms)
+ GET / 200 in 11ms (next.js: 3ms, application-code: 8ms)
+ GET / 200 in 67ms (next.js: 2ms, application-code: 65ms)
+✓ Compiled in 135ms
+ GET / 500 in 17ms (next.js: 9ms, application-code: 9ms)
+ GET / 500 in 25ms (next.js: 10ms, application-code: 14ms)
+ GET / 500 in 27ms (next.js: 20ms, application-code: 8ms)
+ GET / 500 in 4ms
+✓ Compiled in 132ms
+ GET / 200 in 374ms (next.js: 76ms, application-code: 298ms)
+✓ Compiled in 167ms
+ GET / 200 in 620ms (next.js: 66ms, application-code: 554ms)
+ GET / 200 in 566ms (next.js: 3ms, application-code: 563ms)
+ GET / 200 in 478ms (next.js: 4ms, application-code: 474ms)
+ GET / 200 in 478ms (next.js: 84ms, application-code: 394ms)
+ GET / 200 in 483ms (next.js: 174ms, application-code: 309ms)
+ GET / 200 in 483ms (next.js: 268ms, application-code: 215ms)
+ GET / 200 in 109ms (next.js: 4ms, application-code: 105ms)
+✓ Compiled in 126ms
+✓ Compiled in 113ms
+ GET / 200 in 598ms (next.js: 74ms, application-code: 524ms)
+ GET / 200 in 424ms (next.js: 3ms, application-code: 420ms)
+ GET / 200 in 334ms (next.js: 5ms, application-code: 329ms)
+ GET / 200 in 334ms (next.js: 83ms, application-code: 252ms)
+ GET / 200 in 334ms (next.js: 230ms, application-code: 104ms)
+ GET / 200 in 335ms (next.js: 153ms, application-code: 182ms)
+ GET / 200 in 168ms (next.js: 69ms, application-code: 99ms)
+ GET / 200 in 184ms (next.js: 72ms, application-code: 112ms)
+ GET / 200 in 174ms (next.js: 69ms, application-code: 104ms)
+ GET / 200 in 165ms (next.js: 71ms, application-code: 94ms)
+ GET / 200 in 169ms (next.js: 71ms, application-code: 98ms)
+ GET / 200 in 178ms (next.js: 67ms, application-code: 111ms)
+ GET / 200 in 178ms (next.js: 69ms, application-code: 108ms)
+ GET / 200 in 189ms (next.js: 75ms, application-code: 114ms)
+ GET / 200 in 161ms (next.js: 67ms, application-code: 93ms)
+ GET / 200 in 206ms (next.js: 72ms, application-code: 134ms)
+ GET / 200 in 166ms (next.js: 68ms, application-code: 98ms)
+ GET / 200 in 173ms (next.js: 76ms, application-code: 97ms)
+✓ Compiled in 127ms
+ GET / 200 in 181ms (next.js: 69ms, application-code: 112ms)
+[LeadOps mock integration] {
+  leadId: 'dfa0930c-cb26-401e-bf55-520fc3bd3252',
+  source: 'clearflow-well-water-demo',
+  priority: 'hot',
+  action: 'customer_reply',
+  provider: 'twilio',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'dfa0930c-cb26-401e-bf55-520fc3bd3252',
+  source: 'clearflow-well-water-demo',
+  priority: 'hot',
+  action: 'owner_alert',
+  provider: 'email',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'dfa0930c-cb26-401e-bf55-520fc3bd3252',
+  source: 'clearflow-well-water-demo',
+  priority: 'hot',
+  action: 'crm_webhook',
+  provider: 'crm',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'dfa0930c-cb26-401e-bf55-520fc3bd3252',
+  source: 'clearflow-well-water-demo',
+  priority: 'hot',
+  action: 'booking_link',
+  provider: 'calendar',
+  status: 'mocked'
+}
+[LeadOps mock integration] {
+  leadId: 'dfa0930c-cb26-401e-bf55-520fc3bd3252',
+  source: 'clearflow-well-water-demo',
+  priority: 'hot',
+  action: 'follow_up_sequence',
+  provider: 'leadops-sequences',
+  status: 'mocked'
+}
+ POST /api/lead 201 in 640ms (next.js: 82ms, application-code: 558ms)
+ GET /demo 200 in 345ms (next.js: 119ms, application-code: 227ms)
+ GET /demo 200 in 349ms (next.js: 147ms, application-code: 202ms)
+ GET /demo 200 in 57ms (next.js: 4ms, application-code: 53ms)
+ GET / 200 in 3.3s (next.js: 1810ms, application-code: 1516ms)
+ GET / 200 in 571ms (next.js: 72ms, application-code: 500ms)
+ GET / 200 in 412ms (next.js: 4ms, application-code: 407ms)
+ GET / 200 in 412ms (next.js: 70ms, application-code: 342ms)
+ GET / 200 in 413ms (next.js: 139ms, application-code: 274ms)
+ GET / 200 in 497ms (next.js: 208ms, application-code: 289ms)
+ GET / 200 in 548ms (next.js: 4ms, application-code: 544ms)
+ GET / 200 in 447ms (next.js: 5ms, application-code: 442ms)
+ GET / 200 in 456ms (next.js: 4ms, application-code: 452ms)
+ GET / 200 in 456ms (next.js: 75ms, application-code: 381ms)
+ GET / 200 in 550ms (next.js: 4ms, application-code: 545ms)
+ GET / 200 in 550ms (next.js: 90ms, application-code: 460ms)
+ GET / 200 in 649ms (next.js: 5ms, application-code: 645ms)
+ GET / 200 in 643ms (next.js: 5ms, application-code: 639ms)
+ GET / 200 in 405ms (next.js: 4ms, application-code: 401ms)
+ GET / 200 in 406ms (next.js: 73ms, application-code: 333ms)
+ GET / 200 in 370ms (next.js: 4ms, application-code: 366ms)
+ GET / 200 in 398ms (next.js: 4ms, application-code: 395ms)
+ GET / 200 in 304ms (next.js: 4ms, application-code: 300ms)
+ GET / 200 in 214ms (next.js: 4ms, application-code: 210ms)
+ GET / 200 in 115ms (next.js: 5ms, application-code: 110ms)
+✓ Compiled in 95ms
+ GET / 200 in 354ms (next.js: 146ms, application-code: 208ms)
+ GET / 200 in 99ms (next.js: 4ms, application-code: 95ms)
+✓ Compiled in 94ms
+ GET / 200 in 296ms (next.js: 81ms, application-code: 215ms)
+ GET / 200 in 110ms (next.js: 3ms, application-code: 107ms)
+✓ Compiled in 105ms
+ GET / 200 in 460ms (next.js: 81ms, application-code: 379ms)
+ GET / 200 in 277ms (next.js: 4ms, application-code: 274ms)
+ GET / 200 in 185ms (next.js: 4ms, application-code: 181ms)
+ GET / 200 in 185ms (next.js: 86ms, application-code: 99ms)
+✓ Compiled in 92ms
+ GET / 200 in 271ms (next.js: 73ms, application-code: 198ms)
+ GET / 200 in 94ms (next.js: 4ms, application-code: 91ms)
+✓ Compiled in 101ms
+ GET / 200 in 280ms (next.js: 73ms, application-code: 208ms)
+ GET / 200 in 105ms (next.js: 4ms, application-code: 101ms)
+✓ Compiled in 96ms
+ GET / 200 in 274ms (next.js: 65ms, application-code: 209ms)
+ GET / 200 in 111ms (next.js: 4ms, application-code: 107ms)
+✓ Compiled in 99ms
+ GET / 200 in 281ms (next.js: 66ms, application-code: 215ms)
+ GET / 200 in 110ms (next.js: 4ms, application-code: 106ms)
+✓ Compiled in 85ms
+ GET / 200 in 258ms (next.js: 70ms, application-code: 188ms)
+ GET / 200 in 95ms (next.js: 4ms, application-code: 91ms)
+✓ Compiled in 98ms
+ GET / 200 in 297ms (next.js: 78ms, application-code: 219ms)
+ GET / 200 in 100ms (next.js: 4ms, application-code: 96ms)
+✓ Compiled in 160ms
+ GET / 200 in 1567ms (next.js: 1058ms, application-code: 508ms)
+ GET / 200 in 90ms (next.js: 6ms, application-code: 84ms)
+ GET / 200 in 686ms (next.js: 272ms, application-code: 414ms)
+ GET /robots.txt 200 in 483ms (next.js: 475ms, application-code: 8ms)
+ GET /audit 200 in 492ms (next.js: 154ms, application-code: 338ms)
+ GET /sitemap.xml 200 in 114ms (next.js: 109ms, application-code: 5ms)
+✓ Compiled in 104ms
+ GET / 200 in 895ms (next.js: 160ms, application-code: 734ms)
+ GET / 200 in 746ms (next.js: 3ms, application-code: 742ms)
+ GET / 200 in 645ms (next.js: 343ms, application-code: 302ms)
+ GET / 200 in 734ms (next.js: 261ms, application-code: 473ms)
+ GET / 200 in 735ms (next.js: 5ms, application-code: 730ms)
+ GET / 200 in 734ms (next.js: 430ms, application-code: 305ms)
+ GET / 200 in 470ms (next.js: 4ms, application-code: 466ms)
+ GET / 200 in 361ms (next.js: 5ms, application-code: 356ms)
+ GET / 200 in 269ms (next.js: 4ms, application-code: 265ms)
+ GET / 200 in 269ms (next.js: 86ms, application-code: 183ms)
+ GET / 200 in 269ms (next.js: 167ms, application-code: 102ms)
+✓ Compiled in 85ms
+ GET / 200 in 538ms (next.js: 145ms, application-code: 394ms)
+ GET / 200 in 301ms (next.js: 4ms, application-code: 297ms)
+ GET / 200 in 199ms (next.js: 97ms, application-code: 102ms)
+ GET / 200 in 200ms (next.js: 4ms, application-code: 195ms)
+ GET /sitemap.xml 200 in 35ms (next.js: 29ms, application-code: 6ms)
+ GET /robots.txt 200 in 248ms (next.js: 245ms, application-code: 4ms)
+ GET / 200 in 258ms (next.js: 3ms, application-code: 255ms)
+ GET / 200 in 141ms (next.js: 3ms, application-code: 138ms)
+ GET /demo 200 in 273ms (next.js: 118ms, application-code: 155ms)
+ GET /audit 200 in 291ms (next.js: 114ms, application-code: 177ms)
+ GET /dashboard 200 in 250ms (next.js: 114ms, application-code: 136ms)
+ GET /how-it-works 200 in 244ms (next.js: 112ms, application-code: 132ms)
+ GET /live-demo 200 in 227ms (next.js: 114ms, application-code: 113ms)
+ GET /roi-calculator 200 in 248ms (next.js: 121ms, application-code: 127ms)
+ GET /privacy 200 in 388ms (next.js: 267ms, application-code: 121ms)
+ GET /terms 200 in 227ms (next.js: 111ms, application-code: 116ms)
+ GET /dashboard 200 in 66ms (next.js: 3ms, application-code: 63ms)

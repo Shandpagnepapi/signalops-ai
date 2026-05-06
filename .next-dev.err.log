@@ -1,0 +1,1422 @@
+[browser] Image with src "http://127.0.0.1:3000/brand/leadops-logo-horizontal.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⨯ ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m14 |[0m   [33mWorkflow[0m
+  [90m15 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m16 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/card"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m14 |[0m   [33mWorkflow[0m
+  [90m15 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m16 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/card"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m14 |[0m   [33mWorkflow[0m
+  [90m15 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m16 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/card"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+⨯ ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m14 |[0m   [33mWorkflow[0m
+  [90m15 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m16 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/card"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m14 |[0m   [33mWorkflow[0m
+  [90m15 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m16 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/card"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m14 |[0m   [33mWorkflow[0m
+  [90m15 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m16 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/card"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/audit/page.tsx:16:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/audit/page.tsx:16:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/audit/page.tsx:16:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  14 |   Workflow
+  15 | } from "lucide-react";
+> 16 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+  19 | import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui...[0m
+  [90m20 |[0m [36mimport[0m { apexWheelRepair } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+[31m[1m>[0m [90m21 |[0m [36mimport[0m { [33mWheelLeadForm[0m } [36mfrom[0m [32m"./wheel-lead-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m22 |[0m
+  [90m23 |[0m [36mconst[0m serviceIcons = [[33mWrench[0m, [33mGauge[0m, [33mShieldCheck[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCar[0m, [33mCheck...[0m
+  [90m24 |[0m [36mconst[0m damageIcons = [[33mWrench[0m, [33mGauge[0m, [33mAlertTriangle[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCheckCirc...[0m
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui...[0m
+  [90m20 |[0m [36mimport[0m { apexWheelRepair } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+[31m[1m>[0m [90m21 |[0m [36mimport[0m { [33mWheelLeadForm[0m } [36mfrom[0m [32m"./wheel-lead-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m22 |[0m
+  [90m23 |[0m [36mconst[0m serviceIcons = [[33mWrench[0m, [33mGauge[0m, [33mShieldCheck[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCar[0m, [33mCheck...[0m
+  [90m24 |[0m [36mconst[0m damageIcons = [[33mWrench[0m, [33mGauge[0m, [33mAlertTriangle[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCheckCirc...[0m
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui...[0m
+  [90m20 |[0m [36mimport[0m { apexWheelRepair } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+[31m[1m>[0m [90m21 |[0m [36mimport[0m { [33mWheelLeadForm[0m } [36mfrom[0m [32m"./wheel-lead-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m22 |[0m
+  [90m23 |[0m [36mconst[0m serviceIcons = [[33mWrench[0m, [33mGauge[0m, [33mShieldCheck[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCar[0m, [33mCheck...[0m
+  [90m24 |[0m [36mconst[0m damageIcons = [[33mWrench[0m, [33mGauge[0m, [33mAlertTriangle[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCheckCirc...[0m
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  [90m19 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui...[0m
+  [90m20 |[0m [36mimport[0m { apexWheelRepair } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+[31m[1m>[0m [90m21 |[0m [36mimport[0m { [33mWheelLeadForm[0m } [36mfrom[0m [32m"./wheel-lead-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m22 |[0m
+  [90m23 |[0m [36mconst[0m serviceIcons = [[33mWrench[0m, [33mGauge[0m, [33mShieldCheck[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCar[0m, [33mCheck...[0m
+  [90m24 |[0m [36mconst[0m damageIcons = [[33mWrench[0m, [33mGauge[0m, [33mAlertTriangle[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCheckCirc...[0m
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  19 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui...
+  20 | import { apexWheelRepair } from "@/lib/mock-data";
+> 21 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 |
+  23 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  24 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] Uncaught Error: ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  19 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui...
+  20 | import { apexWheelRepair } from "@/lib/mock-data";
+> 21 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 |
+  23 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  24 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./components/demo/apex-wheel-site.tsx:21:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./components/demo/apex-wheel-site.tsx:21:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  19 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui...
+  20 | import { apexWheelRepair } from "@/lib/mock-data";
+> 21 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 |
+  23 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  24 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/demo/apex-wheel-site.tsx:21:1
+Module not found: Can't resolve './wheel-lead-form'
+  19 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui...
+  20 | import { apexWheelRepair } from "@/lib/mock-data";
+> 21 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 |
+  23 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  24 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+
+./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+⨯ ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+
+./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+⨯ ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+
+./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+⨯ ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+
+./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  [90m2 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m3 |[0m [36mimport[0m { [33mCard[0m, [33mCardContent[0m, [33mCardDescription[0m, [33mCardHeader[0m, [33mCardTitle[0m } [36mfrom[0m [32m"@/components/ui/...[0m
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { dashboardMetrics, leadRows } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m metricIcons = [[33mMessageSquare[0m, [33mTimerReset[0m, [33mCalendarCheck2[0m, [33mPhoneCall[0m];
+  [90m7 |[0m
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+[browser] Uncaught Error: ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx
+
+
+    at <unknown> (Error: ./components/dashboard/dashboard-shell.tsx:4:1)
+    at <unknown> (Error: (./components/dashboard/dashboard-shell.tsx:4:1)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export dashboardMetrics doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export dashboardMetrics was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import apexDashboardLeads?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/dashboard/dashboard-shell.tsx:4:1
+Export leadRows doesn't exist in target module
+  2 | import { Badge } from "@/components/ui/badge";
+  3 | import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/...
+> 4 | import { dashboardMetrics, leadRows } from "@/lib/mock-data";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const metricIcons = [MessageSquare, TimerReset, CalendarCheck2, PhoneCall];
+  7 |
+
+The export leadRows was not found in module [project]/lib/mock-data.ts [app-rsc] (ecmascript).
+Did you mean to import homepageStats?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/dashboard/dashboard-shell.tsx
+    ./app/dashboard/page.tsx 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  [90m1 |[0m [36mimport[0m [36mtype[0m { [33mMetadata[0m } [36mfrom[0m [32m"next"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mDashboardShell[0m } [36mfrom[0m [32m"@/components/dashboard/dashboard-shell"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mexport[0m [36mconst[0m metadata: [33mMetadata[0m = {
+  [90m5 |[0m   title: [32m"Dashboard"[0m,
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  [90m1 |[0m [36mimport[0m [36mtype[0m { [33mMetadata[0m } [36mfrom[0m [32m"next"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mDashboardShell[0m } [36mfrom[0m [32m"@/components/dashboard/dashboard-shell"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mexport[0m [36mconst[0m metadata: [33mMetadata[0m = {
+  [90m5 |[0m   title: [32m"Dashboard"[0m,
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  [90m1 |[0m [36mimport[0m [36mtype[0m { [33mMetadata[0m } [36mfrom[0m [32m"next"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mDashboardShell[0m } [36mfrom[0m [32m"@/components/dashboard/dashboard-shell"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mexport[0m [36mconst[0m metadata: [33mMetadata[0m = {
+  [90m5 |[0m   title: [32m"Dashboard"[0m,
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  1 | import type { Metadata } from "next";
+> 2 | import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export const metadata: Metadata = {
+  5 |   title: "Dashboard",
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  1 | import type { Metadata } from "next";
+> 2 | import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export const metadata: Metadata = {
+  5 |   title: "Dashboard",
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  1 | import type { Metadata } from "next";
+> 2 | import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export const metadata: Metadata = {
+  5 |   title: "Dashboard",
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/dashboard/page.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/dashboard/page.tsx:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  1 | import type { Metadata } from "next";
+> 2 | import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export const metadata: Metadata = {
+  5 |   title: "Dashboard",
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/dashboard/page.tsx:2:1
+Module not found: Can't resolve '@/components/dashboard/dashboard-shell'
+  1 | import type { Metadata } from "next";
+> 2 | import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export const metadata: Metadata = {
+  5 |   title: "Dashboard",
+
+Import map: aliased to relative './components/dashboard/dashboard-shell' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+⨯ ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m13 |[0m   [33mWorkflow[0m
+  [90m14 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m16 |[0m [36mimport[0m { [33mTrackedLink[0m } [36mfrom[0m [32m"@/components/site/tracked-link"[0m;
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  [90m13 |[0m   [33mWorkflow[0m
+  [90m14 |[0m } [36mfrom[0m [32m"lucide-react"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m { [33mLeadLeakAuditForm[0m } [36mfrom[0m [32m"@/components/forms/lead-leak-audit-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m16 |[0m [36mimport[0m { [33mTrackedLink[0m } [36mfrom[0m [32m"@/components/site/tracked-link"[0m;
+  [90m17 |[0m [36mimport[0m { [33mBadge[0m } [36mfrom[0m [32m"@/components/ui/badge"[0m;
+  [90m18 |[0m [36mimport[0m { buttonVariants } [36mfrom[0m [32m"@/components/ui/button"[0m;
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  13 |   Workflow
+  14 | } from "lucide-react";
+> 15 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { TrackedLink } from "@/components/site/tracked-link";
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] Uncaught Error: ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  13 |   Workflow
+  14 | } from "lucide-react";
+> 15 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { TrackedLink } from "@/components/site/tracked-link";
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/audit/page.tsx:15:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/audit/page.tsx:15:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  13 |   Workflow
+  14 | } from "lucide-react";
+> 15 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { TrackedLink } from "@/components/site/tracked-link";
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  13 |   Workflow
+  14 | } from "lucide-react";
+> 15 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { TrackedLink } from "@/components/site/tracked-link";
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/audit/page.tsx:15:1
+Module not found: Can't resolve '@/components/forms/lead-leak-audit-form'
+  13 |   Workflow
+  14 | } from "lucide-react";
+> 15 | import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { TrackedLink } from "@/components/site/tracked-link";
+  17 | import { Badge } from "@/components/ui/badge";
+  18 | import { buttonVariants } from "@/components/ui/button";
+
+Import map: aliased to relative './components/forms/lead-leak-audit-form' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./components/demo/apex-wheel-site.tsx:23:1
+Module not found: Can't resolve './wheel-lead-form'
+  [90m21 |[0m [36mimport[0m { [33mANALYTICS_EVENTS[0m } [36mfrom[0m [32m"@/lib/analytics"[0m;
+  [90m22 |[0m [36mimport[0m { apexWheelRepair } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+[31m[1m>[0m [90m23 |[0m [36mimport[0m { [33mWheelLeadForm[0m } [36mfrom[0m [32m"./wheel-lead-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m24 |[0m
+  [90m25 |[0m [36mconst[0m serviceIcons = [[33mWrench[0m, [33mGauge[0m, [33mShieldCheck[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCar[0m, [33mCheck...[0m
+  [90m26 |[0m [36mconst[0m damageIcons = [[33mWrench[0m, [33mGauge[0m, [33mAlertTriangle[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCheckCirc...[0m
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/demo/apex-wheel-site.tsx:23:1
+Module not found: Can't resolve './wheel-lead-form'
+  [90m21 |[0m [36mimport[0m { [33mANALYTICS_EVENTS[0m } [36mfrom[0m [32m"@/lib/analytics"[0m;
+  [90m22 |[0m [36mimport[0m { apexWheelRepair } [36mfrom[0m [32m"@/lib/mock-data"[0m;
+[31m[1m>[0m [90m23 |[0m [36mimport[0m { [33mWheelLeadForm[0m } [36mfrom[0m [32m"./wheel-lead-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m24 |[0m
+  [90m25 |[0m [36mconst[0m serviceIcons = [[33mWrench[0m, [33mGauge[0m, [33mShieldCheck[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCar[0m, [33mCheck...[0m
+  [90m26 |[0m [36mconst[0m damageIcons = [[33mWrench[0m, [33mGauge[0m, [33mAlertTriangle[0m, [33mSparkles[0m, [33mBadgeCheck[0m, [33mCamera[0m, [33mCheckCirc...[0m
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./components/demo/apex-wheel-site.tsx:23:1
+Module not found: Can't resolve './wheel-lead-form'
+  21 | import { ANALYTICS_EVENTS } from "@/lib/analytics";
+  22 | import { apexWheelRepair } from "@/lib/mock-data";
+> 23 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 |
+  25 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  26 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] Uncaught Error: ./components/demo/apex-wheel-site.tsx:23:1
+Module not found: Can't resolve './wheel-lead-form'
+  21 | import { ANALYTICS_EVENTS } from "@/lib/analytics";
+  22 | import { apexWheelRepair } from "@/lib/mock-data";
+> 23 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 |
+  25 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  26 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./components/demo/apex-wheel-site.tsx:23:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./components/demo/apex-wheel-site.tsx:23:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./components/demo/apex-wheel-site.tsx:23:1
+Module not found: Can't resolve './wheel-lead-form'
+  21 | import { ANALYTICS_EVENTS } from "@/lib/analytics";
+  22 | import { apexWheelRepair } from "@/lib/mock-data";
+> 23 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 |
+  25 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  26 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./components/demo/apex-wheel-site.tsx:23:1
+Module not found: Can't resolve './wheel-lead-form'
+  21 | import { ANALYTICS_EVENTS } from "@/lib/analytics";
+  22 | import { apexWheelRepair } from "@/lib/mock-data";
+> 23 | import { WheelLeadForm } from "./wheel-lead-form";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 |
+  25 | const serviceIcons = [Wrench, Gauge, ShieldCheck, Sparkles, BadgeCheck, Camera, Car, Check...
+  26 | const damageIcons = [Wrench, Gauge, AlertTriangle, Sparkles, BadgeCheck, Camera, CheckCirc...
+
+Import trace:
+  Server Component:
+    ./components/demo/apex-wheel-site.tsx
+    ./app/demo/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/dillo/OneDrive/Desktop/LeadOps AI/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+LeadOps Supabase storage unavailable. Using mock store fallback. Unknown Supabase error.
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
