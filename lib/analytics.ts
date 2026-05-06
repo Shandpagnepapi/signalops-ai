@@ -79,7 +79,7 @@ export function trackEvent(
   });
 
   window.dispatchEvent(
-    new CustomEvent("leadops:analytics", {
+    new CustomEvent("signalops:analytics", {
       detail: {
         eventName,
         properties: payload

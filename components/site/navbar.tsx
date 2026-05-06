@@ -9,13 +9,13 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/82 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/82 backdrop-blur-md">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
         aria-label="Primary navigation"
       >
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <Image src="/brand/leadops-logo-mark.svg" alt="" width={34} height={34} priority />
+          <Image src="/brand/signalops-logo-mark.svg" alt="" width={34} height={34} />
           <span className="text-base font-semibold tracking-normal text-white">{SITE_CONFIG.name}</span>
         </Link>
 

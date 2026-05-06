@@ -21,8 +21,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import {
   AI_LEAD_ENGINE_FEATURES,
-  LEADOPS_PROCESS,
-  LEADOPS_USE_CASES,
+  SIGNALOPS_PROCESS,
+  SIGNALOPS_USE_CASES,
   MARKETING_FAQS,
   PACKAGE_NAMES,
   PRIMARY_CTA,
@@ -58,10 +58,10 @@ export function MarketingHome() {
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <Image
-          src="/brand/leadops-hero.png"
-          alt="LeadOps lead operations command center"
+          src="/brand/signalops-hero.png"
+          alt=""
           fill
-          priority
+          quality={62}
           className="object-cover opacity-30"
           sizes="100vw"
         />
@@ -73,12 +73,12 @@ export function MarketingHome() {
               AI Lead Response & Qualification System for service businesses
             </Badge>
             <h1 className="max-w-sm text-4xl font-semibold leading-tight tracking-normal text-white sm:max-w-none sm:text-6xl">
-              Every lead answered. Every follow-up handled.
+              AI lead response systems for businesses that cannot afford missed leads.
             </h1>
             <p className="mt-6 max-w-xs text-base leading-8 text-slate-200 sm:max-w-2xl sm:text-lg">
-              LeadOps installs the response, qualification, routing, and follow-up
-              layer that keeps good inquiries from getting buried in forms, inboxes,
-              missed calls, and scattered notes.
+              SignalOps helps small and local businesses capture, qualify, route,
+              follow up with, and book more leads automatically before good
+              inquiries get buried in forms, inboxes, missed calls, and scattered notes.
             </p>
             <div className="mt-8 flex max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row">
               <TrackedLink
@@ -205,8 +205,8 @@ export function MarketingHome() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The solution"
-            title="The LeadOps engine keeps every inquiry moving."
-            description="LeadOps installs an operating layer between lead source and sales follow-up, so prospects get useful communication and your team gets the context needed to act."
+            title="The SignalOps engine keeps every inquiry moving."
+            description="SignalOps installs an operating layer between lead source and sales follow-up, so prospects get useful communication and your team gets the context needed to act."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {AI_LEAD_ENGINE_FEATURES.map((feature, index) => {
@@ -230,7 +230,7 @@ export function MarketingHome() {
         <div>
           <SectionHeader
             eyebrow="Demo preview"
-            title="See LeadOps inside a real local service workflow."
+            title="See SignalOps inside a real local service workflow."
             description="The Apex Wheel Repair demo shows how a wheel repair shop can instantly qualify quote requests, ask for photos, prioritize urgent bent-wheel leads, and route hot opportunities to the shop."
           />
           <TrackedLink
@@ -255,6 +255,8 @@ export function MarketingHome() {
               alt="Apex Wheel Repair demo preview"
               width={1800}
               height={1100}
+              quality={72}
+              sizes="(min-width: 1024px) 52vw, 100vw"
               className="aspect-[16/10] w-full object-cover opacity-88 transition duration-300 group-hover:scale-[1.02]"
             />
           </div>
@@ -272,11 +274,11 @@ export function MarketingHome() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Process"
-            title="A practical build path from missed-lead checkup to optimization."
+            title="A practical build path from lead leak audit to optimization."
             description="The goal is not to bolt AI onto a broken process. We map the sales motion first, then build a response system your team can actually trust."
           />
           <div className="mt-8 grid gap-4 md:grid-cols-5">
-            {LEADOPS_PROCESS.map((step, index) => (
+            {SIGNALOPS_PROCESS.map((step, index) => (
               <div key={step.step} className="rounded-lg border border-white/10 bg-white/[0.035] p-5">
                 <div className="mb-5 flex size-10 items-center justify-center rounded-md bg-primary text-sm font-semibold text-white">
                   {index + 1}
@@ -330,11 +332,11 @@ export function MarketingHome() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Use cases"
-            title="LeadOps handles the work between interest and booked appointment."
+            title="SignalOps handles the work between interest and booked appointment."
             description="These are the repeatable workflows local service businesses usually need before spending more money on traffic."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {LEADOPS_USE_CASES.map((useCase, index) => {
+            {SIGNALOPS_USE_CASES.map((useCase, index) => {
               const Icon = useCaseIcons[index] ?? Workflow;
               return (
                 <Card key={useCase} className="bg-slate-950/74">
@@ -387,7 +389,7 @@ export function MarketingHome() {
           <SectionHeader
             eyebrow="FAQ"
             title="Straight answers for skeptical operators."
-            description="LeadOps is built for business owners who care about speed, control, and practical follow-up, not novelty."
+            description="SignalOps is built for business owners who care about speed, control, and practical follow-up, not novelty."
           />
           <div className="grid gap-3">
             {MARKETING_FAQS.map((faq) => (
@@ -405,7 +407,7 @@ export function MarketingHome() {
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">Free Missed Lead Checkup</p>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">Free Lead Leak Audit</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where leads are being missed, delayed, or forgotten.
             </h2>

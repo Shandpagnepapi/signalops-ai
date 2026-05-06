@@ -1,13 +1,13 @@
-# LeadOps Technical SEO Checklist
+# SignalOps Technical SEO Checklist
 
-This checklist documents the SEO foundation added to the LeadOps Next.js app and what should be reviewed before launch.
+This checklist documents the SEO foundation added to the SignalOps Next.js app and what should be reviewed before launch.
 
 ## Metadata
 
 - Reusable metadata helpers live in `/lib/seo.ts`.
 - Every public route should have a unique title and meta description.
-- Page titles use the `LeadOps` title template.
-- Open Graph and Twitter/X card metadata use the shared LeadOps OG image unless a page has a better page-specific image.
+- Page titles use the `SignalOps` title template.
+- Open Graph and Twitter/X card metadata use the shared SignalOps OG image unless a page has a better page-specific image.
 - Canonical URLs should point to the preferred public route.
 - The dashboard is marked as a demo/internal page and should not be treated as a primary indexable SEO page.
 
@@ -66,14 +66,14 @@ This checklist documents the SEO foundation added to the LeadOps Next.js app and
 
 - Keep the main navigation and footer linking to:
   - Homepage
-  - Free Missed Lead Checkup
+  - Free Lead Leak Audit
   - Live Demo
   - How It Works
   - ROI Calculator
   - Client Demo
 - Homepage CTAs should point to `/audit`, `/live-demo`, and `/demo`.
 - How It Works and ROI pages should point back to `/audit`.
-- Demo pages should make the LeadOps value clear and provide a path back to the checkup offer.
+- Demo pages should make the SignalOps value clear and provide a path back to the audit offer.
 
 ## Crawlability
 

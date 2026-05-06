@@ -1,29 +1,29 @@
-# LeadOps Demo Walkthrough
+# SignalOps Demo Walkthrough
 
 ## Goal Of The Demo
 
-Show skeptical business owners that LeadOps is an operational system, not a chatbot gimmick. Keep the demo practical, concrete, and tied to booking outcomes.
+Show skeptical business owners that SignalOps is an operational system, not a chatbot gimmick. Keep the demo practical, concrete, and tied to booking outcomes.
 
 ## Demo Flow At A Glance
 
-1. LeadOps homepage  
+1. SignalOps homepage  
 2. Apex Wheel Repair demo  
-3. Missed Lead Checkup form  
+3. Lead Leak Audit form  
 4. Dashboard  
 5. How-it-works page  
 6. Closing pitch
 
-## 1) LeadOps Homepage Walkthrough
+## 1) SignalOps Homepage Walkthrough
 
 Talk track:
 
-"Most businesses do not have a lead volume problem. They have a response and follow-up execution problem. LeadOps closes that gap."
+"Most businesses do not have a lead volume problem. They have a response and follow-up execution problem. SignalOps closes that gap."
 
 What to point out:
 - Core promise: instant response, qualification, and booking flow.
 - Problem framing: leads get missed after form submit, missed call, DM, or ad inquiry.
 - Packages: clear path from starter to custom system.
-- CTA: Free Missed Lead Checkup as low-friction next step.
+- CTA: Free Lead Leak Audit as low-friction next step.
 
 ## 2) Apex Wheel Repair Demo Walkthrough
 
@@ -48,7 +48,7 @@ Narrative to present step-by-step:
 7. Dashboard updates automatically:
    "Pipeline, score, tags, and status reflect the new lead immediately."
 
-## 3) Missed Lead Checkup Form Walkthrough
+## 3) Lead Leak Audit Form Walkthrough
 
 Talk track:
 
@@ -96,7 +96,7 @@ Use this page when someone says, "Can you explain exactly what your system does?
 
 Primary close:
 
-"If this makes sense, the next step is a Free Missed Lead Checkup. We look at how you handle calls, texts, forms, DMs, and follow-up, then show where leads are getting missed, delayed, or forgotten."
+"If this makes sense, the next step is a Free Lead Leak Audit. We look at how you handle calls, texts, forms, DMs, and follow-up, then show where leads are getting missed, delayed, or forgotten."
 
 Secondary close:
 
@@ -114,4 +114,4 @@ Secondary close:
 
 ### "Will this work with my current tools?"
 
-"Yes. LeadOps is designed to integrate with existing forms, CRM, phone, email, SMS, and calendar workflows."
+"Yes. SignalOps is designed to integrate with existing forms, CRM, phone, email, SMS, and calendar workflows."

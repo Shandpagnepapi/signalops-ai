@@ -1,6 +1,6 @@
-# LeadOps Loom Demo Script
+# SignalOps Loom Demo Script
 
-Purpose: record a tight 3-minute Loom that shows a prospect how LeadOps captures, qualifies, routes, and follows up with leads using the LeadOps homepage, Apex Wheel Repair demo, and dashboard.
+Purpose: record a tight 3-minute Loom that shows a prospect how SignalOps captures, qualifies, routes, and follows up with leads using the SignalOps homepage, Apex Wheel Repair demo, and dashboard.
 
 Tone: conversational, confident, practical, and not pushy.
 
@@ -8,10 +8,10 @@ Tone: conversational, confident, practical, and not pushy.
 
 Open these tabs before recording:
 
-1. LeadOps homepage: `/`
+1. SignalOps homepage: `/`
 2. Apex Wheel Repair demo: `/demo#lead-form`
-3. LeadOps dashboard: `/dashboard`
-4. Free Missed Lead Checkup: `/audit`
+3. SignalOps dashboard: `/dashboard`
+4. Free Lead Leak Audit: `/audit`
 
 Use this main scenario in the demo form:
 
@@ -34,11 +34,11 @@ Simple recording rule: move quickly, show the actual forms/results, and talk abo
 
 ### 0:00-0:15 - Quick Intro
 
-Screen action: Start on the LeadOps homepage hero.
+Screen action: Start on the SignalOps homepage hero.
 
 Say:
 
-"Hey, this is a quick walkthrough of LeadOps. The idea is simple: when someone fills out a form, calls, clicks an ad, or asks for a quote, the business should not have to wait hours to respond, qualify the lead, or figure out who should follow up. LeadOps installs that response system."
+"Hey, this is a quick walkthrough of SignalOps. The idea is simple: when someone fills out a form, calls, clicks an ad, or asks for a quote, the business should not have to wait hours to respond, qualify the lead, or figure out who should follow up. SignalOps installs that response system."
 
 Timing note: Keep this under 15 seconds. Do not explain the whole product yet.
 
@@ -52,13 +52,13 @@ Say:
 
 Timing note: This is the pain. Say it plainly and move on.
 
-### 0:35-0:55 - Show the LeadOps Homepage
+### 0:35-0:55 - Show the SignalOps Homepage
 
 Screen action: Point to the homepage CTA and core offer language.
 
 Say:
 
-"LeadOps builds an AI Lead Response and Qualification System around that process. It can respond instantly, ask the right questions, score the opportunity, alert the owner or sales rep, log the lead, and start follow-up if the customer does not book."
+"SignalOps builds an AI Lead Response and Qualification System around that process. It can respond instantly, ask the right questions, score the opportunity, alert the owner or sales rep, log the lead, and start follow-up if the customer does not book."
 
 Screen action: Click or point to the "View Demo" link, then move to the Apex Wheel Repair demo tab.
 
@@ -126,13 +126,13 @@ Say:
 
 Timing note: Make this about their operation, not the demo.
 
-### 2:50-3:00 - Close With Missed Lead Checkup CTA
+### 2:50-3:00 - Close With Lead Leak Audit CTA
 
 Screen action: Open or point to `/audit`.
 
 Say:
 
-"If you want, I can run a Free Missed Lead Checkup and show where calls, texts, forms, DMs, and follow-ups are getting missed, delayed, or forgotten. It is not a sales pitch first. It is a practical look at the way you already handle leads, with or without a CRM."
+"If you want, I can run a Free Lead Leak Audit and show where calls, texts, forms, DMs, and follow-ups are getting missed, delayed, or forgotten. It is not a sales pitch first. It is a practical look at the way you already handle leads, with or without a CRM."
 
 Timing note: End cleanly. Do not over-explain after the CTA.
 
@@ -163,7 +163,7 @@ Say:
 
 Value point:
 
-"LeadOps can separate a casual quote request from something that needs immediate human attention."
+"SignalOps can separate a casual quote request from something that needs immediate human attention."
 
 ### Cracked Wheel Needing Inspection
 
@@ -237,11 +237,11 @@ Use this opener:
 
 Use this value statement:
 
-"LeadOps helps sort cosmetic mobile opportunities from inspection-required work, asks for photos when needed, routes urgent leads to the shop, and follows up until the customer books or clearly drops off."
+"SignalOps helps sort cosmetic mobile opportunities from inspection-required work, asks for photos when needed, routes urgent leads to the shop, and follows up until the customer books or clearly drops off."
 
 Use this close:
 
-"The checkup would look at your quote form, photo intake, mobile repair CTA, missed-call process, texts, DMs, and follow-up after estimates."
+"The audit would look at your quote form, photo intake, mobile repair CTA, missed-call process, texts, DMs, and follow-up after estimates."
 
 ### Auto Repair Shops
 
@@ -255,7 +255,7 @@ Use this value statement:
 
 Use this close:
 
-"The checkup would look at how fast you respond to service requests, whether missed calls get texted back, and how many quote or appointment inquiries never get followed up."
+"The audit would look at how fast you respond to service requests, whether missed calls get texted back, and how many quote or appointment inquiries never get followed up."
 
 ### Detailers
 
@@ -265,11 +265,11 @@ Use this opener:
 
 Use this value statement:
 
-"LeadOps can ask about vehicle type, condition, desired package, location, photos, timing, and whether they want mobile or shop service. Then it can suggest the next best reply and push the customer toward booking."
+"SignalOps can ask about vehicle type, condition, desired package, location, photos, timing, and whether they want mobile or shop service. Then it can suggest the next best reply and push the customer toward booking."
 
 Use this close:
 
-"The checkup would look at your package flow, photo requests, mobile scheduling, quote follow-up, and review or rebooking opportunities."
+"The audit would look at your package flow, photo requests, mobile scheduling, quote follow-up, and review or rebooking opportunities."
 
 ### Med Spas
 
@@ -279,11 +279,11 @@ Use this opener:
 
 Use this value statement:
 
-"LeadOps can capture treatment interest, timeline, location, preferred contact method, and booking intent. Anything sensitive or uncertain can be flagged for human review."
+"SignalOps can capture treatment interest, timeline, location, preferred contact method, and booking intent. Anything sensitive or uncertain can be flagged for human review."
 
 Use this close:
 
-"The checkup would look at consult requests, missed calls, slow follow-up, booking drop-off, and where human review should stay in the process."
+"The audit would look at consult requests, missed calls, slow follow-up, booking drop-off, and where human review should stay in the process."
 
 ### Insurance Agencies
 
@@ -293,11 +293,11 @@ Use this opener:
 
 Use this value statement:
 
-"LeadOps can respond immediately, collect the line of insurance, timing, current coverage status, contact details, and route the lead to the right producer. It can also follow up when a quote shopper goes quiet."
+"SignalOps can respond immediately, collect the line of insurance, timing, current coverage status, contact details, and route the lead to the right producer. It can also follow up when a quote shopper goes quiet."
 
 Use this close:
 
-"The checkup would look at inbound quote forms, call handling, producer handoff, CRM logging if you use one, and follow-up on unbound quotes."
+"The audit would look at inbound quote forms, call handling, producer handoff, CRM logging if you use one, and follow-up on unbound quotes."
 
 ## Quick Screen Action Checklist
 
@@ -317,8 +317,8 @@ During recording:
 - Submit the lead around 1:25.
 - Show the AI result by 1:40.
 - Show the dashboard by 2:10.
-- End on the checkup CTA by 3:00.
+- End on the audit CTA by 3:00.
 
 ## One-Line Follow-Up Message After Sending the Loom
 
-"I recorded this quick walkthrough using a wheel repair example, but the same idea applies to your business: faster response, better qualification, cleaner routing, and consistent follow-up. If useful, I can run a Free Missed Lead Checkup and point out where leads may be getting missed now."
+"I recorded this quick walkthrough using a wheel repair example, but the same idea applies to your business: faster response, better qualification, cleaner routing, and consistent follow-up. If useful, I can run a Free Lead Leak Audit and point out where leads may be getting missed now."

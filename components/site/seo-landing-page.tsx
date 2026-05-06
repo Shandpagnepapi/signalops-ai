@@ -60,7 +60,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
           <div className="self-center rounded-lg border border-white/10 bg-slate-950/80 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold text-white">LeadOps service blueprint</p>
+                <p className="text-sm font-semibold text-white">SignalOps service blueprint</p>
                 <p className="text-xs leading-5 text-slate-500">Practical workflows for real inbound leads</p>
               </div>
               <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-blue-500/15 text-blue-100">
@@ -132,7 +132,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow="LeadOps system" title={page.solutionTitle} description={page.solutionIntro} />
+        <SectionHeader eyebrow="SignalOps system" title={page.solutionTitle} description={page.solutionIntro} />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {page.solutionCards.map((card, index) => {
             const Icon = solutionIcons[index % solutionIcons.length];
@@ -172,7 +172,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
         <SectionHeader
           eyebrow="Industry examples"
           title={page.industryTitle}
-          description="LeadOps is built around the way real service businesses receive and handle inquiries, not one generic script for every industry."
+          description="SignalOps is built around the way real service businesses receive and handle inquiries, not one generic script for every industry."
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {page.industryExamples.map((example) => (
@@ -210,7 +210,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
         <SectionHeader
           eyebrow="Related pages"
           title="Keep exploring the missed-lead system"
-          description="These pages show the other parts of the LeadOps workflow, from first response to qualification, follow-up, tracking, and ROI."
+          description="These pages show the other parts of the SignalOps workflow, from first response to qualification, follow-up, tracking, and ROI."
         />
         <div className="grid gap-4 sm:grid-cols-3">
           {page.relatedLinks.map((link) => (
@@ -230,7 +230,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">
-              Free Missed Lead Checkup
+              Free Lead Leak Audit
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where leads are being missed, delayed, or forgotten.

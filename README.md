@@ -1,6 +1,6 @@
-# LeadOps AI
+# SignalOps AI
 
-LeadOps is the foundation for an AI-powered lead operations venture studio. This app is set up to grow into a marketing website, demo client website, lead intake and qualification demo, internal dashboard, documentation, and brand asset library.
+SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically. This app contains the marketing site, demo client pages, lead intake demos, dashboard, documentation, and brand assets.
 
 ## Stack
 
@@ -107,6 +107,7 @@ lib/
   seo.ts
   utils.ts
 docs/
+  signalops-brand-kit.md
   seo/seo-qa-checklist.md
   seo/technical-seo-checklist.md
   supabase-schema.sql
@@ -126,7 +127,7 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 
 ### Supabase Setup
 
-LeadOps works in mock mode when Supabase variables are blank. To use Supabase:
+SignalOps works in mock mode when Supabase variables are blank. To use Supabase:
 
 1. Create a Supabase project.
 2. Open the Supabase SQL editor and run `docs/supabase-schema.sql`.
@@ -155,7 +156,7 @@ OPENAI_API_KEY=
 OPENAI_MODEL=
 ```
 
-If `OPENAI_API_KEY` is blank or an AI request fails, LeadOps uses deterministic fallbacks. Lead scoring falls back to `lib/lead-scoring.ts`; the live demo generator falls back to stored industry templates in `lib/demo-templates.ts`.
+If `OPENAI_API_KEY` is blank or an AI request fails, SignalOps uses deterministic fallbacks. Lead scoring falls back to `lib/lead-scoring.ts`; the live demo generator falls back to stored industry templates in `lib/demo-templates.ts`.
 
 ### Analytics Setup
 
@@ -167,17 +168,17 @@ NEXT_PUBLIC_META_PIXEL_ID=
 NEXT_PUBLIC_LINKEDIN_PARTNER_ID=
 ```
 
-`components/site/AnalyticsProvider.tsx` only loads Google Analytics, Meta Pixel, or LinkedIn Insight scripts when the matching env variable is present. Conversion events are centralized in `lib/analytics.ts` and currently include checkup CTA clicks, demo views, checkup form start/submission, demo lead submissions, package clicks, and contact clicks.
+`components/site/AnalyticsProvider.tsx` only loads Google Analytics, Meta Pixel, or LinkedIn Insight scripts when the matching env variable is present. Conversion events are centralized in `lib/analytics.ts` and currently include audit CTA clicks, demo views, audit form start/submission, demo lead submissions, package clicks, and contact clicks.
 
-For Vercel Analytics, add the official Vercel Analytics package/provider later if desired. LeadOps already forwards events to `window.va` when that client is available, while still working safely when it is absent.
+For Vercel Analytics, add the official Vercel Analytics package/provider later if desired. SignalOps already forwards events to `window.va` when that client is available, while still working safely when it is absent.
 
 ## Routes
 
-- `/` - LeadOps marketing homepage
-- `/live-demo` - Live demo generator for prospect-specific LeadOps examples
+- `/` - SignalOps marketing homepage
+- `/live-demo` - Live demo generator for prospect-specific SignalOps examples
 - `/how-it-works` - Visual AI Lead Engine explainer
 - `/roi-calculator` - Revenue impact estimate calculator for lead response and follow-up
-- `/audit` - Free Missed Lead Checkup request page
+- `/audit` - Free Lead Leak Audit request page
 - `/demo` - Fictional client website and intake demo
 - `/dashboard` - Lightweight internal dashboard demo
 - `/privacy` - Privacy policy
@@ -188,9 +189,14 @@ For Vercel Analytics, add the official Vercel Analytics package/provider later i
 ## Launch and Deployment
 
 - Launch checklist: `docs/launch-checklist.md`
+- SignalOps brand kit: `docs/signalops-brand-kit.md`
 - Vercel deployment guide: `docs/deployment-vercel.md`
 - Technical SEO checklist: `docs/seo/technical-seo-checklist.md`
 - SEO QA checklist: `docs/seo/seo-qa-checklist.md`
+- Final SEO launch audit: `docs/seo/final-seo-audit.md`
+- Performance checklist: `docs/seo/performance-checklist.md`
+- Social sharing checklist: `docs/seo/social-sharing-checklist.md`
+- Google Search Console setup: `docs/seo/google-search-console-setup.md`
 
 Before deploying an SEO page batch, run:
 

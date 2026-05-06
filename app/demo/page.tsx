@@ -6,6 +6,7 @@ import {
   faqPageJsonLd,
   jsonLdScript,
   META_DESCRIPTION_TEMPLATES,
+  OG_IMAGE_ASSETS,
   PAGE_TITLE_TEMPLATES,
   webPageJsonLd
 } from "@/lib/seo";
@@ -14,8 +15,8 @@ export const metadata = createPageMetadata({
   title: PAGE_TITLE_TEMPLATES.demo,
   description: META_DESCRIPTION_TEMPLATES.demo,
   path: "/demo",
-  image: "/demo/apex-wheel-hero.png",
-  imageAlt: "LeadOps client demo showing AI lead intake and qualification"
+  image: OG_IMAGE_ASSETS.demo.path,
+  imageAlt: OG_IMAGE_ASSETS.demo.alt
 });
 
 export default function DemoPage() {

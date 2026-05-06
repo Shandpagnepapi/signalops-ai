@@ -1,6 +1,6 @@
-# LeadOps Deployment Guide (Vercel)
+# SignalOps Deployment Guide (Vercel)
 
-This guide walks a beginner through deploying LeadOps from local development to a live production domain on Vercel.
+This guide walks a beginner through deploying SignalOps from local development to a live production domain on Vercel.
 
 ## 1) Prerequisites
 
@@ -19,7 +19,7 @@ If your repo is not on GitHub yet, run these commands from the project root:
 ```bash
 git init
 git add .
-git commit -m "Initial LeadOps launch-ready build"
+git commit -m "Initial SignalOps launch-ready build"
 git branch -M main
 git remote add origin https://github.com/<your-username>/<your-repo>.git
 git push -u origin main
@@ -29,7 +29,7 @@ If the repo already exists, commit and push your current changes:
 
 ```bash
 git add .
-git commit -m "Prepare LeadOps for deployment"
+git commit -m "Prepare SignalOps for deployment"
 git push origin main
 ```
 
@@ -117,7 +117,7 @@ After production deploy:
 ## 7) Add a Custom Domain
 
 1. In Vercel project settings, go to `Domains`.
-2. Add your root domain (example: `leadops.ai`).
+2. Add your root domain (example: `signalops.ai`).
 3. Add `www` if needed.
 4. Update DNS records at your domain provider as instructed by Vercel.
 5. Wait for DNS propagation and SSL provisioning.
@@ -129,7 +129,7 @@ After production deploy:
 
 ## 8) Post-Launch Verification
 
-- Run a live Free Missed Lead Checkup submission through `/audit`
+- Run a live Free Lead Leak Audit submission through `/audit`
 - Run a live demo lead through `/demo`
 - Confirm analytics events in your analytics tools (if enabled)
 - Confirm legal links in footer (`/privacy`, `/terms`)

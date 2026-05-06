@@ -49,7 +49,7 @@ export async function scheduleFollowUpSequence(lead: LeadSubmission): Promise<In
   return createIntegrationResult({
     ok: true,
     action: "follow_up_sequence",
-    provider: "leadops-sequences",
+    provider: "signalops-sequences",
     mode: "mock",
     status: "mocked",
     message: `Mock follow-up sequence started: ${cadence}`,

@@ -1,23 +1,8 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { ANALYTICS_EVENTS, analyticsConfig, trackEvent } from "@/lib/analytics";
+import { analyticsConfig } from "@/lib/analytics";
 
 export function AnalyticsProvider() {
-  const pathname = usePathname();
-  const lastDemoView = useRef<string | null>(null);
   const { gaId, metaPixelId, linkedInPartnerId } = analyticsConfig;
-
-  useEffect(() => {
-    if (pathname === "/demo" && lastDemoView.current !== pathname) {
-      lastDemoView.current = pathname;
-      trackEvent(ANALYTICS_EVENTS.demoViewed, {
-        path: pathname
-      });
-    }
-  }, [pathname]);
 
   return (
     <>
@@ -27,7 +12,7 @@ export function AnalyticsProvider() {
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
             strategy="afterInteractive"
           />
-          <Script id="leadops-ga-init" strategy="afterInteractive">
+          <Script id="signalops-ga-init" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){window.dataLayer.push(arguments);}
@@ -39,7 +24,7 @@ export function AnalyticsProvider() {
       ) : null}
 
       {metaPixelId ? (
-        <Script id="leadops-meta-pixel" strategy="afterInteractive">
+        <Script id="signalops-meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -56,7 +41,7 @@ export function AnalyticsProvider() {
       ) : null}
 
       {linkedInPartnerId ? (
-        <Script id="leadops-linkedin-insight" strategy="afterInteractive">
+        <Script id="signalops-linkedin-insight" strategy="afterInteractive">
           {`
             _linkedin_partner_id = '${linkedInPartnerId}';
             window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];

@@ -1,8 +1,8 @@
-# LeadOps Client Implementation Checklist
+# SignalOps Client Implementation Checklist
 
 ## Purpose
 
-Use this checklist to install a LeadOps AI Lead Engine from intake through optimization. It is designed for real client delivery, not internal brainstorming.
+Use this checklist to install a SignalOps AI Lead Engine from intake through optimization. It is designed for real client delivery, not internal brainstorming.
 
 ## How To Use
 

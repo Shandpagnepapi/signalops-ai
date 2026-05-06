@@ -2,7 +2,7 @@
 
 ## Opening
 
-Thanks for taking the time today. I want to understand how leads currently arrive, how quickly your team responds, and where opportunities slip through the cracks. If there is a fit, I will outline what a LeadOps foundation could look like for your business.
+Thanks for taking the time today. I want to understand how leads currently arrive, how quickly your team responds, and where opportunities slip through the cracks. If there is a fit, I will outline what a SignalOps foundation could look like for your business.
 
 ## Lead Source Questions
 

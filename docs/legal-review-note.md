@@ -1,4 +1,4 @@
-# LeadOps Legal Review Note
+# SignalOps Legal Review Note
 
 This repository includes draft privacy and terms pages for operational readiness.
 

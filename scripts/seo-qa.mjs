@@ -95,17 +95,28 @@ function getTitle(html) {
 }
 
 function getMetaDescription(html) {
+  return getMetaContent(html, "name", "description");
+}
+
+function getMetaContent(html, attributeName, attributeValue) {
   const metaTags = html.match(/<meta\b[^>]*>/gi) ?? [];
 
   for (const tag of metaTags) {
     const attributes = getAttributes(tag);
 
-    if (attributes.name?.toLowerCase() === "description") {
+    if (attributes[attributeName]?.toLowerCase() === attributeValue.toLowerCase()) {
       return decodeHtml(attributes.content ?? "");
     }
   }
 
   return "";
+}
+
+function hasNoIndex(html) {
+  const robots = getMetaContent(html, "name", "robots").toLowerCase();
+  const googleBot = getMetaContent(html, "name", "googlebot").toLowerCase();
+
+  return robots.includes("noindex") || googleBot.includes("noindex");
 }
 
 function getCanonical(html) {
@@ -208,9 +219,14 @@ for (const page of pages) {
   const title = getTitle(page.html);
   const description = getMetaDescription(page.html);
   const canonical = getCanonical(page.html);
+  const ogTitle = getMetaContent(page.html, "property", "og:title");
+  const ogDescription = getMetaContent(page.html, "property", "og:description");
+  const ogImage = getMetaContent(page.html, "property", "og:image");
+  const twitterCard = getMetaContent(page.html, "name", "twitter:card");
   const h1s = getH1s(page.html);
   const imageTags = getImageTags(page.html);
   const hrefs = getAnchorHrefs(page.html);
+  const isIntentionallyNonIndexable = intentionallyNonIndexableRoutes.has(page.route);
 
   if (!title) {
     fail(`${page.route}: missing <title> metadata.`);
@@ -226,6 +242,26 @@ for (const page of pages) {
 
   if (!canonical) {
     fail(`${page.route}: missing canonical URL.`);
+  }
+
+  if (!ogTitle) {
+    fail(`${page.route}: missing Open Graph title.`);
+  }
+
+  if (!ogDescription) {
+    fail(`${page.route}: missing Open Graph description.`);
+  }
+
+  if (!ogImage) {
+    fail(`${page.route}: missing Open Graph image.`);
+  }
+
+  if (!twitterCard) {
+    fail(`${page.route}: missing Twitter/X card metadata.`);
+  }
+
+  if (!isIntentionallyNonIndexable && hasNoIndex(page.html)) {
+    fail(`${page.route}: has noindex metadata but is expected to be indexable.`);
   }
 
   if (h1s.length === 0) {

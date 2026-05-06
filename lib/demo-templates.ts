@@ -108,7 +108,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     ],
     beforeAfter: [
       { before: "Storm leads sit in voicemail and generic forms.", after: "Urgent leaks are flagged and routed for fast inspection." },
-      { before: "Reps ask the same claim and property questions manually.", after: "LeadOps captures claim context before handoff." }
+      { before: "Reps ask the same claim and property questions manually.", after: "SignalOps captures claim context before handoff." }
     ],
     packageBias: "Growth"
   },
@@ -219,7 +219,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     ],
     beforeAfter: [
       { before: "Safety issues are buried in general requests.", after: "Risky language triggers fast human review." },
-      { before: "Install quotes lack scope before callback.", after: "LeadOps captures project type, property, and timing." }
+      { before: "Install quotes lack scope before callback.", after: "SignalOps captures project type, property, and timing." }
     ],
     packageBias: "Growth"
   },
@@ -330,7 +330,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     ],
     beforeAfter: [
       { before: "Potential clients leave long messages with no structured intake.", after: "The firm receives matter type, urgency, location, and contact context." },
-      { before: "Automation risks sounding like legal advice.", after: "LeadOps keeps replies practical and routes legal judgment to humans." }
+      { before: "Automation risks sounding like legal advice.", after: "SignalOps keeps replies practical and routes legal judgment to humans." }
     ],
     packageBias: "Custom Agent System"
   },
@@ -484,7 +484,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
       "Follow-up reminders"
     ],
     beforeAfter: [
-      { before: "Leads are scattered across forms, calls, and inboxes.", after: "LeadOps captures and routes each inquiry with the right next step." },
+      { before: "Leads are scattered across forms, calls, and inboxes.", after: "SignalOps captures and routes each inquiry with the right next step." },
       { before: "Follow-up depends on memory.", after: "Helpful reminders continue until the lead books or cools off." }
     ],
     packageBias: "Starter"

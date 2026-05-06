@@ -284,7 +284,7 @@ function rememberMockLead(lead: LeadSubmission) {
 
 function warnAndUseMock(error: unknown) {
   const message = error instanceof Error ? error.message : "Unknown Supabase error.";
-  console.warn(`LeadOps Supabase storage unavailable. Using mock store fallback. ${message}`);
+  console.warn(`SignalOps Supabase storage unavailable. Using mock store fallback. ${message}`);
 }
 
 export async function createLead(input: LeadSubmissionDraft) {

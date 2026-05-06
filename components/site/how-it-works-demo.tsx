@@ -63,7 +63,7 @@ const flowSteps: FlowStep[] = [
     title: "AI qualifies the lead",
     eyebrow: "Intent, urgency, budget, service",
     description:
-      "LeadOps asks practical follow-up questions and turns messy messages into structured context.",
+      "SignalOps asks practical follow-up questions and turns messy messages into structured context.",
     icon: SearchCheck,
     details: [
       "Extracts service need and buying intent",
@@ -128,7 +128,7 @@ const flowSteps: FlowStep[] = [
 
 const beforeAfter = [
   {
-    label: "Before LeadOps",
+    label: "Before SignalOps",
     tone: "warning",
     items: [
       "Leads sit in inboxes, voicemails, and form notifications.",
@@ -138,7 +138,7 @@ const beforeAfter = [
     ]
   },
   {
-    label: "After LeadOps",
+    label: "After SignalOps",
     tone: "success",
     items: [
       "Every lead gets an instant response and a clear next step.",
@@ -193,7 +193,7 @@ export function HowItWorksDemo() {
               </Badge>
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
-                  How the LeadOps AI Lead Engine Works
+                  How the SignalOps AI Lead Engine Works
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
                   A simple operating layer for capturing, responding, qualifying,
@@ -276,7 +276,7 @@ export function HowItWorksDemo() {
             From first touch to booked appointment
           </h2>
           <p className="text-sm leading-6 text-slate-300 sm:text-base">
-            LeadOps connects the moments that usually live in separate tools: the inquiry,
+            SignalOps connects the moments that usually live in separate tools: the inquiry,
             response, qualification, routing, booking, follow-up, and reporting.
           </p>
         </div>
@@ -429,7 +429,7 @@ export function HowItWorksDemo() {
         <div className="overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-blue-500/18 via-card to-slate-950 p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div className="space-y-3">
-              <Badge variant="success">Free checkup</Badge>
+              <Badge variant="success">Free audit</Badge>
               <h2 className="text-3xl font-semibold tracking-normal text-white">
                 See where leads are being missed.
               </h2>
@@ -445,7 +445,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Get a Free Missed Lead Checkup
+              Get a Free Lead Leak Audit
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

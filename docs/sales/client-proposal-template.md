@@ -1,10 +1,10 @@
-# LeadOps Client Proposal Template
+# SignalOps Client Proposal Template
 
 ## 1. Title
 
 **Proposal:** AI Lead Engine Implementation for [Prospect Business Name]  
 **Prepared For:** [Prospect Name / Team]  
-**Prepared By:** LeadOps  
+**Prepared By:** SignalOps  
 **Date:** [Month Day, Year]  
 **Proposal Valid Through:** [Month Day, Year]
 
@@ -37,7 +37,7 @@ Business impact:
 
 ## 4. Recommended Solution
 
-LeadOps recommends implementing an AI Lead Engine that:
+SignalOps recommends implementing an AI Lead Engine that:
 
 - Responds to every lead quickly
 - Collects missing qualification details
@@ -49,7 +49,7 @@ This is an operational system layered onto your current tools, not a full replac
 
 ---
 
-## 5. What LeadOps Will Build
+## 5. What SignalOps Will Build
 
 - Lead intake logic across selected channels
 - Qualification and scoring rules aligned to your business
@@ -144,7 +144,7 @@ Final pricing is based on confirmed scope, integrations, and implementation comp
 
 ---
 
-## 11. What LeadOps Handles
+## 11. What SignalOps Handles
 
 - System design and implementation
 - Qualification and routing logic
@@ -173,7 +173,7 @@ To protect timeline and delivery quality:
 - This proposal covers only the channels and workflows explicitly listed in scope.
 - Net-new requests after approval are handled through a change request.
 - Paid ads management, full CRM migration, and full website redesign are excluded unless explicitly added.
-- LeadOps does not guarantee a specific revenue result; outcomes depend on lead quality, speed, offer strength, and internal follow-through.
+- SignalOps does not guarantee a specific revenue result; outcomes depend on lead quality, speed, offer strength, and internal follow-through.
 
 ---
 
@@ -201,4 +201,4 @@ Add-ons are scoped and priced separately.
 4. Begin implementation sprint.
 
 **Approval Contact:** [Name, Title, Email, Phone]  
-**LeadOps Contact:** [Name, Title, Email, Phone]
+**SignalOps Contact:** [Name, Title, Email, Phone]

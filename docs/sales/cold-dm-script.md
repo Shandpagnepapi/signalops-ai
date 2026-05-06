@@ -1,8 +1,8 @@
-# LeadOps Cold DM Script
+# SignalOps Cold DM Script
 
 ## How To Use
 
-Keep the first message short and specific. Do not pitch a full automation stack in message one. The goal is a quick reply and a simple Missed Lead Checkup call.
+Keep the first message short and specific. Do not pitch a full automation stack in message one. The goal is a quick reply and a simple Lead Leak Audit call.
 
 ## Instagram DM Version
 
@@ -26,15 +26,15 @@ Hi [First Name], I help SMB teams tighten lead operations.
 
 Most do not have a lead volume problem. They have a response-time and follow-up gap after someone submits a form or calls.
 
-LeadOps installs an AI lead response and qualification layer so hot leads are handled fast and low-intent leads do not waste the team.
+SignalOps installs an AI lead response and qualification layer so hot leads are handled fast and low-intent leads do not waste the team.
 
-Would a Free Missed Lead Checkup be useful for [Business Name]?
+Would a Free Lead Leak Audit be useful for [Business Name]?
 
 ## Short Warm Network Version
 
 Hey [First Name], quick ask.
 
-I am building LeadOps, where we help businesses answer every lead and make the next step clear. If you know a shop that gets leads but misses calls, replies slowly, or forgets follow-up, I can run a Free Missed Lead Checkup for them.
+I am building SignalOps, where we help businesses answer every lead and make the next step clear. If you know a shop that gets leads but misses calls, replies slowly, or forgets follow-up, I can run a Free Lead Leak Audit for them.
 
 If anyone comes to mind, happy to send a one-paragraph intro you can forward.
 
@@ -56,7 +56,7 @@ Worth a quick look?
 
 Last ping from me.
 
-If fixing missed calls, slow replies, and forgotten follow-up is a priority this quarter, I can share a practical checkup and rollout plan. If timing is not right, no pressure.
+If fixing missed calls, slow replies, and forgotten follow-up is a priority this quarter, I can share a practical audit and rollout plan. If timing is not right, no pressure.
 
 ## Auto Shops and Wheel Repair Shops Version
 
@@ -64,11 +64,11 @@ Hey [First Name], I help auto service shops respond to quote requests faster.
 
 Typical issue: customer submits curb rash, bent wheel, or refinishing request, and the shop loses momentum waiting on back-and-forth details.
 
-LeadOps installs:
+SignalOps installs:
 - Instant reply after form submit
 - Photo request flow when details are missing
 - Urgent/bent/cracked wheel flagging
 - Mobile service versus in-shop routing
 - Follow-up until booking
 
-If useful, I can run a Free Missed Lead Checkup on your current quote flow and show what to fix first.
+If useful, I can run a Free Lead Leak Audit on your current quote flow and show what to fix first.

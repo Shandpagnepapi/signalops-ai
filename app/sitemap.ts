@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
+import { ALTERNATIVE_PAGE_IDS, ALTERNATIVE_PAGES } from "@/lib/alternative-pages";
 import { INDUSTRY_PAGE_IDS, INDUSTRY_SEO_PAGES } from "@/lib/industry-seo-pages";
 import { absoluteUrl } from "@/lib/seo";
+import { SERVICE_PAGE_IDS, SERVICE_PAGES } from "@/lib/service-pages";
 
 const routes = [
   {
@@ -43,6 +45,21 @@ const routes = [
     priority: 0.82,
     changeFrequency: "monthly"
   },
+  {
+    path: "/alternatives",
+    priority: 0.76,
+    changeFrequency: "monthly"
+  },
+  ...SERVICE_PAGE_IDS.map((service) => ({
+    path: SERVICE_PAGES[service].path,
+    priority: 0.9,
+    changeFrequency: "monthly" as const
+  })),
+  ...ALTERNATIVE_PAGE_IDS.map((alternative) => ({
+    path: ALTERNATIVE_PAGES[alternative].path,
+    priority: 0.7,
+    changeFrequency: "monthly" as const
+  })),
   ...INDUSTRY_PAGE_IDS.map((industry) => ({
     path: INDUSTRY_SEO_PAGES[industry].path,
     priority: 0.78,

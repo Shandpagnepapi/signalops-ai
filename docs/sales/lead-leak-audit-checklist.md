@@ -1,4 +1,4 @@
-# Free Missed Lead Checkup Checklist
+# Free Lead Leak Audit Checklist
 
 Use this checklist to review how a business handles calls, texts, forms, DMs, and follow-ups before proposing implementation. Mark each line as `Yes`, `No`, or `Needs Work`.
 

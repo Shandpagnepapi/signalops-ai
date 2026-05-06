@@ -6,6 +6,7 @@ import {
   faqPageJsonLd,
   jsonLdScript,
   META_DESCRIPTION_TEMPLATES,
+  OG_IMAGE_ASSETS,
   PAGE_TITLE_TEMPLATES,
   serviceJsonLd,
   webPageJsonLd
@@ -14,7 +15,9 @@ import {
 export const metadata = createPageMetadata({
   title: PAGE_TITLE_TEMPLATES.home,
   description: META_DESCRIPTION_TEMPLATES.home,
-  path: "/"
+  path: "/",
+  image: OG_IMAGE_ASSETS.home.path,
+  imageAlt: OG_IMAGE_ASSETS.home.alt
 });
 
 export default function MarketingHomePage() {

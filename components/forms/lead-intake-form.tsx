@@ -39,7 +39,7 @@ const initialState: FormState = {
   notes: "We are missing after-hours quote requests and need faster follow-up for curb rash, bent wheels, and refinishing leads."
 };
 
-export function LeadIntakeForm({ demoClientName = "LeadOps" }: { demoClientName?: string }) {
+export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientName?: string }) {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [result, setResult] = useState<LeadResponse | null>(null);

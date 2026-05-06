@@ -53,7 +53,7 @@ export function logSafeMockAction(lead: LeadSubmission, result: IntegrationResul
     return;
   }
 
-  console.info("[LeadOps mock integration]", {
+  console.info("[SignalOps mock integration]", {
     leadId: lead.id,
     source: lead.source,
     priority: lead.priority,

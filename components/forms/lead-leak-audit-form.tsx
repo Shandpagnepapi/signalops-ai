@@ -74,7 +74,7 @@ function formatLabel(value: string) {
     .join(" ");
 }
 
-export function MissedLeadCheckupForm() {
+export function LeadLeakAuditForm() {
   const [form, setForm] = useState<AuditFormState>(initialState);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [lead, setLead] = useState<LeadSubmission | null>(null);
@@ -106,7 +106,7 @@ export function MissedLeadCheckupForm() {
 
     if (!form.email.trim() && !form.phone.trim()) {
       setStatus("error");
-      setError("Please include an email or phone number so LeadOps can follow up with your checkup.");
+      setError("Please include an email or phone number so SignalOps can follow up with your audit.");
       return;
     }
 
@@ -117,14 +117,14 @@ export function MissedLeadCheckupForm() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          source: "leadops-missed-lead-checkup",
+          source: "signalops-lead-leak-audit",
           name: form.name,
           email: form.email,
           phone: form.phone,
           businessName: form.businessName,
           website: form.website,
           industry: form.industry,
-          serviceNeeded: "Free Missed Lead Checkup",
+          serviceNeeded: "Free Lead Leak Audit",
           message: form.biggestProblem,
           currentTools: form.currentTools,
           monthlyLeads: Number(form.monthlyLeads) || 0,
@@ -136,7 +136,7 @@ export function MissedLeadCheckupForm() {
       const data = (await response.json()) as LeadApiResponse;
 
       if (!response.ok || !data.lead) {
-        throw new Error(data.errors?.join(" ") || data.error || "The checkup request could not be submitted.");
+        throw new Error(data.errors?.join(" ") || data.error || "The audit request could not be submitted.");
       }
 
       setLead(data.lead);
@@ -159,10 +159,10 @@ export function MissedLeadCheckupForm() {
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 bg-blue-500/14 text-blue-100">Missed lead checkup</Badge>
-            <CardTitle className="text-2xl">Request your Free Missed Lead Checkup</CardTitle>
+            <Badge className="mb-3 bg-blue-500/14 text-blue-100">Lead leak audit</Badge>
+            <CardTitle className="text-2xl">Request your Free Lead Leak Audit</CardTitle>
             <CardDescription>
-              Share the basics. LeadOps will look for missed calls, slow replies, weak qualification, messy handoffs, and forgotten follow-ups.
+              Share the basics. SignalOps will look for missed calls, slow replies, weak qualification, messy handoffs, and forgotten follow-ups.
             </CardDescription>
           </div>
           <div className="rounded-md border border-emerald-300/20 bg-emerald-400/10 px-3 py-2 text-xs font-medium text-emerald-100">
@@ -247,7 +247,7 @@ export function MissedLeadCheckupForm() {
             ) : (
               <Send className="size-4" aria-hidden="true" />
             )}
-            Submit checkup request
+            Submit audit request
           </Button>
         </form>
 
@@ -256,7 +256,7 @@ export function MissedLeadCheckupForm() {
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-sm font-medium text-emerald-100">
                 <CheckCircle2 className="size-4" aria-hidden="true" />
-              Checkup request received
+              Audit request received
               </div>
               <Badge variant={priorityVariant(lead.priority)}>
                 {formatLabel(lead.priority)} priority

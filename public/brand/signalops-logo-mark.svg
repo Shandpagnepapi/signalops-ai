@@ -1,0 +1,14 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SignalOps logo mark</title>
+  <desc id="desc">A routed signal mark representing lead flow, qualification, and operations.</desc>
+  
+    <rect x="2" y="2" width="92" height="92" rx="22" fill="#0F1A30" stroke="#233757" stroke-width="2"/>
+    <path d="M22 61C22 51 31 43 41 43H51C61 43 70 34 70 24" stroke="#2F7CFF" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M22 75C22 65 31 56 41 56H51C61 56 70 47 70 37" stroke="#17C8F2" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M22 47H42C52 47 59 40 66 31" stroke="#7DD3FC" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <circle cx="22" cy="47" r="5.5" fill="#F8FBFF"/>
+    <circle cx="22" cy="61" r="6" fill="#F8FBFF"/>
+    <circle cx="22" cy="75" r="6" fill="#F8FBFF"/>
+    <circle cx="70" cy="24" r="6" fill="#F8FBFF"/>
+    <circle cx="70" cy="37" r="6" fill="#F8FBFF"/>
+</svg>

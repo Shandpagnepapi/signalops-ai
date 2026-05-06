@@ -15,6 +15,8 @@ export default function robots(): MetadataRoute.Robots {
           "/ai-lead-qualification",
           "/lead-management-for-small-business",
           "/no-crm-lead-tracking",
+          "/services/",
+          "/alternatives/",
           "/industries/",
           "/demo",
           "/how-it-works",

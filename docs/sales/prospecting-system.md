@@ -1,8 +1,8 @@
-# LeadOps Prospecting System
+# SignalOps Prospecting System
 
 ## Purpose
 
-This is a practical outbound system to help LeadOps find, contact, and close first pilot clients.
+This is a practical outbound system to help SignalOps find, contact, and close first pilot clients.
 
 Use this as a daily operating plan, not a theory document.
 
@@ -29,7 +29,7 @@ Priority order:
 
 ## 2) Why Wheel Repair and Auto Service Is a Strong First Niche
 
-Wheel repair and adjacent auto service is a high-leverage first wedge for LeadOps:
+Wheel repair and adjacent auto service is a high-leverage first wedge for SignalOps:
 
 - Quote requests are common and frequent.
 - Customers often send photos, which makes AI-assisted intake useful immediately.
@@ -124,7 +124,7 @@ Suggested `status` values:
 - Follow-up 1
 - Follow-up 2
 - Replied
-- Checkup booked
+- Audit booked
 - No response
 - Not fit
 - Won pilot
@@ -139,7 +139,7 @@ Daily targets:
 
 Weekly targets:
 
-- 3 Loom checkups per week
+- 3 Loom audits per week
 - 5 booked discovery calls per week
 - 2 pilot proposals sent per week
 
@@ -167,33 +167,33 @@ Wheel repair shop:
 
 `I help wheel shops respond faster to curb rash, bent wheel, and refinishing quote requests. I noticed [specific leak: no photo flow / no instant response].`
 
-`LeadOps builds the backend so leads get an immediate reply, send photos faster, and route to mobile or in-shop inspection correctly.`
+`SignalOps builds the backend so leads get an immediate reply, send photos faster, and route to mobile or in-shop inspection correctly.`
 
-`Open to a 10-minute Free Missed Lead Checkup for [Business Name]?`
+`Open to a 10-minute Free Lead Leak Audit for [Business Name]?`
 
 Auto detailer:
 
 `Hey [First Name], reaching out because detail shops often lose web leads between inquiry and follow-up.`
 
-`I noticed [specific leak]. LeadOps sets up instant response, qualification, and follow-up so quote requests do not die in DMs or email.`
+`I noticed [specific leak]. SignalOps sets up instant response, qualification, and follow-up so quote requests do not die in DMs or email.`
 
-`Want a quick 10-minute checkup on your current flow?`
+`Want a quick 10-minute audit on your current flow?`
 
 Tint or wrap shop:
 
 `Hey [First Name], quick note. Shops in tint and wrap usually have demand, but lead handling after inquiry is where jobs leak.`
 
-`I noticed [specific leak] on [Business Name]. LeadOps installs rapid reply plus structured follow-up so more estimate requests convert to booked appointments.`
+`I noticed [specific leak] on [Business Name]. SignalOps installs rapid reply plus structured follow-up so more estimate requests convert to booked appointments.`
 
-`Worth a short checkup call this week?`
+`Worth a short audit call this week?`
 
 General local service business:
 
 `Hey [First Name], quick outreach. Most local businesses are not losing because of lead volume, they are losing in response speed and follow-up.`
 
-`I noticed [specific leak]. LeadOps builds a simple AI lead response and qualification layer so leads get handled fast and routed correctly.`
+`I noticed [specific leak]. SignalOps builds a simple AI lead response and qualification layer so leads get handled fast and routed correctly.`
 
-`Open to a short missed lead checkup?`
+`Open to a short lead leak audit?`
 
 ### Channel 2: Cold Email
 
@@ -205,9 +205,9 @@ Subject: `Quick idea for your wheel quote flow`
 
 `I looked at [Business Name] and noticed [specific leak].`
 
-`LeadOps helps wheel shops instantly respond to quote requests, request photos when needed, flag urgent bent/cracked leads, and route mobile vs shop opportunities.`
+`SignalOps helps wheel shops instantly respond to quote requests, request photos when needed, flag urgent bent/cracked leads, and route mobile vs shop opportunities.`
 
-`If useful, I can run a quick Free Missed Lead Checkup and send practical fixes.`
+`If useful, I can run a quick Free Lead Leak Audit and send practical fixes.`
 
 `Open to a short call next week?`
 
@@ -219,7 +219,7 @@ Subject: `[Business Name] lead follow-up idea`
 
 `Detail shops often lose good inquiries when follow-up depends on manual bandwidth.`
 
-`LeadOps installs response, qualification, and sequence follow-up so more quote requests convert into booked work.`
+`SignalOps installs response, qualification, and sequence follow-up so more quote requests convert into booked work.`
 
 `If you want, I can send a short missed lead summary specific to your current flow.`
 
@@ -231,9 +231,9 @@ Subject: `Potential booking gap in your quote flow`
 
 `I noticed [specific leak] on [Business Name].`
 
-`LeadOps helps tint/wrap shops capture and qualify leads faster, then follow up consistently until booking.`
+`SignalOps helps tint/wrap shops capture and qualify leads faster, then follow up consistently until booking.`
 
-`Would a short Free Missed Lead Checkup be useful?`
+`Would a short Free Lead Leak Audit be useful?`
 
 General local service business:
 
@@ -243,9 +243,9 @@ Subject: `Quick lead process question for [Business Name]`
 
 `Most teams do not need more leads first. They need tighter response and follow-up after inquiry.`
 
-`LeadOps builds that layer with instant response, qualification, routing, and follow-up workflows.`
+`SignalOps builds that layer with instant response, qualification, routing, and follow-up workflows.`
 
-`I can send a short missed lead checkup if helpful.`
+`I can send a short lead leak audit if helpful.`
 
 `Best,`
 `[Your Name]`
@@ -254,19 +254,19 @@ Subject: `Quick lead process question for [Business Name]`
 
 Wheel repair shop:
 
-`Hey [Name], I will keep this brief. I help wheel shops tighten quote handling after form submit and missed calls. I noticed [specific missed lead sign] and wanted to see if you are open to a quick Missed Lead Checkup.`
+`Hey [Name], I will keep this brief. I help wheel shops tighten quote handling after form submit and missed calls. I noticed [specific missed lead sign] and wanted to see if you are open to a quick Lead Leak Audit.`
 
 Auto detailer:
 
-`Hey [Name], quick reason for the call: I help detail shops respond and follow up faster on inbound inquiries. I noticed [specific missed lead sign] on your current flow and thought a short checkup might help.`
+`Hey [Name], quick reason for the call: I help detail shops respond and follow up faster on inbound inquiries. I noticed [specific missed lead sign] on your current flow and thought a short audit might help.`
 
 Tint or wrap shop:
 
-`Hi [Name], short call. I work with tint and wrap shops on response and booking workflows after lead inquiry. I noticed [specific missed lead sign] and wanted to see if a quick checkup is useful.`
+`Hi [Name], short call. I work with tint and wrap shops on response and booking workflows after lead inquiry. I noticed [specific missed lead sign] and wanted to see if a quick audit is useful.`
 
 General local service business:
 
-`Hi [Name], I help local service teams catch missed leads after inquiry. I noticed [specific missed lead sign] and wanted to offer a short Missed Lead Checkup if you are open to it.`
+`Hi [Name], I help local service teams catch missed leads after inquiry. I noticed [specific missed lead sign] and wanted to offer a short Lead Leak Audit if you are open to it.`
 
 ## 9) Pilot Close Script
 
@@ -292,7 +292,7 @@ Run this every Friday:
 
 1. Count messages sent by channel
 2. Count replies by niche
-3. Count checkups booked
+3. Count audits booked
 4. Count proposals sent
 5. Count pilots closed
 6. Identify top-performing message by niche

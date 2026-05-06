@@ -11,7 +11,7 @@ import {
   SearchCheck,
   Workflow
 } from "lucide-react";
-import { MissedLeadCheckupForm } from "@/components/forms/missed-lead-checkup-form";
+import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -24,6 +24,7 @@ import {
   faqPageJsonLd,
   jsonLdScript,
   META_DESCRIPTION_TEMPLATES,
+  OG_IMAGE_ASSETS,
   PAGE_TITLE_TEMPLATES,
   serviceJsonLd,
   webPageJsonLd
@@ -32,7 +33,9 @@ import {
 export const metadata = createPageMetadata({
   title: PAGE_TITLE_TEMPLATES.audit,
   description: META_DESCRIPTION_TEMPLATES.audit,
-  path: "/audit"
+  path: "/audit",
+  image: OG_IMAGE_ASSETS.audit.path,
+  imageAlt: OG_IMAGE_ASSETS.audit.alt
 });
 
 const whoItIsFor = [
@@ -70,9 +73,9 @@ const checkIcons = [
 
 const faqs = [
   {
-    question: "What happens after I submit the checkup request?",
+    question: "What happens after I submit the audit request?",
     answer:
-      "LeadOps reviews your answers, looks for the biggest response and follow-up gaps, then follows up with recommended fixes and a practical next step."
+      "SignalOps reviews your answers, looks for the biggest response and follow-up gaps, then follows up with recommended fixes and a practical next step."
   },
   {
     question: "Do I need to prepare anything first?",
@@ -80,19 +83,19 @@ const faqs = [
       "No. A website, basic lead source notes, and a rough monthly lead count are enough to start. More detail helps, but the form is designed to be lightweight."
   },
   {
-    question: "Is the checkup really free?",
+    question: "Is the audit really free?",
     answer:
-      "Yes. The checkup is a focused diagnostic. If there is a fit, LeadOps can scope a simple response and follow-up system afterward."
+      "Yes. The Free Lead Leak Audit is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
   },
   {
     question: "Can you review missed calls and quote requests?",
     answer:
-      "Yes. Missed calls, website forms, quote requests, photo-based requests, DMs, and slow follow-up are exactly what this checkup is built to surface."
+      "Yes. Missed calls, website forms, quote requests, photo-based requests, DMs, and slow follow-up are exactly what this audit is built to surface."
   },
   {
     question: "Will this work if I do not have a CRM?",
     answer:
-      "No CRM? No problem. LeadOps can start with the way you already work - calls, texts, forms, and DMs - then build a simple AI-assisted follow-up system around it."
+      "No CRM? No problem. SignalOps can start with the way you already work - calls, texts, forms, and DMs - then build a simple AI-assisted follow-up system around it."
   },
   {
     question: "What if AI is unsure about a lead?",
@@ -141,7 +144,7 @@ export default function AuditPage() {
                 eventProperties={{ location: "audit_hero" }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                Start free checkup
+                Start free audit
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -187,7 +190,7 @@ export default function AuditPage() {
         <SectionIntro
           eyebrow="Who it is for"
           title="Built for operators who already get leads but know too many are missed, delayed, or forgotten."
-          description="If your team is answering calls, texting customers, checking forms, replying to DMs, or sorting quote requests manually, the checkup shows what should be tightened first."
+          description="If your team is answering calls, texting customers, checking forms, replying to DMs, or sorting quote requests manually, the audit shows what should be tightened first."
         />
         <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-2">
           {whoItIsFor.map((item) => (
@@ -204,9 +207,9 @@ export default function AuditPage() {
       <section className="border-y border-white/10 bg-slate-950/70">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionIntro
-            eyebrow="What the checkup reviews"
+            eyebrow="What the audit reviews"
             title="Missed leads usually hide between first contact and follow-up."
-            description="The checkup reviews the practical details that turn an interested prospect into a booked appointment or a forgotten lead."
+            description="The audit reviews the practical details that turn an interested prospect into a booked appointment or a forgotten lead."
           />
           <div className="mt-8 grid w-full max-w-xs gap-4 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3">
             {auditChecks.map((check, index) => {
@@ -229,9 +232,9 @@ export default function AuditPage() {
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <div>
           <SectionIntro
-            eyebrow="Checkup form"
+            eyebrow="Audit form"
             title="Share the basics and get a preview of where leads may be missed."
-            description="Give LeadOps enough context to identify where calls, texts, forms, DMs, and follow-ups are most likely costing you booked appointments."
+            description="Give SignalOps enough context to identify where calls, texts, forms, DMs, and follow-ups are most likely costing you booked appointments."
           />
           <div className="mt-6 w-full max-w-xs rounded-lg border border-blue-300/20 bg-blue-500/10 p-5 sm:max-w-none">
             <p className="text-sm font-semibold text-white">What you get back</p>
@@ -239,7 +242,7 @@ export default function AuditPage() {
               {[
                 "A plain-English snapshot of your biggest lead flow risks",
                 "Recommended fixes for response, routing, and follow-up",
-                "A next-step note for a focused Missed Lead Checkup call"
+                "A next-step note for a focused Lead Leak Audit call"
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <CheckCircle2 className="mt-1 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -250,7 +253,7 @@ export default function AuditPage() {
           </div>
         </div>
         <div className="w-full max-w-xs sm:max-w-none">
-          <MissedLeadCheckupForm />
+          <LeadLeakAuditForm />
         </div>
       </section>
 
@@ -259,7 +262,7 @@ export default function AuditPage() {
           <SectionIntro
             eyebrow="FAQ"
             title="A simple diagnostic before you commit to new systems."
-            description="The checkup is designed to be clear, practical, and useful for a busy owner or operator."
+            description="The audit is designed to be clear, practical, and useful for a busy owner or operator."
           />
           <div className="grid w-full max-w-xs gap-3 sm:max-w-none">
             {faqs.map((faq) => (
@@ -288,7 +291,7 @@ export default function AuditPage() {
             eventProperties={{ location: "audit_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
-            Start free checkup
+            Start free audit
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

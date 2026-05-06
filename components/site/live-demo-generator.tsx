@@ -162,10 +162,10 @@ export function LiveDemoGenerator() {
               Template-backed live demo generator
             </Badge>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-              Build a tailored LeadOps demo while the prospect is watching.
+              Build a tailored SignalOps demo while the prospect is watching.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Enter a business name, industry, services, and lead problem. LeadOps uses stored industry templates,
+              Enter a business name, industry, services, and lead problem. SignalOps uses stored industry templates,
               then enhances the output server-side when an OpenAI key is configured.
             </p>
             <div className="mt-6 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
@@ -383,7 +383,7 @@ function EmptyState() {
       {[
         ["Before", "Prospect says leads are slow, scattered, or hard to qualify."],
         ["During", "You enter their details and generate a tailored strategy example live."],
-        ["After", "They can see the exact response, routing, follow-up, and dashboard logic LeadOps would install."]
+        ["After", "They can see the exact response, routing, follow-up, and dashboard logic SignalOps would install."]
       ].map(([title, body]) => (
         <Card key={title} className="bg-slate-950/72">
           <CardHeader>
@@ -499,7 +499,7 @@ function GeneratedDemoPreview({
                   <p className="mt-2 text-sm leading-6 text-slate-300">{item.before}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-emerald-100/70">After LeadOps</p>
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-emerald-100/70">After SignalOps</p>
                   <p className="mt-2 text-sm leading-6 text-slate-200">{item.after}</p>
                 </div>
               </div>

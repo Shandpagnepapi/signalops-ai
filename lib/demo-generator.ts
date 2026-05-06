@@ -346,7 +346,7 @@ function buildFallbackDemo(input: LiveDemoInput): GeneratedLiveDemo {
 
   const internalSalesNote = `${businessName} lead from ${cityState}. Main issue: ${mainLeadProblem}. Current handling appears to rely on ${currentLeadHandling}. Route this as a ${template.label} lead, confirm service fit, and push the prospect toward the next available booking or estimate path.`;
 
-  const strategySummary = `LeadOps would use the ${template.label} template as the base, then customize the intake questions, scoring rules, replies, alerts, and follow-up around ${businessName}'s services and current lead bottleneck. The goal is practical: faster response, cleaner qualification, and more booked next steps.`;
+  const strategySummary = `SignalOps would use the ${template.label} template as the base, then customize the intake questions, scoring rules, replies, alerts, and follow-up around ${businessName}'s services and current lead bottleneck. The goal is practical: faster response, cleaner qualification, and more booked next steps.`;
 
   const generatedAt = new Date().toISOString();
   const demo: GeneratedLiveDemo = {
@@ -357,7 +357,7 @@ function buildFallbackDemo(input: LiveDemoInput): GeneratedLiveDemo {
     industryLabel: template.label,
     businessName,
     cityState,
-    installTitle: `Here's what LeadOps would install for ${businessName}`,
+    installTitle: `Here's what SignalOps would install for ${businessName}`,
     headline: buildHeadline({ ...input, preferredTone: normalizeTone(input.preferredTone) }, template),
     subheadline: `A ${tonePrefix(input.preferredTone)} lead response system for ${template.label.toLowerCase()} prospects in ${cityState}, built around ${services.slice(0, 3).join(", ")} and the follow-up gaps that cost appointments.`,
     strategySummary,
@@ -522,7 +522,7 @@ function extractResponseText(payload: unknown) {
 
 function buildPrompt(input: LiveDemoInput, template: DemoTemplate, fallback: GeneratedLiveDemo) {
   return [
-    "Create a tailored LeadOps live demo preview for a sales conversation.",
+    "Create a tailored SignalOps live demo preview for a sales conversation.",
     "Use the stored industry template as the base. Do not generate a full website. Do not claim to inspect or scrape the optional website URL.",
     "Keep the output practical for a skeptical business owner: speed-to-lead, qualification, routing, follow-up, booked appointments, and human review when needed.",
     "Avoid hype, robot language, and unsupported revenue guarantees.",
@@ -559,7 +559,7 @@ async function enhanceWithAI(input: LiveDemoInput, template: DemoTemplate, fallb
       body: JSON.stringify({
         model: process.env.OPENAI_MODEL?.trim() || DEFAULT_MODEL,
         instructions:
-          "You are a senior sales operations strategist for local service businesses. Produce structured, conservative, business-owner-friendly LeadOps demo content.",
+          "You are a senior sales operations strategist for local service businesses. Produce structured, conservative, business-owner-friendly SignalOps demo content.",
         input: buildPrompt(input, template, fallback),
         store: false,
         temperature: 0.35,
@@ -567,7 +567,7 @@ async function enhanceWithAI(input: LiveDemoInput, template: DemoTemplate, fallb
         text: {
           format: {
             type: "json_schema",
-            name: "leadops_live_demo",
+            name: "signalops_live_demo",
             strict: true,
             schema: demoSchema
           }

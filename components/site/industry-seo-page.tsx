@@ -5,6 +5,7 @@ import {
   BellRing,
   CheckCircle2,
   ClipboardList,
+  ListChecks,
   MessageSquareReply,
   PhoneCall,
   SearchCheck,
@@ -19,6 +20,11 @@ import { PRIMARY_CTA } from "@/lib/constants";
 import type { IndustrySeoPageConfig } from "@/lib/industry-seo-pages";
 
 export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
+  const exampleLeadFlow = page.exampleLeadFlow ?? [];
+  const qualificationQuestions = page.qualificationQuestions ?? [];
+  const followUpExamples = page.followUpExamples ?? [];
+  const dashboardValue = page.dashboardValue ?? [];
+
   return (
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
@@ -86,11 +92,32 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
+      {exampleLeadFlow.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Example lead flow"
+            title={`How SignalOps handles leads for ${page.industryName.toLowerCase()}`}
+            description="This is the practical sequence a customer would experience before your team gets a clean handoff."
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-4">
+            {exampleLeadFlow.map((step, index) => (
+              <div key={step.title} className="rounded-lg border border-white/10 bg-slate-950/74 p-5">
+                <div className="mb-5 flex size-10 items-center justify-center rounded-md bg-primary text-sm font-semibold text-white">
+                  {index + 1}
+                </div>
+                <h3 className="text-base font-semibold text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-400">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Missed lead problems"
           title={`Where ${page.industryName.toLowerCase()} usually lose leads`}
-          description="LeadOps starts by mapping the real moments where inquiries slow down, get answered vaguely, or never receive a clear follow-up."
+          description="SignalOps starts by mapping the real moments where inquiries slow down, get answered vaguely, or never receive a clear follow-up."
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {page.missedLeadProblems.map((problem) => (
@@ -140,6 +167,26 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
+      {qualificationQuestions.length > 0 ? (
+        <section className="border-y border-white/10 bg-slate-950/65">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.84fr_1.16fr] lg:px-8">
+            <SectionHeader
+              eyebrow="Qualification questions"
+              title={`Questions SignalOps can ask for ${page.industryName.toLowerCase()}`}
+              description="The questions should match the service, urgency, and level of human review required before quoting or booking."
+            />
+            <div className="grid gap-3 sm:grid-cols-2">
+              {qualificationQuestions.map((question) => (
+                <div key={question} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-slate-300">
+                  <ListChecks className="mt-0.5 size-4 shrink-0 text-cyan-200" aria-hidden="true" />
+                  <span>{question}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="border-y border-white/10 bg-[linear-gradient(180deg,#07101f,#060c18)]">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
           <MessageExample
@@ -157,11 +204,35 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
+      {followUpExamples.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Follow-up examples"
+            title="Useful follow-up without sounding like a generic sequence"
+            description="Follow-up should ask for the next missing detail, help the customer book, or route a reply to the team."
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {followUpExamples.map((example) => (
+              <Card key={example.scenario} className="bg-slate-950/74">
+                <CardHeader>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">
+                    {example.scenario}
+                  </p>
+                  <CardDescription className="text-base leading-7 text-slate-300">
+                    {example.message}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Lead scoring"
           title="Example scoring rules"
-          description="LeadOps scoring is not magic. It is a practical way to decide who needs a callback, who needs more information, and who should be reviewed by a human."
+          description="SignalOps scoring is not magic. It is a practical way to decide who needs a callback, who needs more information, and who should be reviewed by a human."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {page.scoringRules.map((rule) => (
@@ -182,7 +253,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Recommended automations"
-            title={`Useful LeadOps automations for ${page.industryName.toLowerCase()}`}
+            title={`Useful SignalOps automations for ${page.industryName.toLowerCase()}`}
             description="The first version should focus on the workflows that protect the most revenue with the least extra admin."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -200,6 +271,26 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           </div>
         </div>
       </section>
+
+      {dashboardValue.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Dashboard value"
+            title={`What ${page.industryName.toLowerCase()} can see in the dashboard`}
+            description="SignalOps gives owners a simple operating view of lead quality, response needs, and follow-up gaps."
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {dashboardValue.map((item) => (
+              <Card key={item.title} className="bg-slate-950/74">
+                <CardHeader>
+                  <CardTitle className="text-base">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <SectionHeader
@@ -224,7 +315,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           <SectionHeader
             eyebrow="Next steps"
             title="Generate a tailored demo or check your current lead flow"
-            description="Use the live demo generator for a quick industry-specific preview, or start with a free checkup of calls, texts, forms, DMs, and follow-ups."
+            description="Use the live demo generator for a quick industry-specific preview, or start with a Free Lead Leak Audit of calls, texts, forms, DMs, and follow-ups."
           />
           <div className="grid gap-4 sm:grid-cols-3">
             {page.relatedLinks.map((link) => (
@@ -245,7 +336,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">
-              Free Missed Lead Checkup
+              Free Lead Leak Audit
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where leads are being missed, delayed, or forgotten.

@@ -1,10 +1,10 @@
-# LeadOps Discovery Call Script
+# SignalOps Discovery Call Script
 
 ## Opening
 
 Thanks for making time.
 
-The goal of this call is simple: understand how your leads move from first inquiry to booked appointment, identify where calls, texts, forms, DMs, or follow-ups are being missed, and decide if a LeadOps pilot is worth running.
+The goal of this call is simple: understand how your leads move from first inquiry to booked appointment, identify where calls, texts, forms, DMs, or follow-ups are being missed, and decide if a SignalOps pilot is worth running.
 
 If there is a fit, I will recommend a practical first implementation. If not, I will still share the top fixes I see.
 
@@ -66,13 +66,13 @@ Based on what you shared, here is what I see:
 - [Pain #2]
 - [Pain #3]
 
-If you want to move forward, the next step is a Free Missed Lead Checkup and pilot rollout plan. We would define scope, timeline, and clear success metrics before implementation starts.
+If you want to move forward, the next step is a Free Lead Leak Audit and pilot rollout plan. We would define scope, timeline, and clear success metrics before implementation starts.
 
 ## Objection Handling
 
 ### "We already have a CRM."
 
-Great. LeadOps works with existing CRMs. We are not replacing your system. We are fixing response, qualification, and follow-up execution around it.
+Great. SignalOps works with existing CRMs. We are not replacing your system. We are fixing response, qualification, and follow-up execution around it.
 
 ### "We need more leads, not automation."
 
@@ -88,4 +88,4 @@ They can, but manual consistency is the bottleneck at scale. The point is to rem
 
 ### "Not sure this is a priority right now."
 
-Understood. If helpful, we can do a lightweight checkup first and quantify where leads are being missed. Then you can decide based on clear numbers, not guesswork.
+Understood. If helpful, we can do a lightweight audit first and quantify where leads are being missed. Then you can decide based on clear numbers, not guesswork.

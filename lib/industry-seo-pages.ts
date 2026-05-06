@@ -4,6 +4,9 @@ export const INDUSTRY_PAGE_IDS = [
   "roofers",
   "hvac",
   "plumbers",
+  "detailers",
+  "tint-wrap-shops",
+  "home-services",
   "med-spas",
   "insurance-agencies",
   "auto-shops",
@@ -35,11 +38,15 @@ export type IndustrySeoPageConfig = {
   heroBullets: string[];
   missedLeadProblems: IndustrySeoCard[];
   leadSources: string[];
+  exampleLeadFlow?: IndustrySeoCard[];
   followUpFailures: IndustrySeoCard[];
+  qualificationQuestions?: string[];
+  followUpExamples?: IndustryExampleMessage[];
   instantReply: IndustryExampleMessage;
   internalNote: IndustryExampleMessage;
   scoringRules: IndustrySeoCard[];
   automations: IndustrySeoCard[];
+  dashboardValue?: IndustrySeoCard[];
   faqs: SeoFaq[];
   relatedLinks: IndustrySeoCardWithLink[];
 };
@@ -53,13 +60,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "roofers",
     industryName: "Roofers",
     path: "/industries/roofers",
-    eyebrow: "LeadOps for roofing companies",
-    metaTitle: "AI Lead Response for Roofers and Roofing Companies",
+    eyebrow: "SignalOps for roofing companies",
+    metaTitle: "AI Lead Response for Roofing Companies",
     metaDescription:
-      "LeadOps helps roofing companies respond faster to roof repair, storm damage, inspection, and replacement leads with qualification, follow-up, and routing.",
+      "SignalOps gives roofing companies AI lead response, speed to lead automation, qualification, routing, and follow-up for repairs, storm damage, and inspections.",
     h1: "AI lead response for roofers who cannot afford slow follow-up.",
     subheadline:
-      "LeadOps helps roofing teams capture calls, forms, storm inquiries, inspection requests, and quote follow-ups before homeowners call the next contractor.",
+      "SignalOps helps roofing teams capture calls, forms, storm inquiries, inspection requests, and quote follow-ups before homeowners call the next contractor.",
     heroBullets: [
       "Prioritize active leaks, storm damage, and replacement opportunities",
       "Request photos, address, roof type, insurance context, and timeline",
@@ -165,9 +172,9 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can LeadOps qualify emergency roof leak leads?",
+        question: "Can SignalOps qualify emergency roof leak leads?",
         answer:
-          "Yes. LeadOps can flag active leak language, request key details, and alert a human for urgent review."
+          "Yes. SignalOps can flag active leak language, request key details, and alert a human for urgent review."
       },
       {
         question: "Can it ask homeowners for roof photos?",
@@ -182,7 +189,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it work with storm campaign landing pages?",
         answer:
-          "Yes. LeadOps can support storm damage forms, missed calls, ad leads, and inspection requests."
+          "Yes. SignalOps can support storm damage forms, missed calls, ad leads, and inspection requests."
       }
     ],
     relatedLinks: [
@@ -199,7 +206,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate a Roofing Demo",
-        description: "Create a tailored LeadOps preview for a roofing company."
+        description: "Create a tailored SignalOps preview for a roofing company."
       }
     ]
   },
@@ -207,13 +214,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "hvac",
     industryName: "HVAC Companies",
     path: "/industries/hvac",
-    eyebrow: "LeadOps for HVAC companies",
+    eyebrow: "SignalOps for HVAC companies",
     metaTitle: "AI Lead Response for HVAC Companies",
     metaDescription:
-      "LeadOps helps HVAC companies respond to repair, replacement, maintenance, and emergency leads with fast qualification, routing, and follow-up.",
+      "SignalOps helps HVAC companies use AI lead response, lead qualification, routing automation, and follow-up for emergency, repair, replacement, and maintenance leads.",
     h1: "AI lead response for HVAC companies that need faster callbacks and cleaner booking.",
     subheadline:
-      "LeadOps helps HVAC teams separate emergency no-heat or no-cool calls from tune-ups, replacement estimates, and general questions so the right leads get handled first.",
+      "SignalOps helps HVAC teams separate emergency no-heat or no-cool calls from tune-ups, replacement estimates, and general questions so the right leads get handled first.",
     heroBullets: [
       "Flag no-heat, no-cool, and system-down requests",
       "Collect system type, issue, address, timeline, and appointment preference",
@@ -319,19 +326,19 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can LeadOps separate emergency HVAC leads from routine maintenance?",
+        question: "Can SignalOps separate emergency HVAC leads from routine maintenance?",
         answer:
           "Yes. The intake and scoring rules can flag no-heat, no-cool, and system-down language for faster human review."
       },
       {
         question: "Can this help with HVAC replacement estimates?",
         answer:
-          "Yes. LeadOps can collect system details, timeline, contact info, and follow up if the customer does not book a consultation."
+          "Yes. SignalOps can collect system details, timeline, contact info, and follow up if the customer does not book a consultation."
       },
       {
         question: "Does it connect to dispatch software?",
         answer:
-          "The architecture is designed for future integrations. LeadOps can start in mock or dashboard mode, then connect to CRM, dispatch, or calendar tools when ready."
+          "The architecture is designed for future integrations. SignalOps can start in mock or dashboard mode, then connect to CRM, dispatch, or calendar tools when ready."
       },
       {
         question: "Can it work after hours?",
@@ -353,7 +360,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate an HVAC Demo",
-        description: "Build a tailored LeadOps preview for an HVAC company."
+        description: "Build a tailored SignalOps preview for an HVAC company."
       }
     ]
   },
@@ -361,13 +368,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "plumbers",
     industryName: "Plumbers",
     path: "/industries/plumbers",
-    eyebrow: "LeadOps for plumbing companies",
-    metaTitle: "AI Lead Response for Plumbers and Plumbing Companies",
+    eyebrow: "SignalOps for plumbing companies",
+    metaTitle: "AI Lead Response for Plumbing Companies",
     metaDescription:
-      "LeadOps helps plumbers capture emergency calls, quote requests, inspection leads, and follow-ups with AI-assisted intake, scoring, and routing.",
+      "SignalOps helps plumbing companies capture emergency calls, quote requests, and service leads with AI lead response, qualification, routing, and follow-up.",
     h1: "AI lead response for plumbers who need to catch urgent jobs fast.",
     subheadline:
-      "LeadOps helps plumbing teams triage emergency leaks, drain issues, water heater calls, estimates, and routine service requests without losing leads in missed calls or texts.",
+      "SignalOps helps plumbing teams triage emergency leaks, drain issues, water heater calls, estimates, and routine service requests without losing leads in missed calls or texts.",
     heroBullets: [
       "Flag leaks, no-water issues, sewer backups, and urgent plumbing problems",
       "Collect address, issue type, photos, access notes, and preferred time",
@@ -473,7 +480,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can LeadOps handle plumbing emergency language?",
+        question: "Can SignalOps handle plumbing emergency language?",
         answer:
           "It can flag urgent terms like active leak, sewer backup, no water, and water heater failure for human follow-up."
       },
@@ -485,10 +492,10 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it work for small plumbing teams?",
         answer:
-          "Yes. LeadOps is especially useful when the same people are answering calls, doing jobs, quoting work, and following up."
+          "Yes. SignalOps is especially useful when the same people are answering calls, doing jobs, quoting work, and following up."
       },
       {
-        question: "Does LeadOps dispatch plumbers automatically?",
+        question: "Does SignalOps dispatch plumbers automatically?",
         answer:
           "Not by default. It can prepare the intake, score the lead, and route the next step. Dispatch rules should be configured carefully with the business."
       }
@@ -507,7 +514,681 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate a Plumbing Demo",
-        description: "Create a tailored LeadOps preview for a plumbing company."
+        description: "Create a tailored SignalOps preview for a plumbing company."
+      }
+    ]
+  },
+  detailers: {
+    id: "detailers",
+    industryName: "Auto Detailers",
+    path: "/industries/detailers",
+    eyebrow: "SignalOps for auto detailers",
+    metaTitle: "AI Lead Response for Auto Detailers",
+    metaDescription:
+      "SignalOps helps auto detailers respond to package inquiries, qualify quote requests, follow up on photos, and book detailing appointments faster.",
+    h1: "AI lead response for auto detailers that depend on quote requests and booking follow-up.",
+    subheadline:
+      "SignalOps helps detailers answer package questions, collect vehicle and condition details, follow up after quotes, and move high-intent customers toward a booked appointment.",
+    heroBullets: [
+      "Collect vehicle type, package interest, condition, photos, and timing",
+      "Separate maintenance details from correction, ceramic, fleet, and high-value jobs",
+      "Follow up after quotes so interested customers do not disappear"
+    ],
+    missedLeadProblems: [
+      {
+        title: "Package shoppers ask vague questions",
+        description:
+          "A message like 'How much for a detail?' usually needs vehicle type, condition, service level, location, and timing before pricing is useful."
+      },
+      {
+        title: "High-value jobs need better intake",
+        description:
+          "Paint correction, ceramic coating, fleet work, and neglected vehicles require more context than a basic wash inquiry."
+      },
+      {
+        title: "Instagram and Facebook leads get buried",
+        description:
+          "Detailers often get DMs from before/after content, but those conversations are easy to lose during busy shop days."
+      },
+      {
+        title: "Quote follow-up is inconsistent",
+        description:
+          "A customer may be ready to book but needs one reminder after receiving package options."
+      }
+    ],
+    leadSources: [
+      "Instagram DMs",
+      "Facebook messages",
+      "Website quote forms",
+      "Google Business Profile calls",
+      "Missed calls",
+      "Text inquiries",
+      "Referral messages",
+      "Fleet or dealership emails"
+    ],
+    exampleLeadFlow: [
+      {
+        title: "Customer asks for pricing",
+        description:
+          "The inquiry comes from a DM, missed call, form, or text asking about a detail package."
+      },
+      {
+        title: "SignalOps asks for context",
+        description:
+          "The system collects vehicle type, condition, package interest, photos if useful, timing, and contact info."
+      },
+      {
+        title: "Lead is scored",
+        description:
+          "Ceramic, correction, fleet, and ready-to-book leads can be prioritized over general price shoppers."
+      },
+      {
+        title: "Follow-up moves booking forward",
+        description:
+          "If the customer does not book after package options, SignalOps sends a practical next-step reminder."
+      }
+    ],
+    followUpFailures: [
+      {
+        title: "Photos never arrive",
+        description:
+          "The customer asks for a quote but never sends vehicle photos or condition details."
+      },
+      {
+        title: "Package options do not convert",
+        description:
+          "A lead receives pricing but does not get a clear reminder to choose a package or appointment window."
+      },
+      {
+        title: "Fleet opportunities are not separated",
+        description:
+          "Multi-vehicle or repeat work should be routed differently from one-time consumer details."
+      }
+    ],
+    qualificationQuestions: [
+      "What vehicle year, make, and model do you need detailed?",
+      "Are you looking for maintenance detail, deep clean, paint correction, ceramic coating, or another service?",
+      "What condition is the interior and exterior in right now?",
+      "Can you send photos of the vehicle if you want a more accurate quote?",
+      "Are you trying to book this week or just comparing options?",
+      "Is this for one vehicle, multiple vehicles, or fleet/dealership work?"
+    ],
+    instantReply: {
+      scenario: "Customer asks for a detail quote from Instagram",
+      message:
+        "Thanks for reaching out. We can help narrow down the best detail package. What vehicle do you have, what service are you considering, and can you send a few photos of the interior and exterior if you want a more accurate quote?"
+    },
+    internalNote: {
+      scenario: "Auto detailing package lead",
+      message:
+        "Detail quote request. Gather vehicle, condition, package interest, photos, timeline, and whether customer is ready to book. Prioritize ceramic, correction, fleet, and this-week appointment requests."
+    },
+    followUpExamples: [
+      {
+        scenario: "Missing photos",
+        message:
+          "Quick follow-up: if you can send a few photos of the interior and exterior, we can point you toward the right package and next available appointment."
+      },
+      {
+        scenario: "Quote sent",
+        message:
+          "Just checking in on the detail options we sent over. Want us to look at available times this week?"
+      },
+      {
+        scenario: "Ceramic or correction lead",
+        message:
+          "For ceramic or paint correction, a quick review helps us recommend the right level of prep. Want to send photos or set up a consultation?"
+      }
+    ],
+    scoringRules: [
+      {
+        title: "Hot",
+        description:
+          "Ready-to-book, ceramic coating, paint correction, fleet/dealership request, clear vehicle details, phone number, and preferred time."
+      },
+      {
+        title: "Warm",
+        description:
+          "Package inquiry, maintenance detail, interior deep clean, photos provided, or customer wants service soon."
+      },
+      {
+        title: "Cold or review",
+        description:
+          "Vague pricing question, no vehicle details, no contact info, or unrealistic timeline."
+      }
+    ],
+    automations: [
+      {
+        title: "Package intake form",
+        description:
+          "Collect vehicle, service interest, condition, photos, and preferred appointment time."
+      },
+      {
+        title: "Quote follow-up",
+        description:
+          "Nudge leads who received package pricing but did not book."
+      },
+      {
+        title: "High-value lead alert",
+        description:
+          "Route ceramic, correction, fleet, and dealership leads to the owner or sales contact."
+      },
+      {
+        title: "No-response sequence",
+        description:
+          "Ask for missing photos or timing before a lead disappears."
+      }
+    ],
+    dashboardValue: [
+      {
+        title: "Quote pipeline",
+        description:
+          "See package inquiries, photos needed, quote sent, booked, won, and lost status."
+      },
+      {
+        title: "High-value service mix",
+        description:
+          "Track ceramic, correction, fleet, and routine detail requests separately."
+      },
+      {
+        title: "Follow-up gaps",
+        description:
+          "Identify which leads received quotes but never booked."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can SignalOps help detailers follow up after quotes?",
+        answer:
+          "Yes. Quote follow-up is a strong fit for detailers because customers often compare packages and need a clear booking prompt."
+      },
+      {
+        question: "Can it ask for vehicle photos?",
+        answer:
+          "Yes. SignalOps can request interior and exterior photos when they help with package recommendation or pricing."
+      },
+      {
+        question: "Can it separate ceramic coating leads from basic details?",
+        answer:
+          "Yes. High-value services like ceramic coating and paint correction can be scored and routed differently."
+      },
+      {
+        question: "Does it replace talking to customers?",
+        answer:
+          "No. It handles first response, missing details, and follow-up so the detailer can focus on qualified conversations."
+      }
+    ],
+    relatedLinks: [
+      {
+        href: "/services/quote-intake-automation",
+        title: "Quote Intake Automation",
+        description: "Collect vehicle details, package interest, photos, and timing before quoting."
+      },
+      {
+        href: "/services/automated-lead-follow-up",
+        title: "Automated Lead Follow-Up",
+        description: "Follow up after detailing quotes and missing photos."
+      },
+      {
+        href: "/demo",
+        title: "View Automotive Demo",
+        description: "See a similar quote-intake workflow in the Apex Wheel Repair demo."
+      },
+      {
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See how intake, qualification, routing, booking, and follow-up connect."
+      }
+    ]
+  },
+  "tint-wrap-shops": {
+    id: "tint-wrap-shops",
+    industryName: "Tint and Wrap Shops",
+    path: "/industries/tint-wrap-shops",
+    eyebrow: "SignalOps for tint and wrap shops",
+    metaTitle: "AI Lead Response for Tint Shops and Wrap Shops",
+    metaDescription:
+      "SignalOps helps tint and wrap shops automate quote requests, qualify vehicle and package details, follow up, and book more appointments.",
+    h1: "AI lead response for tint shops and wrap shops handling quote requests.",
+    subheadline:
+      "SignalOps helps tint, wrap, and PPF shops respond to quote requests, collect vehicle and coverage details, route high-value jobs, and follow up when customers do not book.",
+    heroBullets: [
+      "Collect vehicle, service type, coverage, film preference, and desired timing",
+      "Prioritize full wraps, PPF, commercial graphics, and ready-to-book leads",
+      "Follow up after quotes without relying on DMs and memory"
+    ],
+    missedLeadProblems: [
+      {
+        title: "Customers ask for price without scope",
+        description:
+          "Tint, wrap, PPF, and vinyl jobs need vehicle details, coverage, material preferences, and timeline."
+      },
+      {
+        title: "DM leads are easy to lose",
+        description:
+          "Before/after posts generate inquiries, but social conversations can disappear during production work."
+      },
+      {
+        title: "Large jobs need owner review",
+        description:
+          "Full wraps, commercial graphics, fleets, and PPF packages should be routed differently from basic tint questions."
+      },
+      {
+        title: "Appointment intent is not captured",
+        description:
+          "Customers may be ready to schedule but never receive a clear booking path after the quote."
+      }
+    ],
+    leadSources: [
+      "Instagram DMs",
+      "Facebook messages",
+      "Website quote forms",
+      "Google Business Profile calls",
+      "Missed calls",
+      "Text inquiries",
+      "Paid social ads",
+      "Commercial account emails"
+    ],
+    exampleLeadFlow: [
+      {
+        title: "Quote request arrives",
+        description:
+          "A customer asks about tint, wrap, PPF, chrome delete, decals, or commercial graphics."
+      },
+      {
+        title: "SignalOps collects scope",
+        description:
+          "The system asks for vehicle, desired service, coverage, photos if needed, timeline, and contact info."
+      },
+      {
+        title: "Lead is routed",
+        description:
+          "High-value full wrap, PPF, and commercial leads can alert the owner while basic tint requests move toward booking."
+      },
+      {
+        title: "Quote follow-up starts",
+        description:
+          "If the customer does not book after pricing, SignalOps sends a helpful next-step follow-up."
+      }
+    ],
+    followUpFailures: [
+      {
+        title: "Coverage details are missing",
+        description:
+          "The shop cannot quote accurately without knowing full vehicle, partial wrap, windows, windshield strip, PPF areas, or graphics scope."
+      },
+      {
+        title: "Commercial leads are not escalated",
+        description:
+          "Fleet graphics or business wrap requests may require owner review, proofs, or a more careful sales process."
+      },
+      {
+        title: "Quotes are sent but not booked",
+        description:
+          "A customer receives pricing but never gets nudged toward an appointment window."
+      }
+    ],
+    qualificationQuestions: [
+      "What vehicle year, make, and model is this for?",
+      "Are you interested in tint, wrap, PPF, chrome delete, decals, or commercial graphics?",
+      "What coverage are you looking for?",
+      "Do you have a preferred film, finish, color, or shade?",
+      "Are you trying to book soon or just comparing options?",
+      "Is this for one vehicle, multiple vehicles, or commercial/fleet work?"
+    ],
+    instantReply: {
+      scenario: "Customer asks about tint and wrap pricing",
+      message:
+        "Thanks for reaching out. To point you in the right direction, what vehicle is this for, what service are you considering, and what coverage or finish do you have in mind?"
+    },
+    internalNote: {
+      scenario: "Tint/wrap quote request",
+      message:
+        "Quote request. Gather vehicle, service type, coverage, film/finish preference, timeline, and appointment intent. Route full wrap, PPF, or commercial graphics to owner/sales review."
+    },
+    followUpExamples: [
+      {
+        scenario: "Scope missing",
+        message:
+          "Quick follow-up: can you confirm the vehicle and coverage you want so we can give a more useful estimate?"
+      },
+      {
+        scenario: "Quote sent",
+        message:
+          "Checking in on the quote we sent. Want us to look at available install times?"
+      },
+      {
+        scenario: "Commercial graphics",
+        message:
+          "For commercial graphics, we will need vehicle count, artwork status, timing, and whether there is a decision-maker we should include."
+      }
+    ],
+    scoringRules: [
+      {
+        title: "Hot",
+        description:
+          "Ready-to-book tint, full wrap, PPF, commercial graphics, clear vehicle details, phone number, and preferred timing."
+      },
+      {
+        title: "Warm",
+        description:
+          "Package inquiry, shade question, chrome delete, partial wrap, or customer comparing options soon."
+      },
+      {
+        title: "Needs review",
+        description:
+          "Commercial scope, fleet request, unclear artwork, vague pricing question, missing vehicle details, or unrealistic timeline."
+      }
+    ],
+    automations: [
+      {
+        title: "Quote request intake",
+        description:
+          "Collect vehicle, service, coverage, film preference, photos, and timing."
+      },
+      {
+        title: "Commercial routing",
+        description:
+          "Send fleet, signage, and full wrap opportunities to the right person."
+      },
+      {
+        title: "Booking follow-up",
+        description:
+          "Nudge customers who received quotes but did not schedule."
+      },
+      {
+        title: "Missed-call text back",
+        description:
+          "Capture callers when installers and owners are busy in the shop."
+      }
+    ],
+    dashboardValue: [
+      {
+        title: "Install pipeline",
+        description:
+          "Track new, quoted, needs scope, booked, won, and lost requests."
+      },
+      {
+        title: "Service mix",
+        description:
+          "Separate tint, PPF, full wrap, partial wrap, decals, and commercial graphics leads."
+      },
+      {
+        title: "Follow-up visibility",
+        description:
+          "See which quotes need a reminder before the customer books elsewhere."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can SignalOps qualify tint and wrap quote requests?",
+        answer:
+          "Yes. SignalOps can collect vehicle, service type, coverage, film or finish preference, and booking timing."
+      },
+      {
+        question: "Can it handle commercial wrap leads?",
+        answer:
+          "Yes. Commercial graphics and fleet requests can be tagged and routed for owner or sales review."
+      },
+      {
+        question: "Can it follow up after a quote?",
+        answer:
+          "Yes. SignalOps can follow up when a customer receives pricing but does not book."
+      },
+      {
+        question: "Can this work with Instagram DMs?",
+        answer:
+          "The workflow can be designed around DM intake and follow-up. Exact automation depends on platform access and the tools configured."
+      }
+    ],
+    relatedLinks: [
+      {
+        href: "/services/quote-intake-automation",
+        title: "Quote Intake Automation",
+        description: "Structure tint, wrap, and PPF quote requests before sales follow-up."
+      },
+      {
+        href: "/services/ai-appointment-booking",
+        title: "AI Appointment Booking",
+        description: "Move qualified install leads toward booking."
+      },
+      {
+        href: "/demo",
+        title: "View Client Demo",
+        description: "See a live SignalOps demo with AI quote intake and lead qualification."
+      },
+      {
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See the full flow from intake to qualification, routing, and follow-up."
+      }
+    ]
+  },
+  "home-services": {
+    id: "home-services",
+    industryName: "Home Service Businesses",
+    path: "/industries/home-services",
+    eyebrow: "SignalOps for home service businesses",
+    metaTitle: "AI Lead Response for Home Service Businesses",
+    metaDescription:
+      "SignalOps helps home service businesses recover missed leads, answer calls and forms faster, qualify urgency, route jobs, and follow up after estimates.",
+    h1: "AI lead response for home service businesses and contractors.",
+    subheadline:
+      "SignalOps helps contractors and local service teams capture calls, texts, forms, emergency requests, quote leads, and follow-ups before homeowners call the next provider.",
+    heroBullets: [
+      "Capture emergency and routine requests across calls, texts, forms, and ads",
+      "Collect address, issue, urgency, photos, access notes, and appointment timing",
+      "Recover missed leads from slow replies, unbooked quotes, and forgotten follow-up"
+    ],
+    missedLeadProblems: [
+      {
+        title: "Calls arrive while crews are working",
+        description:
+          "Contractors miss calls because the same team is driving, quoting, doing the work, and managing customers."
+      },
+      {
+        title: "Emergency and routine leads mix together",
+        description:
+          "Leaks, no heat, no water, electrical issues, maintenance, and general estimates should not be handled with the same urgency."
+      },
+      {
+        title: "Address and scope are missing",
+        description:
+          "The team needs location, issue type, photos if helpful, timing, and access notes before scheduling."
+      },
+      {
+        title: "Estimates are not followed up",
+        description:
+          "Homeowners comparing contractors may need a clear reminder or booking path after a quote."
+      }
+    ],
+    leadSources: [
+      "Missed calls",
+      "Google Business Profile",
+      "Website forms",
+      "Local service ads",
+      "Landing pages",
+      "Texts from existing customers",
+      "Facebook neighborhood referrals",
+      "Email quote requests"
+    ],
+    exampleLeadFlow: [
+      {
+        title: "Homeowner reaches out",
+        description:
+          "The lead comes from a missed call, form, ad, text, or referral asking for repair, service, or an estimate."
+      },
+      {
+        title: "SignalOps triages urgency",
+        description:
+          "The system asks about issue type, address, active problem, photos, timeline, and best callback."
+      },
+      {
+        title: "Lead is routed",
+        description:
+          "Emergency and high-value jobs alert the right person while routine requests move toward booking or follow-up."
+      },
+      {
+        title: "Pipeline stays visible",
+        description:
+          "The dashboard shows new, contacted, needs info, quoted, booked, won, and lost leads."
+      }
+    ],
+    followUpFailures: [
+      {
+        title: "Missed calls do not get a fast text back",
+        description:
+          "A homeowner often calls multiple contractors, and the first useful response has an advantage."
+      },
+      {
+        title: "Photos and address are requested once",
+        description:
+          "If the customer does not send the missing detail, the lead can disappear."
+      },
+      {
+        title: "Quote follow-up is manual",
+        description:
+          "Estimates are sent, then follow-up depends on memory or a calendar reminder."
+      }
+    ],
+    qualificationQuestions: [
+      "What service or issue do you need help with?",
+      "What is the property address or service area?",
+      "Is this urgent, happening now, or a routine estimate?",
+      "Can you safely send photos or a short description of the issue?",
+      "What is your preferred callback or appointment window?",
+      "Have you already received an estimate or inspection from another provider?"
+    ],
+    instantReply: {
+      scenario: "Homeowner submits a repair request",
+      message:
+        "Thanks for reaching out. Can you send the service address, a short description of the issue, whether it is urgent, and any photos if safe? We will review this and help route the next step."
+    },
+    internalNote: {
+      scenario: "Home service lead summary",
+      message:
+        "New home service request. Confirm issue type, address, urgency, photos, access notes, and preferred appointment window. Prioritize active emergencies and ready-to-book estimates."
+    },
+    followUpExamples: [
+      {
+        scenario: "Missed details",
+        message:
+          "Quick follow-up: can you send the address and a little more detail on the issue so we can point you to the right next step?"
+      },
+      {
+        scenario: "Estimate follow-up",
+        message:
+          "Checking in on the estimate request. Do you still need help with this, or would you like us to look at appointment options?"
+      },
+      {
+        scenario: "Emergency triage",
+        message:
+          "If this issue is active or causing damage right now, please reply with 'urgent' and confirm the best callback number."
+      }
+    ],
+    scoringRules: [
+      {
+        title: "Hot",
+        description:
+          "Active issue, urgent language, full address, phone number, ready-to-book intent, or high-value estimate request."
+      },
+      {
+        title: "Warm",
+        description:
+          "Routine repair, maintenance, quote request, photos provided, or customer wants service soon."
+      },
+      {
+        title: "Needs review",
+        description:
+          "Vague issue, missing address or phone, outside service area, sensitive safety issue, or unclear project scope."
+      }
+    ],
+    automations: [
+      {
+        title: "Missed-call text back",
+        description:
+          "Respond to calls when the team is in the field or after hours."
+      },
+      {
+        title: "Emergency alert",
+        description:
+          "Route urgent leads to the owner, dispatcher, or sales lead with context."
+      },
+      {
+        title: "Quote follow-up sequence",
+        description:
+          "Follow up after estimates, inspections, and missing-photo requests."
+      },
+      {
+        title: "Daily lead brief",
+        description:
+          "Show response-needed leads, booked appointments, and missed opportunities."
+      }
+    ],
+    dashboardValue: [
+      {
+        title: "Response-needed list",
+        description:
+          "See which homeowners still need a callback, photo request, quote, or booking path."
+      },
+      {
+        title: "Missed opportunity tracking",
+        description:
+          "Identify missed calls, slow form replies, unbooked quotes, and old leads that need follow-up."
+      },
+      {
+        title: "Lead source clarity",
+        description:
+          "Compare calls, ads, forms, referrals, and landing pages by lead quality."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can SignalOps work for contractors without a CRM?",
+        answer:
+          "Yes. It can start with calls, texts, forms, owner alerts, and a simple dashboard before a CRM is added."
+      },
+      {
+        question: "Can it identify emergency leads?",
+        answer:
+          "It can flag urgent language and route emergency leads to human review quickly."
+      },
+      {
+        question: "Can it follow up after estimates?",
+        answer:
+          "Yes. Estimate follow-up is one of the most practical ways to recover missed revenue."
+      },
+      {
+        question: "Does SignalOps replace dispatch?",
+        answer:
+          "No. It helps capture, qualify, route, and follow up with leads. Dispatch decisions should stay with the business."
+      }
+    ],
+    relatedLinks: [
+      {
+        href: "/services/missed-lead-recovery",
+        title: "Missed Lead Recovery",
+        description: "Recover contractor leads from missed calls, slow replies, and unbooked estimates."
+      },
+      {
+        href: "/services/lead-routing-automation",
+        title: "Lead Routing Automation",
+        description: "Route emergency, quote, and routine service leads to the right person."
+      },
+      {
+        href: "/audit",
+        title: "Free Lead Leak Audit",
+        description: "Find where calls, forms, and follow-ups are being missed."
+      },
+      {
+        href: "/demo",
+        title: "View Client Demo",
+        description: "See a live SignalOps demo with intake, scoring, and follow-up."
+      },
+      {
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See how missed lead recovery, routing, booking, and follow-up connect."
       }
     ]
   },
@@ -515,13 +1196,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "med-spas",
     industryName: "Med Spas",
     path: "/industries/med-spas",
-    eyebrow: "LeadOps for med spas",
-    metaTitle: "AI Lead Response for Med Spas",
+    eyebrow: "SignalOps for med spas",
+    metaTitle: "AI Appointment Booking for Med Spas",
     metaDescription:
-      "LeadOps helps med spas respond to consultation requests, treatment questions, booking inquiries, and follow-ups with practical AI-assisted workflows.",
+      "SignalOps helps med spas respond to consultation requests with AI lead response, qualification, appointment booking prompts, and automated follow-up.",
     h1: "AI lead response for med spas that need faster consultation follow-up.",
     subheadline:
-      "LeadOps helps med spas answer new inquiries, collect treatment interest, route sensitive questions to staff, and follow up with prospects who do not book.",
+      "SignalOps helps med spas answer new inquiries, collect treatment interest, route sensitive questions to staff, and follow up with prospects who do not book.",
     heroBullets: [
       "Respond quickly to consultation, treatment, and pricing inquiries",
       "Collect treatment interest, timing, prior experience, and contact preference",
@@ -559,6 +1240,28 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       "Email inquiries",
       "Event or promotion landing pages"
     ],
+    exampleLeadFlow: [
+      {
+        title: "Prospect asks about treatment",
+        description:
+          "The lead comes from a form, DM, missed call, ad, or promotion landing page."
+      },
+      {
+        title: "SignalOps collects intent",
+        description:
+          "The system asks for treatment interest, consultation timing, contact preference, and whether they want to book soon."
+      },
+      {
+        title: "Staff review is flagged",
+        description:
+          "Medical, safety, suitability, or treatment-specific questions are routed to the team instead of answered automatically."
+      },
+      {
+        title: "Booking follow-up starts",
+        description:
+          "If the prospect does not choose a time, SignalOps sends a concise consultation follow-up."
+      }
+    ],
     followUpFailures: [
       {
         title: "No booking nudge",
@@ -576,6 +1279,14 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Promo-driven inquiries may need treatment interest, timeline, and eligibility review before booking."
       }
     ],
+    qualificationQuestions: [
+      "Which treatment or service are you interested in?",
+      "Are you hoping to book a consultation soon or just gathering information?",
+      "What is your preferred contact method?",
+      "Do you have a preferred day or appointment window?",
+      "Is this related to a promotion, event, or returning-client visit?",
+      "Does this question need a staff member or provider to review before booking?"
+    ],
     instantReply: {
       scenario: "Prospect asks about a treatment consultation",
       message:
@@ -586,6 +1297,23 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       message:
         "Treatment interest received. Route to front desk or provider review if medical/safety question appears. Ask for preferred appointment window and avoid giving treatment-specific promises in automated replies."
     },
+    followUpExamples: [
+      {
+        scenario: "Consultation interest",
+        message:
+          "Quick follow-up: would you like us to help find a consultation time, or are you still comparing options?"
+      },
+      {
+        scenario: "DM lead",
+        message:
+          "Thanks again for reaching out. If you want to move forward, we can have the team review your question and help with next available consultation options."
+      },
+      {
+        scenario: "Promotion inquiry",
+        message:
+          "Checking in on your promotion inquiry. Would you like someone from the team to confirm availability and next steps?"
+      }
+    ],
     scoringRules: [
       {
         title: "Hot",
@@ -625,21 +1353,38 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Follow up with prospects who asked questions but did not schedule."
       }
     ],
+    dashboardValue: [
+      {
+        title: "Consultation pipeline",
+        description:
+          "See new inquiries, staff-review questions, booking-ready leads, booked consultations, and no-response follow-ups."
+      },
+      {
+        title: "Treatment interest",
+        description:
+          "Track which services generate the most inquiries without making medical claims in automation."
+      },
+      {
+        title: "DM follow-up visibility",
+        description:
+          "Keep social leads from getting buried in Instagram and Facebook conversations."
+      }
+    ],
     faqs: [
       {
         question: "Can AI answer medical treatment questions?",
         answer:
-          "LeadOps should be conservative. It can collect context and route questions to staff, but it should not provide medical advice or make treatment promises."
+          "SignalOps should be conservative. It can collect context and route questions to staff, but it should not provide medical advice or make treatment promises."
       },
       {
-        question: "Can LeadOps help with Instagram and Facebook inquiries?",
+        question: "Can SignalOps help with Instagram and Facebook inquiries?",
         answer:
           "Yes. Social DMs are a strong use case because many prospects ask questions there before booking."
       },
       {
         question: "Can it follow up after consultations are requested?",
         answer:
-          "Yes. LeadOps can nudge prospects to choose a time, provide missing details, or wait for a staff callback."
+          "Yes. SignalOps can nudge prospects to choose a time, provide missing details, or wait for a staff callback."
       },
       {
         question: "Will this feel too robotic for a premium med spa?",
@@ -649,19 +1394,29 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     relatedLinks: [
       {
-        href: "/ai-follow-up-automation",
-        title: "AI Follow-Up Automation",
+        href: "/services/ai-appointment-booking",
+        title: "AI Appointment Booking",
+        description: "Move qualified consultation inquiries toward the right booking path."
+      },
+      {
+        href: "/services/automated-lead-follow-up",
+        title: "Automated Lead Follow-Up",
         description: "Follow up with consultation and treatment inquiries."
       },
       {
-        href: "/ai-lead-qualification",
+        href: "/services/ai-lead-qualification",
         title: "AI Lead Qualification",
         description: "Prioritize booking-ready prospects and staff-review cases."
       },
       {
-        href: "/live-demo",
-        title: "Generate a Med Spa Demo",
-        description: "Create a tailored LeadOps preview for a med spa."
+        href: "/demo",
+        title: "View Client Demo",
+        description: "See a live SignalOps demo with AI lead intake, scoring, and follow-up."
+      },
+      {
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See how response, routing, booking, and follow-up connect."
       }
     ]
   },
@@ -669,13 +1424,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "insurance-agencies",
     industryName: "Insurance Agencies",
     path: "/industries/insurance-agencies",
-    eyebrow: "LeadOps for insurance agencies",
-    metaTitle: "AI Lead Response for Insurance Agencies",
+    eyebrow: "SignalOps for insurance agencies",
+    metaTitle: "AI Lead Qualification for Insurance Agencies",
     metaDescription:
-      "LeadOps helps insurance agencies respond to quote requests, policy questions, renewal opportunities, and follow-ups with structured intake and routing.",
+      "SignalOps helps insurance agencies manage quote requests with AI lead response, lead qualification, producer routing, and automated follow-up.",
     h1: "AI lead response for insurance agencies that need faster quote follow-up.",
     subheadline:
-      "LeadOps helps agencies organize quote requests, coverage questions, renewal opportunities, and missed calls so producers can focus on qualified prospects.",
+      "SignalOps helps agencies organize quote requests, coverage questions, renewal opportunities, and missed calls so producers can focus on qualified prospects.",
     heroBullets: [
       "Capture quote type, timeline, current coverage, and contact preference",
       "Route commercial, personal lines, and urgent policy questions correctly",
@@ -713,6 +1468,28 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       "Social media messages",
       "Networking and local business groups"
     ],
+    exampleLeadFlow: [
+      {
+        title: "Prospect requests a quote",
+        description:
+          "The lead comes from a form, missed call, referral, email, paid search, or social message."
+      },
+      {
+        title: "SignalOps collects coverage context",
+        description:
+          "The system asks for line of business, location, renewal timing, current coverage if available, and contact preference."
+      },
+      {
+        title: "Lead routes to the right producer",
+        description:
+          "Commercial, personal lines, benefits, and specialty requests can follow different routing rules."
+      },
+      {
+        title: "Follow-up tracks missing details",
+        description:
+          "If documents, renewal dates, or callback times are missing, SignalOps sends practical reminders."
+      }
+    ],
     followUpFailures: [
       {
         title: "Missing documents stall quotes",
@@ -730,6 +1507,14 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Commercial and renewal-based prospects may need reminders before they are ready."
       }
     ],
+    qualificationQuestions: [
+      "What type of coverage are you looking for?",
+      "Is this personal, commercial, benefits, specialty, or another line?",
+      "What city/state or business location is the policy for?",
+      "Do you know your renewal date or decision timeline?",
+      "Do you have current policy details or declarations pages available?",
+      "What is the best number and preferred time for a licensed producer to follow up?"
+    ],
     instantReply: {
       scenario: "Prospect requests a business insurance quote",
       message:
@@ -740,6 +1525,23 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       message:
         "Possible commercial quote opportunity. Route to licensed producer. Gather coverage type, business location, current carrier/renewal date if available, decision timeline, and contact preference."
     },
+    followUpExamples: [
+      {
+        scenario: "Missing quote details",
+        message:
+          "Quick follow-up: can you confirm the coverage type and renewal timing so the right licensed team member can review this?"
+      },
+      {
+        scenario: "Commercial inquiry",
+        message:
+          "For the business quote, we will need the company location, coverage type, decision timeline, and best callback number."
+      },
+      {
+        scenario: "Renewal timing",
+        message:
+          "Checking in on your renewal timing. If the date is getting close, we can route this for a producer callback."
+      }
+    ],
     scoringRules: [
       {
         title: "Hot",
@@ -779,11 +1581,28 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Route advice-heavy or policy-specific questions to licensed staff."
       }
     ],
+    dashboardValue: [
+      {
+        title: "Producer handoff view",
+        description:
+          "See quote type, priority, renewal timing, missing details, and assigned producer."
+      },
+      {
+        title: "Coverage category tracking",
+        description:
+          "Separate commercial, personal, benefits, specialty, and human-review requests."
+      },
+      {
+        title: "Renewal follow-up",
+        description:
+          "Keep renewal-window prospects visible until timing is right for a producer conversation."
+      }
+    ],
     faqs: [
       {
-        question: "Can LeadOps quote insurance automatically?",
+        question: "Can SignalOps quote insurance automatically?",
         answer:
-          "No. LeadOps should collect details, route the lead, and support follow-up. Quotes and coverage advice should stay with licensed staff and approved tools."
+          "No. SignalOps should collect details, route the lead, and support follow-up. Quotes and coverage advice should stay with licensed staff and approved tools."
       },
       {
         question: "Can it separate personal and commercial leads?",
@@ -798,24 +1617,29 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can this work with an existing agency CRM?",
         answer:
-          "Yes. LeadOps is designed so CRM logging and webhook integrations can be added when the agency is ready."
+          "Yes. SignalOps is designed so CRM logging and webhook integrations can be added when the agency is ready."
       }
     ],
     relatedLinks: [
       {
-        href: "/ai-lead-qualification",
+        href: "/services/ai-lead-qualification",
         title: "AI Lead Qualification",
         description: "Prioritize quote requests by coverage type, urgency, and completeness."
       },
       {
-        href: "/ai-follow-up-automation",
-        title: "AI Follow-Up Automation",
+        href: "/services/automated-lead-follow-up",
+        title: "Automated Lead Follow-Up",
         description: "Follow up on missing quote details and renewal timing."
       },
       {
-        href: "/live-demo",
-        title: "Generate an Insurance Demo",
-        description: "Create a tailored LeadOps preview for an insurance agency."
+        href: "/demo",
+        title: "View Client Demo",
+        description: "See a live SignalOps demo with lead scoring, routing, and follow-up."
+      },
+      {
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See how qualification, routing, and follow-up connect."
       }
     ]
   },
@@ -823,13 +1647,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "auto-shops",
     industryName: "Auto Shops",
     path: "/industries/auto-shops",
-    eyebrow: "LeadOps for auto shops",
-    metaTitle: "AI Lead Response for Auto Repair Shops",
+    eyebrow: "SignalOps for auto shops",
+    metaTitle: "AI Lead Response for Auto Shops",
     metaDescription:
-      "LeadOps helps auto repair shops respond to repair requests, diagnostic inquiries, appointment leads, and estimate follow-ups with practical AI-assisted workflows.",
+      "SignalOps provides AI lead response for auto shops with repair intake, diagnostic lead qualification, appointment booking prompts, and lead follow-up automation.",
     h1: "AI lead response for auto shops that need cleaner intake and faster booking.",
     subheadline:
-      "LeadOps helps repair shops capture vehicle details, symptoms, urgency, service needs, and appointment intent so customers do not get lost between missed calls and busy bays.",
+      "SignalOps helps repair shops capture vehicle details, symptoms, urgency, service needs, and appointment intent so customers do not get lost between missed calls and busy bays.",
     heroBullets: [
       "Collect year, make, model, symptoms, drivability, and preferred appointment time",
       "Flag urgent safety or drivability concerns for human review",
@@ -867,6 +1691,28 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       "Facebook messages",
       "Referral leads"
     ],
+    exampleLeadFlow: [
+      {
+        title: "Customer asks for repair help",
+        description:
+          "The lead comes from a missed call, appointment form, quote request, text, or Google profile call."
+      },
+      {
+        title: "SignalOps collects vehicle context",
+        description:
+          "The system asks for year, make, model, symptoms, warning lights, drivability, and preferred appointment time."
+      },
+      {
+        title: "Urgency is flagged",
+        description:
+          "No-start, overheating, brake concerns, shaking, and safety language can route to a service advisor quickly."
+      },
+      {
+        title: "Appointment follow-up continues",
+        description:
+          "If the customer does not book, SignalOps follows up with the next practical scheduling step."
+      }
+    ],
     followUpFailures: [
       {
         title: "No vehicle context before callback",
@@ -884,6 +1730,14 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Open estimate questions and diagnostic requests can disappear when the shop gets busy."
       }
     ],
+    qualificationQuestions: [
+      "What is the vehicle year, make, model, and mileage if known?",
+      "What symptoms or service do you need help with?",
+      "Is the vehicle drivable right now?",
+      "Are there warning lights, noises, shaking, overheating, brake concerns, or no-start symptoms?",
+      "Are you looking for a quote, diagnostic appointment, maintenance, or repair booking?",
+      "What appointment window works best for you?"
+    ],
     instantReply: {
       scenario: "Customer asks about a shaking vehicle",
       message:
@@ -894,6 +1748,23 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       message:
         "Possible drivability/safety issue. Prioritize service advisor callback. Gather year/make/model, symptoms, speed or conditions, warning lights, drivability, and requested appointment window."
     },
+    followUpExamples: [
+      {
+        scenario: "Missing vehicle details",
+        message:
+          "Quick follow-up: can you send the year, make, model, and symptoms so the service advisor has the right context?"
+      },
+      {
+        scenario: "Appointment interest",
+        message:
+          "Checking in on your appointment request. Do you still want us to look at available times?"
+      },
+      {
+        scenario: "Estimate follow-up",
+        message:
+          "Following up on the estimate question. Would you like a service advisor to review the next step with you?"
+      }
+    ],
     scoringRules: [
       {
         title: "Hot",
@@ -933,9 +1804,26 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Route high-priority repair leads with a concise internal note."
       }
     ],
+    dashboardValue: [
+      {
+        title: "Advisor queue",
+        description:
+          "See which leads need callbacks, vehicle details, diagnostics, estimate follow-up, or appointment booking."
+      },
+      {
+        title: "Urgency visibility",
+        description:
+          "Separate safety, no-start, overheating, shaking, and routine maintenance leads."
+      },
+      {
+        title: "Estimate follow-up tracking",
+        description:
+          "Keep diagnostic and repair estimate leads from disappearing after the first reply."
+      }
+    ],
     faqs: [
       {
-        question: "Can LeadOps diagnose car problems?",
+        question: "Can SignalOps diagnose car problems?",
         answer:
           "No. It can collect symptoms and route the lead, but diagnosis should stay with qualified shop staff."
       },
@@ -952,7 +1840,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it follow up after estimates?",
         answer:
-          "Yes. LeadOps can remind customers about open estimates or appointment options without adding more manual work."
+          "Yes. SignalOps can remind customers about open estimates or appointment options without adding more manual work."
       }
     ],
     relatedLinks: [
@@ -962,14 +1850,29 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
         description: "See a more specific automotive workflow for wheel repair and refinishing."
       },
       {
+        href: "/services/automated-lead-follow-up",
+        title: "Lead Follow-Up Automation",
+        description: "Follow up on auto repair estimates and unbooked appointment requests."
+      },
+      {
+        href: "/services/ai-lead-response",
+        title: "AI Lead Response System",
+        description: "Answer auto shop calls, forms, and texts before customers go cold."
+      },
+      {
+        href: "/demo",
+        title: "View Client Demo",
+        description: "See a live SignalOps demo with quote intake and lead qualification."
+      },
+      {
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See how intake, qualification, routing, booking, and follow-up connect."
+      },
+      {
         href: "/missed-call-text-back",
         title: "Missed-Call Text Back",
         description: "Catch auto repair callers when service advisors are busy."
-      },
-      {
-        href: "/live-demo",
-        title: "Generate an Auto Shop Demo",
-        description: "Create a tailored LeadOps preview for an auto repair shop."
       }
     ]
   },
@@ -977,13 +1880,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "well-water-service-companies",
     industryName: "Well and Water Service Companies",
     path: "/industries/well-water-service-companies",
-    eyebrow: "LeadOps for well and water service companies",
+    eyebrow: "SignalOps for well and water service companies",
     metaTitle: "AI Lead Response for Well and Water Service Companies",
     metaDescription:
-      "LeadOps helps small well and water service companies capture calls, texts, emergency no-water issues, filter changes, maintenance requests, and larger commercial opportunities.",
+      "SignalOps helps well and water service companies capture calls, texts, no-water emergencies, maintenance leads, and commercial requests with AI lead response.",
     h1: "AI lead response for well and water service companies that run on calls, texts, and follow-up.",
     subheadline:
-      "LeadOps helps small 3-person well and water teams capture emergency no-water issues, routine filter changes, maintenance requests, and occasional large commercial jobs without burying opportunities in text threads.",
+      "SignalOps helps small 3-person well and water teams capture emergency no-water issues, routine filter changes, maintenance requests, and occasional large commercial jobs without burying opportunities in text threads.",
     heroBullets: [
       "Built for low daily job volume where every missed request matters",
       "Separate emergency no-water calls from routine maintenance and filter changes",
@@ -1089,9 +1992,9 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can LeadOps work for a very small well and water company?",
+        question: "Can SignalOps work for a very small well and water company?",
         answer:
-          "Yes. LeadOps is a strong fit when a small team relies on calls and texts and does not have a formal lead system."
+          "Yes. SignalOps is a strong fit when a small team relies on calls and texts and does not have a formal lead system."
       },
       {
         question: "Can it separate emergency no-water issues from maintenance?",
@@ -1123,7 +2026,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate a Well and Water Demo",
-        description: "Create a tailored LeadOps preview for a well and water service company."
+        description: "Create a tailored SignalOps preview for a well and water service company."
       }
     ]
   },
@@ -1131,13 +2034,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "wheel-repair",
     industryName: "Wheel Repair Shops",
     path: "/industries/wheel-repair",
-    eyebrow: "LeadOps for wheel repair shops",
+    eyebrow: "SignalOps for wheel repair shops",
     metaTitle: "AI Lead Response for Wheel Repair Shops",
     metaDescription:
-      "LeadOps helps wheel repair shops qualify quote requests, request photos, route urgent bent or cracked wheel leads, book mobile repair, and follow up after estimates.",
+      "SignalOps gives wheel repair shops AI lead response and quote intake automation for photo requests, curb rash, bent wheel review, refinishing, mobile repair, and booking.",
     h1: "AI lead response for wheel repair shops that live on quote requests and photos.",
     subheadline:
-      "LeadOps helps wheel repair and refinishing shops respond to quote requests, collect damage photos, qualify mobile repair opportunities, and route urgent or commercial leads quickly.",
+      "SignalOps helps wheel repair and refinishing shops respond to quote requests, collect damage photos, qualify mobile repair opportunities, and route urgent or commercial leads quickly.",
     heroBullets: [
       "Request photos, vehicle details, wheel size, damage type, and appointment preference",
       "Flag bent wheels, cracked wheels, and drivability issues for human inspection",
@@ -1175,6 +2078,28 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       "Dealership referrals",
       "Commercial account emails"
     ],
+    exampleLeadFlow: [
+      {
+        title: "Customer submits a quote request",
+        description:
+          "The lead asks about curb rash, bent wheels, cracked wheel inspection, refinishing, powder coating, paint matching, or mobile repair."
+      },
+      {
+        title: "SignalOps requests photos and details",
+        description:
+          "The system asks for clear wheel photos, vehicle year/make/model, wheel size if known, damage type, drivability, and preferred appointment time."
+      },
+      {
+        title: "Damage is routed carefully",
+        description:
+          "Cosmetic leads can move toward a quote, while bent, cracked, or unsafe-language leads are flagged for human inspection."
+      },
+      {
+        title: "Follow-up pushes booking",
+        description:
+          "If the customer does not send photos or book after an estimate, SignalOps sends a specific next-step follow-up."
+      }
+    ],
     followUpFailures: [
       {
         title: "Photos are missing",
@@ -1192,6 +2117,14 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Customers may need a reminder to book after receiving a curb rash, refinishing, or powder coating estimate."
       }
     ],
+    qualificationQuestions: [
+      "What vehicle year, make, and model is this for?",
+      "What type of wheel damage are you seeing: curb rash, bent wheel, crack, peeling clear coat, corrosion, scratches, or color mismatch?",
+      "How many wheels are damaged?",
+      "Can you send clear photos of each damaged wheel?",
+      "Is the vehicle drivable, or are you noticing shaking, vibration, or air loss?",
+      "Do you need mobile repair, shop inspection, refinishing, powder coating, or paint matching?"
+    ],
     instantReply: {
       scenario: "Customer has curb rash on two wheels and asks about mobile repair",
       message:
@@ -1202,6 +2135,23 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       message:
         "Good cosmetic repair lead. Customer reports curb rash on two wheels and asks about mobile service. Request photos, confirm location, wheel size, finish, and preferred appointment window."
     },
+    followUpExamples: [
+      {
+        scenario: "Photos missing",
+        message:
+          "Quick follow-up: can you send clear photos of each damaged wheel? That helps the shop review whether this looks cosmetic, needs inspection, or should be quoted in person."
+      },
+      {
+        scenario: "Estimate sent",
+        message:
+          "Checking in on the wheel repair estimate. Would you like us to look at mobile repair or shop appointment availability?"
+      },
+      {
+        scenario: "Bent or cracked wheel",
+        message:
+          "Because bent or cracked wheels can involve safety, the shop should inspect this before confirming repair options. Can you share photos and whether the vehicle is drivable?"
+      }
+    ],
     scoringRules: [
       {
         title: "Hot",
@@ -1241,9 +2191,26 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Follow up after curb rash, refinishing, powder coating, and commercial estimates."
       }
     ],
+    dashboardValue: [
+      {
+        title: "Photo requests pending",
+        description:
+          "See which wheel leads still need photos before the shop can review a quote."
+      },
+      {
+        title: "Inspection-required leads",
+        description:
+          "Separate bent, cracked, vibration, air-loss, and not-drivable requests for human review."
+      },
+      {
+        title: "Mobile and commercial pipeline",
+        description:
+          "Track mobile repair opportunities, dealership referrals, refinishing jobs, and estimate follow-ups."
+      }
+    ],
     faqs: [
       {
-        question: "Can LeadOps ask wheel repair customers for photos?",
+        question: "Can SignalOps ask wheel repair customers for photos?",
         answer:
           "Yes. Photo request follow-up is one of the strongest workflows for wheel repair quote requests."
       },
@@ -1255,7 +2222,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it route mobile repair appointments?",
         answer:
-          "Yes. LeadOps can collect service location, damage type, photos, number of wheels, and preferred time before routing the lead."
+          "Yes. SignalOps can collect service location, damage type, photos, number of wheels, and preferred time before routing the lead."
       },
       {
         question: "Can it help with dealership or fleet opportunities?",
@@ -1266,18 +2233,23 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     relatedLinks: [
       {
         href: "/demo",
-        title: "Apex Wheel Repair Demo",
+        title: "View the Apex Wheel Repair AI lead demo",
         description: "View the live wheel repair demo with AI qualification output."
       },
       {
-        href: "/ai-lead-qualification",
+        href: "/services/quote-intake-automation",
+        title: "Quote Intake Automation",
+        description: "Collect wheel photos, damage details, vehicle info, and appointment timing."
+      },
+      {
+        href: "/services/ai-lead-qualification",
         title: "AI Lead Qualification",
         description: "Score wheel leads by damage type, urgency, photos, and value."
       },
       {
-        href: "/live-demo",
-        title: "Generate a Wheel Repair Demo",
-        description: "Create a tailored LeadOps preview for a wheel repair business."
+        href: "/how-it-works",
+        title: "How SignalOps Works",
+        description: "See how photo intake, scoring, routing, booking, and follow-up connect."
       }
     ]
   }

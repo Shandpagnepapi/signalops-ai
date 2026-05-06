@@ -32,14 +32,14 @@ const termsSections: LegalSection[] = [
   {
     title: "No Guarantee of Specific Business Results",
     paragraphs: [
-      "LeadOps provides systems, workflows, and recommendations designed to improve lead operations.",
-      "LeadOps does not guarantee specific revenue, close rates, appointment volume, or other business outcomes."
+      "SignalOps provides systems, workflows, and recommendations designed to improve lead operations.",
+      "SignalOps does not guarantee specific revenue, close rates, appointment volume, or other business outcomes."
     ]
   },
   {
     title: "AI Outputs May Require Human Review",
     paragraphs: [
-      "LeadOps tools may generate summaries, scores, suggested replies, and routing recommendations.",
+      "SignalOps tools may generate summaries, scores, suggested replies, and routing recommendations.",
       "AI outputs can be incomplete or incorrect and should be reviewed by a human before important decisions are made."
     ]
   },
@@ -53,14 +53,14 @@ const termsSections: LegalSection[] = [
   {
     title: "Limitation of Liability",
     paragraphs: [
-      "LeadOps services and website content are provided as-is and as-available.",
+      "SignalOps services and website content are provided as-is and as-available.",
       "This limitation of liability language should be finalized by legal counsel before launch."
     ]
   },
   {
     title: "Contact Information",
     paragraphs: [
-      "For terms questions, contact LeadOps by email.",
+      "For terms questions, contact SignalOps by email.",
       `Email: ${SITE_CONFIG.email}`
     ]
   }
@@ -85,7 +85,7 @@ export default function TermsPage() {
       />
       <header className="max-w-3xl">
         <Badge className="mb-4 bg-blue-500/14 text-blue-100">Terms</Badge>
-        <h1 className="text-4xl font-semibold tracking-normal text-white sm:text-5xl">LeadOps Terms of Use</h1>
+        <h1 className="text-4xl font-semibold tracking-normal text-white sm:text-5xl">SignalOps Terms of Use</h1>
         <CardDescription className="mt-4 text-base leading-7">
           These terms describe how this website and related demo materials may be used.
         </CardDescription>

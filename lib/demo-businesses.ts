@@ -138,7 +138,7 @@ export type DemoBusinessConfig = {
       description: string;
     }[];
   };
-  whyLeadOpsPanel: {
+  whySignalOpsPanel: {
     title: string;
     description: string;
     bullets: string[];
@@ -201,7 +201,7 @@ export const demoBusinesses = {
     industry: "Automotive wheel repair and refinishing",
     location: apexWheelRepair.location,
     phone: apexWheelRepair.phone,
-    heroBadge: "Dallas wheel repair + LeadOps AI intake demo",
+    heroBadge: "Dallas wheel repair + SignalOps AI intake demo",
     headline: apexWheelRepair.headline,
     subheadline: apexWheelRepair.subheadline,
     primaryCta: "Request a quote",
@@ -264,7 +264,7 @@ export const demoBusinesses = {
       eyebrow: "Common wheel damage",
       title: "Clear damage categories make quote requests easier to sort.",
       description:
-        "LeadOps can turn a messy form submission into a cleaner repair path, with special handling for safety-sensitive cases.",
+        "SignalOps can turn a messy form submission into a cleaner repair path, with special handling for safety-sensitive cases.",
       items: apexWheelRepair.damageTypes
     },
     process: {
@@ -280,7 +280,7 @@ export const demoBusinesses = {
         "Curb rash, scuffs, scratches, peeling clear coat, and some paint match jobs can often be handled mobile around Dallas. Bent wheels, cracked wheels, air leaks, vibration, or severe impact damage should be reviewed by the shop before any repair path is confirmed.",
       noteTitle: "Safety-first repair note",
       noteDescription:
-        "If a wheel is structurally unsafe, Apex recommends replacement instead of repair. The LeadOps workflow should surface that language before a customer receives a promise."
+        "If a wheel is structurally unsafe, Apex recommends replacement instead of repair. The SignalOps workflow should surface that language before a customer receives a promise."
     },
     testimonialsSection: {
       eyebrow: "Customer proof",
@@ -297,11 +297,11 @@ export const demoBusinesses = {
       eyebrow: "FAQ",
       title: "Questions drivers ask before they book.",
       description:
-        "Answering these questions up front gives the customer confidence and gives LeadOps better signals for qualification."
+        "Answering these questions up front gives the customer confidence and gives SignalOps better signals for qualification."
     },
     faqs: apexWheelRepair.faqs,
     leadOpsPanel: {
-      badge: "LeadOps demo workflow",
+      badge: "SignalOps demo workflow",
       title: "What would happen in production?",
       description:
         "Normally this would instantly text the customer, request photos if needed, score the lead, alert the wheel repair team, log the lead in the CRM, and start follow-up.",
@@ -324,8 +324,8 @@ export const demoBusinesses = {
         }
       ]
     },
-    whyLeadOpsPanel: {
-      title: "Why this sells LeadOps",
+    whySignalOpsPanel: {
+      title: "Why this sells SignalOps",
       description:
         "A local service business does not just need a prettier form. It needs a lead process that knows what matters.",
       bullets: [
@@ -336,7 +336,7 @@ export const demoBusinesses = {
     },
     form: {
       source: "apex-wheel-repair-demo",
-      badge: "LeadOps intake",
+      badge: "SignalOps intake",
       title: "Request a wheel repair quote",
       description:
         "A conversion-focused intake captures the details Apex needs to quote faster and route safety-sensitive work correctly.",
@@ -390,7 +390,7 @@ export const demoBusinesses = {
     industry: "Well and water processing service",
     location: "Central Alabama",
     phone: "(334) 555-0186",
-    heroBadge: "Small well and water service company + LeadOps intake demo",
+    heroBadge: "Small well and water service company + SignalOps intake demo",
     headline: "Local well and water service without missed calls or buried follow-ups.",
     subheadline:
       "ClearFlow is a small 3-person operation handling filter changes, pump issues, pressure problems, water testing, routine maintenance, and occasional commercial water system projects.",
@@ -420,7 +420,7 @@ export const demoBusinesses = {
     ],
     qualificationPreview: {
       title: "Service request triage",
-      subtitle: "How LeadOps sorts the next callback",
+      subtitle: "How SignalOps sorts the next callback",
       badge: "Owner-ready notes",
       cards: [
         {
@@ -441,7 +441,7 @@ export const demoBusinesses = {
       eyebrow: "Well and water services",
       title: "A small service company needs intake that separates urgent calls from routine work.",
       description:
-        "ClearFlow can keep using calls and texts, while LeadOps captures the details that decide whether a request needs a fast callback, routine scheduling, or owner review."
+        "ClearFlow can keep using calls and texts, while SignalOps captures the details that decide whether a request needs a fast callback, routine scheduling, or owner review."
     },
     services: [
       {
@@ -484,11 +484,11 @@ export const demoBusinesses = {
         "For a low-volume service team, one missed callback can be the job that would have filled tomorrow or the commercial request that deserved owner attention.",
       points: [
         {
-          title: "Before LeadOps",
+          title: "Before SignalOps",
           description: "Calls, texts, quotes, and reminders depend on whoever remembers while the crew is already in the field."
         },
         {
-          title: "After LeadOps",
+          title: "After SignalOps",
           description: "Every request gets captured, classified, tagged, and placed into the right follow-up path."
         }
       ],
@@ -515,7 +515,7 @@ export const demoBusinesses = {
       eyebrow: "Common service requests",
       title: "Simple categories make the next callback obvious.",
       description:
-        "LeadOps helps ClearFlow avoid treating every message the same. Urgent water issues, routine maintenance, and larger project requests need different handling.",
+        "SignalOps helps ClearFlow avoid treating every message the same. Urgent water issues, routine maintenance, and larger project requests need different handling.",
       items: [
         "No water",
         "Well pump issue",
@@ -536,7 +536,7 @@ export const demoBusinesses = {
         },
         {
           title: "Issue Gets Sorted",
-          description: "LeadOps identifies emergency, maintenance, testing, pressure, pump, or commercial context."
+          description: "SignalOps identifies emergency, maintenance, testing, pressure, pump, or commercial context."
         },
         {
           title: "Details Are Requested",
@@ -557,7 +557,7 @@ export const demoBusinesses = {
       eyebrow: "Small team callout",
       title: "Built around the way ClearFlow already works.",
       description:
-        "ClearFlow does not need a complicated CRM to start. LeadOps can wrap a simple intake and follow-up system around calls, texts, forms, and DMs so the team knows who needs a callback and what the customer needs.",
+        "ClearFlow does not need a complicated CRM to start. SignalOps can wrap a simple intake and follow-up system around calls, texts, forms, and DMs so the team knows who needs a callback and what the customer needs.",
       noteTitle: "Practical service note",
       noteDescription:
         "No-water and major pressure issues should be prioritized for human review. Routine maintenance can be organized into available service windows, while large commercial requests should route to the owner."
@@ -566,7 +566,7 @@ export const demoBusinesses = {
       eyebrow: "Why this matters for a small 3-person operation",
       title: "Small teams lose opportunities in the handoff between doing the work and following up.",
       description:
-        "When a small team is doing the work, answering calls, texting customers, quoting jobs, and handling follow-ups, it is easy for opportunities to get lost. LeadOps gives the business a simple system that captures every request, separates urgent jobs from routine maintenance, reminds the team who needs follow-up, and keeps bigger opportunities from getting buried in text threads.",
+        "When a small team is doing the work, answering calls, texting customers, quoting jobs, and handling follow-ups, it is easy for opportunities to get lost. SignalOps gives the business a simple system that captures every request, separates urgent jobs from routine maintenance, reminds the team who needs follow-up, and keeps bigger opportunities from getting buried in text threads.",
       points: [
         "Missed-call text back",
         "Service request intake form",
@@ -639,7 +639,7 @@ export const demoBusinesses = {
       {
         question: "Do customers need a CRM for this to work?",
         answer:
-          "No. LeadOps can start with calls, texts, forms, and DMs, then create a simple dashboard and follow-up process around the current workflow."
+          "No. SignalOps can start with calls, texts, forms, and DMs, then create a simple dashboard and follow-up process around the current workflow."
       },
       {
         question: "What happens when a request is vague?",
@@ -648,7 +648,7 @@ export const demoBusinesses = {
       }
     ],
     leadOpsPanel: {
-      badge: "LeadOps demo workflow",
+      badge: "SignalOps demo workflow",
       title: "What would happen in production?",
       description:
         "Normally this would text the customer, ask for missing address or system details, alert the owner on urgent issues, log the lead, and start maintenance or quote follow-up.",
@@ -671,8 +671,8 @@ export const demoBusinesses = {
         }
       ]
     },
-    whyLeadOpsPanel: {
-      title: "Why this sells LeadOps",
+    whySignalOpsPanel: {
+      title: "Why this sells SignalOps",
       description:
         "A tiny service team does not need extra admin work. It needs a practical system that keeps opportunities from getting missed while the crew is busy.",
       bullets: [
@@ -683,7 +683,7 @@ export const demoBusinesses = {
     },
     form: {
       source: "clearflow-well-water-demo",
-      badge: "LeadOps service intake",
+      badge: "SignalOps service intake",
       title: "Request well or water service help",
       description:
         "This intake keeps a small team organized by capturing the issue, urgency, location, system details, and next follow-up step.",

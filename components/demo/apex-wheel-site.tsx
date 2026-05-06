@@ -40,6 +40,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
             alt={business.heroImage.alt}
             fill
             priority
+            quality={72}
             className="object-cover opacity-48"
             sizes="100vw"
           />
@@ -181,6 +182,8 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
                 alt={business.beforeAfter.image.alt}
                 width={1400}
                 height={720}
+                quality={72}
+                sizes="(min-width: 1024px) 54vw, 100vw"
                 className="h-full w-full object-cover"
               />
             ) : (
@@ -356,13 +359,13 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
 
             <Card className="bg-zinc-900/80">
               <CardHeader>
-                <CardTitle>{business.whyLeadOpsPanel.title}</CardTitle>
+                <CardTitle>{business.whySignalOpsPanel.title}</CardTitle>
                 <CardDescription>
-                  {business.whyLeadOpsPanel.description}
+                  {business.whySignalOpsPanel.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-sm leading-6 text-zinc-300">
-                {business.whyLeadOpsPanel.bullets.map((bullet, index) => {
+                {business.whySignalOpsPanel.bullets.map((bullet, index) => {
                   const Icon = index === 0 ? Clock3 : index === 1 ? MessageSquareText : ShieldCheck;
                   const iconClass = index === 0 ? "text-sky-300" : index === 1 ? "text-emerald-300" : "text-amber-300";
                   return (
@@ -382,7 +385,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xl font-semibold text-white">{business.name}</p>
-            <p className="mt-1 text-sm text-zinc-500">{business.location} | Fictional LeadOps sales demo</p>
+            <p className="mt-1 text-sm text-zinc-500">{business.location} | Fictional SignalOps sales demo</p>
           </div>
           <div className="flex flex-col gap-2 text-sm text-zinc-300 sm:items-end">
             <TrackedLink

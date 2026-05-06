@@ -1,4 +1,4 @@
-# LeadOps SEO QA Checklist
+# SignalOps SEO QA Checklist
 
 Use this checklist before publishing major page changes, launching a new SEO page batch, or deploying to production.
 
@@ -45,7 +45,7 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 
 - Validate JSON-LD with Google's Rich Results Test or Schema.org validator before launch.
 - Confirm Organization and WebSite schema render on the site.
-- Confirm Service schema describes the LeadOps AI Lead Response & Qualification System.
+- Confirm Service schema describes the SignalOps AI Lead Response & Qualification System.
 - Confirm FAQPage schema appears only on pages with visible FAQ content.
 - Confirm BreadcrumbList schema uses real, reachable URLs.
 - Do not use fake reviews, ratings, case studies, or claims in schema.
@@ -55,7 +55,7 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 - Visit `/sitemap.xml` on the preview or production deployment.
 - Confirm important public pages are included:
   - Homepage
-  - Free Missed Lead Checkup page
+  - Free Lead Leak Audit page
   - Service SEO pages
   - Industry SEO pages
   - How-it-works page
@@ -108,7 +108,7 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 
 ## Internal Links
 
-- Every SEO page should link to the Free Missed Lead Checkup.
+- Every SEO page should link to the Free Lead Leak Audit.
 - Every industry page should link to `/live-demo`.
 - Service pages should link to related service/use-case pages.
 - Footer links should include key services and industries without overwhelming the main navigation.
@@ -139,4 +139,4 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 - Avoid fake guarantees or implied results.
 - Use industry-specific examples.
 - Make human review conditions clear for urgent, risky, regulated, or uncertain situations.
-- Keep the primary CTA consistent: `Get a Free Missed Lead Checkup`.
+- Keep the primary CTA consistent: `Get a Free Lead Leak Audit`.

@@ -1,15 +1,15 @@
 export const SITE_CONFIG = {
-  brandName: "LeadOps",
-  name: "LeadOps",
-  tagline: "Every lead answered. Every follow-up handled.",
+  brandName: "SignalOps",
+  name: "SignalOps",
+  tagline: "AI lead response systems for businesses that cannot afford missed leads.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  email: "hello@leadops.ai",
+  email: "hello@signalops.ai",
   description:
-    "LeadOps helps service businesses respond faster, qualify better, follow up consistently, and turn more inquiries into booked appointments."
+    "SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically."
 };
 
 export const PRIMARY_CTA = {
-  label: "Get a Free Missed Lead Checkup",
+  label: "Get a Free Lead Leak Audit",
   href: "/audit"
 };
 
@@ -20,74 +20,74 @@ export const SECONDARY_CTA = {
 
 export const NAV_LINKS = [
   {
-    href: "/",
-    label: "LeadOps"
-  },
-  {
-    href: "/live-demo",
-    label: "Live Demo"
-  },
-  {
-    href: "/audit",
-    label: "Free Checkup"
-  },
-  {
-    href: "/roi-calculator",
-    label: "ROI"
-  },
-  {
     href: "/how-it-works",
     label: "How It Works"
   },
   {
     href: "/demo",
-    label: "Client Demo"
+    label: "Demo"
   },
   {
-    href: "/dashboard",
-    label: "Ops Dashboard"
+    href: "/roi-calculator",
+    label: "ROI Calculator"
+  },
+  {
+    href: "/audit",
+    label: "Free Audit"
   }
 ];
 
 export const SEO_SERVICE_LINKS = [
   {
-    href: "/ai-lead-response",
+    href: "/services/ai-lead-response",
     label: "AI Lead Response"
   },
   {
-    href: "/missed-call-text-back",
-    label: "Missed-Call Text Back"
-  },
-  {
-    href: "/ai-follow-up-automation",
-    label: "AI Follow-Up Automation"
-  },
-  {
-    href: "/ai-lead-qualification",
+    href: "/services/ai-lead-qualification",
     label: "AI Lead Qualification"
   },
   {
-    href: "/lead-management-for-small-business",
-    label: "Small Business Lead Management"
+    href: "/services/automated-lead-follow-up",
+    label: "Automated Follow-Up"
   },
   {
-    href: "/no-crm-lead-tracking",
-    label: "No-CRM Lead Tracking"
+    href: "/services/missed-lead-recovery",
+    label: "Missed Lead Recovery"
+  },
+  {
+    href: "/services/lead-routing-automation",
+    label: "Lead Routing Automation"
+  },
+  {
+    href: "/services/ai-appointment-booking",
+    label: "AI Appointment Booking"
+  },
+  {
+    href: "/services/quote-intake-automation",
+    label: "Quote Intake Automation"
   }
 ];
 
 export const SEO_INDUSTRY_LINKS = [
   {
-    href: "/industries/roofers",
-    label: "Roofers"
+    href: "/industries/wheel-repair",
+    label: "Wheel Repair Shops"
   },
   {
-    href: "/industries/hvac",
-    label: "HVAC"
+    href: "/industries/auto-shops",
+    label: "Auto Shops"
   },
   {
-    href: "/industries/plumbers",
-    label: "Plumbers"
+    href: "/industries/detailers",
+    label: "Detailers"
+  },
+  {
+    href: "/industries/tint-wrap-shops",
+    label: "Tint & Wrap Shops"
+  },
+  {
+    href: "/industries/home-services",
+    label: "Home Services"
   },
   {
     href: "/industries/med-spas",
@@ -96,18 +96,40 @@ export const SEO_INDUSTRY_LINKS = [
   {
     href: "/industries/insurance-agencies",
     label: "Insurance Agencies"
+  }
+];
+
+export const RESOURCE_LINKS = [
+  {
+    href: "/demo",
+    label: "Demo"
   },
   {
-    href: "/industries/auto-shops",
-    label: "Auto Shops"
+    href: "/how-it-works",
+    label: "How It Works"
   },
   {
-    href: "/industries/well-water-service-companies",
-    label: "Well & Water Service"
+    href: "/roi-calculator",
+    label: "ROI Calculator"
   },
   {
-    href: "/industries/wheel-repair",
-    label: "Wheel Repair"
+    href: "/alternatives",
+    label: "Alternatives"
+  },
+  {
+    href: "/audit",
+    label: "Free Lead Leak Audit"
+  }
+];
+
+export const COMPANY_LINKS = [
+  {
+    href: "/privacy",
+    label: "Privacy"
+  },
+  {
+    href: "/terms",
+    label: "Terms"
   }
 ];
 
@@ -117,7 +139,7 @@ export const PACKAGE_NAMES = [
     price: "$750 setup + $300/mo",
     summary: "Install the core response and qualification layer for one lead source.",
     features: [
-      "Missed lead checkup",
+      "Free Lead Leak Audit",
       "Instant reply workflow",
       "Practical lead qualification",
       "Owner or rep alerts"
@@ -176,9 +198,9 @@ export const AI_LEAD_ENGINE_FEATURES = [
   "Dashboard reporting"
 ];
 
-export const LEADOPS_PROCESS = [
+export const SIGNALOPS_PROCESS = [
   {
-    step: "Checkup",
+    step: "Audit",
     description: "Find where calls, texts, forms, DMs, and follow-ups are being missed."
   },
   {
@@ -199,7 +221,7 @@ export const LEADOPS_PROCESS = [
   }
 ];
 
-export const LEADOPS_USE_CASES = [
+export const SIGNALOPS_USE_CASES = [
   "Missed-call text back",
   "Website lead qualification",
   "Appointment request handling",
@@ -215,7 +237,7 @@ export const MARKETING_FAQS = [
   {
     question: "Is this a chatbot?",
     answer:
-      "Not in the usual sense. LeadOps builds the response and follow-up process behind your forms, calls, ads, DMs, email, CRM rules, and alerts. The goal is faster follow-through, not a floating widget."
+      "Not in the usual sense. SignalOps builds the response and follow-up process behind your forms, calls, ads, DMs, email, CRM rules, and alerts. The goal is faster follow-through, not a floating widget."
   },
   {
     question: "Does it replace my team?",
@@ -225,7 +247,7 @@ export const MARKETING_FAQS = [
   {
     question: "What tools do you work with?",
     answer:
-      "LeadOps can be designed around the tools you already use, including websites, forms, CRMs, calendars, email, SMS, spreadsheets, and internal notification channels."
+      "SignalOps can be designed around the tools you already use, including websites, forms, CRMs, calendars, email, SMS, spreadsheets, and internal notification channels."
   },
   {
     question: "How fast can this be installed?",
@@ -235,7 +257,7 @@ export const MARKETING_FAQS = [
   {
     question: "Do I need a CRM?",
     answer:
-      "No, but having one helps. If you do not have a CRM, LeadOps can start with structured lead capture, alerts, follow-up, and reporting while preparing you for a CRM later."
+      "No, but having one helps. If you do not have a CRM, SignalOps can start with structured lead capture, alerts, follow-up, and reporting while preparing you for a CRM later."
   },
   {
     question: "Can it work with my existing website?",
@@ -255,8 +277,8 @@ export const MARKETING_FAQS = [
 ];
 
 export const CONTACT_PLACEHOLDER = {
-  email: "hello@leadops.ai",
-  calendly: "https://calendly.com/leadops/discovery",
+  email: "hello@signalops.ai",
+  calendly: "https://calendly.com/signalops/discovery",
   phone: "+1 (000) 000-0000"
 };
 

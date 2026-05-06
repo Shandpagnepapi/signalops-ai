@@ -169,7 +169,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             <CardDescription>{business.form.description}</CardDescription>
           </div>
           <div className="rounded-md border border-emerald-300/20 bg-emerald-400/10 px-3 py-2 text-xs font-medium text-emerald-100">
-            LeadOps-scored demo
+            SignalOps-scored demo
           </div>
         </div>
       </CardHeader>
@@ -264,7 +264,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-sm font-medium text-sky-100">
                 <Sparkles className="size-4" aria-hidden="true" />
-                LeadOps qualification complete
+                SignalOps qualification complete
               </div>
               <Badge variant={priorityVariant(lead.priority)}>{formatLabel(lead.priority)} priority</Badge>
             </div>

@@ -199,7 +199,7 @@ export function DashboardShell() {
         <Card className="border-blue-300/20 bg-blue-500/10">
           <CardContent className="p-5">
             <p className="text-sm leading-6 text-blue-50">
-              This dashboard is a demo view. In production, LeadOps connects this to your CRM,
+              This dashboard is a demo view. In production, SignalOps connects this to your CRM,
               forms, ads, missed calls, quote requests, photo submissions, and appointment calendar.
             </p>
           </CardContent>

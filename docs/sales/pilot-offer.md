@@ -1,4 +1,4 @@
-# LeadOps Pilot Offer
+# SignalOps Pilot Offer
 
 ## Pilot Positioning
 
@@ -14,7 +14,7 @@ This is a focused pilot to prove one thing quickly: better lead response and fol
 
 ## Deliverables
 
-- Missed lead checkup and implementation map
+- Lead leak audit and implementation map
 - One primary lead-source workflow (form/call/ad/DM)
 - Instant response logic with qualification prompts
 - Lead scoring and routing rules
@@ -24,7 +24,7 @@ This is a focused pilot to prove one thing quickly: better lead response and fol
 
 ## Timeline
 
-- Week 1: Checkup, workflow mapping, tool access, implementation plan
+- Week 1: Audit, workflow mapping, tool access, implementation plan
 - Week 2: Build and configure response, qualification, and routing
 - Week 3: Launch, monitor, and tune
 - Week 4: Performance review and expansion recommendation
@@ -37,7 +37,7 @@ Client responsibilities:
 - Assign a point of contact for decisions
 - Respond quickly to testing feedback
 
-LeadOps responsibilities:
+SignalOps responsibilities:
 - Build practical workflows tied to booking outcomes
 - Keep implementation scope clear and measured
 - Report findings and recommendations transparently

@@ -1,11 +1,11 @@
-# LeadOps Launch Checklist
+# SignalOps Launch Checklist
 
-Use this checklist before making LeadOps publicly accessible. Mark each item complete only after you verify it in a live browser session.
+Use this checklist before making SignalOps publicly accessible. Mark each item complete only after you verify it in a live browser session.
 
 ## 1) Brand Review
 
 - [ ] Logo files load correctly across key pages (`/`, `/demo`, `/audit`, `/dashboard`)
-- [ ] Brand name appears consistently as `LeadOps`
+- [ ] Brand name appears consistently as `SignalOps`
 - [ ] Tagline and offer language match the current brand kit
 - [ ] Colors and typography feel consistent across mobile and desktop
 
@@ -45,7 +45,7 @@ Use this checklist before making LeadOps publicly accessible. Mark each item com
 
 - [ ] Apex Wheel Repair page loads fully (`/demo`)
 - [ ] Service sections and conversion CTAs display correctly
-- [ ] LeadOps demo workflow panel is visible and understandable
+- [ ] SignalOps demo workflow panel is visible and understandable
 - [ ] Demo lead qualification logic appears realistic and useful
 - [ ] No unsafe repair claims (cracked/structural cases route to inspection/replacement guidance)
 
@@ -60,7 +60,7 @@ Use this checklist before making LeadOps publicly accessible. Mark each item com
 ## 8) SEO Metadata
 
 - [ ] Global metadata title/description are set
-- [ ] Route metadata exists for homepage, checkup, demo, dashboard, how-it-works
+- [ ] Route metadata exists for homepage, audit, demo, dashboard, how-it-works
 - [ ] Open Graph image references are valid
 - [ ] Canonical URLs are set where needed
 - [ ] `NEXT_PUBLIC_SITE_URL` is updated for production domain
@@ -100,16 +100,16 @@ Use this checklist before making LeadOps publicly accessible. Mark each item com
 - [ ] Footer contact link opens correctly
 - [ ] Owner alert placeholders updated if using notification integrations
 
-## 13) Calendly and Checkup CTA
+## 13) Calendly and Audit CTA
 
 - [ ] Primary CTA points to `/audit`
 - [ ] Calendly URL env var configured if using direct booking links
-- [ ] Checkup page final CTA works on desktop and mobile
-- [ ] Demo and how-it-works pages include visible path to the Free Missed Lead Checkup
+- [ ] Audit page final CTA works on desktop and mobile
+- [ ] Demo and how-it-works pages include visible path to the Free Lead Leak Audit
 
 ## 14) Test Lead Submission (Final Dry Run)
 
-- [ ] Submit one realistic checkup lead in production preview
+- [ ] Submit one realistic audit lead in production preview
 - [ ] Submit one realistic Apex wheel repair lead in production preview
 - [ ] Confirm scoring, priority, and summary output quality
 - [ ] Confirm dashboard reflects new mock/store data path

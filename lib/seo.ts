@@ -19,43 +19,67 @@ type PageMetadataOptions = {
   imageAlt?: string;
   type?: "website" | "article";
   noIndex?: boolean;
+  absoluteTitle?: boolean;
 };
 
 type JsonLdObject = Record<string, unknown>;
 
-export const SEO_DEFAULT_IMAGE = "/brand/leadops-og.svg";
+export const SEO_DEFAULT_IMAGE = "/og/signalops-default.png";
+
+export const OG_IMAGE_ASSETS = {
+  default: {
+    path: "/og/signalops-default.png",
+    alt: "SignalOps branded social image for AI lead response systems for businesses that cannot afford missed leads."
+  },
+  home: {
+    path: "/og/signalops-home.png",
+    alt: "SignalOps homepage social image for AI lead response and follow-up systems."
+  },
+  audit: {
+    path: "/og/signalops-audit.png",
+    alt: "SignalOps Free Lead Leak Audit social image."
+  },
+  demo: {
+    path: "/og/signalops-demo.png",
+    alt: "SignalOps client demo social image showing AI lead intake, scoring, and routing."
+  },
+  roi: {
+    path: "/og/signalops-roi.png",
+    alt: "SignalOps ROI calculator social image for missed lead revenue estimates."
+  }
+} as const;
 
 export const PAGE_TITLE_TEMPLATES = {
-  home: "AI Lead Response & Qualification Systems",
-  audit: "Free Missed Lead Checkup",
-  demo: "Client Demo: AI Lead Intake Examples",
-  dashboard: "Demo Lead Operations Dashboard",
-  howItWorks: "How the LeadOps AI Lead Engine Works",
-  liveDemo: "Live AI Demo Generator",
-  roi: "Lead Response ROI Calculator",
+  home: "AI Lead Response Systems for Local Businesses",
+  audit: "Free Lead Leak Audit for AI Lead Response",
+  demo: "AI Lead Response Demo for Local Service Businesses",
+  dashboard: "AI Lead Management Dashboard Demo",
+  howItWorks: "How AI Lead Response Systems Work",
+  liveDemo: "AI Lead Response Live Demo Generator",
+  roi: "AI Lead Response ROI Calculator",
   privacy: "Privacy Policy",
   terms: "Terms of Use"
 } as const;
 
 export const META_DESCRIPTION_TEMPLATES = {
   home:
-    "LeadOps helps service businesses answer every lead, qualify prospects, follow up consistently, and turn more inquiries into booked appointments.",
+    "SignalOps helps local and service businesses respond to leads instantly, qualify prospects automatically, and follow up before opportunities go cold.",
   audit:
-    "Get a free LeadOps checkup of how your business handles calls, texts, forms, DMs, and follow-ups.",
+    "Get a Free Lead Leak Audit from SignalOps to find gaps in AI lead response, lead qualification, automated follow-up, routing, and missed lead recovery.",
   demo:
-    "Explore tailored LeadOps client demos for Apex Wheel Repair and ClearFlow Well & Water Services with AI-powered intake, scoring, routing, and follow-up.",
+    "See SignalOps AI lead response demos for Apex Wheel Repair and ClearFlow with quote intake automation, lead qualification, routing, and follow-up.",
   dashboard:
-    "A public demo of the LeadOps lead operations dashboard for AI-qualified service business leads.",
+    "Explore a SignalOps AI lead management dashboard demo with lead scores, routing status, missed lead recovery, and automated follow-up visibility.",
   howItWorks:
-    "See how LeadOps captures leads, responds instantly, qualifies prospects, routes hot opportunities, books appointments, and updates the dashboard.",
+    "See how SignalOps AI lead response systems capture inquiries, qualify leads, route hot opportunities, book appointments, and trigger follow-up.",
   liveDemo:
-    "Generate a tailored LeadOps lead response, qualification, routing, follow-up, and dashboard preview for a prospect in real time.",
+    "Generate a tailored SignalOps AI lead response demo with lead qualification, routing automation, follow-up examples, and appointment booking ideas.",
   roi:
-    "Estimate potential revenue impact from improving lead response speed, qualification, and follow-up.",
+    "Use the SignalOps ROI calculator to estimate missed lead recovery from faster response, AI lead qualification, and automated follow-up.",
   privacy:
-    "How LeadOps collects, uses, and protects information submitted through the website and lead forms.",
+    "Read how SignalOps handles website, analytics, and lead form information submitted through its AI lead response system pages.",
   terms:
-    "Terms governing use of the LeadOps website, demos, and service information."
+    "Review the terms for using the SignalOps website, demos, AI lead response examples, and service information."
 } as const;
 
 export function getSiteUrl() {
@@ -72,7 +96,7 @@ export function absoluteUrl(path = "/") {
 }
 
 export function formatPageTitle(title: string) {
-  return `${title} | ${SITE_CONFIG.name}`;
+  return `${SITE_CONFIG.name} | ${title}`;
 }
 
 export function createCanonical(path: string) {
@@ -84,12 +108,14 @@ export function createPageMetadata({
   description,
   path,
   image = SEO_DEFAULT_IMAGE,
-  imageAlt = "LeadOps AI lead operations studio",
+  imageAlt = OG_IMAGE_ASSETS.default.alt,
   type = "website",
-  noIndex = false
+  noIndex = false,
+  absoluteTitle = false
 }: PageMetadataOptions): Metadata {
   const canonical = createCanonical(path);
   const imageUrl = absoluteUrl(image);
+  const socialTitle = absoluteTitle ? title : formatPageTitle(title);
   const robots = noIndex
     ? {
         index: false,
@@ -102,13 +128,13 @@ export function createPageMetadata({
     : undefined;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical
     },
     openGraph: {
-      title: formatPageTitle(title),
+      title: socialTitle,
       description,
       url: canonical,
       siteName: SITE_CONFIG.name,
@@ -125,9 +151,14 @@ export function createPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: formatPageTitle(title),
+      title: socialTitle,
       description,
-      images: [imageUrl]
+      images: [
+        {
+          url: imageUrl,
+          alt: imageAlt
+        }
+      ]
     },
     robots
   };
@@ -138,7 +169,7 @@ export function createRootMetadata(): Metadata {
     metadataBase: new URL(getSiteUrl()),
     title: {
       default: formatPageTitle(PAGE_TITLE_TEMPLATES.home),
-      template: `%s | ${SITE_CONFIG.name}`
+      template: `${SITE_CONFIG.name} | %s`
     },
     description: META_DESCRIPTION_TEMPLATES.home,
     openGraph: {
@@ -151,7 +182,7 @@ export function createRootMetadata(): Metadata {
           url: absoluteUrl(SEO_DEFAULT_IMAGE),
           width: 1200,
           height: 630,
-          alt: "LeadOps AI lead operations studio"
+          alt: OG_IMAGE_ASSETS.default.alt
         }
       ],
       locale: "en_US",
@@ -161,7 +192,12 @@ export function createRootMetadata(): Metadata {
       card: "summary_large_image",
       title: formatPageTitle(PAGE_TITLE_TEMPLATES.home),
       description: META_DESCRIPTION_TEMPLATES.home,
-      images: [absoluteUrl(SEO_DEFAULT_IMAGE)]
+      images: [
+        {
+          url: absoluteUrl(SEO_DEFAULT_IMAGE),
+          alt: OG_IMAGE_ASSETS.default.alt
+        }
+      ]
     }
   };
 }
@@ -173,7 +209,7 @@ export function organizationJsonLd(): JsonLdObject {
     "@id": absoluteUrl("/#organization"),
     name: SITE_CONFIG.name,
     url: getSiteUrl(),
-    logo: absoluteUrl("/brand/leadops-logo-horizontal.svg"),
+    logo: absoluteUrl("/brand/signalops-logo-horizontal.svg"),
     description: SITE_CONFIG.description,
     email: SITE_CONFIG.email,
     contactPoint: [
@@ -224,7 +260,52 @@ export function serviceJsonLd(): JsonLdObject {
       audienceType: "Small and mid-sized local service businesses"
     },
     description:
-      "LeadOps builds AI-assisted lead response systems that capture, answer, qualify, follow up with, route, and organize inbound leads for service businesses.",
+      "SignalOps builds AI-powered lead response systems that help small and local businesses capture, answer, qualify, follow up with, route, and book more leads automatically.",
+    offers: PACKAGE_NAMES.map((pkg) => ({
+      "@type": "Offer",
+      name: pkg.name,
+      description: pkg.summary,
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "USD",
+        description: pkg.price
+      },
+      availability: "https://schema.org/InStock",
+      url: absoluteUrl("/audit")
+    }))
+  };
+}
+
+export function serviceOfferingJsonLd({
+  name,
+  description,
+  path,
+  serviceType
+}: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType: string;
+}): JsonLdObject {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": absoluteUrl(`${path}#service`),
+    name,
+    serviceType,
+    url: absoluteUrl(path),
+    provider: {
+      "@id": absoluteUrl("/#organization")
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States"
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Small and local service businesses"
+    },
+    description,
     offers: PACKAGE_NAMES.map((pkg) => ({
       "@type": "Offer",
       name: pkg.name,
@@ -243,18 +324,20 @@ export function serviceJsonLd(): JsonLdObject {
 export function webPageJsonLd({
   title,
   description,
-  path
+  path,
+  absoluteTitle = false
 }: {
   title: string;
   description: string;
   path: string;
+  absoluteTitle?: boolean;
 }): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": absoluteUrl(`${path}#webpage`),
     url: absoluteUrl(path),
-    name: formatPageTitle(title),
+    name: absoluteTitle ? title : formatPageTitle(title),
     description,
     isPartOf: {
       "@id": absoluteUrl("/#website")

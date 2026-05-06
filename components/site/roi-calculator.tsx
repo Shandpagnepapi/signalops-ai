@@ -14,7 +14,7 @@ type CalculatorInputs = {
   currentCloseRate: number;
   missedLeadPercentage: number;
   expectedImprovementPercentage: number;
-  monthlyLeadOpsCost: number;
+  monthlySignalOpsCost: number;
 };
 
 type SuggestedPackage = {
@@ -28,7 +28,7 @@ const initialInputs: CalculatorInputs = {
   currentCloseRate: 28,
   missedLeadPercentage: 20,
   expectedImprovementPercentage: 25,
-  monthlyLeadOpsCost: 750
+  monthlySignalOpsCost: 750
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -112,8 +112,8 @@ export function RoiCalculator() {
     const estimatedRecoveredRevenue = estimatedRecoveredLeads * closeRate * inputs.averageCustomerValue;
 
     const estimatedRoi =
-      inputs.monthlyLeadOpsCost > 0
-        ? ((estimatedRecoveredRevenue - inputs.monthlyLeadOpsCost) / inputs.monthlyLeadOpsCost) * 100
+      inputs.monthlySignalOpsCost > 0
+        ? ((estimatedRecoveredRevenue - inputs.monthlySignalOpsCost) / inputs.monthlySignalOpsCost) * 100
         : 0;
 
     const suggestedPackage = getSuggestedPackage(inputs, estimatedRecoveredRevenue);
@@ -137,7 +137,7 @@ export function RoiCalculator() {
               Estimate how much slow response and weak follow-up may be costing you.
             </h1>
             <p className="mt-4 text-base leading-7 text-slate-300">
-              Use conservative inputs to model missed revenue, likely recovered leads, and whether a LeadOps package could make financial sense.
+              Use conservative inputs to model missed revenue, likely recovered leads, and whether a SignalOps package could make financial sense.
             </p>
           </div>
 
@@ -208,11 +208,11 @@ export function RoiCalculator() {
               onChange={(value) => updateInput("expectedImprovementPercentage", value)}
             />
             <InputField
-              label="Monthly LeadOps cost ($)"
+              label="Monthly SignalOps cost ($)"
               type="number"
               min={0}
-              value={inputs.monthlyLeadOpsCost}
-              onChange={(value) => updateInput("monthlyLeadOpsCost", value)}
+              value={inputs.monthlySignalOpsCost}
+              onChange={(value) => updateInput("monthlySignalOpsCost", value)}
             />
           </div>
         </section>
@@ -281,7 +281,7 @@ export function RoiCalculator() {
             2) Estimated current missed revenue = estimated missed leads x current close rate x average customer value.
             3) Estimated recovered leads = estimated missed leads x expected improvement percentage.
             4) Estimated recovered revenue = estimated recovered leads x current close rate x average customer value.
-            5) Estimated ROI = (estimated recovered revenue - monthly LeadOps cost) / monthly LeadOps cost.
+            5) Estimated ROI = (estimated recovered revenue - monthly SignalOps cost) / monthly SignalOps cost.
           </p>
           <p className="mt-3 flex gap-2 text-sm leading-6 text-slate-400">
             <Info className="mt-0.5 size-4 shrink-0 text-slate-500" aria-hidden="true" />

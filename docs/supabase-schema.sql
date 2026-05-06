@@ -1,5 +1,5 @@
--- LeadOps Supabase schema
--- Run this in the Supabase SQL editor for the project that backs LeadOps.
+-- SignalOps Supabase schema
+-- Run this in the Supabase SQL editor for the project that backs SignalOps.
 -- The app writes through the server-only service role key. No anon policies are
 -- added here, so browser clients cannot read or write these tables directly.
 
@@ -140,5 +140,5 @@ using (true)
 with check (true);
 
 -- Anonymous visitors can submit leads, but they cannot read lead data back.
--- Server-side LeadOps API routes should use SUPABASE_SERVICE_ROLE_KEY for
+-- Server-side SignalOps API routes should use SUPABASE_SERVICE_ROLE_KEY for
 -- privileged reads, dashboard access, and status updates in production.
