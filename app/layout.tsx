@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { AnalyticsProvider } from "@/components/site/AnalyticsProvider";
 import { Footer } from "@/components/site/footer";
 import { Navbar } from "@/components/site/navbar";
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body className="antialiased">
         <AnalyticsProvider />
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonLdScript([
