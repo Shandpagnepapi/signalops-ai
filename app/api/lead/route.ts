@@ -2,10 +2,13 @@ import { NextResponse } from "next/server";
 import { runLeadAutomation, type LeadAutomationResult } from "@/lib/integrations/notifications";
 import { createLead, getLeadById, listLeads } from "@/lib/lead-store";
 import type { LeadSubmission, LeadSubmissionDraft } from "@/lib/lead-scoring";
+import { enforceRateLimit, parseLimitedJsonBody } from "@/lib/server/request-guards";
 
 type IncomingPayload = Record<string, unknown>;
 
 const VALID_DRIVABLE_VALUES = ["yes", "no", "unsure", ""] as const;
+const MAX_LEAD_PAYLOAD_BYTES = 20_000;
+const INTERNAL_TOKEN_HEADER = "x-signalops-internal-token";
 
 function isRecord(value: unknown): value is IncomingPayload {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -204,7 +207,47 @@ function responseForLead(lead: LeadSubmission, automation?: LeadAutomationResult
   };
 }
 
+function validateInternalRequest(request: Request) {
+  const configuredToken = process.env.SIGNALOPS_INTERNAL_TOKEN?.trim();
+  const providedToken = request.headers.get(INTERNAL_TOKEN_HEADER)?.trim();
+
+  if (!configuredToken) {
+    return NextResponse.json(
+      {
+        error: "Lead reads are disabled until internal API authentication is configured."
+      },
+      { status: 403 }
+    );
+  }
+
+  if (!providedToken) {
+    return NextResponse.json(
+      {
+        error: "Internal token is required."
+      },
+      { status: 401 }
+    );
+  }
+
+  if (providedToken !== configuredToken) {
+    return NextResponse.json(
+      {
+        error: "Invalid internal token."
+      },
+      { status: 403 }
+    );
+  }
+
+  return null;
+}
+
 export async function GET(request: Request) {
+  const unauthorizedResponse = validateInternalRequest(request);
+
+  if (unauthorizedResponse) {
+    return unauthorizedResponse;
+  }
+
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
 
@@ -226,20 +269,27 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  let payload: unknown;
+  const rateLimitResponse = enforceRateLimit(request, "lead-submission", {
+    maxRequests: 10,
+    windowMs: 60_000
+  });
 
-  try {
-    payload = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON payload." }, { status: 400 });
+  if (rateLimitResponse) {
+    return rateLimitResponse;
   }
 
-  if (!isRecord(payload)) {
+  const body = await parseLimitedJsonBody(request, MAX_LEAD_PAYLOAD_BYTES);
+
+  if (!body.ok) {
+    return body.response;
+  }
+
+  if (!isRecord(body.payload)) {
     return NextResponse.json({ error: "Request body must be a JSON object." }, { status: 400 });
   }
 
-  const normalizedLead = normalizePayload(payload);
-  const validationErrors = validateLead(payload, normalizedLead);
+  const normalizedLead = normalizePayload(body.payload);
+  const validationErrors = validateLead(body.payload, normalizedLead);
 
   if (validationErrors.length > 0) {
     return NextResponse.json(

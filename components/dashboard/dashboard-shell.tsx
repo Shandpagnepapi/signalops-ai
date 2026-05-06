@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import type { LeadSubmission } from "@/lib/lead-scoring";
-import { apexDashboardLeads, type ApexDashboardLead, type DashboardLeadStatus } from "@/lib/mock-data";
+import { apexDashboardLeads } from "@/lib/mock-data";
 import { DashboardFilters } from "./dashboard-filters";
 import { DashboardMetrics } from "./dashboard-metrics";
 import {
@@ -17,150 +16,11 @@ import { LeadDetailCard } from "./lead-detail-card";
 import { LeadPipeline } from "./lead-pipeline";
 import { LeadTable } from "./lead-table";
 
-type LeadListResponse = {
-  leads?: LeadSubmission[];
-};
-
-function titleCase(value: string) {
-  return value
-    .replace(/[-_]+/g, " ")
-    .split(" ")
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-}
-
-function isWheelRepairLead(lead: LeadSubmission) {
-  const text = [
-    lead.source,
-    lead.businessName,
-    lead.industry,
-    lead.serviceNeeded,
-    lead.damageType,
-    lead.tags.join(" ")
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  return text.includes("apex") || text.includes("wheel");
-}
-
-function mapLeadStatus(lead: LeadSubmission): DashboardLeadStatus {
-  if (lead.status === "booked") {
-    return "booked";
-  }
-
-  if (lead.status === "closed") {
-    return "won";
-  }
-
-  if (lead.status === "archived") {
-    return "lost";
-  }
-
-  if (lead.tags.some((tag) => tag.includes("photo") || tag === "needs-photos")) {
-    return "needs-photos";
-  }
-
-  if (lead.score >= 75) {
-    return "qualified";
-  }
-
-  return lead.status === "contacted" ? "contacted" : "new";
-}
-
-function mapApiLead(lead: LeadSubmission): ApexDashboardLead {
-  const urgency = lead.aiQualification?.urgency ?? "unknown";
-  const summary = lead.aiQualification?.summary ?? lead.aiSummary;
-
-  return {
-    id: lead.id,
-    name: lead.name,
-    email: lead.email,
-    phone: lead.phone,
-    source: titleCase(lead.source || "API lead"),
-    vehicle: lead.vehicleYearMakeModel || "Vehicle not provided",
-    wheelSize: lead.wheelSize,
-    damageType: lead.serviceNeeded || titleCase(lead.damageType || "Wheel repair"),
-    numberOfWheels: lead.numberOfWheels || 1,
-    vehicleDrivable: lead.vehicleDrivable || "unsure",
-    needsMobileService: lead.needsMobileService === "yes",
-    address: lead.address || "Not provided",
-    score: lead.score,
-    priority: lead.priority,
-    urgency,
-    status: mapLeadStatus(lead),
-    createdAt: lead.createdAt,
-    preferredTime: lead.preferredTime,
-    message: lead.message || "No customer message provided.",
-    summary,
-    recommendedAction: lead.recommendedAction,
-    customerReply: lead.customerReply,
-    internalNote: lead.internalNote,
-    tags: lead.tags,
-    timeline: [
-      {
-        time: "API",
-        event: "Lead received from /api/lead"
-      },
-      {
-        time: "AI",
-        event: `Qualified as ${lead.priority} priority with ${urgency} urgency`
-      },
-      {
-        time: "Next",
-        event: lead.recommendedAction
-      }
-    ]
-  };
-}
-
 export function DashboardShell() {
   const [filters, setFilters] = useState<DashboardFiltersState>(defaultDashboardFilters);
   const [selectedLeadId, setSelectedLeadId] = useState(apexDashboardLeads[0]?.id ?? "");
-  const [apiLeads, setApiLeads] = useState<ApexDashboardLead[]>([]);
-  const [apiStatus, setApiStatus] = useState<"idle" | "connected" | "unavailable">("idle");
 
-  useEffect(() => {
-    let active = true;
-
-    async function loadApiLeads() {
-      try {
-        const response = await fetch("/api/lead", {
-          cache: "no-store"
-        });
-
-        if (!response.ok) {
-          throw new Error("Lead API unavailable");
-        }
-
-        const payload = (await response.json()) as LeadListResponse;
-        const mappedLeads = (payload.leads ?? [])
-          .filter(isWheelRepairLead)
-          .map(mapApiLead);
-
-        if (active) {
-          setApiLeads(mappedLeads);
-          setApiStatus("connected");
-        }
-      } catch {
-        if (active) {
-          setApiStatus("unavailable");
-        }
-      }
-    }
-
-    void loadApiLeads();
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  const allLeads = useMemo(() => {
-    const apiLeadIds = new Set(apiLeads.map((lead) => lead.id));
-    return [...apiLeads, ...apexDashboardLeads.filter((lead) => !apiLeadIds.has(lead.id))];
-  }, [apiLeads]);
+  const allLeads = apexDashboardLeads;
 
   const filteredLeads = useMemo(() => filterLeads(allLeads, filters), [allLeads, filters]);
   const selectedLead = filteredLeads.find((lead) => lead.id === selectedLeadId) ?? filteredLeads[0] ?? null;
@@ -183,9 +43,7 @@ export function DashboardShell() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              <Badge variant={apiStatus === "connected" ? "success" : "outline"}>
-                {apiStatus === "connected" ? "Lead API connected" : "Mock data ready"}
-              </Badge>
+              <Badge variant="success">Demo data only</Badge>
               <Badge variant="outline">Dallas wheel repair</Badge>
               <Badge variant="outline">No live messages sent</Badge>
             </div>
@@ -199,8 +57,9 @@ export function DashboardShell() {
         <Card className="border-blue-300/20 bg-blue-500/10">
           <CardContent className="p-5">
             <p className="text-sm leading-6 text-blue-50">
-              This dashboard is a demo view. In production, SignalOps connects this to your CRM,
-              forms, ads, missed calls, quote requests, photo submissions, and appointment calendar.
+              This public dashboard uses mock Apex Wheel Repair data only. Production lead records
+              stay behind internal access, while real client installs connect securely to CRM,
+              forms, ads, missed calls, quote requests, photo submissions, and calendars.
             </p>
           </CardContent>
         </Card>

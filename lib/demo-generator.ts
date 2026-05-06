@@ -1,3 +1,5 @@
+import "server-only";
+
 import { PACKAGE_NAMES } from "@/lib/constants";
 import {
   getDemoTemplate,

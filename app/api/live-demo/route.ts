@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { generateLiveDemo, normalizeLiveDemoInput, type LiveDemoInput } from "@/lib/demo-generator";
+import { enforceRateLimit, parseLimitedJsonBody } from "@/lib/server/request-guards";
 
 type IncomingPayload = Record<string, unknown>;
+
+const MAX_LIVE_DEMO_PAYLOAD_BYTES = 16_000;
 
 function isRecord(value: unknown): value is IncomingPayload {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -76,19 +79,26 @@ function validateInput(input: LiveDemoInput) {
 }
 
 export async function POST(request: Request) {
-  let payload: unknown;
+  const rateLimitResponse = enforceRateLimit(request, "live-demo", {
+    maxRequests: 6,
+    windowMs: 60_000
+  });
 
-  try {
-    payload = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON payload." }, { status: 400 });
+  if (rateLimitResponse) {
+    return rateLimitResponse;
   }
 
-  if (!isRecord(payload)) {
+  const body = await parseLimitedJsonBody(request, MAX_LIVE_DEMO_PAYLOAD_BYTES);
+
+  if (!body.ok) {
+    return body.response;
+  }
+
+  if (!isRecord(body.payload)) {
     return NextResponse.json({ error: "Request body must be a JSON object." }, { status: 400 });
   }
 
-  const input = buildInput(payload);
+  const input = buildInput(body.payload);
   const errors = validateInput(input);
 
   if (errors.length > 0) {

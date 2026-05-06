@@ -37,8 +37,10 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 
 - [ ] `POST /api/lead` accepts valid payloads
 - [ ] `POST /api/lead` rejects invalid/empty payloads with useful errors
-- [ ] `GET /api/lead` returns a lead list
-- [ ] `GET /api/lead?id=...` returns a specific lead when available
+- [ ] Public `GET /api/lead` is blocked without internal auth
+- [ ] Public `GET /api/lead?id=...` is blocked without internal auth
+- [ ] Internal lead reads require `x-signalops-internal-token`
+- [ ] Public lead and live demo APIs return friendly rate-limit errors when abused
 - [ ] Fallback behavior works when optional integrations are not configured
 
 ## 6) Demo Testing
@@ -52,6 +54,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 ## 7) Dashboard Testing
 
 - [ ] `/dashboard` loads without errors
+- [ ] `/dashboard` only displays demo/mock data publicly
 - [ ] KPI cards show realistic values
 - [ ] Pipeline columns render correctly
 - [ ] Lead table supports filtering and detail inspection

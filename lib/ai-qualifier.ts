@@ -1,3 +1,5 @@
+import "server-only";
+
 import { scoreLead, type LeadSubmissionDraft, type QualifiedLeadResult } from "@/lib/lead-scoring";
 
 export type { QualifiedLeadResult };
