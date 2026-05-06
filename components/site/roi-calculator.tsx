@@ -1,0 +1,343 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, TrendingUp } from "lucide-react";
+import { TrackedLink } from "@/components/site/tracked-link";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { PACKAGE_NAMES, PRIMARY_CTA } from "@/lib/constants";
+
+type CalculatorInputs = {
+  monthlyLeads: number;
+  averageCustomerValue: number;
+  currentCloseRate: number;
+  missedLeadPercentage: number;
+  expectedImprovementPercentage: number;
+  monthlyLeadOpsCost: number;
+};
+
+type SuggestedPackage = {
+  name: string;
+  reason: string;
+};
+
+const initialInputs: CalculatorInputs = {
+  monthlyLeads: 120,
+  averageCustomerValue: 1200,
+  currentCloseRate: 28,
+  missedLeadPercentage: 20,
+  expectedImprovementPercentage: 25,
+  monthlyLeadOpsCost: 750
+};
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function formatCurrency(value: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0
+  }).format(value);
+}
+
+function formatNumber(value: number) {
+  return new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 1
+  }).format(value);
+}
+
+function formatPercent(value: number) {
+  return `${formatNumber(value)}%`;
+}
+
+function getSuggestedPackage(inputs: CalculatorInputs, recoveredRevenue: number): SuggestedPackage {
+  if (inputs.monthlyLeads <= 70 || recoveredRevenue <= 2500) {
+    return {
+      name: PACKAGE_NAMES[0]?.name ?? "Starter",
+      reason: "Good fit when lead volume is moderate and you want one clean response + follow-up system first."
+    };
+  }
+
+  if (inputs.monthlyLeads <= 200 || recoveredRevenue <= 10000) {
+    return {
+      name: PACKAGE_NAMES[1]?.name ?? "Growth",
+      reason: "Best fit when multiple lead sources need qualification, routing, and repeatable follow-up."
+    };
+  }
+
+  return {
+    name: PACKAGE_NAMES[2]?.name ?? "Custom Agent System",
+    reason: "Best fit for higher-volume teams that need deeper automation, integrations, and custom workflows."
+  };
+}
+
+function parseNumber(value: string) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+export function RoiCalculator() {
+  const [inputs, setInputs] = useState<CalculatorInputs>(initialInputs);
+
+  function updateInput<Key extends keyof CalculatorInputs>(key: Key, value: string) {
+    const parsed = parseNumber(value);
+
+    setInputs((current) => {
+      if (key === "currentCloseRate" || key === "missedLeadPercentage" || key === "expectedImprovementPercentage") {
+        return {
+          ...current,
+          [key]: clamp(parsed, 0, 100)
+        };
+      }
+
+      return {
+        ...current,
+        [key]: clamp(parsed, 0, 1000000)
+      };
+    });
+  }
+
+  const results = useMemo(() => {
+    const closeRate = inputs.currentCloseRate / 100;
+    const missedLeadRate = inputs.missedLeadPercentage / 100;
+    const improvementRate = inputs.expectedImprovementPercentage / 100;
+
+    const estimatedMissedLeads = inputs.monthlyLeads * missedLeadRate;
+    const estimatedCurrentMissedRevenue = estimatedMissedLeads * closeRate * inputs.averageCustomerValue;
+
+    const estimatedRecoveredLeads = estimatedMissedLeads * improvementRate;
+    const estimatedRecoveredRevenue = estimatedRecoveredLeads * closeRate * inputs.averageCustomerValue;
+
+    const estimatedRoi =
+      inputs.monthlyLeadOpsCost > 0
+        ? ((estimatedRecoveredRevenue - inputs.monthlyLeadOpsCost) / inputs.monthlyLeadOpsCost) * 100
+        : 0;
+
+    const suggestedPackage = getSuggestedPackage(inputs, estimatedRecoveredRevenue);
+
+    return {
+      estimatedCurrentMissedRevenue,
+      estimatedRecoveredLeads,
+      estimatedRecoveredRevenue,
+      estimatedRoi,
+      suggestedPackage
+    };
+  }, [inputs]);
+
+  return (
+    <div className="overflow-x-hidden">
+      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(47,124,255,0.14),rgba(6,12,24,0))]">
+        <div className="surface-grid mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
+          <div className="max-w-3xl">
+            <Badge className="mb-4 bg-blue-500/14 text-blue-100">ROI calculator</Badge>
+            <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
+              Estimate how much slow response and weak follow-up may be costing you.
+            </h1>
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              Use conservative inputs to model missed revenue, likely recovered leads, and whether a LeadOps package could make financial sense.
+            </p>
+          </div>
+
+          <div className="rounded-lg border border-blue-300/20 bg-slate-950/78 p-5 shadow-2xl shadow-black/20">
+            <p className="text-sm font-semibold text-white">What this estimates</p>
+            <div className="mt-4 grid gap-3">
+              {[
+                "How many leads may be slipping between inquiry and follow-up",
+                "How much revenue could be recovered from cleaner response habits",
+                "Which package is most realistic for your current lead volume"
+              ].map((item) => (
+                <div key={item} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
+                  <p className="text-sm leading-6 text-slate-300">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
+        <section className="rounded-lg border border-white/10 bg-slate-950/76 p-6" aria-labelledby="roi-inputs">
+          <div className="mb-6 flex items-center gap-2">
+            <Calculator className="size-4 text-blue-200" aria-hidden="true" />
+            <h2 id="roi-inputs" className="text-lg font-semibold text-white">
+              Inputs
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <InputField
+              label="Monthly leads"
+              type="number"
+              min={0}
+              value={inputs.monthlyLeads}
+              onChange={(value) => updateInput("monthlyLeads", value)}
+            />
+            <InputField
+              label="Average customer value ($)"
+              type="number"
+              min={0}
+              value={inputs.averageCustomerValue}
+              onChange={(value) => updateInput("averageCustomerValue", value)}
+            />
+            <InputField
+              label="Current close rate (%)"
+              type="number"
+              min={0}
+              max={100}
+              value={inputs.currentCloseRate}
+              onChange={(value) => updateInput("currentCloseRate", value)}
+            />
+            <InputField
+              label="Estimated missed lead percentage (%)"
+              type="number"
+              min={0}
+              max={100}
+              value={inputs.missedLeadPercentage}
+              onChange={(value) => updateInput("missedLeadPercentage", value)}
+            />
+            <InputField
+              label="Expected improvement percentage (%)"
+              type="number"
+              min={0}
+              max={100}
+              value={inputs.expectedImprovementPercentage}
+              onChange={(value) => updateInput("expectedImprovementPercentage", value)}
+            />
+            <InputField
+              label="Monthly LeadOps cost ($)"
+              type="number"
+              min={0}
+              value={inputs.monthlyLeadOpsCost}
+              onChange={(value) => updateInput("monthlyLeadOpsCost", value)}
+            />
+          </div>
+        </section>
+
+        <section className="rounded-lg border border-blue-300/20 bg-blue-500/10 p-6" aria-labelledby="roi-outputs">
+          <div className="mb-6 flex items-center gap-2">
+            <CircleDollarSign className="size-4 text-blue-100" aria-hidden="true" />
+            <h2 id="roi-outputs" className="text-lg font-semibold text-white">
+              Estimated outputs
+            </h2>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <OutputTile
+              label="Estimated current missed revenue"
+              value={formatCurrency(results.estimatedCurrentMissedRevenue)}
+            />
+            <OutputTile
+              label="Estimated recovered leads"
+              value={formatNumber(results.estimatedRecoveredLeads)}
+            />
+            <OutputTile
+              label="Estimated recovered revenue"
+              value={formatCurrency(results.estimatedRecoveredRevenue)}
+            />
+            <OutputTile
+              label="Estimated ROI"
+              value={formatPercent(results.estimatedRoi)}
+              tone={results.estimatedRoi >= 0 ? "positive" : "neutral"}
+            />
+          </div>
+
+          <div className="mt-5 rounded-md border border-white/10 bg-slate-950/60 p-4">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">Suggested package</p>
+            <p className="mt-2 text-lg font-semibold text-white">{results.suggestedPackage.name}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">{results.suggestedPackage.reason}</p>
+          </div>
+
+          <p className="mt-5 text-sm leading-6 text-blue-50">
+            This calculator is an estimate only. Actual results depend on your offer, market, sales process,
+            response quality, and follow-up.
+          </p>
+
+          <TrackedLink
+            href={PRIMARY_CTA.href}
+            eventName={ANALYTICS_EVENTS.auditCtaClicked}
+            eventProperties={{ location: "roi_calculator" }}
+            className={`${buttonVariants({ size: "lg" })} mt-6 w-full sm:w-auto`}
+          >
+            {PRIMARY_CTA.label}
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </TrackedLink>
+        </section>
+      </div>
+
+      <section className="mx-auto mb-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-lg border border-white/10 bg-slate-950/68 p-6" aria-labelledby="roi-math">
+          <div className="mb-4 flex items-center gap-2">
+            <TrendingUp className="size-4 text-cyan-200" aria-hidden="true" />
+            <h2 id="roi-math" className="text-lg font-semibold text-white">
+              How the math works
+            </h2>
+          </div>
+          <p className="text-sm leading-7 text-slate-300">
+            1) Estimated missed leads = monthly leads x missed lead percentage.
+            2) Estimated current missed revenue = estimated missed leads x current close rate x average customer value.
+            3) Estimated recovered leads = estimated missed leads x expected improvement percentage.
+            4) Estimated recovered revenue = estimated recovered leads x current close rate x average customer value.
+            5) Estimated ROI = (estimated recovered revenue - monthly LeadOps cost) / monthly LeadOps cost.
+          </p>
+          <p className="mt-3 flex gap-2 text-sm leading-6 text-slate-400">
+            <Info className="mt-0.5 size-4 shrink-0 text-slate-500" aria-hidden="true" />
+            We use your current close rate in both baseline and recovered scenarios to keep the estimate conservative.
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function InputField({
+  label,
+  type,
+  min,
+  max,
+  value,
+  onChange
+}: {
+  label: string;
+  type: "number";
+  min: number;
+  max?: number;
+  value: number;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="grid gap-2 text-sm font-medium text-slate-200">
+      {label}
+      <input
+        type={type}
+        min={min}
+        max={max}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="h-11 w-full rounded-md border border-input bg-slate-950/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      />
+    </label>
+  );
+}
+
+function OutputTile({
+  label,
+  value,
+  tone = "neutral"
+}: {
+  label: string;
+  value: string;
+  tone?: "neutral" | "positive";
+}) {
+  return (
+    <div className="rounded-md border border-white/10 bg-slate-950/60 p-4">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">{label}</p>
+      <p className={`mt-2 text-2xl font-semibold ${tone === "positive" ? "text-emerald-200" : "text-white"}`}>
+        {value}
+      </p>
+    </div>
+  );
+}

@@ -1,0 +1,49 @@
+import { DemoBusinessSwitcher } from "@/components/demo/demo-business-switcher";
+import { demoBusinesses } from "@/lib/demo-businesses";
+import {
+  breadcrumbJsonLd,
+  createPageMetadata,
+  faqPageJsonLd,
+  jsonLdScript,
+  META_DESCRIPTION_TEMPLATES,
+  PAGE_TITLE_TEMPLATES,
+  webPageJsonLd
+} from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: PAGE_TITLE_TEMPLATES.demo,
+  description: META_DESCRIPTION_TEMPLATES.demo,
+  path: "/demo",
+  image: "/demo/apex-wheel-hero.png",
+  imageAlt: "LeadOps client demo showing AI lead intake and qualification"
+});
+
+export default function DemoPage() {
+  const demoFaqs = Object.values(demoBusinesses).flatMap((business) =>
+    business.faqs.map((faq) => ({
+      question: `${business.name}: ${faq.question}`,
+      answer: faq.answer
+    }))
+  );
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript([
+          webPageJsonLd({
+            title: PAGE_TITLE_TEMPLATES.demo,
+            description: META_DESCRIPTION_TEMPLATES.demo,
+            path: "/demo"
+          }),
+          faqPageJsonLd(demoFaqs),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: PAGE_TITLE_TEMPLATES.demo, path: "/demo" }
+          ])
+        ])}
+      />
+      <DemoBusinessSwitcher />
+    </>
+  );
+}

@@ -1,0 +1,81 @@
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import type { ApexDashboardLead } from "@/lib/mock-data";
+import {
+  pipelineStatuses,
+  priorityBadgeClass,
+  priorityLabels,
+  statusLabels
+} from "./dashboard-utils";
+
+type LeadPipelineProps = {
+  leads: ApexDashboardLead[];
+  selectedLeadId?: string;
+  onSelectLead: (leadId: string) => void;
+};
+
+export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipelineProps) {
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <CardTitle>Lead pipeline</CardTitle>
+            <CardDescription>From new quote requests to booked and won work.</CardDescription>
+          </div>
+          <Badge variant="outline">{leads.length} visible leads</Badge>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex gap-3 overflow-x-auto pb-2">
+          {pipelineStatuses.map((status) => {
+            const columnLeads = leads.filter((lead) => lead.status === status);
+
+            return (
+              <div key={status} className="w-[220px] shrink-0 rounded-lg border border-white/10 bg-slate-950/62 p-3">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-white">{statusLabels[status]}</p>
+                  <span className="rounded-md bg-white/6 px-2 py-1 text-xs text-slate-400">{columnLeads.length}</span>
+                </div>
+                <div className="space-y-2">
+                  {columnLeads.length > 0 ? (
+                    columnLeads.map((lead) => (
+                      <button
+                        key={lead.id}
+                        type="button"
+                        onClick={() => onSelectLead(lead.id)}
+                        className={cn(
+                          "w-full rounded-md border border-white/10 bg-white/[0.035] p-3 text-left transition hover:border-blue-300/40 hover:bg-blue-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          selectedLeadId === lead.id && "border-blue-300/50 bg-blue-500/12"
+                        )}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <p className="truncate text-sm font-medium text-white">{lead.name}</p>
+                            <p className="mt-1 truncate text-xs text-slate-400">{lead.damageType}</p>
+                          </div>
+                          <Badge className={cn("shrink-0", priorityBadgeClass(lead.priority))}>
+                            {priorityLabels[lead.priority]}
+                          </Badge>
+                        </div>
+                        <div className="mt-3 flex items-center justify-between text-xs text-slate-500">
+                          <span>{lead.score} score</span>
+                          <span>{lead.needsMobileService ? "Mobile" : "Shop"}</span>
+                        </div>
+                      </button>
+                    ))
+                  ) : (
+                    <p className="rounded-md border border-dashed border-white/10 p-3 text-xs leading-5 text-slate-500">
+                      No leads in this stage.
+                    </p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
