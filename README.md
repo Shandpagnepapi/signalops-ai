@@ -122,7 +122,7 @@ Copy `.env.example` to `.env.local` and add real values as integrations are adde
 Set the public site URL before production launch so canonical URLs, sitemap URLs, robots, and Open Graph metadata use the real domain:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+NEXT_PUBLIC_SITE_URL=https://signalops.pro
 ```
 
 ### Supabase Setup
@@ -146,6 +146,25 @@ SUPABASE_SERVICE_ROLE_KEY=
 Lead submissions are written through `/api/lead`, which uses the server storage layer. With only the public key configured, the app can submit leads if the public insert policy from `docs/supabase-schema.sql` has been applied. For dashboard reads, status updates, and internal operations, add `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`.
 
 If the Supabase variables are missing, the app falls back to the in-memory mock lead store so local demos keep working.
+
+The Supabase packages are already installed:
+
+```bash
+npm install @supabase/supabase-js @supabase/ssr
+```
+
+`proxy.ts` keeps Supabase auth sessions refreshed with the Next.js 16 proxy convention.
+
+### Email and Notification Policy
+
+Client-facing email is currently:
+
+```bash
+OWNER_ALERT_EMAIL=signalopspro@gmail.com
+EMAIL_DELIVERY_MODE=draft
+```
+
+SignalOps is intentionally draft-only for email replies. Even if `RESEND_API_KEY` is configured later, the current integration layer prepares draft/review output and does not send customer emails automatically. Do not change this behavior unless the owner explicitly approves live sending.
 
 ### AI Qualification Setup
 

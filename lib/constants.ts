@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   name: "SignalOps",
   tagline: "AI lead response systems for businesses that cannot afford missed leads.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  email: "hello@signalops.ai",
+  email: "signalopspro@gmail.com",
   description:
     "SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically."
 };
@@ -277,7 +277,7 @@ export const MARKETING_FAQS = [
 ];
 
 export const CONTACT_PLACEHOLDER = {
-  email: "hello@signalops.ai",
+  email: "signalopspro@gmail.com",
   calendly: "https://calendly.com/signalops/discovery",
   phone: "+1 (000) 000-0000"
 };

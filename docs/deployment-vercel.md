@@ -50,6 +50,16 @@ In Vercel project settings, open `Environment Variables` and add variables from 
 
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_DEMO_CLIENT_NAME`
+- `OWNER_ALERT_EMAIL`
+- `EMAIL_DELIVERY_MODE`
+
+For the current launch:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://signalops.pro
+OWNER_ALERT_EMAIL=signalopspro@gmail.com
+EMAIL_DELIVERY_MODE=draft
+```
 
 ### Analytics variables (optional)
 
@@ -83,6 +93,8 @@ Important:
 - Notifications: `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER`, `RESEND_API_KEY`
 - Alerts: `OWNER_ALERT_EMAIL`, `OWNER_ALERT_PHONE`
 - CRM/Webhooks: `GHL_WEBHOOK_URL`, `CRM_WEBHOOK_URL`
+
+Email replies must remain draft-only unless live sending is explicitly approved. The current email integration prepares reviewable drafts and does not send customer emails automatically, even when provider keys are present.
 
 ## 5) Create and Test a Preview Deployment
 

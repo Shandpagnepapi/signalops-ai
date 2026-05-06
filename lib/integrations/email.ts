@@ -11,6 +11,10 @@ function hasResendConfig() {
   return Boolean(process.env.RESEND_API_KEY?.trim());
 }
 
+function getEmailDeliveryMode() {
+  return process.env.EMAIL_DELIVERY_MODE?.trim().toLowerCase() || "draft";
+}
+
 export async function sendEmailCustomerReply(
   lead: LeadSubmission,
   message: string
@@ -30,11 +34,13 @@ export async function sendEmailCustomerReply(
     return createIntegrationResult({
       ok: true,
       action: "customer_reply",
-      provider: "resend",
+      provider: "email-draft",
       mode: "mock",
       status: "mocked",
-      message: "Mock email customer reply prepared. Configure RESEND_API_KEY for live delivery.",
+      message:
+        "Customer email draft prepared for manual review. No customer email was sent.",
       metadata: {
+        deliveryMode: getEmailDeliveryMode(),
         hasEmail: true,
         leadPriority: lead.priority,
         messageLength: message.length
@@ -45,11 +51,13 @@ export async function sendEmailCustomerReply(
   return createIntegrationResult({
     ok: true,
     action: "customer_reply",
-    provider: "resend",
+    provider: "email-draft",
     mode: "configured",
     status: "prepared",
-    message: "Resend email customer reply is ready for live implementation. No outbound email was sent.",
+    message:
+      "Customer email draft prepared for manual review. RESEND_API_KEY is configured, but SignalOps is locked to draft-only email behavior.",
     metadata: {
+      deliveryMode: getEmailDeliveryMode(),
       hasEmail: true,
       leadPriority: lead.priority,
       messageLength: message.length
@@ -65,11 +73,13 @@ export async function sendEmailOwnerAlert(
     return createIntegrationResult({
       ok: true,
       action: "owner_alert",
-      provider: "email",
+      provider: "email-draft",
       mode: "mock",
       status: "mocked",
-      message: "Mock owner email alert prepared. Configure OWNER_ALERT_EMAIL and RESEND_API_KEY for live delivery.",
+      message:
+        "Owner alert email draft prepared. Configure OWNER_ALERT_EMAIL to route this draft to the review inbox.",
       metadata: {
+        deliveryMode: getEmailDeliveryMode(),
         leadPriority: lead.priority,
         score: lead.score,
         internalNoteLength: internalNote.length
@@ -81,11 +91,13 @@ export async function sendEmailOwnerAlert(
     return createIntegrationResult({
       ok: true,
       action: "owner_alert",
-      provider: "resend",
+      provider: "email-draft",
       mode: "mock",
       status: "mocked",
-      message: "Mock owner email alert prepared because RESEND_API_KEY is not configured.",
+      message:
+        "Owner alert email draft prepared for manual review. RESEND_API_KEY is not configured, so nothing was sent.",
       metadata: {
+        deliveryMode: getEmailDeliveryMode(),
         ownerAlertEmailConfigured: true,
         leadPriority: lead.priority,
         score: lead.score,
@@ -97,11 +109,13 @@ export async function sendEmailOwnerAlert(
   return createIntegrationResult({
     ok: true,
     action: "owner_alert",
-    provider: "resend",
+    provider: "email-draft",
     mode: "configured",
     status: "prepared",
-    message: "Resend owner alert email is ready for live implementation. No outbound email was sent.",
+    message:
+      "Owner alert email draft prepared for manual review. RESEND_API_KEY is configured, but SignalOps is locked to draft-only email behavior.",
     metadata: {
+      deliveryMode: getEmailDeliveryMode(),
       ownerAlertEmailConfigured: true,
       leadPriority: lead.priority,
       score: lead.score,
