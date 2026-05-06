@@ -56,7 +56,7 @@ In Vercel project settings, open `Environment Variables` and add variables from 
 For the current launch:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://signalops.pro
+NEXT_PUBLIC_SITE_URL=https://www.signalops.pro
 OWNER_ALERT_EMAIL=signalopspro@gmail.com
 EMAIL_DELIVERY_MODE=draft
 ```

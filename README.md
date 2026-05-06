@@ -2,6 +2,8 @@
 
 SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically. This app contains the marketing site, demo client pages, lead intake demos, dashboard, documentation, and brand assets.
 
+Live site: `https://www.signalops.pro`
+
 ## Stack
 
 - Next.js App Router
@@ -122,7 +124,7 @@ Copy `.env.example` to `.env.local` and add real values as integrations are adde
 Set the public site URL before production launch so canonical URLs, sitemap URLs, robots, and Open Graph metadata use the real domain:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://signalops.pro
+NEXT_PUBLIC_SITE_URL=https://www.signalops.pro
 ```
 
 ### Supabase Setup
