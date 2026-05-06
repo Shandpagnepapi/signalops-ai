@@ -49,6 +49,68 @@ export const NAV_LINKS = [
   }
 ];
 
+export const SEO_SERVICE_LINKS = [
+  {
+    href: "/ai-lead-response",
+    label: "AI Lead Response"
+  },
+  {
+    href: "/missed-call-text-back",
+    label: "Missed-Call Text Back"
+  },
+  {
+    href: "/ai-follow-up-automation",
+    label: "AI Follow-Up Automation"
+  },
+  {
+    href: "/ai-lead-qualification",
+    label: "AI Lead Qualification"
+  },
+  {
+    href: "/lead-management-for-small-business",
+    label: "Small Business Lead Management"
+  },
+  {
+    href: "/no-crm-lead-tracking",
+    label: "No-CRM Lead Tracking"
+  }
+];
+
+export const SEO_INDUSTRY_LINKS = [
+  {
+    href: "/industries/roofers",
+    label: "Roofers"
+  },
+  {
+    href: "/industries/hvac",
+    label: "HVAC"
+  },
+  {
+    href: "/industries/plumbers",
+    label: "Plumbers"
+  },
+  {
+    href: "/industries/med-spas",
+    label: "Med Spas"
+  },
+  {
+    href: "/industries/insurance-agencies",
+    label: "Insurance Agencies"
+  },
+  {
+    href: "/industries/auto-shops",
+    label: "Auto Shops"
+  },
+  {
+    href: "/industries/well-water-service-companies",
+    label: "Well & Water Service"
+  },
+  {
+    href: "/industries/wheel-repair",
+    label: "Wheel Repair"
+  }
+];
+
 export const PACKAGE_NAMES = [
   {
     name: "Starter",

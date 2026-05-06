@@ -9,6 +9,13 @@ export default function robots(): MetadataRoute.Robots {
         allow: [
           "/",
           "/audit",
+          "/ai-lead-response",
+          "/missed-call-text-back",
+          "/ai-follow-up-automation",
+          "/ai-lead-qualification",
+          "/lead-management-for-small-business",
+          "/no-crm-lead-tracking",
+          "/industries/",
           "/demo",
           "/how-it-works",
           "/live-demo",

@@ -53,6 +53,14 @@ Run a production build:
 npm run build
 ```
 
+Run the SEO QA checker after a production build:
+
+```bash
+npm run seo:qa
+```
+
+The SEO QA script inspects the generated HTML in `.next/server/app`, so `npm run build` must run first. It checks titles, descriptions, canonicals, H1s, image alt attributes, internal links, sitemap output, and robots output.
+
 For a final local smoke test, start the dev server and check the key routes:
 
 ```bash
@@ -84,6 +92,8 @@ components/
   forms/
   demo/
   dashboard/
+scripts/
+  seo-qa.mjs
 lib/
   supabase/server.ts
   supabase/client.ts
@@ -97,6 +107,7 @@ lib/
   seo.ts
   utils.ts
 docs/
+  seo/seo-qa-checklist.md
   seo/technical-seo-checklist.md
   supabase-schema.sql
 public/
@@ -179,3 +190,13 @@ For Vercel Analytics, add the official Vercel Analytics package/provider later i
 - Launch checklist: `docs/launch-checklist.md`
 - Vercel deployment guide: `docs/deployment-vercel.md`
 - Technical SEO checklist: `docs/seo/technical-seo-checklist.md`
+- SEO QA checklist: `docs/seo/seo-qa-checklist.md`
+
+Before deploying an SEO page batch, run:
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npm run seo:qa
+```
