@@ -1,8 +1,14 @@
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const normalizedSiteUrl =
+  rawSiteUrl.replace(/\/$/, "") === "https://signalops.pro"
+    ? "https://www.signalops.pro"
+    : rawSiteUrl;
+
 export const SITE_CONFIG = {
   brandName: "SignalOps",
   name: "SignalOps",
   tagline: "Every lead answered. Every follow-up handled.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
     "SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically."
