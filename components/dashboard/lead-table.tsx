@@ -43,12 +43,12 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
             </thead>
             <tbody className="divide-y divide-white/10 text-slate-300">
               {leads.map((lead) => (
-                <tr key={lead.id} className={cn(selectedLeadId === lead.id && "bg-blue-500/8")}>
+                <tr key={lead.id} className={cn(selectedLeadId === lead.id && "bg-[#ff6f9c]/8")}>
                   <td className="py-4 pr-4 align-top">
                     <button
                       type="button"
                       onClick={() => onSelectLead(lead.id)}
-                      className="text-left font-medium text-white underline-offset-4 hover:text-blue-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="text-left font-medium text-white underline-offset-4 hover:text-[#ffc0d5] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {lead.name}
                     </button>

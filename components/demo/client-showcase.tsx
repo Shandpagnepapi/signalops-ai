@@ -10,7 +10,7 @@ export function ClientShowcase() {
     <section className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
       <Card className="overflow-hidden bg-slate-950/75">
         <CardHeader>
-          <Badge className="mb-2 w-fit bg-blue-500/14 text-blue-100">{demoClient.industry}</Badge>
+          <Badge className="mb-2 w-fit bg-[#ff6f9c]/14 text-[#ffd7e6]">{demoClient.industry}</Badge>
           <CardTitle className="text-2xl">{demoClient.headline}</CardTitle>
           <CardDescription>{demoClient.description}</CardDescription>
         </CardHeader>
@@ -20,7 +20,7 @@ export function ClientShowcase() {
               const Icon = icons[index] ?? Building2;
               return (
                 <div key={service} className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
-                  <Icon className="mb-3 size-5 text-cyan-200" aria-hidden="true" />
+                  <Icon className="mb-3 size-5 text-[#ffca91]" aria-hidden="true" />
                   <p className="font-medium text-white">{service}</p>
                 </div>
               );
@@ -29,7 +29,7 @@ export function ClientShowcase() {
         </CardContent>
       </Card>
 
-      <Card className="bg-blue-500/10">
+      <Card className="bg-[#ff6f9c]/10">
         <CardHeader>
           <CardTitle>Client goal</CardTitle>
           <CardDescription>{demoClient.goal}</CardDescription>
@@ -37,7 +37,7 @@ export function ClientShowcase() {
         <CardContent>
           <div className="space-y-4">
             {demoClient.painPoints.map((point) => (
-              <div key={point} className="rounded-lg border border-blue-200/15 bg-slate-950/50 p-4 text-sm text-slate-200">
+              <div key={point} className="rounded-lg border border-[#ffc0d5]/15 bg-slate-950/50 p-4 text-sm text-slate-200">
                 {point}
               </div>
             ))}

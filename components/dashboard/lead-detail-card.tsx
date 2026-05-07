@@ -112,7 +112,7 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
           <div className="space-y-3">
             {leadOpsTimeline.map((item, index) => (
               <div key={`${index}-${item.time}-${item.event}`} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
-                <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md bg-blue-500/12 text-blue-200">
+                <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md bg-[#ff6f9c]/12 text-[#ffc0d5]">
                   <Clock3 className="size-4" aria-hidden="true" />
                 </div>
                 <div>
@@ -139,7 +139,7 @@ function InfoItem({
 }) {
   return (
     <div className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4">
-      <Icon className="mt-0.5 size-4 shrink-0 text-blue-200" aria-hidden="true" />
+      <Icon className="mt-0.5 size-4 shrink-0 text-[#ffc0d5]" aria-hidden="true" />
       <div className="min-w-0">
         <p className="text-xs uppercase tracking-[0.14em] text-slate-500">{label}</p>
         <p className="mt-1 truncate text-sm font-medium text-white">{value}</p>

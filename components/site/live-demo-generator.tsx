@@ -155,10 +155,10 @@ export function LiveDemoGenerator() {
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(47,124,255,0.16),rgba(6,12,24,0)_64%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,111,156,0.16),rgba(6,12,24,0)_64%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <Badge variant="outline" className="mb-5 border-cyan-300/25 bg-cyan-300/10 text-cyan-100">
+            <Badge variant="outline" className="mb-5 border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
               Template-backed live demo generator
             </Badge>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
@@ -182,11 +182,11 @@ export function LiveDemoGenerator() {
             </div>
           </div>
 
-          <Card className="border-blue-300/20 bg-slate-950/82">
+          <Card className="border-[#ff9ec0]/20 bg-slate-950/82">
             <CardHeader>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <Badge className="mb-3 bg-blue-500/14 text-blue-100">Prospect inputs</Badge>
+                  <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">Prospect inputs</Badge>
                   <CardTitle className="text-2xl">Generate a mini strategy demo</CardTitle>
                   <CardDescription>
                     Keep it quick. The goal is a credible example, not a full implementation plan.
@@ -347,11 +347,11 @@ function LoadingPreview() {
   return (
     <section className="border-b border-white/10 bg-slate-950/50">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <Card className="border-cyan-300/20 bg-cyan-400/10">
+        <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
           <CardContent className="p-6">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="flex items-center gap-2 text-sm font-semibold text-cyan-100">
+                <p className="flex items-center gap-2 text-sm font-semibold text-[#ffe1bd]">
                   <Loader2 className="size-4 animate-spin" aria-hidden="true" />
                   Building the tailored demo
                 </p>
@@ -359,7 +359,7 @@ function LoadingPreview() {
                   The system starts with stored templates so the output stays fast and reliable.
                 </p>
               </div>
-              <Badge variant="outline" className="border-cyan-300/25 text-cyan-100">
+              <Badge variant="outline" className="border-[#ffb36d]/25 text-[#ffe1bd]">
                 Usually a few seconds
               </Badge>
             </div>
@@ -415,7 +415,7 @@ function GeneratedDemoPreview({
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <Badge className="mb-4 bg-blue-500/14 text-blue-100">
+          <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">
             {demo.generatedBy === "ai-enhanced" ? "AI-enhanced strategy" : "Template fallback strategy"}
           </Badge>
           <h2 className="max-w-4xl text-3xl font-semibold tracking-normal text-white sm:text-4xl">
@@ -446,15 +446,15 @@ function GeneratedDemoPreview({
       ) : null}
 
       {saveMessage ? (
-        <p className="mb-5 rounded-md border border-blue-300/20 bg-blue-500/10 p-3 text-sm text-blue-100">
+        <p className="mb-5 rounded-md border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-3 text-sm text-[#ffd7e6]">
           {saveMessage}
         </p>
       ) : null}
 
       <div className="grid gap-6 lg:grid-cols-[1fr_0.78fr]">
-        <Card className="border-blue-300/20 bg-blue-500/10">
+        <Card className="border-[#ff9ec0]/20 bg-[#ff6f9c]/10">
           <CardHeader>
-            <Badge className="mb-3 bg-slate-950 text-blue-100">Generated positioning</Badge>
+            <Badge className="mb-3 bg-slate-950 text-[#ffd7e6]">Generated positioning</Badge>
             <CardTitle className="text-3xl leading-tight">{demo.headline}</CardTitle>
             <CardDescription className="text-base leading-7">{demo.subheadline}</CardDescription>
           </CardHeader>
@@ -474,7 +474,7 @@ function GeneratedDemoPreview({
           </CardHeader>
           <CardContent>
             <p className="text-3xl font-semibold text-white">{demo.suggestedPackage.name}</p>
-            <p className="mt-1 text-sm font-medium text-blue-100">{demo.suggestedPackage.price}</p>
+            <p className="mt-1 text-sm font-medium text-[#ffd7e6]">{demo.suggestedPackage.price}</p>
             <p className="mt-4 text-sm leading-6 text-slate-300">{demo.suggestedPackage.reason}</p>
             <TrackedLink
               href="/audit"
@@ -611,7 +611,7 @@ function SectionCard({
     <Card>
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-md bg-blue-500/15 text-blue-200">
+          <div className="flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffc0d5]">
             <Icon className="size-5" aria-hidden="true" />
           </div>
           <CardTitle>{title}</CardTitle>

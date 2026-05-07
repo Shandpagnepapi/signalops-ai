@@ -63,7 +63,7 @@ export function priorityBadgeClass(priority: LeadPriority) {
   }
 
   if (priority === "cold") {
-    return "border-sky-300/25 bg-sky-400/12 text-sky-100";
+    return "border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]";
   }
 
   return "border-slate-500/35 bg-slate-500/12 text-slate-200";
@@ -71,8 +71,8 @@ export function priorityBadgeClass(priority: LeadPriority) {
 
 export function statusBadgeClass(status: DashboardLeadStatus) {
   const classes: Record<DashboardLeadStatus, string> = {
-    new: "border-blue-300/25 bg-blue-400/12 text-blue-100",
-    contacted: "border-cyan-300/25 bg-cyan-400/12 text-cyan-100",
+    new: "border-[#ff9ec0]/25 bg-[#ff6f9c]/12 text-[#ffd7e6]",
+    contacted: "border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]",
     "needs-photos": "border-amber-300/25 bg-amber-400/12 text-amber-100",
     qualified: "border-emerald-300/25 bg-emerald-400/12 text-emerald-100",
     booked: "border-violet-300/25 bg-violet-400/12 text-violet-100",

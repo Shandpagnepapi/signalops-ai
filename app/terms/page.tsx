@@ -84,7 +84,7 @@ export default function TermsPage() {
         ])}
       />
       <header className="max-w-3xl">
-        <Badge className="mb-4 bg-blue-500/14 text-blue-100">Terms</Badge>
+        <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">Terms</Badge>
         <h1 className="text-4xl font-semibold tracking-normal text-white sm:text-5xl">SignalOps Terms of Use</h1>
         <CardDescription className="mt-4 text-base leading-7">
           These terms describe how this website and related demo materials may be used.

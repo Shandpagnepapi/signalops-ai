@@ -155,11 +155,11 @@ export function LeadLeakAuditForm() {
   }
 
   return (
-    <Card id="audit-form" className="scroll-mt-24 border-blue-300/20 bg-slate-950/86 shadow-2xl shadow-black/25">
+    <Card id="audit-form" className="scroll-mt-24 border-[#ff9ec0]/20 bg-slate-950/86 shadow-2xl shadow-black/25">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 bg-blue-500/14 text-blue-100">Missed lead checkup</Badge>
+            <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">Missed lead checkup</Badge>
             <CardTitle className="text-2xl">Request your Free Missed Lead Checkup</CardTitle>
             <CardDescription>
               Share the basics. SignalOps will look for missed calls, slow replies, weak qualification, messy handoffs, and forgotten follow-ups.
@@ -305,7 +305,7 @@ export function LeadLeakAuditForm() {
               </div>
             </div>
 
-            <p className="mt-4 rounded-md border border-blue-300/20 bg-blue-500/10 p-4 text-sm font-medium leading-6 text-blue-50">
+            <p className="mt-4 rounded-md border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4 text-sm font-medium leading-6 text-[#fff1f7]">
               We will review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.
             </p>
           </div>

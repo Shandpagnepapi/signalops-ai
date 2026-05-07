@@ -188,7 +188,7 @@ export function HowItWorksDemo() {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
             <div className="space-y-6">
-              <Badge variant="outline" className="border-blue-300/25 bg-blue-400/10 text-blue-100">
+              <Badge variant="outline" className="border-[#ff9ec0]/25 bg-[#ff6f9c]/10 text-[#ffd7e6]">
                 AI Lead Engine
               </Badge>
               <div className="space-y-4">
@@ -230,7 +230,7 @@ export function HowItWorksDemo() {
             </div>
 
             <Card className="relative overflow-hidden p-5">
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-300" />
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#ff6f9c] via-[#ffb36d] to-[#8d6bff]" />
               <div className="space-y-5">
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -284,7 +284,7 @@ export function HowItWorksDemo() {
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)]">
           <div className="relative">
             <div
-              className="absolute bottom-8 left-5 top-8 w-px bg-gradient-to-b from-blue-300/15 via-cyan-300/35 to-emerald-300/15 lg:left-8 lg:right-8 lg:top-1/2 lg:h-px lg:w-auto lg:-translate-y-1/2 lg:bg-gradient-to-r"
+              className="absolute bottom-8 left-5 top-8 w-px bg-gradient-to-b from-[#ff6f9c]/15 via-[#ffb36d]/35 to-[#8d6bff]/15 lg:left-8 lg:right-8 lg:top-1/2 lg:h-px lg:w-auto lg:-translate-y-1/2 lg:bg-gradient-to-r"
               aria-hidden="true"
             />
             <div className="grid gap-3 lg:grid-cols-7">
@@ -300,8 +300,8 @@ export function HowItWorksDemo() {
                     className={cn(
                       "relative z-10 flex min-h-28 w-full items-start gap-3 rounded-lg border p-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:min-h-44 lg:flex-col",
                       isActive
-                        ? "border-blue-300/45 bg-blue-400/15 shadow-xl shadow-blue-950/25"
-                        : "border-white/10 bg-card/88 hover:border-blue-300/30 hover:bg-white/5"
+                        ? "border-[#ff9ec0]/45 bg-[#ff6f9c]/15 shadow-xl shadow-pink-950/25"
+                        : "border-white/10 bg-card/88 hover:border-[#ff9ec0]/30 hover:bg-white/5"
                     )}
                     aria-pressed={isActive}
                   >
@@ -309,7 +309,7 @@ export function HowItWorksDemo() {
                       className={cn(
                         "flex size-10 shrink-0 items-center justify-center rounded-lg border",
                         isActive
-                          ? "border-blue-200/40 bg-blue-300/20 text-blue-100"
+                          ? "border-[#ffc0d5]/40 bg-[#ff9ec0]/20 text-[#ffd7e6]"
                           : "border-white/10 bg-white/5 text-slate-300"
                       )}
                     >
@@ -332,7 +332,7 @@ export function HowItWorksDemo() {
 
           <Card className="p-5">
             <div className="flex items-start gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-cyan-300/25 bg-cyan-300/10 text-cyan-100">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
                 <ActiveStepIcon className="size-6" aria-hidden="true" />
               </div>
               <div className="min-w-0">
@@ -355,8 +355,8 @@ export function HowItWorksDemo() {
               ))}
             </div>
 
-            <div className="mt-5 rounded-lg border border-blue-300/20 bg-blue-400/10 p-4">
-              <p className="text-xs font-medium uppercase tracking-normal text-blue-100">
+            <div className="mt-5 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4">
+              <p className="text-xs font-medium uppercase tracking-normal text-[#ffd7e6]">
                 What the owner sees
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-200">{activeStep.ownerView}</p>
@@ -395,7 +395,7 @@ export function HowItWorksDemo() {
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="mb-8 grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-end">
           <div className="space-y-3">
-            <Badge variant="outline" className="border-cyan-300/25 bg-cyan-300/10 text-cyan-100">
+            <Badge variant="outline" className="border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
               Generated operating examples
             </Badge>
             <h2 className="text-3xl font-semibold tracking-normal text-white">
@@ -414,7 +414,7 @@ export function HowItWorksDemo() {
 
             return (
               <Card key={example.label} className="p-5">
-                <div className="mb-4 flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-blue-100">
+                <div className="mb-4 flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#ffd7e6]">
                   <ExampleIcon className="size-5" aria-hidden="true" />
                 </div>
                 <h3 className="text-base font-semibold tracking-normal text-white">{example.label}</h3>
@@ -426,7 +426,7 @@ export function HowItWorksDemo() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-blue-500/18 via-card to-slate-950 p-6 sm:p-8">
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-[#ff6f9c]/18 via-card to-slate-950 p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div className="space-y-3">
               <Badge variant="success">Free audit</Badge>

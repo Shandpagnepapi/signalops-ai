@@ -46,8 +46,8 @@ export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipeli
                         type="button"
                         onClick={() => onSelectLead(lead.id)}
                         className={cn(
-                          "w-full rounded-md border border-white/10 bg-white/[0.035] p-3 text-left transition hover:border-blue-300/40 hover:bg-blue-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                          selectedLeadId === lead.id && "border-blue-300/50 bg-blue-500/12"
+                          "w-full rounded-md border border-white/10 bg-white/[0.035] p-3 text-left transition hover:border-[#ff9ec0]/40 hover:bg-[#ff6f9c]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          selectedLeadId === lead.id && "border-[#ff9ec0]/50 bg-[#ff6f9c]/12"
                         )}
                       >
                         <div className="flex items-start justify-between gap-2">

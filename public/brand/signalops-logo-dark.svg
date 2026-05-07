@@ -1,15 +1,33 @@
 <svg width="420" height="96" viewBox="0 0 420 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">SignalOps dark logo</title>
   <desc id="desc">SignalOps horizontal logo for light backgrounds.</desc>
-  
-    <rect x="5" y="1.79" width="82.42" height="82.42" rx="19.71" fill="#0F1A30" stroke="#233757" stroke-width="1.79"/>
-    <path d="M19.71 54.65C19.71 45.69 27.77 38.52 36.73 38.52H45.69C54.65 38.52 62.71 30.46 62.71 21.5" stroke="#2F7CFF" stroke-width="7.17" stroke-linecap="round" fill="none"/>
-    <path d="M19.71 67.19C19.71 58.23 27.77 50.17 36.73 50.17H45.69C54.65 50.17 62.71 42.1 62.71 33.15" stroke="#17C8F2" stroke-width="7.17" stroke-linecap="round" fill="none"/>
-    <path d="M19.71 42.1H37.63C46.58 42.1 52.85 35.83 59.13 27.77" stroke="#7DD3FC" stroke-width="4.48" stroke-linecap="round" fill="none" opacity="0.9"/>
-    <circle cx="19.71" cy="42.1" r="4.93" fill="#F8FBFF"/>
-    <circle cx="19.71" cy="54.65" r="5.38" fill="#F8FBFF"/>
-    <circle cx="19.71" cy="67.19" r="5.38" fill="#F8FBFF"/>
-    <circle cx="62.71" cy="21.5" r="5.38" fill="#F8FBFF"/>
-    <circle cx="62.71" cy="33.15" r="5.38" fill="#F8FBFF"/>
-  <text x="112" y="59" fill="#101A2F" font-family="Sora, Manrope, Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="0">SignalOps</text>
+  <defs>
+    <linearGradient id="surface" x1="12" y1="4" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#32183f"/>
+      <stop offset="0.56" stop-color="#22112f"/>
+      <stop offset="1" stop-color="#100818"/>
+    </linearGradient>
+    <linearGradient id="signalA" x1="24" y1="28" x2="76" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6f9c"/>
+      <stop offset="0.55" stop-color="#ffb36d"/>
+      <stop offset="1" stop-color="#8d6bff"/>
+    </linearGradient>
+    <linearGradient id="signalB" x1="24" y1="68" x2="76" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8d6bff"/>
+      <stop offset="0.5" stop-color="#ff6f9c"/>
+      <stop offset="1" stop-color="#ffb36d"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="4" width="82" height="82" rx="22" fill="url(#surface)" stroke="#6f3b68" stroke-width="1.8"/>
+  <path d="M25 30H35C43 30 42 43 50 43H60C67 43 67 30 74 30" stroke="url(#signalA)" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+  <path d="M25 48H74" stroke="#fff8fb" stroke-opacity="0.86" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+  <path d="M25 66H35C43 66 42 53 50 53H60C67 53 67 66 74 66" stroke="url(#signalB)" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+  <circle cx="25" cy="30" r="5" fill="#fff8fb"/>
+  <circle cx="25" cy="48" r="5" fill="#fff8fb"/>
+  <circle cx="25" cy="66" r="5" fill="#fff8fb"/>
+  <circle cx="74" cy="30" r="5" fill="#ffb36d"/>
+  <circle cx="74" cy="48" r="5" fill="#fff8fb"/>
+  <circle cx="74" cy="66" r="5" fill="#ff6f9c"/>
+  <circle cx="48" cy="48" r="6" fill="#140c20" stroke="#ff9ec0" stroke-width="2.7"/>
+  <text x="112" y="59" fill="#24122d" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="760" letter-spacing="0">SignalOps</text>
 </svg>

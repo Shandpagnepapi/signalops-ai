@@ -160,11 +160,11 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
   }
 
   return (
-    <Card id="quote" className="scroll-mt-24 border-sky-300/20 bg-zinc-950/90 shadow-2xl shadow-black/30">
+    <Card id="quote" className="scroll-mt-24 border-[#ffb36d]/20 bg-zinc-950/90 shadow-2xl shadow-black/30">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 bg-sky-400/15 text-sky-100">{business.form.badge}</Badge>
+            <Badge className="mb-3 bg-[#ffb36d]/15 text-[#ffe1bd]">{business.form.badge}</Badge>
             <CardTitle className="text-2xl">{business.form.title}</CardTitle>
             <CardDescription>{business.form.description}</CardDescription>
           </div>
@@ -249,7 +249,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             </Field>
           </div>
 
-          <Button type="submit" size="lg" disabled={status === "submitting"} className="bg-sky-500 hover:bg-sky-400">
+          <Button type="submit" size="lg" disabled={status === "submitting"} className="bg-[#ff6f9c] hover:bg-[#ff8ab0]">
             {status === "submitting" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             ) : (
@@ -260,9 +260,9 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
         </form>
 
         {status === "success" && lead ? (
-          <div className="mt-6 rounded-lg border border-sky-300/20 bg-sky-400/10 p-5">
+          <div className="mt-6 rounded-lg border border-[#ffb36d]/20 bg-[#ffb36d]/10 p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-sm font-medium text-sky-100">
+              <div className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
                 <Sparkles className="size-4" aria-hidden="true" />
                 SignalOps qualification complete
               </div>

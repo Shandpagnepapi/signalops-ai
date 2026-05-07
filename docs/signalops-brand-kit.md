@@ -22,12 +22,12 @@ Free Missed Lead Checkup
 
 ## Color Palette
 
-- `Midnight` `#060C18`: Primary background and major dark surfaces.
-- `Deep Slate` `#101A2F`: Cards, dashboard panels, and content sections.
-- `Signal Blue` `#2F7CFF`: Primary CTA, links, routing lines, and key highlights.
-- `Router Cyan` `#17C8F2`: Secondary accent for signal flow, badges, and active states.
+- `Midnight` `#100818`: Primary background and major dark surfaces.
+- `Deep Slate` `#24122d`: Cards, dashboard panels, and content sections.
+- `Sunset Coral` `#ff6f9c`: Primary CTA, links, routing lines, and key highlights.
+- `Warm Signal` `#ffb36d`: Secondary accent for signal flow, badges, and active states.
 - `Fog White` `#F8FBFF`: Primary text on dark surfaces.
-- `Steel Mist` `#9FB2D0`: Secondary copy, helper text, and labels.
+- `Orchid Mist` `#d4b6c8`: Secondary copy, helper text, and labels.
 - `Success Mint` `#2ED9A0`: Qualified leads, booked states, and positive status.
 - `Alert Amber` `#F6B84A`: Needs-attention, human review, and urgent lead status.
 

@@ -129,10 +129,10 @@ export function RoiCalculator() {
 
   return (
     <div className="overflow-x-hidden">
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(47,124,255,0.14),rgba(6,12,24,0))]">
+      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,111,156,0.14),rgba(6,12,24,0))]">
         <div className="surface-grid mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
           <div className="max-w-3xl">
-            <Badge className="mb-4 bg-blue-500/14 text-blue-100">ROI calculator</Badge>
+            <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">ROI calculator</Badge>
             <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
               Estimate how much slow response and weak follow-up may be costing you.
             </h1>
@@ -141,7 +141,7 @@ export function RoiCalculator() {
             </p>
           </div>
 
-          <div className="rounded-lg border border-blue-300/20 bg-slate-950/78 p-5 shadow-2xl shadow-black/20">
+          <div className="rounded-lg border border-[#ff9ec0]/20 bg-slate-950/78 p-5 shadow-2xl shadow-black/20">
             <p className="text-sm font-semibold text-white">What this estimates</p>
             <div className="mt-4 grid gap-3">
               {[
@@ -162,7 +162,7 @@ export function RoiCalculator() {
       <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
         <section className="rounded-lg border border-white/10 bg-slate-950/76 p-6" aria-labelledby="roi-inputs">
           <div className="mb-6 flex items-center gap-2">
-            <Calculator className="size-4 text-blue-200" aria-hidden="true" />
+            <Calculator className="size-4 text-[#ffc0d5]" aria-hidden="true" />
             <h2 id="roi-inputs" className="text-lg font-semibold text-white">
               Inputs
             </h2>
@@ -217,9 +217,9 @@ export function RoiCalculator() {
           </div>
         </section>
 
-        <section className="rounded-lg border border-blue-300/20 bg-blue-500/10 p-6" aria-labelledby="roi-outputs">
+        <section className="rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6" aria-labelledby="roi-outputs">
           <div className="mb-6 flex items-center gap-2">
-            <CircleDollarSign className="size-4 text-blue-100" aria-hidden="true" />
+            <CircleDollarSign className="size-4 text-[#ffd7e6]" aria-hidden="true" />
             <h2 id="roi-outputs" className="text-lg font-semibold text-white">
               Estimated outputs
             </h2>
@@ -251,7 +251,7 @@ export function RoiCalculator() {
             <p className="mt-2 text-sm leading-6 text-slate-300">{results.suggestedPackage.reason}</p>
           </div>
 
-          <p className="mt-5 text-sm leading-6 text-blue-50">
+          <p className="mt-5 text-sm leading-6 text-[#fff1f7]">
             This calculator is an estimate only. Actual results depend on your offer, market, sales process,
             response quality, and follow-up.
           </p>
@@ -271,7 +271,7 @@ export function RoiCalculator() {
       <section className="mx-auto mb-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-lg border border-white/10 bg-slate-950/68 p-6" aria-labelledby="roi-math">
           <div className="mb-4 flex items-center gap-2">
-            <TrendingUp className="size-4 text-cyan-200" aria-hidden="true" />
+            <TrendingUp className="size-4 text-[#ffca91]" aria-hidden="true" />
             <h2 id="roi-math" className="text-lg font-semibold text-white">
               How the math works
             </h2>

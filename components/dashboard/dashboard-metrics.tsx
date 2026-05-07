@@ -76,7 +76,7 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between gap-3">
                 <CardDescription>{metric.label}</CardDescription>
-                <Icon className="size-5 text-blue-200" aria-hidden="true" />
+                <Icon className="size-5 text-[#ffc0d5]" aria-hidden="true" />
               </div>
               <CardTitle className="text-3xl">{metric.value}</CardTitle>
             </CardHeader>

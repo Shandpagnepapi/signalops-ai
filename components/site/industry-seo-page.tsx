@@ -28,11 +28,11 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
   return (
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_8%,rgba(23,200,242,0.2),transparent_32%),radial-gradient(circle_at_18%_12%,rgba(47,124,255,0.24),transparent_35%),linear-gradient(180deg,#081326,#060c18_88%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_8%,rgba(255,179,109,0.20),transparent_32%),radial-gradient(circle_at_18%_12%,rgba(255,111,156,0.24),transparent_35%),linear-gradient(180deg,#241331,#100818_88%)]" />
         <div className="surface-grid absolute inset-0 opacity-20" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.96fr_1.04fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <Badge variant="outline" className="mb-6 border-cyan-300/30 bg-cyan-300/10 text-cyan-100">
+            <Badge variant="outline" className="mb-6 border-[#ffb36d]/30 bg-[#ffb36d]/10 text-[#ffe1bd]">
               {page.eyebrow}
             </Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
@@ -76,7 +76,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
                 <p className="text-sm font-semibold text-white">{page.industryName} lead flow</p>
                 <p className="text-xs leading-5 text-slate-500">Capture, qualify, route, and follow up</p>
               </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-blue-500/15 text-blue-100">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffd7e6]">
                 <Workflow className="size-5" aria-hidden="true" />
               </div>
             </div>
@@ -141,7 +141,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           <div className="grid gap-3 sm:grid-cols-2">
             {page.leadSources.map((source) => (
               <div key={source} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm text-slate-300">
-                <PhoneCall className="size-4 shrink-0 text-cyan-200" aria-hidden="true" />
+                <PhoneCall className="size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
                 <span>{source}</span>
               </div>
             ))}
@@ -178,7 +178,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             <div className="grid gap-3 sm:grid-cols-2">
               {qualificationQuestions.map((question) => (
                 <div key={question} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-slate-300">
-                  <ListChecks className="mt-0.5 size-4 shrink-0 text-cyan-200" aria-hidden="true" />
+                  <ListChecks className="mt-0.5 size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
                   <span>{question}</span>
                 </div>
               ))}
@@ -187,7 +187,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </section>
       ) : null}
 
-      <section className="border-y border-white/10 bg-[linear-gradient(180deg,#07101f,#060c18)]">
+      <section className="border-y border-white/10 bg-[linear-gradient(180deg,#160d22,#100818)]">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
           <MessageExample
             eyebrow="Example AI instant reply"
@@ -215,7 +215,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             {followUpExamples.map((example) => (
               <Card key={example.scenario} className="bg-slate-950/74">
                 <CardHeader>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">
                     {example.scenario}
                   </p>
                   <CardDescription className="text-base leading-7 text-slate-300">
@@ -238,7 +238,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           {page.scoringRules.map((rule) => (
             <Card key={rule.title} className="bg-slate-950/74">
               <CardHeader>
-                <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-blue-500/14 text-blue-100">
+                <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/14 text-[#ffd7e6]">
                   <SearchCheck className="size-5" aria-hidden="true" />
                 </div>
                 <CardTitle className="text-base">{rule.title}</CardTitle>
@@ -260,7 +260,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             {page.automations.map((automation) => (
               <Card key={automation.title} className="bg-white/[0.035]">
                 <CardHeader>
-                  <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-cyan-400/12 text-cyan-100">
+                  <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ffb36d]/12 text-[#ffe1bd]">
                     <BellRing className="size-5" aria-hidden="true" />
                   </div>
                   <CardTitle className="text-base">{automation.title}</CardTitle>
@@ -322,7 +322,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg border border-white/10 bg-white/[0.035] p-5 transition hover:border-blue-300/35 hover:bg-blue-500/10"
+                className="rounded-lg border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
               >
                 <p className="font-semibold text-white">{link.title}</p>
                 <p className="mt-2 text-sm leading-6 text-slate-400">{link.description}</p>
@@ -333,9 +333,9 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
               Free Missed Lead Checkup
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
@@ -375,10 +375,10 @@ function MessageExample({
   return (
     <Card className="bg-slate-950/76">
       <CardHeader>
-        <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-blue-500/14 text-blue-100">
+        <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/14 text-[#ffd7e6]">
           {icon}
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">{eyebrow}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">{eyebrow}</p>
         <CardTitle className="text-xl">{scenario}</CardTitle>
         <CardDescription className="text-base leading-7 text-slate-300">
           {message}
@@ -399,7 +399,7 @@ function SectionHeader({
 }) {
   return (
     <div className="max-w-3xl">
-      <Badge className="mb-4 bg-blue-500/14 text-blue-100">{eyebrow}</Badge>
+      <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
       <p className="mt-4 text-base leading-7 text-slate-300">{description}</p>
     </div>

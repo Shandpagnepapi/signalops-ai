@@ -6,7 +6,7 @@ import { demoBusinessOptions, demoBusinesses, type DemoBusinessKey } from "@/lib
 import { ApexWheelSite } from "./apex-wheel-site";
 
 const selectClass =
-  "h-11 w-full rounded-md border border-white/12 bg-slate-950 px-3 text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 sm:w-80";
+  "h-11 w-full rounded-md border border-white/12 bg-slate-950 px-3 text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9ec0] sm:w-80";
 
 export function DemoBusinessSwitcher() {
   const [selectedBusiness, setSelectedBusiness] = useState<DemoBusinessKey>("wheel-repair");
@@ -17,7 +17,7 @@ export function DemoBusinessSwitcher() {
       <section className="sticky top-[61px] z-40 border-b border-white/10 bg-slate-950/95 px-4 py-3 backdrop-blur-md sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Badge className="bg-sky-400/15 text-sky-100">SignalOps client demo</Badge>
+            <Badge className="bg-[#ffb36d]/15 text-[#ffe1bd]">SignalOps client demo</Badge>
             <p className="text-sm text-slate-300">Choose a demo business</p>
           </div>
           <label className="grid gap-1 text-sm font-medium text-slate-200 sm:flex sm:items-center sm:gap-3">

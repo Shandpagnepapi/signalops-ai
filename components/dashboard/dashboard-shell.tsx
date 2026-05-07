@@ -29,11 +29,11 @@ export function DashboardShell() {
 
   return (
     <div className="overflow-x-hidden">
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(47,124,255,0.12),rgba(6,12,24,0))]">
+      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,111,156,0.12),rgba(6,12,24,0))]">
         <div className="surface-grid mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="min-w-0">
-              <Badge className="mb-4 bg-blue-500/14 text-blue-100">Apex Wheel Repair portal demo</Badge>
+              <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">Apex Wheel Repair portal demo</Badge>
               <h1 className="max-w-xs text-3xl font-semibold tracking-normal text-white sm:max-w-none sm:text-4xl">
                 Lead pipeline dashboard for Apex Wheel Repair
               </h1>
@@ -54,9 +54,9 @@ export function DashboardShell() {
       <div className="mx-auto w-full max-w-xs space-y-6 px-4 py-8 sm:max-w-7xl sm:px-6 lg:px-8">
         <DashboardMetrics leads={allLeads} />
 
-        <Card className="border-blue-300/20 bg-blue-500/10">
+        <Card className="border-[#ff9ec0]/20 bg-[#ff6f9c]/10">
           <CardContent className="p-5">
-            <p className="text-sm leading-6 text-blue-50">
+            <p className="text-sm leading-6 text-[#fff1f7]">
               This public dashboard uses mock Apex Wheel Repair data only. Production lead records
               stay behind internal access, while real client installs connect securely to CRM,
               forms, ads, missed calls, quote requests, photo submissions, and calendars.

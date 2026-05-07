@@ -45,17 +45,17 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
             sizes="100vw"
           />
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(14,165,233,0.28),transparent_34%),linear-gradient(135deg,#07111f_0%,#082f49_40%,#080a0f_100%)]">
-            <div className="absolute right-0 top-14 hidden w-[48rem] max-w-[55vw] rounded-l-full border-y border-l border-cyan-200/10 bg-cyan-300/8 p-10 blur-[0.2px] lg:block">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(255,111,156,0.24),transparent_34%),linear-gradient(135deg,#160d22_0%,#2b193c_40%,#080a0f_100%)]">
+            <div className="absolute right-0 top-14 hidden w-[48rem] max-w-[55vw] rounded-l-full border-y border-l border-[#ffb36d]/10 bg-[#ffb36d]/8 p-10 blur-[0.2px] lg:block">
               <div className="grid gap-4">
                 {["Call", "Text", "Form", "Follow-up"].map((item, index) => (
                   <div
                     key={item}
                     className={`ml-auto flex w-[70%] items-center gap-3 rounded-lg border border-white/10 bg-black/24 p-4 ${signalFlowOffsets[index] ?? "mr-0"}`}
                   >
-                    <div className="size-3 rounded-full bg-cyan-300" />
+                    <div className="size-3 rounded-full bg-[#ffb36d]" />
                     <div className="h-2 flex-1 rounded-full bg-white/20" />
-                    <span className="text-xs font-medium text-cyan-50">{item}</span>
+                    <span className="text-xs font-medium text-[#fff1f7]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -66,11 +66,11 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,#080a0f_96%)]" />
         <div className="relative mx-auto grid min-h-[84vh] max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.95fr_0.75fr] lg:px-8">
           <div className="max-w-3xl">
-            <Badge className="mb-5 border-sky-300/25 bg-sky-400/10 text-sky-100">
+            <Badge className="mb-5 border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
               {business.heroBadge}
             </Badge>
             <p className="mb-4 flex items-center gap-2 text-sm font-medium uppercase tracking-[0.18em] text-zinc-400">
-              <MapPin className="size-4 text-sky-300" aria-hidden="true" />
+              <MapPin className="size-4 text-[#ffb36d]" aria-hidden="true" />
               {business.location}
             </p>
             <h1 className="text-3xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
@@ -82,14 +82,14 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#quote"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-sky-500 px-5 text-base font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#ff6f9c] px-5 text-base font-semibold text-white shadow-lg shadow-pink-950/30 transition hover:bg-[#ff8ab0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9ec0]"
               >
                 {business.primaryCta}
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>
               <a
                 href={business.secondaryHref}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-zinc-900 px-5 text-base font-semibold text-zinc-100 transition hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-zinc-900 px-5 text-base font-semibold text-zinc-100 transition hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9ec0]"
               >
                 {business.secondaryCta}
               </a>
@@ -148,7 +148,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
           return (
             <Card key={service.title} className="border-white/10 bg-zinc-950/82">
               <CardHeader>
-                <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-sky-400/12 text-sky-200">
+                <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ffb36d]/12 text-[#ffd0a4]">
                   <Icon className="size-5" aria-hidden="true" />
                 </div>
                 <CardTitle className="text-base">{service.title}</CardTitle>
@@ -187,11 +187,11 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
                 className="h-full w-full object-cover"
               />
             ) : (
-              <div className="grid min-h-[22rem] gap-4 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.22),transparent_34%),#090f18] p-5 sm:grid-cols-3">
+              <div className="grid min-h-[22rem] gap-4 bg-[radial-gradient(circle_at_top_right,rgba(255,179,109,0.18),transparent_34%),#160d22] p-5 sm:grid-cols-3">
                 {(business.beforeAfter.visualCards ?? []).map((card) => (
                   <div key={card.label} className="flex min-h-48 flex-col justify-between rounded-lg border border-white/10 bg-white/[0.045] p-5">
                     <div>
-                      <p className="text-xs font-medium uppercase tracking-[0.16em] text-cyan-200">{card.label}</p>
+                      <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#ffca91]">{card.label}</p>
                       <p className="mt-4 text-2xl font-semibold text-white">{card.value}</p>
                     </div>
                     <p className="text-sm leading-6 text-zinc-300">{card.description}</p>
@@ -214,7 +214,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
           const Icon = damageIcons[index] ?? Wrench;
           return (
             <div key={damage} className="rounded-lg border border-white/10 bg-white/[0.035] p-4">
-              <Icon className="mb-3 size-5 text-sky-200" aria-hidden="true" />
+              <Icon className="mb-3 size-5 text-[#ffd0a4]" aria-hidden="true" />
               <p className="text-sm font-medium text-white">{damage}</p>
             </div>
           );
@@ -224,13 +224,13 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
       <section className="border-y border-white/10 bg-zinc-950/80">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mb-10 max-w-3xl">
-            <Badge className="mb-4 bg-sky-400/15 text-sky-100">{business.process.eyebrow}</Badge>
+            <Badge className="mb-4 bg-[#ffb36d]/15 text-[#ffe1bd]">{business.process.eyebrow}</Badge>
             <h2 className="text-3xl font-semibold tracking-normal text-white">{business.process.title}</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-5">
             {business.process.steps.map((step, index) => (
               <div key={step.title} className="rounded-lg border border-white/10 bg-black/28 p-5">
-                <div className="mb-5 flex size-10 items-center justify-center rounded-md bg-sky-500 text-sm font-semibold text-white">
+                <div className="mb-5 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c] text-sm font-semibold text-white">
                   {index + 1}
                 </div>
                 <h3 className="text-base font-semibold text-white">{step.title}</h3>
@@ -242,13 +242,13 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
       </section>
 
       <section id={business.callout.id} className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.86fr] lg:px-8">
-        <div className="rounded-lg border border-sky-300/20 bg-sky-400/10 p-6">
+        <div className="rounded-lg border border-[#ffb36d]/20 bg-[#ffb36d]/10 p-6">
           <div className="flex items-center gap-3">
-            <div className="flex size-11 items-center justify-center rounded-md bg-sky-500 text-white">
+            <div className="flex size-11 items-center justify-center rounded-md bg-[#ff6f9c] text-white">
               <CalloutIcon className="size-5" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-sky-100">{business.callout.eyebrow}</p>
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffe1bd]">{business.callout.eyebrow}</p>
               <h2 className="mt-1 text-2xl font-semibold text-white">{business.callout.title}</h2>
             </div>
           </div>
@@ -271,10 +271,10 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
       </section>
 
       {business.operationsSection ? (
-        <section className="border-y border-cyan-300/10 bg-[linear-gradient(180deg,#07111f,#080a0f)]">
+        <section className="border-y border-[#ffb36d]/10 bg-[linear-gradient(180deg,#160d22,#080a0f)]">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div>
-              <Badge className="mb-4 bg-cyan-400/15 text-cyan-100">{business.operationsSection.eyebrow}</Badge>
+              <Badge className="mb-4 bg-[#ffb36d]/15 text-[#ffe1bd]">{business.operationsSection.eyebrow}</Badge>
               <h2 className="text-3xl font-semibold tracking-normal text-white">{business.operationsSection.title}</h2>
               <p className="mt-4 text-base leading-7 text-zinc-300">{business.operationsSection.description}</p>
             </div>
@@ -315,7 +315,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
         <div>
-          <Badge className="mb-4 bg-sky-400/15 text-sky-100">{business.faqSection.eyebrow}</Badge>
+          <Badge className="mb-4 bg-[#ffb36d]/15 text-[#ffe1bd]">{business.faqSection.eyebrow}</Badge>
           <h2 className="text-3xl font-semibold tracking-normal text-white">{business.faqSection.title}</h2>
           <p className="mt-4 text-base leading-7 text-zinc-300">
             {business.faqSection.description}
@@ -337,11 +337,11 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <DemoLeadForm key={business.key} business={business} />
           <div className="space-y-4">
-            <Card className="border-sky-300/20 bg-sky-400/10">
+            <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
               <CardHeader>
-                <Badge className="mb-2 w-fit bg-zinc-950 text-sky-100">{business.leadOpsPanel.badge}</Badge>
+                <Badge className="mb-2 w-fit bg-zinc-950 text-[#ffe1bd]">{business.leadOpsPanel.badge}</Badge>
                 <CardTitle>{business.leadOpsPanel.title}</CardTitle>
-                <CardDescription className="text-sky-50/82">
+                <CardDescription className="text-[#fff1f7]/82">
                   {business.leadOpsPanel.description}
                 </CardDescription>
               </CardHeader>
@@ -367,7 +367,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
               <CardContent className="space-y-3 text-sm leading-6 text-zinc-300">
                 {business.whySignalOpsPanel.bullets.map((bullet, index) => {
                   const Icon = index === 0 ? Clock3 : index === 1 ? MessageSquareText : ShieldCheck;
-                  const iconClass = index === 0 ? "text-sky-300" : index === 1 ? "text-emerald-300" : "text-amber-300";
+                  const iconClass = index === 0 ? "text-[#ffb36d]" : index === 1 ? "text-emerald-300" : "text-amber-300";
                   return (
                     <p key={bullet} className="flex gap-2">
                       <Icon className={`mt-0.5 size-4 shrink-0 ${iconClass}`} aria-hidden="true" />
@@ -407,7 +407,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-zinc-950/96 p-3 backdrop-blur md:hidden">
         <div className="grid grid-cols-2 gap-2">
-          <a href="#quote" className="inline-flex h-11 items-center justify-center rounded-md bg-sky-500 text-sm font-semibold text-white">
+          <a href="#quote" className="inline-flex h-11 items-center justify-center rounded-md bg-[#ff6f9c] text-sm font-semibold text-white">
             {business.stickyPrimaryCta}
           </a>
           <a href={business.secondaryHref} className="inline-flex h-11 items-center justify-center rounded-md bg-zinc-800 text-sm font-semibold text-white">
@@ -433,7 +433,7 @@ function SectionIntro({
   return (
     <section id={id} className="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
       <div className="max-w-3xl">
-        <Badge className="mb-4 bg-sky-400/15 text-sky-100">{eyebrow}</Badge>
+        <Badge className="mb-4 bg-[#ffb36d]/15 text-[#ffe1bd]">{eyebrow}</Badge>
         <h2 className="text-3xl font-semibold tracking-normal text-white">{title}</h2>
         <p className="mt-4 text-base leading-7 text-zinc-300">{description}</p>
       </div>

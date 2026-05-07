@@ -125,10 +125,10 @@ export default function AuditPage() {
       />
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,12,24,0.56),#060c18_92%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,12,24,0.56),#100818_92%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex min-w-0 flex-col justify-center">
-            <Badge className="mb-6 w-fit bg-blue-500/14 text-blue-100">{PRIMARY_CTA.label}</Badge>
+            <Badge className="mb-6 w-fit bg-[#ff6f9c]/14 text-[#ffd7e6]">{PRIMARY_CTA.label}</Badge>
             <h1 className="max-w-xs text-4xl font-semibold leading-tight tracking-normal text-white sm:max-w-3xl sm:text-6xl">
               Find missed leads before they turn into lost opportunities.
             </h1>
@@ -217,7 +217,7 @@ export default function AuditPage() {
               return (
                 <Card key={check} className="bg-slate-950/76">
                   <CardHeader>
-                    <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-blue-500/15 text-blue-200">
+                    <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffc0d5]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-base">{check}</CardTitle>
@@ -236,7 +236,7 @@ export default function AuditPage() {
             title="Share the basics and get a preview of where leads may be missed."
             description="Give SignalOps enough context to identify where calls, texts, forms, DMs, and follow-ups are most likely costing you booked appointments."
           />
-          <div className="mt-6 w-full max-w-xs rounded-lg border border-blue-300/20 bg-blue-500/10 p-5 sm:max-w-none">
+          <div className="mt-6 w-full max-w-xs rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-5 sm:max-w-none">
             <p className="text-sm font-semibold text-white">What you get back</p>
             <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
               {[
@@ -278,9 +278,9 @@ export default function AuditPage() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">Next step</p>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">Next step</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where leads are being missed.
             </h2>
@@ -311,7 +311,7 @@ function SectionIntro({
 }) {
   return (
     <div className="w-full max-w-xs sm:max-w-3xl">
-      <Badge className="mb-4 bg-blue-500/14 text-blue-100">{eyebrow}</Badge>
+      <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
       <CardDescription className="mt-4 text-base leading-7">{description}</CardDescription>
     </div>
