@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   brandName: "SignalOps",
   name: "SignalOps",
-  tagline: "AI lead response systems for businesses that cannot afford missed leads.",
+  tagline: "Every lead answered. Every follow-up handled.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   email: "signalopspro@gmail.com",
   description:
@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Get a Free Lead Leak Audit",
+  label: "Get a Free Missed Lead Checkup",
   href: "/audit"
 };
 
@@ -118,7 +118,7 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Free Lead Leak Audit"
+    label: "Free Missed Lead Checkup"
   }
 ];
 
@@ -139,7 +139,7 @@ export const PACKAGE_NAMES = [
     price: "$750 setup + $300/mo",
     summary: "Install the core response and qualification layer for one lead source.",
     features: [
-      "Free Lead Leak Audit",
+      "Free Missed Lead Checkup",
       "Instant reply workflow",
       "Practical lead qualification",
       "Owner or rep alerts"

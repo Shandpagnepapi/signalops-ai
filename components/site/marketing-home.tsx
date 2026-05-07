@@ -491,7 +491,7 @@ function FinalCTA() {
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-[#ffb36d]/24 bg-[radial-gradient(circle_at_22%_0%,rgba(255,111,156,0.26),transparent_32%),linear-gradient(135deg,rgba(255,111,156,0.16),rgba(255,179,109,0.10),rgba(35,20,52,0.9))] p-6 shadow-2xl shadow-black/20 sm:p-10">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">
-            Free Lead Leak Audit
+            Free Missed Lead Checkup
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
             Find the leads slipping through.

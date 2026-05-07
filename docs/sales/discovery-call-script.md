@@ -66,7 +66,7 @@ Based on what you shared, here is what I see:
 - [Pain #2]
 - [Pain #3]
 
-If you want to move forward, the next step is a Free Lead Leak Audit and pilot rollout plan. We would define scope, timeline, and clear success metrics before implementation starts.
+If you want to move forward, the next step is a Free Missed Lead Checkup and pilot rollout plan. We would define scope, timeline, and clear success metrics before implementation starts.
 
 ## Objection Handling
 

@@ -29,7 +29,7 @@ export const SEO_DEFAULT_IMAGE = "/og/signalops-default.png";
 export const OG_IMAGE_ASSETS = {
   default: {
     path: "/og/signalops-default.png",
-    alt: "SignalOps branded social image for AI lead response systems for businesses that cannot afford missed leads."
+    alt: "SignalOps branded social image for Every lead answered. Every follow-up handled."
   },
   home: {
     path: "/og/signalops-home.png",
@@ -37,7 +37,7 @@ export const OG_IMAGE_ASSETS = {
   },
   audit: {
     path: "/og/signalops-audit.png",
-    alt: "SignalOps Free Lead Leak Audit social image."
+    alt: "SignalOps Free Missed Lead Checkup social image."
   },
   demo: {
     path: "/og/signalops-demo.png",
@@ -51,7 +51,7 @@ export const OG_IMAGE_ASSETS = {
 
 export const PAGE_TITLE_TEMPLATES = {
   home: "AI Lead Response Systems for Local Businesses",
-  audit: "Free Lead Leak Audit for AI Lead Response",
+  audit: "Free Missed Lead Checkup for AI Lead Response",
   demo: "AI Lead Response Demo for Local Service Businesses",
   dashboard: "AI Lead Management Dashboard Demo",
   howItWorks: "How AI Lead Response Systems Work",
@@ -65,7 +65,7 @@ export const META_DESCRIPTION_TEMPLATES = {
   home:
     "SignalOps helps local and service businesses respond to leads instantly, qualify prospects automatically, and follow up before opportunities go cold.",
   audit:
-    "Get a Free Lead Leak Audit from SignalOps to find gaps in AI lead response, lead qualification, automated follow-up, routing, and missed lead recovery.",
+    "Get a Free Missed Lead Checkup from SignalOps to find gaps in AI lead response, lead qualification, automated follow-up, routing, and missed lead recovery.",
   demo:
     "See SignalOps AI lead response demos for Apex Wheel Repair and ClearFlow with quote intake automation, lead qualification, routing, and follow-up.",
   dashboard:

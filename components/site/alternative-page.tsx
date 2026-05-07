@@ -228,7 +228,7 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">
-              Free Lead Leak Audit
+              Free Missed Lead Checkup
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               Compare options by first finding where leads are leaking.

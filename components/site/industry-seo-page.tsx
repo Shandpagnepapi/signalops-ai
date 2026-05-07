@@ -315,7 +315,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           <SectionHeader
             eyebrow="Next steps"
             title="Generate a tailored demo or check your current lead flow"
-            description="Use the live demo generator for a quick industry-specific preview, or start with a Free Lead Leak Audit of calls, texts, forms, DMs, and follow-ups."
+            description="Use the live demo generator for a quick industry-specific preview, or start with a Free Missed Lead Checkup of calls, texts, forms, DMs, and follow-ups."
           />
           <div className="grid gap-4 sm:grid-cols-3">
             {page.relatedLinks.map((link) => (
@@ -336,7 +336,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-blue-300/20 bg-blue-500/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-blue-100">
-              Free Lead Leak Audit
+              Free Missed Lead Checkup
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where leads are being missed, delayed, or forgotten.

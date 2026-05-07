@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Is the audit really free?",
     answer:
-      "Yes. The Free Lead Leak Audit is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
+      "Yes. The Free Missed Lead Checkup is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
   },
   {
     question: "Can you review missed calls and quote requests?",
@@ -242,7 +242,7 @@ export default function AuditPage() {
               {[
                 "A plain-English snapshot of your biggest lead flow risks",
                 "Recommended fixes for response, routing, and follow-up",
-                "A next-step note for a focused Lead Leak Audit call"
+                "A next-step note for a focused Missed Lead Checkup call"
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <CheckCircle2 className="mt-1 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />

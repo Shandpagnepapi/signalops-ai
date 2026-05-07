@@ -117,14 +117,14 @@ export function LeadLeakAuditForm() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          source: "signalops-lead-leak-audit",
+          source: "signalops-missed-lead-checkup",
           name: form.name,
           email: form.email,
           phone: form.phone,
           businessName: form.businessName,
           website: form.website,
           industry: form.industry,
-          serviceNeeded: "Free Lead Leak Audit",
+          serviceNeeded: "Free Missed Lead Checkup",
           message: form.biggestProblem,
           currentTools: form.currentTools,
           monthlyLeads: Number(form.monthlyLeads) || 0,
@@ -159,8 +159,8 @@ export function LeadLeakAuditForm() {
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 bg-blue-500/14 text-blue-100">Lead leak audit</Badge>
-            <CardTitle className="text-2xl">Request your Free Lead Leak Audit</CardTitle>
+            <Badge className="mb-3 bg-blue-500/14 text-blue-100">Missed lead checkup</Badge>
+            <CardTitle className="text-2xl">Request your Free Missed Lead Checkup</CardTitle>
             <CardDescription>
               Share the basics. SignalOps will look for missed calls, slow replies, weak qualification, messy handoffs, and forgotten follow-ups.
             </CardDescription>

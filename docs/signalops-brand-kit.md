@@ -6,7 +6,7 @@ SignalOps
 
 ## Primary Tagline
 
-AI lead response systems for businesses that cannot afford missed leads.
+Every lead answered. Every follow-up handled.
 
 ## Positioning
 
@@ -18,7 +18,7 @@ AI Lead Response & Qualification System
 
 ## Primary Offer
 
-Free Lead Leak Audit
+Free Missed Lead Checkup
 
 ## Color Palette
 
@@ -59,8 +59,8 @@ Free Lead Leak Audit
 
 ## CTA Language
 
-- Get a Free Lead Leak Audit
-- Book a Free Lead Leak Audit
+- Get a Free Missed Lead Checkup
+- Book a Free Missed Lead Checkup
 - Find Where Leads Are Leaking
 - See Where Leads Are Being Missed
 - View the Client Demo
@@ -69,7 +69,7 @@ Free Lead Leak Audit
 
 ## Offer Names
 
-- Free Lead Leak Audit
+- Free Missed Lead Checkup
 - AI Lead Response & Qualification System
 - Missed-Call Text Back
 - Lead Routing Blueprint
@@ -99,7 +99,7 @@ SignalOps should rank around practical lead handling problems, not vague AI clai
 - service business lead follow-up
 - AI appointment setting
 
-Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a CTA to the Free Lead Leak Audit.
+Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a CTA to the Free Missed Lead Checkup.
 
 ## Logo Usage Notes
 
@@ -133,13 +133,13 @@ Eyebrow:
 `AI Lead Response & Qualification System`
 
 H1:
-`AI lead response systems for businesses that cannot afford missed leads.`
+`Every lead answered. Every follow-up handled.`
 
 Supporting copy:
 `SignalOps helps small and local businesses capture, qualify, route, follow up with, and book more leads automatically before good inquiries get buried in forms, inboxes, missed calls, and scattered notes.`
 
 Primary CTA:
-`Get a Free Lead Leak Audit`
+`Get a Free Missed Lead Checkup`
 
 Secondary CTA:
 `View Client Demo`

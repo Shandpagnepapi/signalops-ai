@@ -445,7 +445,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Get a Free Lead Leak Audit
+              Get a Free Missed Lead Checkup
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

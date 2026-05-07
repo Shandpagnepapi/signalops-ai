@@ -11,7 +11,7 @@ Open these tabs before recording:
 1. SignalOps homepage: `/`
 2. Apex Wheel Repair demo: `/demo#lead-form`
 3. SignalOps dashboard: `/dashboard`
-4. Free Lead Leak Audit: `/audit`
+4. Free Missed Lead Checkup: `/audit`
 
 Use this main scenario in the demo form:
 
@@ -126,13 +126,13 @@ Say:
 
 Timing note: Make this about their operation, not the demo.
 
-### 2:50-3:00 - Close With Lead Leak Audit CTA
+### 2:50-3:00 - Close With Missed Lead Checkup CTA
 
 Screen action: Open or point to `/audit`.
 
 Say:
 
-"If you want, I can run a Free Lead Leak Audit and show where calls, texts, forms, DMs, and follow-ups are getting missed, delayed, or forgotten. It is not a sales pitch first. It is a practical look at the way you already handle leads, with or without a CRM."
+"If you want, I can run a Free Missed Lead Checkup and show where calls, texts, forms, DMs, and follow-ups are getting missed, delayed, or forgotten. It is not a sales pitch first. It is a practical look at the way you already handle leads, with or without a CRM."
 
 Timing note: End cleanly. Do not over-explain after the CTA.
 
@@ -321,4 +321,4 @@ During recording:
 
 ## One-Line Follow-Up Message After Sending the Loom
 
-"I recorded this quick walkthrough using a wheel repair example, but the same idea applies to your business: faster response, better qualification, cleaner routing, and consistent follow-up. If useful, I can run a Free Lead Leak Audit and point out where leads may be getting missed now."
+"I recorded this quick walkthrough using a wheel repair example, but the same idea applies to your business: faster response, better qualification, cleaner routing, and consistent follow-up. If useful, I can run a Free Missed Lead Checkup and point out where leads may be getting missed now."
