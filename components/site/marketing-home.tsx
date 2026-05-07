@@ -25,6 +25,7 @@ import {
   getEmailHref,
   getPlanEmailHref,
   PRIMARY_CTA,
+  SECONDARY_CTA,
   SITE_CONFIG
 } from "@/lib/constants";
 
@@ -189,22 +190,22 @@ function HeroSection() {
       <div className="relative grid gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="max-w-2xl">
           <Badge className="border border-[#ff9ec0]/22 bg-white/8 px-3 py-1.5 text-[#ffd7e6]">
-            Done-for-you AI lead response systems
+            Free Instant AI Lead System Preview
           </Badge>
           <h1 className="mt-8 text-[2.95rem] font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.35rem]">
-            AI lead response systems,
+            See the AI lead system
             <span className="block bg-[linear-gradient(90deg,#ffb36d,#ff6f9c,#d770ff)] bg-clip-text text-transparent">
-              built for your business.
+              your business should already have.
             </span>
           </h1>
           <p className={`mt-6 max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${muted}`}>
-            SignalOps builds done-for-you lead response, qualification, follow-up, and booking systems for local service businesses.
+            SignalOps builds done-for-you AI receptionist, lead response, qualification, follow-up, and booking handoff systems for local service businesses. Start with a free personalized preview before anything is built.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackedLink
               href={PRIMARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.auditCtaClicked}
+              eventName={ANALYTICS_EVENTS.previewCtaClicked}
               eventProperties={{ location: "homepage_hero" }}
               className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
             >
@@ -212,20 +213,20 @@ function HeroSection() {
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
             <TrackedLink
-              href={getEmailHref()}
-              eventName={ANALYTICS_EVENTS.contactClicked}
-              eventProperties={{ location: "homepage_hero", type: "email" }}
+              href={SECONDARY_CTA.href}
+              eventName={ANALYTICS_EVENTS.demoViewed}
+              eventProperties={{ location: "homepage_hero_demo" }}
               className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/20 bg-white/[0.045] sm:w-auto`}
             >
-              {EMAIL_CTA.label}
-              <Mail className="size-4" aria-hidden="true" />
+              {SECONDARY_CTA.label}
+              <PlayCircle className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
 
           <div className="mt-9 grid grid-cols-3 gap-2 sm:max-w-xl sm:gap-4">
             <HeroStat icon={ClipboardList} value="1" label="You tell us how leads come in" />
-            <HeroStat icon={Workflow} value="2" label="We build the response system" />
-            <HeroStat icon={CalendarCheck2} value="3" label="Leads get handled and handed off" />
+            <HeroStat icon={Workflow} value="2" label="We generate your AI Lead System Preview" />
+            <HeroStat icon={CalendarCheck2} value="3" label="You approve the build plan before launch" />
           </div>
         </div>
 
@@ -491,12 +492,12 @@ function PricingSection() {
               <Mail className="size-4" aria-hidden="true" />
             </TrackedLink>
             <TrackedLink
-              href={PRIMARY_CTA.href}
+              href="/audit"
               eventName={ANALYTICS_EVENTS.packageClicked}
               eventProperties={{ package: plan.name, price: plan.price }}
               className={`${buttonVariants({ variant: "ghost" })} mt-3 w-full border border-white/10 bg-white/[0.035]`}
             >
-              Start a Project
+              Send Project Details
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
@@ -532,7 +533,7 @@ function PricingSection() {
       </div>
 
       <div className="mt-5 rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-4 text-center text-sm leading-6 text-[#ffe1bd]">
-        Not sure which package fits? Email SignalOps or start the project questionnaire and we will point you in the right direction.
+        Not sure which package fits? Generate the free preview first, then email SignalOps when you are ready to talk through the build.
       </div>
 
       <BreakEvenCalculator className="mt-6" defaultAverageValue={250} defaultUnitLabel="jobs" />
@@ -595,16 +596,16 @@ function FinalCTA() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold tracking-normal text-white">
-                Tell us what you want built.
+                See the system before we build it.
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-                Choose a package direction, share your current lead flow, and SignalOps will reply with the best next step.
+                Get a personalized preview of the AI receptionist, lead dashboard, follow-up timeline, and package recommendation for your business.
               </p>
             </div>
           </div>
           <TrackedLink
             href={PRIMARY_CTA.href}
-            eventName={ANALYTICS_EVENTS.auditCtaClicked}
+            eventName={ANALYTICS_EVENTS.previewCtaClicked}
             eventProperties={{ location: "homepage_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
@@ -617,13 +618,13 @@ function FinalCTA() {
             eventProperties={{ location: "homepage_final_demo" }}
             className={`${buttonVariants({ variant: "outline", size: "lg" })} border-white/20 bg-white/[0.045]`}
           >
-            View Live Demo
+            {SECONDARY_CTA.label}
             <PlayCircle className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>
         <div className="mt-5 rounded-2xl border border-white/10 bg-[#17122d]/52 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
-          <p className="text-sm leading-6 text-[#ead0df]/76">
-            Prefer email? Send your business, website, package interest, and what you need help with.
+            <p className="text-sm leading-6 text-[#ead0df]/76">
+            Prefer email? Send your business, website, lead sources, and what you need help with.
           </p>
           <TrackedLink
             href={getEmailHref()}
@@ -648,10 +649,10 @@ function ContactSection() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Email SignalOps</p>
             <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-              Want to get the build moving?
+              Want to talk through the preview?
             </h2>
             <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-              Send a quick email with your business, website, package interest, current lead flow, and timeline.
+              Send a quick email with your business, website, current lead flow, and what you want the AI lead system to handle.
             </p>
             <p className="mt-3 text-sm font-semibold text-[#ffe1bd]">{SITE_CONFIG.email}</p>
           </div>
@@ -667,7 +668,7 @@ function ContactSection() {
             </TrackedLink>
             <TrackedLink
               href={PRIMARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.auditCtaClicked}
+              eventName={ANALYTICS_EVENTS.previewCtaClicked}
               eventProperties={{ location: "homepage_contact_section" }}
               className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
             >

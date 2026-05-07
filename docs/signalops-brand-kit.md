@@ -18,7 +18,7 @@ AI Lead Response & Qualification System
 
 ## Primary Offer
 
-SignalOps Project Inquiry
+Free Instant AI Lead System Preview
 
 ## Color Palette
 
@@ -59,7 +59,7 @@ SignalOps Project Inquiry
 
 ## CTA Language
 
-- Start a Project
+- Get My Free Preview
 - Contact SignalOps
 - Email SignalOps
 - Ask About Starter
@@ -71,7 +71,7 @@ SignalOps Project Inquiry
 
 ## Offer Names
 
-- SignalOps Project Inquiry
+- Free Instant AI Lead System Preview
 - AI Lead Response & Qualification System
 - Missed-Call Text Back
 - Lead Routing Blueprint
@@ -101,7 +101,7 @@ SignalOps should rank around practical lead handling problems, not vague AI clai
 - service business lead follow-up
 - AI appointment setting
 
-Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a path to contact SignalOps or start a project inquiry.
+Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a path to get the Free Instant AI Lead System Preview.
 
 ## Logo Usage Notes
 
@@ -115,7 +115,7 @@ Every SEO page should include a clear business problem, examples by industry, a 
 ## Do Language
 
 - "SignalOps helps every inquiry get a fast, useful next step."
-- "Tell us how leads come in, and we will scope the system that fits."
+- "See the AI lead system your business should already have."
 - "Route urgent leads to a human with context."
 - "Follow up until the lead books, replies, or clearly drops off."
 - "Start with the way your business already works."
@@ -132,16 +132,16 @@ Every SEO page should include a clear business problem, examples by industry, a 
 ## Homepage Hero Copy
 
 Eyebrow:
-`Done-for-you AI lead response systems`
+`Free Instant AI Lead System Preview`
 
 H1:
-`AI lead response systems, built for your business.`
+`See the AI lead system your business should already have.`
 
 Supporting copy:
-`SignalOps builds done-for-you lead response, qualification, follow-up, and booking systems for local service businesses.`
+`SignalOps builds done-for-you AI receptionist, lead response, qualification, follow-up, and booking handoff systems for local service businesses. Start with a free personalized preview before anything is built.`
 
 Primary CTA:
-`Start a Project`
+`Get My Free Preview`
 
 Secondary CTA:
-`Email SignalOps`
+`See Demo`

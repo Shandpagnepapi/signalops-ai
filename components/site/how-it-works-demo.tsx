@@ -444,7 +444,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Start a Project
+              Get My Free Preview
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

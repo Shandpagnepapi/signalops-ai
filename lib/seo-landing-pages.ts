@@ -554,8 +554,8 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         description: "Keep follow-up status visible in a simple dashboard."
       },
       {
-        href: "/audit",
-        label: "Start a Project",
+        href: "/preview",
+        label: "Get My Free Preview",
         description: "Find where follow-ups are getting delayed or forgotten."
       }
     ]

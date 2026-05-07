@@ -125,7 +125,7 @@ export function Footer() {
             </TrackedLink>
             <TrackedLink
               href={PRIMARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.auditCtaClicked}
+              eventName={ANALYTICS_EVENTS.previewCtaClicked}
               eventProperties={{ location: "footer_company" }}
               className={`${buttonVariants({ size: "sm" })} mt-1 w-full`}
             >

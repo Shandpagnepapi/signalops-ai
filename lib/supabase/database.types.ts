@@ -139,6 +139,48 @@ export type Database = {
           }
         ];
       };
+      preview_submissions: {
+        Row: {
+          id: string;
+          created_at: string;
+          business_name: string;
+          contact_name: string;
+          email: string;
+          phone: string | null;
+          website: string | null;
+          industry: string;
+          main_lead_sources: string[];
+          current_problem: string;
+          average_job_value: number | null;
+          monthly_lead_volume: string;
+          notes: string | null;
+          preview_data: Json;
+          manager_notes: Json;
+          status: string;
+          owner_approved: boolean;
+        };
+        Insert: {
+          id?: string;
+          created_at?: string;
+          business_name: string;
+          contact_name: string;
+          email: string;
+          phone?: string | null;
+          website?: string | null;
+          industry: string;
+          main_lead_sources?: string[];
+          current_problem: string;
+          average_job_value?: number | null;
+          monthly_lead_volume?: string;
+          notes?: string | null;
+          preview_data?: Json;
+          manager_notes?: Json;
+          status?: string;
+          owner_approved?: boolean;
+        };
+        Update: Partial<Database["public"]["Tables"]["preview_submissions"]["Insert"]>;
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

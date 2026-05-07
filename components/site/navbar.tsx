@@ -44,7 +44,7 @@ export function Navbar() {
           </TrackedLink>
           <TrackedLink
             href={PRIMARY_CTA.href}
-            eventName={ANALYTICS_EVENTS.auditCtaClicked}
+            eventName={ANALYTICS_EVENTS.previewCtaClicked}
             eventProperties={{ location: "navbar" }}
             aria-label={PRIMARY_CTA.label}
             className={cn(buttonVariants({ size: "sm" }), "max-sm:size-10 max-sm:px-0")}

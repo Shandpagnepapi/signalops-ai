@@ -15,11 +15,11 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Start a Project",
-  href: "/audit"
+  label: "Get My Free Preview",
+  href: "/preview"
 };
 
-export const OFFER_NAME = "SignalOps Project Inquiry";
+export const OFFER_NAME = "Free Instant AI Lead System Preview";
 
 export const EMAIL_CTA = {
   label: "Email SignalOps",
@@ -52,7 +52,7 @@ export function getPlanEmailHref(planName: string) {
 }
 
 export const SECONDARY_CTA = {
-  label: "View Demo",
+  label: "See Demo",
   href: "/demo"
 };
 
@@ -139,6 +139,10 @@ export const SEO_INDUSTRY_LINKS = [
 
 export const RESOURCE_LINKS = [
   {
+    href: "/preview",
+    label: "Free AI Preview"
+  },
+  {
     href: "/demo",
     label: "Demo"
   },
@@ -156,7 +160,7 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Start a Project"
+    label: "Project Questionnaire"
   }
 ];
 

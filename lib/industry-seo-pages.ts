@@ -1176,8 +1176,8 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
         description: "Route emergency, quote, and routine service leads to the right person."
       },
       {
-        href: "/audit",
-        title: "Start a Project",
+        href: "/preview",
+        title: "Get My Free Preview",
         description: "Find where calls, forms, and follow-ups are being missed."
       },
       {

@@ -7,7 +7,7 @@ const sitemapPath = path.join(appBuildDir, "sitemap.xml.body");
 const robotsPath = path.join(appBuildDir, "robots.txt.body");
 
 const ignoredRoutes = new Set(["/_global-error", "/_not-found"]);
-const intentionallyNonIndexableRoutes = new Set(["/dashboard"]);
+const intentionallyNonIndexableRoutes = new Set(["/dashboard", "/admin/manager"]);
 const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt"]);
 
 const failures = [];

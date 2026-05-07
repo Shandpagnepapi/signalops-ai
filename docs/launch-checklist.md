@@ -105,13 +105,17 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 
 ## 13) Contact and Project CTA
 
-- [ ] Primary CTA points to `/audit`
+- [ ] Primary CTA points to `/preview`
+- [ ] Preview CTA points to `/preview`
+- [ ] `/preview` form submits and opens a generated `/preview/[id]` page
+- [ ] `/admin/manager` is noindex, not in the main nav, and clearly marked internal demo only
 - [ ] Calendly URL env var configured if using direct booking links
 - [ ] Project inquiry page final CTA works on desktop and mobile
-- [ ] Demo and how-it-works pages include visible paths to contact SignalOps or start a project
+- [ ] Demo and how-it-works pages include visible paths to get the free AI lead system preview
 
 ## 14) Test Lead Submission (Final Dry Run)
 
+- [ ] Submit one realistic preview request in production preview
 - [ ] Submit one realistic project inquiry in production preview
 - [ ] Submit one realistic Apex wheel repair lead in production preview
 - [ ] Confirm scoring, priority, and summary output quality

@@ -8,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: [
           "/",
+          "/preview",
           "/audit",
           "/ai-lead-response",
           "/missed-call-text-back",
@@ -25,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
           "/privacy",
           "/terms"
         ],
-        disallow: ["/api/", "/auth/", "/dashboard"]
+        disallow: ["/api/", "/auth/", "/dashboard", "/admin/"]
       }
     ],
     sitemap: absoluteUrl("/sitemap.xml"),

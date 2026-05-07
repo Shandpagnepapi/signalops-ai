@@ -69,13 +69,16 @@ For a final local smoke test, start the dev server and check the key routes:
 npm run dev
 ```
 
-Open `http://localhost:3000` and verify `/`, `/live-demo`, `/demo`, `/audit`, `/dashboard`, `/how-it-works`, `/roi-calculator`, `/privacy`, and `/terms`.
+Open `http://localhost:3000` and verify `/`, `/preview`, `/live-demo`, `/demo`, `/audit`, `/dashboard`, `/admin/manager`, `/how-it-works`, `/roi-calculator`, `/privacy`, and `/terms`.
 
 ## Project Structure
 
 ```txt
 app/
   (marketing)/page.tsx
+  preview/page.tsx
+  preview/[id]/page.tsx
+  admin/manager/page.tsx
   live-demo/page.tsx
   audit/page.tsx
   demo/page.tsx
@@ -87,6 +90,7 @@ app/
   sitemap.ts
   robots.ts
   api/lead/route.ts
+  api/preview/route.ts
   api/live-demo/route.ts
 components/
   site/
@@ -103,6 +107,9 @@ lib/
   constants.ts
   demo-generator.ts
   demo-templates.ts
+  preview-generator.ts
+  preview-store.ts
+  preview-types.ts
   lead-scoring.ts
   lead-store.ts
   mock-data.ts
@@ -113,6 +120,7 @@ docs/
   seo/seo-qa-checklist.md
   seo/technical-seo-checklist.md
   supabase-schema.sql
+  supabase-preview-submissions.sql
 public/
   brand/
 ```
@@ -149,6 +157,18 @@ Lead submissions are written through `/api/lead`, which uses the server storage 
 
 If the Supabase variables are missing, the app falls back to the in-memory mock lead store so local demos keep working.
 
+Preview submissions for the Free Instant AI Lead System Preview use `preview_submissions`.
+For a fresh database, `docs/supabase-schema.sql` includes the preview table. For an
+existing database that already has the lead tables, run:
+
+```bash
+docs/supabase-preview-submissions.sql
+```
+
+If Supabase is missing or the preview table has not been created yet, `/api/preview`
+falls back to the in-memory mock store and the browser keeps the generated preview
+available through session storage for the current visit.
+
 The Supabase packages are already installed:
 
 ```bash
@@ -179,6 +199,9 @@ OPENAI_MODEL=
 
 If `OPENAI_API_KEY` is blank or an AI request fails, SignalOps uses deterministic fallbacks. Lead scoring falls back to `lib/lead-scoring.ts`; the live demo generator falls back to stored industry templates in `lib/demo-templates.ts`.
 
+The Instant AI Lead System Preview currently uses deterministic industry templates in
+`lib/preview-generator.ts`, so it works with or without OpenAI.
+
 ### Analytics Setup
 
 Analytics is optional and disabled by default. Add any of these public IDs to `.env.local` when you are ready to activate tracking:
@@ -189,23 +212,39 @@ NEXT_PUBLIC_META_PIXEL_ID=
 NEXT_PUBLIC_LINKEDIN_PARTNER_ID=
 ```
 
-`components/site/AnalyticsProvider.tsx` only loads Google Analytics, Meta Pixel, or LinkedIn Insight scripts when the matching env variable is present. Conversion events are centralized in `lib/analytics.ts` and currently include missed lead check CTA clicks, demo views, form start/submission, demo lead submissions, package clicks, and contact clicks.
+`components/site/AnalyticsProvider.tsx` only loads Google Analytics, Meta Pixel, or LinkedIn Insight scripts when the matching env variable is present. Conversion events are centralized in `lib/analytics.ts` and currently include preview CTA clicks, preview form start/submission, demo views, form submissions, demo lead submissions, package clicks, and contact clicks.
 
 For Vercel Analytics, add the official Vercel Analytics package/provider later if desired. SignalOps already forwards events to `window.va` when that client is available, while still working safely when it is absent.
 
 ## Routes
 
 - `/` - SignalOps marketing homepage
+- `/preview` - Free Instant AI Lead System Preview request flow
+- `/preview/[id]` - Generated customer-facing preview mockup
 - `/live-demo` - Live demo generator for prospect-specific SignalOps examples
 - `/how-it-works` - Visual AI Lead Engine explainer
 - `/roi-calculator` - Revenue impact estimate calculator for lead response and follow-up
 - `/audit` - SignalOps project inquiry and contact page
 - `/demo` - Fictional client website and intake demo
 - `/dashboard` - Lightweight internal dashboard demo
+- `/admin/manager` - Internal demo-only SignalOps AI Manager for previews and approval workflow
 - `/privacy` - Privacy policy
 - `/terms` - Terms of use
 - `/api/lead` - Lead intake API endpoint
+- `/api/preview` - Preview submission API endpoint
 - `/api/live-demo` - Server-side live demo generation endpoint
+
+## Testing the Preview Flow Locally
+
+1. Run `npm run dev`.
+2. Open `http://localhost:3000/preview`.
+3. Submit a business name, contact, email, lead sources, and lead problem.
+4. Confirm the app navigates to `/preview/[id]`.
+5. Confirm the preview shows the AI receptionist mock conversation, lead dashboard,
+   follow-up timeline, value snapshot, recommended package, and approval-first note.
+6. Open `/admin/manager` to review the internal demo queue. It is intentionally
+   demo-only until a real admin auth layer exists; customer-facing drafts are marked
+   as needing owner approval and are not sent automatically.
 
 ## Launch and Deployment
 

@@ -4,6 +4,9 @@ export const ANALYTICS_EVENTS = {
   auditFormStarted: "audit_form_started",
   auditFormSubmitted: "audit_form_submitted",
   demoLeadSubmitted: "demo_lead_submitted",
+  previewCtaClicked: "preview_cta_clicked",
+  previewFormStarted: "preview_form_started",
+  previewSubmitted: "preview_submitted",
   packageClicked: "package_clicked",
   contactClicked: "contact_clicked"
 } as const;

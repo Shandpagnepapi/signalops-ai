@@ -49,8 +49,8 @@ export type AlternativePageConfig = {
 
 const coreRelatedLinks: AlternativeRelatedLink[] = [
   {
-    href: "/audit",
-    label: "Start a Project",
+    href: "/preview",
+    label: "Get My Free Preview",
     description: "Find the places where calls, texts, forms, DMs, and follow-ups are being missed."
   },
   {

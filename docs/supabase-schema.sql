@@ -71,6 +71,40 @@ create table if not exists public.lead_messages (
   created_at timestamptz not null default now()
 );
 
+create table if not exists public.preview_submissions (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  business_name text not null,
+  contact_name text not null,
+  email text not null,
+  phone text,
+  website text,
+  industry text not null,
+  main_lead_sources text[] not null default '{}',
+  current_problem text not null,
+  average_job_value numeric,
+  monthly_lead_volume text not null default 'Not sure',
+  notes text,
+  preview_data jsonb not null default '{}',
+  manager_notes jsonb not null default '{}',
+  status text not null default 'New' check (
+    status in (
+      'New',
+      'Preview Generated',
+      'Needs Review',
+      'Approved to Send',
+      'Sent',
+      'Discovery Booked',
+      'Project Initiated',
+      'Building',
+      'Delivered',
+      'Won',
+      'Lost'
+    )
+  ),
+  owner_approved boolean not null default false
+);
+
 drop trigger if exists leads_set_updated_at on public.leads;
 create trigger leads_set_updated_at
 before update on public.leads
@@ -84,16 +118,22 @@ create index if not exists leads_source_idx on public.leads (source);
 create index if not exists leads_tags_idx on public.leads using gin (tags);
 create index if not exists lead_events_lead_id_idx on public.lead_events (lead_id);
 create index if not exists lead_messages_lead_id_idx on public.lead_messages (lead_id);
+create index if not exists preview_submissions_created_at_idx on public.preview_submissions (created_at desc);
+create index if not exists preview_submissions_status_idx on public.preview_submissions (status);
+create index if not exists preview_submissions_email_idx on public.preview_submissions (email);
 
 alter table public.leads enable row level security;
 alter table public.lead_events enable row level security;
 alter table public.lead_messages enable row level security;
+alter table public.preview_submissions enable row level security;
 
 grant usage on schema public to anon, authenticated;
 grant insert on public.leads to anon, authenticated;
+grant insert on public.preview_submissions to anon, authenticated;
 grant select, insert, update on public.leads to authenticated;
 grant select, insert, update on public.lead_events to authenticated;
 grant select, insert, update on public.lead_messages to authenticated;
+grant select, insert, update on public.preview_submissions to authenticated;
 
 drop policy if exists leads_public_insert on public.leads;
 create policy leads_public_insert
@@ -135,6 +175,32 @@ drop policy if exists lead_messages_authenticated_all on public.lead_messages;
 create policy lead_messages_authenticated_all
 on public.lead_messages
 for all
+to authenticated
+using (true)
+with check (true);
+
+drop policy if exists preview_submissions_public_insert on public.preview_submissions;
+create policy preview_submissions_public_insert
+on public.preview_submissions
+for insert
+to anon
+with check (
+  nullif(business_name, '') is not null
+  and nullif(contact_name, '') is not null
+  and nullif(email, '') is not null
+);
+
+drop policy if exists preview_submissions_authenticated_read on public.preview_submissions;
+create policy preview_submissions_authenticated_read
+on public.preview_submissions
+for select
+to authenticated
+using (true);
+
+drop policy if exists preview_submissions_authenticated_update on public.preview_submissions;
+create policy preview_submissions_authenticated_update
+on public.preview_submissions
+for update
 to authenticated
 using (true)
 with check (true);

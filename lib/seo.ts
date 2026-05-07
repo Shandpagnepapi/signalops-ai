@@ -51,6 +51,7 @@ export const OG_IMAGE_ASSETS = {
 
 export const PAGE_TITLE_TEMPLATES = {
   home: "AI Lead Response Systems for Local Businesses",
+  preview: "Free Instant AI Lead System Preview",
   audit: "Start a Project for AI Lead Response",
   demo: "AI Lead Response Demo for Local Service Businesses",
   dashboard: "AI Lead Management Dashboard Demo",
@@ -64,6 +65,8 @@ export const PAGE_TITLE_TEMPLATES = {
 export const META_DESCRIPTION_TEMPLATES = {
   home:
     "SignalOps helps local and service businesses respond to leads instantly, qualify prospects automatically, and follow up before opportunities go cold.",
+  preview:
+    "Get a personalized SignalOps mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build for your business.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:
@@ -247,7 +250,7 @@ export function serviceJsonLd(): JsonLdObject {
     "@id": absoluteUrl("/#ai-lead-response-qualification-system"),
     name: "AI Lead Response & Qualification System",
     serviceType: "AI lead response, qualification, routing, follow-up, and appointment booking",
-    url: absoluteUrl("/audit"),
+    url: absoluteUrl("/preview"),
     provider: {
       "@id": absoluteUrl("/#organization")
     },
@@ -271,7 +274,7 @@ export function serviceJsonLd(): JsonLdObject {
         description: pkg.price
       },
       availability: "https://schema.org/InStock",
-      url: absoluteUrl("/audit")
+      url: absoluteUrl("/preview")
     }))
   };
 }
@@ -316,7 +319,7 @@ export function serviceOfferingJsonLd({
         description: pkg.price
       },
       availability: "https://schema.org/InStock",
-      url: absoluteUrl("/audit")
+      url: absoluteUrl("/preview")
     }))
   };
 }
