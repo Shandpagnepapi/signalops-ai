@@ -1,15 +1,10 @@
 import {
   ArrowRight,
-  BellRing,
   CheckCircle2,
-  ClipboardCheck,
-  Clock3,
-  DatabaseZap,
-  FileText,
+  ClipboardList,
   Mail,
-  PhoneCall,
   Route,
-  SearchCheck,
+  Sparkles,
   Workflow
 } from "lucide-react";
 import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
@@ -18,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { EMAIL_CTA, getEmailHref, PRIMARY_CTA, SECONDARY_CTA, SITE_CONFIG } from "@/lib/constants";
+import { EMAIL_CTA, getEmailHref, SECONDARY_CTA, SITE_CONFIG } from "@/lib/constants";
 import {
   breadcrumbJsonLd,
   createPageMetadata,
@@ -39,69 +34,58 @@ export const metadata = createPageMetadata({
   imageAlt: OG_IMAGE_ASSETS.audit.alt
 });
 
-const whoItIsFor = [
-  "Local service businesses",
-  "Businesses running ads",
-  "Businesses getting website inquiries",
-  "Businesses running mostly through calls and texts",
-  "Businesses with slow follow-up",
-  "Businesses unsure which leads are worth chasing"
+const scopeItems = [
+  "How leads currently arrive",
+  "Which package looks closest",
+  "Current tools and handoffs",
+  "Biggest follow-up gaps",
+  "Timeline and build priorities",
+  "Best way to contact you"
 ];
 
-const auditChecks = [
-  "Lead source tracking",
-  "Response time",
-  "Missed calls",
-  "Form follow-up",
-  "CRM usage",
-  "Appointment booking flow",
-  "Follow-up sequences",
-  "Sales handoff",
-  "Lost lead recovery"
-];
-
-const checkIcons = [
-  SearchCheck,
-  Clock3,
-  PhoneCall,
-  FileText,
-  DatabaseZap,
-  Route,
-  Workflow,
-  BellRing,
-  ClipboardCheck
+const buildSteps = [
+  {
+    title: "You share the lead flow",
+    description: "Calls, forms, texts, DMs, ads, referrals, tools, pain points, and package interest.",
+    icon: ClipboardList
+  },
+  {
+    title: "SignalOps scopes the system",
+    description: "We map the response, qualification, follow-up, routing, logging, and handoff work.",
+    icon: Workflow
+  },
+  {
+    title: "We build and launch",
+    description: "Your lead engine gets installed around the way your business already operates.",
+    icon: Route
+  }
 ];
 
 const faqs = [
   {
-    question: "What happens after I submit the check request?",
+    question: "What happens after I send project details?",
     answer:
-      "SignalOps reviews your answers, looks for the biggest response and follow-up gaps, then follows up with recommended fixes and a practical next step."
+      "SignalOps reviews your lead flow, package interest, tools, and timeline, then replies with the best next step for scoping the build."
   },
   {
-    question: "Do I need to prepare anything first?",
+    question: "Do I need to know which package I want?",
     answer:
-      "No. A website, basic lead source notes, and a rough monthly lead count are enough to start. More detail helps, but the form is designed to be lightweight."
+      "No. Choose Not sure if you want help deciding. The questionnaire gives enough context to recommend Starter, Growth, or Custom."
   },
   {
-    question: "Is the check really free?",
+    question: "Do I need a CRM?",
     answer:
-      "Yes. The Free Missed Lead Check is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
+      "No. SignalOps can start with calls, texts, forms, DMs, email, spreadsheets, and calendars, then connect a CRM later if it makes sense."
   },
   {
-    question: "Can you review missed calls and quote requests?",
+    question: "Can I just email instead?",
     answer:
-      "Yes. Missed calls, website forms, quote requests, photo-based requests, DMs, and slow follow-up are exactly what this check is built to surface."
+      `Yes. Send your business name, website, lead problem, and package interest to ${SITE_CONFIG.email}.`
   },
   {
-    question: "Will this work if I do not have a CRM?",
+    question: "Will SignalOps send messages without approval?",
     answer:
-      "No CRM? No problem. SignalOps can start with the way you already work - calls, texts, forms, and DMs - then build a simple AI-assisted follow-up system around it."
-  },
-  {
-    question: "What if AI is unsure about a lead?",
-    answer:
-      "The recommended system should route uncertain, high-value, or risky cases to a human with context instead of forcing a bad automated answer."
+      "No. Customer-facing messages and email drafts should be reviewed before anything goes live unless you explicitly approve otherwise."
   }
 ];
 
@@ -124,50 +108,49 @@ export default function AuditPage() {
           ])
         ])}
       />
+
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,12,24,0.56),#100818_92%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.2),transparent_34%),linear-gradient(180deg,rgba(6,12,24,0.56),#100818_92%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex min-w-0 flex-col justify-center">
-            <Badge className="mb-6 w-fit bg-[#ff6f9c]/14 text-[#ffd7e6]">{PRIMARY_CTA.label}</Badge>
+            <Badge className="mb-6 w-fit bg-[#ff6f9c]/14 text-[#ffd7e6]">Project intake</Badge>
             <h1 className="max-w-xs text-4xl font-semibold leading-tight tracking-normal text-white sm:max-w-3xl sm:text-6xl">
-              Find missed leads before they turn into lost opportunities.
+              Start your SignalOps project.
             </h1>
             <p className="mt-6 max-w-xs text-base leading-8 text-[#ead0df]/78 sm:max-w-2xl sm:text-lg">
-              We will review how your business handles calls, texts, forms, DMs,
-              and follow-ups - then show you where leads are getting missed,
-              delayed, or forgotten.
+              Tell us how leads come in, which package you are considering, and what you need built. We will review the details and reply with the best next step.
             </p>
             <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row">
               <TrackedLink
                 href="#audit-form"
                 eventName={ANALYTICS_EVENTS.auditCtaClicked}
-                eventProperties={{ location: "audit_hero" }}
+                eventProperties={{ location: "project_hero" }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                {PRIMARY_CTA.label}
+                Send Project Details
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </TrackedLink>
-              <TrackedLink
-                href={SECONDARY_CTA.href}
-                eventName={ANALYTICS_EVENTS.demoViewed}
-                eventProperties={{ location: "audit_hero_demo_click" }}
-                className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-full sm:w-auto`}
-              >
-                {SECONDARY_CTA.label}
               </TrackedLink>
               <TrackedLink
                 href={getEmailHref()}
                 eventName={ANALYTICS_EVENTS.contactClicked}
-                eventProperties={{ location: "audit_hero", type: "email" }}
+                eventProperties={{ location: "project_hero", type: "email" }}
                 className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
               >
                 <Mail className="size-4" aria-hidden="true" />
                 {EMAIL_CTA.label}
               </TrackedLink>
+              <TrackedLink
+                href={SECONDARY_CTA.href}
+                eventName={ANALYTICS_EVENTS.demoViewed}
+                eventProperties={{ location: "project_hero_demo_click" }}
+                className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-full sm:w-auto`}
+              >
+                {SECONDARY_CTA.label}
+              </TrackedLink>
             </div>
             <div className="mt-6 grid max-w-2xl gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
-              {["No CRM required", "Built for local service teams", "Focused on booked appointments"].map((item) => (
+              {["Starter, Growth, or Custom", "Done-for-you build", "Draft-first messaging"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                   {item}
@@ -177,18 +160,13 @@ export default function AuditPage() {
           </div>
 
           <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-[#17122d]/82 p-5 shadow-2xl shadow-black/25 sm:max-w-none">
-            <p className="text-sm font-semibold text-white">{SITE_CONFIG.name} missed lead snapshot</p>
-            <p className="mt-1 text-sm text-[#ead0df]/42">What we look for before adding follow-up help</p>
+            <p className="text-sm font-semibold text-white">{SITE_CONFIG.name} project snapshot</p>
+            <p className="mt-1 text-sm text-[#ead0df]/42">What we need to scope your lead engine</p>
             <div className="mt-5 grid gap-3">
-              {[
-                ["Lead arrives", "Where did it come from and was the source tracked?"],
-                ["Response starts", "Did the customer get useful contact within minutes?"],
-                ["Lead qualifies", "Was the right next question asked before the lead went cold?"],
-                ["Booking happens", "Was a clear appointment or follow-up path offered?"]
-              ].map(([title, description]) => (
-                <div key={title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                  <p className="font-medium text-white">{title}</p>
-                  <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{description}</p>
+              {scopeItems.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4">
+                  <Sparkles className="size-4 shrink-0 text-[#ffb36d]" aria-hidden="true" />
+                  <p className="text-sm font-medium text-white">{item}</p>
                 </div>
               ))}
             </div>
@@ -198,16 +176,20 @@ export default function AuditPage() {
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <SectionIntro
-          eyebrow="Who it is for"
-          title="Built for operators who already get leads but know too many are missed, delayed, or forgotten."
-          description="If your team is answering calls, texting customers, checking forms, replying to DMs, or sorting quote requests manually, the check shows what should be tightened first."
+          eyebrow="Package-first"
+          title="Choose the level of system you need today."
+          description="The questionnaire is built to help SignalOps understand whether Starter, Growth, or a Custom Agent System is the right fit before we talk build details."
         />
-        <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-2">
-          {whoItIsFor.map((item) => (
-            <Card key={item} className="bg-[#17122d]/76">
-              <CardHeader className="flex-row items-center gap-3 space-y-0">
-                <CheckCircle2 className="size-5 shrink-0 text-emerald-300" aria-hidden="true" />
-                <CardTitle className="text-base">{item}</CardTitle>
+        <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-3">
+          {[
+            ["Starter", "One lead source and faster first response."],
+            ["Growth", "Multiple sources, follow-up, logging, and visibility."],
+            ["Custom", "Advanced workflows, routing, dashboards, and integrations."]
+          ].map(([title, description]) => (
+            <Card key={title} className="bg-[#17122d]/76">
+              <CardHeader>
+                <CardTitle className="text-base">{title}</CardTitle>
+                <CardDescription>{description}</CardDescription>
               </CardHeader>
             </Card>
           ))}
@@ -217,20 +199,22 @@ export default function AuditPage() {
       <section className="border-y border-white/10 bg-[#17122d]/70">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionIntro
-            eyebrow="What the check reviews"
-            title="Missed leads usually hide between first contact and follow-up."
-            description="The check reviews the practical details that turn an interested prospect into a booked appointment or a forgotten lead."
+            eyebrow="Build path"
+            title="A simpler way to get from messy lead flow to installed system."
+            description="SignalOps is a done-for-you build service. The goal is to understand your workflow, design the right system, and install it without making your team manage another complicated tool."
           />
-          <div className="mt-8 grid w-full max-w-xs gap-4 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3">
-            {auditChecks.map((check, index) => {
-              const Icon = checkIcons[index] ?? ClipboardCheck;
+          <div className="mt-8 grid w-full max-w-xs gap-4 sm:max-w-none lg:grid-cols-3">
+            {buildSteps.map((step) => {
+              const Icon = step.icon;
+
               return (
-                <Card key={check} className="bg-[#17122d]/76">
+                <Card key={step.title} className="bg-[#17122d]/76">
                   <CardHeader>
                     <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffc0d5]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
-                    <CardTitle className="text-base">{check}</CardTitle>
+                    <CardTitle className="text-base">{step.title}</CardTitle>
+                    <CardDescription>{step.description}</CardDescription>
                   </CardHeader>
                 </Card>
               );
@@ -242,24 +226,24 @@ export default function AuditPage() {
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <div>
           <SectionIntro
-            eyebrow="Missed lead check form"
-            title="Share the basics and get a preview of where leads may be missed."
-            description="Give SignalOps enough context to identify where calls, texts, forms, DMs, and follow-ups are most likely costing you booked appointments."
+            eyebrow="Start a project"
+            title="Send the details SignalOps needs to scope the build."
+            description="This is short enough to finish quickly, but specific enough to understand your package interest, lead sources, tools, pain points, and timeline."
           />
           <div className="mt-6 w-full max-w-xs rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-5 sm:max-w-none">
-            <p className="text-sm font-semibold text-white">What you get back</p>
-            <ul className="mt-3 space-y-2 text-sm leading-6 text-[#ead0df]/78">
-              {[
-                "A plain-English snapshot of your biggest lead flow risks",
-                "Recommended fixes for response, routing, and follow-up",
-                "A next-step note for a focused Missed Lead Check call"
-              ].map((item) => (
-                <li key={item} className="flex gap-2">
-                  <CheckCircle2 className="mt-1 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="text-sm font-semibold text-white">Prefer email?</p>
+            <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">
+              Send the same project details directly to {SITE_CONFIG.email}. The form and email path both land in the same review process.
+            </p>
+            <TrackedLink
+              href={getEmailHref()}
+              eventName={ANALYTICS_EVENTS.contactClicked}
+              eventProperties={{ location: "project_form_side_card", type: "email" }}
+              className={`${buttonVariants({ variant: "outline" })} mt-4 w-full border-white/18 bg-white/[0.045]`}
+            >
+              <Mail className="size-4" aria-hidden="true" />
+              {EMAIL_CTA.label}
+            </TrackedLink>
           </div>
         </div>
         <div className="w-full max-w-xs sm:max-w-none">
@@ -271,8 +255,8 @@ export default function AuditPage() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <SectionIntro
             eyebrow="FAQ"
-            title="A simple diagnostic before you commit to new systems."
-            description="The check is designed to be clear, practical, and useful for a busy owner or operator."
+            title="What to know before you start."
+            description="The project intake is designed for busy operators who want a practical build plan, not another generic AI pitch."
           />
           <div className="grid w-full max-w-xs gap-3 sm:max-w-none">
             {faqs.map((faq) => (
@@ -290,24 +274,24 @@ export default function AuditPage() {
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">Next step</p>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">Contact SignalOps</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
-              See where leads are being missed.
+              Ready to scope your lead engine?
             </h2>
           </div>
           <TrackedLink
             href="#audit-form"
             eventName={ANALYTICS_EVENTS.auditCtaClicked}
-            eventProperties={{ location: "audit_final_cta" }}
+            eventProperties={{ location: "project_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
-            {PRIMARY_CTA.label}
+            Send Project Details
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
             href={getEmailHref()}
             eventName={ANALYTICS_EVENTS.contactClicked}
-            eventProperties={{ location: "audit_final_cta", type: "email" }}
+            eventProperties={{ location: "project_final_cta", type: "email" }}
             className={`${buttonVariants({ variant: "outline", size: "lg" })} border-white/18 bg-white/[0.045]`}
           >
             <Mail className="size-4" aria-hidden="true" />

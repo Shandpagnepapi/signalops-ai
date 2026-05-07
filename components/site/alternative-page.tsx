@@ -228,10 +228,10 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-              Free Missed Lead Check
+              Start a SignalOps project
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
-              Compare options by first finding where leads are leaking.
+              Compare options, then ask about the right build.
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
               SignalOps will review how your business handles calls, texts, forms, DMs,

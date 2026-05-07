@@ -8,6 +8,7 @@ import {
   COMPANY_LINKS,
   EMAIL_CTA,
   getEmailHref,
+  PACKAGE_LINKS,
   PRIMARY_CTA,
   RESOURCE_LINKS,
   SEO_INDUSTRY_LINKS,
@@ -34,6 +35,18 @@ export function Footer() {
           <p className="mt-4 max-w-xl text-sm leading-6 text-[#ead0df]/70">
             {SITE_CONFIG.description}
           </p>
+          <div className="mt-5 border-t border-white/10 pt-4">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#ead0df]/42">
+              Packages
+            </p>
+            <div className="grid gap-2 text-sm text-[#ead0df]/78">
+              {PACKAGE_LINKS.map((link) => (
+                <Link key={link.label} href={link.href} className="transition hover:text-white">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#ead0df]/42">

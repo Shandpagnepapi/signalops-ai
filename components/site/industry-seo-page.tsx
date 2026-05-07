@@ -314,8 +314,8 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:px-8">
           <SectionHeader
             eyebrow="Next steps"
-            title="Generate a tailored demo or check your current lead flow"
-            description="Use the live demo generator for a quick industry-specific preview, or start with a Free Missed Lead Check of calls, texts, forms, DMs, and follow-ups."
+            title="Generate a tailored demo or start a project"
+            description="Use the live demo generator for a quick industry-specific preview, or send your lead sources, tools, package interest, and timeline to SignalOps."
           />
           <div className="grid gap-4 sm:grid-cols-3">
             {page.relatedLinks.map((link) => (
@@ -336,14 +336,13 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-              Free Missed Lead Check
+              Start a SignalOps project
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
-              See where leads are being missed, delayed, or forgotten.
+              Ask about the package that fits this industry.
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
-              We will review how your business handles calls, texts, forms, DMs, and follow-ups,
-              then show practical fixes that fit the way your team already works.
+              Send your lead flow, current tools, and project goals so SignalOps can scope a done-for-you system.
             </p>
           </div>
           <TrackedLink

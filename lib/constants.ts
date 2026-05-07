@@ -15,17 +15,18 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Get a Free Missed Lead Check",
+  label: "Start a Project",
   href: "/audit"
 };
 
-export const OFFER_NAME = "Free Missed Lead Check";
+export const OFFER_NAME = "SignalOps Project Inquiry";
 
 export const EMAIL_CTA = {
   label: "Email SignalOps",
-  shortLabel: "Email Us",
-  subject: "SignalOps Inquiry",
-  body: "Hi SignalOps, I'm interested in getting help with missed leads. Here's a little about my business:"
+  shortLabel: "Contact",
+  subject: "SignalOps Project Inquiry",
+  body:
+    "Hi SignalOps, I'm interested in getting help with lead response and follow-up for my business.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
 };
 
 export function getEmailHref({
@@ -39,9 +40,14 @@ export function getEmailHref({
 }
 
 export function getPlanEmailHref(planName: string) {
+  const subject =
+    planName === "Custom Agent System"
+      ? "SignalOps Custom Agent System Inquiry"
+      : `SignalOps ${planName} Package Inquiry`;
+
   return getEmailHref({
-    subject: `SignalOps ${planName} Inquiry`,
-    body: `Hi SignalOps, I'm interested in the ${planName} plan and getting help with missed leads. Here's a little about my business:`
+    subject,
+    body: `Hi SignalOps, I'm interested in the ${planName} package.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat I need help with:\nBest phone/email:\nTimeline:`
   });
 }
 
@@ -150,7 +156,22 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Free Missed Lead Check"
+    label: "Contact"
+  }
+];
+
+export const PACKAGE_LINKS = [
+  {
+    href: "/#pricing",
+    label: "Starter Package"
+  },
+  {
+    href: "/#pricing",
+    label: "Growth Package"
+  },
+  {
+    href: "/#pricing",
+    label: "Custom Agent System"
   }
 ];
 
@@ -171,7 +192,7 @@ export const PACKAGE_NAMES = [
     price: "$297/mo",
     summary: "Start with one clean response and follow-up workflow for a core lead source.",
     features: [
-      "Free Missed Lead Check",
+      "Project intake and setup plan",
       "Instant reply workflow",
       "Practical lead qualification",
       "Owner or rep alerts"
@@ -232,8 +253,8 @@ export const AI_LEAD_ENGINE_FEATURES = [
 
 export const SIGNALOPS_PROCESS = [
   {
-    step: "Check",
-    description: "Find where calls, texts, forms, DMs, and follow-ups are being missed."
+    step: "Scope",
+    description: "Gather package interest, lead sources, tools, timeline, and build priorities."
   },
   {
     step: "Map",

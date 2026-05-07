@@ -50,7 +50,7 @@ export type AlternativePageConfig = {
 const coreRelatedLinks: AlternativeRelatedLink[] = [
   {
     href: "/audit",
-    label: "Free Missed Lead Check",
+    label: "Start a Project",
     description: "Find the places where calls, texts, forms, DMs, and follow-ups are being missed."
   },
   {

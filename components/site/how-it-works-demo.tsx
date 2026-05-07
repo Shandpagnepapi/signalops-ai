@@ -429,14 +429,13 @@ export function HowItWorksDemo() {
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#ff6f9c]/18 via-[#231434] to-[#17122d] p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div className="space-y-3">
-              <Badge variant="success">Free Missed Lead Check</Badge>
+              <Badge variant="success">Project inquiry</Badge>
               <h2 className="text-3xl font-semibold tracking-normal text-white">
                 See where leads are being missed.
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-[#ead0df]/78 sm:text-base">
-                We will review how your business handles calls, texts, forms, DMs,
-                and follow-ups, then show where leads are getting missed, delayed,
-                or forgotten.
+                Tell us how leads come in, what tools you use, and which package you are considering.
+                SignalOps will reply with the best next step.
               </p>
             </div>
             <TrackedLink
@@ -445,7 +444,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Get a Free Missed Lead Check
+              Start a Project
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

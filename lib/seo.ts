@@ -37,7 +37,7 @@ export const OG_IMAGE_ASSETS = {
   },
   audit: {
     path: "/og/signalops-audit.png",
-    alt: "SignalOps Free Missed Lead Check social image."
+    alt: "SignalOps project inquiry social image."
   },
   demo: {
     path: "/og/signalops-demo.png",
@@ -51,7 +51,7 @@ export const OG_IMAGE_ASSETS = {
 
 export const PAGE_TITLE_TEMPLATES = {
   home: "AI Lead Response Systems for Local Businesses",
-  audit: "Free Missed Lead Check for AI Lead Response",
+  audit: "Start a Project for AI Lead Response",
   demo: "AI Lead Response Demo for Local Service Businesses",
   dashboard: "AI Lead Management Dashboard Demo",
   howItWorks: "How AI Lead Response Systems Work",
@@ -65,7 +65,7 @@ export const META_DESCRIPTION_TEMPLATES = {
   home:
     "SignalOps helps local and service businesses respond to leads instantly, qualify prospects automatically, and follow up before opportunities go cold.",
   audit:
-    "Get a Free Missed Lead Check from SignalOps to find gaps in AI lead response, lead qualification, automated follow-up, routing, and missed lead recovery.",
+    "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:
     "See SignalOps AI lead response demos for Apex Wheel Repair and ClearFlow with quote intake automation, lead qualification, routing, and follow-up.",
   dashboard:

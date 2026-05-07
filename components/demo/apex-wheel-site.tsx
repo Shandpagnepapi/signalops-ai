@@ -114,10 +114,10 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
                 Ready for your business?
               </p>
               <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
-                See where your real leads are leaking.
+                Want this built for your business?
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[#ead0df]/76">
-                The free check reviews calls, texts, forms, DMs, response time, routing, and follow-up.
+                Send your lead sources, tools, package interest, and timeline so SignalOps can scope the right system.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">

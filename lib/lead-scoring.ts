@@ -168,7 +168,7 @@ function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
   }
 
   if (isAuditLead(lead)) {
-    return `${lead.name} requested a Free Missed Lead Check${business}${industry}. The main issue appears to be ${lead.message || "missed calls, slow replies, or follow-up visibility"}.`;
+    return `${lead.name} submitted a SignalOps project inquiry${business}${industry}. The main issue appears to be ${lead.message || "lead response, qualification, routing, or follow-up visibility"}.`;
   }
 
   return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
@@ -176,7 +176,7 @@ function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
 
 function isAuditLead(lead: LeadSubmissionDraft) {
   const text = normalize(`${lead.source} ${lead.serviceNeeded} ${lead.message}`);
-  return text.includes("checkup") || text.includes("missed lead") || text.includes("audit");
+  return text.includes("project inquiry") || text.includes("checkup") || text.includes("missed lead") || text.includes("audit");
 }
 
 function isWheelLead(lead: LeadSubmissionDraft) {
@@ -259,7 +259,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   pushTag(tags, lead.source || "website");
 
   if (auditLead) {
-    pushTag(tags, "missed-lead-check");
+    pushTag(tags, "project-inquiry");
     score += 14;
   }
 
@@ -524,7 +524,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return "Review calls, texts, forms, DMs, response process, CRM/tools if any, and follow-up gaps before sending missed lead check recommendations.";
+      return "Review package interest, lead sources, current tools, response process, routing needs, and follow-up gaps before recommending the next project step.";
     }
 
     if (priority === "hot") {
@@ -560,7 +560,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return `Thanks ${name}, SignalOps received your Free Missed Lead Check request. We'll review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.`;
+      return `Thanks ${name}, SignalOps received your project details. We'll review your lead flow, tools, package interest, and timeline, then reply with the best next step.`;
     }
 
     return `Thanks ${name}, we received your request. We'll review the details and follow up with the best next step.`;
@@ -594,7 +594,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return `${contactNote} Missed lead check should focus on missed calls, slow replies, forgotten follow-ups, CRM/tool usage if any, and simple recovery steps. Tags: ${tags.join(", ")}.`;
+      return `${contactNote} Project review should focus on package fit, lead sources, tools, routing, follow-up, timeline, and the simplest build path. Tags: ${tags.join(", ")}.`;
     }
 
     return `${contactNote} Review message quality and route according to score. Tags: ${tags.join(", ")}.`;

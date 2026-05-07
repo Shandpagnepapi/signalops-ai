@@ -103,16 +103,16 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 - [ ] Footer contact link opens correctly
 - [ ] Owner alert placeholders updated if using notification integrations
 
-## 13) Calendly and Audit CTA
+## 13) Contact and Project CTA
 
 - [ ] Primary CTA points to `/audit`
 - [ ] Calendly URL env var configured if using direct booking links
-- [ ] Audit page final CTA works on desktop and mobile
-- [ ] Demo and how-it-works pages include visible path to the Free Missed Lead Check
+- [ ] Project inquiry page final CTA works on desktop and mobile
+- [ ] Demo and how-it-works pages include visible paths to contact SignalOps or start a project
 
 ## 14) Test Lead Submission (Final Dry Run)
 
-- [ ] Submit one realistic audit lead in production preview
+- [ ] Submit one realistic project inquiry in production preview
 - [ ] Submit one realistic Apex wheel repair lead in production preview
 - [ ] Confirm scoring, priority, and summary output quality
 - [ ] Confirm dashboard reflects new mock/store data path

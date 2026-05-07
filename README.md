@@ -199,7 +199,7 @@ For Vercel Analytics, add the official Vercel Analytics package/provider later i
 - `/live-demo` - Live demo generator for prospect-specific SignalOps examples
 - `/how-it-works` - Visual AI Lead Engine explainer
 - `/roi-calculator` - Revenue impact estimate calculator for lead response and follow-up
-- `/audit` - Free Missed Lead Check request page
+- `/audit` - SignalOps project inquiry and contact page
 - `/demo` - Fictional client website and intake demo
 - `/dashboard` - Lightweight internal dashboard demo
 - `/privacy` - Privacy policy

@@ -4,14 +4,15 @@ import {
   BarChart3,
   CalendarCheck2,
   CheckCircle2,
+  ClipboardList,
   Mail,
   MessageSquareReply,
   PlayCircle,
   SearchCheck,
-  Sparkles,
   Star,
   TrendingUp,
   UserRound,
+  Workflow,
   Zap
 } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
@@ -23,7 +24,6 @@ import {
   getEmailHref,
   getPlanEmailHref,
   PRIMARY_CTA,
-  SECONDARY_CTA,
   SITE_CONFIG
 } from "@/lib/constants";
 
@@ -64,47 +64,74 @@ const pricing = [
     name: "Starter",
     price: "$297",
     cadence: "/mo",
-    bestFor: "Best for businesses just getting started.",
-    cta: "Get Started",
+    setupFee: "Starting at $750 setup",
+    bestFor: "A business that mainly needs faster replies and basic follow-up for one main lead source.",
+    explanation:
+      "We set up your first lead response workflow so new inquiries get answered fast and basic follow-up does not get forgotten.",
+    cta: "Ask About Starter",
     items: [
-      "AI instant reply",
-      "Lead qualification",
-      "Smart follow-up",
-      "Basic reporting",
-      "1 lead source"
-    ]
+      "1 main lead source",
+      "Instant reply workflow",
+      "Basic lead qualification questions",
+      "Simple follow-up reminders",
+      "Owner/new lead alerts",
+      "Basic monthly check-in"
+    ],
+    examples: ["Website form", "Missed call/text flow", "Simple quote request", "Solo operator or small team"]
   },
   {
     name: "Growth",
     price: "$597",
     cadence: "/mo",
-    bestFor: "Best for growing businesses ready to scale.",
-    cta: "Get Started",
+    setupFee: "Starting at $1,500 setup",
+    bestFor: "A business that has multiple lead sources and wants stronger automation, follow-up, and visibility.",
+    explanation:
+      "We connect more of your lead flow, add smarter qualification, follow-up sequences, booking handoff, and better visibility into what is happening.",
+    cta: "Ask About Growth",
     highlight: true,
     items: [
-      "Everything in Starter",
-      "Multi-channel support",
-      "Advanced follow-up",
-      "Detailed analytics",
-      "2 calendar connections",
-      "Priority support"
-    ]
+      "Multiple lead sources",
+      "Smarter lead qualification",
+      "Follow-up sequences",
+      "Booking handoff",
+      "CRM or spreadsheet logging",
+      "Dashboard visibility",
+      "Monthly optimization"
+    ],
+    examples: ["Website + calls + Facebook leads", "Quote requests with photos/details", "Team handoffs", "Growing service business"]
   },
   {
     name: "Custom Agent System",
     price: "Custom",
     cadence: "",
-    bestFor: "Best for businesses that want a fully custom solution.",
-    cta: "Contact Us",
+    setupFee: "Starting at $5,000+ buildout",
+    supportFee: "Custom monthly support",
+    bestFor: "A business with complex workflows, multiple locations, custom tools, or advanced routing needs.",
+    explanation:
+      "We design and build a custom AI-powered lead operations system around your tools, team, services, routing rules, and sales process.",
+    cta: "Ask About Custom",
     items: [
-      "Everything in Growth",
-      "Custom AI agent flows",
-      "Advanced integrations",
-      "Custom reporting",
-      "Dedicated onboarding",
-      "Strategy support"
-    ]
+      "Custom AI workflows",
+      "Multi-step lead qualification",
+      "CRM/calendar/tool integrations",
+      "Team/location routing",
+      "Custom dashboards or reporting",
+      "Advanced follow-up logic",
+      "Ongoing optimization/support"
+    ],
+    examples: ["Multi-location businesses", "Larger teams", "Complex quote workflows", "Custom integrations"]
   }
+];
+
+const comparisonRows = [
+  ["Lead sources", "1 main source", "Multiple sources", "Unlimited/custom"],
+  ["Qualification", "Basic questions", "Smarter scoring", "Multi-step logic"],
+  ["Follow-up", "Simple reminders", "Sequences", "Advanced branching"],
+  ["Booking handoff", "Basic", "Included", "Custom"],
+  ["CRM/logging", "Lightweight", "CRM or spreadsheet", "Deep integrations"],
+  ["Dashboard", "Basic check-in", "Visibility included", "Custom reporting"],
+  ["Custom integrations", "Not included", "Limited", "Advanced"],
+  ["Monthly optimization", "Basic check-in", "Included", "Custom support"]
 ];
 
 const faqs = [
@@ -136,9 +163,9 @@ export function MarketingHome() {
         <div className={`${shell} relative`}>
           <div className="overflow-hidden rounded-[1.75rem] border border-white/18 bg-white/[0.055] shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:rounded-[2.25rem]">
             <HeroSection />
+            <PricingSection />
             <FeatureSection />
             <HowItWorks />
-            <PricingSection />
             <DemoFaq />
             <FinalCTA />
             <ContactSection />
@@ -158,17 +185,16 @@ function HeroSection() {
       <div className="relative grid gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="max-w-2xl">
           <Badge className="border border-[#ff9ec0]/22 bg-white/8 px-3 py-1.5 text-[#ffd7e6]">
-            AI lead response for local service businesses
+            Done-for-you AI lead response systems
           </Badge>
           <h1 className="mt-8 text-[2.95rem] font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.35rem]">
-            Respond faster.
+            AI lead response systems,
             <span className="block bg-[linear-gradient(90deg,#ffb36d,#ff6f9c,#d770ff)] bg-clip-text text-transparent">
-              Book more leads.
+              built for your business.
             </span>
           </h1>
           <p className={`mt-6 max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${muted}`}>
-            AI lead response systems for local service businesses. Instant reply,
-            qualification, routing, and follow-up, so you never lose a good lead again.
+            SignalOps builds done-for-you lead response, qualification, follow-up, and booking systems for local service businesses.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -182,20 +208,20 @@ function HeroSection() {
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
             <TrackedLink
-              href={SECONDARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.demoViewed}
-              eventProperties={{ location: "homepage_hero_demo" }}
+              href={getEmailHref()}
+              eventName={ANALYTICS_EVENTS.contactClicked}
+              eventProperties={{ location: "homepage_hero", type: "email" }}
               className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/20 bg-white/[0.045] sm:w-auto`}
             >
-              View Live Demo
-              <PlayCircle className="size-4" aria-hidden="true" />
+              {EMAIL_CTA.label}
+              <Mail className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
 
           <div className="mt-9 grid grid-cols-3 gap-2 sm:max-w-xl sm:gap-4">
-            <HeroStat icon={Zap} value="< 5 sec" label="Average response time" />
-            <HeroStat icon={TrendingUp} value="2.7x" label="More leads booked" />
-            <HeroStat icon={Sparkles} value="24/7" label="AI working for you" />
+            <HeroStat icon={ClipboardList} value="1" label="You tell us how leads come in" />
+            <HeroStat icon={Workflow} value="2" label="We build the response system" />
+            <HeroStat icon={CalendarCheck2} value="3" label="Leads get handled and handed off" />
           </div>
         </div>
 
@@ -387,11 +413,14 @@ function HowItWorks() {
 
 function PricingSection() {
   return (
-    <section id="pricing" className="px-5 py-8 sm:px-9 lg:px-11">
+    <section id="pricing" className="border-y border-white/10 bg-[#17122d]/38 px-5 py-9 sm:px-9 lg:px-11">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-          Simple pricing. Serious results.
+          Choose the system level you need.
         </h2>
+        <p className={`mt-3 text-sm leading-6 ${muted}`}>
+          Clear monthly support, clear build fees, and a direct path to ask about the package that fits your business.
+        </p>
       </div>
       <div className="mt-6 grid gap-4 lg:grid-cols-3">
         {pricing.map((plan) => (
@@ -409,11 +438,25 @@ function PricingSection() {
               </Badge>
             ) : null}
             <h3 className="text-xl font-semibold text-white">{plan.name}</h3>
-            <p className={`mt-2 min-h-12 text-sm leading-6 ${muted}`}>{plan.bestFor}</p>
+            <p className={`mt-2 text-sm leading-6 ${muted}`}>
+              <span className="font-semibold text-[#ffe1bd]">Best for: </span>
+              {plan.bestFor}
+            </p>
             <div className="mt-5">
               <span className="text-4xl font-semibold tracking-normal text-white">{plan.price}</span>
               <span className="ml-1 text-sm text-[#ead0df]/72">{plan.cadence}</span>
-              <p className="mt-1 text-xs text-[#ead0df]/58">{plan.cadence ? "Billed monthly" : "Let's build what you need."}</p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#ffb36d]">
+                {plan.setupFee}
+              </p>
+              {"supportFee" in plan ? (
+                <p className="mt-1 text-xs text-[#ead0df]/58">{plan.supportFee}</p>
+              ) : (
+                <p className="mt-1 text-xs text-[#ead0df]/58">Monthly support billed separately from setup</p>
+              )}
+            </div>
+            <div className="mt-5 rounded-xl border border-white/10 bg-[#17122d]/52 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/50">What we build</p>
+              <p className={`mt-2 text-sm leading-6 ${muted}`}>{plan.explanation}</p>
             </div>
             <ul className="mt-6 flex-1 space-y-2.5">
               {plan.items.map((item) => (
@@ -423,28 +466,68 @@ function PricingSection() {
                 </li>
               ))}
             </ul>
-            <TrackedLink
-              href={PRIMARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.packageClicked}
-              eventProperties={{ package: plan.name, price: plan.price }}
-              className={`${buttonVariants({ variant: plan.highlight ? "default" : "outline" })} mt-6 w-full`}
-            >
-              {plan.cta}
-            </TrackedLink>
+            <div className="mt-5 rounded-xl border border-white/10 bg-white/[0.035] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/50">Good fit examples</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {plan.examples.map((example) => (
+                  <span key={example} className="rounded-full border border-white/10 bg-[#17122d]/58 px-2.5 py-1 text-xs text-[#ead0df]/76">
+                    {example}
+                  </span>
+                ))}
+              </div>
+            </div>
             <TrackedLink
               href={getPlanEmailHref(plan.name)}
               eventName={ANALYTICS_EVENTS.contactClicked}
               eventProperties={{ location: "pricing_card", type: "email", package: plan.name }}
+              className={`${buttonVariants({ variant: plan.highlight ? "default" : "outline" })} mt-6 w-full`}
+            >
+              {plan.cta}
+              <Mail className="size-4" aria-hidden="true" />
+            </TrackedLink>
+            <TrackedLink
+              href={PRIMARY_CTA.href}
+              eventName={ANALYTICS_EVENTS.packageClicked}
+              eventProperties={{ package: plan.name, price: plan.price }}
               className={`${buttonVariants({ variant: "ghost" })} mt-3 w-full border border-white/10 bg-white/[0.035]`}
             >
-              <Mail className="size-4" aria-hidden="true" />
-              Email about {plan.name}
+              Start a Project
+              <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
         ))}
       </div>
+
+      <div className="mt-6 overflow-hidden rounded-2xl border border-white/12 bg-white/[0.045]">
+        <div className="border-b border-white/10 p-4">
+          <p className="text-sm font-semibold text-white">Simple package comparison</p>
+          <p className={`mt-1 text-xs leading-5 ${muted}`}>Use this to choose what to ask about first.</p>
+        </div>
+        <div className="grid divide-y divide-white/10 text-sm md:grid-cols-[1fr_repeat(3,0.9fr)] md:divide-x md:divide-y-0">
+          <div className="hidden p-4 font-semibold text-[#ead0df]/58 md:block">Capability</div>
+          {["Starter", "Growth", "Custom"].map((label) => (
+            <div key={label} className="hidden p-4 font-semibold text-white md:block">
+              {label}
+            </div>
+          ))}
+          {comparisonRows.map(([label, starter, growth, custom]) => (
+            <div key={label} className="contents">
+              <div className="bg-[#17122d]/42 p-4 font-semibold text-white md:bg-transparent">{label}</div>
+              {[starter, growth, custom].map((value, index) => (
+                <div key={`${label}-${value}`} className="flex justify-between gap-4 p-4 text-[#ead0df]/76 md:block">
+                  <span className="font-medium text-[#ead0df]/42 md:hidden">
+                    {index === 0 ? "Starter" : index === 1 ? "Growth" : "Custom"}
+                  </span>
+                  <span>{value}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-5 rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-4 text-center text-sm leading-6 text-[#ffe1bd]">
-        Not sure which plan fits? Start with a Free Missed Lead Check, or email us and we will point you in the right direction.
+        Not sure which package fits? Email SignalOps or start the project questionnaire and we will point you in the right direction.
       </div>
     </section>
   );
@@ -505,10 +588,10 @@ function FinalCTA() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold tracking-normal text-white">
-                Stop losing leads. Start booking more.
+                Tell us what you want built.
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-                Start with a Free Missed Lead Check and see where leads are getting missed, delayed, or forgotten.
+                Choose a package direction, share your current lead flow, and SignalOps will reply with the best next step.
               </p>
             </div>
           </div>
@@ -533,7 +616,7 @@ function FinalCTA() {
         </div>
         <div className="mt-5 rounded-2xl border border-white/10 bg-[#17122d]/52 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
           <p className="text-sm leading-6 text-[#ead0df]/76">
-            Prefer email? Send a quick note and we will help you figure out what is being missed.
+            Prefer email? Send your business, website, package interest, and what you need help with.
           </p>
           <TrackedLink
             href={getEmailHref()}
@@ -558,10 +641,10 @@ function ContactSection() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Email SignalOps</p>
             <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-              Want to get the ball rolling?
+              Want to get the build moving?
             </h2>
             <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-              Send a quick email and tell us what kind of leads you are missing: calls, forms, texts, DMs, or follow-ups.
+              Send a quick email with your business, website, package interest, current lead flow, and timeline.
             </p>
             <p className="mt-3 text-sm font-semibold text-[#ffe1bd]">{SITE_CONFIG.email}</p>
           </div>

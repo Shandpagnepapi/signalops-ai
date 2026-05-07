@@ -18,7 +18,7 @@ AI Lead Response & Qualification System
 
 ## Primary Offer
 
-Free Missed Lead Check
+SignalOps Project Inquiry
 
 ## Color Palette
 
@@ -59,17 +59,19 @@ Free Missed Lead Check
 
 ## CTA Language
 
-- Get a Free Missed Lead Check
-- Book a Free Missed Lead Check
-- Find Where Leads Are Leaking
-- See Where Leads Are Being Missed
+- Start a Project
+- Contact SignalOps
+- Email SignalOps
+- Ask About Starter
+- Ask About Growth
+- Ask About Custom
 - View the Client Demo
 - Generate a Live Demo
 - Estimate Missed Revenue
 
 ## Offer Names
 
-- Free Missed Lead Check
+- SignalOps Project Inquiry
 - AI Lead Response & Qualification System
 - Missed-Call Text Back
 - Lead Routing Blueprint
@@ -99,7 +101,7 @@ SignalOps should rank around practical lead handling problems, not vague AI clai
 - service business lead follow-up
 - AI appointment setting
 
-Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a CTA to the Free Missed Lead Check.
+Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a path to contact SignalOps or start a project inquiry.
 
 ## Logo Usage Notes
 
@@ -113,7 +115,7 @@ Every SEO page should include a clear business problem, examples by industry, a 
 ## Do Language
 
 - "SignalOps helps every inquiry get a fast, useful next step."
-- "Find where calls, texts, forms, DMs, and follow-ups are leaking."
+- "Tell us how leads come in, and we will scope the system that fits."
 - "Route urgent leads to a human with context."
 - "Follow up until the lead books, replies, or clearly drops off."
 - "Start with the way your business already works."
@@ -130,16 +132,16 @@ Every SEO page should include a clear business problem, examples by industry, a 
 ## Homepage Hero Copy
 
 Eyebrow:
-`AI Lead Response & Qualification System`
+`Done-for-you AI lead response systems`
 
 H1:
-`Every lead answered. Every follow-up handled.`
+`AI lead response systems, built for your business.`
 
 Supporting copy:
-`SignalOps helps small and local businesses capture, qualify, route, follow up with, and book more leads automatically before good inquiries get buried in forms, inboxes, missed calls, and scattered notes.`
+`SignalOps builds done-for-you lead response, qualification, follow-up, and booking systems for local service businesses.`
 
 Primary CTA:
-`Get a Free Missed Lead Check`
+`Start a Project`
 
 Secondary CTA:
-`View Client Demo`
+`Email SignalOps`

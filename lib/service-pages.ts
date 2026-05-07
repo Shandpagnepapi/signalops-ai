@@ -715,7 +715,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Where should we start?",
         answer:
-          "Start with a Free Missed Lead Check to identify the highest-value missed moments across calls, texts, forms, DMs, and follow-up."
+          "Start by sending project details so SignalOps can scope the right response, qualification, routing, and follow-up system."
       }
     ],
     relatedLinks: [related.response, related.followUp, related.routing, related.booking]
