@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Is the audit really free?",
     answer:
-      "Yes. The Free Missed Lead Checkup is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
+      "Yes. The Free Lead Leak Audit is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
   },
   {
     question: "Can you review missed calls and quote requests?",
@@ -132,7 +132,7 @@ export default function AuditPage() {
             <h1 className="max-w-xs text-4xl font-semibold leading-tight tracking-normal text-white sm:max-w-3xl sm:text-6xl">
               Find missed leads before they turn into lost opportunities.
             </h1>
-            <p className="mt-6 max-w-xs text-base leading-8 text-slate-300 sm:max-w-2xl sm:text-lg">
+            <p className="mt-6 max-w-xs text-base leading-8 text-[#ead0df]/78 sm:max-w-2xl sm:text-lg">
               We will review how your business handles calls, texts, forms, DMs,
               and follow-ups - then show you where leads are getting missed,
               delayed, or forgotten.
@@ -144,7 +144,7 @@ export default function AuditPage() {
                 eventProperties={{ location: "audit_hero" }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                Start free audit
+                {PRIMARY_CTA.label}
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -156,7 +156,7 @@ export default function AuditPage() {
                 {SECONDARY_CTA.label}
               </TrackedLink>
             </div>
-            <div className="mt-6 grid max-w-2xl gap-3 text-sm text-slate-300 sm:grid-cols-3">
+            <div className="mt-6 grid max-w-2xl gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
               {["No CRM required", "Built for local service teams", "Focused on booked appointments"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -166,9 +166,9 @@ export default function AuditPage() {
             </div>
           </div>
 
-          <div className="w-full max-w-xs rounded-lg border border-white/10 bg-slate-950/82 p-5 shadow-2xl shadow-black/25 sm:max-w-none">
+          <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-[#17122d]/82 p-5 shadow-2xl shadow-black/25 sm:max-w-none">
             <p className="text-sm font-semibold text-white">{SITE_CONFIG.name} missed lead snapshot</p>
-            <p className="mt-1 text-sm text-slate-500">What we look for before adding follow-up help</p>
+            <p className="mt-1 text-sm text-[#ead0df]/42">What we look for before adding follow-up help</p>
             <div className="mt-5 grid gap-3">
               {[
                 ["Lead arrives", "Where did it come from and was the source tracked?"],
@@ -176,9 +176,9 @@ export default function AuditPage() {
                 ["Lead qualifies", "Was the right next question asked before the lead went cold?"],
                 ["Booking happens", "Was a clear appointment or follow-up path offered?"]
               ].map(([title, description]) => (
-                <div key={title} className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+                <div key={title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                   <p className="font-medium text-white">{title}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">{description}</p>
+                  <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{description}</p>
                 </div>
               ))}
             </div>
@@ -194,7 +194,7 @@ export default function AuditPage() {
         />
         <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-2">
           {whoItIsFor.map((item) => (
-            <Card key={item} className="bg-slate-950/76">
+            <Card key={item} className="bg-[#17122d]/76">
               <CardHeader className="flex-row items-center gap-3 space-y-0">
                 <CheckCircle2 className="size-5 shrink-0 text-emerald-300" aria-hidden="true" />
                 <CardTitle className="text-base">{item}</CardTitle>
@@ -204,7 +204,7 @@ export default function AuditPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/70">
+      <section className="border-y border-white/10 bg-[#17122d]/70">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionIntro
             eyebrow="What the audit reviews"
@@ -215,9 +215,9 @@ export default function AuditPage() {
             {auditChecks.map((check, index) => {
               const Icon = checkIcons[index] ?? ClipboardCheck;
               return (
-                <Card key={check} className="bg-slate-950/76">
+                <Card key={check} className="bg-[#17122d]/76">
                   <CardHeader>
-                    <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffc0d5]">
+                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffc0d5]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-base">{check}</CardTitle>
@@ -236,13 +236,13 @@ export default function AuditPage() {
             title="Share the basics and get a preview of where leads may be missed."
             description="Give SignalOps enough context to identify where calls, texts, forms, DMs, and follow-ups are most likely costing you booked appointments."
           />
-          <div className="mt-6 w-full max-w-xs rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-5 sm:max-w-none">
+          <div className="mt-6 w-full max-w-xs rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-5 sm:max-w-none">
             <p className="text-sm font-semibold text-white">What you get back</p>
-            <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+            <ul className="mt-3 space-y-2 text-sm leading-6 text-[#ead0df]/78">
               {[
                 "A plain-English snapshot of your biggest lead flow risks",
                 "Recommended fixes for response, routing, and follow-up",
-                "A next-step note for a focused Missed Lead Checkup call"
+                "A next-step note for a focused Lead Leak Audit call"
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <CheckCircle2 className="mt-1 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -257,7 +257,7 @@ export default function AuditPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/70">
+      <section className="border-y border-white/10 bg-[#17122d]/70">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <SectionIntro
             eyebrow="FAQ"
@@ -266,11 +266,11 @@ export default function AuditPage() {
           />
           <div className="grid w-full max-w-xs gap-3 sm:max-w-none">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-lg border border-white/10 bg-slate-950/76 p-5">
+              <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#17122d]/76 p-5">
                 <summary className="cursor-pointer list-none text-base font-semibold text-white">
                   {faq.question}
                 </summary>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{faq.answer}</p>
+                <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -278,7 +278,7 @@ export default function AuditPage() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">Next step</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
@@ -291,7 +291,7 @@ export default function AuditPage() {
             eventProperties={{ location: "audit_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
-            Start free audit
+            {PRIMARY_CTA.label}
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

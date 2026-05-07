@@ -28,7 +28,7 @@ const initialInputs: CalculatorInputs = {
   currentCloseRate: 28,
   missedLeadPercentage: 20,
   expectedImprovementPercentage: 25,
-  monthlySignalOpsCost: 750
+  monthlySignalOpsCost: 597
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -136,12 +136,12 @@ export function RoiCalculator() {
             <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
               Estimate how much slow response and weak follow-up may be costing you.
             </h1>
-            <p className="mt-4 text-base leading-7 text-slate-300">
+            <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
               Use conservative inputs to model missed revenue, likely recovered leads, and whether a SignalOps package could make financial sense.
             </p>
           </div>
 
-          <div className="rounded-lg border border-[#ff9ec0]/20 bg-slate-950/78 p-5 shadow-2xl shadow-black/20">
+          <div className="rounded-2xl border border-[#ff9ec0]/20 bg-[#17122d]/78 p-5 shadow-2xl shadow-black/20">
             <p className="text-sm font-semibold text-white">What this estimates</p>
             <div className="mt-4 grid gap-3">
               {[
@@ -149,9 +149,9 @@ export function RoiCalculator() {
                 "How much revenue could be recovered from cleaner response habits",
                 "Which package is most realistic for your current lead volume"
               ].map((item) => (
-                <div key={item} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
+                <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3">
                   <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
-                  <p className="text-sm leading-6 text-slate-300">{item}</p>
+                  <p className="text-sm leading-6 text-[#ead0df]/78">{item}</p>
                 </div>
               ))}
             </div>
@@ -160,7 +160,7 @@ export function RoiCalculator() {
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
-        <section className="rounded-lg border border-white/10 bg-slate-950/76 p-6" aria-labelledby="roi-inputs">
+        <section className="rounded-2xl border border-white/10 bg-[#17122d]/76 p-6" aria-labelledby="roi-inputs">
           <div className="mb-6 flex items-center gap-2">
             <Calculator className="size-4 text-[#ffc0d5]" aria-hidden="true" />
             <h2 id="roi-inputs" className="text-lg font-semibold text-white">
@@ -217,7 +217,7 @@ export function RoiCalculator() {
           </div>
         </section>
 
-        <section className="rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6" aria-labelledby="roi-outputs">
+        <section className="rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6" aria-labelledby="roi-outputs">
           <div className="mb-6 flex items-center gap-2">
             <CircleDollarSign className="size-4 text-[#ffd7e6]" aria-hidden="true" />
             <h2 id="roi-outputs" className="text-lg font-semibold text-white">
@@ -245,10 +245,10 @@ export function RoiCalculator() {
             />
           </div>
 
-          <div className="mt-5 rounded-md border border-white/10 bg-slate-950/60 p-4">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">Suggested package</p>
+          <div className="mt-5 rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">Suggested package</p>
             <p className="mt-2 text-lg font-semibold text-white">{results.suggestedPackage.name}</p>
-            <p className="mt-2 text-sm leading-6 text-slate-300">{results.suggestedPackage.reason}</p>
+            <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{results.suggestedPackage.reason}</p>
           </div>
 
           <p className="mt-5 text-sm leading-6 text-[#fff1f7]">
@@ -269,22 +269,22 @@ export function RoiCalculator() {
       </div>
 
       <section className="mx-auto mb-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-lg border border-white/10 bg-slate-950/68 p-6" aria-labelledby="roi-math">
+        <div className="rounded-2xl border border-white/10 bg-[#17122d]/68 p-6" aria-labelledby="roi-math">
           <div className="mb-4 flex items-center gap-2">
             <TrendingUp className="size-4 text-[#ffca91]" aria-hidden="true" />
             <h2 id="roi-math" className="text-lg font-semibold text-white">
               How the math works
             </h2>
           </div>
-          <p className="text-sm leading-7 text-slate-300">
+          <p className="text-sm leading-7 text-[#ead0df]/78">
             1) Estimated missed leads = monthly leads x missed lead percentage.
             2) Estimated current missed revenue = estimated missed leads x current close rate x average customer value.
             3) Estimated recovered leads = estimated missed leads x expected improvement percentage.
             4) Estimated recovered revenue = estimated recovered leads x current close rate x average customer value.
             5) Estimated ROI = (estimated recovered revenue - monthly SignalOps cost) / monthly SignalOps cost.
           </p>
-          <p className="mt-3 flex gap-2 text-sm leading-6 text-slate-400">
-            <Info className="mt-0.5 size-4 shrink-0 text-slate-500" aria-hidden="true" />
+          <p className="mt-3 flex gap-2 text-sm leading-6 text-[#ead0df]/62">
+            <Info className="mt-0.5 size-4 shrink-0 text-[#ead0df]/42" aria-hidden="true" />
             We use your current close rate in both baseline and recovered scenarios to keep the estimate conservative.
           </p>
         </div>
@@ -309,7 +309,7 @@ function InputField({
   onChange: (value: string) => void;
 }) {
   return (
-    <label className="grid gap-2 text-sm font-medium text-slate-200">
+    <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
       {label}
       <input
         type={type}
@@ -317,7 +317,7 @@ function InputField({
         max={max}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-11 w-full rounded-md border border-input bg-slate-950/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="h-11 w-full rounded-xl border border-input bg-[#17122d]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       />
     </label>
   );
@@ -333,8 +333,8 @@ function OutputTile({
   tone?: "neutral" | "positive";
 }) {
   return (
-    <div className="rounded-md border border-white/10 bg-slate-950/60 p-4">
-      <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">{label}</p>
+    <div className="rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">{label}</p>
       <p className={`mt-2 text-2xl font-semibold ${tone === "positive" ? "text-emerald-200" : "text-white"}`}>
         {value}
       </p>

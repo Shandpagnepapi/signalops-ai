@@ -61,7 +61,7 @@ const industries = [
 const contactMethods = ["Text + email", "Phone call", "Email", "Text message"];
 
 const selectClass =
-  "h-11 w-full min-w-0 rounded-md border border-input bg-slate-950/60 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-11 w-full min-w-0 rounded-xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 function priorityVariant(priority: LeadSubmission["priority"]) {
   return priority === "hot" || priority === "junk" ? "warning" : "success";
@@ -117,14 +117,14 @@ export function LeadLeakAuditForm() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          source: "signalops-missed-lead-checkup",
+          source: "signalops-lead-leak-audit",
           name: form.name,
           email: form.email,
           phone: form.phone,
           businessName: form.businessName,
           website: form.website,
           industry: form.industry,
-          serviceNeeded: "Free Missed Lead Checkup",
+          serviceNeeded: "Free Lead Leak Audit",
           message: form.biggestProblem,
           currentTools: form.currentTools,
           monthlyLeads: Number(form.monthlyLeads) || 0,
@@ -155,91 +155,99 @@ export function LeadLeakAuditForm() {
   }
 
   return (
-    <Card id="audit-form" className="scroll-mt-24 border-[#ff9ec0]/20 bg-slate-950/86 shadow-2xl shadow-black/25">
+    <Card id="audit-form" className="scroll-mt-24 border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">Missed lead checkup</Badge>
-            <CardTitle className="text-2xl">Request your Free Missed Lead Checkup</CardTitle>
+            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Lead leak audit</Badge>
+            <CardTitle className="text-2xl">Request your Free Lead Leak Audit</CardTitle>
             <CardDescription>
               Share the basics. SignalOps will look for missed calls, slow replies, weak qualification, messy handoffs, and forgotten follow-ups.
             </CardDescription>
           </div>
-          <div className="rounded-md border border-emerald-300/20 bg-emerald-400/10 px-3 py-2 text-xs font-medium text-emerald-100">
+          <div className="rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 px-3 py-2 text-xs font-medium text-[#ffd7e6]">
             Instant preview
           </div>
         </div>
       </CardHeader>
       <CardContent>
         <form className="grid gap-4" onFocus={handleFormStart} onSubmit={handleSubmit}>
-          <div className="grid gap-4 md:grid-cols-2">
-            <Field label="Name">
-              <Input required value={form.name} onChange={(event) => updateField("name", event.target.value)} autoComplete="name" placeholder="Your name" />
-            </Field>
-            <Field label="Business name">
-              <Input value={form.businessName} onChange={(event) => updateField("businessName", event.target.value)} autoComplete="organization" placeholder="Business name" />
-            </Field>
+          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Your business</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Field label="Name">
+                <Input required value={form.name} onChange={(event) => updateField("name", event.target.value)} autoComplete="name" placeholder="Your name" />
+              </Field>
+              <Field label="Business name">
+                <Input value={form.businessName} onChange={(event) => updateField("businessName", event.target.value)} autoComplete="organization" placeholder="Business name" />
+              </Field>
+            </div>
+
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <Field label="Website">
+                <Input value={form.website} onChange={(event) => updateField("website", event.target.value)} placeholder="https://yourbusiness.com" />
+              </Field>
+              <Field label="Email">
+                <Input type="email" value={form.email} onChange={(event) => updateField("email", event.target.value)} autoComplete="email" placeholder="you@business.com" />
+              </Field>
+              <Field label="Phone">
+                <Input value={form.phone} onChange={(event) => updateField("phone", event.target.value)} autoComplete="tel" placeholder="(555) 555-0123" />
+              </Field>
+            </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            <Field label="Website">
-              <Input value={form.website} onChange={(event) => updateField("website", event.target.value)} placeholder="https://yourbusiness.com" />
-            </Field>
-            <Field label="Email">
-              <Input type="email" value={form.email} onChange={(event) => updateField("email", event.target.value)} autoComplete="email" placeholder="you@business.com" />
-            </Field>
-            <Field label="Phone">
-              <Input value={form.phone} onChange={(event) => updateField("phone", event.target.value)} autoComplete="tel" placeholder="(555) 555-0123" />
-            </Field>
+          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Lead flow</p>
+            <div className="grid gap-4 md:grid-cols-3">
+              <Field label="Industry">
+                <select value={form.industry} onChange={(event) => updateField("industry", event.target.value)} className={selectClass}>
+                  {industries.map((industry) => (
+                    <option key={industry} value={industry}>
+                      {industry}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Approx monthly leads">
+                <Input
+                  required
+                  type="number"
+                  min="0"
+                  value={form.monthlyLeads}
+                  onChange={(event) => updateField("monthlyLeads", event.target.value)}
+                  placeholder="80"
+                />
+              </Field>
+              <Field label="Preferred contact">
+                <select value={form.preferredContact} onChange={(event) => updateField("preferredContact", event.target.value)} className={selectClass}>
+                  {contactMethods.map((method) => (
+                    <option key={method} value={method}>
+                      {method}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+            </div>
+
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <Field label="Current CRM/tools">
+                <Textarea
+                  value={form.currentTools}
+                  onChange={(event) => updateField("currentTools", event.target.value)}
+                  placeholder="No CRM is fine. Calls, texts, DMs, inbox, spreadsheet, Jobber, GoHighLevel..."
+                />
+              </Field>
+
+              <Field label="Biggest lead problem">
+                <Textarea
+                  required
+                  value={form.biggestProblem}
+                  onChange={(event) => updateField("biggestProblem", event.target.value)}
+                  placeholder="Example: We miss after-hours quote requests and follow-up is inconsistent."
+                />
+              </Field>
+            </div>
           </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <Field label="Industry">
-              <select value={form.industry} onChange={(event) => updateField("industry", event.target.value)} className={selectClass}>
-                {industries.map((industry) => (
-                  <option key={industry} value={industry}>
-                    {industry}
-                  </option>
-                ))}
-              </select>
-            </Field>
-            <Field label="Approx monthly leads">
-              <Input
-                required
-                type="number"
-                min="0"
-                value={form.monthlyLeads}
-                onChange={(event) => updateField("monthlyLeads", event.target.value)}
-                placeholder="80"
-              />
-            </Field>
-            <Field label="Preferred contact method">
-              <select value={form.preferredContact} onChange={(event) => updateField("preferredContact", event.target.value)} className={selectClass}>
-                {contactMethods.map((method) => (
-                  <option key={method} value={method}>
-                    {method}
-                  </option>
-                ))}
-              </select>
-            </Field>
-          </div>
-
-          <Field label="Current CRM/tools">
-            <Textarea
-              value={form.currentTools}
-              onChange={(event) => updateField("currentTools", event.target.value)}
-              placeholder="No CRM is fine. Add calls, texts, DMs, inbox, spreadsheet, HubSpot, GoHighLevel, ServiceTitan, Jobber, etc."
-            />
-          </Field>
-
-          <Field label="Biggest lead problem">
-            <Textarea
-              required
-              value={form.biggestProblem}
-              onChange={(event) => updateField("biggestProblem", event.target.value)}
-              placeholder="Example: We get quote requests after hours, but follow-up is inconsistent and customers do not always book."
-            />
-          </Field>
 
           <Button type="submit" size="lg" disabled={status === "submitting"}>
             {status === "submitting" ? (
@@ -252,11 +260,11 @@ export function LeadLeakAuditForm() {
         </form>
 
         {status === "success" && lead ? (
-          <div className="mt-6 rounded-lg border border-emerald-300/20 bg-emerald-400/10 p-5">
+          <div className="mt-6 rounded-2xl border border-[#ffb36d]/22 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),rgba(255,179,109,0.08)] p-5 shadow-2xl shadow-black/18">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-sm font-medium text-emerald-100">
+              <div className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
                 <CheckCircle2 className="size-4" aria-hidden="true" />
-              Audit request received
+                Audit request received
               </div>
               <Badge variant={priorityVariant(lead.priority)}>
                 {formatLabel(lead.priority)} priority
@@ -264,28 +272,28 @@ export function LeadLeakAuditForm() {
             </div>
 
             <div className="mt-5 grid gap-4 md:grid-cols-4">
-              <div className="rounded-md border border-white/10 bg-slate-950/70 p-4">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">Lead score</p>
+              <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Lead score</p>
                 <p className="mt-3 text-4xl font-semibold text-white">{lead.score}</p>
               </div>
-              <div className="rounded-md border border-white/10 bg-slate-950/70 p-4">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">Urgency</p>
+              <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Urgency</p>
                 <p className="mt-3 text-lg font-semibold text-white">{formatLabel(lead.aiQualification.urgency)}</p>
               </div>
-              <div className="rounded-md border border-white/10 bg-slate-950/70 p-4">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">Confidence</p>
+              <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Confidence</p>
                 <p className="mt-3 text-lg font-semibold text-white">{Math.round(lead.aiQualification.confidence * 100)}%</p>
               </div>
-              <div className="rounded-md border border-white/10 bg-slate-950/70 p-4">
-                <p className="text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">Review</p>
+              <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Review</p>
                 <p className="mt-3 text-lg font-semibold text-white">{lead.aiQualification.needsHumanReview ? "Human" : "Auto route"}</p>
               </div>
-              <div className="rounded-md border border-white/10 bg-slate-950/70 p-4 md:col-span-4">
-                <p className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">
+              <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4 md:col-span-4">
+                <p className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">
                   <Sparkles className="size-3.5" aria-hidden="true" />
                   AI qualification summary
                 </p>
-                <p className="text-sm leading-6 text-emerald-50">{lead.aiQualification.summary}</p>
+                <p className="text-sm leading-6 text-[#fff8fb]">{lead.aiQualification.summary}</p>
               </div>
             </div>
 
@@ -294,10 +302,10 @@ export function LeadLeakAuditForm() {
               <ResultBlock title="Suggested customer reply" body={lead.customerReply} />
               <ResultBlock title="Internal note" body={lead.internalNote} />
               <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">Suggested tags</p>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Suggested tags</p>
                 <div className="flex flex-wrap gap-2">
                   {lead.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-slate-200">
+                    <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-[#f2d9e8]">
                       {tag}
                     </Badge>
                   ))}
@@ -305,14 +313,14 @@ export function LeadLeakAuditForm() {
               </div>
             </div>
 
-            <p className="mt-4 rounded-md border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4 text-sm font-medium leading-6 text-[#fff1f7]">
+            <p className="mt-4 rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4 text-sm font-medium leading-6 text-[#fff1f7]">
               We will review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.
             </p>
           </div>
         ) : null}
 
         {status === "error" ? (
-          <div className="mt-6 flex gap-2 rounded-lg border border-red-300/20 bg-red-400/10 p-4 text-sm text-red-100">
+          <div className="mt-6 flex gap-2 rounded-2xl border border-red-300/20 bg-red-400/10 p-4 text-sm text-red-100">
             <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
             {error}
           </div>
@@ -324,7 +332,7 @@ export function LeadLeakAuditForm() {
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-slate-200">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
       {label}
       {children}
     </label>
@@ -333,12 +341,12 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 
 function ResultBlock({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-md border border-white/10 bg-slate-950/70 p-4">
-      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/70">
-        <ClipboardCheck className="size-3.5 text-emerald-200" aria-hidden="true" />
+    <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">
+        <ClipboardCheck className="size-3.5 text-[#ffb36d]" aria-hidden="true" />
         {title}
       </p>
-      <p className="text-sm leading-6 text-slate-100">{body}</p>
+      <p className="text-sm leading-6 text-[#fff8fb]">{body}</p>
     </div>
   );
 }

@@ -555,7 +555,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/audit",
-        label: "Free Missed Lead Checkup",
+        label: "Free Lead Leak Audit",
         description: "Find where follow-ups are getting delayed or forgotten."
       }
     ]

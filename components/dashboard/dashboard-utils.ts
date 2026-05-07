@@ -66,7 +66,7 @@ export function priorityBadgeClass(priority: LeadPriority) {
     return "border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]";
   }
 
-  return "border-slate-500/35 bg-slate-500/12 text-slate-200";
+  return "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#f2d9e8]";
 }
 
 export function statusBadgeClass(status: DashboardLeadStatus) {
@@ -77,7 +77,7 @@ export function statusBadgeClass(status: DashboardLeadStatus) {
     qualified: "border-emerald-300/25 bg-emerald-400/12 text-emerald-100",
     booked: "border-violet-300/25 bg-violet-400/12 text-violet-100",
     won: "border-green-300/25 bg-green-400/12 text-green-100",
-    lost: "border-slate-500/35 bg-slate-500/12 text-slate-200"
+    lost: "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#f2d9e8]"
   };
 
   return classes[status];

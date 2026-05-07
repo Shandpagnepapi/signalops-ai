@@ -72,7 +72,7 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
         const Icon = metric.icon;
 
         return (
-          <Card key={metric.label} className="min-h-[142px] bg-slate-950/78">
+          <Card key={metric.label} className="min-h-[142px] bg-[#17122d]/78">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between gap-3">
                 <CardDescription>{metric.label}</CardDescription>
@@ -81,7 +81,7 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
               <CardTitle className="text-3xl">{metric.value}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm leading-5 text-slate-400">{metric.note}</p>
+              <p className="text-sm leading-5 text-[#ead0df]/62">{metric.note}</p>
             </CardContent>
           </Card>
         );

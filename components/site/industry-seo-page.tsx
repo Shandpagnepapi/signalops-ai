@@ -38,7 +38,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
               {page.h1}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#f2d9e8] sm:text-lg">
               {page.subheadline}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -60,7 +60,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
                 Generate Tailored Demo
               </TrackedLink>
             </div>
-            <ul className="mt-7 grid gap-3 text-sm leading-6 text-slate-300">
+            <ul className="mt-7 grid gap-3 text-sm leading-6 text-[#ead0df]/78">
               {page.heroBullets.map((bullet) => (
                 <li key={bullet} className="flex gap-3">
                   <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -70,21 +70,21 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             </ul>
           </div>
 
-          <div className="self-center rounded-lg border border-white/10 bg-slate-950/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
+          <div className="self-center rounded-2xl border border-white/10 bg-[#17122d]/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-white">{page.industryName} lead flow</p>
-                <p className="text-xs leading-5 text-slate-500">Capture, qualify, route, and follow up</p>
+                <p className="text-xs leading-5 text-[#ead0df]/42">Capture, qualify, route, and follow up</p>
               </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffd7e6]">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffd7e6]">
                 <Workflow className="size-5" aria-hidden="true" />
               </div>
             </div>
             <div className="grid gap-3">
               {page.missedLeadProblems.slice(0, 3).map((problem) => (
-                <div key={problem.title} className="rounded-md border border-white/10 bg-slate-900/72 p-4">
+                <div key={problem.title} className="rounded-xl border border-white/10 bg-[#211638]/72 p-4">
                   <p className="text-sm font-medium text-white">{problem.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">{problem.description}</p>
+                  <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{problem.description}</p>
                 </div>
               ))}
             </div>
@@ -101,12 +101,12 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           />
           <div className="mt-8 grid gap-4 md:grid-cols-4">
             {exampleLeadFlow.map((step, index) => (
-              <div key={step.title} className="rounded-lg border border-white/10 bg-slate-950/74 p-5">
-                <div className="mb-5 flex size-10 items-center justify-center rounded-md bg-primary text-sm font-semibold text-white">
+              <div key={step.title} className="rounded-2xl border border-white/10 bg-[#17122d]/74 p-5">
+                <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-white">
                   {index + 1}
                 </div>
                 <h3 className="text-base font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{step.description}</p>
+                <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{step.description}</p>
               </div>
             ))}
           </div>
@@ -121,7 +121,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {page.missedLeadProblems.map((problem) => (
-            <Card key={problem.title} className="bg-slate-950/74">
+            <Card key={problem.title} className="bg-[#17122d]/74">
               <CardHeader>
                 <CardTitle className="text-base">{problem.title}</CardTitle>
                 <CardDescription>{problem.description}</CardDescription>
@@ -131,7 +131,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/65">
+      <section className="border-y border-white/10 bg-[#17122d]/65">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
           <SectionHeader
             eyebrow="Lead sources"
@@ -140,7 +140,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           />
           <div className="grid gap-3 sm:grid-cols-2">
             {page.leadSources.map((source) => (
-              <div key={source} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm text-slate-300">
+              <div key={source} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm text-[#ead0df]/78">
                 <PhoneCall className="size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
                 <span>{source}</span>
               </div>
@@ -168,7 +168,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
       </section>
 
       {qualificationQuestions.length > 0 ? (
-        <section className="border-y border-white/10 bg-slate-950/65">
+        <section className="border-y border-white/10 bg-[#17122d]/65">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.84fr_1.16fr] lg:px-8">
             <SectionHeader
               eyebrow="Qualification questions"
@@ -177,7 +177,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             />
             <div className="grid gap-3 sm:grid-cols-2">
               {qualificationQuestions.map((question) => (
-                <div key={question} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-slate-300">
+                <div key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/78">
                   <ListChecks className="mt-0.5 size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
                   <span>{question}</span>
                 </div>
@@ -213,12 +213,12 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {followUpExamples.map((example) => (
-              <Card key={example.scenario} className="bg-slate-950/74">
+              <Card key={example.scenario} className="bg-[#17122d]/74">
                 <CardHeader>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">
                     {example.scenario}
                   </p>
-                  <CardDescription className="text-base leading-7 text-slate-300">
+                  <CardDescription className="text-base leading-7 text-[#ead0df]/78">
                     {example.message}
                   </CardDescription>
                 </CardHeader>
@@ -236,9 +236,9 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {page.scoringRules.map((rule) => (
-            <Card key={rule.title} className="bg-slate-950/74">
+            <Card key={rule.title} className="bg-[#17122d]/74">
               <CardHeader>
-                <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
                   <SearchCheck className="size-5" aria-hidden="true" />
                 </div>
                 <CardTitle className="text-base">{rule.title}</CardTitle>
@@ -249,7 +249,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/65">
+      <section className="border-y border-white/10 bg-[#17122d]/65">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Recommended automations"
@@ -260,7 +260,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             {page.automations.map((automation) => (
               <Card key={automation.title} className="bg-white/[0.035]">
                 <CardHeader>
-                  <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ffb36d]/12 text-[#ffe1bd]">
+                  <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ffb36d]/12 text-[#ffe1bd]">
                     <BellRing className="size-5" aria-hidden="true" />
                   </div>
                   <CardTitle className="text-base">{automation.title}</CardTitle>
@@ -281,7 +281,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {dashboardValue.map((item) => (
-              <Card key={item.title} className="bg-slate-950/74">
+              <Card key={item.title} className="bg-[#17122d]/74">
                 <CardHeader>
                   <CardTitle className="text-base">{item.title}</CardTitle>
                   <CardDescription>{item.description}</CardDescription>
@@ -300,32 +300,32 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         />
         <div className="grid gap-3">
           {page.faqs.map((faq) => (
-            <details key={faq.question} className="group rounded-lg border border-white/10 bg-slate-950/76 p-5">
+            <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#17122d]/76 p-5">
               <summary className="cursor-pointer list-none text-base font-semibold text-white">
                 {faq.question}
               </summary>
-              <p className="mt-3 text-sm leading-6 text-slate-400">{faq.answer}</p>
+              <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{faq.answer}</p>
             </details>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/70">
+      <section className="border-y border-white/10 bg-[#17122d]/70">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:px-8">
           <SectionHeader
             eyebrow="Next steps"
             title="Generate a tailored demo or check your current lead flow"
-            description="Use the live demo generator for a quick industry-specific preview, or start with a Free Missed Lead Checkup of calls, texts, forms, DMs, and follow-ups."
+            description="Use the live demo generator for a quick industry-specific preview, or start with a Free Lead Leak Audit of calls, texts, forms, DMs, and follow-ups."
           />
           <div className="grid gap-4 sm:grid-cols-3">
             {page.relatedLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
               >
                 <p className="font-semibold text-white">{link.title}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{link.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{link.description}</p>
               </Link>
             ))}
           </div>
@@ -333,15 +333,15 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-              Free Missed Lead Checkup
+              Free Lead Leak Audit
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where leads are being missed, delayed, or forgotten.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
               We will review how your business handles calls, texts, forms, DMs, and follow-ups,
               then show practical fixes that fit the way your team already works.
             </p>
@@ -373,14 +373,14 @@ function MessageExample({
   message: string;
 }) {
   return (
-    <Card className="bg-slate-950/76">
+    <Card className="bg-[#17122d]/76">
       <CardHeader>
-        <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/14 text-[#ffd7e6]">
+        <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
           {icon}
         </div>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">{eyebrow}</p>
         <CardTitle className="text-xl">{scenario}</CardTitle>
-        <CardDescription className="text-base leading-7 text-slate-300">
+        <CardDescription className="text-base leading-7 text-[#ead0df]/78">
           {message}
         </CardDescription>
       </CardHeader>
@@ -401,7 +401,7 @@ function SectionHeader({
     <div className="max-w-3xl">
       <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-slate-300">{description}</p>
+      <p className="mt-4 text-base leading-7 text-[#ead0df]/78">{description}</p>
     </div>
   );
 }

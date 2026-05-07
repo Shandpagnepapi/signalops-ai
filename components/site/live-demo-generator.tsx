@@ -80,7 +80,7 @@ const initialForm: LiveDemoFormState = {
 };
 
 const selectClass =
-  "h-11 w-full min-w-0 rounded-md border border-input bg-slate-950/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-11 w-full min-w-0 rounded-xl border border-input bg-[#17122d]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 export function LiveDemoGenerator() {
   const [form, setForm] = useState<LiveDemoFormState>(initialForm);
@@ -159,19 +159,18 @@ export function LiveDemoGenerator() {
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex flex-col justify-center">
             <Badge variant="outline" className="mb-5 border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-              Template-backed live demo generator
+              Live prospect demo
             </Badge>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-              Build a tailored SignalOps demo while the prospect is watching.
+              Generate a tailored SignalOps preview in seconds.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Enter a business name, industry, services, and lead problem. SignalOps uses stored industry templates,
-              then enhances the output server-side when an OpenAI key is configured.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
+              Enter a business name, industry, services, and lead problem. SignalOps turns it into a mini strategy report you can walk through live.
             </p>
-            <div className="mt-6 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
+            <div className="mt-6 grid gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
               {[
-                "No website scrape required",
-                "Works without an API key",
+                "Industry-specific workflows",
+                "Personalized replies and notes",
                 "Built for live sales calls"
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
@@ -182,14 +181,14 @@ export function LiveDemoGenerator() {
             </div>
           </div>
 
-          <Card className="border-[#ff9ec0]/20 bg-slate-950/82">
+          <Card className="border-[#ff9ec0]/20 bg-[#17122d]/82">
             <CardHeader>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">Prospect inputs</Badge>
                   <CardTitle className="text-2xl">Generate a mini strategy demo</CardTitle>
                   <CardDescription>
-                    Keep it quick. The goal is a credible example, not a full implementation plan.
+                    Keep it quick. The goal is a clear preview the prospect can understand right away.
                   </CardDescription>
                 </div>
                 <Badge variant={status === "success" ? "success" : "outline"}>
@@ -294,8 +293,8 @@ export function LiveDemoGenerator() {
                   </Field>
                 </div>
 
-                <p className="rounded-md border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-slate-400">
-                  Website URL is stored as context only for now. This generator does not scrape or inspect websites yet.
+                <p className="rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
+                  Website URL is optional context only. The preview is generated from the details you enter.
                 </p>
 
                 <Button type="submit" size="lg" disabled={status === "loading"}>
@@ -309,7 +308,7 @@ export function LiveDemoGenerator() {
               </form>
 
               {status === "error" ? (
-                <div className="mt-5 rounded-lg border border-red-300/20 bg-red-400/10 p-4 text-sm leading-6 text-red-100">
+                <div className="mt-5 rounded-2xl border border-red-300/20 bg-red-400/10 p-4 text-sm leading-6 text-red-100">
                   {error}
                 </div>
               ) : null}
@@ -345,7 +344,7 @@ function LoadingPreview() {
   ];
 
   return (
-    <section className="border-b border-white/10 bg-slate-950/50">
+    <section className="border-b border-white/10 bg-[#17122d]/50">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
           <CardContent className="p-6">
@@ -355,8 +354,8 @@ function LoadingPreview() {
                   <Loader2 className="size-4 animate-spin" aria-hidden="true" />
                   Building the tailored demo
                 </p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">
-                  The system starts with stored templates so the output stays fast and reliable.
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">
+                  The system starts with proven industry patterns, then shapes the preview around the prospect.
                 </p>
               </div>
               <Badge variant="outline" className="border-[#ffb36d]/25 text-[#ffe1bd]">
@@ -365,8 +364,8 @@ function LoadingPreview() {
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((step) => (
-                <div key={step} className="rounded-md border border-white/10 bg-slate-950/60 p-4">
-                  <p className="text-sm leading-6 text-slate-200">{step}</p>
+                <div key={step} className="rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
+                  <p className="text-sm leading-6 text-[#f2d9e8]">{step}</p>
                 </div>
               ))}
             </div>
@@ -385,7 +384,7 @@ function EmptyState() {
         ["During", "You enter their details and generate a tailored strategy example live."],
         ["After", "They can see the exact response, routing, follow-up, and dashboard logic SignalOps would install."]
       ].map(([title, body]) => (
-        <Card key={title} className="bg-slate-950/72">
+        <Card key={title} className="bg-[#17122d]/72">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
             <CardDescription>{body}</CardDescription>
@@ -421,7 +420,7 @@ function GeneratedDemoPreview({
           <h2 className="max-w-4xl text-3xl font-semibold tracking-normal text-white sm:text-4xl">
             {demo.installTitle}
           </h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-300">{demo.strategySummary}</p>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-[#ead0df]/78">{demo.strategySummary}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button type="button" variant="outline" onClick={onCopy}>
@@ -440,13 +439,13 @@ function GeneratedDemoPreview({
       </div>
 
       {copyStatus === "error" ? (
-        <p className="mb-5 rounded-md border border-amber-300/20 bg-amber-400/10 p-3 text-sm text-amber-100">
+        <p className="mb-5 rounded-xl border border-amber-300/20 bg-amber-400/10 p-3 text-sm text-amber-100">
           Copy failed in this browser. You can still select the generated strategy text manually.
         </p>
       ) : null}
 
       {saveMessage ? (
-        <p className="mb-5 rounded-md border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-3 text-sm text-[#ffd7e6]">
+        <p className="mb-5 rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-3 text-sm text-[#ffd7e6]">
           {saveMessage}
         </p>
       ) : null}
@@ -454,7 +453,7 @@ function GeneratedDemoPreview({
       <div className="grid gap-6 lg:grid-cols-[1fr_0.78fr]">
         <Card className="border-[#ff9ec0]/20 bg-[#ff6f9c]/10">
           <CardHeader>
-            <Badge className="mb-3 bg-slate-950 text-[#ffd7e6]">Generated positioning</Badge>
+            <Badge className="mb-3 bg-[#17122d] text-[#ffd7e6]">Generated positioning</Badge>
             <CardTitle className="text-3xl leading-tight">{demo.headline}</CardTitle>
             <CardDescription className="text-base leading-7">{demo.subheadline}</CardDescription>
           </CardHeader>
@@ -475,7 +474,7 @@ function GeneratedDemoPreview({
           <CardContent>
             <p className="text-3xl font-semibold text-white">{demo.suggestedPackage.name}</p>
             <p className="mt-1 text-sm font-medium text-[#ffd7e6]">{demo.suggestedPackage.price}</p>
-            <p className="mt-4 text-sm leading-6 text-slate-300">{demo.suggestedPackage.reason}</p>
+            <p className="mt-4 text-sm leading-6 text-[#ead0df]/78">{demo.suggestedPackage.reason}</p>
             <TrackedLink
               href="/audit"
               eventName={ANALYTICS_EVENTS.auditCtaClicked}
@@ -493,14 +492,14 @@ function GeneratedDemoPreview({
         <SectionCard icon={Route} title="Before / after framing">
           <div className="grid gap-3">
             {demo.beforeAfter.map((item) => (
-              <div key={`${item.before}-${item.after}`} className="grid gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 sm:grid-cols-2">
+              <div key={`${item.before}-${item.after}`} className="grid gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.14em] text-amber-100/70">Before</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">{item.before}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{item.before}</p>
                 </div>
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.14em] text-emerald-100/70">After SignalOps</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-200">{item.after}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#f2d9e8]">{item.after}</p>
                 </div>
               </div>
             ))}
@@ -510,7 +509,7 @@ function GeneratedDemoPreview({
         <SectionCard icon={Clipboard} title="Suggested lead intake questions">
           <ul className="grid gap-2">
             {demo.leadIntakeQuestions.map((question) => (
-              <li key={question} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-slate-200">
+              <li key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-[#f2d9e8]">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                 {question}
               </li>
@@ -529,12 +528,12 @@ function GeneratedDemoPreview({
         <SectionCard icon={BarChart3} title="Lead scoring logic example">
           <div className="grid gap-3">
             {demo.leadScoringLogic.map((rule) => (
-              <div key={`${rule.label}-${rule.impact}`} className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+              <div key={`${rule.label}-${rule.impact}`} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <p className="font-medium text-white">{rule.label}</p>
                   <Badge variant="outline">{rule.impact}</Badge>
                 </div>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{rule.rule}</p>
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{rule.rule}</p>
               </div>
             ))}
           </div>
@@ -543,10 +542,10 @@ function GeneratedDemoPreview({
         <SectionCard icon={RefreshCw} title="Follow-up sequence example">
           <div className="grid gap-3">
             {demo.followUpSequence.map((step) => (
-              <div key={`${step.timing}-${step.goal}`} className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+              <div key={`${step.timing}-${step.goal}`} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                 <p className="text-sm font-semibold text-white">{step.timing}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{step.message}</p>
-                <p className="mt-2 text-xs leading-5 text-slate-500">Goal: {step.goal}</p>
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{step.message}</p>
+                <p className="mt-2 text-xs leading-5 text-[#ead0df]/42">Goal: {step.goal}</p>
               </div>
             ))}
           </div>
@@ -557,7 +556,7 @@ function GeneratedDemoPreview({
         <SectionCard icon={BadgeCheck} title="Recommended automations">
           <div className="flex flex-wrap gap-2">
             {demo.recommendedAutomations.map((automation) => (
-              <Badge key={automation} variant="outline" className="border-white/15 bg-white/5 text-slate-200">
+              <Badge key={automation} variant="outline" className="border-white/15 bg-white/5 text-[#f2d9e8]">
                 {automation}
               </Badge>
             ))}
@@ -567,10 +566,10 @@ function GeneratedDemoPreview({
         <SectionCard icon={BarChart3} title="Dashboard preview cards">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {demo.dashboardPreviewCards.map((card) => (
-              <div key={`${card.label}-${card.value}`} className="rounded-md border border-white/10 bg-slate-950/70 p-4">
-                <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">{card.label}</p>
+              <div key={`${card.label}-${card.value}`} className="rounded-xl border border-white/10 bg-[#17122d]/70 p-4">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">{card.label}</p>
                 <p className="mt-3 text-3xl font-semibold text-white">{card.value}</p>
-                <p className="mt-2 text-sm leading-5 text-slate-400">{card.note}</p>
+                <p className="mt-2 text-sm leading-5 text-[#ead0df]/62">{card.note}</p>
               </div>
             ))}
           </div>
@@ -582,7 +581,7 @@ function GeneratedDemoPreview({
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-slate-200">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
       {label}
       {children}
     </label>
@@ -591,8 +590,8 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-md border border-white/10 bg-slate-950/60 p-4">
-      <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">{label}</p>
+    <div className="rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">{label}</p>
       <p className="mt-2 text-sm font-semibold text-white">{value}</p>
     </div>
   );
@@ -611,7 +610,7 @@ function SectionCard({
     <Card>
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffc0d5]">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffc0d5]">
             <Icon className="size-5" aria-hidden="true" />
           </div>
           <CardTitle>{title}</CardTitle>
@@ -624,7 +623,7 @@ function SectionCard({
 
 function MessageBlock({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-md border border-white/10 bg-slate-950/70 p-4 text-sm leading-7 text-slate-100">
+    <div className="rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-7 text-[#fff8fb]">
       {children}
     </div>
   );

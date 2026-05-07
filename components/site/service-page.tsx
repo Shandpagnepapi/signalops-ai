@@ -30,7 +30,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
               {page.h1}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#f2d9e8] sm:text-lg">
               {page.subheadline}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -54,21 +54,21 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
             </div>
           </div>
 
-          <div className="self-center rounded-lg border border-white/10 bg-slate-950/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
+          <div className="self-center rounded-2xl border border-white/10 bg-[#17122d]/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-white">{page.targetKeyword}</p>
-                <p className="text-xs leading-5 text-slate-500">Built around real local lead flows</p>
+                <p className="text-xs leading-5 text-[#ead0df]/42">Built around real local lead flows</p>
               </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffd7e6]">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffd7e6]">
                 <MessageSquareReply className="size-5" aria-hidden="true" />
               </div>
             </div>
             <div className="grid gap-3">
               {page.examples.map((example) => (
-                <div key={example.title} className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+                <div key={example.title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                   <p className="text-sm font-medium text-white">{example.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">{example.description}</p>
+                  <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{example.description}</p>
                 </div>
               ))}
             </div>
@@ -81,7 +81,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         <CardGrid cards={page.problemCards} tone="dark" />
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/65">
+      <section className="border-y border-white/10 bg-[#17122d]/65">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="SignalOps system" title={page.solutionTitle} description={page.solutionIntro} />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -90,7 +90,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
               return (
                 <Card key={card.title} className="bg-white/[0.035]">
                   <CardHeader>
-                    <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-base">{card.title}</CardTitle>
@@ -108,12 +108,12 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
           <SectionHeader eyebrow="Workflow" title={page.workflowTitle} description={page.workflowIntro} />
           <div className="mt-8 grid gap-4 lg:grid-cols-4">
             {page.workflow.map((step) => (
-              <div key={step.title} className="rounded-lg border border-white/10 bg-slate-950/76 p-5">
-                <div className="mb-5 flex size-10 items-center justify-center rounded-md bg-primary text-sm font-semibold text-white">
+              <div key={step.title} className="rounded-2xl border border-white/10 bg-[#17122d]/76 p-5">
+                <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-white">
                   {step.label}
                 </div>
                 <h3 className="text-base font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{step.description}</p>
+                <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{step.description}</p>
               </div>
             ))}
           </div>
@@ -128,7 +128,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         />
         <div className="grid gap-4 sm:grid-cols-3">
           {page.whoFor.map((card) => (
-            <Card key={card.title} className="bg-slate-950/74">
+            <Card key={card.title} className="bg-[#17122d]/74">
               <CardHeader>
                 <CardTitle className="text-base">{card.title}</CardTitle>
                 <CardDescription>{card.description}</CardDescription>
@@ -138,7 +138,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/65">
+      <section className="border-y border-white/10 bg-[#17122d]/65">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Benefits"
@@ -157,17 +157,17 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         />
         <div className="grid gap-3">
           {page.faqs.map((faq) => (
-            <details key={faq.question} className="group rounded-lg border border-white/10 bg-slate-950/76 p-5">
+            <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#17122d]/76 p-5">
               <summary className="cursor-pointer list-none text-base font-semibold text-white">
                 {faq.question}
               </summary>
-              <p className="mt-3 text-sm leading-6 text-slate-400">{faq.answer}</p>
+              <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{faq.answer}</p>
             </details>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/70">
+      <section className="border-y border-white/10 bg-[#17122d]/70">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:px-8">
           <SectionHeader
             eyebrow="Related services"
@@ -179,10 +179,10 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
               >
                 <p className="font-semibold text-white">{link.label}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{link.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{link.description}</p>
               </Link>
             ))}
           </div>
@@ -190,15 +190,15 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-              Free Missed Lead Checkup
+              Free Lead Leak Audit
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               See where your current lead flow is leaking.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
               We will review calls, texts, forms, DMs, quote requests, routing, and follow-up,
               then show the simplest system SignalOps could install first.
             </p>
@@ -227,7 +227,7 @@ function CardGrid({
   cards: { title: string; description: string }[];
   tone: "dark" | "light";
 }) {
-  const className = tone === "dark" ? "bg-slate-950/74" : "bg-white/[0.035]";
+  const className = tone === "dark" ? "bg-[#17122d]/74" : "bg-white/[0.035]";
 
   return (
     <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -256,7 +256,7 @@ function SectionHeader({
     <div className="max-w-3xl">
       <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-slate-300">{description}</p>
+      <p className="mt-4 text-base leading-7 text-[#ead0df]/78">{description}</p>
     </div>
   );
 }

@@ -17,7 +17,7 @@ type DashboardFiltersProps = {
 };
 
 const selectClass =
-  "h-10 w-full min-w-0 rounded-md border border-input bg-slate-950/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-10 w-full min-w-0 rounded-xl border border-input bg-[#17122d]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 const priorities: LeadPriority[] = ["hot", "warm", "cold", "junk"];
 const statuses: DashboardLeadStatus[] = ["new", "contacted", "needs-photos", "qualified", "booked", "won", "lost"];
@@ -32,9 +32,9 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
   }
 
   return (
-    <section className="rounded-lg border border-white/10 bg-slate-950/68 p-4" aria-label="Lead filters">
+    <section className="rounded-2xl border border-white/10 bg-[#17122d]/68 p-4" aria-label="Lead filters">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
           Priority
           <select value={filters.priority} onChange={(event) => updateFilter("priority", event.target.value as DashboardFilters["priority"])} className={selectClass}>
             <option value="all">All priorities</option>
@@ -46,7 +46,7 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
           </select>
         </label>
 
-        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
           Status
           <select value={filters.status} onChange={(event) => updateFilter("status", event.target.value as DashboardFilters["status"])} className={selectClass}>
             <option value="all">All statuses</option>
@@ -58,7 +58,7 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
           </select>
         </label>
 
-        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
           Source
           <select value={filters.source} onChange={(event) => updateFilter("source", event.target.value)} className={selectClass}>
             <option value="all">All sources</option>
@@ -70,7 +70,7 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
           </select>
         </label>
 
-        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
           Urgency
           <select value={filters.urgency} onChange={(event) => updateFilter("urgency", event.target.value as DashboardFilters["urgency"])} className={selectClass}>
             <option value="all">All urgency</option>
@@ -82,7 +82,7 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
           </select>
         </label>
 
-        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
           Damage
           <select value={filters.damageType} onChange={(event) => updateFilter("damageType", event.target.value)} className={selectClass}>
             <option value="all">All damage</option>
@@ -94,7 +94,7 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
           </select>
         </label>
 
-        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+        <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
           Mobile
           <select value={filters.mobileService} onChange={(event) => updateFilter("mobileService", event.target.value as DashboardFilters["mobileService"])} className={selectClass}>
             <option value="all">All leads</option>

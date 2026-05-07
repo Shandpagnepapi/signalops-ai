@@ -35,7 +35,7 @@ For X/Twitter `summary_large_image`, the official guidance supports a 2:1 image 
 ## Pages to Test First
 
 - Homepage: `/`
-- Free Missed Lead Checkup: `/audit`
+- Free Lead Leak Audit: `/audit`
 - Demo: `/demo`
 - ROI Calculator: `/roi-calculator`
 - How It Works: `/how-it-works`

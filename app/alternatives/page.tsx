@@ -154,7 +154,7 @@ export default function AlternativesHubPage() {
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
                 AI lead response alternatives and lead management options.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#f2d9e8] sm:text-lg">
                 This hub is for businesses searching for tools like LeadOps-style systems,
                 LeadPilot-style lead automation, lead routing platforms, scoring tools, inbound
                 management options, and quote intake automation. SignalOps is not affiliated with
@@ -176,21 +176,21 @@ export default function AlternativesHubPage() {
               </div>
             </div>
 
-            <div className="self-center rounded-lg border border-white/10 bg-slate-950/82 p-5 shadow-2xl shadow-black/25 backdrop-blur">
+            <div className="self-center rounded-2xl border border-white/10 bg-[#17122d]/82 p-5 shadow-2xl shadow-black/25 backdrop-blur">
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-sm font-semibold text-white">Comparison framework</p>
-                  <p className="text-xs leading-5 text-slate-500">Useful buying criteria without fake competitor claims</p>
+                  <p className="text-xs leading-5 text-[#ead0df]/42">Useful buying criteria without fake competitor claims</p>
                 </div>
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#ff6f9c]/15 text-[#ffd7e6]">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffd7e6]">
                   <GitBranch className="size-5" aria-hidden="true" />
                 </div>
               </div>
               <div className="grid gap-3">
                 {buyerCriteria.map((item) => (
-                  <div key={item.title} className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+                  <div key={item.title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                     <p className="text-sm font-medium text-white">{item.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-slate-400">{item.description}</p>
+                    <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -208,9 +208,9 @@ export default function AlternativesHubPage() {
             {featureCards.map((feature, index) => {
               const Icon = featureIcons[index % featureIcons.length];
               return (
-                <Card key={feature.title} className="bg-slate-950/74">
+                <Card key={feature.title} className="bg-[#17122d]/74">
                   <CardHeader>
-                    <div className="mb-3 flex size-10 items-center justify-center rounded-md bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-base">{feature.title}</CardTitle>
@@ -222,7 +222,7 @@ export default function AlternativesHubPage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-slate-950/65">
+        <section className="border-y border-white/10 bg-[#17122d]/65">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <SectionHeader
               eyebrow="Buying options"
@@ -234,7 +234,7 @@ export default function AlternativesHubPage() {
                 <Card key={card.title} className="bg-white/[0.035]">
                   <CardHeader>
                     <CardTitle>{card.title}</CardTitle>
-                    <CardDescription className="text-base leading-7 text-slate-300">
+                    <CardDescription className="text-base leading-7 text-[#ead0df]/78">
                       {card.description}
                     </CardDescription>
                   </CardHeader>
@@ -252,7 +252,7 @@ export default function AlternativesHubPage() {
           />
           <div className="grid gap-3">
             {fitSignals.map((signal) => (
-              <div key={signal} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-slate-300">
+              <div key={signal} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/78">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                 <span>{signal}</span>
               </div>
@@ -272,13 +272,13 @@ export default function AlternativesHubPage() {
                 <Link
                   key={page.id}
                   href={page.path}
-                  className="rounded-lg border border-white/10 bg-slate-950/76 p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                  className="rounded-2xl border border-white/10 bg-[#17122d]/76 p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">
                     {page.targetName}
                   </p>
                   <h3 className="mt-3 text-xl font-semibold text-white">{page.metaTitle}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-400">{page.comparisonAngle}</p>
+                  <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{page.comparisonAngle}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
                     Read guide
                     <ArrowRight className="size-4" aria-hidden="true" />
@@ -300,25 +300,25 @@ export default function AlternativesHubPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
               >
                 <p className="font-semibold text-white">{link.label}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{link.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{link.description}</p>
               </Link>
             ))}
           </div>
         </section>
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-                Free Missed Lead Checkup
+                Free Lead Leak Audit
               </p>
               <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
                 Compare tools after you know where leads are leaking.
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
                 SignalOps will review calls, texts, forms, DMs, quote requests, routing, and
                 follow-up, then show what kind of lead response system would actually help.
               </p>
@@ -384,7 +384,7 @@ function SectionHeader({
     <div className="max-w-3xl">
       <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-slate-300">{description}</p>
+      <p className="mt-4 text-base leading-7 text-[#ead0df]/78">{description}</p>
     </div>
   );
 }

@@ -19,7 +19,7 @@ type LeadDetailCardProps = {
 export function LeadDetailCard({ lead }: LeadDetailCardProps) {
   if (!lead) {
     return (
-      <Card className="bg-slate-950/75">
+      <Card className="bg-[#17122d]/75">
         <CardHeader>
           <CardTitle>Lead detail</CardTitle>
           <CardDescription>Select a lead to inspect the qualification record and recommended next action.</CardDescription>
@@ -56,13 +56,13 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
   ];
 
   return (
-    <Card className="min-w-0 bg-slate-950/78">
+    <Card className="min-w-0 bg-[#17122d]/78">
       <CardHeader>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardDescription>Selected lead</CardDescription>
             <CardTitle className="mt-1 text-2xl">{lead.name}</CardTitle>
-            <p className="mt-2 text-sm leading-6 text-slate-400">{lead.summary}</p>
+            <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{lead.summary}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Badge className={priorityBadgeClass(lead.priority)}>{priorityLabels[lead.priority]}</Badge>
@@ -94,13 +94,13 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
         </div>
 
         <section>
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">Lead signals</p>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">Lead signals</p>
           <div className="flex flex-wrap gap-2">
             <Badge variant="outline">Score {lead.score}</Badge>
             <Badge variant="outline">Urgency {urgencyLabels[lead.urgency]}</Badge>
             <Badge variant="outline">Created {formatDateTime(lead.createdAt)}</Badge>
             {lead.tags.map((tag) => (
-              <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-slate-200">
+              <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-[#f2d9e8]">
                 {tag}
               </Badge>
             ))}
@@ -108,16 +108,16 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
         </section>
 
         <section>
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">Timeline</p>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">Timeline</p>
           <div className="space-y-3">
             {leadOpsTimeline.map((item, index) => (
-              <div key={`${index}-${item.time}-${item.event}`} className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3">
-                <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md bg-[#ff6f9c]/12 text-[#ffc0d5]">
+              <div key={`${index}-${item.time}-${item.event}`} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3">
+                <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/12 text-[#ffc0d5]">
                   <Clock3 className="size-4" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-white">{item.time}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">{item.event}</p>
+                  <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{item.event}</p>
                 </div>
               </div>
             ))}
@@ -138,10 +138,10 @@ function InfoItem({
   value: string;
 }) {
   return (
-    <div className="flex gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4">
+    <div className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4">
       <Icon className="mt-0.5 size-4 shrink-0 text-[#ffc0d5]" aria-hidden="true" />
       <div className="min-w-0">
-        <p className="text-xs uppercase tracking-[0.14em] text-slate-500">{label}</p>
+        <p className="text-xs uppercase tracking-[0.14em] text-[#ead0df]/42">{label}</p>
         <p className="mt-1 truncate text-sm font-medium text-white">{value}</p>
       </div>
     </div>
@@ -150,8 +150,8 @@ function InfoItem({
 
 function DetailStat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-md border border-white/10 bg-white/[0.035] p-4">
-      <p className="text-xs uppercase tracking-[0.14em] text-slate-500">{label}</p>
+    <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
+      <p className="text-xs uppercase tracking-[0.14em] text-[#ead0df]/42">{label}</p>
       <p className="mt-2 text-sm font-semibold text-white">{value}</p>
     </div>
   );
@@ -159,12 +159,12 @@ function DetailStat({ label, value }: { label: string; value: string }) {
 
 function TextBlock({ title, body, warning }: { title: string; body: string; warning?: boolean }) {
   return (
-    <div className={cn("rounded-md border border-white/10 bg-white/[0.035] p-4", warning && "border-amber-300/25 bg-amber-400/10")}>
-      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+    <div className={cn("rounded-xl border border-white/10 bg-white/[0.035] p-4", warning && "border-amber-300/25 bg-amber-400/10")}>
+      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
         {warning ? <AlertTriangle className="size-3.5 text-amber-300" aria-hidden="true" /> : <CheckCircle2 className="size-3.5 text-emerald-300" aria-hidden="true" />}
         {title}
       </p>
-      <p className="text-sm leading-6 text-slate-200">{body}</p>
+      <p className="text-sm leading-6 text-[#f2d9e8]">{body}</p>
     </div>
   );
 }

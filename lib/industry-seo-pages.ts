@@ -1177,7 +1177,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/audit",
-        title: "Free Missed Lead Checkup",
+        title: "Free Lead Leak Audit",
         description: "Find where calls, forms, and follow-ups are being missed."
       },
       {

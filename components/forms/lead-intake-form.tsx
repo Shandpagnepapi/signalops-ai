@@ -81,7 +81,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
   }
 
   return (
-    <Card className="bg-slate-950/75">
+    <Card className="bg-[#17122d]/75">
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -94,7 +94,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
       <CardContent>
         <form className="grid gap-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-slate-200">
+            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
               Full name
               <Input
                 required
@@ -103,7 +103,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
                 autoComplete="name"
               />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-slate-200">
+            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
               Email
               <Input
                 required
@@ -115,7 +115,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
             </label>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-slate-200">
+            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
               Company
               <Input
                 value={form.company}
@@ -123,7 +123,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
                 autoComplete="organization"
               />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-slate-200">
+            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
               Phone
               <Input
                 value={form.phone}
@@ -133,7 +133,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
             </label>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-slate-200">
+            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
               Monthly lead volume
               <Input
                 type="number"
@@ -142,7 +142,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
                 onChange={(event) => updateField("monthlyLeads", event.target.value)}
               />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-slate-200">
+            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
               Response goal
               <Input
                 value={form.responseGoal}
@@ -150,7 +150,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
               />
             </label>
           </div>
-          <label className="grid gap-2 text-sm font-medium text-slate-200">
+          <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
             Context
             <Textarea
               value={form.notes}
@@ -168,7 +168,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
         </form>
 
         {status === "success" && result ? (
-          <div className="mt-6 rounded-lg border border-emerald-300/20 bg-emerald-400/10 p-4">
+          <div className="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-400/10 p-4">
             <div className="flex items-center gap-2 text-sm font-medium text-emerald-100">
               <CheckCircle2 className="size-4" aria-hidden="true" />
               Qualified lead created: {result.leadId}
@@ -194,7 +194,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
         ) : null}
 
         {status === "error" ? (
-          <div className="mt-6 flex gap-2 rounded-lg border border-red-300/20 bg-red-400/10 p-4 text-sm text-red-100">
+          <div className="mt-6 flex gap-2 rounded-2xl border border-red-300/20 bg-red-400/10 p-4 text-sm text-red-100">
             <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
             {error}
           </div>

@@ -108,7 +108,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 - [ ] Primary CTA points to `/audit`
 - [ ] Calendly URL env var configured if using direct booking links
 - [ ] Audit page final CTA works on desktop and mobile
-- [ ] Demo and how-it-works pages include visible path to the Free Missed Lead Checkup
+- [ ] Demo and how-it-works pages include visible path to the Free Lead Leak Audit
 
 ## 14) Test Lead Submission (Final Dry Run)
 

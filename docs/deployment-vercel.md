@@ -141,7 +141,7 @@ After production deploy:
 
 ## 8) Post-Launch Verification
 
-- Run a live Free Missed Lead Checkup submission through `/audit`
+- Run a live Free Lead Leak Audit submission through `/audit`
 - Run a live demo lead through `/demo`
 - Confirm analytics events in your analytics tools (if enabled)
 - Confirm legal links in footer (`/privacy`, `/terms`)

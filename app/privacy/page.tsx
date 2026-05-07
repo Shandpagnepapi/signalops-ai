@@ -95,23 +95,23 @@ export default function PrivacyPage() {
         <CardDescription className="mt-4 text-base leading-7">
           This page explains how SignalOps may collect and use information from website visitors and form submissions.
         </CardDescription>
-        <p className="mt-4 text-sm text-slate-400">Effective date: [Month DD, YYYY]</p>
+        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: [Month DD, YYYY]</p>
       </header>
 
       <div className="mt-10 space-y-4">
         {privacySections.map((section) => (
-          <Card key={section.title} className="bg-slate-950/72">
+          <Card key={section.title} className="bg-[#17122d]/72">
             <CardHeader>
               <CardTitle>{section.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-sm leading-7 text-slate-300">
+                <p key={paragraph} className="text-sm leading-7 text-[#ead0df]/78">
                   {paragraph}
                 </p>
               ))}
               {section.bullets ? (
-                <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-slate-300">
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-[#ead0df]/78">
                   {section.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}

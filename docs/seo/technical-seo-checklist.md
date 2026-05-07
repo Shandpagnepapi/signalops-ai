@@ -66,7 +66,7 @@ This checklist documents the SEO foundation added to the SignalOps Next.js app a
 
 - Keep the main navigation and footer linking to:
   - Homepage
-  - Free Missed Lead Checkup
+  - Free Lead Leak Audit
   - Live Demo
   - How It Works
   - ROI Calculator

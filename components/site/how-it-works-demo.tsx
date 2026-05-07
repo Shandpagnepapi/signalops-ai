@@ -195,7 +195,7 @@ export function HowItWorksDemo() {
                 <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
                   How the SignalOps AI Lead Engine Works
                 </h1>
-                <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+                <p className="max-w-2xl text-base leading-7 text-[#ead0df]/78 sm:text-lg">
                   A simple operating layer for capturing, responding, qualifying,
                   routing, booking, and following up before good opportunities go cold.
                 </p>
@@ -216,10 +216,10 @@ export function HowItWorksDemo() {
                   eventProperties={{ location: "how_it_works_hero_demo_click" }}
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto")}
                 >
-                  View Apex Demo
+                  View Demo
                 </TrackedLink>
               </div>
-              <div className="grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
+              <div className="grid gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
                 {["No vague autoresponder", "Clear human handoff", "Follow-up that keeps moving"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -234,14 +234,14 @@ export function HowItWorksDemo() {
               <div className="space-y-5">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-normal text-slate-400">
+                    <p className="text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
                       Live qualification snapshot
                     </p>
                     <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
                       Lead response in under 60 seconds
                     </h2>
                   </div>
-                  <div className="rounded-lg border border-emerald-300/25 bg-emerald-400/10 px-3 py-2 text-right">
+                  <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/10 px-3 py-2 text-right">
                     <p className="text-xs text-emerald-100">Score</p>
                     <p className="text-2xl font-semibold text-white">92</p>
                   </div>
@@ -256,10 +256,10 @@ export function HowItWorksDemo() {
                   ].map(([label, value]) => (
                     <div
                       key={label}
-                      className="flex items-center justify-between gap-4 rounded-md border border-white/10 bg-white/5 px-3 py-3"
+                      className="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-3 py-3"
                     >
-                      <span className="text-sm text-slate-400">{label}</span>
-                      <span className="text-right text-sm font-medium text-slate-100">{value}</span>
+                      <span className="text-sm text-[#ead0df]/62">{label}</span>
+                      <span className="text-right text-sm font-medium text-[#fff8fb]">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -275,7 +275,7 @@ export function HowItWorksDemo() {
           <h2 className="text-3xl font-semibold tracking-normal text-white">
             From first touch to booked appointment
           </h2>
-          <p className="text-sm leading-6 text-slate-300 sm:text-base">
+          <p className="text-sm leading-6 text-[#ead0df]/78 sm:text-base">
             SignalOps connects the moments that usually live in separate tools: the inquiry,
             response, qualification, routing, booking, follow-up, and reporting.
           </p>
@@ -298,31 +298,31 @@ export function HowItWorksDemo() {
                     type="button"
                     onClick={() => setActiveIndex(index)}
                     className={cn(
-                      "relative z-10 flex min-h-28 w-full items-start gap-3 rounded-lg border p-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:min-h-44 lg:flex-col",
+                      "relative z-10 flex min-h-28 w-full items-start gap-3 rounded-2xl border p-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:min-h-44 lg:flex-col",
                       isActive
                         ? "border-[#ff9ec0]/45 bg-[#ff6f9c]/15 shadow-xl shadow-pink-950/25"
-                        : "border-white/10 bg-card/88 hover:border-[#ff9ec0]/30 hover:bg-white/5"
+                        : "border-white/10 bg-[#231434]/88 hover:border-[#ff9ec0]/30 hover:bg-white/5"
                     )}
                     aria-pressed={isActive}
                   >
                     <span
                       className={cn(
-                        "flex size-10 shrink-0 items-center justify-center rounded-lg border",
+                        "flex size-10 shrink-0 items-center justify-center rounded-2xl border",
                         isActive
                           ? "border-[#ffc0d5]/40 bg-[#ff9ec0]/20 text-[#ffd7e6]"
-                          : "border-white/10 bg-white/5 text-slate-300"
+                          : "border-white/10 bg-white/5 text-[#ead0df]/78"
                       )}
                     >
                       <StepIcon className="size-5" aria-hidden="true" />
                     </span>
                     <span className="min-w-0 space-y-1">
-                      <span className="block text-xs font-medium uppercase tracking-normal text-slate-400">
+                      <span className="block text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="block text-sm font-semibold leading-5 text-white">
                         {step.title}
                       </span>
-                      <span className="block text-xs leading-5 text-slate-400">{step.eyebrow}</span>
+                      <span className="block text-xs leading-5 text-[#ead0df]/62">{step.eyebrow}</span>
                     </span>
                   </button>
                 );
@@ -332,40 +332,40 @@ export function HowItWorksDemo() {
 
           <Card className="p-5">
             <div className="flex items-start gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
                 <ActiveStepIcon className="size-6" aria-hidden="true" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs font-medium uppercase tracking-normal text-slate-400">
+                <p className="text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
                   Step {activeNumber}
                 </p>
                 <h3 className="mt-1 text-2xl font-semibold tracking-normal text-white">
                   {activeStep.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{activeStep.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{activeStep.description}</p>
               </div>
             </div>
 
             <div className="mt-6 space-y-3">
               {activeStep.details.map((detail) => (
-                <div key={detail} className="flex gap-3 rounded-md border border-white/10 bg-white/5 p-3">
+                <div key={detail} className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
                   <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-200" aria-hidden="true" />
-                  <p className="text-sm leading-6 text-slate-200">{detail}</p>
+                  <p className="text-sm leading-6 text-[#f2d9e8]">{detail}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 rounded-lg border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4">
+            <div className="mt-5 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4">
               <p className="text-xs font-medium uppercase tracking-normal text-[#ffd7e6]">
                 What the owner sees
               </p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">{activeStep.ownerView}</p>
+              <p className="mt-2 text-sm leading-6 text-[#f2d9e8]">{activeStep.ownerView}</p>
             </div>
           </Card>
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-slate-950/35">
+      <section className="border-y border-white/10 bg-[#17122d]/35">
         <div className="mx-auto grid w-full max-w-7xl gap-4 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:px-8">
           {beforeAfter.map((group) => (
             <Card key={group.label} className="p-5">
@@ -375,7 +375,7 @@ export function HowItWorksDemo() {
               </div>
               <div className="space-y-3">
                 {group.items.map((item) => (
-                  <div key={item} className="flex gap-3 rounded-md border border-white/10 bg-white/5 p-3">
+                  <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
                     <CheckCircle2
                       className={cn(
                         "mt-0.5 size-4 shrink-0",
@@ -383,7 +383,7 @@ export function HowItWorksDemo() {
                       )}
                       aria-hidden="true"
                     />
-                    <p className="text-sm leading-6 text-slate-200">{item}</p>
+                    <p className="text-sm leading-6 text-[#f2d9e8]">{item}</p>
                   </div>
                 ))}
               </div>
@@ -402,7 +402,7 @@ export function HowItWorksDemo() {
               The useful output your team actually needs
             </h2>
           </div>
-          <p className="text-sm leading-6 text-slate-300 sm:text-base">
+          <p className="text-sm leading-6 text-[#ead0df]/78 sm:text-base">
             The system is designed to make the next action obvious, not bury your team in generic
             automation noise.
           </p>
@@ -414,11 +414,11 @@ export function HowItWorksDemo() {
 
             return (
               <Card key={example.label} className="p-5">
-                <div className="mb-4 flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#ffd7e6]">
+                <div className="mb-4 flex size-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#ffd7e6]">
                   <ExampleIcon className="size-5" aria-hidden="true" />
                 </div>
                 <h3 className="text-base font-semibold tracking-normal text-white">{example.label}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{example.value}</p>
+                <p className="mt-3 text-sm leading-6 text-[#ead0df]/78">{example.value}</p>
               </Card>
             );
           })}
@@ -426,14 +426,14 @@ export function HowItWorksDemo() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-[#ff6f9c]/18 via-card to-slate-950 p-6 sm:p-8">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#ff6f9c]/18 via-[#231434] to-[#17122d] p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div className="space-y-3">
               <Badge variant="success">Free audit</Badge>
               <h2 className="text-3xl font-semibold tracking-normal text-white">
                 See where leads are being missed.
               </h2>
-              <p className="max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+              <p className="max-w-2xl text-sm leading-6 text-[#ead0df]/78 sm:text-base">
                 We will review how your business handles calls, texts, forms, DMs,
                 and follow-ups, then show where leads are getting missed, delayed,
                 or forgotten.
@@ -445,7 +445,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Get a Free Missed Lead Checkup
+              Get a Free Lead Leak Audit
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

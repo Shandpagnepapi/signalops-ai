@@ -20,7 +20,7 @@ Then test the deployed production or preview URL with Lighthouse and PageSpeed I
 Run Lighthouse on:
 
 - Homepage: `/`
-- Free Missed Lead Checkup: `/audit`
+- Free Lead Leak Audit: `/audit`
 - Demo: `/demo`
 - Live Demo: `/live-demo`
 - ROI Calculator: `/roi-calculator`

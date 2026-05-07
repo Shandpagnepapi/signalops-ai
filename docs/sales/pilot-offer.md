@@ -14,7 +14,7 @@ This is a focused pilot to prove one thing quickly: better lead response and fol
 
 ## Deliverables
 
-- Missed lead checkup and implementation map
+- Lead leak audit and implementation map
 - One primary lead-source workflow (form/call/ad/DM)
 - Instant response logic with qualification prompts
 - Lead scoring and routing rules

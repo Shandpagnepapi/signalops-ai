@@ -1,43 +1,46 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { demoBusinessOptions, demoBusinesses, type DemoBusinessKey } from "@/lib/demo-businesses";
 import { ApexWheelSite } from "./apex-wheel-site";
-
-const selectClass =
-  "h-11 w-full rounded-md border border-white/12 bg-slate-950 px-3 text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9ec0] sm:w-80";
 
 export function DemoBusinessSwitcher() {
   const [selectedBusiness, setSelectedBusiness] = useState<DemoBusinessKey>("wheel-repair");
   const business = demoBusinesses[selectedBusiness];
 
   return (
-    <div className="bg-[#080a0f]">
-      <section className="sticky top-[61px] z-40 border-b border-white/10 bg-slate-950/95 px-4 py-3 backdrop-blur-md sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <Badge className="bg-[#ffb36d]/15 text-[#ffe1bd]">SignalOps client demo</Badge>
-            <p className="text-sm text-slate-300">Choose a demo business</p>
+    <div className="min-h-screen overflow-x-hidden bg-[#14102b] text-white">
+      <section className="relative isolate px-3 py-5 sm:px-5 lg:px-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(255,111,156,0.24),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(255,179,109,0.18),transparent_30%),linear-gradient(135deg,#241641_0%,#2a1a48_44%,#241331_100%)]" />
+        <div className="surface-grid absolute inset-0 opacity-[0.13]" />
+        <div className="relative mx-auto max-w-[1500px]">
+          <div className="mb-4 flex flex-col gap-3 rounded-3xl border border-white/14 bg-white/[0.07] p-4 shadow-2xl shadow-black/20 backdrop-blur-2xl sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <Badge className="mb-2 bg-[#ff6f9c]/14 text-[#ffd7e6]">SignalOps product demo</Badge>
+              <p className="text-sm text-[#ead0df]/72">Choose a demo workflow and submit a sample lead.</p>
+            </div>
+            <label className="relative grid gap-2 text-sm font-medium text-[#ead0df] sm:w-80">
+              <span className="sr-only">Choose a demo workflow</span>
+              <select
+                value={selectedBusiness}
+                onChange={(event) => setSelectedBusiness(event.target.value as DemoBusinessKey)}
+                className="h-12 w-full appearance-none rounded-2xl border border-white/14 bg-[#17122d]/88 px-4 pr-10 text-sm font-semibold text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9ec0]"
+              >
+                {demoBusinessOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute bottom-3.5 right-4 size-4 text-[#ffb36d]" aria-hidden="true" />
+            </label>
           </div>
-          <label className="grid gap-1 text-sm font-medium text-slate-200 sm:flex sm:items-center sm:gap-3">
-            <span className="sr-only">Choose a demo business</span>
-            <select
-              value={selectedBusiness}
-              onChange={(event) => setSelectedBusiness(event.target.value as DemoBusinessKey)}
-              className={selectClass}
-            >
-              {demoBusinessOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </label>
+
+          <ApexWheelSite business={business} />
         </div>
       </section>
-
-      <ApexWheelSite business={business} />
     </div>
   );
 }

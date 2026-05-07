@@ -18,7 +18,7 @@ AI Lead Response & Qualification System
 
 ## Primary Offer
 
-Free Missed Lead Checkup
+Free Lead Leak Audit
 
 ## Color Palette
 
@@ -59,8 +59,8 @@ Free Missed Lead Checkup
 
 ## CTA Language
 
-- Get a Free Missed Lead Checkup
-- Book a Free Missed Lead Checkup
+- Get a Free Lead Leak Audit
+- Book a Free Lead Leak Audit
 - Find Where Leads Are Leaking
 - See Where Leads Are Being Missed
 - View the Client Demo
@@ -69,7 +69,7 @@ Free Missed Lead Checkup
 
 ## Offer Names
 
-- Free Missed Lead Checkup
+- Free Lead Leak Audit
 - AI Lead Response & Qualification System
 - Missed-Call Text Back
 - Lead Routing Blueprint
@@ -99,7 +99,7 @@ SignalOps should rank around practical lead handling problems, not vague AI clai
 - service business lead follow-up
 - AI appointment setting
 
-Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a CTA to the Free Missed Lead Checkup.
+Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a CTA to the Free Lead Leak Audit.
 
 ## Logo Usage Notes
 
@@ -139,7 +139,7 @@ Supporting copy:
 `SignalOps helps small and local businesses capture, qualify, route, follow up with, and book more leads automatically before good inquiries get buried in forms, inboxes, missed calls, and scattered notes.`
 
 Primary CTA:
-`Get a Free Missed Lead Checkup`
+`Get a Free Lead Leak Audit`
 
 Secondary CTA:
 `View Client Demo`

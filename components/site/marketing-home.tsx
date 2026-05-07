@@ -122,7 +122,7 @@ export function MarketingHome() {
   return (
     <main className="overflow-hidden bg-[#14102b] text-white">
       <section className="relative isolate px-3 py-5 sm:px-5 sm:py-7 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(255,111,156,0.24),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(255,179,109,0.22),transparent_30%),linear-gradient(135deg,#241641_0%,#172652_42%,#241331_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(255,111,156,0.24),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(255,179,109,0.22),transparent_30%),linear-gradient(135deg,#241641_0%,#2a1a48_44%,#241331_100%)]" />
         <div className="surface-grid absolute inset-0 opacity-[0.16]" />
 
         <div className={`${shell} relative`}>
@@ -214,7 +214,7 @@ function ProductDashboard() {
             {["Overview", "Conversations", "Leads", "Bookings", "Follow-ups", "Analytics"].map((item, index) => (
               <div
                 key={item}
-                className={`rounded-lg px-3 py-2 ${index === 0 ? "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white" : "text-[#ead0df]/70"}`}
+                className={`rounded-2xl px-3 py-2 ${index === 0 ? "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white" : "text-[#ead0df]/70"}`}
               >
                 {item}
               </div>

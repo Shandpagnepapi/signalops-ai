@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Get a Free Missed Lead Checkup",
+  label: "Get a Free Lead Leak Audit",
   href: "/audit"
 };
 
@@ -118,7 +118,7 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Free Missed Lead Checkup"
+    label: "Free Lead Leak Audit"
   }
 ];
 
@@ -136,10 +136,10 @@ export const COMPANY_LINKS = [
 export const PACKAGE_NAMES = [
   {
     name: "Starter",
-    price: "$750 setup + $300/mo",
-    summary: "Install the core response and qualification layer for one lead source.",
+    price: "$297/mo",
+    summary: "Start with one clean response and follow-up workflow for a core lead source.",
     features: [
-      "Free Missed Lead Checkup",
+      "Free Lead Leak Audit",
       "Instant reply workflow",
       "Practical lead qualification",
       "Owner or rep alerts"
@@ -147,8 +147,8 @@ export const PACKAGE_NAMES = [
   },
   {
     name: "Growth",
-    price: "$1,500-$3,000 setup + $750/mo",
-    summary: "Connect multiple lead sources, automate follow-up, and keep sales handoffs clean.",
+    price: "$597/mo",
+    summary: "Connect more lead sources, stronger follow-up, and a clearer operating view.",
     features: [
       "Multi-source lead routing",
       "Lead scoring and routing",
@@ -159,7 +159,7 @@ export const PACKAGE_NAMES = [
   },
   {
     name: "Custom Agent System",
-    price: "Starting at $5,000+",
+    price: "Custom",
     summary: "Build a custom lead operations layer for complex sales, quote, or service workflows.",
     features: [
       "Custom lead agents",

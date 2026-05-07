@@ -18,7 +18,7 @@ type LeadApiResponse = {
 };
 
 const selectClass =
-  "h-11 w-full min-w-0 rounded-md border border-input bg-slate-950/60 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-11 w-full min-w-0 rounded-xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 function getServiceLabel(business: DemoBusinessConfig, value: string) {
   return business.form.serviceOptions.find((option) => option.value === value)?.label ?? business.form.serviceOptions[0]?.label ?? "Service request";
@@ -160,96 +160,111 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
   }
 
   return (
-    <Card id="quote" className="scroll-mt-24 border-[#ffb36d]/20 bg-zinc-950/90 shadow-2xl shadow-black/30">
+    <Card id="quote" className="scroll-mt-28 border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 bg-[#ffb36d]/15 text-[#ffe1bd]">{business.form.badge}</Badge>
-            <CardTitle className="text-2xl">{business.form.title}</CardTitle>
-            <CardDescription>{business.form.description}</CardDescription>
+            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Lead intake demo</Badge>
+            <CardTitle className="text-2xl">Submit a sample lead</CardTitle>
+            <CardDescription>
+              The form updates for {business.name}, then posts to the same `/api/lead` route used by real intake pages.
+            </CardDescription>
           </div>
-          <div className="rounded-md border border-emerald-300/20 bg-emerald-400/10 px-3 py-2 text-xs font-medium text-emerald-100">
+          <div className="rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 px-3 py-2 text-xs font-medium text-[#ffd7e6]">
             SignalOps-scored demo
           </div>
         </div>
       </CardHeader>
       <CardContent>
         <form className="grid gap-4" onSubmit={handleSubmit}>
-          <div className="grid gap-4 md:grid-cols-3">
-            <Field label="Name">
-              <Input required value={form.name} onChange={(event) => updateField("name", event.target.value)} />
-            </Field>
-            <Field label="Phone">
-              <Input value={form.phone} onChange={(event) => updateField("phone", event.target.value)} />
-            </Field>
-            <Field label="Email">
-              <Input type="email" value={form.email} onChange={(event) => updateField("email", event.target.value)} />
-            </Field>
+          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Contact</p>
+            <div className="grid gap-4 md:grid-cols-3">
+              <Field label="Name">
+                <Input required value={form.name} onChange={(event) => updateField("name", event.target.value)} />
+              </Field>
+              <Field label="Phone">
+                <Input value={form.phone} onChange={(event) => updateField("phone", event.target.value)} />
+              </Field>
+              <Field label="Email">
+                <Input type="email" value={form.email} onChange={(event) => updateField("email", event.target.value)} />
+              </Field>
+            </div>
           </div>
 
-          <Field label={business.form.locationLabel}>
-            <Input value={form.address} onChange={(event) => updateField("address", event.target.value)} />
-          </Field>
+          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Request details</p>
+            <div className="grid gap-4">
+              <Field label={business.form.locationLabel}>
+                <Input value={form.address} onChange={(event) => updateField("address", event.target.value)} />
+              </Field>
 
-          <div className="grid gap-4 md:grid-cols-[1.3fr_0.7fr]">
-            <Field label={business.form.assetLabel}>
-              <Input value={form.asset} onChange={(event) => updateField("asset", event.target.value)} />
-            </Field>
-            <Field label={business.form.assetSecondaryLabel}>
-              <Input value={form.assetSecondary} onChange={(event) => updateField("assetSecondary", event.target.value)} />
-            </Field>
+              <div className="grid gap-4 md:grid-cols-[1.3fr_0.7fr]">
+                <Field label={business.form.assetLabel}>
+                  <Input value={form.asset} onChange={(event) => updateField("asset", event.target.value)} />
+                </Field>
+                <Field label={business.form.assetSecondaryLabel}>
+                  <Input value={form.assetSecondary} onChange={(event) => updateField("assetSecondary", event.target.value)} />
+                </Field>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <Field label={business.form.serviceLabel}>
+                  <select value={form.serviceValue} onChange={(event) => updateField("serviceValue", event.target.value)} className={selectClass}>
+                    {business.form.serviceOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label={business.form.quantityLabel}>
+                  <Input min="1" type="number" value={form.quantity} onChange={(event) => updateField("quantity", event.target.value)} />
+                </Field>
+              </div>
+            </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <Field label={business.form.serviceLabel}>
-              <select value={form.serviceValue} onChange={(event) => updateField("serviceValue", event.target.value)} className={selectClass}>
-                {business.form.serviceOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </Field>
-            <Field label={business.form.quantityLabel}>
-              <Input min="1" type="number" value={form.quantity} onChange={(event) => updateField("quantity", event.target.value)} />
-            </Field>
+          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Routing signals</p>
+            <div className="grid gap-4">
+              <div className="grid gap-4 md:grid-cols-2">
+                <Field label={business.form.statusLabel}>
+                  <select value={form.status} onChange={(event) => updateField("status", event.target.value)} className={selectClass}>
+                    {business.form.statusOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label={business.form.mobileLabel}>
+                  <select value={form.mobile} onChange={(event) => updateField("mobile", event.target.value)} className={selectClass}>
+                    {business.form.mobileOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+              </div>
+
+              <Field label={business.form.photoLabel}>
+                <Textarea value={form.photoNote} onChange={(event) => updateField("photoNote", event.target.value)} />
+              </Field>
+
+              <div className="grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
+                <Field label={business.form.descriptionLabel}>
+                  <Textarea value={form.description} onChange={(event) => updateField("description", event.target.value)} />
+                </Field>
+                <Field label={business.form.preferredTimeLabel}>
+                  <Textarea value={form.preferredTime} onChange={(event) => updateField("preferredTime", event.target.value)} />
+                </Field>
+              </div>
+            </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <Field label={business.form.statusLabel}>
-              <select value={form.status} onChange={(event) => updateField("status", event.target.value)} className={selectClass}>
-                {business.form.statusOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </Field>
-            <Field label={business.form.mobileLabel}>
-              <select value={form.mobile} onChange={(event) => updateField("mobile", event.target.value)} className={selectClass}>
-                {business.form.mobileOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </Field>
-          </div>
-
-          <Field label={business.form.photoLabel}>
-            <Textarea value={form.photoNote} onChange={(event) => updateField("photoNote", event.target.value)} />
-          </Field>
-
-          <div className="grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-            <Field label={business.form.descriptionLabel}>
-              <Textarea value={form.description} onChange={(event) => updateField("description", event.target.value)} />
-            </Field>
-            <Field label={business.form.preferredTimeLabel}>
-              <Textarea value={form.preferredTime} onChange={(event) => updateField("preferredTime", event.target.value)} />
-            </Field>
-          </div>
-
-          <Button type="submit" size="lg" disabled={status === "submitting"} className="bg-[#ff6f9c] hover:bg-[#ff8ab0]">
+          <Button type="submit" size="lg" disabled={status === "submitting"}>
             {status === "submitting" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             ) : (
@@ -260,11 +275,14 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
         </form>
 
         {status === "success" && lead ? (
-          <div className="mt-6 rounded-lg border border-[#ffb36d]/20 bg-[#ffb36d]/10 p-5">
+          <div className="mt-6 rounded-2xl border border-[#ffb36d]/22 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),rgba(255,179,109,0.08)] p-5 shadow-2xl shadow-black/18">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
-                <Sparkles className="size-4" aria-hidden="true" />
-                SignalOps qualification complete
+              <div>
+                <p className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
+                  <Sparkles className="size-4" aria-hidden="true" />
+                  SignalOps AI Report
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold text-white">Lead qualified and routed</h3>
               </div>
               <Badge variant={priorityVariant(lead.priority)}>{formatLabel(lead.priority)} priority</Badge>
             </div>
@@ -277,7 +295,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             </dl>
 
             <div className="mt-4 grid gap-4">
-              <ResultBlock title="AI qualification summary" body={lead.aiQualification.summary} />
+              <ResultBlock title="AI summary" body={lead.aiQualification.summary} />
               <ResultBlock title="Recommended next action" body={lead.recommendedAction} />
               <ResultBlock title="Suggested customer reply" body={lead.customerReply} />
               <ResultBlock title={business.form.internalNoteLabel} body={lead.internalNote} icon="warning" />
@@ -285,10 +303,10 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
                 <ResultBlock title="Human review flag" body="This lead should be reviewed by a person before any automated promise is made." icon="warning" />
               ) : null}
               <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">Suggested tags</p>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Suggested tags</p>
                 <div className="flex flex-wrap gap-2">
                   {lead.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-zinc-200">
+                    <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-[#f2d9e8]">
                       {tag}
                     </Badge>
                   ))}
@@ -299,7 +317,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
         ) : null}
 
         {status === "error" ? (
-          <div className="mt-6 flex gap-2 rounded-lg border border-red-300/20 bg-red-400/10 p-4 text-sm text-red-100">
+          <div className="mt-6 flex gap-2 rounded-2xl border border-red-300/20 bg-red-400/10 p-4 text-sm text-red-100">
             <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
             {error}
           </div>
@@ -311,7 +329,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-zinc-200">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
       {label}
       {children}
     </label>
@@ -320,8 +338,8 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-md border border-white/10 bg-zinc-950/60 p-4">
-      <dt className="text-xs uppercase tracking-[0.16em] text-zinc-500">{label}</dt>
+    <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+      <dt className="text-xs uppercase tracking-[0.16em] text-[#ead0df]/58">{label}</dt>
       <dd className="mt-2 text-3xl font-semibold text-white md:text-lg">{value}</dd>
     </div>
   );
@@ -337,16 +355,16 @@ function ResultBlock({
   icon?: "warning";
 }) {
   return (
-    <div className="rounded-md border border-white/10 bg-zinc-950/60 p-4">
-      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
+    <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
+      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">
         {icon === "warning" ? (
           <AlertTriangle className="size-3.5 text-amber-300" aria-hidden="true" />
         ) : (
-          <CheckCircle2 className="size-3.5 text-emerald-300" aria-hidden="true" />
+          <CheckCircle2 className="size-3.5 text-[#ffb36d]" aria-hidden="true" />
         )}
         {title}
       </p>
-      <p className="text-sm leading-6 text-zinc-100">{body}</p>
+      <p className="text-sm leading-6 text-[#fff8fb]">{body}</p>
     </div>
   );
 }

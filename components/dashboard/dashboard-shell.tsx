@@ -37,7 +37,7 @@ export function DashboardShell() {
               <h1 className="max-w-xs text-3xl font-semibold tracking-normal text-white sm:max-w-none sm:text-4xl">
                 Lead pipeline dashboard for Apex Wheel Repair
               </h1>
-              <p className="mt-3 max-w-xs text-base leading-7 text-slate-300 sm:max-w-3xl">
+              <p className="mt-3 max-w-xs text-base leading-7 text-[#ead0df]/78 sm:max-w-3xl">
                 A daily operating view for quote requests, wheel damage triage, photo follow-up,
                 appointment booking, and shop-owner alerts.
               </p>

@@ -168,7 +168,7 @@ function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
   }
 
   if (isAuditLead(lead)) {
-    return `${lead.name} requested a Free Missed Lead Checkup${business}${industry}. The main issue appears to be ${lead.message || "missed calls, slow replies, or follow-up visibility"}.`;
+    return `${lead.name} requested a Free Lead Leak Audit${business}${industry}. The main issue appears to be ${lead.message || "missed calls, slow replies, or follow-up visibility"}.`;
   }
 
   return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
@@ -259,7 +259,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   pushTag(tags, lead.source || "website");
 
   if (auditLead) {
-    pushTag(tags, "missed-lead-checkup");
+    pushTag(tags, "lead-leak-audit");
     score += 14;
   }
 
@@ -560,7 +560,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return `Thanks ${name}, SignalOps received your Free Missed Lead Checkup request. We'll review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.`;
+      return `Thanks ${name}, SignalOps received your Free Lead Leak Audit request. We'll review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.`;
     }
 
     return `Thanks ${name}, we received your request. We'll review the details and follow up with the best next step.`;
