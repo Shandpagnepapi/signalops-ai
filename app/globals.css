@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060c18;
-  --foreground: #f8fbff;
-  --card: #101a2f;
-  --card-foreground: #f8fbff;
-  --popover: #101a2f;
-  --popover-foreground: #f8fbff;
-  --primary: #2f7cff;
+  --background: #160d22;
+  --foreground: #fff8fb;
+  --card: #231434;
+  --card-foreground: #fff8fb;
+  --popover: #231434;
+  --popover-foreground: #fff8fb;
+  --primary: #ff6f9c;
   --primary-foreground: #ffffff;
-  --secondary: #15233d;
-  --secondary-foreground: #e8efff;
-  --muted: #13203a;
-  --muted-foreground: #9fb2d0;
-  --accent: #17c8f2;
-  --accent-foreground: #031423;
+  --secondary: #2b193c;
+  --secondary-foreground: #f7deed;
+  --muted: #24162f;
+  --muted-foreground: #d4b6c8;
+  --accent: #ffb36d;
+  --accent-foreground: #241007;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #233757;
-  --input: #233757;
-  --ring: #59a3ff;
+  --border: #4b2b5f;
+  --input: #4b2b5f;
+  --ring: #ff9ec0;
   --radius: 0.85rem;
 }
 
@@ -65,9 +65,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(6, 12, 24, 0.84), #060c18 620px),
-    radial-gradient(circle at 50% -20%, rgba(47, 124, 255, 0.24), transparent 42%),
-    #060c18;
+    linear-gradient(180deg, rgba(33, 17, 47, 0.86), #160d22 620px),
+    radial-gradient(circle at 50% -20%, rgba(255, 111, 156, 0.22), transparent 42%),
+    #160d22;
   color: var(--foreground);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
@@ -79,7 +79,7 @@ a {
 }
 
 ::selection {
-  background: rgba(79, 140, 255, 0.35);
+  background: rgba(255, 111, 156, 0.35);
   color: #ffffff;
 }
 

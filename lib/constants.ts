@@ -20,20 +20,20 @@ export const SECONDARY_CTA = {
 
 export const NAV_LINKS = [
   {
-    href: "/how-it-works",
+    href: "/#how-it-works",
     label: "How It Works"
+  },
+  {
+    href: "/#pricing",
+    label: "Pricing"
   },
   {
     href: "/demo",
     label: "Demo"
   },
   {
-    href: "/roi-calculator",
-    label: "ROI Calculator"
-  },
-  {
-    href: "/audit",
-    label: "Free Audit"
+    href: "/#faq",
+    label: "FAQ"
   }
 ];
 
