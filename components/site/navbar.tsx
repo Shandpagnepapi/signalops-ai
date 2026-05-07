@@ -1,13 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Mail } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { EMAIL_CTA, getEmailHref, NAV_LINKS, PRIMARY_CTA, SITE_CONFIG } from "@/lib/constants";
+import { isMobileTestRoute } from "@/lib/mobile-test-routes";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const pathname = usePathname();
+
+  if (isMobileTestRoute(pathname)) {
+    return null;
+  }
+
   return (
     <header className="sticky top-0 z-50 bg-[#14102b]/74 px-3 py-3 backdrop-blur-xl sm:px-5">
       <nav

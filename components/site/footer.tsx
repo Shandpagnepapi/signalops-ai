@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Mail } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { buttonVariants } from "@/components/ui/button";
@@ -15,8 +18,15 @@ import {
   SEO_SERVICE_LINKS,
   SITE_CONFIG
 } from "@/lib/constants";
+import { isMobileTestRoute } from "@/lib/mobile-test-routes";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  if (isMobileTestRoute(pathname)) {
+    return null;
+  }
+
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#14102b]">
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#ff6f9c,#ffb36d,transparent)]" />

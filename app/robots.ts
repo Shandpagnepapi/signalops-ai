@@ -26,7 +26,16 @@ export default function robots(): MetadataRoute.Robots {
           "/privacy",
           "/terms"
         ],
-        disallow: ["/api/", "/auth/", "/dashboard", "/admin/"]
+        disallow: [
+          "/api/",
+          "/auth/",
+          "/dashboard",
+          "/admin/",
+          "/mobile-tests",
+          "/mobile-test-1",
+          "/mobile-test-2",
+          "/mobile-test-3"
+        ]
       }
     ],
     sitemap: absoluteUrl("/sitemap.xml"),
