@@ -6,7 +6,7 @@ SignalOps designs and implements AI-assisted lead operations systems for SMBs th
 
 ## Phase 1: SignalOps Foundation
 
-- Run a Free Lead Leak Audit across calls, texts, forms, DMs, response paths, and handoffs
+- Run a Free Missed Lead Check across calls, texts, forms, DMs, response paths, and handoffs
 - Build an intake and qualification model
 - Create response templates and routing rules
 - Stand up reporting for lead volume, speed, score, and next action

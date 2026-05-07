@@ -293,7 +293,7 @@ export default function AlternativesHubPage() {
           <SectionHeader
             eyebrow="Related pages"
             title="Compare the system before choosing a tool"
-            description="A strong lead response setup usually connects alternatives research with service workflows, industry fit, ROI, and a real audit of your current process."
+            description="A strong lead response setup usually connects alternatives research with service workflows, industry fit, ROI, and a clear check of your current process."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {relatedPages.map((link) => (
@@ -313,7 +313,7 @@ export default function AlternativesHubPage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-                Free Lead Leak Audit
+                Free Missed Lead Check
               </p>
               <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
                 Compare tools after you know where leads are leaking.

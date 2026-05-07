@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, Mail } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
+import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import {
   COMPANY_LINKS,
+  EMAIL_CTA,
+  getEmailHref,
+  PRIMARY_CTA,
   RESOURCE_LINKS,
   SEO_INDUSTRY_LINKS,
   SEO_SERVICE_LINKS,
@@ -95,6 +100,24 @@ export function Footer() {
               className="transition hover:text-white"
             >
               {SITE_CONFIG.email}
+            </TrackedLink>
+            <TrackedLink
+              href={getEmailHref()}
+              eventName={ANALYTICS_EVENTS.contactClicked}
+              eventProperties={{ location: "footer_button", type: "email" }}
+              className={`${buttonVariants({ variant: "outline" })} mt-2 w-full border-white/18 bg-white/[0.045]`}
+            >
+              <Mail className="size-4" aria-hidden="true" />
+              {EMAIL_CTA.label}
+            </TrackedLink>
+            <TrackedLink
+              href={PRIMARY_CTA.href}
+              eventName={ANALYTICS_EVENTS.auditCtaClicked}
+              eventProperties={{ location: "footer_company" }}
+              className={`${buttonVariants({ size: "sm" })} mt-1 w-full`}
+            >
+              {PRIMARY_CTA.label}
+              <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
         </div>

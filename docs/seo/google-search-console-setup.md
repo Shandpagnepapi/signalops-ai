@@ -142,7 +142,7 @@ Google notes that requesting indexing does not guarantee indexing. It may take d
 Check these first:
 
 - Homepage: `/`
-- Free Lead Leak Audit: `/audit`
+- Free Missed Lead Check: `/audit`
 - Demo page: `/demo`
 - How It Works: `/how-it-works`
 - ROI Calculator: `/roi-calculator`

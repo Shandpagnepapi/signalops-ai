@@ -21,7 +21,7 @@ SignalOps helps teams:
 - Route hot leads to the right person fast
 - Trigger follow-up until the lead books or disqualifies
 
-If useful, I can run a Free Lead Leak Audit for [Business Name] and show where calls, forms, DMs, or follow-ups are getting missed.
+If useful, I can run a Free Missed Lead Check for [Business Name] and show where calls, forms, DMs, or follow-ups are getting missed.
 
 Open to a 15-minute call next week?
 
@@ -65,7 +65,7 @@ Hi [First Name],
 
 I'll close the loop after this.
 
-If missed calls, slow replies, and follow-up become a priority, I can run a Free Lead Leak Audit for your team and send practical recommendations.
+If missed calls, slow replies, and follow-up become a priority, I can run a Free Missed Lead Check for your team and send practical recommendations.
 
 If now is not the right time, all good.
 
@@ -84,7 +84,7 @@ SignalOps helps shops instantly reply, request photos, flag urgent structural is
 
 If helpful, I can review your current quote path and show exactly where leads are getting missed before booking.
 
-Open to a short Lead Leak Audit call?
+Open to a short Missed Lead Check call?
 
 ## Auto Shops Version
 
@@ -96,7 +96,7 @@ Many auto shops already have demand. The miss is usually speed-to-lead and follo
 
 SignalOps installs response and qualification workflows so service inquiries do not sit in voicemail, form inboxes, or DMs.
 
-If you want, I can run a Free Lead Leak Audit and map the highest-impact fixes for your shop.
+If you want, I can run a Free Missed Lead Check and map the highest-impact fixes for your shop.
 
 ## Roofers Version
 
@@ -120,7 +120,7 @@ Insurance agencies lose high-intent leads when response and qualification depend
 
 SignalOps helps automate first response, qualification prompts, producer routing, and structured follow-up.
 
-If useful, I can walk through a short Free Lead Leak Audit for your agency.
+If useful, I can walk through a short Free Missed Lead Check for your agency.
 
 ## Med Spas Version
 
@@ -132,7 +132,7 @@ Med spas often lose revenue between inquiry and consult booking due to slow firs
 
 SignalOps helps capture and qualify inbound leads, trigger fast replies, and automate follow-up toward consult bookings.
 
-Open to a short Lead Leak Audit call?
+Open to a short Missed Lead Check call?
 
 ## Law Firms Version
 
@@ -144,4 +144,4 @@ Law firms can lose qualified case opportunities when intake response is delayed 
 
 SignalOps helps automate immediate acknowledgment, qualification prompts, and handoff to the right intake or attorney path.
 
-If useful, I can run a practical Free Lead Leak Audit and show what to improve first.
+If useful, I can run a practical Free Missed Lead Check and show what to improve first.

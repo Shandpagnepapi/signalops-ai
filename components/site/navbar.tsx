@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { NAV_LINKS, PRIMARY_CTA, SITE_CONFIG } from "@/lib/constants";
+import { EMAIL_CTA, getEmailHref, NAV_LINKS, PRIMARY_CTA, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -31,16 +31,28 @@ export function Navbar() {
           ))}
         </div>
 
-        <TrackedLink
-          href={PRIMARY_CTA.href}
-          eventName={ANALYTICS_EVENTS.auditCtaClicked}
-          eventProperties={{ location: "navbar" }}
-          aria-label={PRIMARY_CTA.label}
-          className={cn(buttonVariants({ size: "sm" }), "shrink-0 max-sm:size-10 max-sm:px-0")}
-        >
-          <span className="hidden sm:inline">{PRIMARY_CTA.label}</span>
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </TrackedLink>
+        <div className="flex shrink-0 items-center gap-2">
+          <TrackedLink
+            href={getEmailHref()}
+            eventName={ANALYTICS_EVENTS.contactClicked}
+            eventProperties={{ location: "navbar", type: "email" }}
+            aria-label={EMAIL_CTA.label}
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "border-white/18 bg-white/[0.045] max-sm:h-10 max-sm:px-3")}
+          >
+            <span>{EMAIL_CTA.shortLabel}</span>
+            <Mail className="size-4" aria-hidden="true" />
+          </TrackedLink>
+          <TrackedLink
+            href={PRIMARY_CTA.href}
+            eventName={ANALYTICS_EVENTS.auditCtaClicked}
+            eventProperties={{ location: "navbar" }}
+            aria-label={PRIMARY_CTA.label}
+            className={cn(buttonVariants({ size: "sm" }), "max-sm:size-10 max-sm:px-0")}
+          >
+            <span className="hidden sm:inline">{PRIMARY_CTA.label}</span>
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </TrackedLink>
+        </div>
       </nav>
     </header>
   );

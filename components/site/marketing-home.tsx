@@ -4,6 +4,7 @@ import {
   BarChart3,
   CalendarCheck2,
   CheckCircle2,
+  Mail,
   MessageSquareReply,
   PlayCircle,
   SearchCheck,
@@ -17,7 +18,14 @@ import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { PRIMARY_CTA, SECONDARY_CTA } from "@/lib/constants";
+import {
+  EMAIL_CTA,
+  getEmailHref,
+  getPlanEmailHref,
+  PRIMARY_CTA,
+  SECONDARY_CTA,
+  SITE_CONFIG
+} from "@/lib/constants";
 
 const shell = "mx-auto max-w-[1500px] px-3 sm:px-5 lg:px-8";
 const glass =
@@ -133,6 +141,7 @@ export function MarketingHome() {
             <PricingSection />
             <DemoFaq />
             <FinalCTA />
+            <ContactSection />
           </div>
         </div>
       </section>
@@ -422,8 +431,20 @@ function PricingSection() {
             >
               {plan.cta}
             </TrackedLink>
+            <TrackedLink
+              href={getPlanEmailHref(plan.name)}
+              eventName={ANALYTICS_EVENTS.contactClicked}
+              eventProperties={{ location: "pricing_card", type: "email", package: plan.name }}
+              className={`${buttonVariants({ variant: "ghost" })} mt-3 w-full border border-white/10 bg-white/[0.035]`}
+            >
+              <Mail className="size-4" aria-hidden="true" />
+              Email about {plan.name}
+            </TrackedLink>
           </div>
         ))}
+      </div>
+      <div className="mt-5 rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-4 text-center text-sm leading-6 text-[#ffe1bd]">
+        Not sure which plan fits? Start with a Free Missed Lead Check, or email us and we will point you in the right direction.
       </div>
     </section>
   );
@@ -487,7 +508,7 @@ function FinalCTA() {
                 Stop losing leads. Start booking more.
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-                Get your free checkup and see where leads are getting missed, delayed, or forgotten.
+                Start with a Free Missed Lead Check and see where leads are getting missed, delayed, or forgotten.
               </p>
             </div>
           </div>
@@ -509,6 +530,61 @@ function FinalCTA() {
             View Live Demo
             <PlayCircle className="size-4" aria-hidden="true" />
           </TrackedLink>
+        </div>
+        <div className="mt-5 rounded-2xl border border-white/10 bg-[#17122d]/52 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
+          <p className="text-sm leading-6 text-[#ead0df]/76">
+            Prefer email? Send a quick note and we will help you figure out what is being missed.
+          </p>
+          <TrackedLink
+            href={getEmailHref()}
+            eventName={ANALYTICS_EVENTS.contactClicked}
+            eventProperties={{ location: "homepage_prefer_email", type: "email" }}
+            className={`${buttonVariants({ variant: "outline" })} mt-3 w-full border-white/18 bg-white/[0.045] sm:mt-0 sm:w-auto`}
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            {EMAIL_CTA.label}
+          </TrackedLink>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section className="px-5 pb-5 sm:px-9 sm:pb-9 lg:px-11">
+      <div className="rounded-[1.5rem] border border-[#ffb36d]/20 bg-[radial-gradient(circle_at_20%_0%,rgba(255,179,109,0.12),transparent_36%),rgba(255,255,255,0.055)] p-5 shadow-2xl shadow-black/18 sm:p-7">
+        <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Email SignalOps</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
+              Want to get the ball rolling?
+            </h2>
+            <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
+              Send a quick email and tell us what kind of leads you are missing: calls, forms, texts, DMs, or follow-ups.
+            </p>
+            <p className="mt-3 text-sm font-semibold text-[#ffe1bd]">{SITE_CONFIG.email}</p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+            <TrackedLink
+              href={getEmailHref()}
+              eventName={ANALYTICS_EVENTS.contactClicked}
+              eventProperties={{ location: "homepage_contact_section", type: "email" }}
+              className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
+            >
+              <Mail className="size-4" aria-hidden="true" />
+              {EMAIL_CTA.label}
+            </TrackedLink>
+            <TrackedLink
+              href={PRIMARY_CTA.href}
+              eventName={ANALYTICS_EVENTS.auditCtaClicked}
+              eventProperties={{ location: "homepage_contact_section" }}
+              className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
+            >
+              {PRIMARY_CTA.label}
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </TrackedLink>
+          </div>
         </div>
       </div>
     </section>

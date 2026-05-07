@@ -9,9 +9,35 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Get a Free Lead Leak Audit",
+  label: "Get a Free Missed Lead Check",
   href: "/audit"
 };
+
+export const OFFER_NAME = "Free Missed Lead Check";
+
+export const EMAIL_CTA = {
+  label: "Email SignalOps",
+  shortLabel: "Email Us",
+  subject: "SignalOps Inquiry",
+  body: "Hi SignalOps, I'm interested in getting help with missed leads. Here's a little about my business:"
+};
+
+export function getEmailHref({
+  subject = EMAIL_CTA.subject,
+  body = EMAIL_CTA.body
+}: {
+  subject?: string;
+  body?: string;
+} = {}) {
+  return `mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+export function getPlanEmailHref(planName: string) {
+  return getEmailHref({
+    subject: `SignalOps ${planName} Inquiry`,
+    body: `Hi SignalOps, I'm interested in the ${planName} plan and getting help with missed leads. Here's a little about my business:`
+  });
+}
 
 export const SECONDARY_CTA = {
   label: "View Demo",
@@ -118,7 +144,7 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Free Lead Leak Audit"
+    label: "Free Missed Lead Check"
   }
 ];
 
@@ -139,7 +165,7 @@ export const PACKAGE_NAMES = [
     price: "$297/mo",
     summary: "Start with one clean response and follow-up workflow for a core lead source.",
     features: [
-      "Free Lead Leak Audit",
+      "Free Missed Lead Check",
       "Instant reply workflow",
       "Practical lead qualification",
       "Owner or rep alerts"
@@ -200,7 +226,7 @@ export const AI_LEAD_ENGINE_FEATURES = [
 
 export const SIGNALOPS_PROCESS = [
   {
-    step: "Audit",
+    step: "Check",
     description: "Find where calls, texts, forms, DMs, and follow-ups are being missed."
   },
   {

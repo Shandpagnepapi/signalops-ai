@@ -55,7 +55,7 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 - Visit `/sitemap.xml` on the preview or production deployment.
 - Confirm important public pages are included:
   - Homepage
-  - Free Lead Leak Audit page
+  - Free Missed Lead Check page
   - Service SEO pages
   - Industry SEO pages
   - How-it-works page
@@ -108,7 +108,7 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 
 ## Internal Links
 
-- Every SEO page should link to the Free Lead Leak Audit.
+- Every SEO page should link to the Free Missed Lead Check.
 - Every industry page should link to `/live-demo`.
 - Service pages should link to related service/use-case pages.
 - Footer links should include key services and industries without overwhelming the main navigation.
@@ -139,4 +139,4 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 - Avoid fake guarantees or implied results.
 - Use industry-specific examples.
 - Make human review conditions clear for urgent, risky, regulated, or uncertain situations.
-- Keep the primary CTA consistent: `Get a Free Lead Leak Audit`.
+- Keep the primary CTA consistent: `Get a Free Missed Lead Check`.

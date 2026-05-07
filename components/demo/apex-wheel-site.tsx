@@ -5,6 +5,7 @@ import {
   BellRing,
   CalendarCheck2,
   ClipboardList,
+  Mail,
   MessageSquareReply,
   Route,
   SearchCheck,
@@ -15,7 +16,7 @@ import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { PRIMARY_CTA } from "@/lib/constants";
+import { EMAIL_CTA, getEmailHref, PRIMARY_CTA } from "@/lib/constants";
 import type { DemoBusinessConfig } from "@/lib/demo-businesses";
 import { DemoLeadForm } from "./wheel-lead-form";
 
@@ -57,6 +58,15 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
                 className={`${buttonVariants({ variant: "outline", size: "lg" })} border-white/20 bg-white/[0.045]`}
               >
                 {PRIMARY_CTA.label}
+              </TrackedLink>
+              <TrackedLink
+                href={getEmailHref()}
+                eventName={ANALYTICS_EVENTS.contactClicked}
+                eventProperties={{ location: "demo_hero", type: "email" }}
+                className={`${buttonVariants({ variant: "outline", size: "lg" })} border-white/20 bg-white/[0.045]`}
+              >
+                <Mail className="size-4" aria-hidden="true" />
+                {EMAIL_CTA.label}
               </TrackedLink>
             </div>
           </div>
@@ -107,18 +117,29 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
                 See where your real leads are leaking.
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[#ead0df]/76">
-                The free audit reviews calls, texts, forms, DMs, response time, routing, and follow-up.
+                The free check reviews calls, texts, forms, DMs, response time, routing, and follow-up.
               </p>
             </div>
-            <TrackedLink
-              href={PRIMARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.auditCtaClicked}
-              eventProperties={{ location: "demo_final_cta" }}
-              className={buttonVariants({ size: "lg" })}
-            >
-              {PRIMARY_CTA.label}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </TrackedLink>
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+              <TrackedLink
+                href={PRIMARY_CTA.href}
+                eventName={ANALYTICS_EVENTS.auditCtaClicked}
+                eventProperties={{ location: "demo_final_cta" }}
+                className={buttonVariants({ size: "lg" })}
+              >
+                {PRIMARY_CTA.label}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </TrackedLink>
+              <TrackedLink
+                href={getEmailHref()}
+                eventName={ANALYTICS_EVENTS.contactClicked}
+                eventProperties={{ location: "demo_final_cta", type: "email" }}
+                className={`${buttonVariants({ variant: "outline", size: "lg" })} border-white/18 bg-white/[0.045]`}
+              >
+                <Mail className="size-4" aria-hidden="true" />
+                {EMAIL_CTA.label}
+              </TrackedLink>
+            </div>
           </div>
         </div>
       </section>

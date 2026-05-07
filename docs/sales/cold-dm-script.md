@@ -2,7 +2,7 @@
 
 ## How To Use
 
-Keep the first message short and specific. Do not pitch a full automation stack in message one. The goal is a quick reply and a simple Lead Leak Audit call.
+Keep the first message short and specific. Do not pitch a full automation stack in message one. The goal is a quick reply and a simple Missed Lead Check call.
 
 ## Instagram DM Version
 
@@ -28,13 +28,13 @@ Most do not have a lead volume problem. They have a response-time and follow-up 
 
 SignalOps installs an AI lead response and qualification layer so hot leads are handled fast and low-intent leads do not waste the team.
 
-Would a Free Lead Leak Audit be useful for [Business Name]?
+Would a Free Missed Lead Check be useful for [Business Name]?
 
 ## Short Warm Network Version
 
 Hey [First Name], quick ask.
 
-I am building SignalOps, where we help businesses answer every lead and make the next step clear. If you know a shop that gets leads but misses calls, replies slowly, or forgets follow-up, I can run a Free Lead Leak Audit for them.
+I am building SignalOps, where we help businesses answer every lead and make the next step clear. If you know a shop that gets leads but misses calls, replies slowly, or forgets follow-up, I can run a Free Missed Lead Check for them.
 
 If anyone comes to mind, happy to send a one-paragraph intro you can forward.
 
@@ -71,4 +71,4 @@ SignalOps installs:
 - Mobile service versus in-shop routing
 - Follow-up until booking
 
-If useful, I can run a Free Lead Leak Audit on your current quote flow and show what to fix first.
+If useful, I can run a Free Missed Lead Check on your current quote flow and show what to fix first.

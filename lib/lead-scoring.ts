@@ -168,7 +168,7 @@ function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
   }
 
   if (isAuditLead(lead)) {
-    return `${lead.name} requested a Free Lead Leak Audit${business}${industry}. The main issue appears to be ${lead.message || "missed calls, slow replies, or follow-up visibility"}.`;
+    return `${lead.name} requested a Free Missed Lead Check${business}${industry}. The main issue appears to be ${lead.message || "missed calls, slow replies, or follow-up visibility"}.`;
   }
 
   return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
@@ -259,7 +259,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   pushTag(tags, lead.source || "website");
 
   if (auditLead) {
-    pushTag(tags, "lead-leak-audit");
+    pushTag(tags, "missed-lead-check");
     score += 14;
   }
 
@@ -524,7 +524,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return "Review calls, texts, forms, DMs, response process, CRM/tools if any, and follow-up gaps before sending audit recommendations.";
+      return "Review calls, texts, forms, DMs, response process, CRM/tools if any, and follow-up gaps before sending missed lead check recommendations.";
     }
 
     if (priority === "hot") {
@@ -560,7 +560,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return `Thanks ${name}, SignalOps received your Free Lead Leak Audit request. We'll review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.`;
+      return `Thanks ${name}, SignalOps received your Free Missed Lead Check request. We'll review how your business handles calls, texts, forms, DMs, and follow-ups, then show where leads are getting missed, delayed, or forgotten.`;
     }
 
     return `Thanks ${name}, we received your request. We'll review the details and follow up with the best next step.`;
@@ -594,7 +594,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return `${contactNote} Audit should focus on missed calls, slow replies, forgotten follow-ups, CRM/tool usage if any, and simple recovery steps. Tags: ${tags.join(", ")}.`;
+      return `${contactNote} Missed lead check should focus on missed calls, slow replies, forgotten follow-ups, CRM/tool usage if any, and simple recovery steps. Tags: ${tags.join(", ")}.`;
     }
 
     return `${contactNote} Review message quality and route according to score. Tags: ${tags.join(", ")}.`;

@@ -32,7 +32,7 @@ const privacySections: LegalSection[] = [
     bullets: [
       "Name, email address, and phone number",
       "Business name, website, and industry",
-      "Details submitted through audit or lead forms",
+      "Details submitted through missed lead check or lead forms",
       "Basic website usage data from analytics tools"
     ]
   },

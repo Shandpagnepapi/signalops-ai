@@ -429,7 +429,7 @@ export function HowItWorksDemo() {
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#ff6f9c]/18 via-[#231434] to-[#17122d] p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div className="space-y-3">
-              <Badge variant="success">Free audit</Badge>
+              <Badge variant="success">Free Missed Lead Check</Badge>
               <h2 className="text-3xl font-semibold tracking-normal text-white">
                 See where leads are being missed.
               </h2>
@@ -445,7 +445,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Get a Free Lead Leak Audit
+              Get a Free Missed Lead Check
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

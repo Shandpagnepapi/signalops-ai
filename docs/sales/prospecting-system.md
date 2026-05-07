@@ -169,7 +169,7 @@ Wheel repair shop:
 
 `SignalOps builds the backend so leads get an immediate reply, send photos faster, and route to mobile or in-shop inspection correctly.`
 
-`Open to a 10-minute Free Lead Leak Audit for [Business Name]?`
+`Open to a 10-minute Free Missed Lead Check for [Business Name]?`
 
 Auto detailer:
 
@@ -193,7 +193,7 @@ General local service business:
 
 `I noticed [specific leak]. SignalOps builds a simple AI lead response and qualification layer so leads get handled fast and routed correctly.`
 
-`Open to a short lead leak audit?`
+`Open to a short missed lead check?`
 
 ### Channel 2: Cold Email
 
@@ -207,7 +207,7 @@ Subject: `Quick idea for your wheel quote flow`
 
 `SignalOps helps wheel shops instantly respond to quote requests, request photos when needed, flag urgent bent/cracked leads, and route mobile vs shop opportunities.`
 
-`If useful, I can run a quick Free Lead Leak Audit and send practical fixes.`
+`If useful, I can run a quick Free Missed Lead Check and send practical fixes.`
 
 `Open to a short call next week?`
 
@@ -233,7 +233,7 @@ Subject: `Potential booking gap in your quote flow`
 
 `SignalOps helps tint/wrap shops capture and qualify leads faster, then follow up consistently until booking.`
 
-`Would a short Free Lead Leak Audit be useful?`
+`Would a short Free Missed Lead Check be useful?`
 
 General local service business:
 
@@ -245,7 +245,7 @@ Subject: `Quick lead process question for [Business Name]`
 
 `SignalOps builds that layer with instant response, qualification, routing, and follow-up workflows.`
 
-`I can send a short lead leak audit if helpful.`
+`I can send a short missed lead check if helpful.`
 
 `Best,`
 `[Your Name]`
@@ -254,7 +254,7 @@ Subject: `Quick lead process question for [Business Name]`
 
 Wheel repair shop:
 
-`Hey [Name], I will keep this brief. I help wheel shops tighten quote handling after form submit and missed calls. I noticed [specific missed lead sign] and wanted to see if you are open to a quick Lead Leak Audit.`
+`Hey [Name], I will keep this brief. I help wheel shops tighten quote handling after form submit and missed calls. I noticed [specific missed lead sign] and wanted to see if you are open to a quick Missed Lead Check.`
 
 Auto detailer:
 
@@ -266,7 +266,7 @@ Tint or wrap shop:
 
 General local service business:
 
-`Hi [Name], I help local service teams catch missed leads after inquiry. I noticed [specific missed lead sign] and wanted to offer a short Lead Leak Audit if you are open to it.`
+`Hi [Name], I help local service teams catch missed leads after inquiry. I noticed [specific missed lead sign] and wanted to offer a short Missed Lead Check if you are open to it.`
 
 ## 9) Pilot Close Script
 

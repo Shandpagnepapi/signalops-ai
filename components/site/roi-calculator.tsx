@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, TrendingUp } from "lucide-react";
+import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, Mail, TrendingUp } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { PACKAGE_NAMES, PRIMARY_CTA } from "@/lib/constants";
+import { EMAIL_CTA, getEmailHref, PACKAGE_NAMES, PRIMARY_CTA } from "@/lib/constants";
 
 type CalculatorInputs = {
   monthlyLeads: number;
@@ -264,6 +264,18 @@ export function RoiCalculator() {
           >
             {PRIMARY_CTA.label}
             <ArrowRight className="size-4" aria-hidden="true" />
+          </TrackedLink>
+          <TrackedLink
+            href={getEmailHref({
+              subject: "SignalOps ROI Calculator Inquiry",
+              body: "Hi SignalOps, I used the ROI calculator and want help with missed leads. Here's a little about my business:"
+            })}
+            eventName={ANALYTICS_EVENTS.contactClicked}
+            eventProperties={{ location: "roi_calculator", type: "email" }}
+            className={`${buttonVariants({ variant: "outline", size: "lg" })} mt-3 w-full border-white/18 bg-white/[0.045] sm:ml-3 sm:w-auto`}
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            {EMAIL_CTA.label}
           </TrackedLink>
         </section>
       </div>

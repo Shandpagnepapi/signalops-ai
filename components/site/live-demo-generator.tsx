@@ -10,6 +10,7 @@ import {
   Copy,
   FileText,
   Loader2,
+  Mail,
   MessageSquareReply,
   RefreshCw,
   Route,
@@ -23,6 +24,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { EMAIL_CTA, getEmailHref, PRIMARY_CTA } from "@/lib/constants";
 import { industryIds, preferredTones, type IndustryId, type PreferredTone } from "@/lib/demo-templates";
 import type { GeneratedLiveDemo } from "@/lib/demo-generator";
 import { cn } from "@/lib/utils";
@@ -305,6 +307,15 @@ export function LiveDemoGenerator() {
                   )}
                   Generate tailored demo
                 </Button>
+                <TrackedLink
+                  href={getEmailHref()}
+                  eventName={ANALYTICS_EVENTS.contactClicked}
+                  eventProperties={{ location: "live_demo_form", type: "email" }}
+                  className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045]`}
+                >
+                  <Mail className="size-4" aria-hidden="true" />
+                  {EMAIL_CTA.label}
+                </TrackedLink>
               </form>
 
               {status === "error" ? (
@@ -475,14 +486,26 @@ function GeneratedDemoPreview({
             <p className="text-3xl font-semibold text-white">{demo.suggestedPackage.name}</p>
             <p className="mt-1 text-sm font-medium text-[#ffd7e6]">{demo.suggestedPackage.price}</p>
             <p className="mt-4 text-sm leading-6 text-[#ead0df]/78">{demo.suggestedPackage.reason}</p>
-            <TrackedLink
-              href="/audit"
+          <TrackedLink
+              href={PRIMARY_CTA.href}
               eventName={ANALYTICS_EVENTS.auditCtaClicked}
               eventProperties={{ location: "live_demo_setup_call", businessName: demo.businessName }}
               className={cn(buttonVariants({ size: "lg" }), "mt-6 w-full")}
             >
-              Book Free Setup Call
+              {PRIMARY_CTA.label}
               <ArrowRight className="size-4" aria-hidden="true" />
+            </TrackedLink>
+            <TrackedLink
+              href={getEmailHref({
+                subject: `SignalOps Inquiry for ${demo.businessName}`,
+                body: `Hi SignalOps, I generated a live demo for ${demo.businessName} and want help with missed leads. Here's a little about my business:`
+              })}
+              eventName={ANALYTICS_EVENTS.contactClicked}
+              eventProperties={{ location: "live_demo_generated_package", type: "email", businessName: demo.businessName }}
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "mt-3 w-full border-white/18 bg-white/[0.045]")}
+            >
+              <Mail className="size-4" aria-hidden="true" />
+              {EMAIL_CTA.label}
             </TrackedLink>
           </CardContent>
         </Card>

@@ -7,7 +7,7 @@ This audit records the final pre-launch QA pass for the SignalOps rebrand and SE
 ## Rebrand Checks
 
 - SignalOps is the official brand in user-facing site copy, metadata, JSON-LD, docs, logos, footer links, and shared constants.
-- The primary offer is consistently positioned as the Free Lead Leak Audit.
+- The primary offer is consistently positioned as the Free Missed Lead Check.
 - The primary tagline is `Every lead answered. Every follow-up handled.`
 - Old predecessor-brand references were searched across the repo.
 - The only intentional predecessor-brand mentions are on ethical alternative-intent pages and related data files, where SignalOps includes clear non-affiliation language.
@@ -136,7 +136,7 @@ Complete these checks on the live production domain:
 4. Submit `https://yourdomain.com/sitemap.xml`.
 5. Inspect and request indexing for:
    - Homepage
-   - Free Lead Leak Audit page
+   - Free Missed Lead Check page
    - Demo page
    - How It Works page
    - ROI Calculator
@@ -161,7 +161,7 @@ Complete these checks on the live production domain:
   - `demo_lead_submitted`
   - `package_clicked`
   - `contact_clicked`
-- Check conversions from the Free Lead Leak Audit CTA, demo page, live demo page, ROI calculator, service pages, industry pages, and alternative pages.
+- Check conversions from the Free Missed Lead Check CTA, demo page, live demo page, ROI calculator, service pages, industry pages, and alternative pages.
 
 ## Launch Status
 

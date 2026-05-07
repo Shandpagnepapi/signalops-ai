@@ -50,7 +50,7 @@ export type AlternativePageConfig = {
 const coreRelatedLinks: AlternativeRelatedLink[] = [
   {
     href: "/audit",
-    label: "Free Lead Leak Audit",
+    label: "Free Missed Lead Check",
     description: "Find the places where calls, texts, forms, DMs, and follow-ups are being missed."
   },
   {
@@ -130,7 +130,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     howSignalOpsHelps: [
       {
-        title: "Audit the current flow",
+        title: "Check the current flow",
         description:
           "SignalOps starts by finding where inquiries slow down, get answered vaguely, or never receive a second touch."
       },

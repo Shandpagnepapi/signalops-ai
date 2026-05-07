@@ -6,6 +6,7 @@ import {
   Clock3,
   DatabaseZap,
   FileText,
+  Mail,
   PhoneCall,
   Route,
   SearchCheck,
@@ -17,7 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { PRIMARY_CTA, SECONDARY_CTA, SITE_CONFIG } from "@/lib/constants";
+import { EMAIL_CTA, getEmailHref, PRIMARY_CTA, SECONDARY_CTA, SITE_CONFIG } from "@/lib/constants";
 import {
   breadcrumbJsonLd,
   createPageMetadata,
@@ -73,7 +74,7 @@ const checkIcons = [
 
 const faqs = [
   {
-    question: "What happens after I submit the audit request?",
+    question: "What happens after I submit the check request?",
     answer:
       "SignalOps reviews your answers, looks for the biggest response and follow-up gaps, then follows up with recommended fixes and a practical next step."
   },
@@ -83,14 +84,14 @@ const faqs = [
       "No. A website, basic lead source notes, and a rough monthly lead count are enough to start. More detail helps, but the form is designed to be lightweight."
   },
   {
-    question: "Is the audit really free?",
+    question: "Is the check really free?",
     answer:
-      "Yes. The Free Lead Leak Audit is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
+      "Yes. The Free Missed Lead Check is a focused diagnostic. If there is a fit, SignalOps can scope a simple response and follow-up system afterward."
   },
   {
     question: "Can you review missed calls and quote requests?",
     answer:
-      "Yes. Missed calls, website forms, quote requests, photo-based requests, DMs, and slow follow-up are exactly what this audit is built to surface."
+      "Yes. Missed calls, website forms, quote requests, photo-based requests, DMs, and slow follow-up are exactly what this check is built to surface."
   },
   {
     question: "Will this work if I do not have a CRM?",
@@ -155,6 +156,15 @@ export default function AuditPage() {
               >
                 {SECONDARY_CTA.label}
               </TrackedLink>
+              <TrackedLink
+                href={getEmailHref()}
+                eventName={ANALYTICS_EVENTS.contactClicked}
+                eventProperties={{ location: "audit_hero", type: "email" }}
+                className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
+              >
+                <Mail className="size-4" aria-hidden="true" />
+                {EMAIL_CTA.label}
+              </TrackedLink>
             </div>
             <div className="mt-6 grid max-w-2xl gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
               {["No CRM required", "Built for local service teams", "Focused on booked appointments"].map((item) => (
@@ -190,7 +200,7 @@ export default function AuditPage() {
         <SectionIntro
           eyebrow="Who it is for"
           title="Built for operators who already get leads but know too many are missed, delayed, or forgotten."
-          description="If your team is answering calls, texting customers, checking forms, replying to DMs, or sorting quote requests manually, the audit shows what should be tightened first."
+          description="If your team is answering calls, texting customers, checking forms, replying to DMs, or sorting quote requests manually, the check shows what should be tightened first."
         />
         <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-2">
           {whoItIsFor.map((item) => (
@@ -207,9 +217,9 @@ export default function AuditPage() {
       <section className="border-y border-white/10 bg-[#17122d]/70">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionIntro
-            eyebrow="What the audit reviews"
+            eyebrow="What the check reviews"
             title="Missed leads usually hide between first contact and follow-up."
-            description="The audit reviews the practical details that turn an interested prospect into a booked appointment or a forgotten lead."
+            description="The check reviews the practical details that turn an interested prospect into a booked appointment or a forgotten lead."
           />
           <div className="mt-8 grid w-full max-w-xs gap-4 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3">
             {auditChecks.map((check, index) => {
@@ -232,7 +242,7 @@ export default function AuditPage() {
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <div>
           <SectionIntro
-            eyebrow="Audit form"
+            eyebrow="Missed lead check form"
             title="Share the basics and get a preview of where leads may be missed."
             description="Give SignalOps enough context to identify where calls, texts, forms, DMs, and follow-ups are most likely costing you booked appointments."
           />
@@ -242,7 +252,7 @@ export default function AuditPage() {
               {[
                 "A plain-English snapshot of your biggest lead flow risks",
                 "Recommended fixes for response, routing, and follow-up",
-                "A next-step note for a focused Lead Leak Audit call"
+                "A next-step note for a focused Missed Lead Check call"
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <CheckCircle2 className="mt-1 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -262,7 +272,7 @@ export default function AuditPage() {
           <SectionIntro
             eyebrow="FAQ"
             title="A simple diagnostic before you commit to new systems."
-            description="The audit is designed to be clear, practical, and useful for a busy owner or operator."
+            description="The check is designed to be clear, practical, and useful for a busy owner or operator."
           />
           <div className="grid w-full max-w-xs gap-3 sm:max-w-none">
             {faqs.map((faq) => (
@@ -293,6 +303,15 @@ export default function AuditPage() {
           >
             {PRIMARY_CTA.label}
             <ArrowRight className="size-4" aria-hidden="true" />
+          </TrackedLink>
+          <TrackedLink
+            href={getEmailHref()}
+            eventName={ANALYTICS_EVENTS.contactClicked}
+            eventProperties={{ location: "audit_final_cta", type: "email" }}
+            className={`${buttonVariants({ variant: "outline", size: "lg" })} border-white/18 bg-white/[0.045]`}
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            {EMAIL_CTA.label}
           </TrackedLink>
         </div>
       </section>

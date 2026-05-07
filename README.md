@@ -189,7 +189,7 @@ NEXT_PUBLIC_META_PIXEL_ID=
 NEXT_PUBLIC_LINKEDIN_PARTNER_ID=
 ```
 
-`components/site/AnalyticsProvider.tsx` only loads Google Analytics, Meta Pixel, or LinkedIn Insight scripts when the matching env variable is present. Conversion events are centralized in `lib/analytics.ts` and currently include audit CTA clicks, demo views, audit form start/submission, demo lead submissions, package clicks, and contact clicks.
+`components/site/AnalyticsProvider.tsx` only loads Google Analytics, Meta Pixel, or LinkedIn Insight scripts when the matching env variable is present. Conversion events are centralized in `lib/analytics.ts` and currently include missed lead check CTA clicks, demo views, form start/submission, demo lead submissions, package clicks, and contact clicks.
 
 For Vercel Analytics, add the official Vercel Analytics package/provider later if desired. SignalOps already forwards events to `window.va` when that client is available, while still working safely when it is absent.
 
@@ -199,7 +199,7 @@ For Vercel Analytics, add the official Vercel Analytics package/provider later i
 - `/live-demo` - Live demo generator for prospect-specific SignalOps examples
 - `/how-it-works` - Visual AI Lead Engine explainer
 - `/roi-calculator` - Revenue impact estimate calculator for lead response and follow-up
-- `/audit` - Free Lead Leak Audit request page
+- `/audit` - Free Missed Lead Check request page
 - `/demo` - Fictional client website and intake demo
 - `/dashboard` - Lightweight internal dashboard demo
 - `/privacy` - Privacy policy
