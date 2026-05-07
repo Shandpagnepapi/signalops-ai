@@ -25,3 +25,5 @@ pnpm-debug.log*
 # Local browser verification artifacts
 .chrome-profile/
 artifacts-*.png
+
+.vercel
