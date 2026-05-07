@@ -15,6 +15,7 @@ import {
   Workflow,
   Zap
 } from "lucide-react";
+import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -61,6 +62,7 @@ const features: Array<{ title: string; copy: string; result: string; icon: Lucid
 
 const pricing = [
   {
+    id: "starter",
     name: "Starter",
     price: "$297",
     cadence: "/mo",
@@ -80,6 +82,7 @@ const pricing = [
     examples: ["Website form", "Missed call/text flow", "Simple quote request", "Solo operator or small team"]
   },
   {
+    id: "growth",
     name: "Growth",
     price: "$597",
     cadence: "/mo",
@@ -101,6 +104,7 @@ const pricing = [
     examples: ["Website + calls + Facebook leads", "Quote requests with photos/details", "Team handoffs", "Growing service business"]
   },
   {
+    id: "custom-agent-system",
     name: "Custom Agent System",
     price: "Custom",
     cadence: "",
@@ -426,6 +430,7 @@ function PricingSection() {
         {pricing.map((plan) => (
           <div
             key={plan.name}
+            id={plan.id}
             className={`relative flex min-h-full flex-col rounded-2xl border p-5 shadow-xl shadow-black/15 ${
               plan.highlight
                 ? "border-[#ffb36d]/55 bg-[radial-gradient(circle_at_50%_0%,rgba(255,111,156,0.34),transparent_34%),linear-gradient(180deg,rgba(255,111,156,0.16),rgba(255,179,109,0.08),rgba(35,20,52,0.84))]"
@@ -529,6 +534,8 @@ function PricingSection() {
       <div className="mt-5 rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-4 text-center text-sm leading-6 text-[#ffe1bd]">
         Not sure which package fits? Email SignalOps or start the project questionnaire and we will point you in the right direction.
       </div>
+
+      <BreakEvenCalculator className="mt-6" defaultAverageValue={250} defaultUnitLabel="jobs" />
     </section>
   );
 }

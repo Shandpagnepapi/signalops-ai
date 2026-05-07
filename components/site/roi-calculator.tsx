@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, Mail, TrendingUp } from "lucide-react";
+import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -115,6 +116,8 @@ export function RoiCalculator() {
       inputs.monthlySignalOpsCost > 0
         ? ((estimatedRecoveredRevenue - inputs.monthlySignalOpsCost) / inputs.monthlySignalOpsCost) * 100
         : 0;
+    const estimatedBreakEvenJobs =
+      inputs.averageCustomerValue > 0 ? inputs.monthlySignalOpsCost / inputs.averageCustomerValue : 0;
 
     const suggestedPackage = getSuggestedPackage(inputs, estimatedRecoveredRevenue);
 
@@ -123,6 +126,7 @@ export function RoiCalculator() {
       estimatedRecoveredLeads,
       estimatedRecoveredRevenue,
       estimatedRoi,
+      estimatedBreakEvenJobs,
       suggestedPackage
     };
   }, [inputs]);
@@ -243,6 +247,10 @@ export function RoiCalculator() {
               value={formatPercent(results.estimatedRoi)}
               tone={results.estimatedRoi >= 0 ? "positive" : "neutral"}
             />
+            <OutputTile
+              label="Jobs to cover monthly cost"
+              value={`${formatNumber(results.estimatedBreakEvenJobs)} jobs`}
+            />
           </div>
 
           <div className="mt-5 rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
@@ -268,7 +276,7 @@ export function RoiCalculator() {
           <TrackedLink
             href={getEmailHref({
               subject: "SignalOps ROI Calculator Inquiry",
-              body: "Hi SignalOps, I used the ROI calculator and want help with missed leads. Here's a little about my business:"
+              body: "Hi SignalOps, I used the ROI calculator and want help with lead response and follow-up.\n\nBusiness name:\nWebsite:\nIndustry:\nPackage I'm considering:\nWhat I need help with:"
             })}
             eventName={ANALYTICS_EVENTS.contactClicked}
             eventProperties={{ location: "roi_calculator", type: "email" }}
@@ -279,6 +287,10 @@ export function RoiCalculator() {
           </TrackedLink>
         </section>
       </div>
+
+      <section className="mx-auto w-full max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+        <BreakEvenCalculator defaultAverageValue={inputs.averageCustomerValue} />
+      </section>
 
       <section className="mx-auto mb-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-white/10 bg-[#17122d]/68 p-6" aria-labelledby="roi-math">

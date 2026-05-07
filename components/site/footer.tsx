@@ -107,7 +107,7 @@ export function Footer() {
               </Link>
             ))}
             <TrackedLink
-              href={`mailto:${SITE_CONFIG.email}`}
+              href={getEmailHref()}
               eventName={ANALYTICS_EVENTS.contactClicked}
               eventProperties={{ location: "footer", type: "email" }}
               className="transition hover:text-white"

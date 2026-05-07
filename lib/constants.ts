@@ -63,15 +63,15 @@ export const NAV_LINKS = [
   },
   {
     href: "/#pricing",
-    label: "Pricing"
+    label: "Packages"
   },
   {
     href: "/demo",
     label: "Demo"
   },
   {
-    href: "/#faq",
-    label: "FAQ"
+    href: "/roi-calculator",
+    label: "ROI Calculator"
   }
 ];
 
@@ -156,21 +156,21 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Contact"
+    label: "Start a Project"
   }
 ];
 
 export const PACKAGE_LINKS = [
   {
-    href: "/#pricing",
+    href: "/#starter",
     label: "Starter Package"
   },
   {
-    href: "/#pricing",
+    href: "/#growth",
     label: "Growth Package"
   },
   {
-    href: "/#pricing",
+    href: "/#custom-agent-system",
     label: "Custom Agent System"
   }
 ];
