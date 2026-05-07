@@ -1,33 +1,20 @@
 <svg width="420" height="96" viewBox="0 0 420 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">SignalOps horizontal logo</title>
-  <desc id="desc">SignalOps wordmark paired with a warm routed signal icon.</desc>
+  <desc id="desc">SignalOps wordmark with a sunset orchid signal bolt mark.</desc>
   <defs>
-    <linearGradient id="surface" x1="12" y1="4" x2="88" y2="88" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#32183f"/>
-      <stop offset="0.56" stop-color="#22112f"/>
-      <stop offset="1" stop-color="#100818"/>
+    <linearGradient id="markBg" x1="10" y1="6" x2="86" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4b315f"/>
+      <stop offset="0.52" stop-color="#261842"/>
+      <stop offset="1" stop-color="#14102b"/>
     </linearGradient>
-    <linearGradient id="signalA" x1="24" y1="28" x2="76" y2="68" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff6f9c"/>
-      <stop offset="0.55" stop-color="#ffb36d"/>
-      <stop offset="1" stop-color="#8d6bff"/>
-    </linearGradient>
-    <linearGradient id="signalB" x1="24" y1="68" x2="76" y2="28" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8d6bff"/>
-      <stop offset="0.5" stop-color="#ff6f9c"/>
-      <stop offset="1" stop-color="#ffb36d"/>
+    <linearGradient id="bolt" x1="28" y1="16" x2="68" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb36d"/>
+      <stop offset="0.45" stop-color="#ff6f9c"/>
+      <stop offset="1" stop-color="#d770ff"/>
     </linearGradient>
   </defs>
-  <rect x="5" y="4" width="82" height="82" rx="22" fill="url(#surface)" stroke="#6f3b68" stroke-width="1.8"/>
-  <path d="M25 30H35C43 30 42 43 50 43H60C67 43 67 30 74 30" stroke="url(#signalA)" stroke-width="6.5" stroke-linecap="round" fill="none"/>
-  <path d="M25 48H74" stroke="#fff8fb" stroke-opacity="0.86" stroke-width="5.5" stroke-linecap="round" fill="none"/>
-  <path d="M25 66H35C43 66 42 53 50 53H60C67 53 67 66 74 66" stroke="url(#signalB)" stroke-width="6.5" stroke-linecap="round" fill="none"/>
-  <circle cx="25" cy="30" r="5" fill="#fff8fb"/>
-  <circle cx="25" cy="48" r="5" fill="#fff8fb"/>
-  <circle cx="25" cy="66" r="5" fill="#fff8fb"/>
-  <circle cx="74" cy="30" r="5" fill="#ffb36d"/>
-  <circle cx="74" cy="48" r="5" fill="#fff8fb"/>
-  <circle cx="74" cy="66" r="5" fill="#ff6f9c"/>
-  <circle cx="48" cy="48" r="6" fill="#140c20" stroke="#ff9ec0" stroke-width="2.7"/>
+  <rect x="8" y="8" width="80" height="80" rx="21" fill="url(#markBg)" stroke="#9c6c93" stroke-opacity="0.72" stroke-width="1.8"/>
+  <path d="M54 18 29 50h17l-6 28 28-36H51l3-24Z" fill="none" stroke="url(#bolt)" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M56 27 41 47h13l-4 17 14-21H52l4-16Z" fill="url(#bolt)" opacity="0.26"/>
   <text x="112" y="59" fill="#fff8fb" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="760" letter-spacing="0">SignalOps</text>
 </svg>

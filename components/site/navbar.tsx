@@ -9,14 +9,14 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/82 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-[#14102b]/82 px-3 py-3 backdrop-blur-xl sm:px-5">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-[1450px] items-center justify-between gap-4 rounded-2xl border border-white/14 bg-white/[0.07] px-4 py-3 shadow-2xl shadow-black/18 backdrop-blur-2xl sm:px-6"
         aria-label="Primary navigation"
       >
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <Image src="/brand/signalops-logo-mark.svg" alt="" width={34} height={34} />
-          <span className="text-base font-semibold tracking-normal text-white">{SITE_CONFIG.name}</span>
+          <Image src="/brand/signalops-logo-mark.svg" alt="" width={30} height={30} />
+          <span className="text-base font-semibold tracking-normal text-white sm:text-lg">{SITE_CONFIG.name}</span>
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -24,7 +24,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm text-slate-300 transition hover:bg-white/6 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm text-[#ead0df]/76 transition hover:bg-white/8 hover:text-white"
             >
               {link.label}
             </Link>

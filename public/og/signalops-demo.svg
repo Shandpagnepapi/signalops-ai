@@ -1,19 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">SignalOps demo social sharing image</title>
   <desc id="desc">SignalOps branded Open Graph image for demo.</desc>
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#231434"/><stop offset="0.55" stop-color="#2b193c"/><stop offset="1" stop-color="#100818"/></linearGradient><radialGradient id="glow" cx="68%" cy="18%" r="58%"><stop offset="0" stop-color="#ffb36d" stop-opacity="0.32"/><stop offset="0.48" stop-color="#ff6f9c" stop-opacity="0.16"/><stop offset="1" stop-color="#100818" stop-opacity="0"/></radialGradient></defs>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#231434"/><stop offset="0.55" stop-color="#2b193c"/><stop offset="1" stop-color="#100818"/></linearGradient><radialGradient id="glow" cx="68%" cy="18%" r="58%"><stop offset="0" stop-color="#ffb36d" stop-opacity="0.32"/><stop offset="0.48" stop-color="#ff6f9c" stop-opacity="0.16"/><stop offset="1" stop-color="#100818" stop-opacity="0"/></radialGradient><linearGradient id="boltLogo" x1="18" y1="10" x2="48" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#ffb36d"/><stop offset="0.45" stop-color="#ff6f9c"/><stop offset="1" stop-color="#d770ff"/></linearGradient></defs>
   <rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#glow)"/>
   <path d="M0 116H1200M0 238H1200M0 360H1200M0 482H1200M150 0V630M360 0V630M570 0V630M780 0V630M990 0V630" stroke="#ffffff" stroke-opacity="0.055"/>
   <g transform="translate(72 70)">
-    <rect x="1.29" y="1.29" width="59.42" height="59.42" rx="14.21" fill="#231434" stroke="#5b346d" stroke-width="1.29"/>
-    <path d="M14.21 39.4C14.21 32.94 20.02 27.77 26.48 27.77H32.94C39.4 27.77 45.21 21.96 45.21 15.5" stroke="#ff6f9c" stroke-width="5.17" stroke-linecap="round" fill="none"/>
-    <path d="M14.21 48.44C14.21 41.98 20.02 36.17 26.48 36.17H32.94C39.4 36.17 45.21 30.35 45.21 23.9" stroke="#ffb36d" stroke-width="5.17" stroke-linecap="round" fill="none"/>
-    <path d="M14.21 30.35H27.13C33.58 30.35 38.1 25.83 42.63 20.02" stroke="#8d6bff" stroke-width="3.23" stroke-linecap="round" fill="none" opacity="0.9"/>
-    <circle cx="14.21" cy="30.35" r="3.55" fill="#F8FBFF"/>
-    <circle cx="14.21" cy="39.4" r="3.88" fill="#F8FBFF"/>
-    <circle cx="14.21" cy="48.44" r="3.88" fill="#F8FBFF"/>
-    <circle cx="45.21" cy="15.5" r="3.88" fill="#F8FBFF"/>
-    <circle cx="45.21" cy="23.9" r="3.88" fill="#F8FBFF"/><text x="82" y="41" fill="#F8FBFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="38" font-weight="760">SignalOps</text></g>
+    <rect x="1.29" y="1.29" width="59.42" height="59.42" rx="15.5" fill="#261842" stroke="#9c6c93" stroke-opacity="0.72" stroke-width="1.29"/>
+    <path d="M36.3 10.5 18.2 34.5H31l-4.5 20.8 20.6-27H34.8l1.5-17.8Z" fill="none" stroke="url(#boltLogo)" stroke-width="4.7" stroke-linejoin="round"/>
+    <path d="M38 19 27 33.5h9.3l-3 12.5 10.4-15.5h-9L38 19Z" fill="url(#boltLogo)" opacity="0.28"/>
+    <text x="82" y="41" fill="#F8FBFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="38" font-weight="760">SignalOps</text>
+  </g>
   <g transform="translate(72 218)"><text fill="#F8FBFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="64" font-weight="780"><tspan x="0" y="0">Client demo workflows</tspan></text><text x="0" y="92" fill="#ead0df" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="29" font-weight="520">See AI intake, scoring, routing, and follow-up in action.</text></g>
   <g transform="translate(762 178)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M26 196H140C178 196 178 128 216 128H306" stroke="#ff6f9c" stroke-width="10"/><path d="M26 292H160C216 292 216 352 286 352H368" stroke="#ffb36d" stroke-width="10"/><path d="M26 100H132C188 100 188 54 250 54H368" stroke="#8d6bff" stroke-width="10" opacity="0.85"/><circle cx="26" cy="100" r="18" fill="#231434" stroke="#8d6bff" stroke-width="8"/><circle cx="26" cy="196" r="18" fill="#231434" stroke="#ff6f9c" stroke-width="8"/><circle cx="26" cy="292" r="18" fill="#231434" stroke="#ffb36d" stroke-width="8"/><rect x="368" y="22" width="190" height="64" rx="16" fill="#241331" stroke="#8d6bff" stroke-opacity="0.55"/><rect x="306" y="96" width="252" height="64" rx="16" fill="#241331" stroke="#ff6f9c" stroke-opacity="0.55"/><rect x="368" y="320" width="190" height="64" rx="16" fill="#241331" stroke="#ffb36d" stroke-opacity="0.55"/></g>
   <text x="72" y="566" fill="#d4b6c8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22">Get a Free Missed Lead Checkup</text>

@@ -1,37 +1,24 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">SignalOps logo mark</title>
-  <desc id="desc">A premium routed signal mark representing lead response, qualification, follow-up, and handoff.</desc>
+  <desc id="desc">A sunset orchid signal bolt mark for SignalOps.</desc>
   <defs>
-    <linearGradient id="surface" x1="8" y1="4" x2="88" y2="92" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#32183f"/>
-      <stop offset="0.56" stop-color="#22112f"/>
-      <stop offset="1" stop-color="#100818"/>
+    <linearGradient id="markBg" x1="10" y1="6" x2="86" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4b315f"/>
+      <stop offset="0.52" stop-color="#261842"/>
+      <stop offset="1" stop-color="#14102b"/>
     </linearGradient>
-    <linearGradient id="signalA" x1="18" y1="24" x2="78" y2="72" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff6f9c"/>
-      <stop offset="0.55" stop-color="#ffb36d"/>
-      <stop offset="1" stop-color="#8d6bff"/>
+    <linearGradient id="bolt" x1="28" y1="16" x2="68" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb36d"/>
+      <stop offset="0.45" stop-color="#ff6f9c"/>
+      <stop offset="1" stop-color="#d770ff"/>
     </linearGradient>
-    <linearGradient id="signalB" x1="20" y1="70" x2="78" y2="26" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8d6bff"/>
-      <stop offset="0.5" stop-color="#ff6f9c"/>
-      <stop offset="1" stop-color="#ffb36d"/>
-    </linearGradient>
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1 0 1 0 0 .46 0 0 1 0 .65 0 0 0 .32 0"/>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1 0 1 0 0 .42 0 0 1 0 .62 0 0 0 .42 0"/>
       <feBlend in="SourceGraphic"/>
     </filter>
   </defs>
-  <rect x="2" y="2" width="92" height="92" rx="24" fill="url(#surface)" stroke="#6f3b68" stroke-width="2"/>
-  <path d="M23 28H34C43 28 42 42 51 42H62C69 42 69 28 76 28" stroke="url(#signalA)" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#softGlow)"/>
-  <path d="M23 48H76" stroke="#fff8fb" stroke-opacity="0.86" stroke-width="6" stroke-linecap="round" fill="none"/>
-  <path d="M23 68H34C43 68 42 54 51 54H62C69 54 69 68 76 68" stroke="url(#signalB)" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#softGlow)"/>
-  <circle cx="23" cy="28" r="5.5" fill="#fff8fb"/>
-  <circle cx="23" cy="48" r="5.5" fill="#fff8fb"/>
-  <circle cx="23" cy="68" r="5.5" fill="#fff8fb"/>
-  <circle cx="76" cy="28" r="5.5" fill="#ffb36d"/>
-  <circle cx="76" cy="48" r="5.5" fill="#fff8fb"/>
-  <circle cx="76" cy="68" r="5.5" fill="#ff6f9c"/>
-  <circle cx="48" cy="48" r="6.5" fill="#140c20" stroke="#ff9ec0" stroke-width="3"/>
+  <rect x="4" y="4" width="88" height="88" rx="23" fill="url(#markBg)" stroke="#9c6c93" stroke-opacity="0.72" stroke-width="2"/>
+  <path d="M55 12 25 50h20l-7 34 33-43H51l4-29Z" fill="none" stroke="url(#bolt)" stroke-width="7" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M57 23 39 46h15l-5 21 17-25H52l5-19Z" fill="url(#bolt)" opacity="0.26"/>
 </svg>
