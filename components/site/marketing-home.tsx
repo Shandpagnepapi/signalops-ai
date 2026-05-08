@@ -1,7 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
-  BarChart3,
   CalendarCheck2,
   CheckCircle2,
   ClipboardList,
@@ -9,13 +8,20 @@ import {
   MessageSquareReply,
   PlayCircle,
   SearchCheck,
-  Star,
+  ShieldCheck,
   TrendingUp,
   UserRound,
   Workflow,
   Zap
 } from "lucide-react";
 import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
+import { MobileSignalOpsHome } from "@/components/site/mobile-home";
+import {
+  BeforeAfterFlow,
+  DashboardSnapshot,
+  LeadJourneyVisual,
+  PreviewArtifactShowcase
+} from "@/components/site/product-story-visuals";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -30,8 +36,6 @@ import {
 } from "@/lib/constants";
 
 const shell = "mx-auto max-w-[1500px] px-3 sm:px-5 lg:px-8";
-const glass =
-  "border border-white/14 bg-white/[0.075] shadow-2xl shadow-black/28 backdrop-blur-2xl";
 const muted = "text-[#ead0df]/76";
 
 const features: Array<{ title: string; copy: string; result: string; icon: LucideIcon }> = [
@@ -160,24 +164,28 @@ const faqs = [
 
 export function MarketingHome() {
   return (
-    <main className="overflow-hidden bg-[#14102b] text-white">
-      <section className="relative isolate px-3 py-5 sm:px-5 sm:py-7 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(255,111,156,0.24),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(255,179,109,0.22),transparent_30%),linear-gradient(135deg,#241641_0%,#2a1a48_44%,#241331_100%)]" />
-        <div className="surface-grid absolute inset-0 opacity-[0.16]" />
+    <>
+      <MobileSignalOpsHome />
+      <main className="hidden overflow-hidden bg-[#14102b] text-white md:block">
+        <section className="relative isolate px-3 py-5 sm:px-5 sm:py-7 lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(255,111,156,0.24),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(255,179,109,0.22),transparent_30%),linear-gradient(135deg,#241641_0%,#2a1a48_44%,#241331_100%)]" />
+          <div className="surface-grid absolute inset-0 opacity-[0.16]" />
 
-        <div className={`${shell} relative`}>
-          <div className="overflow-hidden rounded-[1.75rem] border border-white/18 bg-white/[0.055] shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:rounded-[2.25rem]">
-            <HeroSection />
-            <PricingSection />
-            <FeatureSection />
-            <HowItWorks />
-            <DemoFaq />
-            <FinalCTA />
-            <ContactSection />
+          <div className={`${shell} relative`}>
+            <div className="overflow-hidden rounded-[1.75rem] border border-white/18 bg-white/[0.055] shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:rounded-[2.25rem]">
+              <HeroSection />
+              <ProductStorySection />
+              <PricingSection />
+              <FeatureSection />
+              <HowItWorks />
+              <DemoFaq />
+              <FinalCTA />
+              <ContactSection />
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
 
@@ -190,16 +198,16 @@ function HeroSection() {
       <div className="relative grid gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="max-w-2xl">
           <Badge className="border border-[#ff9ec0]/22 bg-white/8 px-3 py-1.5 text-[#ffd7e6]">
-            Free Instant AI Lead System Preview
+            Free Preview
           </Badge>
-          <h1 className="mt-8 text-[2.95rem] font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.35rem]">
-            See the AI lead system
+          <div className="mt-8 text-[2.95rem] font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.35rem]">
+            Get Your Free Preview
             <span className="block bg-[linear-gradient(90deg,#ffb36d,#ff6f9c,#d770ff)] bg-clip-text text-transparent">
-              your business should already have.
+              before anything is built.
             </span>
-          </h1>
+          </div>
           <p className={`mt-6 max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${muted}`}>
-            SignalOps builds done-for-you AI receptionist, lead response, qualification, follow-up, and booking handoff systems for local service businesses. Start with a free personalized preview before anything is built.
+            Tell us how your leads come in and where things slow down. SignalOps builds a personalized preview of the AI lead system your business should be using.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -225,129 +233,40 @@ function HeroSection() {
 
           <div className="mt-9 grid grid-cols-3 gap-2 sm:max-w-xl sm:gap-4">
             <HeroStat icon={ClipboardList} value="1" label="You tell us how leads come in" />
-            <HeroStat icon={Workflow} value="2" label="We generate your AI Lead System Preview" />
-            <HeroStat icon={CalendarCheck2} value="3" label="You approve the build plan before launch" />
+            <HeroStat icon={Workflow} value="2" label="We draft report, proposal, and email" />
+            <HeroStat icon={ShieldCheck} value="3" label="We review before it is emailed" />
           </div>
         </div>
 
         <div className="relative">
           <div className="absolute -inset-5 rounded-[2rem] bg-[radial-gradient(circle_at_78%_18%,rgba(255,111,156,0.42),transparent_36%),radial-gradient(circle_at_55%_78%,rgba(255,179,109,0.22),transparent_36%)] blur-2xl" />
-          <ProductDashboard />
-          <SocialProof />
+          <PreviewArtifactShowcase />
         </div>
       </div>
     </section>
   );
 }
 
-function ProductDashboard() {
+function ProductStorySection() {
   return (
-    <div className={`relative overflow-hidden rounded-[1.55rem] ${glass}`}>
-      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#ffb36d,#ff6f9c,transparent)]" />
-      <div className="grid min-h-[23rem] bg-[#1a1434]/78 md:grid-cols-[10.5rem_1fr]">
-        <aside className="hidden border-r border-white/10 bg-white/[0.035] p-4 md:block">
-          <div className="flex items-center gap-2">
-            <LogoSpark className="size-5" />
-            <span className="text-sm font-semibold">SignalOps</span>
-          </div>
-          <div className="mt-7 space-y-2 text-xs">
-            {["Overview", "Conversations", "Leads", "Bookings", "Follow-ups", "Analytics"].map((item, index) => (
-              <div
-                key={item}
-                className={`rounded-2xl px-3 py-2 ${index === 0 ? "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white" : "text-[#ead0df]/70"}`}
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </aside>
-
-        <section className="p-4 sm:p-5">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-lg font-semibold">Overview</p>
-              <p className="text-xs text-[#ead0df]/58">This month</p>
-            </div>
-            <Badge className="border border-white/10 bg-white/8 text-[#ead0df]">Live</Badge>
-          </div>
-
-          <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
-            <MetricCard label="New Leads" value="482" delta="+29%" />
-            <MetricCard label="Booked Jobs" value="127" delta="+24%" />
-            <MetricCard label="Response Time" value="4.3s" delta="+72%" />
-          </div>
-
-          <div className="mt-3 grid gap-3 lg:grid-cols-[1fr_13rem]">
-            <div className="rounded-xl border border-white/10 bg-[#17122d]/82 p-4">
-              <div className="mb-3 flex items-center justify-between">
-                <p className="text-xs font-semibold text-[#ead0df]/78">Leads over time</p>
-                <BarChart3 className="size-4 text-[#ffb36d]" aria-hidden="true" />
-              </div>
-              <svg viewBox="0 0 420 180" className="h-40 w-full" role="img" aria-label="Leads over time increasing chart">
-                <defs>
-                  <linearGradient id="chartLine" x1="0" y1="0" x2="1" y2="0">
-                    <stop stopColor="#ffb36d" />
-                    <stop offset="0.5" stopColor="#ff6f9c" />
-                    <stop offset="1" stopColor="#d770ff" />
-                  </linearGradient>
-                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop stopColor="#ff6f9c" stopOpacity="0.32" />
-                    <stop offset="1" stopColor="#ff6f9c" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path d="M0 154H420M0 112H420M0 70H420M0 28H420" stroke="white" strokeOpacity="0.07" />
-                <path d="M8 148C42 142 52 95 84 96C122 98 119 56 150 64C186 74 180 116 218 102C248 91 253 54 286 66C322 79 326 36 360 41C384 44 392 29 412 24" fill="none" stroke="url(#chartLine)" strokeWidth="7" strokeLinecap="round" />
-                <path d="M8 148C42 142 52 95 84 96C122 98 119 56 150 64C186 74 180 116 218 102C248 91 253 54 286 66C322 79 326 36 360 41C384 44 392 29 412 24V180H8Z" fill="url(#chartFill)" />
-              </svg>
-            </div>
-
-            <div className="rounded-xl border border-white/10 bg-[#17122d]/82 p-4">
-              <p className="text-xs font-semibold text-[#ead0df]/78">Lead source</p>
-              <div className="mx-auto mt-4 flex size-28 items-center justify-center rounded-full bg-[conic-gradient(#ff6f9c_0_44%,#ffb36d_44%_70%,#d770ff_70%_86%,#7a5cff_86%_100%)]">
-                <div className="flex size-20 flex-col items-center justify-center rounded-full bg-[#17122d]">
-                  <span className="text-xs text-[#ead0df]/58">Total</span>
-                  <span className="text-xl font-semibold">482</span>
-                </div>
-              </div>
-              <div className="mt-4 space-y-2 text-xs text-[#ead0df]/70">
-                {["Google 48%", "Facebook 20%", "Website 16%", "Other 16%"].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-[#ffb36d]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+    <section className="border-y border-white/10 bg-[#17122d]/34 px-5 py-9 sm:px-9 lg:px-11" aria-labelledby="product-story-title">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#37f0bd]">AI lead operating system</p>
+        <h2 id="product-story-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
+          Show the lead moving through the system.
+        </h2>
+        <p className={`mt-3 text-sm leading-6 ${muted}`}>
+          Capture, qualify, route, follow up, and hand off bookings from one operating layer.
+        </p>
       </div>
-    </div>
-  );
-}
-
-function SocialProof() {
-  return (
-    <div className="mx-auto mt-5 flex w-fit flex-col items-center gap-2 text-center sm:flex-row sm:text-left">
-      <div className="flex -space-x-2">
-        {["JD", "AV", "MK", "RS", "TB"].map((initials, index) => (
-          <span
-            key={initials}
-            className="flex size-8 items-center justify-center rounded-full border-2 border-[#201636] bg-[linear-gradient(135deg,#ffb36d,#ff6f9c)] text-[10px] font-bold text-white"
-            style={{ opacity: 1 - index * 0.04 }}
-          >
-            {initials}
-          </span>
-        ))}
-      </div>
-      <div>
-        <div className="flex justify-center gap-0.5 text-[#ffb36d] sm:justify-start">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Star key={index} className="size-3.5 fill-current" aria-hidden="true" />
-          ))}
+      <div className="mt-7 grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
+        <LeadJourneyVisual />
+        <DashboardSnapshot />
+        <div className="xl:col-span-2">
+          <BeforeAfterFlow />
         </div>
-        <p className="text-xs leading-5 text-[#ead0df]/72">Trusted by local service teams</p>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -492,12 +411,12 @@ function PricingSection() {
               <Mail className="size-4" aria-hidden="true" />
             </TrackedLink>
             <TrackedLink
-              href="/audit"
+              href={PRIMARY_CTA.href}
               eventName={ANALYTICS_EVENTS.packageClicked}
               eventProperties={{ package: plan.name, price: plan.price }}
               className={`${buttonVariants({ variant: "ghost" })} mt-3 w-full border border-white/10 bg-white/[0.035]`}
             >
-              Send Project Details
+              Free Preview
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
@@ -596,10 +515,10 @@ function FinalCTA() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold tracking-normal text-white">
-                See the system before we build it.
+                Get Your Free Preview
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-                Get a personalized preview of the AI receptionist, lead dashboard, follow-up timeline, and package recommendation for your business.
+                Tell us how your leads come in. SignalOps drafts a Preview Report, Proposal Draft, and Email Draft, then reviews it before anything is sent.
               </p>
             </div>
           </div>
@@ -691,38 +610,5 @@ function HeroStat({ icon: Icon, value, label }: { icon: LucideIcon; value: strin
       </div>
       <p className="mt-1 text-[0.68rem] leading-4 text-[#ead0df]/68 sm:text-xs">{label}</p>
     </div>
-  );
-}
-
-function MetricCard({ label, value, delta }: { label: string; value: string; delta: string }) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.055] p-3 shadow-lg shadow-black/12">
-      <p className="text-[0.65rem] font-medium text-[#ead0df]/70">{label}</p>
-      <div className="mt-2 flex items-end justify-between gap-2">
-        <p className="text-xl font-semibold text-white sm:text-2xl">{value}</p>
-        <p className="text-[0.65rem] font-semibold text-lime-300">{delta}</p>
-      </div>
-    </div>
-  );
-}
-
-function LogoSpark({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path
-        d="M13.4 2.6 4.8 13.1h5.6l-1.8 8.3 10.6-12h-6.1l.3-6.8Z"
-        fill="none"
-        stroke="url(#sparkGradient)"
-        strokeWidth="2.4"
-        strokeLinejoin="round"
-      />
-      <defs>
-        <linearGradient id="sparkGradient" x1="5" y1="3" x2="19" y2="21" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#ffb36d" />
-          <stop offset="0.55" stopColor="#ff6f9c" />
-          <stop offset="1" stopColor="#d770ff" />
-        </linearGradient>
-      </defs>
-    </svg>
   );
 }

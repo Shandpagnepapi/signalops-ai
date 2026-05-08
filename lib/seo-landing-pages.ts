@@ -555,7 +555,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/preview",
-        label: "Get My Free Preview",
+        label: "Free Preview",
         description: "Find where follow-ups are getting delayed or forgotten."
       }
     ]

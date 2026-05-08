@@ -1,5 +1,10 @@
-import { ArrowRight, CheckCircle2, Eye, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
+import {
+  BeforeAfterFlow,
+  LeadJourneyVisual,
+  PreviewArtifactShowcase
+} from "@/components/site/product-story-visuals";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -12,17 +17,19 @@ import {
   webPageJsonLd
 } from "@/lib/seo";
 
+const previewDescription =
+  "Tell us how your leads come in and where things slow down. SignalOps builds a personalized preview of the AI lead system your business should be using.";
+
 export const metadata = createPageMetadata({
-  title: "Free Instant AI Lead System Preview",
-  description:
-    "Get a personalized SignalOps mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build for your business.",
+  title: "Free Preview",
+  description: previewDescription,
   path: "/preview"
 });
 
 const steps = [
-  "Tell us how leads come in",
-  "We generate your AI Lead System Preview",
-  "You approve the build plan before anything goes live"
+  "Submit the Free Preview form",
+  "SignalOps creates the draft package",
+  "We review your preview before it is emailed"
 ];
 
 export default function PreviewPage() {
@@ -32,14 +39,13 @@ export default function PreviewPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "Free Instant AI Lead System Preview",
-            description:
-              "Get a personalized SignalOps mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build for your business.",
+            title: "Free Preview",
+            description: previewDescription,
             path: "/preview"
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
-            { name: "Free Instant AI Lead System Preview", path: "/preview" }
+            { name: "Free Preview", path: "/preview" }
           ])
         ])}
       />
@@ -50,17 +56,17 @@ export default function PreviewPage() {
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
             <div className="flex flex-col justify-center">
               <Badge className="mb-5 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-                Free Instant AI Lead System Preview
+                Free Preview
               </Badge>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-                Get Your Free Instant AI Lead System Preview
+                Get Your Free Preview
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
-                See a personalized mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build for your business.
+                {previewDescription}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}>
-                  Get My Free Preview
+                  Start Free Preview
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
                 <TrackedLink
@@ -74,25 +80,7 @@ export default function PreviewPage() {
               </div>
             </div>
 
-            <div className="rounded-[1.75rem] border border-white/14 bg-white/[0.075] p-5 shadow-2xl shadow-black/24 backdrop-blur-2xl">
-              <div className="mb-5 flex items-center gap-2">
-                <Eye className="size-5 text-[#ffb36d]" aria-hidden="true" />
-                <p className="font-semibold text-white">What you get back</p>
-              </div>
-              <div className="grid gap-3">
-                {[
-                  ["AI receptionist mockup", "A sample conversation tailored to your industry and lead problem."],
-                  ["Lead dashboard preview", "Fake-but-realistic cards showing score, urgency, status, source, and next follow-up."],
-                  ["Follow-up and handoff flow", "How calls, forms, texts, DMs, and quote requests would move through the system."],
-                  ["Recommended package", "Starter, Growth, or Custom based on lead sources, complexity, and volume."]
-                ].map(([title, copy]) => (
-                  <div key={title} className="rounded-2xl border border-white/10 bg-[#17122d]/62 p-4">
-                    <p className="font-semibold text-white">{title}</p>
-                    <p className="mt-1 text-sm leading-6 text-[#ead0df]/68">{copy}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <PreviewArtifactShowcase />
           </div>
         </section>
 
@@ -109,23 +97,28 @@ export default function PreviewPage() {
           </div>
         </section>
 
+        <section className="mx-auto grid max-w-7xl gap-5 px-4 py-10 sm:px-6 xl:grid-cols-[1.08fr_0.92fr] lg:px-8">
+          <LeadJourneyVisual />
+          <BeforeAfterFlow />
+        </section>
+
         <section id="preview-form" className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
           <div className="grid gap-4">
             <div className="rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-5">
               <Sparkles className="mb-4 size-7 text-[#ffb36d]" aria-hidden="true" />
-              <h2 className="text-2xl font-semibold tracking-normal text-white">Not a generic audit.</h2>
+              <h2 className="text-2xl font-semibold tracking-normal text-white">A preview before buildout.</h2>
               <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-                This creates a practical preview of the system SignalOps could install: AI receptionist, lead manager, dashboard visibility, follow-up, and owner approval rules.
+                The form gives SignalOps enough context to draft the report, proposal, and email your business would receive after review.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">
               <ShieldCheck className="mb-4 size-7 text-emerald-300" aria-hidden="true" />
-              <h2 className="text-xl font-semibold tracking-normal text-white">Approval-first by default.</h2>
+              <h2 className="text-xl font-semibold tracking-normal text-white">What happens after submission</h2>
               <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-                SignalOps can draft replies and follow-ups, but customer-facing messages are reviewed before sending unless you explicitly approve live sending later.
+                SignalOps creates a personalized draft preview package, then reviews it internally before anything is sent.
               </p>
               <div className="mt-4 grid gap-2">
-                {["No automatic prospect emails", "Draft-first setup", "Human review for unsure leads"].map((item) => (
+                {["Preview Report draft", "Proposal Draft", "Email Draft", "Human review before email"].map((item) => (
                   <p key={item} className="flex gap-2 text-sm text-[#ead0df]/74">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                     {item}

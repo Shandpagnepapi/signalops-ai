@@ -62,6 +62,7 @@ function normalizeInput(payload: IncomingPayload): PreviewSubmissionInput {
     industry: (previewIndustryOptions as readonly string[]).includes(industry)
       ? (industry as PreviewSubmissionInput["industry"])
       : "Other local service",
+    mainServices: getString(payload, "mainServices"),
     mainLeadSources: mainLeadSources.filter((source) =>
       (previewLeadSourceOptions as readonly string[]).includes(source)
     ) as PreviewSubmissionInput["mainLeadSources"],
@@ -72,6 +73,8 @@ function normalizeInput(payload: IncomingPayload): PreviewSubmissionInput {
     monthlyLeadVolume: (previewLeadVolumeOptions as readonly string[]).includes(monthlyLeadVolume)
       ? (monthlyLeadVolume as PreviewSubmissionInput["monthlyLeadVolume"])
       : "Not sure",
+    currentTools: getString(payload, "currentTools"),
+    leadProcess: getString(payload, "leadProcess"),
     notes: getString(payload, "notes")
   };
 }
@@ -97,6 +100,14 @@ function validateInput(input: PreviewSubmissionInput) {
 
   if (input.mainLeadSources.length === 0) {
     errors.push("Choose at least one lead source.");
+  }
+
+  if (!input.mainServices) {
+    errors.push("Main services are required.");
+  }
+
+  if (!input.leadProcess) {
+    errors.push("Tell us what happens after a lead comes in.");
   }
 
   return errors;
@@ -153,11 +164,20 @@ export async function POST(request: Request) {
   }
 
   const submission = await createPreviewSubmission(input);
+  const receipt = {
+    id: submission.id,
+    businessName: submission.businessName,
+    industry: submission.industry,
+    status: submission.status,
+    recommendedPackage: submission.previewData.recommendedPackage.name
+  };
 
   return NextResponse.json(
     {
-      submission,
-      previewUrl: `/preview/${submission.id}`
+      submission: receipt,
+      previewUrl: `/preview/${submission.id}`,
+      status: submission.status,
+      message: "Draft preview package generated for internal review. Nothing has been sent."
     },
     { status: 201 }
   );

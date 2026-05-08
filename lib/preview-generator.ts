@@ -63,7 +63,7 @@ function isHighFrictionProblem(problem: PreviewProblem) {
 }
 
 function hasComplexNotes(input: PreviewSubmissionInput) {
-  const notes = input.notes.toLowerCase();
+  const notes = `${input.notes} ${input.currentTools} ${input.leadProcess}`.toLowerCase();
   return ["multi-location", "multiple locations", "custom", "routing", "crm", "calendar", "team", "franchise"].some((term) =>
     notes.includes(term)
   );
@@ -75,7 +75,7 @@ export function calculateFitScore(input: PreviewSubmissionInput) {
   const problemScore = isHighFrictionProblem(input.currentProblem) ? 18 : input.currentProblem === "Bad lead quality" ? 12 : 7;
   const valueScore = input.averageJobValue >= 1500 ? 14 : input.averageJobValue >= 750 ? 10 : input.averageJobValue >= 250 ? 6 : 3;
   const serviceScore = input.industry === "Other local service" ? 4 : 8;
-  const notesScore = hasComplexNotes(input) ? 10 : input.notes ? 4 : 0;
+  const notesScore = hasComplexNotes(input) ? 10 : input.notes || input.currentTools || input.leadProcess ? 4 : 0;
 
   return clamp(34 + sourceScore + problemScore + valueScore + leadVolumeScore(input.monthlyLeadVolume) + serviceScore + notesScore, 0, 100);
 }
@@ -121,7 +121,7 @@ export function generateSampleConversation(input: PreviewSubmissionInput) {
     {
       speaker: "SignalOps AI Receptionist" as const,
       message:
-        `Absolutely — I can help get this started. What service do you need, what city or area are you in, and how soon are you looking to book?`
+        `Absolutely - I can help get this started. What service do you need, what city or area are you in, and how soon are you looking to book?`
     },
     {
       speaker: "Customer" as const,
@@ -143,7 +143,7 @@ function getPainPoints(input: PreviewSubmissionInput) {
   if (input.mainLeadSources.includes("Facebook") || input.mainLeadSources.includes("Instagram")) points.add("DM follow-up");
   if (input.mainLeadSources.includes("Google Business Profile") || input.mainLeadSources.includes("Google LSA")) points.add("Google lead routing");
   if (input.mainLeadSources.length >= 3) points.add("Scattered lead sources");
-  if (input.notes.toLowerCase().includes("photo")) points.add("Photo/detail collection");
+  if (`${input.notes} ${input.leadProcess}`.toLowerCase().includes("photo")) points.add("Photo/detail collection");
 
   return [...points].slice(0, 5);
 }
@@ -233,7 +233,7 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     fitScore,
     painPoints,
     approvalNote:
-      "SignalOps drafts replies, follow-ups, and internal notes first. Prospect-facing messages require owner approval before sending unless explicitly approved otherwise."
+      "SignalOps drafts the preview report, proposal, and email first. Nothing customer-facing is sent until a human reviews and approves it."
   };
 }
 
@@ -244,18 +244,57 @@ export function generateManagerDrafts(
 ): PreviewManagerNotes {
   const recommendedPackage = previewData.recommendedPackage.name;
   const sourceSummary = input.mainLeadSources.length > 0 ? input.mainLeadSources.join(", ") : "unknown lead sources";
+  const services = input.mainServices || serviceExamples[input.industry];
+  const previewPathNote = previewPath ? `Draft preview path: ${previewPath}` : "Draft preview path pending.";
 
   return {
+    submissionDetails: {
+      mainServices: input.mainServices,
+      currentTools: input.currentTools,
+      leadProcess: input.leadProcess,
+      anythingElse: input.notes
+    },
     prospectSummary:
-      `${input.businessName} likely needs faster response across ${sourceSummary}. Main issue: ${input.currentProblem.toLowerCase()}. Recommended package: ${recommendedPackage}.`,
+      `${input.businessName} likely needs faster response across ${sourceSummary}. Main bottleneck: ${input.currentProblem.toLowerCase()}. Services: ${services}. Recommended package: ${recommendedPackage}.`,
     fitScore: previewData.fitScore,
     painPointsDetected: previewData.painPoints,
     recommendedPackage,
-    draftEmail: {
-      subject: "Your SignalOps AI Lead System Preview",
+    previewReport: {
+      title: `${input.businessName} Free Preview Report`,
+      executiveSummary:
+        `SignalOps should focus on protecting ${input.businessName}'s lead flow across ${sourceSummary}, with special attention to ${input.currentProblem.toLowerCase()}.`,
+      leadFlowFindings: [
+        `Primary services: ${services}.`,
+        `Current lead process: ${input.leadProcess || "Not provided yet."}`,
+        `Current tools/CRM: ${input.currentTools || "Not provided."}`,
+        `Detected pain points: ${previewData.painPoints.join(", ")}.`
+      ],
+      responseSystemRecommendation:
+        `Build a draft-first AI receptionist, qualification, follow-up, booking handoff, and dashboard flow around ${input.industry.toLowerCase()} inquiries.`
+    },
+    proposalDraft: {
+      title: `${recommendedPackage} proposal draft`,
+      recommendedPackage,
+      scope: [
+        "AI receptionist flow for new inquiries",
+        "Lead qualification questions based on services and lead sources",
+        "Follow-up sequence for no-replies, quote requests, and missing details",
+        "Booking or callback handoff path",
+        "Internal dashboard view for lead status and next action"
+      ],
+      nextSteps: [
+        "Human review of preview report",
+        "Edit proposal language if needed",
+        "Approve or revise the email draft",
+        "Send preview manually after approval"
+      ]
+    },
+    emailDraft: {
+      subject: "Your SignalOps Free Preview",
       body:
-        `Hey ${input.contactName},\n\nI put together a quick preview of what an AI lead response system could look like for ${input.businessName}. It includes a sample AI receptionist conversation, lead dashboard, follow-up flow, and recommended setup.\n\nYou can review it here: ${previewPath}\n\nIf it looks useful, we can walk through it and decide what should actually be built.\n\n- SignalOps`,
-      approvalStatus: "Needs owner approval"
+        `Hey ${input.contactName},\n\nI put together a draft Free Preview for ${input.businessName}. It includes a preview report, proposal draft, and suggested AI response system for your lead flow.\n\n${previewPathNote}\n\nI reviewed this before sending so we can keep it practical and accurate. If it looks useful, we can walk through what should actually be built.\n\n- SignalOps`,
+      approvalStatus: "Needs Review",
+      deliveryStatus: "Draft only - not sent"
     },
     kickoffChecklist: [
       "Confirm lead sources",
@@ -292,8 +331,11 @@ export function createDemoPreviewSubmissions(): PreviewSubmission[] {
       phone: "(555) 010-0142",
       website: "https://example.com",
       industry: "Wheel repair",
+      mainServices: "Curb rash repair, wheel refinishing, bent wheel triage, cracked wheel review, and mobile repair quotes",
       mainLeadSources: ["Website form", "Missed calls", "Instagram"],
       currentProblem: "No follow-up",
+      currentTools: "Website form, phone calls, Instagram DMs, and a spreadsheet",
+      leadProcess: "Customer sends a form or message, the shop asks for photos, then the owner reviews and quotes manually.",
       averageJobValue: 260,
       monthlyLeadVolume: "76-200",
       notes: "Needs photo collection, mobile repair routing, and quote follow-up."
@@ -305,8 +347,11 @@ export function createDemoPreviewSubmissions(): PreviewSubmission[] {
       phone: "(555) 010-0199",
       website: "",
       industry: "Well / water service",
+      mainServices: "Well pump repairs, filtration, water pressure checks, and emergency no-water calls",
       mainLeadSources: ["Phone calls", "Missed calls", "Text messages"],
       currentProblem: "Leads forgotten",
+      currentTools: "Phone, email, and Google Business Profile",
+      leadProcess: "Calls come in while the team is in the field, then someone calls back between jobs.",
       averageJobValue: 425,
       monthlyLeadVolume: "21-75",
       notes: "Small team, emergency no-water calls, routine filter changes, occasional commercial projects."
@@ -323,7 +368,7 @@ export function createDemoPreviewSubmissions(): PreviewSubmission[] {
       createdAt: new Date(Date.now() - index * 86_400_000).toISOString(),
       previewData,
       managerNotes: generateManagerDrafts(input, previewData, getPreviewSharePath(id)),
-      status: index === 0 ? "Needs Review" : "Preview Generated",
+      status: index === 0 ? "Needs Review" : "Draft Generated",
       ownerApproved: false
     };
   });

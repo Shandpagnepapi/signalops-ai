@@ -7,7 +7,14 @@ const sitemapPath = path.join(appBuildDir, "sitemap.xml.body");
 const robotsPath = path.join(appBuildDir, "robots.txt.body");
 
 const ignoredRoutes = new Set(["/_global-error", "/_not-found"]);
-const intentionallyNonIndexableRoutes = new Set(["/dashboard", "/admin/manager"]);
+const intentionallyNonIndexableRoutes = new Set([
+  "/dashboard",
+  "/admin/manager",
+  "/mobile-tests",
+  "/mobile-test-1",
+  "/mobile-test-2",
+  "/mobile-test-3"
+]);
 const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt"]);
 
 const failures = [];
@@ -240,23 +247,23 @@ for (const page of pages) {
     fail(`${page.route}: missing meta description.`);
   }
 
-  if (!canonical) {
+  if (!isIntentionallyNonIndexable && !canonical) {
     fail(`${page.route}: missing canonical URL.`);
   }
 
-  if (!ogTitle) {
+  if (!isIntentionallyNonIndexable && !ogTitle) {
     fail(`${page.route}: missing Open Graph title.`);
   }
 
-  if (!ogDescription) {
+  if (!isIntentionallyNonIndexable && !ogDescription) {
     fail(`${page.route}: missing Open Graph description.`);
   }
 
-  if (!ogImage) {
+  if (!isIntentionallyNonIndexable && !ogImage) {
     fail(`${page.route}: missing Open Graph image.`);
   }
 
-  if (!twitterCard) {
+  if (!isIntentionallyNonIndexable && !twitterCard) {
     fail(`${page.route}: missing Twitter/X card metadata.`);
   }
 

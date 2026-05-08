@@ -1177,7 +1177,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/preview",
-        title: "Get My Free Preview",
+        title: "Free Preview",
         description: "Find where calls, forms, and follow-ups are being missed."
       },
       {

@@ -15,11 +15,11 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Get My Free Preview",
+  label: "Free Preview",
   href: "/preview"
 };
 
-export const OFFER_NAME = "Free Instant AI Lead System Preview";
+export const OFFER_NAME = "Free Preview";
 
 export const EMAIL_CTA = {
   label: "Email SignalOps",
@@ -52,7 +52,7 @@ export function getPlanEmailHref(planName: string) {
 }
 
 export const SECONDARY_CTA = {
-  label: "See Demo",
+  label: "View Demo",
   href: "/demo"
 };
 
@@ -140,7 +140,7 @@ export const SEO_INDUSTRY_LINKS = [
 export const RESOURCE_LINKS = [
   {
     href: "/preview",
-    label: "Free AI Preview"
+    label: "Free Preview"
   },
   {
     href: "/demo",

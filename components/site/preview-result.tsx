@@ -306,7 +306,7 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
                 eventProperties={{ location: "preview_result" }}
                 className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
               >
-                See Demo
+                View Demo
               </TrackedLink>
             </div>
           </CardContent>

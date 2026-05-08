@@ -51,7 +51,7 @@ export const OG_IMAGE_ASSETS = {
 
 export const PAGE_TITLE_TEMPLATES = {
   home: "AI Lead Response Systems for Local Businesses",
-  preview: "Free Instant AI Lead System Preview",
+  preview: "Free Preview",
   audit: "Start a Project for AI Lead Response",
   demo: "AI Lead Response Demo for Local Service Businesses",
   dashboard: "AI Lead Management Dashboard Demo",
@@ -66,7 +66,7 @@ export const META_DESCRIPTION_TEMPLATES = {
   home:
     "SignalOps helps local and service businesses respond to leads instantly, qualify prospects automatically, and follow up before opportunities go cold.",
   preview:
-    "Get a personalized SignalOps mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build for your business.",
+    "Get a personalized SignalOps Free Preview with a draft report, proposal, and email draft for the AI lead system your business should be using.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:

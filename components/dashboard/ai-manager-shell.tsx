@@ -1,13 +1,34 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-import { CheckCircle2, ClipboardList, Mail, Pencil, Rocket, Send, ShieldAlert, XCircle } from "lucide-react";
+import {
+  CheckCircle2,
+  ClipboardList,
+  FileText,
+  Mail,
+  Pencil,
+  Rocket,
+  Send,
+  ShieldAlert,
+  UserRound
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { previewSubmissionStatuses, type PreviewSubmission, type PreviewSubmissionStatus } from "@/lib/preview-types";
 import { cn } from "@/lib/utils";
+
+type LegacyEmailDraft = {
+  subject: string;
+  body: string;
+  approvalStatus: string;
+};
+
+type DetailItem = {
+  label: string;
+  value: string;
+};
 
 export function AiManagerShell({ submissions }: { submissions: PreviewSubmission[] }) {
   const [items, setItems] = useState(submissions);
@@ -17,7 +38,7 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
   const metrics = useMemo(
     () => ({
       total: items.length,
-      needsReview: items.filter((item) => item.status === "Needs Review" || item.status === "Preview Generated").length,
+      needsReview: items.filter((item) => ["New", "Draft Generated", "Needs Review"].includes(item.status)).length,
       avgScore: Math.round(items.reduce((sum, item) => sum + item.managerNotes.fitScore, 0) / Math.max(items.length, 1))
     }),
     [items]
@@ -38,18 +59,23 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
     );
   }
 
+  const report = selected ? getPreviewReport(selected) : null;
+  const proposal = selected ? getProposalDraft(selected) : null;
+  const emailDraft = selected ? getEmailDraft(selected) : null;
+  const submissionDetails = selected ? getSubmissionDetails(selected) : [];
+
   return (
     <div className="overflow-x-hidden">
       <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,111,156,0.14),rgba(6,12,24,0))]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <Badge className="mb-5 border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-            Internal demo only
+            Internal review
           </Badge>
           <h1 className="max-w-4xl text-4xl font-semibold tracking-normal text-white sm:text-5xl">
-            SignalOps AI Manager
+            SignalOps Free Preview Queue
           </h1>
           <p className="mt-4 max-w-3xl text-base leading-7 text-[#ead0df]/76">
-            Drafts summaries, replies, kickoff plans, and build recommendations. Nothing prospect-facing sends automatically.
+            Review draft preview reports, proposal drafts, and email drafts before anything prospect-facing is sent.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <Metric label="Preview submissions" value={String(metrics.total)} />
@@ -62,8 +88,8 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <Card className="h-fit">
           <CardHeader>
-            <CardTitle>Preview queue</CardTitle>
-            <CardDescription>Safe demo records until a real admin auth system is installed.</CardDescription>
+            <CardTitle>Draft queue</CardTitle>
+            <CardDescription>Submission records and generated drafts for internal review.</CardDescription>
           </CardHeader>
           <CardContent className="grid gap-3">
             {items.map((item) => (
@@ -108,34 +134,37 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                 <div className="grid gap-3 sm:grid-cols-3">
                   <Metric label="Recommended" value={selected.managerNotes.recommendedPackage} />
                   <Metric label="Fit score" value={`${selected.managerNotes.fitScore}/100`} />
-                  <Metric label="Approval" value={selected.ownerApproved ? "Approved" : "Needs owner approval"} />
+                  <Metric label="Approval" value={selected.ownerApproved ? "Approved" : "Needs review"} />
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <Button type="button" onClick={() => updateStatus(selected.id, "Approved to Send", true)}>
+                  <Button type="button" onClick={() => updateStatus(selected.id, "Approved", true)}>
                     <CheckCircle2 className="size-4" aria-hidden="true" />
                     Approve Draft
                   </Button>
-                  <Button type="button" variant="secondary" onClick={() => updateStatus(selected.id, "Sent")}>
+                  <Button type="button" variant="secondary" onClick={() => updateStatus(selected.id, "Sent", true)}>
                     <Send className="size-4" aria-hidden="true" />
                     Mark Sent
                   </Button>
                   <Button type="button" variant="outline" onClick={() => updateStatus(selected.id, "Needs Review")}>
                     <Pencil className="size-4" aria-hidden="true" />
-                    Edit Draft
-                  </Button>
-                  <Button type="button" variant="outline" onClick={() => updateStatus(selected.id, "Project Initiated")}>
-                    <Rocket className="size-4" aria-hidden="true" />
-                    Start Project
-                  </Button>
-                  <Button type="button" variant="ghost" onClick={() => updateStatus(selected.id, "Lost")}>
-                    <XCircle className="size-4" aria-hidden="true" />
-                    Mark Lost
+                    Needs Edits
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
             <div className="grid gap-6 lg:grid-cols-2">
+              <ManagerCard icon={UserRound} title="Submission details">
+                <dl className="grid gap-3">
+                  {submissionDetails.map((item) => (
+                    <div key={item.label} className="rounded-xl border border-white/10 bg-white/[0.035] p-3">
+                      <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">{item.label}</dt>
+                      <dd className="mt-1 text-sm leading-6 text-[#f2d9e8]">{item.value || "Not provided"}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </ManagerCard>
+
               <ManagerCard icon={ShieldAlert} title="Pain points detected">
                 <div className="flex flex-wrap gap-2">
                   {selected.managerNotes.painPointsDetected.map((point) => (
@@ -144,26 +173,62 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                 </div>
               </ManagerCard>
 
-              <ManagerCard icon={Mail} title="Draft reply email">
-                <p className="text-sm font-semibold text-white">{selected.managerNotes.draftEmail.subject}</p>
-                <pre className="mt-3 whitespace-pre-wrap rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-6 text-[#ead0df]/78">
-                  {selected.managerNotes.draftEmail.body}
-                </pre>
-                <Badge className="mt-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">
-                  {selected.managerNotes.draftEmail.approvalStatus}
-                </Badge>
-              </ManagerCard>
+              {report ? (
+                <ManagerCard icon={FileText} title="Preview Report draft">
+                  <p className="text-sm font-semibold text-white">{report.title}</p>
+                  <p className="mt-3 text-sm leading-6 text-[#ead0df]/78">{report.executiveSummary}</p>
+                  <ul className="mt-4 grid gap-2">
+                    {report.leadFlowFindings.map((finding) => (
+                      <li key={finding} className="flex gap-2 text-sm leading-6 text-[#ead0df]/78">
+                        <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
+                        {finding}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-6 text-[#ead0df]/78">
+                    {report.responseSystemRecommendation}
+                  </p>
+                </ManagerCard>
+              ) : null}
 
-              <ManagerCard icon={ClipboardList} title="Kickoff checklist">
-                <ul className="grid gap-2">
-                  {selected.managerNotes.kickoffChecklist.map((item) => (
-                    <li key={item} className="flex gap-2 text-sm leading-6 text-[#ead0df]/78">
-                      <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </ManagerCard>
+              {proposal ? (
+                <ManagerCard icon={ClipboardList} title="Proposal Draft">
+                  <p className="text-sm font-semibold text-white">{proposal.title}</p>
+                  <Badge className="mt-3 bg-[#ffb36d]/14 text-[#ffe1bd]">{proposal.recommendedPackage}</Badge>
+                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Scope</h3>
+                  <ul className="mt-3 grid gap-2">
+                    {proposal.scope.map((item) => (
+                      <li key={item} className="flex gap-2 text-sm leading-6 text-[#ead0df]/78">
+                        <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Next steps</h3>
+                  <ul className="mt-3 grid gap-2">
+                    {proposal.nextSteps.map((item) => (
+                      <li key={item} className="text-sm leading-6 text-[#ead0df]/78">{item}</li>
+                    ))}
+                  </ul>
+                </ManagerCard>
+              ) : null}
+
+              {emailDraft ? (
+                <ManagerCard icon={Mail} title="Email Draft">
+                  <p className="text-sm font-semibold text-white">{emailDraft.subject}</p>
+                  <pre className="mt-3 whitespace-pre-wrap rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-6 text-[#ead0df]/78">
+                    {emailDraft.body}
+                  </pre>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <Badge className="bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                      {emailDraft.approvalStatus}
+                    </Badge>
+                    {"deliveryStatus" in emailDraft ? (
+                      <Badge variant="outline">{emailDraft.deliveryStatus}</Badge>
+                    ) : null}
+                  </div>
+                </ManagerCard>
+              ) : null}
 
               <ManagerCard icon={Rocket} title="Build plan">
                 <div className="grid gap-3">
@@ -207,6 +272,44 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
   );
 }
 
+function getPreviewReport(selected: PreviewSubmission) {
+  return selected.managerNotes.previewReport ?? {
+    title: `${selected.businessName} Free Preview Report`,
+    executiveSummary: selected.managerNotes.prospectSummary,
+    leadFlowFindings: selected.previewData.leadFlow,
+    responseSystemRecommendation: selected.previewData.recommendedPackage.reason
+  };
+}
+
+function getProposalDraft(selected: PreviewSubmission) {
+  return selected.managerNotes.proposalDraft ?? {
+    title: `${selected.previewData.recommendedPackage.name} proposal draft`,
+    recommendedPackage: selected.previewData.recommendedPackage.name,
+    scope: selected.managerNotes.buildPlan.map((phase) => `${phase.phase}: ${phase.work}`),
+    nextSteps: selected.managerNotes.kickoffChecklist
+  };
+}
+
+function getEmailDraft(selected: PreviewSubmission) {
+  const legacy = (selected.managerNotes as typeof selected.managerNotes & { draftEmail?: LegacyEmailDraft }).draftEmail;
+
+  return selected.managerNotes.emailDraft ?? legacy ?? null;
+}
+
+function getSubmissionDetails(selected: PreviewSubmission): DetailItem[] {
+  return [
+    { label: "Contact", value: `${selected.contactName} - ${selected.email}${selected.phone ? ` - ${selected.phone}` : ""}` },
+    { label: "Website", value: selected.website },
+    { label: "Industry", value: selected.industry },
+    { label: "Main services", value: selected.mainServices || selected.managerNotes.submissionDetails?.mainServices },
+    { label: "Lead sources", value: selected.mainLeadSources.join(", ") },
+    { label: "Biggest bottleneck", value: selected.currentProblem },
+    { label: "Current tools/CRM", value: selected.currentTools || selected.managerNotes.submissionDetails?.currentTools },
+    { label: "After a lead comes in", value: selected.leadProcess || selected.managerNotes.submissionDetails?.leadProcess },
+    { label: "Anything else", value: selected.notes || selected.managerNotes.submissionDetails?.anythingElse }
+  ];
+}
+
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
@@ -223,7 +326,7 @@ function ManagerCard({
 }: {
   icon: LucideIcon;
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <Card>

@@ -51,16 +51,10 @@ export const previewLeadVolumeOptions = [
 
 export const previewSubmissionStatuses = [
   "New",
-  "Preview Generated",
+  "Draft Generated",
   "Needs Review",
-  "Approved to Send",
+  "Approved",
   "Sent",
-  "Discovery Booked",
-  "Project Initiated",
-  "Building",
-  "Delivered",
-  "Won",
-  "Lost"
 ] as const;
 
 export type PreviewIndustry = (typeof previewIndustryOptions)[number];
@@ -77,8 +71,11 @@ export type PreviewSubmissionInput = {
   phone: string;
   website: string;
   industry: PreviewIndustry;
+  mainServices: string;
   mainLeadSources: PreviewLeadSource[];
   currentProblem: PreviewProblem;
+  currentTools: string;
+  leadProcess: string;
   averageJobValue: number;
   monthlyLeadVolume: PreviewLeadVolume;
   notes: string;
@@ -128,14 +125,33 @@ export type PreviewData = {
 };
 
 export type PreviewManagerNotes = {
+  submissionDetails: {
+    mainServices: string;
+    currentTools: string;
+    leadProcess: string;
+    anythingElse: string;
+  };
   prospectSummary: string;
   fitScore: number;
   painPointsDetected: string[];
   recommendedPackage: PreviewPackageName;
-  draftEmail: {
+  previewReport: {
+    title: string;
+    executiveSummary: string;
+    leadFlowFindings: string[];
+    responseSystemRecommendation: string;
+  };
+  proposalDraft: {
+    title: string;
+    recommendedPackage: PreviewPackageName;
+    scope: string[];
+    nextSteps: string[];
+  };
+  emailDraft: {
     subject: string;
     body: string;
-    approvalStatus: "Needs owner approval";
+    approvalStatus: "Needs Review";
+    deliveryStatus: "Draft only - not sent";
   };
   kickoffChecklist: string[];
   buildPlan: {

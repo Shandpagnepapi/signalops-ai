@@ -3,168 +3,324 @@
   max-width: 100vw;
   overflow-x: hidden;
   overflow-x: clip;
-  background: #f7f5ef;
-  color: #111827;
+  background:
+    radial-gradient(circle at 16% -8%, rgba(82, 255, 211, 0.22), transparent 26rem),
+    radial-gradient(circle at 92% 6%, rgba(120, 92, 255, 0.24), transparent 28rem),
+    linear-gradient(180deg, #05070d 0%, #08111b 31%, #0d1724 52%, #f4f8fb 52%, #f4f8fb 74%, #060910 74%, #060910 100%);
+  color: #f7fbff;
 }
 
 :global(body:has(.mobile-test-2-page)) {
   overflow-x: hidden;
 }
 
-.clamp {
-  width: 100vw;
-  max-width: 100vw;
-  box-sizing: border-box;
-  overflow-x: hidden;
+.shell,
+.scanCard,
+.glassCard,
+.scannerCard,
+.apexCard,
+.stackCard,
+.meterCard,
+.finalPanel {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 24px 74px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(22px);
 }
 
-.topNav {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
+.header {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 40;
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(7, 12, 20, 0.78);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(20px);
 }
 
-.topBar,
-.card,
-.whiteSection,
-.featureCard,
-.packageCard,
-.faqCard,
-.beforeAfterCard {
-  background: #ffffff;
-  color: #111827;
-  border-color: rgba(17, 24, 39, 0.1);
+.wordmark {
+  color: #ffffff;
 }
 
-.topBar {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+.statusPill,
+.eyebrow,
+.miniPill,
+.tag {
+  border-color: rgba(90, 255, 213, 0.24);
+  background: rgba(90, 255, 213, 0.1);
+  color: #b9ffed;
 }
 
-.topBar,
-.card,
-.featureCard,
-.packageCard,
-.faqCard,
-.beforeAfterCard {
-  box-shadow: 0 20px 45px rgba(17, 24, 39, 0.08);
+.statusDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #5affd5;
+  box-shadow: 0 0 0 0.25rem rgba(90, 255, 213, 0.12);
 }
 
 .primaryButton {
-  background: #111827;
-  color: #ffffff;
-  box-shadow: 0 16px 32px rgba(17, 24, 39, 0.16);
+  background: #5affd5;
+  color: #04100d;
+  box-shadow: 0 16px 36px rgba(90, 255, 213, 0.18);
 }
 
 .primaryButton:hover {
-  background: #243041;
+  background: #9dffe8;
 }
 
-.secondaryButton,
-.lightButton {
-  background: #ffffff;
-  color: #111827;
-  border-color: rgba(17, 24, 39, 0.12);
+.secondaryButton {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  color: #f7fbff;
 }
 
-.secondaryButton:hover,
-.lightButton:hover {
-  background: #eff6ff;
-}
-
-.kicker,
-.hotCard {
-  background: #fff7dc;
-  color: #8a4b00;
-  border-color: rgba(245, 158, 11, 0.28);
-}
-
-.title,
-.strongText {
-  color: #111827;
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .heroTitle {
   max-width: 100%;
-  font-size: 2.18rem;
-  line-height: 1.05;
+  color: #ffffff;
+  font-size: 2.62rem;
+  line-height: 0.98;
   overflow-wrap: break-word;
+}
+
+.heroCopy,
+.muted,
+.deepMuted,
+.stickySubtext {
+  color: rgba(247, 251, 255, 0.68);
+}
+
+.scanCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanCard::before {
+  position: absolute;
+  inset: -1px;
+  content: "";
+  background:
+    linear-gradient(120deg, transparent 0%, rgba(90, 255, 213, 0.18) 42%, transparent 56%),
+    radial-gradient(circle at 82% 10%, rgba(138, 110, 255, 0.22), transparent 16rem);
+  pointer-events: none;
+}
+
+.scanLine {
+  position: absolute;
+  inset-inline: 1rem;
+  top: 5.25rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #5affd5, transparent);
+  box-shadow: 0 0 22px rgba(90, 255, 213, 0.8);
+  animation: scanSweep 3.4s ease-in-out infinite;
+}
+
+@keyframes scanSweep {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateY(14.5rem);
+    opacity: 1;
+  }
+}
+
+.scanGrid {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.scanRow,
+.outputRow,
+.leakCard,
+.apexOutput,
+.previewCard,
+.proofCard {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.riskHigh {
+  color: #ff9d9d;
+}
+
+.riskWeak {
+  color: #ffd98a;
+}
+
+.riskGood,
+.accent {
+  color: #5affd5;
+}
+
+.greenIcon {
+  color: #08785d;
+}
+
+.speakerMutedDark {
+  color: rgba(6, 17, 27, 0.55);
+}
+
+.speakerMutedLight {
+  color: rgba(234, 255, 248, 0.7);
+}
+
+.chipLabel {
+  color: rgba(247, 251, 255, 0.6);
+}
+
+.sectionTitle {
+  color: #ffffff;
+}
+
+.sectionEyebrow {
+  color: #5affd5;
+}
+
+.leakIndex,
+.layerIndex {
+  background: rgba(90, 255, 213, 0.12);
+  color: #b9ffed;
+}
+
+.fixText {
+  color: #b9ffed;
+}
+
+.scannerCard {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(90, 255, 213, 0.14), transparent 18rem),
+    rgba(255, 255, 255, 0.07);
+}
+
+.chip {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(247, 251, 255, 0.72);
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.chipActive {
+  border-color: rgba(90, 255, 213, 0.42);
+  background: rgba(90, 255, 213, 0.14);
+  color: #eafff8;
+  box-shadow: inset 0 0 0 1px rgba(90, 255, 213, 0.06);
+}
+
+.outputCard {
+  border-color: rgba(90, 255, 213, 0.2);
+  background:
+    linear-gradient(180deg, rgba(90, 255, 213, 0.11), rgba(255, 255, 255, 0.06)),
+    rgba(255, 255, 255, 0.06);
+}
+
+.apexCard {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(138, 110, 255, 0.18), transparent 20rem),
+    rgba(255, 255, 255, 0.07);
+}
+
+.chatCustomer {
+  margin-left: auto;
+  background: #f7fbff;
+  color: #06111b;
+}
+
+.chatAi {
+  margin-right: auto;
+  border: 1px solid rgba(90, 255, 213, 0.18);
+  background: rgba(90, 255, 213, 0.11);
+  color: #eafff8;
+}
+
+.lightBand {
+  background: #f4f8fb;
+  color: #06111b;
+}
+
+.lightTitle {
+  color: #06111b;
+}
+
+.lightMuted {
+  color: rgba(6, 17, 27, 0.66);
+}
+
+.layerCard,
+.previewLightCard,
+.credibilityCard {
+  border-color: rgba(6, 17, 27, 0.1);
+  background: #ffffff;
+  color: #06111b;
+  box-shadow: 0 22px 52px rgba(6, 17, 27, 0.08);
+}
+
+.layerRail {
+  background: linear-gradient(180deg, #5affd5, #8a6eff);
+}
+
+.meterCard {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(90, 255, 213, 0.18), transparent 20rem),
+    rgba(255, 255, 255, 0.075);
+}
+
+.meterTrack {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.meterFill {
+  width: 58%;
+  background: linear-gradient(90deg, #5affd5, #f4ff7a);
+  box-shadow: 0 0 22px rgba(90, 255, 213, 0.28);
+}
+
+.disclaimer {
+  color: rgba(247, 251, 255, 0.52);
+}
+
+.finalPanel {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(244, 255, 122, 0.2), transparent 18rem),
+    radial-gradient(circle at 5% 100%, rgba(90, 255, 213, 0.16), transparent 18rem),
+    rgba(255, 255, 255, 0.08);
+}
+
+.emailButton {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7fbff;
+}
+
+.stickyBar {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(5, 7, 13, 0.94);
+  color: #f7fbff;
+  box-shadow: 0 -22px 60px rgba(0, 0, 0, 0.32);
 }
 
 @media (min-width: 640px) {
   .heroTitle {
-    font-size: 3.75rem;
-    line-height: 1;
+    font-size: 4.3rem;
+    line-height: 0.95;
   }
 }
 
 @media (min-width: 1024px) {
   .heroTitle {
-    font-size: 4.5rem;
+    font-size: 5.25rem;
   }
-}
-
-.bodyText {
-  color: #374151;
-}
-
-.mutedText {
-  color: #6b7280;
-}
-
-.metricCard,
-.listItem {
-  background: #f9fafb;
-  border-color: rgba(17, 24, 39, 0.1);
-}
-
-.liveBadge {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.amberText {
-  color: #b45309;
-}
-
-.greenText {
-  color: #16a34a;
-}
-
-.darkSection,
-.finalCta {
-  background: #111827;
-  color: #ffffff;
-  border-color: rgba(17, 24, 39, 0.9);
-}
-
-.darkMuted {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.darkEyebrow {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fde68a;
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.darkPanel,
-.darkStep {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.stepBadge {
-  background: #ffffff;
-  color: #111827;
-}
-
-.sectionEyebrow {
-  color: #b45309;
-}
-
-.featureIcon {
-  background: #f3f4f6;
-  color: #111827;
 }

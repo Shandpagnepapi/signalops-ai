@@ -13,6 +13,7 @@ import type {
   PreviewSubmissionInput,
   PreviewSubmissionStatus
 } from "@/lib/preview-types";
+import { previewSubmissionStatuses } from "@/lib/preview-types";
 import type { Database, Json } from "@/lib/supabase/database.types";
 import { getSupabaseDatabaseClient, isSupabaseConfigured } from "@/lib/supabase/server";
 
@@ -47,7 +48,34 @@ function safeStringArray(value: unknown) {
 }
 
 function safeStatus(value: unknown): PreviewSubmissionStatus {
-  return typeof value === "string" ? (value as PreviewSubmissionStatus) : "New";
+  if (typeof value !== "string") {
+    return "New";
+  }
+
+  if ((previewSubmissionStatuses as readonly string[]).includes(value)) {
+    return value as PreviewSubmissionStatus;
+  }
+
+  const legacyStatuses: Record<string, PreviewSubmissionStatus> = {
+    "Preview Generated": "Draft Generated",
+    "Approved to Send": "Approved",
+    "Discovery Booked": "Approved",
+    "Project Initiated": "Approved",
+    Lost: "Needs Review"
+  };
+
+  return legacyStatuses[value] ?? "New";
+}
+
+function getStoredNotes(submission: PreviewSubmission) {
+  return [
+    submission.mainServices ? `Main services: ${submission.mainServices}` : "",
+    submission.currentTools ? `Current tools/CRM: ${submission.currentTools}` : "",
+    submission.leadProcess ? `After a lead comes in: ${submission.leadProcess}` : "",
+    submission.notes ? `Anything else: ${submission.notes}` : ""
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
 function toPreviewInsert(submission: PreviewSubmission): PreviewInsert {
@@ -63,7 +91,7 @@ function toPreviewInsert(submission: PreviewSubmission): PreviewInsert {
     current_problem: submission.currentProblem,
     average_job_value: submission.averageJobValue || null,
     monthly_lead_volume: submission.monthlyLeadVolume,
-    notes: submission.notes || null,
+    notes: getStoredNotes(submission) || null,
     preview_data: asJson(submission.previewData),
     manager_notes: asJson(submission.managerNotes),
     status: submission.status,
@@ -73,6 +101,9 @@ function toPreviewInsert(submission: PreviewSubmission): PreviewInsert {
 }
 
 function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
+  const managerNotes = (row.manager_notes ?? {}) as PreviewManagerNotes;
+  const submissionDetails = managerNotes.submissionDetails;
+
   return {
     id: row.id,
     createdAt: row.created_at,
@@ -86,9 +117,12 @@ function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
     currentProblem: safeString(row.current_problem) as PreviewSubmissionInput["currentProblem"],
     averageJobValue: safeNumber(row.average_job_value),
     monthlyLeadVolume: safeString(row.monthly_lead_volume) as PreviewSubmissionInput["monthlyLeadVolume"],
-    notes: safeString(row.notes),
+    mainServices: submissionDetails?.mainServices ?? "",
+    currentTools: submissionDetails?.currentTools ?? "",
+    leadProcess: submissionDetails?.leadProcess ?? "",
+    notes: submissionDetails?.anythingElse ?? safeString(row.notes),
     previewData: row.preview_data as PreviewData,
-    managerNotes: row.manager_notes as PreviewManagerNotes,
+    managerNotes,
     status: safeStatus(row.status),
     ownerApproved: Boolean(row.owner_approved)
   };
@@ -156,6 +190,26 @@ async function getSupabasePreviewById(id: string) {
   return data?.[0] ? toPreviewSubmission(data[0]) : null;
 }
 
+async function listSupabasePreviews() {
+  const database = getSupabaseDatabaseClient();
+
+  if (!database) {
+    throw new Error("Supabase database client is not configured.");
+  }
+
+  const { data, error } = await database.client
+    .from("preview_submissions")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(50);
+
+  if (error) {
+    throw error;
+  }
+
+  return (data ?? []).map(toPreviewSubmission);
+}
+
 export async function createPreviewSubmission(input: PreviewSubmissionInput) {
   const id = randomUUID();
   const previewData = generatePreviewData(input);
@@ -165,7 +219,7 @@ export async function createPreviewSubmission(input: PreviewSubmissionInput) {
     createdAt: new Date().toISOString(),
     previewData,
     managerNotes: generateManagerDrafts(input, previewData, getPreviewSharePath(id)),
-    status: "Preview Generated",
+    status: "Needs Review",
     ownerApproved: false
   };
 
@@ -191,5 +245,18 @@ export async function getPreviewSubmissionById(id: string) {
   } catch (error) {
     warnAndUseMock(error);
     return getStore().find((submission) => submission.id === id) ?? null;
+  }
+}
+
+export async function listPreviewSubmissions() {
+  if (!isSupabaseConfigured()) {
+    return getStore();
+  }
+
+  try {
+    return await listSupabasePreviews();
+  } catch (error) {
+    warnAndUseMock(error);
+    return getStore();
   }
 }
