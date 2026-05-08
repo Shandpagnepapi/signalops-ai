@@ -133,8 +133,21 @@ function rememberMockSubmission(submission: PreviewSubmission) {
   return submission;
 }
 
+function getSupabaseErrorMessage(error: unknown) {
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  if (error && typeof error === "object" && "message" in error) {
+    const message = (error as { message?: unknown }).message;
+    return typeof message === "string" && message.trim() ? message : "Unknown Supabase error.";
+  }
+
+  return "Unknown Supabase error.";
+}
+
 function warnAndUseMock(error: unknown) {
-  const message = error instanceof Error ? error.message : "Unknown Supabase error.";
+  const message = getSupabaseErrorMessage(error);
   console.warn(`SignalOps preview storage unavailable. Using mock fallback. ${message}`);
 }
 
