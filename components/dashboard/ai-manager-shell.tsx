@@ -1,11 +1,13 @@
 "use client";
 
 import { useMemo, useState, type ReactNode } from "react";
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   CheckCircle2,
   ClipboardList,
   FileText,
+  ImageIcon,
   Mail,
   Pencil,
   Rocket,
@@ -173,6 +175,44 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                 </div>
               </ManagerCard>
 
+              {selected.previewData.visualDrafts?.length ? (
+                <ManagerCard className="lg:col-span-2" icon={ImageIcon} title="AI visual drafts">
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {selected.previewData.visualDrafts.map((visual) => (
+                      <div key={visual.id} className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]">
+                        <div className="aspect-square bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,109,0.22),transparent_34%),linear-gradient(135deg,#120d24,#070b15)]">
+                          {visual.imageUrl ? (
+                            <Image
+                              src={visual.imageUrl}
+                              alt={`${selected.businessName} ${visual.title}`}
+                              width={1024}
+                              height={1024}
+                              unoptimized
+                              className="size-full object-cover"
+                            />
+                          ) : (
+                            <div className="flex size-full flex-col items-center justify-center p-5 text-center">
+                              <ImageIcon className="mb-3 size-7 text-[#ffb36d]" aria-hidden="true" />
+                              <p className="text-sm font-semibold text-white">Visual draft {visual.status.toLowerCase()}</p>
+                            </div>
+                          )}
+                        </div>
+                        <div className="p-4">
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="text-sm font-semibold text-white">{visual.title}</p>
+                            <Badge variant={visual.status === "Generated" ? "success" : "outline"}>{visual.status}</Badge>
+                          </div>
+                          <p className="mt-2 text-xs leading-5 text-[#ead0df]/66">{visual.description}</p>
+                          {visual.error ? (
+                            <p className="mt-2 text-xs leading-5 text-red-100/80">{visual.error}</p>
+                          ) : null}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </ManagerCard>
+              ) : null}
+
               {report ? (
                 <ManagerCard icon={FileText} title="Preview Report draft">
                   <p className="text-sm font-semibold text-white">{report.title}</p>
@@ -322,14 +362,16 @@ function Metric({ label, value }: { label: string; value: string }) {
 function ManagerCard({
   icon: Icon,
   title,
-  children
+  children,
+  className
 }: {
   icon: LucideIcon;
   title: string;
   children: ReactNode;
+  className?: string;
 }) {
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <div className="flex items-center gap-2">
           <Icon className="size-5 text-[#ffb36d]" aria-hidden="true" />

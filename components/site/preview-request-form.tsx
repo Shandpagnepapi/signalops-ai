@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent, type ReactNode } from "react";
-import { AlertCircle, CheckCircle2, ClipboardList, FileText, Loader2, Mail, ShieldCheck } from "lucide-react";
+import { AlertCircle, CheckCircle2, ClipboardList, FileText, ImageIcon, Loader2, Mail, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -80,6 +80,11 @@ const previewOutputs = [
     title: "Email Draft",
     copy: "A customer-ready draft that still needs human approval.",
     icon: Mail
+  },
+  {
+    title: "3 AI Visual Drafts",
+    copy: "Personalized system mockups based on the intake details.",
+    icon: ImageIcon
   }
 ];
 
@@ -178,7 +183,7 @@ export function PreviewRequestForm() {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {previewOutputs.map((item) => {
               const Icon = item.icon;
 
@@ -197,7 +202,7 @@ export function PreviewRequestForm() {
               Internal review comes next.
             </p>
             <p className="mt-2 text-sm leading-6 text-[#ead0df]/76">
-              We review the preview report, proposal draft, and email draft before anything customer-facing is sent.
+              We review the visual drafts, preview report, proposal draft, and email draft before anything customer-facing is sent.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>
@@ -220,7 +225,7 @@ export function PreviewRequestForm() {
             </Badge>
             <CardTitle className="text-2xl">Tell us how your leads work today.</CardTitle>
             <CardDescription>
-              The form creates an internal draft package for review: report, proposal, and email draft.
+              The form creates an internal draft package for review: three AI visual drafts, report, proposal, and email draft.
             </CardDescription>
           </div>
           <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-medium text-emerald-100">
@@ -229,7 +234,7 @@ export function PreviewRequestForm() {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="mb-4 grid gap-3 sm:grid-cols-3">
+        <div className="mb-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {previewOutputs.map((item) => {
             const Icon = item.icon;
 

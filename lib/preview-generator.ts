@@ -7,7 +7,8 @@ import type {
   PreviewManagerNotes,
   PreviewProblem,
   PreviewSubmission,
-  PreviewSubmissionInput
+  PreviewSubmissionInput,
+  PreviewVisualDraft
 } from "@/lib/preview-types";
 
 const serviceExamples: Record<PreviewIndustry, string> = {
@@ -158,6 +159,57 @@ function leadNameForIndustry(industry: PreviewIndustry) {
   return "New service inquiry";
 }
 
+function visualPromptBase(input: PreviewSubmissionInput, previewData: PreviewData) {
+  const leadSources = input.mainLeadSources.length > 0 ? input.mainLeadSources.join(", ") : "website forms and phone calls";
+  const services = input.mainServices || serviceExamples[input.industry];
+  const packageName = previewData.recommendedPackage.name;
+
+  return [
+    "Create a premium SaaS product mockup image for SignalOps.",
+    "Style: polished AI lead operating system, dark executive UI, crisp cards, subtle glow accents, app-like mobile/product screenshot.",
+    "No robots, no people, no fake client logos, no stock photos, no clutter.",
+    "Use clean realistic UI panels, charts, message cards, lead status chips, owner alerts, and timeline elements.",
+    "Do not rely on tiny unreadable text; use a few short realistic labels only.",
+    `Business: ${input.businessName}.`,
+    `Industry: ${input.industry}.`,
+    `Main services: ${services}.`,
+    `Lead sources: ${leadSources}.`,
+    `Primary bottleneck: ${input.currentProblem}.`,
+    `Recommended system level: ${packageName}.`
+  ].join(" ");
+}
+
+export function buildPreviewVisualDrafts(
+  input: PreviewSubmissionInput,
+  previewData: PreviewData
+): PreviewVisualDraft[] {
+  const base = visualPromptBase(input, previewData);
+
+  return [
+    {
+      id: "ai-receptionist",
+      title: "AI Receptionist Interface",
+      description: "A lead conversation screen showing the first response, key questions, and priority state.",
+      status: "Pending",
+      prompt: `${base} Image 1 of 3: show a mobile AI receptionist conversation interface for a new ${input.industry.toLowerCase()} lead. Include a customer inquiry, SignalOps reply, collected details, urgency score, and owner-ready summary card.`
+    },
+    {
+      id: "command-center",
+      title: "Lead Command Center",
+      description: "A dashboard-style view of new leads, hot opportunities, bookings, sources, and follow-up status.",
+      status: "Pending",
+      prompt: `${base} Image 2 of 3: show a premium command center dashboard for this business. Include new leads, hot leads, booked jobs, lead sources, response time, follow-up queue, and one top-priority owner alert.`
+    },
+    {
+      id: "handoff-flow",
+      title: "Booking Handoff Flow",
+      description: "A visual handoff path from lead capture to qualification, follow-up, owner alert, and booking next step.",
+      status: "Pending",
+      prompt: `${base} Image 3 of 3: show an operating-system style workflow timeline from lead captured to AI reply, qualification, missing details follow-up, owner alert, and booking/callback handoff.`
+    }
+  ];
+}
+
 export function generatePreviewData(input: PreviewSubmissionInput): PreviewData {
   const fitScore = calculateFitScore(input);
   const recommendedPackage = recommendPackage(input, fitScore);
@@ -167,7 +219,7 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
   const secondarySource = input.mainLeadSources[1] ?? "Phone calls";
   const painPoints = getPainPoints(input);
 
-  return {
+  const previewData: PreviewData = {
     headline: `A SignalOps AI lead system for ${input.businessName}`,
     subheadline:
       `A personalized mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build around your ${input.industry.toLowerCase()} lead flow.`,
@@ -235,6 +287,11 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     approvalNote:
       "SignalOps drafts the preview report, proposal, and email first. Nothing customer-facing is sent until a human reviews and approves it."
   };
+
+  return {
+    ...previewData,
+    visualDrafts: buildPreviewVisualDrafts(input, previewData)
+  };
 }
 
 export function generateManagerDrafts(
@@ -296,6 +353,7 @@ export function generateManagerDrafts(
       approvalStatus: "Needs Review",
       deliveryStatus: "Draft only - not sent"
     },
+    visualDrafts: previewData.visualDrafts,
     kickoffChecklist: [
       "Confirm lead sources",
       "Confirm routing owner/team",

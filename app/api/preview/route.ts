@@ -13,6 +13,8 @@ type IncomingPayload = Record<string, unknown>;
 
 const MAX_PREVIEW_PAYLOAD_BYTES = 18_000;
 
+export const maxDuration = 60;
+
 function isRecord(value: unknown): value is IncomingPayload {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }

@@ -6,6 +6,7 @@ import {
   generatePreviewData,
   getPreviewSharePath
 } from "@/lib/preview-generator";
+import { generatePreviewVisualImages } from "@/lib/preview-images";
 import type {
   PreviewData,
   PreviewManagerNotes,
@@ -225,7 +226,16 @@ async function listSupabasePreviews() {
 
 export async function createPreviewSubmission(input: PreviewSubmissionInput) {
   const id = randomUUID();
-  const previewData = generatePreviewData(input);
+  let previewData = generatePreviewData(input);
+  const visualDrafts = await generatePreviewVisualImages({
+    submissionId: id,
+    previewData
+  });
+  previewData = {
+    ...previewData,
+    visualDrafts
+  };
+
   const submission: PreviewSubmission = {
     ...input,
     id,

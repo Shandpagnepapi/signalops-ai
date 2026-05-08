@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   BarChart3,
   CalendarCheck2,
   Clock,
+  ImageIcon,
   Mail,
   MessageSquareReply,
   Route,
@@ -168,6 +170,8 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
         </div>
       </section>
 
+      <VisualDraftGallery submission={submission} />
+
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
         <Card className="border-[#ff9ec0]/20 bg-[#17122d]/78">
           <CardHeader>
@@ -313,6 +317,68 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
         </Card>
       </section>
     </div>
+  );
+}
+
+function VisualDraftGallery({ submission }: { submission: PreviewSubmission }) {
+  const visuals = submission.previewData.visualDrafts ?? [];
+
+  if (visuals.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">AI visual preview</Badge>
+          <h2 className="text-2xl font-semibold tracking-normal text-white sm:text-3xl">
+            Three draft views of your likely SignalOps system.
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[#ead0df]/72">
+            Generated from your industry, services, lead sources, bottleneck, and current process. These are visual drafts for review, not final build screens.
+          </p>
+        </div>
+        <Badge variant="outline">Draft assets</Badge>
+      </div>
+
+      <div className="grid gap-4 lg:grid-cols-3">
+        {visuals.map((visual) => (
+          <Card key={visual.id} className="overflow-hidden border-white/10 bg-[#17122d]/78">
+            <div className="aspect-square border-b border-white/10 bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,109,0.22),transparent_34%),linear-gradient(135deg,#120d24,#070b15)]">
+              {visual.imageUrl ? (
+                <Image
+                  src={visual.imageUrl}
+                  alt={`${submission.businessName} ${visual.title}`}
+                  width={1024}
+                  height={1024}
+                  unoptimized
+                  className="size-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="flex size-full flex-col items-center justify-center p-6 text-center">
+                  <ImageIcon className="mb-4 size-8 text-[#ffb36d]" aria-hidden="true" />
+                  <p className="text-sm font-semibold text-white">{visual.status === "Failed" ? "Visual draft needs regeneration" : "Visual draft pending"}</p>
+                  <p className="mt-2 text-xs leading-5 text-[#ead0df]/62">
+                    The draft record is saved. Image generation can be rerun from the internal workflow.
+                  </p>
+                </div>
+              )}
+            </div>
+            <CardHeader>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <CardTitle className="text-lg">{visual.title}</CardTitle>
+                  <CardDescription>{visual.description}</CardDescription>
+                </div>
+                <Badge variant={visual.status === "Generated" ? "success" : "outline"}>{visual.status}</Badge>
+              </div>
+            </CardHeader>
+          </Card>
+        ))}
+      </div>
+    </section>
   );
 }
 

@@ -97,6 +97,20 @@ export type PreviewConversationMessage = {
   message: string;
 };
 
+export type PreviewVisualDraft = {
+  id: "ai-receptionist" | "command-center" | "handoff-flow";
+  title: string;
+  description: string;
+  prompt: string;
+  imageUrl?: string;
+  storagePath?: string;
+  revisedPrompt?: string;
+  generatedAt?: string;
+  model?: string;
+  status: "Pending" | "Generated" | "Failed";
+  error?: string;
+};
+
 export type PreviewData = {
   headline: string;
   subheadline: string;
@@ -119,6 +133,7 @@ export type PreviewData = {
     reason: string;
     fit: string;
   };
+  visualDrafts?: PreviewVisualDraft[];
   fitScore: number;
   painPoints: string[];
   approvalNote: string;
@@ -153,6 +168,7 @@ export type PreviewManagerNotes = {
     approvalStatus: "Needs Review";
     deliveryStatus: "Draft only - not sent";
   };
+  visualDrafts?: PreviewVisualDraft[];
   kickoffChecklist: string[];
   buildPlan: {
     phase: string;
