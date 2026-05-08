@@ -361,7 +361,7 @@ function VisualDraftGallery({ submission }: { submission: PreviewSubmission }) {
                   <ImageIcon className="mb-4 size-8 text-[#ffb36d]" aria-hidden="true" />
                   <p className="text-sm font-semibold text-white">{visual.status === "Failed" ? "Visual draft needs regeneration" : "Visual draft pending"}</p>
                   <p className="mt-2 text-xs leading-5 text-[#ead0df]/62">
-                    The draft record is saved. Image generation can be rerun from the internal workflow.
+                    The draft record is saved. Image generation will run on new submissions once the image API is available.
                   </p>
                 </div>
               )}
