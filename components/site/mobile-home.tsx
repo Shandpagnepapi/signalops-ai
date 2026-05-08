@@ -12,10 +12,8 @@ import {
   Clock3,
   FileText,
   Gauge,
-  LayoutDashboard,
   Mail,
   MessageCircle,
-  MessageSquareText,
   RefreshCcw,
   ShieldCheck,
   Sparkles,
@@ -28,7 +26,7 @@ import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { PRIMARY_CTA, SECONDARY_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-const shell = "mx-auto w-full max-w-md px-4";
+const shell = "mx-4 max-w-md sm:mx-auto sm:w-full sm:px-4";
 const accentButtonStyle = {
   backgroundColor: "#dfff5f",
   color: "#071018",
@@ -37,6 +35,17 @@ const accentButtonStyle = {
 const darkInkStyle = { color: "#071018" } satisfies CSSProperties;
 const darkButtonStyle = { backgroundColor: "#071018", color: "#ffffff" } satisfies CSSProperties;
 const lightSectionStyle = { backgroundColor: "#f8fafc", color: "#071018" } satisfies CSSProperties;
+const shellStyle = {
+  marginLeft: "auto",
+  marginRight: "auto",
+  maxWidth: "22rem",
+  width: "calc(100vw - 2rem)"
+} satisfies CSSProperties;
+const narrowPanelStyle = {
+  marginLeft: "auto",
+  marginRight: "auto",
+  maxWidth: "22rem"
+} satisfies CSSProperties;
 
 const steps = [
   {
@@ -56,48 +65,60 @@ const steps = [
   }
 ];
 
-const commandViews: Array<{
-  title: string;
-  description: string;
+const dashboardExamples: Array<{
+  business: string;
+  label: string;
+  topLead: string;
+  nextAction: string;
   icon: LucideIcon;
   tone: "green" | "blue" | "yellow";
   metrics: Array<[string, string]>;
+  sources: string[];
 }> = [
   {
-    title: "Pipeline View",
-    description: "Lead status without a messy spreadsheet.",
-    icon: LayoutDashboard,
+    business: "Apex Wheel Repair",
+    label: "Wheel repair quote dashboard",
+    topLead: "2018 BMW, two passenger-side wheels, curb rash, mobile repair requested.",
+    nextAction: "Request photos and offer a mobile appointment window.",
+    icon: ClipboardCheck,
     tone: "green",
     metrics: [
-      ["New leads", "38"],
-      ["Hot leads", "9"],
-      ["Booked jobs", "12"],
-      ["Follow-up due", "6"]
-    ]
+      ["New leads", "14"],
+      ["Photos needed", "6"],
+      ["Mobile quotes", "4"],
+      ["Follow-up due", "3"]
+    ],
+    sources: ["Website form", "Missed call", "Google"]
   },
   {
-    title: "Conversation View",
-    description: "See the next question and handoff state.",
-    icon: MessageSquareText,
+    business: "Med Spa",
+    label: "Consultation booking dashboard",
+    topLead: "New Botox consult asked for pricing, timing, and Friday availability.",
+    nextAction: "Route to human review with consult notes and booking preference.",
+    icon: CalendarCheck2,
     tone: "blue",
     metrics: [
-      ["AI reply", "Sent"],
-      ["Customer answer", "Waiting"],
-      ["Next question", "Photos"],
-      ["Human handoff", "Ready"]
-    ]
+      ["New consults", "11"],
+      ["Ready to book", "5"],
+      ["Review needed", "2"],
+      ["Follow-up due", "7"]
+    ],
+    sources: ["Website form", "Instagram DM", "Missed call"]
   },
   {
-    title: "Owner View",
-    description: "The few actions that matter today.",
+    business: "Home Services",
+    label: "Estimate request dashboard",
+    topLead: "AC not cooling, same-day callback requested, service area confirmed.",
+    nextAction: "Alert owner, collect address, and send callback window.",
     icon: BellRing,
     tone: "yellow",
     metrics: [
-      ["Hot today", "7"],
-      ["Missed opps", "3"],
-      ["Next action", "Call"],
-      ["Queue", "14"]
-    ]
+      ["Estimates", "18"],
+      ["Urgent", "4"],
+      ["Callbacks", "9"],
+      ["No reply", "5"]
+    ],
+    sources: ["Google Ads", "Website form", "Phone"]
   }
 ];
 
@@ -146,7 +167,7 @@ export function MobileSignalOpsHome() {
   return (
     <div
       data-mobile-home
-      className="relative overflow-hidden bg-slate-950 pb-[calc(8rem+env(safe-area-inset-bottom))] text-white md:hidden"
+      className="relative overflow-hidden bg-slate-950 pb-6 text-white md:hidden"
     >
       <div
         className="pointer-events-none absolute inset-0"
@@ -160,14 +181,13 @@ export function MobileSignalOpsHome() {
         <Hero />
         <HeroVisual />
         <Steps />
-        <CommandCenter />
+        <DashboardExamples />
         <Capabilities />
         <FreePreview />
         <DemoTeaser />
         <RoiTeaser />
         <PackageTeaser />
         <FinalCta />
-        <StickyCta />
       </div>
     </div>
   );
@@ -175,7 +195,7 @@ export function MobileSignalOpsHome() {
 
 function MobileHeader() {
   return (
-    <header className={`${shell} pt-3`}>
+    <header className={`${shell} pt-3`} style={shellStyle}>
       <div className="flex items-center justify-between gap-2 rounded-3xl border border-white/15 bg-white/10 px-3 py-3 shadow-2xl shadow-black/25 backdrop-blur-2xl">
         <p className="shrink-0 text-base font-black tracking-normal">SignalOps</p>
         <nav className="flex min-w-0 items-center gap-2" aria-label="Mobile homepage navigation">
@@ -194,7 +214,7 @@ function MobileHeader() {
             className="inline-flex h-10 items-center justify-center rounded-2xl bg-lime-300 px-3 text-sm font-black whitespace-nowrap text-slate-950 shadow-lg shadow-lime-300/15"
             style={accentButtonStyle}
           >
-            Free Preview
+            Start
           </TrackedLink>
         </nav>
       </div>
@@ -204,12 +224,12 @@ function MobileHeader() {
 
 function Hero() {
   return (
-    <section className={`${shell} pt-8`}>
+    <section className={`${shell} pt-8`} style={shellStyle}>
       <p className="inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-400/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-emerald-100">
         <Sparkles className="size-4" aria-hidden="true" />
         AI lead response for local businesses
       </p>
-      <h1 className="mt-5 text-4xl font-black leading-none tracking-normal text-white">
+      <h1 className="mt-5 break-words text-2xl font-black leading-tight tracking-normal text-white">
         Every lead answered. Every follow-up handled.
       </h1>
       <p className="mt-4 text-base leading-7 text-white/70">
@@ -241,7 +261,7 @@ function Hero() {
 
 function HeroVisual() {
   return (
-    <section className={`${shell} py-6`} aria-label="SignalOps lead assistant example">
+    <section className={`${shell} py-6`} style={shellStyle} aria-label="SignalOps lead assistant example">
       <div className="rounded-3xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-black/25 backdrop-blur-2xl">
         <div className="rounded-3xl bg-slate-950 p-4">
           <div className="flex items-start justify-between gap-3">
@@ -321,7 +341,7 @@ function StatusTile({ icon: Icon, label, value }: { icon: LucideIcon; label: str
 
 function Steps() {
   return (
-    <section className={`${shell} pb-8`}>
+    <section className={`${shell} pb-8`} style={shellStyle}>
       <div className="grid gap-3">
         {steps.map((step, index) => (
           <article key={step.title} className="rounded-3xl border border-white/10 bg-white/10 p-4">
@@ -342,36 +362,45 @@ function Steps() {
   );
 }
 
-function CommandCenter() {
+function DashboardExamples() {
   return (
-    <section className={`${shell} pb-8`} aria-labelledby="mobile-command-title">
+    <section className={`${shell} pb-8`} style={shellStyle} aria-labelledby="mobile-dashboard-examples-title">
       <div className="mb-4">
-        <p className="text-xs font-black uppercase tracking-wide text-emerald-300">Command Center</p>
-        <h2 id="mobile-command-title" className="mt-2 text-3xl font-black leading-tight tracking-normal">
-          Your lead command center.
+        <p className="text-xs font-black uppercase tracking-wide text-emerald-300">Dashboard examples</p>
+        <h2 id="mobile-dashboard-examples-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
+          See what your team would actually look at.
         </h2>
+        <p className="mt-2 text-sm leading-6 text-white/62">
+          Three example dashboards for different service businesses. Same system idea, different intake.
+        </p>
       </div>
 
       <div className="grid gap-3">
-        {commandViews.map((view) => (
-          <CommandView key={view.title} {...view} />
+        {dashboardExamples.map((example) => (
+          <DashboardExampleCard key={example.business} {...example} />
         ))}
       </div>
     </section>
   );
 }
 
-function CommandView({
-  description,
+function DashboardExampleCard({
+  business,
   icon: Icon,
+  label,
   metrics,
-  title,
+  nextAction,
+  sources,
+  topLead,
   tone
 }: {
-  description: string;
+  business: string;
   icon: LucideIcon;
-  metrics: string[][];
-  title: string;
+  label: string;
+  metrics: Array<[string, string]>;
+  nextAction: string;
+  sources: string[];
+  topLead: string;
   tone: "green" | "blue" | "yellow";
 }) {
   const toneClass = {
@@ -381,22 +410,42 @@ function CommandView({
   }[tone];
 
   return (
-    <article className="rounded-3xl border border-white/10 bg-white/10 p-4">
+    <article className="overflow-hidden rounded-3xl border border-white/10 bg-white/10 p-4">
       <div className="flex items-start gap-3">
         <div className={cn("flex size-11 shrink-0 items-center justify-center rounded-2xl border", toneClass)}>
           <Icon className="size-5" aria-hidden="true" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-lg font-black tracking-normal">{title}</h3>
-          <p className="mt-1 text-sm leading-6 text-white/60">{description}</p>
+          <p className="text-xs font-black uppercase tracking-wide text-white/42">Example dashboard</p>
+          <h3 className="mt-1 text-lg font-black tracking-normal">{business}</h3>
+          <p className="mt-1 text-sm leading-6 text-white/60">{label}</p>
         </div>
       </div>
+
       <div className="mt-4 grid grid-cols-2 gap-2">
         {metrics.map(([label, value]) => (
           <div key={label} className="rounded-2xl border border-white/10 bg-slate-950/50 p-3">
             <p className="text-xs font-black uppercase tracking-wide text-white/40">{label}</p>
             <p className="mt-1 text-sm font-black text-white">{value}</p>
           </div>
+        ))}
+      </div>
+
+      <div className="mt-3 rounded-2xl border border-white/10 bg-slate-950/50 p-3">
+        <p className="text-xs font-black uppercase tracking-wide text-white/40">Top priority lead</p>
+        <p className="mt-2 break-words text-sm leading-6 text-white/82">{topLead}</p>
+      </div>
+
+      <div className="mt-3 rounded-2xl border border-emerald-300/15 bg-emerald-400/10 p-3">
+        <p className="text-xs font-black uppercase tracking-wide text-emerald-100/70">Recommended next action</p>
+        <p className="mt-2 break-words text-sm leading-6 text-emerald-50">{nextAction}</p>
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        {sources.map((source) => (
+          <span key={source} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold text-white/70">
+            {source}
+          </span>
         ))}
       </div>
     </article>
@@ -406,9 +455,9 @@ function CommandView({
 function Capabilities() {
   return (
     <section className="px-4 py-9 text-slate-950" style={lightSectionStyle} aria-labelledby="mobile-capabilities-title">
-      <div className="mx-auto max-w-md">
+      <div className="mx-auto max-w-md" style={narrowPanelStyle}>
         <p className="text-xs font-black uppercase tracking-wide text-emerald-700">What SignalOps does</p>
-        <h2 id="mobile-capabilities-title" className="mt-2 text-3xl font-black leading-tight tracking-normal">
+        <h2 id="mobile-capabilities-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
           The lead work your team keeps chasing.
         </h2>
         <div className="mt-5 grid gap-2">
@@ -429,10 +478,10 @@ function Capabilities() {
 function FreePreview() {
   return (
     <section className="px-4 pb-9 text-slate-950" style={lightSectionStyle} aria-labelledby="mobile-preview-title">
-      <div className="mx-auto max-w-md rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/10">
+      <div className="mx-auto max-w-md rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/10" style={narrowPanelStyle}>
         <p className="text-xs font-black uppercase tracking-wide text-emerald-700">Main path</p>
-        <h2 id="mobile-preview-title" className="mt-2 text-3xl font-black leading-tight tracking-normal">
-          Get your Free Preview.
+        <h2 id="mobile-preview-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
+          Get your preview.
         </h2>
         <div className="mt-5 grid gap-2">
           {previewSteps.map((step) => (
@@ -471,7 +520,7 @@ function FreePreview() {
           className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 text-sm font-black text-white"
           style={darkButtonStyle}
         >
-          Start Free Preview
+          Start preview
           <ArrowRight className="size-4" aria-hidden="true" />
         </TrackedLink>
       </div>
@@ -481,10 +530,10 @@ function FreePreview() {
 
 function DemoTeaser() {
   return (
-    <section className={`${shell} bg-slate-950 py-9`} aria-labelledby="mobile-demo-title">
+    <section className={`${shell} bg-slate-950 py-9`} style={shellStyle} aria-labelledby="mobile-demo-title">
       <div className="rounded-3xl border border-white/15 bg-white/10 p-4">
         <p className="text-xs font-black uppercase tracking-wide text-lime-300">Live demo</p>
-        <h2 id="mobile-demo-title" className="mt-2 text-3xl font-black leading-tight tracking-normal">
+        <h2 id="mobile-demo-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
           See it in a real service-business flow.
         </h2>
         <div className="mt-4 rounded-3xl border border-white/10 bg-slate-950/60 p-4">
@@ -513,7 +562,7 @@ function DemoTeaser() {
 
 function RoiTeaser() {
   return (
-    <section className={`${shell} pb-9`} aria-labelledby="mobile-roi-title">
+    <section className={`${shell} pb-9`} style={shellStyle} aria-labelledby="mobile-roi-title">
       <div className="rounded-3xl border border-white/15 bg-white/10 p-4">
         <div className="flex items-start gap-3">
           <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-lime-300/10 text-lime-300">
@@ -521,7 +570,7 @@ function RoiTeaser() {
           </div>
           <div>
             <p className="text-xs font-black uppercase tracking-wide text-lime-300">ROI teaser</p>
-            <h2 id="mobile-roi-title" className="mt-1 text-2xl font-black leading-tight tracking-normal">
+            <h2 id="mobile-roi-title" className="mt-1 text-xl font-black leading-tight tracking-normal">
               How many jobs cover the system?
             </h2>
           </div>
@@ -558,10 +607,10 @@ function MiniMetric({ label, value }: { label: string; value: string }) {
 
 function PackageTeaser() {
   return (
-    <section className={`${shell} pb-9`} aria-labelledby="mobile-packages-title">
+    <section className={`${shell} pb-9`} style={shellStyle} aria-labelledby="mobile-packages-title">
       <div className="mb-4">
         <p className="text-xs font-black uppercase tracking-wide text-emerald-300">Packages</p>
-        <h2 id="mobile-packages-title" className="mt-2 text-3xl font-black leading-tight tracking-normal">
+        <h2 id="mobile-packages-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
           Start at the right level.
         </h2>
       </div>
@@ -602,7 +651,7 @@ function PackageTeaser() {
 
 function FinalCta() {
   return (
-    <section className={`${shell} pb-4`} aria-labelledby="mobile-final-title">
+    <section className={`${shell} pb-4`} style={shellStyle} aria-labelledby="mobile-final-title">
       <div
         className="rounded-3xl border border-white/15 p-5"
         style={{
@@ -610,7 +659,7 @@ function FinalCta() {
             "radial-gradient(circle at 80% 0%, rgba(52, 211, 153, 0.18), transparent 14rem), rgba(255, 255, 255, 0.1)"
         }}
       >
-        <h2 id="mobile-final-title" className="text-3xl font-black leading-tight tracking-normal">
+        <h2 id="mobile-final-title" className="text-2xl font-black leading-tight tracking-normal">
           Want to see the system your business should be using?
         </h2>
         <div className="mt-5 grid gap-3">
@@ -621,7 +670,7 @@ function FinalCta() {
             className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-lime-300 px-5 text-sm font-black text-slate-950"
             style={accentButtonStyle}
           >
-            Free Preview
+            Start preview
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
@@ -635,31 +684,5 @@ function FinalCta() {
         </div>
       </div>
     </section>
-  );
-}
-
-function StickyCta() {
-  return (
-    <div
-      data-mobile-sticky-cta
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/15 bg-slate-950/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 text-white shadow-2xl backdrop-blur-xl md:hidden"
-    >
-      <div className="mx-auto grid max-w-md grid-cols-[1fr_auto] items-center gap-3">
-        <div>
-          <p className="text-xs font-black uppercase">Free Preview</p>
-          <p className="text-xs text-white/52">Reviewed before email</p>
-        </div>
-        <TrackedLink
-          href={PRIMARY_CTA.href}
-          eventName={ANALYTICS_EVENTS.previewCtaClicked}
-          eventProperties={{ location: "mobile_home_sticky" }}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-lime-300 px-5 text-sm font-black text-slate-950"
-          style={accentButtonStyle}
-        >
-          Start
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </TrackedLink>
-      </div>
-    </div>
   );
 }
