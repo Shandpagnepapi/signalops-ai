@@ -1,3 +1,10 @@
+import type {
+  PromptWorkerPackageName,
+  PromptWorkerResult,
+  PromptWorkerStatus,
+  PromptWorkerSystemTemplateName
+} from "@/lib/prompt-worker/prompt-types";
+
 export const previewIndustryOptions = [
   "Wheel repair",
   "Auto repair",
@@ -169,6 +176,11 @@ export type PreviewManagerNotes = {
     deliveryStatus: "Draft only - not sent";
   };
   visualDrafts?: PreviewVisualDraft[];
+  promptWorkerResult?: PromptWorkerResult;
+  promptStatus?: PromptWorkerStatus;
+  internalNotes?: string;
+  selectedPackage?: PromptWorkerPackageName;
+  selectedSystemTemplate?: PromptWorkerSystemTemplateName;
   kickoffChecklist: string[];
   buildPlan: {
     phase: string;
@@ -183,4 +195,9 @@ export type PreviewSubmission = PreviewSubmissionInput & {
   managerNotes: PreviewManagerNotes;
   status: PreviewSubmissionStatus;
   ownerApproved: boolean;
+  promptWorkerResult?: PromptWorkerResult;
+  promptStatus?: PromptWorkerStatus;
+  internalNotes?: string;
+  selectedPackage?: PromptWorkerPackageName;
+  selectedSystemTemplate?: PromptWorkerSystemTemplateName;
 };

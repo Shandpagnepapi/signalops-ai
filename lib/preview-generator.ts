@@ -10,6 +10,7 @@ import type {
   PreviewSubmissionInput,
   PreviewVisualDraft
 } from "@/lib/preview-types";
+import { classifyPreviewIntake } from "@/lib/prompt-worker/intake-classifier";
 
 const serviceExamples: Record<PreviewIndustry, string> = {
   "Wheel repair": "curb rash repair or wheel refinishing",
@@ -300,6 +301,7 @@ export function generateManagerDrafts(
   previewPath: string
 ): PreviewManagerNotes {
   const recommendedPackage = previewData.recommendedPackage.name;
+  const promptClassification = classifyPreviewIntake(input);
   const sourceSummary = input.mainLeadSources.length > 0 ? input.mainLeadSources.join(", ") : "unknown lead sources";
   const services = input.mainServices || serviceExamples[input.industry];
   const previewPathNote = previewPath ? `Draft preview path: ${previewPath}` : "Draft preview path pending.";
@@ -354,6 +356,11 @@ export function generateManagerDrafts(
       deliveryStatus: "Draft only - not sent"
     },
     visualDrafts: previewData.visualDrafts,
+    promptStatus: "not_generated",
+    selectedPackage: promptClassification.recommendedPackage,
+    selectedSystemTemplate: promptClassification.recommendedSystemTemplate,
+    internalNotes:
+      "Prompt worker has not been generated yet. Use Generate ChatGPT Prompt in the internal manager.",
     kickoffChecklist: [
       "Confirm lead sources",
       "Confirm routing owner/team",
@@ -419,6 +426,7 @@ export function createDemoPreviewSubmissions(): PreviewSubmission[] {
   return inputs.map((input, index) => {
     const id = `demo-preview-${index + 1}`;
     const previewData = generatePreviewData(input);
+    const promptClassification = classifyPreviewIntake(input);
 
     return {
       ...input,
@@ -427,7 +435,11 @@ export function createDemoPreviewSubmissions(): PreviewSubmission[] {
       previewData,
       managerNotes: generateManagerDrafts(input, previewData, getPreviewSharePath(id)),
       status: index === 0 ? "Needs Review" : "Draft Generated",
-      ownerApproved: false
+      ownerApproved: false,
+      promptStatus: "not_generated",
+      internalNotes: "",
+      selectedPackage: promptClassification.recommendedPackage,
+      selectedSystemTemplate: promptClassification.recommendedSystemTemplate
     };
   });
 }

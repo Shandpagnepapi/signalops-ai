@@ -6,7 +6,7 @@ import {
   generatePreviewData,
   getPreviewSharePath
 } from "@/lib/preview-generator";
-import { generatePreviewVisualImages } from "@/lib/preview-images";
+import { classifyPreviewIntake } from "@/lib/prompt-worker/intake-classifier";
 import type {
   PreviewData,
   PreviewManagerNotes,
@@ -125,7 +125,12 @@ function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
     previewData: row.preview_data as PreviewData,
     managerNotes,
     status: safeStatus(row.status),
-    ownerApproved: Boolean(row.owner_approved)
+    ownerApproved: Boolean(row.owner_approved),
+    promptWorkerResult: managerNotes.promptWorkerResult,
+    promptStatus: managerNotes.promptStatus ?? "not_generated",
+    internalNotes: managerNotes.internalNotes ?? "",
+    selectedPackage: managerNotes.selectedPackage,
+    selectedSystemTemplate: managerNotes.selectedSystemTemplate
   };
 }
 
@@ -226,15 +231,8 @@ async function listSupabasePreviews() {
 
 export async function createPreviewSubmission(input: PreviewSubmissionInput) {
   const id = randomUUID();
-  let previewData = generatePreviewData(input);
-  const visualDrafts = await generatePreviewVisualImages({
-    submissionId: id,
-    previewData
-  });
-  previewData = {
-    ...previewData,
-    visualDrafts
-  };
+  const previewData = generatePreviewData(input);
+  const promptClassification = classifyPreviewIntake(input);
 
   const submission: PreviewSubmission = {
     ...input,
@@ -243,7 +241,11 @@ export async function createPreviewSubmission(input: PreviewSubmissionInput) {
     previewData,
     managerNotes: generateManagerDrafts(input, previewData, getPreviewSharePath(id)),
     status: "Needs Review",
-    ownerApproved: false
+    ownerApproved: false,
+    promptStatus: "not_generated",
+    internalNotes: "",
+    selectedPackage: promptClassification.recommendedPackage,
+    selectedSystemTemplate: promptClassification.recommendedSystemTemplate
   };
 
   if (!isSupabaseConfigured()) {

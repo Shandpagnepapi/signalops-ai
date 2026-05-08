@@ -184,6 +184,10 @@ function isRecord(value: unknown): value is UnknownRecord {
 }
 
 function getOpenAIKey() {
+  if (process.env.LIVE_DEMO_AI_GENERATION !== "enabled") {
+    return "";
+  }
+
   return process.env.OPENAI_API_KEY?.trim() ?? "";
 }
 

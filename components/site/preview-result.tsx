@@ -321,7 +321,7 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
 }
 
 function VisualDraftGallery({ submission }: { submission: PreviewSubmission }) {
-  const visuals = submission.previewData.visualDrafts ?? [];
+  const visuals = (submission.previewData.visualDrafts ?? []).filter((visual) => visual.imageUrl);
 
   if (visuals.length === 0) {
     return null;

@@ -1,14 +1,16 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   CheckCircle2,
   ClipboardList,
+  Copy,
   FileText,
   ImageIcon,
   Mail,
+  MessageSquareText,
   Pencil,
   Rocket,
   Send,
@@ -18,6 +20,15 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { buildClientBuildPrompt, buildSignalOpsChatPrompt } from "@/lib/prompt-worker/prompt-builder";
+import { classifyPreviewIntake } from "@/lib/prompt-worker/intake-classifier";
+import type {
+  ClientBuildPromptResult,
+  PromptWorkerPackageName,
+  PromptWorkerResult,
+  PromptWorkerStatus,
+  PromptWorkerSystemTemplateName
+} from "@/lib/prompt-worker/prompt-types";
 import { previewSubmissionStatuses, type PreviewSubmission, type PreviewSubmissionStatus } from "@/lib/preview-types";
 import { cn } from "@/lib/utils";
 
@@ -32,9 +43,41 @@ type DetailItem = {
   value: string;
 };
 
+type PromptArchiveItem = {
+  type: "preview" | "build";
+  title: string;
+  createdAt: string;
+  prompt: string;
+};
+
+type PromptRecord = {
+  promptStatus: PromptWorkerStatus;
+  promptWorkerResult?: PromptWorkerResult;
+  buildPromptResult?: ClientBuildPromptResult;
+  selectedPackage?: PromptWorkerPackageName;
+  selectedSystemTemplate?: PromptWorkerSystemTemplateName;
+  internalNotes?: string;
+  archive: PromptArchiveItem[];
+};
+
+const promptStorageKey = "signalops-prompt-worker-state-v1";
+
 export function AiManagerShell({ submissions }: { submissions: PreviewSubmission[] }) {
   const [items, setItems] = useState(submissions);
   const [selectedId, setSelectedId] = useState(submissions[0]?.id ?? "");
+  const [promptRecords, setPromptRecords] = useState<Record<string, PromptRecord>>(() => {
+    if (typeof window === "undefined") {
+      return {};
+    }
+
+    try {
+      const stored = window.localStorage.getItem(promptStorageKey);
+      return stored ? (JSON.parse(stored) as Record<string, PromptRecord>) : {};
+    } catch {
+      return {};
+    }
+  });
+  const [copiedLabel, setCopiedLabel] = useState("");
   const selected = items.find((item) => item.id === selectedId) ?? items[0];
 
   const metrics = useMemo(
@@ -65,6 +108,101 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
   const proposal = selected ? getProposalDraft(selected) : null;
   const emailDraft = selected ? getEmailDraft(selected) : null;
   const submissionDetails = selected ? getSubmissionDetails(selected) : [];
+  const promptRecord = selected ? promptRecords[selected.id] : undefined;
+  const promptClassification = selected ? classifyPreviewIntake(selected) : null;
+  const promptStatus = promptRecord?.promptStatus ?? selected?.promptStatus ?? "not_generated";
+  const promptWorkerResult = promptRecord?.promptWorkerResult ?? selected?.promptWorkerResult;
+  const selectedPackage = promptRecord?.selectedPackage ?? selected?.selectedPackage ?? promptClassification?.recommendedPackage;
+  const selectedSystemTemplate =
+    promptRecord?.selectedSystemTemplate ?? selected?.selectedSystemTemplate ?? promptClassification?.recommendedSystemTemplate;
+  const promptArchive = promptRecord?.archive ?? [];
+  const buildPromptResult = promptRecord?.buildPromptResult;
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(promptStorageKey, JSON.stringify(promptRecords));
+    } catch {
+      // Current-session prompt generation still works if local storage is unavailable.
+    }
+  }, [promptRecords]);
+
+  function updatePromptRecord(id: string, updater: (current: PromptRecord | undefined) => PromptRecord) {
+    setPromptRecords((current) => ({
+      ...current,
+      [id]: updater(current[id])
+    }));
+  }
+
+  function generatePrompt(selectedSubmission: PreviewSubmission) {
+    const result = buildSignalOpsChatPrompt(selectedSubmission);
+
+    updatePromptRecord(selectedSubmission.id, (current) => ({
+      promptStatus: "generated",
+      selectedPackage: result.recommendedPackage,
+      selectedSystemTemplate: result.recommendedSystemTemplate,
+      internalNotes: current?.internalNotes ?? "",
+      promptWorkerResult: result,
+      buildPromptResult: current?.buildPromptResult,
+      archive: [
+        {
+          type: "preview" as const,
+          title: result.title,
+          createdAt: result.createdAt,
+          prompt: result.copyPastePrompt
+        },
+        ...(current?.archive ?? [])
+      ].slice(0, 12)
+    }));
+  }
+
+  function setPromptStatus(id: string, status: PromptWorkerStatus) {
+    updatePromptRecord(id, (current) => ({
+      promptStatus: status,
+      selectedPackage: current?.selectedPackage,
+      selectedSystemTemplate: current?.selectedSystemTemplate,
+      internalNotes: current?.internalNotes ?? "",
+      promptWorkerResult: current?.promptWorkerResult,
+      buildPromptResult: current?.buildPromptResult,
+      archive: current?.archive ?? []
+    }));
+  }
+
+  function generateBuildPrompt(selectedSubmission: PreviewSubmission) {
+    const result = buildClientBuildPrompt({
+      ...selectedSubmission,
+      selectedPackage,
+      selectedSystemTemplate
+    });
+
+    updatePromptRecord(selectedSubmission.id, (current) => ({
+      promptStatus: "paid",
+      selectedPackage: selectedPackage ?? result.recommendedPackage,
+      selectedSystemTemplate: selectedSystemTemplate ?? result.recommendedSystemTemplate,
+      internalNotes: current?.internalNotes ?? "",
+      promptWorkerResult: current?.promptWorkerResult,
+      buildPromptResult: result,
+      archive: [
+        {
+          type: "build" as const,
+          title: result.title,
+          createdAt: result.createdAt,
+          prompt: result.copyPastePrompt
+        },
+        ...(current?.archive ?? [])
+      ].slice(0, 12)
+    }));
+  }
+
+  async function copyPrompt(text: string, label: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedLabel(label);
+    } catch {
+      setCopiedLabel("Copy failed");
+    } finally {
+      window.setTimeout(() => setCopiedLabel(""), 1800);
+    }
+  }
 
   return (
     <div className="overflow-x-hidden">
@@ -151,6 +289,163 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                     <Pencil className="size-4" aria-hidden="true" />
                     Needs Edits
                   </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-emerald-300/18 bg-emerald-300/[0.055]">
+              <CardHeader>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <div className="mb-2 flex items-center gap-2">
+                      <MessageSquareText className="size-5 text-emerald-200" aria-hidden="true" />
+                      <CardTitle>Prompt Worker</CardTitle>
+                    </div>
+                    <CardDescription>
+                      Generate a complete copy/paste ChatGPT prompt. The app does not call OpenAI or send customer emails.
+                    </CardDescription>
+                  </div>
+                  <Badge className="bg-[#17122d] text-emerald-100">{promptStatus.replaceAll("_", " ")}</Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="grid gap-5">
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <Metric label="System template" value={selectedSystemTemplate ?? "Not classified"} />
+                  <Metric label="Prompt package" value={selectedPackage ?? "Not classified"} />
+                  <Metric label="Confidence" value={promptClassification ? `${Math.round(promptClassification.confidence * 100)}%` : "n/a"} />
+                </div>
+
+                <div className="grid gap-3 lg:grid-cols-[0.82fr_1.18fr]">
+                  <div className="rounded-2xl border border-white/10 bg-[#17122d]/60 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Missing info</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {promptClassification?.missingInfo.length ? (
+                        promptClassification.missingInfo.map((item) => (
+                          <Badge key={item} variant="outline">{item}</Badge>
+                        ))
+                      ) : (
+                        <Badge className="bg-emerald-300/12 text-emerald-100">No major gaps</Badge>
+                      )}
+                    </div>
+                    {promptClassification ? (
+                      <p className="mt-4 text-sm leading-6 text-[#ead0df]/74">{promptClassification.reasoning}</p>
+                    ) : null}
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-[#17122d]/60 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Next action</p>
+                    <p className="mt-3 text-sm leading-6 text-[#f2d9e8]">
+                      {promptWorkerResult?.nextAction ?? "Click Generate ChatGPT Prompt, paste it into ChatGPT, review the draft output, then update the status manually."}
+                    </p>
+                    <p className="mt-3 text-xs leading-5 text-[#ead0df]/54">
+                      Prompt archive is stored in this browser for now. Backend persistence can be added later when admin auth is installed.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <Button type="button" onClick={() => generatePrompt(selected)}>
+                    <MessageSquareText className="size-4" aria-hidden="true" />
+                    Generate ChatGPT Prompt
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    disabled={!promptWorkerResult}
+                    onClick={() => promptWorkerResult ? copyPrompt(promptWorkerResult.copyPastePrompt, "Prompt copied") : undefined}
+                  >
+                    <Copy className="size-4" aria-hidden="true" />
+                    Copy Prompt
+                  </Button>
+                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "pasted_to_chatgpt")}>
+                    Mark Prompt Sent to ChatGPT
+                  </Button>
+                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "preview_drafted")}>
+                    Mark Preview Drafted
+                  </Button>
+                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "sent_to_customer")}>
+                    Mark Sent to Customer
+                  </Button>
+                  <Button type="button" variant="outline" onClick={() => generateBuildPrompt(selected)}>
+                    Mark Paid
+                  </Button>
+                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "lost")}>
+                    Mark Lost
+                  </Button>
+                </div>
+
+                {copiedLabel ? (
+                  <p className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm text-emerald-100">
+                    {copiedLabel}
+                  </p>
+                ) : null}
+
+                {promptWorkerResult ? (
+                  <div className="grid gap-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="font-semibold text-white">{promptWorkerResult.title}</p>
+                      <Badge variant="outline">{promptWorkerResult.recommendedSystemTemplate}</Badge>
+                    </div>
+                    <textarea
+                      readOnly
+                      value={promptWorkerResult.copyPastePrompt}
+                      className="min-h-[360px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#ead0df]/82 outline-none"
+                    />
+                  </div>
+                ) : null}
+
+                {promptStatus === "paid" || buildPromptResult ? (
+                  <div className="grid gap-3 rounded-2xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 p-4">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <p className="font-semibold text-white">Build Mode Prompt</p>
+                        <p className="mt-1 text-sm leading-6 text-[#ead0df]/72">
+                          Use this after payment to plan the client system build.
+                        </p>
+                      </div>
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        onClick={() => {
+                          const result = buildPromptResult ?? buildClientBuildPrompt({ ...selected, selectedPackage, selectedSystemTemplate });
+                          copyPrompt(result.copyPastePrompt, "Build prompt copied");
+                        }}
+                      >
+                        <Copy className="size-4" aria-hidden="true" />
+                        Copy Build Prompt
+                      </Button>
+                    </div>
+                    <textarea
+                      readOnly
+                      value={(buildPromptResult ?? buildClientBuildPrompt({ ...selected, selectedPackage, selectedSystemTemplate })).copyPastePrompt}
+                      className="min-h-[260px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#ead0df]/82 outline-none"
+                    />
+                  </div>
+                ) : null}
+
+                <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                  <p className="text-sm font-semibold text-white">Prompt archive</p>
+                  {promptArchive.length > 0 ? (
+                    <div className="mt-3 grid gap-2">
+                      {promptArchive.map((item) => (
+                        <button
+                          key={`${item.type}-${item.createdAt}`}
+                          type="button"
+                          onClick={() => copyPrompt(item.prompt, "Archived prompt copied")}
+                          className="rounded-xl border border-white/10 bg-[#17122d]/70 p-3 text-left transition hover:border-white/20"
+                        >
+                          <p className="text-sm font-semibold text-white">{item.title}</p>
+                          <p className="mt-1 text-xs text-[#ead0df]/56">
+                            {item.type} - {new Date(item.createdAt).toLocaleString()}
+                          </p>
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-sm leading-6 text-[#ead0df]/66">
+                      No prompts generated for this submission in this browser yet.
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>
