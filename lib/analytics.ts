@@ -7,6 +7,7 @@ export const ANALYTICS_EVENTS = {
   previewCtaClicked: "preview_cta_clicked",
   previewFormStarted: "preview_form_started",
   previewSubmitted: "preview_submitted",
+  roiCalculatorViewed: "roi_calculator_viewed",
   packageClicked: "package_clicked",
   contactClicked: "contact_clicked"
 } as const;
