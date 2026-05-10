@@ -309,10 +309,11 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                 </div>
               </CardHeader>
               <CardContent className="grid gap-5">
-                <div className="grid gap-3 sm:grid-cols-3">
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   <Metric label="System template" value={selectedSystemTemplate ?? "Not classified"} />
                   <Metric label="Prompt package" value={selectedPackage ?? "Not classified"} />
                   <Metric label="Confidence" value={promptClassification ? `${Math.round(promptClassification.confidence * 100)}%` : "n/a"} />
+                  <Metric label="Test check" value={promptClassification?.suspectedTestSubmission ? "Flagged" : "No signal"} />
                 </div>
 
                 <div className="grid gap-3 lg:grid-cols-[0.82fr_1.18fr]">
@@ -327,6 +328,16 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                         <Badge className="bg-emerald-300/12 text-emerald-100">No major gaps</Badge>
                       )}
                     </div>
+                    {promptClassification?.suspectedTestSubmission ? (
+                      <div className="mt-4 rounded-xl border border-[#ffb36d]/25 bg-[#ffb36d]/10 p-3">
+                        <p className="text-sm font-semibold text-[#ffe1bd]">Possible test/internal submission</p>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {promptClassification.testSignals.map((signal) => (
+                            <Badge key={signal} variant="outline">{signal}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
                     {promptClassification ? (
                       <p className="mt-4 text-sm leading-6 text-[#ead0df]/74">{promptClassification.reasoning}</p>
                     ) : null}

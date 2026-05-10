@@ -8,6 +8,11 @@ import type {
 
 function textBlob(input: PreviewSubmissionInput) {
   return [
+    input.businessName,
+    input.contactName,
+    input.email,
+    input.phone,
+    input.website,
     input.industry,
     input.mainServices,
     input.mainLeadSources.join(" "),
@@ -22,6 +27,44 @@ function textBlob(input: PreviewSubmissionInput) {
 
 function hasAny(text: string, terms: string[]) {
   return terms.some((term) => text.includes(term));
+}
+
+function getTestSignals(input: PreviewSubmissionInput) {
+  const text = textBlob(input);
+  const signals: string[] = [];
+
+  const phraseSignals = [
+    "smoke test",
+    "safe to delete",
+    "safe-to-delete",
+    "do not contact",
+    "don't contact",
+    "test submission",
+    "testing submission",
+    "fake submission",
+    "spam submission",
+    "duplicate submission"
+  ];
+
+  phraseSignals.forEach((phrase) => {
+    if (text.includes(phrase)) {
+      signals.push(`Contains "${phrase}"`);
+    }
+  });
+
+  if (input.email.toLowerCase().includes("example.com") || input.website.toLowerCase().includes("example.com")) {
+    signals.push("Uses example.com contact or website");
+  }
+
+  if (/\b555[-\s)]?\d{3,4}\b/.test(input.phone) || input.phone.includes("555-")) {
+    signals.push("Uses a likely fake 555 phone number");
+  }
+
+  if (input.email.toLowerCase().includes("test@") || input.email.toLowerCase().includes("+test")) {
+    signals.push("Uses a test-style email address");
+  }
+
+  return Array.from(new Set(signals));
 }
 
 function clampConfidence(value: number) {
@@ -139,7 +182,12 @@ function getRecommendedPackage(input: PreviewSubmissionInput, template: PromptWo
   return "Starter";
 }
 
-function getConfidence(input: PreviewSubmissionInput, missingInfo: string[], template: PromptWorkerSystemTemplateName) {
+function getConfidence(
+  input: PreviewSubmissionInput,
+  missingInfo: string[],
+  template: PromptWorkerSystemTemplateName,
+  testSignals: string[]
+) {
   let confidence = 0.58;
 
   if (input.industry !== "Other local service") confidence += 0.12;
@@ -149,6 +197,7 @@ function getConfidence(input: PreviewSubmissionInput, missingInfo: string[], tem
   if (input.currentTools) confidence += 0.04;
   if (template === "Custom Ops OS") confidence -= 0.04;
   confidence -= Math.min(missingInfo.length * 0.035, 0.18);
+  if (testSignals.length > 0) confidence = Math.min(confidence, 0.24);
 
   return clampConfidence(confidence);
 }
@@ -156,16 +205,20 @@ function getConfidence(input: PreviewSubmissionInput, missingInfo: string[], tem
 export function classifyPreviewIntake(input: PreviewSubmissionInput): PromptWorkerClassification {
   const typed = getBusinessType(input);
   const missingInfo = getMissingInfo(input);
+  const testSignals = getTestSignals(input);
   const recommendedPackage = getRecommendedPackage(input, typed.template);
-  const confidence = getConfidence(input, missingInfo, typed.template);
+  const confidence = getConfidence(input, missingInfo, typed.template, testSignals);
+  const testReason = testSignals.length > 0 ? ` Test/internal signals detected: ${testSignals.join("; ")}.` : "";
 
   return {
     businessType: typed.businessType,
     recommendedSystemTemplate: typed.template,
     recommendedPackage,
     confidence,
+    suspectedTestSubmission: testSignals.length > 0,
+    testSignals,
     missingInfo,
     reasoning:
-      `${typed.reason} Recommended ${recommendedPackage} because the submission has ${input.mainLeadSources.length} lead source(s), ${input.monthlyLeadVolume.toLowerCase()} monthly lead volume, and the main bottleneck is ${input.currentProblem.toLowerCase()}.`
+      `${typed.reason} Recommended ${recommendedPackage} because the submission has ${input.mainLeadSources.length} lead source(s), ${input.monthlyLeadVolume.toLowerCase()} monthly lead volume, and the main bottleneck is ${input.currentProblem.toLowerCase()}.${testReason}`
   };
 }

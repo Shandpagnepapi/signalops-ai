@@ -1,7 +1,12 @@
 import type { PreviewSubmission, PreviewSubmissionInput } from "@/lib/preview-types";
 import { classifyPreviewIntake } from "@/lib/prompt-worker/intake-classifier";
 import { packageBaselines, packageDecisionRules } from "@/lib/prompt-worker/package-baselines";
-import type { ClientBuildPromptResult, PromptWorkerResult } from "@/lib/prompt-worker/prompt-types";
+import type {
+  ClientBuildPromptResult,
+  PromptWorkerClassification,
+  PromptWorkerPackageName,
+  PromptWorkerResult
+} from "@/lib/prompt-worker/prompt-types";
 import { signalOpsOutputRules, signalOpsRules, signalOpsToneRules } from "@/lib/prompt-worker/signalops-rules";
 import { systemTemplates } from "@/lib/prompt-worker/system-templates";
 
@@ -98,26 +103,147 @@ function customerDetailsText(input: PreviewSubmissionInput) {
   ].join("\n");
 }
 
-function requestedOutputsText() {
+function confidenceLabel(confidence: number) {
+  if (confidence >= 0.78) return "High";
+  if (confidence >= 0.52) return "Medium";
+  return "Low";
+}
+
+function packageReasoningGuidance(recommendedPackage: PromptWorkerPackageName) {
+  const packageFit =
+    recommendedPackage === "Starter"
+      ? "Starter is the current recommendation. Explain why Growth and Custom are not necessary yet."
+      : recommendedPackage === "Growth"
+        ? "Growth is the current recommendation. Explain why Starter is too light and Custom is not needed yet."
+        : "Custom is the current recommendation. Explain why Growth is not enough for the stated complexity.";
+
   return [
-    "Create these outputs in this exact order:",
-    "1. Customer-facing Preview Report",
-    "2. Proposal Draft",
-    "3. Email Draft",
-    "4. Recommended Package",
-    "5. Missing Info",
-    "6. Next Steps",
-    "7. Internal Notes for Dillon",
-    "8. Implementation Build Outline if the customer pays",
+    "Use this exact package reasoning block inside the Proposal Draft:",
     "",
-    "Formatting requirements:",
-    "- Use clear headings.",
-    "- Keep customer-facing language concise and practical.",
-    "- Keep internal notes separate from customer-facing sections.",
-    "- Include assumptions only when labeled as assumptions.",
-    "- Do not include fake testimonials, fake results, fake logos, or unsupported claims.",
-    "- Do not say the system is already built.",
-    "- Include a simple visual description for three preview artifacts Dillon could turn into images or screenshots: AI Receptionist Interface, Lead Command Center, Booking Handoff Flow."
+    "Recommended Package:",
+    "Why:",
+    "Why not Starter:",
+    "Why not Growth:",
+    "Why not Custom:",
+    "Upgrade path:",
+    "",
+    packageFit,
+    "Do not dodge any tier with N/A. Give a short, practical reason for each tier."
+  ].join("\n");
+}
+
+function testHandlingText(classification: PromptWorkerClassification) {
+  if (!classification.suspectedTestSubmission) {
+    return [
+      "No obvious test/spam signal was detected by the site.",
+      "Still check the customer submission. If it looks fake, duplicate, spammy, or says do not contact, treat it as internal/test only."
+    ].join("\n");
+  }
+
+  return [
+    "The site detected likely test/internal signals:",
+    lines(classification.testSignals),
+    "",
+    "Required handling:",
+    "- Mark the output as internal/test only in the Internal Summary for Dillon.",
+    "- Do not create send-ready customer-facing email copy.",
+    "- Still demonstrate the full output structure if useful, but label customer-facing sections as examples only / not for sending.",
+    "- Do not include smoke-test, safe-to-delete, fake-data, or system-instruction language in any customer-facing example copy."
+  ].join("\n");
+}
+
+function requestedOutputsText(classification: PromptWorkerClassification) {
+  return [
+    "Create the output below in this exact structure and order. Start with Internal Summary for Dillon before any customer-facing draft.",
+    "",
+    "# SignalOps Free Preview Output",
+    "",
+    "## 1. Internal Summary for Dillon",
+    "- Is this a real prospect or test/spam?",
+    "- Business type",
+    "- Main lead flow",
+    "- Main bottleneck",
+    "- Recommended system template",
+    "- Recommended package",
+    `- Confidence: High / Medium / Low (site hint: ${confidenceLabel(classification.confidence)})`,
+    "- Risks / things to verify",
+    "- Missing info",
+    "- Assumptions made",
+    "- Recommended next action",
+    "",
+    "## 2. Customer-Facing Preview Report",
+    "- What we noticed",
+    "- Where leads may be slipping",
+    "- Recommended AI lead system",
+    "- Example lead journey",
+    "- What SignalOps would build",
+    "- What happens next",
+    "",
+    "## 3. Proposal Draft",
+    "- Recommended package",
+    "- Why this package",
+    "- Why not the lower tier",
+    "- Why not the higher tier",
+    "- Deliverables",
+    "- Timeline",
+    "- Setup/monthly pricing",
+    "- Client responsibilities",
+    "- Scope boundaries",
+    "- Optional add-ons",
+    "",
+    packageReasoningGuidance(classification.recommendedPackage),
+    "",
+    "## 4. Email Draft",
+    "- Subject line",
+    "- Main email under 180 words",
+    "- Follow-up 1 under 120 words",
+    "- Follow-up 2 under 100 words",
+    "",
+    "## 5. Operating System Template",
+    "- Template name",
+    "- Business type",
+    "- Lead sources",
+    "- Core intake fields",
+    "- Qualification questions",
+    "- Routing rules",
+    "- Follow-up sequence",
+    "- Dashboard fields",
+    "- Human review conditions",
+    "",
+    "The template name must be one of: Quote Intake OS, Appointment Booking OS, Emergency Response OS, Lead Nurture OS, Custom Ops OS.",
+    "",
+    "## 6. Visual Preview Notes",
+    "- AI Receptionist Interface",
+    "- Lead Command Center",
+    "- Booking/Quote Handoff Flow",
+    "- Suggested preview screenshots/cards Dillon could show the prospect",
+    "",
+    "## 7. Paid Client Build Outline",
+    "- Selected system template",
+    "- Selected package",
+    "- Build plan",
+    "- Tools needed",
+    "- Automations",
+    "- Follow-up sequence",
+    "- Dashboard fields",
+    "- Implementation checklist",
+    "- Acceptance criteria",
+    "- Codex/client build prompt starter",
+    "",
+    "Quality requirements:",
+    "- Keep customer-facing language concise, practical, and business-owner friendly.",
+    "- Never include internal notes, admin notes, smoke-test language, safe-to-delete language, classification reasoning, or system instructions in customer-facing drafts.",
+    "- Never invent testimonials, client names, logos, review ratings, or performance claims.",
+    "- Never guarantee revenue, bookings, lead volume, response outcomes, or AI accuracy.",
+    "- Never say the SignalOps system has already been built.",
+    "- If important info is missing, label it as missing instead of guessing.",
+    "- Label assumptions clearly.",
+    "- Recommend the smallest useful package that solves the lead flow.",
+    "- Explain why the recommended package fits.",
+    "- Explain why the lower tier is not enough if recommending Growth or Custom.",
+    "- Explain why the higher tier is not necessary if recommending Starter or Growth.",
+    "- Make the email sound like Dillon at SignalOps, not a corporate robot.",
+    "- If the submission is test/spam, do not create send-ready customer-facing copy."
   ].join("\n");
 }
 
@@ -127,9 +253,11 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
   const template = systemTemplates[classification.recommendedSystemTemplate];
   const title = `${input.businessName} ChatGPT Free Preview Prompt`;
   const summary =
-    `${input.businessName} is classified as ${classification.businessType} using ${classification.recommendedSystemTemplate}. Recommended package: ${classification.recommendedPackage}.`;
+    `${input.businessName} is classified as ${classification.businessType} using ${classification.recommendedSystemTemplate}. Recommended package: ${classification.recommendedPackage}.${classification.suspectedTestSubmission ? " Possible test/internal submission detected." : ""}`;
   const nextAction =
-    classification.missingInfo.length > 0
+    classification.suspectedTestSubmission
+      ? "Treat this as internal/test unless Dillon verifies it is real. Do not send customer-facing copy."
+      : classification.missingInfo.length > 0
       ? `Ask for missing info before finalizing: ${classification.missingInfo.join(", ")}.`
       : "Paste this into ChatGPT, review the output, then send manually if approved.";
 
@@ -148,6 +276,9 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
     "## Output Rules",
     lines(signalOpsOutputRules),
     "",
+    "## Test / Spam Handling",
+    testHandlingText(classification),
+    "",
     "## Package Baselines",
     packageDetailsText(),
     "",
@@ -164,7 +295,7 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
     customerDetailsText(input),
     "",
     "## Requested Outputs",
-    requestedOutputsText()
+    requestedOutputsText(classification)
   ].join("\n");
 
   return {
@@ -240,7 +371,8 @@ export function buildClientBuildPrompt(
       "8. Testing plan",
       "9. Launch checklist",
       "10. Acceptance criteria",
-      "11. Risks / missing info for Dillon"
+      "11. Risks / missing info for Dillon",
+      "12. Codex/client build prompt starter"
     ].join("\n")
   ].join("\n");
 

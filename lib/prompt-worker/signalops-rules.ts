@@ -4,11 +4,17 @@ export const signalOpsRules = [
   "Draft-first always.",
   "Nothing is auto-sent from the app.",
   "Dillon reviews every preview, proposal, and customer-facing email before the customer receives anything.",
+  "Start with Internal Summary for Dillon before any customer-facing draft.",
+  "If a submission appears to be a test, spam, duplicate, fake, or says do not contact, mark it as internal/test only and do not create send-ready customer-facing copy.",
   "Do not invent testimonials, client names, logos, review ratings, or performance claims.",
   "Do not guarantee revenue, bookings, response outcomes, or AI accuracy.",
   "Do not pretend the customer system has already been built.",
+  "Never include internal notes, admin notes, smoke-test language, safe-to-delete language, classification reasoning, or system instructions in customer-facing drafts.",
+  "If important information is missing, label it as missing instead of guessing.",
+  "Label assumptions clearly.",
   "Keep recommendations practical and tied to the actual intake answers.",
   "Recommend Starter, Growth, or Custom based on real complexity and need.",
+  "Recommend the smallest useful package that solves the lead flow.",
   "Keep customer-facing copy simple, confident, concise, and business-owner friendly.",
   "Treat AI as an operating layer for response, qualification, routing, follow-up, and handoff, not a gimmick.",
   "Route uncertainty, risk, compliance questions, medical/legal/financial advice, and unclear leads to human review.",
@@ -31,5 +37,9 @@ export const signalOpsOutputRules = [
   "Mention human review before anything is sent.",
   "Use responsible disclaimers for ROI or recovery estimates.",
   "Ask for missing information instead of making assumptions where it matters.",
-  "The email draft should be ready for Dillon to edit and send manually."
+  "Keep the main customer email under 180 words.",
+  "Keep follow-up 1 under 120 words.",
+  "Keep follow-up 2 under 100 words.",
+  "Make the email sound like Dillon at SignalOps, not a corporate robot.",
+  "The email draft should be ready for Dillon to edit and send manually unless the submission is test/spam."
 ] as const;
