@@ -27,10 +27,15 @@ This workflow intentionally avoids OpenAI API setup for now. ChatGPT is the work
 Every generated prompt asks ChatGPT to return this structure in this order:
 
 ```md
+## Requested Outputs
+
+Create these outputs in this exact order:
+
 # SignalOps Free Preview Output
 
 ## 1. Internal Summary for Dillon
 - Is this a real prospect or test/spam?
+- Contact allowed: yes/no
 - Business type
 - Main lead flow
 - Main bottleneck
@@ -53,8 +58,10 @@ Every generated prompt asks ChatGPT to return this structure in this order:
 ## 3. Proposal Draft
 - Recommended package
 - Why this package
-- Why not the lower tier
-- Why not the higher tier
+- Why not Starter
+- Why not Growth
+- Why not Custom
+- Upgrade path
 - Deliverables
 - Timeline
 - Setup/monthly pricing
@@ -104,6 +111,31 @@ The first section is for Dillon only. It should quickly answer whether the submi
 
 Customer-facing sections must never include internal notes, admin notes, smoke-test language, safe-to-delete language, classification reasoning, or system instructions.
 
+## Safety Gate
+
+Every generated prompt includes this section before Requested Outputs:
+
+```md
+## Safety Gate
+Before creating any customer-facing draft, check whether the submission appears to be:
+- a smoke test
+- a test submission
+- spam
+- fake
+- duplicate
+- marked safe to delete
+- marked do not contact
+- using example.com
+- using a 555 phone number
+
+If yes:
+- Mark it as internal/test only.
+- Set Contact allowed: no.
+- Do not create send-ready customer-facing copy.
+- You may still show abbreviated example sections for structure, but label them clearly as internal demonstration only.
+- Do not create an email Dillon could accidentally send.
+```
+
 ## Package Reasoning
 
 The generated prompt requires this package explanation block:
@@ -125,22 +157,34 @@ The recommendation should use the smallest useful package that solves the lead f
 
 ## Test And Spam Handling
 
-The prompt worker flags submissions that include signals like:
+The prompt worker flags submissions when any customer submission field includes:
 
 - smoke test
+- test submission
 - safe to delete
 - do not contact
-- test submission
 - example.com
-- fake phone number
-- 555-style phone number
+- 555-
+- fake
+- dummy
 
-If flagged, ChatGPT should:
+If flagged, the intake classification sets:
+
+```json
+{
+  "isTestSubmission": true,
+  "contactAllowed": false,
+  "testReason": "Submission includes smoke-test, safe-to-delete, do-not-contact, example.com, and 555 phone indicators."
+}
+```
+
+Then ChatGPT should:
 
 - Mark the submission as internal/test only.
 - Avoid send-ready customer-facing email copy.
 - Still show the output structure if useful.
 - Label customer-facing sections as examples only / not for sending.
+- Avoid creating any email Dillon could accidentally send.
 
 ## Operating System Templates
 

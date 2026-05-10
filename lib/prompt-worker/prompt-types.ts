@@ -29,9 +29,10 @@ export type PromptWorkerClassification = {
   recommendedSystemTemplate: PromptWorkerSystemTemplateName;
   recommendedPackage: PromptWorkerPackageName;
   confidence: number;
-  suspectedTestSubmission: boolean;
-  testSignals: string[];
   missingInfo: string[];
+  isTestSubmission: boolean;
+  contactAllowed: boolean;
+  testReason: string | null;
   reasoning: string;
 };
 

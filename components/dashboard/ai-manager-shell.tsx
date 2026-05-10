@@ -313,7 +313,7 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                   <Metric label="System template" value={selectedSystemTemplate ?? "Not classified"} />
                   <Metric label="Prompt package" value={selectedPackage ?? "Not classified"} />
                   <Metric label="Confidence" value={promptClassification ? `${Math.round(promptClassification.confidence * 100)}%` : "n/a"} />
-                  <Metric label="Test check" value={promptClassification?.suspectedTestSubmission ? "Flagged" : "No signal"} />
+                  <Metric label="Contact allowed" value={promptClassification?.contactAllowed === false ? "false" : "true"} />
                 </div>
 
                 <div className="grid gap-3 lg:grid-cols-[0.82fr_1.18fr]">
@@ -328,14 +328,15 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                         <Badge className="bg-emerald-300/12 text-emerald-100">No major gaps</Badge>
                       )}
                     </div>
-                    {promptClassification?.suspectedTestSubmission ? (
+                    {promptClassification?.isTestSubmission || promptClassification?.contactAllowed === false ? (
                       <div className="mt-4 rounded-xl border border-[#ffb36d]/25 bg-[#ffb36d]/10 p-3">
-                        <p className="text-sm font-semibold text-[#ffe1bd]">Possible test/internal submission</p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          {promptClassification.testSignals.map((signal) => (
-                            <Badge key={signal} variant="outline">{signal}</Badge>
-                          ))}
-                        </div>
+                        <Badge className="bg-[#ffb36d]/20 text-[#ffe1bd]">TEST / DO NOT CONTACT</Badge>
+                        <p className="mt-3 text-sm leading-6 text-[#ffe1bd]">
+                          contactAllowed = {String(promptClassification.contactAllowed)}
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-[#ead0df]/74">
+                          {promptClassification.testReason ?? "The classifier marked this as internal/test only."}
+                        </p>
                       </div>
                     ) : null}
                     {promptClassification ? (

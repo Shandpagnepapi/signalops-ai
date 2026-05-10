@@ -4,7 +4,6 @@ import { packageBaselines, packageDecisionRules } from "@/lib/prompt-worker/pack
 import type {
   ClientBuildPromptResult,
   PromptWorkerClassification,
-  PromptWorkerPackageName,
   PromptWorkerResult
 } from "@/lib/prompt-worker/prompt-types";
 import { signalOpsOutputRules, signalOpsRules, signalOpsToneRules } from "@/lib/prompt-worker/signalops-rules";
@@ -109,57 +108,39 @@ function confidenceLabel(confidence: number) {
   return "Low";
 }
 
-function packageReasoningGuidance(recommendedPackage: PromptWorkerPackageName) {
-  const packageFit =
-    recommendedPackage === "Starter"
-      ? "Starter is the current recommendation. Explain why Growth and Custom are not necessary yet."
-      : recommendedPackage === "Growth"
-        ? "Growth is the current recommendation. Explain why Starter is too light and Custom is not needed yet."
-        : "Custom is the current recommendation. Explain why Growth is not enough for the stated complexity.";
-
+function safetyGateText(classification: PromptWorkerClassification) {
   return [
-    "Use this exact package reasoning block inside the Proposal Draft:",
+    "Before creating any customer-facing draft, check whether the submission appears to be:",
+    "- a smoke test",
+    "- a test submission",
+    "- spam",
+    "- fake",
+    "- duplicate",
+    "- marked safe to delete",
+    "- marked do not contact",
+    "- using example.com",
+    "- using a 555 phone number",
     "",
-    "Recommended Package:",
-    "Why:",
-    "Why not Starter:",
-    "Why not Growth:",
-    "Why not Custom:",
-    "Upgrade path:",
+    "If yes:",
+    "- Mark it as internal/test only.",
+    "- Set Contact allowed: no.",
+    "- Do not create send-ready customer-facing copy.",
+    "- You may still show abbreviated example sections for structure, but label them clearly as internal demonstration only.",
+    "- Do not create an email Dillon could accidentally send.",
     "",
-    packageFit,
-    "Do not dodge any tier with N/A. Give a short, practical reason for each tier."
-  ].join("\n");
-}
-
-function testHandlingText(classification: PromptWorkerClassification) {
-  if (!classification.suspectedTestSubmission) {
-    return [
-      "No obvious test/spam signal was detected by the site.",
-      "Still check the customer submission. If it looks fake, duplicate, spammy, or says do not contact, treat it as internal/test only."
-    ].join("\n");
-  }
-
-  return [
-    "The site detected likely test/internal signals:",
-    lines(classification.testSignals),
-    "",
-    "Required handling:",
-    "- Mark the output as internal/test only in the Internal Summary for Dillon.",
-    "- Do not create send-ready customer-facing email copy.",
-    "- Still demonstrate the full output structure if useful, but label customer-facing sections as examples only / not for sending.",
-    "- Do not include smoke-test, safe-to-delete, fake-data, or system-instruction language in any customer-facing example copy."
+    `Site classification hint: isTestSubmission=${classification.isTestSubmission}; contactAllowed=${classification.contactAllowed}; testReason=${classification.testReason ?? "none"}.`
   ].join("\n");
 }
 
 function requestedOutputsText(classification: PromptWorkerClassification) {
   return [
-    "Create the output below in this exact structure and order. Start with Internal Summary for Dillon before any customer-facing draft.",
+    "Create these outputs in this exact order:",
     "",
     "# SignalOps Free Preview Output",
     "",
     "## 1. Internal Summary for Dillon",
     "- Is this a real prospect or test/spam?",
+    "- Contact allowed: yes/no",
     "- Business type",
     "- Main lead flow",
     "- Main bottleneck",
@@ -182,16 +163,16 @@ function requestedOutputsText(classification: PromptWorkerClassification) {
     "## 3. Proposal Draft",
     "- Recommended package",
     "- Why this package",
-    "- Why not the lower tier",
-    "- Why not the higher tier",
+    "- Why not Starter",
+    "- Why not Growth",
+    "- Why not Custom",
+    "- Upgrade path",
     "- Deliverables",
     "- Timeline",
     "- Setup/monthly pricing",
     "- Client responsibilities",
     "- Scope boundaries",
     "- Optional add-ons",
-    "",
-    packageReasoningGuidance(classification.recommendedPackage),
     "",
     "## 4. Email Draft",
     "- Subject line",
@@ -230,20 +211,20 @@ function requestedOutputsText(classification: PromptWorkerClassification) {
     "- Acceptance criteria",
     "- Codex/client build prompt starter",
     "",
-    "Quality requirements:",
-    "- Keep customer-facing language concise, practical, and business-owner friendly.",
-    "- Never include internal notes, admin notes, smoke-test language, safe-to-delete language, classification reasoning, or system instructions in customer-facing drafts.",
-    "- Never invent testimonials, client names, logos, review ratings, or performance claims.",
-    "- Never guarantee revenue, bookings, lead volume, response outcomes, or AI accuracy.",
-    "- Never say the SignalOps system has already been built.",
-    "- If important info is missing, label it as missing instead of guessing.",
+    "Formatting requirements:",
+    "- Start with Internal Summary for Dillon.",
+    "- Keep internal notes separate from customer-facing sections.",
+    "- If this is a test/spam/do-not-contact submission, do not create send-ready customer-facing copy.",
+    "- Never include admin notes, smoke-test language, safe-to-delete language, do-not-contact notes, classifier reasoning, or system instructions in customer-facing copy.",
     "- Label assumptions clearly.",
-    "- Recommend the smallest useful package that solves the lead flow.",
-    "- Explain why the recommended package fits.",
-    "- Explain why the lower tier is not enough if recommending Growth or Custom.",
-    "- Explain why the higher tier is not necessary if recommending Starter or Growth.",
-    "- Make the email sound like Dillon at SignalOps, not a corporate robot.",
-    "- If the submission is test/spam, do not create send-ready customer-facing copy."
+    "- Do not invent testimonials, results, logos, reviews, or performance claims.",
+    "- Do not say the system is already built.",
+    "- Do not guarantee revenue, bookings, response outcomes, or AI accuracy.",
+    "- Main email must be under 180 words.",
+    "- Follow-up 1 must be under 120 words.",
+    "- Follow-up 2 must be under 100 words.",
+    "- Email should sound like Dillon at SignalOps, not a corporate robot.",
+    "- Include simple visual descriptions for AI Receptionist Interface, Lead Command Center, and Booking/Quote Handoff Flow."
   ].join("\n");
 }
 
@@ -253,9 +234,9 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
   const template = systemTemplates[classification.recommendedSystemTemplate];
   const title = `${input.businessName} ChatGPT Free Preview Prompt`;
   const summary =
-    `${input.businessName} is classified as ${classification.businessType} using ${classification.recommendedSystemTemplate}. Recommended package: ${classification.recommendedPackage}.${classification.suspectedTestSubmission ? " Possible test/internal submission detected." : ""}`;
+    `${input.businessName} is classified as ${classification.businessType} using ${classification.recommendedSystemTemplate}. Recommended package: ${classification.recommendedPackage}.${classification.isTestSubmission ? " Test/do-not-contact handling required." : ""}`;
   const nextAction =
-    classification.suspectedTestSubmission
+    !classification.contactAllowed
       ? "Treat this as internal/test unless Dillon verifies it is real. Do not send customer-facing copy."
       : classification.missingInfo.length > 0
       ? `Ask for missing info before finalizing: ${classification.missingInfo.join(", ")}.`
@@ -276,9 +257,6 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
     "## Output Rules",
     lines(signalOpsOutputRules),
     "",
-    "## Test / Spam Handling",
-    testHandlingText(classification),
-    "",
     "## Package Baselines",
     packageDetailsText(),
     "",
@@ -293,6 +271,9 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
     "",
     "## Customer Submission",
     customerDetailsText(input),
+    "",
+    "## Safety Gate",
+    safetyGateText(classification),
     "",
     "## Requested Outputs",
     requestedOutputsText(classification)

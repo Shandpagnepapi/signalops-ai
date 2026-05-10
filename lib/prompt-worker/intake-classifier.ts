@@ -29,42 +29,36 @@ function hasAny(text: string, terms: string[]) {
   return terms.some((term) => text.includes(term));
 }
 
-function getTestSignals(input: PreviewSubmissionInput) {
+function getTestIndicators(input: PreviewSubmissionInput) {
   const text = textBlob(input);
-  const signals: string[] = [];
+  const indicators: string[] = [];
 
-  const phraseSignals = [
-    "smoke test",
-    "safe to delete",
-    "safe-to-delete",
-    "do not contact",
-    "don't contact",
-    "test submission",
-    "testing submission",
-    "fake submission",
-    "spam submission",
-    "duplicate submission"
+  const checks: Array<[string, boolean]> = [
+    ["smoke-test", text.includes("smoke test")],
+    ["test-submission", text.includes("test submission") || text.includes("testing submission")],
+    ["safe-to-delete", text.includes("safe to delete") || text.includes("safe-to-delete")],
+    ["do-not-contact", text.includes("do not contact") || text.includes("don't contact")],
+    ["example.com", text.includes("example.com")],
+    ["555 phone", text.includes("555-") || /\b555[-\s)]?\d{3,4}\b/.test(input.phone)],
+    ["fake", text.includes("fake")],
+    ["dummy", text.includes("dummy")]
   ];
 
-  phraseSignals.forEach((phrase) => {
-    if (text.includes(phrase)) {
-      signals.push(`Contains "${phrase}"`);
-    }
+  checks.forEach(([indicator, detected]) => {
+    if (detected) indicators.push(indicator);
   });
 
-  if (input.email.toLowerCase().includes("example.com") || input.website.toLowerCase().includes("example.com")) {
-    signals.push("Uses example.com contact or website");
-  }
+  return Array.from(new Set(indicators));
+}
 
-  if (/\b555[-\s)]?\d{3,4}\b/.test(input.phone) || input.phone.includes("555-")) {
-    signals.push("Uses a likely fake 555 phone number");
-  }
+function getTestReason(indicators: string[]) {
+  if (indicators.length === 0) return null;
 
-  if (input.email.toLowerCase().includes("test@") || input.email.toLowerCase().includes("+test")) {
-    signals.push("Uses a test-style email address");
-  }
+  const readable = indicators.map((indicator) => (indicator === "555 phone" ? "555 phone" : indicator));
+  const last = readable.pop();
+  const joined = readable.length ? `${readable.join(", ")}, and ${last}` : last;
 
-  return Array.from(new Set(signals));
+  return `Submission includes ${joined} indicator${indicators.length === 1 ? "" : "s"}.`;
 }
 
 function clampConfidence(value: number) {
@@ -186,7 +180,7 @@ function getConfidence(
   input: PreviewSubmissionInput,
   missingInfo: string[],
   template: PromptWorkerSystemTemplateName,
-  testSignals: string[]
+  testIndicators: string[]
 ) {
   let confidence = 0.58;
 
@@ -197,7 +191,7 @@ function getConfidence(
   if (input.currentTools) confidence += 0.04;
   if (template === "Custom Ops OS") confidence -= 0.04;
   confidence -= Math.min(missingInfo.length * 0.035, 0.18);
-  if (testSignals.length > 0) confidence = Math.min(confidence, 0.24);
+  if (testIndicators.length > 0) confidence = Math.min(confidence, 0.24);
 
   return clampConfidence(confidence);
 }
@@ -205,20 +199,22 @@ function getConfidence(
 export function classifyPreviewIntake(input: PreviewSubmissionInput): PromptWorkerClassification {
   const typed = getBusinessType(input);
   const missingInfo = getMissingInfo(input);
-  const testSignals = getTestSignals(input);
+  const testIndicators = getTestIndicators(input);
+  const isTestSubmission = testIndicators.length > 0;
   const recommendedPackage = getRecommendedPackage(input, typed.template);
-  const confidence = getConfidence(input, missingInfo, typed.template, testSignals);
-  const testReason = testSignals.length > 0 ? ` Test/internal signals detected: ${testSignals.join("; ")}.` : "";
+  const confidence = getConfidence(input, missingInfo, typed.template, testIndicators);
+  const testReason = getTestReason(testIndicators);
 
   return {
     businessType: typed.businessType,
     recommendedSystemTemplate: typed.template,
     recommendedPackage,
     confidence,
-    suspectedTestSubmission: testSignals.length > 0,
-    testSignals,
     missingInfo,
+    isTestSubmission,
+    contactAllowed: !isTestSubmission,
+    testReason,
     reasoning:
-      `${typed.reason} Recommended ${recommendedPackage} because the submission has ${input.mainLeadSources.length} lead source(s), ${input.monthlyLeadVolume.toLowerCase()} monthly lead volume, and the main bottleneck is ${input.currentProblem.toLowerCase()}.${testReason}`
+      `${typed.reason} Recommended ${recommendedPackage} because the submission has ${input.mainLeadSources.length} lead source(s), ${input.monthlyLeadVolume.toLowerCase()} monthly lead volume, and the main bottleneck is ${input.currentProblem.toLowerCase()}.${testReason ? ` ${testReason}` : ""}`
   };
 }

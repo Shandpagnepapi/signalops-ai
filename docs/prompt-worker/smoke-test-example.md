@@ -23,8 +23,9 @@ Anything else: Test submission only.
 
 ## Expected Prompt Worker Classification
 
-- Suspected test submission: yes
-- Test signals should include example.com, 555-style phone number, smoke test, safe to delete, do not contact, or test submission.
+- isTestSubmission: true
+- contactAllowed: false
+- testReason should mention example.com, 555 phone, smoke-test, safe-to-delete, do-not-contact, or test-submission indicators.
 - Recommended system template may still be Quote Intake OS because the fake business is wheel repair.
 - Recommended package may still be Growth because the fake intake has multiple lead sources and follow-up needs.
 - Confidence should be low because the record is likely internal/test data.
@@ -38,6 +39,8 @@ ChatGPT should return the official structure:
 ```
 
 The first section should mark the record as internal/test only.
+
+The first section should include `Contact allowed: no`.
 
 The customer-facing Preview Report, Proposal Draft, and Email Draft should either be omitted as send-ready copy or clearly labeled as examples only / not for sending.
 
