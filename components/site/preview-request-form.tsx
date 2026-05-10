@@ -142,15 +142,6 @@ export function PreviewRequestForm() {
         throw new Error(payload.errors?.join(" ") || payload.error || "Free Preview request could not be created.");
       }
 
-      try {
-        sessionStorage.setItem(
-          `signalops-preview-${payload.submission.id}`,
-          JSON.stringify(payload.submission)
-        );
-      } catch {
-        // Session storage is only a convenience fallback for local review.
-      }
-
       trackEvent(ANALYTICS_EVENTS.previewSubmitted, {
         previewId: payload.submission.id,
         industry: payload.submission.industry,

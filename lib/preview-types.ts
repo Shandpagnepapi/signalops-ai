@@ -1,5 +1,7 @@
 import type {
+  ClientBuildPromptResult,
   PromptWorkerPackageName,
+  PromptWorkerClassification,
   PromptWorkerResult,
   PromptWorkerStatus,
   PromptWorkerSystemTemplateName
@@ -177,15 +179,29 @@ export type PreviewManagerNotes = {
   };
   visualDrafts?: PreviewVisualDraft[];
   promptWorkerResult?: PromptWorkerResult;
+  promptClassification?: PromptWorkerClassification;
   promptStatus?: PromptWorkerStatus;
   internalNotes?: string;
   selectedPackage?: PromptWorkerPackageName;
   selectedSystemTemplate?: PromptWorkerSystemTemplateName;
+  generatedChatGPTPrompt?: string;
+  buildPromptResult?: ClientBuildPromptResult;
+  promptArchive?: PreviewPromptArchiveItem[];
+  customerEmailSentAt?: string;
+  markedPaidAt?: string;
+  markedLostAt?: string;
   kickoffChecklist: string[];
   buildPlan: {
     phase: string;
     work: string;
   }[];
+};
+
+export type PreviewPromptArchiveItem = {
+  type: "preview" | "build";
+  title: string;
+  createdAt: string;
+  prompt: string;
 };
 
 export type PreviewSubmission = PreviewSubmissionInput & {
@@ -200,4 +216,8 @@ export type PreviewSubmission = PreviewSubmissionInput & {
   internalNotes?: string;
   selectedPackage?: PromptWorkerPackageName;
   selectedSystemTemplate?: PromptWorkerSystemTemplateName;
+  generatedChatGPTPrompt?: string;
+  customerEmailSentAt?: string;
+  markedPaidAt?: string;
+  markedLostAt?: string;
 };

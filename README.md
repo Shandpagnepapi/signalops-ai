@@ -155,7 +155,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 
 Lead submissions are written through `/api/lead`, which uses the server storage layer. With only the public key configured, the app can submit leads if the public insert policy from `docs/supabase-schema.sql` has been applied. For dashboard reads, status updates, and internal operations, add `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`.
 
-If the Supabase variables are missing, the app falls back to the in-memory mock lead store so local demos keep working.
+If the Supabase variables are missing, the public demo paths can still use the in-memory mock lead store for local review. The admin workflow will show a warning because cross-device persistence is disabled.
 
 Preview submissions for the Free Instant AI Lead System Preview use `preview_submissions`.
 For a fresh database, `docs/supabase-schema.sql` includes the preview table. For an
@@ -165,9 +165,15 @@ existing database that already has the lead tables, run:
 docs/supabase-preview-submissions.sql
 ```
 
-If Supabase is missing or the preview table has not been created yet, `/api/preview`
-falls back to the in-memory mock store and the browser keeps the generated preview
-available through session storage for the current visit.
+Cross-device admin workflow requires Supabase. `/admin/manager` uses Supabase as the source of truth for Free Preview submissions, generated ChatGPT prompts, prompt status, internal notes, selected packages, selected system templates, test/do-not-contact flags, sent/paid/lost markers, and prompt archive records. Browser `localStorage` and `sessionStorage` are not used for business workflow persistence.
+
+If Supabase is missing or the preview table has not been created yet, `/admin/manager` clearly warns:
+
+```text
+Supabase is not configured. Admin workflow persistence is disabled. Data will not sync across devices.
+```
+
+Run `docs/supabase-preview-submissions.sql` against existing projects whenever the prompt-worker fields change. It is safe for fresh setup and existing installs because it uses `create table if not exists` and `alter table ... add column if not exists`.
 
 The Supabase packages are already installed:
 

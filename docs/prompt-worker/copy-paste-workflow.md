@@ -218,7 +218,9 @@ Build Mode includes:
 
 ## Status Tracking
 
-The current manager UI can track:
+Supabase is the source of truth for the admin workflow. Browser `localStorage` and `sessionStorage` must not store Free Preview submissions, generated prompts, prompt status, internal notes, selected packages, selected system templates, paid/lost/sent state, or prompt worker results.
+
+The current manager UI persists:
 
 - Not generated
 - Generated
@@ -228,7 +230,27 @@ The current manager UI can track:
 - Paid
 - Lost
 
-Prompt status and prompt archive are stored in the browser for now. Backend persistence can be added later with admin auth.
+The admin can work across devices by opening `/admin/manager`; submissions, generated ChatGPT prompts, prompt archive, status, test/do-not-contact flags, and internal notes are loaded from Supabase.
+
+If Supabase is missing or the preview table is not available, `/admin/manager` shows a warning that persistence is disabled and data will not sync across devices. The app may still run local mock demos, but that is not a production workflow.
+
+## Regenerating Prompts
+
+Click **Generate ChatGPT Prompt** on a submission to rebuild the prompt from the latest intake and SignalOps prompt-worker rules. The generated prompt worker result and copy/paste prompt are saved back to the Supabase submission record.
+
+Use **Copy Prompt** to paste into ChatGPT. Nothing is sent to the customer from the app.
+
+## Updating Prompt Status
+
+Use the manager buttons to mark:
+
+- Prompt sent to ChatGPT
+- Preview drafted
+- Sent to customer
+- Paid
+- Lost
+
+Each status update is persisted to Supabase. Paid status also generates a Build Mode prompt for client implementation planning.
 
 ## Safety
 

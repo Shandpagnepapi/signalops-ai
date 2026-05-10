@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -20,15 +20,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { buildClientBuildPrompt, buildSignalOpsChatPrompt } from "@/lib/prompt-worker/prompt-builder";
 import { classifyPreviewIntake } from "@/lib/prompt-worker/intake-classifier";
-import type {
-  ClientBuildPromptResult,
-  PromptWorkerPackageName,
-  PromptWorkerResult,
-  PromptWorkerStatus,
-  PromptWorkerSystemTemplateName
-} from "@/lib/prompt-worker/prompt-types";
+import type { PromptWorkerStatus } from "@/lib/prompt-worker/prompt-types";
 import { previewSubmissionStatuses, type PreviewSubmission, type PreviewSubmissionStatus } from "@/lib/preview-types";
 import { cn } from "@/lib/utils";
 
@@ -43,41 +36,41 @@ type DetailItem = {
   value: string;
 };
 
-type PromptArchiveItem = {
-  type: "preview" | "build";
-  title: string;
-  createdAt: string;
-  prompt: string;
-};
+type AdminMutationAction =
+  | "generate_prompt"
+  | "generate_build_prompt"
+  | "set_prompt_status"
+  | "set_review_status"
+  | "update_internal_notes";
 
-type PromptRecord = {
-  promptStatus: PromptWorkerStatus;
-  promptWorkerResult?: PromptWorkerResult;
-  buildPromptResult?: ClientBuildPromptResult;
-  selectedPackage?: PromptWorkerPackageName;
-  selectedSystemTemplate?: PromptWorkerSystemTemplateName;
+type AdminMutationPayload = {
+  action: AdminMutationAction;
+  promptStatus?: PromptWorkerStatus;
+  status?: PreviewSubmissionStatus;
+  ownerApproved?: boolean;
   internalNotes?: string;
-  archive: PromptArchiveItem[];
 };
 
-const promptStorageKey = "signalops-prompt-worker-state-v1";
+type AdminMutationResponse = {
+  submission?: PreviewSubmission;
+  error?: string;
+};
 
-export function AiManagerShell({ submissions }: { submissions: PreviewSubmission[] }) {
+export function AiManagerShell({
+  submissions,
+  persistenceEnabled,
+  persistenceWarning
+}: {
+  submissions: PreviewSubmission[];
+  persistenceEnabled: boolean;
+  persistenceWarning?: string | null;
+}) {
   const [items, setItems] = useState(submissions);
   const [selectedId, setSelectedId] = useState(submissions[0]?.id ?? "");
-  const [promptRecords, setPromptRecords] = useState<Record<string, PromptRecord>>(() => {
-    if (typeof window === "undefined") {
-      return {};
-    }
-
-    try {
-      const stored = window.localStorage.getItem(promptStorageKey);
-      return stored ? (JSON.parse(stored) as Record<string, PromptRecord>) : {};
-    } catch {
-      return {};
-    }
-  });
   const [copiedLabel, setCopiedLabel] = useState("");
+  const [actionMessage, setActionMessage] = useState("");
+  const [pendingAction, setPendingAction] = useState<string | null>(null);
+  const [internalNotesDrafts, setInternalNotesDrafts] = useState<Record<string, string>>({});
   const selected = items.find((item) => item.id === selectedId) ?? items[0];
 
   const metrics = useMemo(
@@ -89,107 +82,81 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
     [items]
   );
 
-  function updateStatus(id: string, status: PreviewSubmissionStatus, ownerApproved = false) {
-    // TODO: Replace this local UI update with an authenticated server mutation once admin auth is installed.
-    setItems((current) =>
-      current.map((item) =>
-        item.id === id
-          ? {
-              ...item,
-              status,
-              ownerApproved: ownerApproved || item.ownerApproved
-            }
-          : item
-      )
-    );
-  }
-
   const report = selected ? getPreviewReport(selected) : null;
   const proposal = selected ? getProposalDraft(selected) : null;
   const emailDraft = selected ? getEmailDraft(selected) : null;
   const submissionDetails = selected ? getSubmissionDetails(selected) : [];
-  const promptRecord = selected ? promptRecords[selected.id] : undefined;
-  const promptClassification = selected ? classifyPreviewIntake(selected) : null;
-  const promptStatus = promptRecord?.promptStatus ?? selected?.promptStatus ?? "not_generated";
-  const promptWorkerResult = promptRecord?.promptWorkerResult ?? selected?.promptWorkerResult;
-  const selectedPackage = promptRecord?.selectedPackage ?? selected?.selectedPackage ?? promptClassification?.recommendedPackage;
+  const promptClassification = selected
+    ? selected.managerNotes.promptClassification ?? selected.promptWorkerResult?.classification ?? classifyPreviewIntake(selected)
+    : null;
+  const promptStatus = selected?.promptStatus ?? selected?.managerNotes.promptStatus ?? "not_generated";
+  const promptWorkerResult = selected?.promptWorkerResult ?? selected?.managerNotes.promptWorkerResult;
+  const selectedPackage = selected?.selectedPackage ?? selected?.managerNotes.selectedPackage ?? promptClassification?.recommendedPackage;
   const selectedSystemTemplate =
-    promptRecord?.selectedSystemTemplate ?? selected?.selectedSystemTemplate ?? promptClassification?.recommendedSystemTemplate;
-  const promptArchive = promptRecord?.archive ?? [];
-  const buildPromptResult = promptRecord?.buildPromptResult;
+    selected?.selectedSystemTemplate ?? selected?.managerNotes.selectedSystemTemplate ?? promptClassification?.recommendedSystemTemplate;
+  const promptArchive = selected?.managerNotes.promptArchive ?? [];
+  const buildPromptResult = selected?.managerNotes.buildPromptResult;
+  const internalNotesDraft = selected
+    ? internalNotesDrafts[selected.id] ?? selected.internalNotes ?? selected.managerNotes.internalNotes ?? ""
+    : "";
 
-  useEffect(() => {
+  async function mutateSubmission(id: string, payload: AdminMutationPayload, successMessage: string) {
+    setActionMessage("");
+    setPendingAction(payload.action);
+
     try {
-      window.localStorage.setItem(promptStorageKey, JSON.stringify(promptRecords));
-    } catch {
-      // Current-session prompt generation still works if local storage is unavailable.
-    }
-  }, [promptRecords]);
+      const response = await fetch(`/api/admin/preview/${encodeURIComponent(id)}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = (await response.json()) as AdminMutationResponse;
 
-  function updatePromptRecord(id: string, updater: (current: PromptRecord | undefined) => PromptRecord) {
-    setPromptRecords((current) => ({
-      ...current,
-      [id]: updater(current[id])
-    }));
+      if (!response.ok || !result.submission) {
+        throw new Error(result.error ?? "Admin update failed.");
+      }
+
+      setItems((current) =>
+        current.map((item) => (item.id === result.submission?.id ? result.submission : item))
+      );
+      setActionMessage(successMessage);
+    } catch (error) {
+      setActionMessage(error instanceof Error ? error.message : "Admin update failed.");
+    } finally {
+      setPendingAction(null);
+    }
+  }
+
+  function updateStatus(id: string, status: PreviewSubmissionStatus, ownerApproved = false) {
+    void mutateSubmission(id, { action: "set_review_status", status, ownerApproved }, "Review status saved.");
   }
 
   function generatePrompt(selectedSubmission: PreviewSubmission) {
-    const result = buildSignalOpsChatPrompt(selectedSubmission);
-
-    updatePromptRecord(selectedSubmission.id, (current) => ({
-      promptStatus: "generated",
-      selectedPackage: result.recommendedPackage,
-      selectedSystemTemplate: result.recommendedSystemTemplate,
-      internalNotes: current?.internalNotes ?? "",
-      promptWorkerResult: result,
-      buildPromptResult: current?.buildPromptResult,
-      archive: [
-        {
-          type: "preview" as const,
-          title: result.title,
-          createdAt: result.createdAt,
-          prompt: result.copyPastePrompt
-        },
-        ...(current?.archive ?? [])
-      ].slice(0, 12)
-    }));
+    void mutateSubmission(selectedSubmission.id, { action: "generate_prompt" }, "Prompt generated and saved.");
   }
 
   function setPromptStatus(id: string, status: PromptWorkerStatus) {
-    updatePromptRecord(id, (current) => ({
-      promptStatus: status,
-      selectedPackage: current?.selectedPackage,
-      selectedSystemTemplate: current?.selectedSystemTemplate,
-      internalNotes: current?.internalNotes ?? "",
-      promptWorkerResult: current?.promptWorkerResult,
-      buildPromptResult: current?.buildPromptResult,
-      archive: current?.archive ?? []
-    }));
+    void mutateSubmission(id, { action: "set_prompt_status", promptStatus: status }, "Prompt status saved.");
   }
 
   function generateBuildPrompt(selectedSubmission: PreviewSubmission) {
-    const result = buildClientBuildPrompt({
-      ...selectedSubmission,
-      selectedPackage,
-      selectedSystemTemplate
-    });
+    void mutateSubmission(selectedSubmission.id, { action: "generate_build_prompt" }, "Build prompt generated and saved.");
+  }
 
-    updatePromptRecord(selectedSubmission.id, (current) => ({
-      promptStatus: "paid",
-      selectedPackage: selectedPackage ?? result.recommendedPackage,
-      selectedSystemTemplate: selectedSystemTemplate ?? result.recommendedSystemTemplate,
-      internalNotes: current?.internalNotes ?? "",
-      promptWorkerResult: current?.promptWorkerResult,
-      buildPromptResult: result,
-      archive: [
-        {
-          type: "build" as const,
-          title: result.title,
-          createdAt: result.createdAt,
-          prompt: result.copyPastePrompt
-        },
-        ...(current?.archive ?? [])
-      ].slice(0, 12)
+  function saveInternalNotes(selectedSubmission: PreviewSubmission) {
+    void mutateSubmission(
+      selectedSubmission.id,
+      { action: "update_internal_notes", internalNotes: internalNotesDraft },
+      "Internal notes saved."
+    );
+  }
+
+  function updateInternalNotesDraft(id: string, value: string) {
+    setInternalNotesDrafts((current) => ({
+      ...current,
+      [id]: value
     }));
   }
 
@@ -222,6 +189,15 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
             <Metric label="Needs review" value={String(metrics.needsReview)} />
             <Metric label="Average fit score" value={`${metrics.avgScore}/100`} />
           </div>
+          {persistenceWarning ? (
+            <div className="mt-6 rounded-2xl border border-[#ffb36d]/30 bg-[#ffb36d]/10 p-4 text-sm leading-6 text-[#ffe1bd]">
+              {persistenceWarning}
+            </div>
+          ) : persistenceEnabled ? (
+            <div className="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm leading-6 text-emerald-100">
+              Supabase persistence is active. Submissions, prompts, notes, and statuses sync across devices.
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -255,6 +231,11 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                 <p className="mt-3 text-xs text-[#ffb36d]">{item.status}</p>
               </button>
             ))}
+            {items.length === 0 ? (
+              <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/70">
+                No Free Preview submissions found yet.
+              </p>
+            ) : null}
           </CardContent>
         </Card>
 
@@ -277,15 +258,15 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                   <Metric label="Approval" value={selected.ownerApproved ? "Approved" : "Needs review"} />
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <Button type="button" onClick={() => updateStatus(selected.id, "Approved", true)}>
+                  <Button type="button" disabled={pendingAction !== null} onClick={() => updateStatus(selected.id, "Approved", true)}>
                     <CheckCircle2 className="size-4" aria-hidden="true" />
                     Approve Draft
                   </Button>
-                  <Button type="button" variant="secondary" onClick={() => updateStatus(selected.id, "Sent", true)}>
+                  <Button type="button" disabled={pendingAction !== null} variant="secondary" onClick={() => updateStatus(selected.id, "Sent", true)}>
                     <Send className="size-4" aria-hidden="true" />
                     Mark Sent
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => updateStatus(selected.id, "Needs Review")}>
+                  <Button type="button" disabled={pendingAction !== null} variant="outline" onClick={() => updateStatus(selected.id, "Needs Review")}>
                     <Pencil className="size-4" aria-hidden="true" />
                     Needs Edits
                   </Button>
@@ -350,45 +331,71 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                       {promptWorkerResult?.nextAction ?? "Click Generate ChatGPT Prompt, paste it into ChatGPT, review the draft output, then update the status manually."}
                     </p>
                     <p className="mt-3 text-xs leading-5 text-[#ead0df]/54">
-                      Prompt archive is stored in this browser for now. Backend persistence can be added later when admin auth is installed.
+                      Prompt worker data is saved with this Supabase submission when persistence is configured.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <Button type="button" onClick={() => generatePrompt(selected)}>
+                  <Button type="button" disabled={pendingAction !== null} onClick={() => generatePrompt(selected)}>
                     <MessageSquareText className="size-4" aria-hidden="true" />
                     Generate ChatGPT Prompt
                   </Button>
                   <Button
                     type="button"
                     variant="secondary"
-                    disabled={!promptWorkerResult}
+                    disabled={!promptWorkerResult || pendingAction !== null}
                     onClick={() => promptWorkerResult ? copyPrompt(promptWorkerResult.copyPastePrompt, "Prompt copied") : undefined}
                   >
                     <Copy className="size-4" aria-hidden="true" />
                     Copy Prompt
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "pasted_to_chatgpt")}>
+                  <Button type="button" disabled={pendingAction !== null} variant="outline" onClick={() => setPromptStatus(selected.id, "pasted_to_chatgpt")}>
                     Mark Prompt Sent to ChatGPT
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "preview_drafted")}>
+                  <Button type="button" disabled={pendingAction !== null} variant="outline" onClick={() => setPromptStatus(selected.id, "preview_drafted")}>
                     Mark Preview Drafted
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "sent_to_customer")}>
+                  <Button type="button" disabled={pendingAction !== null} variant="outline" onClick={() => setPromptStatus(selected.id, "sent_to_customer")}>
                     Mark Sent to Customer
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => generateBuildPrompt(selected)}>
+                  <Button type="button" disabled={pendingAction !== null} variant="outline" onClick={() => generateBuildPrompt(selected)}>
                     Mark Paid
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => setPromptStatus(selected.id, "lost")}>
+                  <Button type="button" disabled={pendingAction !== null} variant="outline" onClick={() => setPromptStatus(selected.id, "lost")}>
                     Mark Lost
                   </Button>
+                </div>
+
+                <div className="grid gap-3 rounded-2xl border border-white/10 bg-[#17122d]/60 p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-sm font-semibold text-white">Internal notes</p>
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      disabled={pendingAction !== null}
+                      onClick={() => saveInternalNotes(selected)}
+                    >
+                      Save Internal Notes
+                    </Button>
+                  </div>
+                  <textarea
+                    value={internalNotesDraft}
+                    onChange={(event) => updateInternalNotesDraft(selected.id, event.target.value)}
+                    placeholder="Add private notes for Dillon. Saved to Supabase when configured."
+                    className="min-h-[110px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 text-sm leading-6 text-[#ead0df]/82 outline-none placeholder:text-[#ead0df]/36"
+                  />
                 </div>
 
                 {copiedLabel ? (
                   <p className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm text-emerald-100">
                     {copiedLabel}
+                  </p>
+                ) : null}
+
+                {actionMessage ? (
+                  <p className="rounded-xl border border-white/10 bg-white/[0.045] px-3 py-2 text-sm text-[#ead0df]/78">
+                    {actionMessage}
                   </p>
                 ) : null}
 
@@ -406,7 +413,7 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                   </div>
                 ) : null}
 
-                {promptStatus === "paid" || buildPromptResult ? (
+                {buildPromptResult ? (
                   <div className="grid gap-3 rounded-2xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 p-4">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
@@ -418,10 +425,7 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                       <Button
                         type="button"
                         variant="secondary"
-                        onClick={() => {
-                          const result = buildPromptResult ?? buildClientBuildPrompt({ ...selected, selectedPackage, selectedSystemTemplate });
-                          copyPrompt(result.copyPastePrompt, "Build prompt copied");
-                        }}
+                        onClick={() => copyPrompt(buildPromptResult.copyPastePrompt, "Build prompt copied")}
                       >
                         <Copy className="size-4" aria-hidden="true" />
                         Copy Build Prompt
@@ -429,7 +433,7 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                     </div>
                     <textarea
                       readOnly
-                      value={(buildPromptResult ?? buildClientBuildPrompt({ ...selected, selectedPackage, selectedSystemTemplate })).copyPastePrompt}
+                      value={buildPromptResult.copyPastePrompt}
                       className="min-h-[260px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#ead0df]/82 outline-none"
                     />
                   </div>
@@ -455,7 +459,7 @@ export function AiManagerShell({ submissions }: { submissions: PreviewSubmission
                     </div>
                   ) : (
                     <p className="mt-2 text-sm leading-6 text-[#ead0df]/66">
-                      No prompts generated for this submission in this browser yet.
+                      No prompts generated for this submission yet.
                     </p>
                   )}
                 </div>

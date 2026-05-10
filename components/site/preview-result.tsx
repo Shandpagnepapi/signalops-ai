@@ -35,18 +35,7 @@ export function PreviewResult({
   previewId: string;
   initialSubmission: PreviewSubmission | null;
 }) {
-  const [submission, setSubmission] = useState<PreviewSubmission | null>(() => {
-    if (initialSubmission || typeof window === "undefined") {
-      return initialSubmission;
-    }
-
-    try {
-      const stored = sessionStorage.getItem(`signalops-preview-${previewId}`);
-      return stored ? (JSON.parse(stored) as PreviewSubmission) : null;
-    } catch {
-      return null;
-    }
-  });
+  const [submission, setSubmission] = useState<PreviewSubmission | null>(initialSubmission);
   const [status, setStatus] = useState(submission ? "ready" : "loading");
 
   useEffect(() => {
@@ -83,7 +72,7 @@ export function PreviewResult({
         <Badge className="mb-5 bg-[#ff6f9c]/14 text-[#ffd7e6]">Preview unavailable</Badge>
         <h1 className="text-4xl font-semibold tracking-normal text-white">This preview could not be found.</h1>
         <p className="mt-4 text-[#ead0df]/76">
-          If you just submitted the form, the preview may have expired from local mock storage. You can generate a new one in under a minute.
+          If you just submitted the form, the preview may still be saving or Supabase persistence may be unavailable. You can generate a new one in under a minute.
         </p>
         <TrackedLink
           href="/preview"

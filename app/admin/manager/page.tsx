@@ -1,6 +1,5 @@
 import { AiManagerShell } from "@/components/dashboard/ai-manager-shell";
-import { createDemoPreviewSubmissions } from "@/lib/preview-generator";
-import { listPreviewSubmissions } from "@/lib/preview-store";
+import { listPreviewSubmissionsWithMeta } from "@/lib/preview-store";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -14,7 +13,13 @@ export const metadata = createPageMetadata({
 export const dynamic = "force-dynamic";
 
 export default async function AdminManagerPage() {
-  const submissions = await listPreviewSubmissions();
+  const { submissions, warning, persistenceEnabled } = await listPreviewSubmissionsWithMeta();
 
-  return <AiManagerShell submissions={submissions.length > 0 ? submissions : createDemoPreviewSubmissions()} />;
+  return (
+    <AiManagerShell
+      submissions={submissions}
+      persistenceEnabled={persistenceEnabled}
+      persistenceWarning={warning}
+    />
+  );
 }
