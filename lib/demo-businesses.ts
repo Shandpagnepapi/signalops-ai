@@ -224,7 +224,7 @@ export const demoBusinesses = {
         },
         {
           title: "Bent or cracked",
-          description: "Flag for inspection and human review before promises."
+          description: "Flag for inspection before any repair promise."
         },
         {
           title: "Refinishing",
@@ -560,7 +560,7 @@ export const demoBusinesses = {
         "ClearFlow does not need a complicated CRM to start. SignalOps can wrap a simple intake and follow-up system around calls, texts, forms, and DMs so the team knows who needs a callback and what the customer needs.",
       noteTitle: "Practical service note",
       noteDescription:
-        "No-water and major pressure issues should be prioritized for human review. Routine maintenance can be organized into available service windows, while large commercial requests should route to the owner."
+        "No-water and major pressure issues should be prioritized for staff handoff. Routine maintenance can be organized into available service windows, while large commercial requests should route to the owner."
     },
     operationsSection: {
       eyebrow: "Why this matters for a small 3-person operation",
@@ -644,7 +644,7 @@ export const demoBusinesses = {
       {
         question: "What happens when a request is vague?",
         answer:
-          "The system asks one or two practical follow-up questions and flags the request for human review if it cannot classify the issue safely."
+          "The system asks one or two practical follow-up questions and routes unclear requests to the right person."
       }
     ],
     leadOpsPanel: {

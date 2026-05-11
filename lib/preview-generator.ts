@@ -287,7 +287,7 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     fitScore,
     painPoints,
     approvalNote:
-      "SignalOps drafts the preview report, proposal, and email first. Nothing customer-facing is sent until a human reviews and approves it."
+      "SignalOps turns the system map into a practical build path before setup begins."
   };
 
   return {

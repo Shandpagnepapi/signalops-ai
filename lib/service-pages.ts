@@ -110,7 +110,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       "SignalOps builds AI lead response systems that help local businesses answer leads instantly, sort prospects, route hot opportunities, and follow up.",
     h1: "AI lead response system for local businesses.",
     subheadline:
-      "SignalOps helps service businesses answer calls, texts, forms, DMs, and quote requests quickly with useful next steps, clean lead summaries, and human review when needed.",
+      "SignalOps helps service businesses answer calls, texts, forms, DMs, and quote requests quickly with useful next steps, clean lead summaries, and staff handoff when needed.",
     problemTitle: "Most businesses do not have a lead problem. They have a response problem.",
     problemIntro:
       "A prospect who submits a form or sends a DM is usually still shopping. If the first response is slow, vague, or forgotten, the lead can go cold before anyone has a real sales conversation.",
@@ -250,7 +250,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "What happens when AI is unsure?",
         answer:
-          "Unclear, urgent, sensitive, or high-value leads are flagged for human review instead of being handled as if the system knows everything."
+          "Unclear, urgent, sensitive, or high-value leads are flagged for staff handoff instead of being handled as if the system knows everything."
       }
     ],
     relatedLinks: [related.qualification, related.followUp, related.routing, related.quote]
@@ -265,7 +265,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       "SignalOps uses AI lead intake to sort small business leads, summarize intent, flag urgency, route hot prospects, and trigger follow-up.",
     h1: "AI lead intake for small business leads.",
     subheadline:
-      "SignalOps turns messy inquiries into clear lead quality, urgency, recommended next action, and human-review flags so your team knows who to call first.",
+      "SignalOps turns messy inquiries into clear lead quality, urgency, recommended next action, and staff-handoff flags so your team knows who to call first.",
     problemTitle: "Not every lead deserves the same response.",
     problemIntro:
       "A ready-to-book customer, a vague price shopper, an urgent repair, and a commercial opportunity all need different handling. When every inquiry is treated the same, strong leads wait too long and weak leads consume too much time.",
@@ -288,7 +288,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps qualifies leads",
     solutionIntro:
-      "SignalOps uses service-specific priority rules and AI summaries to separate hot, warm, cold, junk, and human-review leads.",
+      "SignalOps uses service-specific priority rules and AI summaries to separate hot, warm, cold, junk, and staff-handoff leads.",
     solutionCards: [
       {
         title: "Priority",
@@ -298,7 +298,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Priority and urgency",
         description:
-          "Flag hot opportunities, routine requests, research-stage leads, and issues that need immediate human review."
+          "Flag hot opportunities, routine requests, research-stage leads, and issues that need immediate staff handoff."
       },
       {
         title: "Internal sales note",
@@ -331,7 +331,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "3",
         title: "Priority and priority are assigned",
         description:
-          "The lead is labeled hot, warm, cold, junk, or human-review with a confidence level."
+          "The lead is labeled hot, warm, cold, junk, or staff-handoff with a confidence level."
       },
       {
         label: "4",
@@ -378,7 +378,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Bent wheel at highway speed",
         description:
-          "SignalOps flags the lead as urgent, recommends human review, and avoids making unsafe repair promises."
+          "SignalOps flags the lead as urgent, recommends staff handoff, and avoids making unsafe repair promises."
       },
       {
         title: "Routine filter replacement",
@@ -443,7 +443,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps automates follow-up",
     solutionIntro:
-      "SignalOps builds follow-up sequences around lead status, missing details, quote status, appointment readiness, and human review triggers.",
+      "SignalOps builds follow-up sequences around lead status, missing details, quote status, appointment readiness, and staff handoff triggers.",
     solutionCards: [
       {
         title: "Missing-detail reminders",
@@ -730,7 +730,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       "SignalOps builds lead routing automation that sends hot leads, urgent requests, quote inquiries, and appointment-ready prospects to the right person.",
     h1: "Lead routing automation for sales teams and busy owners.",
     subheadline:
-      "SignalOps routes leads based on urgency, service type, value, source, missing details, and human-review needs so the right person sees the right opportunity faster.",
+      "SignalOps routes leads based on urgency, service type, value, source, missing details, and staff-handoff needs so the right person sees the right opportunity faster.",
     problemTitle: "Good leads lose momentum when they go to the wrong place.",
     problemIntro:
       "A high-value commercial request should not sit in a general inbox. An urgent repair should not wait behind routine questions. A quote request missing photos should not go straight to sales without context.",
@@ -790,7 +790,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "2",
         title: "Routing rule is selected",
         description:
-          "The lead is sent to owner, sales, front desk, estimator, human review, or automated follow-up."
+          "The lead is sent to owner, sales, front desk, estimator, staff handoff, or automated follow-up."
       },
       {
         label: "3",
@@ -865,7 +865,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "What happens if AI is not confident?",
         answer:
-          "The lead can be routed to human review with the reason and missing details clearly shown."
+          "The lead can be routed to the right person with the reason and missing details clearly shown."
       },
       {
         question: "Can SignalOps route to a CRM?",
@@ -898,7 +898,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Wrong leads get booking links",
         description:
-          "Some inquiries need intake, inspection, photos, or human review before an appointment makes sense."
+          "Some inquiries need intake, inspection, photos, or staff attention before an appointment makes sense."
       },
       {
         title: "Scheduling follow-up gets forgotten",
@@ -1063,7 +1063,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps automates quote intake",
     solutionIntro:
-      "SignalOps creates service-specific intake flows that collect the right information before a human reviews, quotes, or books the work.",
+      "SignalOps creates service-specific intake flows that collect the right information before your team follows up, quotes, or books the work.",
     solutionCards: [
       {
         title: "Dynamic intake questions",
@@ -1078,7 +1078,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Quote priority sorting",
         description:
-          "Separate urgent, high-value, routine, incomplete, and human-review quote requests."
+          "Separate urgent, high-value, routine, incomplete, and staff-handoff quote requests."
       },
       {
         title: "Estimate follow-up",

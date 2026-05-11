@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent, type ReactNode } from "react";
-import { AlertCircle, CheckCircle2, ClipboardList, FileText, Loader2, Mail, ShieldCheck } from "lucide-react";
+import { AlertCircle, ArrowRight, CheckCircle2, ClipboardList, FileText, Loader2, Route, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -67,19 +67,19 @@ const selectClass =
 
 const previewOutputs = [
   {
-    title: "Preview Report",
-    copy: "Lead flow findings and where response slows down.",
+    title: "System Map",
+    copy: "Lead sources, slow spots, handoff points, and follow-up gaps.",
     icon: FileText
   },
   {
-    title: "Proposal Draft",
-    copy: "Recommended package, scope, and next steps.",
+    title: "Build Plan",
+    copy: "The Lead OS, package fit, build scope, and setup path.",
     icon: ClipboardList
   },
   {
-    title: "Email Draft",
-    copy: "A customer-ready draft that still needs human approval.",
-    icon: Mail
+    title: "Next Steps",
+    copy: "What to connect, what to automate, and what should happen first.",
+    icon: Route
   }
 ];
 
@@ -164,11 +164,11 @@ export function PreviewRequestForm() {
       <Card className="border-emerald-300/20 bg-emerald-300/[0.07] shadow-2xl shadow-black/24">
         <CardHeader>
           <Badge className="mb-3 w-fit border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
-            Draft package created
+            Request received
           </Badge>
-          <CardTitle className="text-2xl">Your Free Preview is in review.</CardTitle>
+          <CardTitle className="text-2xl">Your system request is in.</CardTitle>
           <CardDescription>
-            SignalOps generated the internal draft package for {submission.businessName}. Nothing has been emailed.
+            Dillon and SignalOps will use your answers to shape a practical lead operating system for {submission.businessName}.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -187,16 +187,16 @@ export function PreviewRequestForm() {
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
             <p className="flex gap-2 text-sm font-semibold text-white">
-              <ShieldCheck className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
-              Internal review comes next.
+              <Sparkles className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
+              What happens next
             </p>
             <p className="mt-2 text-sm leading-6 text-[#ead0df]/76">
-              We review the preview report, proposal draft, and email draft before anything customer-facing is sent.
+              SignalOps maps your lead flow, recommends the right system level, and gives you a clear setup path.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>
               <Badge variant="outline">Draft ID: {submission.id.slice(0, 8)}</Badge>
-              <Badge className="bg-[#ff6f9c]/14 text-[#ffd7e6]">Not auto-sent</Badge>
+              <Badge className="bg-[#ff6f9c]/14 text-[#ffd7e6]">Done-for-you path</Badge>
             </div>
           </div>
         </CardContent>
@@ -210,15 +210,15 @@ export function PreviewRequestForm() {
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">
-              Free Preview
+              Lead OS
             </Badge>
             <CardTitle className="text-2xl">Tell us how your leads work today.</CardTitle>
             <CardDescription>
-              The form creates an internal draft package for review: report, proposal, and email draft.
+              SignalOps uses your answers to map the operating system that fits your calls, forms, DMs, quotes, and appointments.
             </CardDescription>
           </div>
           <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-medium text-emerald-100">
-            Draft-first
+            Done for you
           </div>
         </div>
       </CardHeader>
@@ -392,14 +392,14 @@ export function PreviewRequestForm() {
             {status === "submitting" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             ) : (
-              <CheckCircle2 className="size-4" aria-hidden="true" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             )}
-            Submit Free Preview
+            Show Me My OS
           </Button>
 
           <p className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
-            <ShieldCheck className="mt-0.5 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
-            SignalOps creates draft materials first. We review the preview before it is emailed, and this form does not auto-send customer-facing output.
+            <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
+            Share the messy reality. SignalOps will shape the system around how your business actually runs.
           </p>
         </form>
       </CardContent>

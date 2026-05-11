@@ -378,7 +378,7 @@ export const apexDashboardLeads: ApexDashboardLead[] = [
       "Thanks Priya, Apex can inspect the crack and let you know the safest option. Please send clear photos of the inside lip and crack. If the wheel is structurally unsafe, we will recommend replacement instead of repair.",
     internalNote:
       "Use conservative language. Crack location matters. Route to in-shop inspection before quoting weld repair.",
-    tags: ["cracked-wheel", "inspection-required", "human-review", "safety-first"],
+    tags: ["cracked-wheel", "inspection-required", "staff-handoff", "safety-first"],
     timeline: [
       { time: "9:31 AM", event: "Missed call captured" },
       { time: "9:32 AM", event: "Text-back workflow asked for photos" },

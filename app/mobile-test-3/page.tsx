@@ -225,7 +225,7 @@ function Hero() {
             <p className={styles.mutedText}>Live quote intake preview</p>
           </div>
           <span className={cn(styles.reviewBadge, "rounded-full px-3 py-1 text-xs font-black")}>
-            Human review ready
+            Owner handoff ready
           </span>
         </div>
         <div className="mt-4 grid grid-cols-3 gap-2">

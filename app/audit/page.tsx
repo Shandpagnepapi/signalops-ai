@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Will SignalOps send messages without approval?",
     answer:
-      "No. Customer-facing messages and email drafts should be reviewed before anything goes live unless you explicitly approve otherwise."
+      "No. SignalOps helps shape the setup path with you before any live customer-facing workflow is turned on."
   }
 ];
 

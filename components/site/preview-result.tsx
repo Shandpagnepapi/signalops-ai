@@ -11,7 +11,6 @@ import {
   Mail,
   MessageSquareReply,
   Route,
-  ShieldCheck,
   Sparkles
 } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
@@ -94,7 +93,7 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
   const preview = submission.previewData;
   const emailBody = useMemo(
     () =>
-      `Hi SignalOps, I reviewed the AI Lead System Preview for ${submission.businessName}.\n\nI have questions about:\n\nBest phone/email:\nPreferred walkthrough time:`,
+      `Hi SignalOps, I looked through the AI Lead System Preview for ${submission.businessName}.\n\nI have questions about:\n\nBest phone/email:\nPreferred walkthrough time:`,
     [submission.businessName]
   );
 
@@ -276,8 +275,8 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="size-5 text-emerald-300" aria-hidden="true" />
-              <CardTitle>Approval-first workflow</CardTitle>
+              <Route className="size-5 text-emerald-300" aria-hidden="true" />
+              <CardTitle>Done-for-you build path</CardTitle>
             </div>
             <CardDescription>{preview.approvalNote}</CardDescription>
           </CardHeader>
@@ -327,7 +326,7 @@ function VisualDraftGallery({ submission }: { submission: PreviewSubmission }) {
             Three draft views of your likely SignalOps system.
           </h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[#ead0df]/72">
-            Generated from your industry, services, lead sources, bottleneck, and current process. These are visual drafts for review, not final build screens.
+            Generated from your industry, services, lead sources, bottleneck, and current process. These are concept visuals, not final build screens.
           </p>
         </div>
         <Badge variant="outline">Draft assets</Badge>

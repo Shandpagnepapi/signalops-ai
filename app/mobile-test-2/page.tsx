@@ -136,7 +136,7 @@ const previewIncludes = [
 const credibilityCards = [
   "Built for local service businesses",
   "Designed around real quote requests",
-  "Human review when AI is unsure",
+  "Owner handoff when details are unclear",
   "Works with the tools you already use",
   "Starts with a preview before buildout"
 ];

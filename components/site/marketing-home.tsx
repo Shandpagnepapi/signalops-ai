@@ -124,7 +124,7 @@ const pricing = [
       "Multiple lead sources and routing paths",
       "CRM/job-management integrations",
       "Custom dashboards",
-      "Human-review paths",
+      "Staff-handoff paths",
       "Internal AI agent workflows",
       "Advanced reporting and optimization"
     ],
@@ -234,8 +234,8 @@ function HeroSection() {
 
           <div className="mt-9 grid grid-cols-3 gap-2 sm:max-w-xl sm:gap-4">
             <HeroStat icon={ClipboardList} value="1" label="You tell us how leads come in" />
-            <HeroStat icon={Workflow} value="2" label="We draft report, proposal, and email" />
-            <HeroStat icon={ShieldCheck} value="3" label="We review before it is emailed" />
+            <HeroStat icon={Workflow} value="2" label="We map the right Lead OS" />
+            <HeroStat icon={ShieldCheck} value="3" label="You get a clear next step" />
           </div>
         </div>
 
@@ -515,7 +515,7 @@ function FinalCTA() {
                 Get Your Free Preview
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-                Tell us how your leads come in. SignalOps drafts a Preview Report, Proposal Draft, and Email Draft, then reviews it before anything is sent.
+                Tell us how your leads come in. SignalOps maps your System Map, Build Plan, and Next Steps so you can see the right operating system before setup.
               </p>
             </div>
           </div>

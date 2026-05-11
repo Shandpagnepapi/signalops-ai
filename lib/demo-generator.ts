@@ -530,7 +530,7 @@ function buildPrompt(input: LiveDemoInput, template: DemoTemplate, fallback: Gen
   return [
     "Create a tailored SignalOps live demo preview for a sales conversation.",
     "Use the stored industry template as the base. Do not generate a full website. Do not claim to inspect or scrape the optional website URL.",
-    "Keep the output practical for a skeptical business owner: speed-to-lead, intake, routing, follow-up, booked appointments, and human review when needed.",
+    "Keep the output practical for a skeptical business owner: speed-to-lead, intake, routing, follow-up, booked appointments, and staff handoff when needed.",
     "Avoid hype, robot language, and unsupported revenue guarantees.",
     "Return valid JSON that matches the schema.",
     JSON.stringify(

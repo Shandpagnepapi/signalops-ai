@@ -316,7 +316,7 @@ function OwnerAlert({ tone }: { tone: "enterprise" | "glassy" }) {
             Warm curb rash quote. Needs photos, mobile availability, and callback window.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {["High intent", "Follow-up queued", "Human review"].map((tag) => (
+            {["High intent", "Follow-up queued", "Owner handoff"].map((tag) => (
               <span key={tag} className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.64rem] font-black text-white/72">
                 <CircleDot className="size-3" aria-hidden="true" />
                 {tag}

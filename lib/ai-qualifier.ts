@@ -170,7 +170,7 @@ function buildPrompt(leadInput: LeadSubmissionDraft) {
     "Qualify this inbound lead for SignalOps.",
     "Use the supplied JSON data only. Return conservative, practical sales-operations guidance.",
     "Do not make unsupported promises. For wheel repair leads, do not promise repair for bent or cracked wheels before inspection; recommend replacement if structurally unsafe.",
-    "For well and water service leads, treat no-water and major pressure issues as urgent, route commercial or industrial requests to an owner, and avoid diagnosing equipment without human review.",
+    "For well and water service leads, treat no-water and major pressure issues as urgent, route commercial or industrial requests to an owner, and avoid diagnosing equipment without staff handoff.",
     "Flag missing contact details, emergency language, structural/safety risk, and high buying intent.",
     JSON.stringify(
       {

@@ -300,7 +300,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
               <ResultBlock title="Suggested customer reply" body={lead.customerReply} />
               <ResultBlock title={business.form.internalNoteLabel} body={lead.internalNote} icon="warning" />
               {lead.aiQualification.needsHumanReview ? (
-                <ResultBlock title="Human review flag" body="This lead should be reviewed by a person before any automated promise is made." icon="warning" />
+                <ResultBlock title="Owner handoff flag" body="This lead should go to the shop before any automated promise is made." icon="warning" />
               ) : null}
               <div>
                 <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Suggested tags</p>

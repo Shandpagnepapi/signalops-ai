@@ -196,7 +196,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "What happens if the lead is urgent or complicated?",
         answer:
-          "The system should flag it for human review and alert the right person. SignalOps is designed to escalate uncertainty instead of pretending every question can be fully automated."
+          "The system should flag it for staff handoff and alert the right person. SignalOps is designed to escalate uncertainty instead of pretending every question can be fully automated."
       },
       {
         question: "Do customers know they are getting an automated reply?",
@@ -404,7 +404,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     heroBullets: [
       "Follow up after forms, quote requests, calls, texts, and DMs",
       "Ask for missing photos, appointment times, or decision details",
-      "Keep the tone practical, helpful, and human-review friendly"
+      "Keep the tone practical, helpful, and staff-handoff friendly"
     ],
     quickStats: [
       {
@@ -573,7 +573,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     heroBullets: [
       "Priority leads by urgency, intent, fit, and completeness",
       "Summarize what the customer needs before a callback",
-      "Flag risky, urgent, or unclear leads for human review"
+      "Flag risky, urgent, or unclear leads for staff handoff"
     ],
     quickStats: [
       {
@@ -624,7 +624,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Priority labels",
         description:
-          "Classify leads as hot, warm, cold, junk, or human-review so the team knows what to do."
+          "Classify leads as hot, warm, cold, junk, or staff-handoff so the team knows what to do."
       },
       {
         title: "Summaries and internal notes",
@@ -663,7 +663,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "4",
         title: "Lead is routed",
         description:
-          "Hot leads alert the right person. Incomplete leads get a follow-up. Risky leads go to human review."
+          "Hot leads alert the right person. Incomplete leads get a follow-up. Risky leads go to staff handoff."
       }
     ],
     industryTitle: "Lead intake by industry",
@@ -693,7 +693,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Can AI decide whether a lead is worth pursuing?",
         answer:
-          "It can help prioritize, but it should not be the only decision-maker. SignalOps recommends human review for unclear, risky, or high-value cases."
+          "It can help prioritize, but it should not be the only decision-maker. SignalOps recommends staff handoff for unclear, risky, or high-value cases."
       },
       {
         question: "Can we customize the priority rules?",

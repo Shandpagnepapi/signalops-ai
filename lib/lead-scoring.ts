@@ -157,7 +157,7 @@ function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
   if (isWheelLead(lead)) {
     const wheelCount = lead.numberOfWheels > 0 ? `${lead.numberOfWheels} wheel(s)` : "wheel damage";
     const damage = lead.serviceNeeded || lead.damageType || "wheel repair";
-    const safety = inspectionRequired ? " Safety-sensitive details require human review before promising repair." : "";
+    const safety = inspectionRequired ? " Safety-sensitive details should route to the shop before promising repair." : "";
     return `${lead.name} submitted an Apex Wheel Repair request for ${damage} on ${wheelCount}. Contact is available by ${contact}.${safety}`;
   }
 
@@ -441,7 +441,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   if (!hasPhone && !hasDetailedMessage) {
     score -= 12;
     pushTag(tags, "low-confidence");
-    pushTag(tags, "human-review");
+    pushTag(tags, "staff-handoff");
   }
 
   const normalizedScore = Math.max(5, Math.min(score, 100));

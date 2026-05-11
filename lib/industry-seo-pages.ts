@@ -328,7 +328,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can SignalOps separate emergency HVAC leads from routine maintenance?",
         answer:
-          "Yes. The intake and priority rules can flag no-heat, no-cool, and system-down language for faster human review."
+          "Yes. The intake and priority rules can flag no-heat, no-cool, and system-down language for faster staff handoff."
       },
       {
         question: "Can this help with HVAC replacement estimates?",
@@ -1151,7 +1151,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it identify emergency leads?",
         answer:
-          "It can flag urgent language and route emergency leads to human review quickly."
+          "It can flag urgent language and route emergency leads to the right person quickly."
       },
       {
         question: "Can it follow up after estimates?",
@@ -1326,7 +1326,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Interested in pricing, promotion, or treatment options but needs education or staff follow-up."
       },
       {
-        title: "Human review",
+        title: "Staff handoff",
         description:
           "Medical history, complication, contraindication, safety question, or treatment suitability concern."
       }
@@ -1554,7 +1554,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Personal lines quote, general comparison request, missing details, or future renewal window."
       },
       {
-        title: "Human review",
+        title: "Staff handoff",
         description:
           "Coverage advice, claim issue, cancellation problem, compliance concern, or complex business risk."
       }
@@ -1590,7 +1590,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Coverage category tracking",
         description:
-          "Separate commercial, personal, benefits, specialty, and human-review requests."
+          "Separate commercial, personal, benefits, specialty, and staff-handoff requests."
       },
       {
         title: "Renewal follow-up",
@@ -1656,7 +1656,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       "SignalOps helps repair shops capture vehicle details, symptoms, urgency, service needs, and appointment intent so customers do not get lost between missed calls and busy bays.",
     heroBullets: [
       "Collect year, make, model, symptoms, drivability, and preferred appointment time",
-      "Flag urgent safety or drivability concerns for human review",
+      "Flag urgent safety or drivability concerns for staff handoff",
       "Follow up on estimates, diagnostics, and unbooked appointment requests"
     ],
     missedLeadProblems: [
@@ -1673,7 +1673,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "High-priority issues need quick triage",
         description:
-          "Brake, overheating, shaking, no-start, and warning-light concerns may need faster human review."
+          "Brake, overheating, shaking, no-start, and warning-light concerns may need faster staff handoff."
       },
       {
         title: "Estimate follow-up gets buried",
@@ -2109,7 +2109,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Urgent bent-wheel leads wait too long",
         description:
-          "Shaking, vibration, or drivability concerns need faster human review than cosmetic curb rash."
+          "Shaking, vibration, or drivability concerns need faster shop attention than cosmetic curb rash."
       },
       {
         title: "Estimates are not followed up",
@@ -2164,7 +2164,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Curb rash with photos, refinishing interest, powder coating request, peeling clear coat, or mobile repair request."
       },
       {
-        title: "Human review",
+        title: "Staff handoff",
         description:
           "Cracked wheel, unsafe structural language, vehicle not drivable, missing contact info, or unclear damage photos."
       }
@@ -2183,7 +2183,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Inspection-required alert",
         description:
-          "Route bent, cracked, or drivability-related wheel leads to the shop for human review."
+          "Route bent, cracked, or drivability-related wheel leads to the shop for staff handoff."
       },
       {
         title: "Estimate follow-up",
@@ -2200,7 +2200,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Inspection-required leads",
         description:
-          "Separate bent, cracked, vibration, air-loss, and not-drivable requests for human review."
+          "Separate bent, cracked, vibration, air-loss, and not-drivable requests for staff handoff."
       },
       {
         title: "Mobile and commercial pipeline",

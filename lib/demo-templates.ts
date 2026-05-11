@@ -207,7 +207,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     ],
     followUpSequence: sharedFollowUp,
     dashboardCards: [
-      { label: "Safety alerts", value: "4", note: "Human review" },
+      { label: "Safety alerts", value: "4", note: "Staff handoff" },
       { label: "Install quotes", value: "8", note: "Estimator routing" },
       { label: "Commercial leads", value: "3", note: "Priority follow-up" }
     ],
@@ -218,7 +218,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
       "Commercial lead tagging"
     ],
     beforeAfter: [
-      { before: "Safety issues are buried in general requests.", after: "Risky language triggers fast human review." },
+      { before: "Safety issues are buried in general requests.", after: "Risky language triggers fast staff handoff." },
       { before: "Install quotes lack scope before callback.", after: "SignalOps captures project type, property, and timing." }
     ],
     packageBias: "Growth"
@@ -228,7 +228,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     label: "Med spa",
     serviceNoun: "consultation request",
     customerMoment: "A prospect is asking about treatments, pricing, consultation availability, or whether they are a good fit.",
-    leadProblemAngle: "Med spa leads need fast response, tasteful education, and human review for sensitive or clinical questions.",
+    leadProblemAngle: "Med spa leads need fast response, tasteful education, and staff handoff for sensitive or clinical questions.",
     defaultServices: ["Injectables", "Laser treatments", "Skin consultations", "Body contouring"],
     intakeQuestions: [
       "Which treatment are you interested in?",
@@ -240,19 +240,19 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     scoringRules: [
       { label: "Consult intent", rule: "Customer asks for consultation or availability.", impact: "+20 intent" },
       { label: "Treatment specificity", rule: "Lead names a specific service or concern.", impact: "+15 quality" },
-      { label: "Clinical uncertainty", rule: "Medical, adverse reaction, or suitability questions.", impact: "Human review" }
+      { label: "Clinical uncertainty", rule: "Medical, adverse reaction, or suitability questions.", impact: "Staff handoff" }
     ],
     followUpSequence: sharedFollowUp,
     dashboardCards: [
       { label: "Consult requests", value: "14", note: "Booking ready" },
       { label: "Treatment interest", value: "9", note: "Education follow-up" },
-      { label: "Human review", value: "2", note: "Clinical context" }
+      { label: "Staff handoff", value: "2", note: "Clinical context" }
     ],
     recommendedAutomations: [
       "Consultation intake",
       "Treatment interest routing",
       "No-book follow-up",
-      "Human review for sensitive questions"
+      "Staff handoff for sensitive questions"
     ],
     beforeAfter: [
       { before: "Treatment inquiries get slow or generic replies.", after: "Prospects receive fast, tasteful consultation next steps." },
@@ -314,19 +314,19 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     scoringRules: [
       { label: "Deadline risk", rule: "Court date, demand letter, deadline, arrest, injury, or notice mentioned.", impact: "+25 urgency" },
       { label: "Practice fit", rule: "Lead matches target practice area.", impact: "+20 quality" },
-      { label: "Insufficient details", rule: "Vague legal issue or missing contact info.", impact: "Human review" }
+      { label: "Insufficient details", rule: "Vague legal issue or missing contact info.", impact: "Staff handoff" }
     ],
     followUpSequence: sharedFollowUp,
     dashboardCards: [
       { label: "Urgent matters", value: "5", note: "Attorney review" },
       { label: "Practice-fit leads", value: "12", note: "Intake team" },
-      { label: "Conflict/check needed", value: "4", note: "Human review" }
+      { label: "Conflict/check needed", value: "4", note: "Staff handoff" }
     ],
     recommendedAutomations: [
       "Practice-area intake",
       "Deadline flagging",
       "Consultation booking handoff",
-      "Human review for uncertain matters"
+      "Staff handoff for uncertain matters"
     ],
     beforeAfter: [
       { before: "Potential clients leave long messages with no structured intake.", after: "The firm receives matter type, urgency, location, and contact context." },

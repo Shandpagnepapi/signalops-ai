@@ -7,12 +7,10 @@ import {
   ClipboardList,
   Clock3,
   FileText,
-  Mail,
   MessageSquareText,
   PhoneCall,
   RefreshCcw,
   Route,
-  ShieldCheck,
   Sparkles,
   TrendingUp,
   Workflow,
@@ -22,22 +20,22 @@ import { cn } from "@/lib/utils";
 
 const artifactCards = [
   {
-    title: "Preview Report",
-    label: "Report",
-    copy: "Lead flow findings, bottlenecks, and the recommended response system.",
+    title: "System Map",
+    label: "Map",
+    copy: "Lead sources, bottlenecks, routing points, and follow-up gaps.",
     icon: FileText
   },
   {
-    title: "Proposal Draft",
-    label: "Scope",
-    copy: "Package fit, build scope, and the next steps for implementation.",
+    title: "Build Plan",
+    label: "Plan",
+    copy: "The Lead OS, package fit, build scope, and setup path.",
     icon: ClipboardList
   },
   {
-    title: "Email Draft",
-    label: "Review",
-    copy: "A customer-facing draft that waits for internal approval.",
-    icon: Mail
+    title: "Next Steps",
+    label: "Action",
+    copy: "What to connect, what to automate, and what should happen first.",
+    icon: Route
   }
 ];
 
@@ -100,11 +98,11 @@ export function PreviewArtifactShowcase({ className = "" }: { className?: string
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#37f0bd,#ffb36d,transparent)]" />
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#37f0bd]">Free Preview package</p>
-          <p className="mt-2 text-xl font-semibold tracking-normal text-white">Three draft artifacts, one review path.</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#37f0bd]">Lead OS preview</p>
+          <p className="mt-2 text-xl font-semibold tracking-normal text-white">Three practical outputs, one build path.</p>
         </div>
         <div className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs font-semibold text-emerald-100">
-          Needs Review
+          Mapped
         </div>
       </div>
 
@@ -115,9 +113,8 @@ export function PreviewArtifactShowcase({ className = "" }: { className?: string
       </div>
 
       <div className="mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4">
-        <p className="flex gap-2 text-sm font-semibold text-emerald-100">
-          <ShieldCheck className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-          Draft-first by default. Nothing is emailed until it is reviewed.
+        <p className="text-sm font-semibold leading-6 text-emerald-100">
+          Built to show what SignalOps would shape around your lead flow before setup begins.
         </p>
       </div>
     </div>

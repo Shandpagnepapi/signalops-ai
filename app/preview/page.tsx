@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, ClipboardList, FileText, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ClipboardList, FileText, Route, Sparkles, Workflow } from "lucide-react";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
 import {
   BeforeAfterFlow,
@@ -18,7 +18,7 @@ import {
 } from "@/lib/seo";
 
 const previewDescription =
-  "Tell us how your leads come in and where things slow down. SignalOps builds a personalized preview of the AI lead system your business should be using.";
+  "Tell us how your leads come in and where things slow down. SignalOps maps the lead operating system your business should be using.";
 
 export const metadata = createPageMetadata({
   title: "Free Preview",
@@ -27,15 +27,15 @@ export const metadata = createPageMetadata({
 });
 
 const steps = [
-  "Submit the Free Preview form",
-  "SignalOps creates the draft package",
-  "We review your preview before it is emailed"
+  "Tell us how leads come in",
+  "SignalOps maps the right Lead OS",
+  "You get a clear next step"
 ];
 
 const mobilePreviewOutputs = [
-  { title: "Preview Report", icon: FileText },
-  { title: "Proposal Draft", icon: ClipboardList },
-  { title: "Email Draft", icon: Mail }
+  { title: "System Map", icon: Workflow },
+  { title: "Build Plan", icon: ClipboardList },
+  { title: "Next Steps", icon: Route }
 ];
 
 export default function PreviewPage() {
@@ -60,14 +60,14 @@ export default function PreviewPage() {
           <div className="surface-grid absolute inset-0 opacity-20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),linear-gradient(180deg,rgba(6,12,24,0.4),#100818_92%)]" />
           <div className="relative mx-auto max-w-md px-4 py-10">
-            <Badge className="mb-4 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-              Free Preview
+            <Badge className="mb-4 w-fit border border-lime-300/25 bg-lime-300/10 text-lime-100">
+              Lead OS
             </Badge>
             <h2 className="text-4xl font-semibold leading-tight tracking-normal text-white">
-              Get your Free Preview.
+              See Your System
             </h2>
             <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
-              Tell us how leads come in and where things slow down. We draft the system preview and review it before anything is emailed.
+              Tell us how your leads come in and where things slow down. SignalOps maps the system that fits your business.
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-2">
@@ -79,13 +79,12 @@ export default function PreviewPage() {
               ))}
             </div>
 
-            <p className="mt-4 flex gap-2 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-3 text-sm font-semibold leading-6 text-emerald-100">
-              <ShieldCheck className="mt-1 size-4 shrink-0" aria-hidden="true" />
-              Drafts are reviewed before anything is emailed.
+            <p className="mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-3 text-sm font-semibold leading-6 text-emerald-100">
+              Tell us how your leads come in and where things slow down.
             </p>
 
             <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} mt-6 w-full`}>
-              Start Free Preview
+              Get Started
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           </div>
@@ -149,17 +148,17 @@ export default function PreviewPage() {
               <Sparkles className="mb-4 size-7 text-[#ffb36d]" aria-hidden="true" />
               <h2 className="text-2xl font-semibold tracking-normal text-white">A preview before buildout.</h2>
               <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-                The form gives SignalOps enough context to draft the report, proposal, and email your business would receive after review.
+                The form gives SignalOps enough context to map your lead flow, recommended system, and next steps.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">
-              <ShieldCheck className="mb-4 size-7 text-emerald-300" aria-hidden="true" />
+              <FileText className="mb-4 size-7 text-emerald-300" aria-hidden="true" />
               <h2 className="text-xl font-semibold tracking-normal text-white">What happens after submission</h2>
               <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-                SignalOps creates a personalized draft preview package, then reviews it internally before anything is sent.
+                SignalOps uses your answers to shape a practical operating system map for your business.
               </p>
               <div className="mt-4 grid gap-2">
-                {["Preview Report draft", "Proposal Draft", "Email Draft", "Human review before email"].map((item) => (
+                {["System Map", "Build Plan", "Recommended next step", "Done-for-you setup path"].map((item) => (
                   <p key={item} className="flex gap-2 text-sm text-[#ead0df]/74">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                     {item}
@@ -170,9 +169,8 @@ export default function PreviewPage() {
           </div>
           <PreviewRequestForm />
         </section>
-
         <section className="px-4 pb-10 text-center text-xs leading-5 text-[#ead0df]/52 md:hidden">
-          SignalOps reviews every preview before anything is sent.
+          Built around your lead flow, tools, services, and team handoff.
         </section>
       </div>
     </>

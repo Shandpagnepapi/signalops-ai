@@ -120,7 +120,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Clear intake rules",
         description:
-          "Look for service-specific questions, urgency detection, contact completeness checks, and human review when the situation is unclear."
+          "Look for service-specific questions, urgency detection, contact completeness checks, and staff handoff when the situation is unclear."
       },
       {
         title: "Follow-up after first response",
@@ -245,7 +245,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Teams with inconsistent lead quality",
         description:
-          "Some inquiries are ready to book, some need photos, some are vague, and some require human review."
+          "Some inquiries are ready to book, some need photos, some are vague, and some require staff handoff."
       },
       {
         title: "Businesses that need follow-up discipline",
@@ -326,7 +326,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "3",
         title: "Lead is prioritized",
         description:
-          "Hot, warm, cold, and human-review labels help your team act in the right order."
+          "Hot, warm, cold, and staff-handoff labels help your team act in the right order."
       },
       {
         label: "4",
@@ -409,7 +409,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Fallback for uncertainty",
         description:
-          "When AI confidence is low, the lead should go to human review with the reason clearly explained."
+          "When details are unclear, the lead should be routed to the right person with the reason clearly explained."
       }
     ],
     howSignalOpsHelps: [
@@ -496,7 +496,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Can routing rules be changed after launch?",
         answer:
-          "Yes. Routing should improve as you learn which lead types convert, which ones need faster response, and which ones require human review."
+          "Yes. Routing should improve as you learn which lead types convert, which ones need faster response, and which ones require staff handoff."
       },
       {
         question: "Can SignalOps route leads without a CRM?",
@@ -529,7 +529,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Owners who need quick prioritization",
         description:
-          "You need to know which leads deserve a callback now, which need follow-up, and which require human review."
+          "You need to know which leads deserve a callback now, which need follow-up, and which require staff handoff."
       },
       {
         title: "Businesses with different lead values",
@@ -610,7 +610,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "3",
         title: "Priority is labeled",
         description:
-          "Leads can be marked hot, warm, cold, junk, or human-review based on practical rules."
+          "Leads can be marked hot, warm, cold, junk, or staff-handoff based on practical rules."
       },
       {
         label: "4",
@@ -626,7 +626,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     notFit: [
       "You only need a static lead list with no intake logic.",
-      "You want AI to make final decisions without human review paths.",
+      "You want AI to make final decisions without staff handoff paths.",
       "You do not have enough lead volume or lead variety to need priority sorting yet."
     ],
     faqs: [
@@ -643,7 +643,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Does a low priority mean the lead is ignored?",
         answer:
-          "No. Low-confidence or low-priority leads can still receive a polite follow-up or be sent to human review."
+          "No. Low-confidence or low-priority leads can still receive a polite follow-up or be sent to staff handoff."
       }
     ],
     relatedLinks: coreRelatedLinks
@@ -911,7 +911,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     notFit: [
       "Your pricing is fully fixed and customers can self-checkout without staff involvement.",
       "You do not want to define what information is needed before a quote.",
-      "You need AI to make final safety, repair, legal, or compliance decisions without human review."
+      "You need AI to make final safety, repair, legal, or compliance decisions without staff handoff."
     ],
     faqs: [
       {

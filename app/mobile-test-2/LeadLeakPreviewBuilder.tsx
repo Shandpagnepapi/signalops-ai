@@ -23,7 +23,7 @@ const industryOutputs: Record<
   "Wheel Repair": {
     flow: "Damage-type intake for curb rash, bent wheels, cracked wheels, refinishing, and mobile repair fit.",
     questions: "Wheel count, photos, vehicle, wheel size, shop or mobile visit, urgency.",
-    handoff: "Route cracked or bent wheels to human review before quote promises."
+    handoff: "Route cracked or bent wheels to the shop before quote promises."
   },
   "Auto Shop": {
     flow: "Repair request intake with urgency, symptoms, vehicle details, and appointment readiness.",
@@ -38,7 +38,7 @@ const industryOutputs: Record<
   "Med Spa": {
     flow: "Consultation intake with treatment interest, timeline, intake rules, and review handoff.",
     questions: "Treatment goal, timing, prior services, contact preference, consult availability.",
-    handoff: "Route sensitive or unsure answers to a person before scheduling."
+    handoff: "Route sensitive or unsure answers to the team before scheduling."
   },
   "Home Services": {
     flow: "Estimate intake with service area, urgency, project type, photos, and property details.",

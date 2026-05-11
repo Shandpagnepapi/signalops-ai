@@ -49,7 +49,7 @@ const featureCards = [
   {
     title: "Priority sorting",
     description:
-      "Prioritize urgent, warm, quiet, and human-review leads with transparent routing logic."
+      "Prioritize urgent, warm, quiet, and staff-handoff leads with transparent routing logic."
   },
   {
     title: "Routing",

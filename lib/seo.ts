@@ -66,7 +66,7 @@ export const META_DESCRIPTION_TEMPLATES = {
   home:
     "SignalOps helps local and service businesses respond to leads instantly, sort prospects automatically, and follow up before opportunities go cold.",
   preview:
-    "Get a personalized SignalOps Free Preview with a draft report, proposal, and email draft for the AI lead system your business should be using.",
+    "Get a personalized SignalOps Free Preview with a system map, build plan, and next steps for the AI lead system your business should be using.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:

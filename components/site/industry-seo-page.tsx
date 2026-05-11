@@ -173,7 +173,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             <SectionHeader
               eyebrow="Intake questions"
               title={`Questions SignalOps can ask for ${page.industryName.toLowerCase()}`}
-              description="The questions should match the service, urgency, and level of human review required before quoting or booking."
+              description="The questions should match the service, urgency, and team handoff required before quoting or booking."
             />
             <div className="grid gap-3 sm:grid-cols-2">
               {qualificationQuestions.map((question) => (
