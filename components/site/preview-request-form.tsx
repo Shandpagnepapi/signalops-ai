@@ -195,7 +195,7 @@ export function PreviewRequestForm() {
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>
-              <Badge variant="outline">Draft ID: {submission.id.slice(0, 8)}</Badge>
+              <Badge variant="outline">Request ID: {submission.id.slice(0, 8)}</Badge>
               <Badge className="bg-[#ff6f9c]/14 text-[#ffd7e6]">Done-for-you path</Badge>
             </div>
           </div>

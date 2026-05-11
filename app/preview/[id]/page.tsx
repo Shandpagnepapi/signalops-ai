@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PreviewResult } from "@/components/site/preview-result";
 import { getPreviewSubmissionById } from "@/lib/preview-store";
+import { toPublicPreviewSubmission } from "@/lib/public-preview";
 import { createPageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
@@ -31,5 +32,5 @@ export default async function PreviewDetailPage({
   const { id } = await params;
   const submission = await getPreviewSubmissionById(id);
 
-  return <PreviewResult previewId={id} initialSubmission={submission} />;
+  return <PreviewResult previewId={id} initialSubmission={submission ? toPublicPreviewSubmission(submission) : null} />;
 }

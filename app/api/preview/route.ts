@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createPreviewSubmission, getPreviewSubmissionById } from "@/lib/preview-store";
+import { toPublicPreviewSubmission } from "@/lib/public-preview";
 import {
   previewIndustryOptions,
   previewLeadSourceOptions,
@@ -166,7 +167,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Preview not found." }, { status: 404 });
   }
 
-  return NextResponse.json({ submission });
+  return NextResponse.json({ submission: toPublicPreviewSubmission(submission) });
 }
 
 export async function POST(request: Request) {

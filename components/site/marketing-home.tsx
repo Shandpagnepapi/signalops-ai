@@ -1,13 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
+  BellRing,
   CalendarCheck2,
   CheckCircle2,
   ClipboardList,
   Mail,
   MessageSquareReply,
   PlayCircle,
-  SearchCheck,
+  RefreshCcw,
+  Route,
   ShieldCheck,
   TrendingUp,
   UserRound,
@@ -20,7 +22,8 @@ import {
   BeforeAfterFlow,
   DashboardSnapshot,
   LeadJourneyVisual,
-  PreviewArtifactShowcase
+  PreviewArtifactShowcase,
+  SignalOpsCommandLayer
 } from "@/components/site/product-story-visuals";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
@@ -159,7 +162,7 @@ const faqs = [
   },
   {
     question: "What happens when AI is unsure?",
-    answer: "Unclear, urgent, or sensitive leads are routed to a person with notes for review."
+    answer: "Unclear, urgent, or sensitive leads are routed to a person with clean context and a clear next step."
   }
 ];
 
@@ -264,6 +267,9 @@ function ProductStorySection() {
         <LeadJourneyVisual />
         <DashboardSnapshot />
         <div className="xl:col-span-2">
+          <SignalOpsCommandLayer />
+        </div>
+        <div className="xl:col-span-2">
           <BeforeAfterFlow />
         </div>
       </div>
@@ -302,32 +308,38 @@ function FeatureSection() {
 }
 
 function HowItWorks() {
-  const steps = [
-    ["We capture and respond", "AI instantly replies to every lead across your channels."],
-    ["We sort and follow up", "AI asks the right questions, collects info, and keeps the next step moving."],
-    ["We book and hand off", "Priority leads get booked or routed to your team with context."]
+  const steps: Array<[string, string, LucideIcon]> = [
+    ["Lead comes in", "Forms, calls, DMs, and quote requests enter one operating layer.", MessageSquareReply],
+    ["Reply sent", "The customer gets a useful first response while intent is fresh.", Zap],
+    ["Details collected", "SignalOps asks the right questions and structures the request.", ClipboardList],
+    ["Priority routed", "Urgent or ready leads move to the right person with context.", Route],
+    ["Follow-up queued", "Photo requests, quotes, and no-replies keep moving.", RefreshCcw],
+    ["Handoff ready", "Your team sees the source, details, status, and next action.", BellRing]
   ];
 
   return (
     <section id="how-it-works" className="px-5 py-8 sm:px-9 lg:px-11">
-      <h2 className="text-center text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-        How it works in 3 simple steps
-      </h2>
-      <div className="relative mt-8 rounded-2xl border border-white/12 bg-white/[0.045] p-5 sm:p-6">
-        <div className="absolute left-10 right-10 top-9 hidden h-1 rounded-full bg-[linear-gradient(90deg,#d770ff,#ff6f9c,#ffb36d)] md:block" />
-        <div className="relative grid gap-5 md:grid-cols-3">
-          {steps.map(([title, copy], index) => (
-            <div key={title} className="grid gap-3 md:pt-12">
-              <div className="flex size-11 items-center justify-center rounded-full bg-[linear-gradient(135deg,#d770ff,#ff6f9c,#ffb36d)] text-lg font-semibold shadow-lg shadow-pink-950/25 md:absolute md:top-[-0.15rem]">
-                {index + 1}
-              </div>
-              <div className="flex gap-4 rounded-xl border border-white/10 bg-[#17122d]/62 p-4">
-                <SearchCheck className="mt-1 size-6 shrink-0 text-[#ffb36d]" aria-hidden="true" />
-                <div>
-                  <h3 className="font-semibold text-white">{title}</h3>
-                  <p className={`mt-1 text-sm leading-6 ${muted}`}>{copy}</p>
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Operating flow</p>
+        <h2 className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
+          How the lead moves through SignalOps
+        </h2>
+      </div>
+      <div className="relative mt-8 overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/18 sm:p-6">
+        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#ff6f9c,#ffb36d,#37f0bd,transparent)]" />
+        <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
+          {steps.map(([title, copy, Icon], index) => (
+            <div key={String(title)} className="rounded-2xl border border-white/10 bg-[#0a0f18]/54 p-4">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <div className="flex size-10 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] shadow-lg shadow-pink-950/20">
+                  <Icon className="size-5 text-white" aria-hidden="true" />
                 </div>
+                <span className="text-xs font-semibold text-[#ead0df]/42">0{index + 1}</span>
               </div>
+                <div>
+                  <h3 className="font-semibold text-white">{String(title)}</h3>
+                  <p className={`mt-2 text-sm leading-6 ${muted}`}>{String(copy)}</p>
+                </div>
             </div>
           ))}
         </div>
@@ -352,12 +364,13 @@ function PricingSection() {
           <div
             key={plan.name}
             id={plan.id}
-            className={`relative flex min-h-full flex-col rounded-2xl border p-5 shadow-xl shadow-black/15 ${
+            className={`relative flex min-h-full flex-col overflow-hidden rounded-[1.35rem] border p-5 shadow-2xl shadow-black/18 ${
               plan.highlight
-                ? "border-[#ffb36d]/55 bg-[radial-gradient(circle_at_50%_0%,rgba(255,111,156,0.34),transparent_34%),linear-gradient(180deg,rgba(255,111,156,0.16),rgba(255,179,109,0.08),rgba(35,20,52,0.84))]"
-                : "border-white/12 bg-white/[0.045]"
+                ? "border-[#ffb36d]/55 bg-[radial-gradient(circle_at_50%_0%,rgba(255,111,156,0.34),transparent_34%),linear-gradient(180deg,rgba(255,111,156,0.16),rgba(255,179,109,0.08),rgba(10,15,24,0.88))]"
+                : "border-white/12 bg-[#0a0f18]/54"
             }`}
           >
+            <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.38),transparent)]" />
             {plan.highlight ? (
               <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white">
                 Most Popular
@@ -413,7 +426,7 @@ function PricingSection() {
               eventProperties={{ package: plan.name, price: plan.price }}
               className={`${buttonVariants({ variant: "ghost" })} mt-3 w-full border border-white/10 bg-white/[0.035]`}
             >
-              Free Preview
+              See Your System
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

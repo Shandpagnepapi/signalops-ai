@@ -221,3 +221,17 @@ export type PreviewSubmission = PreviewSubmissionInput & {
   markedPaidAt?: string;
   markedLostAt?: string;
 };
+
+export type PublicPreviewSubmission = Omit<
+  PreviewSubmission,
+  | "managerNotes"
+  | "promptWorkerResult"
+  | "promptStatus"
+  | "internalNotes"
+  | "selectedPackage"
+  | "selectedSystemTemplate"
+  | "generatedChatGPTPrompt"
+  | "customerEmailSentAt"
+  | "markedPaidAt"
+  | "markedLostAt"
+>;

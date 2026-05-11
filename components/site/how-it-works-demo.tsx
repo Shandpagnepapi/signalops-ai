@@ -22,6 +22,7 @@ import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { Card } from "@/components/ui/card";
 import { PRIMARY_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { SignalOpsCommandLayer } from "@/components/site/product-story-visuals";
 
 type FlowStep = {
   title: string;
@@ -220,7 +221,7 @@ export function HowItWorksDemo() {
                 </TrackedLink>
               </div>
               <div className="grid gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
-                {["No vague autoresponder", "Clear human handoff", "Follow-up that keeps moving"].map((item) => (
+                {["No vague autoresponder", "Clear team handoff", "Follow-up that keeps moving"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                     {item}
@@ -267,6 +268,10 @@ export function HowItWorksDemo() {
             </Card>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <SignalOpsCommandLayer />
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

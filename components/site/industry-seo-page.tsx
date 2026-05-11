@@ -232,7 +232,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <SectionHeader
           eyebrow="Priority sorting"
           title="Example priority rules"
-          description="SignalOps uses practical rules to decide who needs a callback, who needs more information, and who should be reviewed by a human."
+          description="SignalOps uses practical rules to decide who needs a callback, who needs more information, and who should be routed to your team."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {page.scoringRules.map((rule) => (

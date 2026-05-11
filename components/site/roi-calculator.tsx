@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, Mail, TrendingUp } from "lucide-react";
 import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
+import { ProductFrame, StatusPill } from "@/components/site/signalops-gui";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -164,12 +165,13 @@ export function RoiCalculator() {
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
-        <section className="rounded-2xl border border-white/10 bg-[#17122d]/76 p-6" aria-labelledby="roi-inputs">
-          <div className="mb-6 flex items-center gap-2">
-            <Calculator className="size-4 text-[#ffc0d5]" aria-hidden="true" />
-            <h2 id="roi-inputs" className="text-lg font-semibold text-white">
-              Inputs
-            </h2>
+        <ProductFrame accent="pink" eyebrow="Inputs" title="Business assumptions">
+          <div className="mb-6 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Calculator className="size-4 text-[#ffc0d5]" aria-hidden="true" />
+              <p className="text-sm font-semibold text-white">Use conservative numbers</p>
+            </div>
+            <StatusPill accent="pink">Live</StatusPill>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -219,14 +221,15 @@ export function RoiCalculator() {
               onChange={(value) => updateInput("monthlySignalOpsCost", value)}
             />
           </div>
-        </section>
+        </ProductFrame>
 
-        <section className="rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6" aria-labelledby="roi-outputs">
-          <div className="mb-6 flex items-center gap-2">
-            <CircleDollarSign className="size-4 text-[#ffd7e6]" aria-hidden="true" />
-            <h2 id="roi-outputs" className="text-lg font-semibold text-white">
-              Estimated outputs
-            </h2>
+        <ProductFrame accent="emerald" eyebrow="Estimated outputs" title="Recovery picture">
+          <div className="mb-6 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <CircleDollarSign className="size-4 text-emerald-200" aria-hidden="true" />
+              <p className="text-sm font-semibold text-white">Live result card</p>
+            </div>
+            <StatusPill accent="emerald">Estimate</StatusPill>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -259,6 +262,24 @@ export function RoiCalculator() {
             <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{results.suggestedPackage.reason}</p>
           </div>
 
+          <div className="mt-5 rounded-2xl border border-emerald-300/18 bg-emerald-300/10 p-4">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm font-semibold text-emerald-50">Recovered opportunity visual</p>
+              <span className="text-sm font-semibold text-white">
+                {formatNumber(results.estimatedRecoveredLeads)} leads
+              </span>
+            </div>
+            <div className="mt-3 h-3 overflow-hidden rounded-full bg-slate-950/60">
+              <div
+                className="h-full rounded-full bg-[linear-gradient(90deg,#37f0bd,#dfff5f)]"
+                style={{ width: `${clamp(results.estimatedRecoveredLeads * 8, 6, 100)}%` }}
+              />
+            </div>
+            <p className="mt-3 text-xs leading-5 text-emerald-50/68">
+              This shows the portion of missed opportunities your assumptions say could be brought back into conversation.
+            </p>
+          </div>
+
           <p className="mt-5 text-sm leading-6 text-[#fff1f7]">
             This calculator is an estimate only. Actual results depend on your offer, market, sales process,
             response quality, and follow-up.
@@ -285,7 +306,7 @@ export function RoiCalculator() {
             <Mail className="size-4" aria-hidden="true" />
             {EMAIL_CTA.label}
           </TrackedLink>
-        </section>
+        </ProductFrame>
       </div>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">

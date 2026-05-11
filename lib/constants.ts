@@ -329,7 +329,7 @@ export const MARKETING_FAQS = [
   {
     question: "What happens when AI is unsure?",
     answer:
-      "Unclear, risky, or high-value cases are routed to a human with context. The system should escalate uncertainty instead of pretending to know."
+      "Unclear, risky, or high-value cases are routed to the right person with context. The system should escalate uncertainty instead of pretending to know."
   }
 ];
 

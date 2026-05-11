@@ -23,7 +23,7 @@ import { DemoLeadForm } from "./wheel-lead-form";
 const timeline = [
   { label: "Inquiry", icon: MessageSquareReply },
   { label: "AI reply", icon: Zap },
-  { label: "Sorted", icon: SearchCheck },
+  { label: "Details", icon: SearchCheck },
   { label: "Follow-up", icon: Route },
   { label: "Booked", icon: CalendarCheck2 }
 ];
@@ -44,7 +44,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#ead0df]/76 sm:text-lg">
               This is a product demo, not a fake business website. Choose a workflow,
-              submit a realistic lead, and see how SignalOps replies, sorts, routes, and follows up.
+              submit a realistic lead, and see how SignalOps replies, collects details, routes priorities, and follows up.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#demo-lead-form" className={buttonVariants({ size: "lg" })}>
@@ -157,13 +157,13 @@ function DemoWorkflowPanel({ business }: { business: DemoBusinessConfig }) {
       <div className="relative overflow-hidden rounded-[1.6rem] border border-white/14 bg-[#17122d]/82 shadow-2xl shadow-black/25 backdrop-blur-2xl">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div>
-            <p className="text-sm font-semibold text-white">SignalOps AI workspace</p>
+            <p className="text-sm font-semibold text-white">SignalOps command workspace</p>
             <p className="text-xs text-[#ead0df]/52">{business.industry}</p>
           </div>
           <Badge className="border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Demo mode</Badge>
         </div>
         <div className="grid gap-3 p-4 sm:grid-cols-3">
-          <Metric label="Priority" value={business.key === "well-water" ? "High" : "Warm"} />
+          <Metric label="Response" value="4.3s" />
           <Metric label="Priority" value={business.key === "well-water" ? "Hot" : "Warm"} />
           <Metric label="Next action" value="Reply" />
         </div>

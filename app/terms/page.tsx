@@ -37,10 +37,10 @@ const termsSections: LegalSection[] = [
     ]
   },
   {
-    title: "AI Outputs May Require Human Review",
+    title: "AI Outputs Need Responsible Use",
     paragraphs: [
       "SignalOps tools may generate summaries, priority values, suggested replies, and routing recommendations.",
-      "AI outputs can be incomplete or incorrect and should be reviewed by a human before important decisions are made."
+      "AI outputs can be incomplete or incorrect and should be checked before important decisions are made."
     ]
   },
   {

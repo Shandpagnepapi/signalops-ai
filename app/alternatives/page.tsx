@@ -72,7 +72,7 @@ const featureCards = [
       "Request missing photos, remind unbooked leads, follow up after quotes, and re-engage quiet prospects."
   },
   {
-    title: "Human handoff",
+    title: "Team handoff",
     description:
       "Escalate unclear, urgent, sensitive, risky, or high-value leads instead of pretending automation should handle everything."
   }
@@ -92,7 +92,7 @@ const buyerCriteria = [
   {
     title: "Does it know when to involve a person?",
     description:
-      "Good automation should route emergency, sensitive, high-value, or low-confidence leads to a human with context."
+      "Good automation should route emergency, sensitive, high-value, or low-confidence leads to the right person with context."
   }
 ];
 
@@ -113,7 +113,7 @@ const fitSignals = [
   "You rely on calls, texts, forms, DMs, or quote requests and cannot answer everything instantly.",
   "You need practical implementation help, not just a tool subscription.",
   "Your team loses leads after the first reply, quote, photo request, or missed call.",
-  "You want automation that keeps humans in control for urgent, unclear, or high-value situations."
+  "You want automation that keeps your team in control for urgent, unclear, or high-value situations."
 ];
 
 const alternativeLinks = ALTERNATIVE_PAGE_IDS.map((id) => ALTERNATIVE_PAGES[id]);
@@ -202,7 +202,7 @@ export default function AlternativesHubPage() {
           <SectionHeader
             eyebrow="Plain English"
             title="What an AI lead response system does"
-            description="An AI lead response system is the operating layer between a new inquiry and the next human action. It should answer quickly, collect the right details, sort the lead, route the opportunity, and keep follow-up from falling through the cracks."
+            description="An AI lead response system is the operating layer between a new inquiry and the next team action. It should answer quickly, collect the right details, sort the lead, route the opportunity, and keep follow-up from falling through the cracks."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featureCards.map((feature, index) => {

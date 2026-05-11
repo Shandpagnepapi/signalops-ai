@@ -19,11 +19,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { getEmailHref } from "@/lib/constants";
-import type { PreviewSubmission } from "@/lib/preview-types";
+import type { PublicPreviewSubmission } from "@/lib/preview-types";
 import { cn } from "@/lib/utils";
 
 type PreviewApiResponse = {
-  submission?: PreviewSubmission;
+  submission?: PublicPreviewSubmission;
   error?: string;
 };
 
@@ -32,9 +32,9 @@ export function PreviewResult({
   initialSubmission
 }: {
   previewId: string;
-  initialSubmission: PreviewSubmission | null;
+  initialSubmission: PublicPreviewSubmission | null;
 }) {
-  const [submission, setSubmission] = useState<PreviewSubmission | null>(initialSubmission);
+  const [submission, setSubmission] = useState<PublicPreviewSubmission | null>(initialSubmission);
   const [status, setStatus] = useState(submission ? "ready" : "loading");
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export function PreviewResult({
   return <PreviewReport submission={submission} />;
 }
 
-function PreviewReport({ submission }: { submission: PreviewSubmission }) {
+function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) {
   const preview = submission.previewData;
   const emailBody = useMemo(
     () =>
@@ -310,7 +310,7 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
   );
 }
 
-function VisualDraftGallery({ submission }: { submission: PreviewSubmission }) {
+function VisualDraftGallery({ submission }: { submission: PublicPreviewSubmission }) {
   const visuals = (submission.previewData.visualDrafts ?? []).filter((visual) => visual.imageUrl);
 
   if (visuals.length === 0) {

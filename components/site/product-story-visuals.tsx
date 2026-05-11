@@ -16,6 +16,17 @@ import {
   Workflow,
   XCircle
 } from "lucide-react";
+import {
+  CommandCard,
+  HandoffTimeline,
+  MessageBubble,
+  MetricTile,
+  OwnerAlertCard,
+  ProductFrame,
+  SignalOpsCommandLayer,
+  StatusPill,
+  SystemPreviewCard
+} from "@/components/site/signalops-gui";
 import { cn } from "@/lib/utils";
 
 const artifactCards = [
@@ -94,74 +105,52 @@ const afterItems = [
 
 export function PreviewArtifactShowcase({ className = "" }: { className?: string }) {
   return (
-    <div className={cn("relative overflow-hidden rounded-[1.55rem] border border-white/14 bg-white/[0.075] p-4 shadow-2xl shadow-black/24 backdrop-blur-2xl", className)}>
-      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#37f0bd,#ffb36d,transparent)]" />
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#37f0bd]">Lead OS preview</p>
-          <p className="mt-2 text-xl font-semibold tracking-normal text-white">Three practical outputs, one build path.</p>
-        </div>
-        <div className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs font-semibold text-emerald-100">
-          Mapped
-        </div>
+    <ProductFrame accent="emerald" className={className} eyebrow="Lead OS preview" title="Three practical outputs, one build path.">
+      <div className="-mt-1 mb-4">
+        <StatusPill accent="emerald">Mapped</StatusPill>
       </div>
 
-      <div className="mt-4 grid gap-3 md:grid-cols-3">
+      <div className="grid gap-3 md:grid-cols-3">
         {artifactCards.map((artifact, index) => (
           <ArtifactCard key={artifact.title} index={index} {...artifact} />
         ))}
       </div>
 
-      <div className="mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4">
+      <CommandCard accent="emerald" className="mt-4">
         <p className="text-sm font-semibold leading-6 text-emerald-100">
           Built to show what SignalOps would shape around your lead flow before setup begins.
         </p>
-      </div>
-    </div>
+      </CommandCard>
+    </ProductFrame>
   );
 }
 
 export function LeadJourneyVisual({ className = "" }: { className?: string }) {
   return (
-    <div className={cn("rounded-[1.55rem] border border-white/14 bg-[#0a0f18]/82 p-4 shadow-2xl shadow-black/22", className)}>
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#37f0bd]">Lead journey</p>
-          <h3 className="mt-2 text-2xl font-semibold tracking-normal text-white">From inquiry to booking handoff.</h3>
-        </div>
-        <Sparkles className="size-6 text-[#f7ff73]" aria-hidden="true" />
-      </div>
+    <ProductFrame accent="emerald" className={className} eyebrow="Lead journey" title="From inquiry to booking handoff.">
+      <Sparkles className="absolute right-5 top-5 size-6 text-[#f7ff73]" aria-hidden="true" />
 
       <div className="mt-5 grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
         <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-3">
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <p className="text-sm font-semibold text-white">AI receptionist</p>
-            <span className="rounded-full bg-[#37f0bd]/12 px-2.5 py-1 text-[0.68rem] font-semibold text-[#cffff2]">
-              4.3s reply
-            </span>
+            <StatusPill accent="emerald">4.3s reply</StatusPill>
           </div>
           <div className="mt-3 grid gap-3">
             {journeyConversation.map((message) => (
-              <div
+              <MessageBubble
                 key={message.text}
-                className={cn(
-                  "max-w-[88%] rounded-3xl p-3 text-sm leading-6",
-                  message.tone === "customer" && "ml-auto bg-white text-[#071018]",
-                  message.tone === "ai" && "mr-auto border border-[#37f0bd]/18 bg-[#37f0bd]/12 text-[#eafff8]",
-                  message.tone === "system" && "mr-auto border border-[#f7ff73]/18 bg-[#f7ff73]/10 text-[#fbffad]"
-                )}
+                label={message.speaker}
+                tone={message.tone === "customer" ? "customer" : message.tone === "system" ? "owner" : "system"}
               >
-                <p className={cn("text-[0.66rem] font-black uppercase", message.tone === "customer" ? "text-[#071018]/52" : "text-current/70")}>
-                  {message.speaker}
-                </p>
-                <p className="mt-1">{message.text}</p>
-              </div>
+                {message.text}
+              </MessageBubble>
             ))}
           </div>
         </div>
 
         <div className="grid gap-3">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-4">
+          <CommandCard accent="emerald" className="rounded-3xl">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#37f0bd]">Priority card</p>
@@ -179,41 +168,27 @@ export function LeadJourneyVisual({ className = "" }: { className?: string }) {
                 </div>
               ))}
             </div>
-          </div>
+          </CommandCard>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-4">
+          <CommandCard accent="lime" className="rounded-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/48">Operating flow</p>
-            <div className="mt-4 grid grid-cols-5 gap-2">
-              {journeyTimeline.map((step) => {
-                const Icon = step.icon;
-
-                return (
-                  <div key={step.title} className="text-center">
-                    <div className="mx-auto flex size-9 items-center justify-center rounded-2xl bg-[#37f0bd]/12 text-[#37f0bd]">
-                      <Icon className="size-4" aria-hidden="true" />
-                    </div>
-                    <p className="mt-2 text-[0.62rem] font-semibold uppercase leading-4 text-white/58">{step.title}</p>
-                  </div>
-                );
-              })}
+            <div className="mt-4">
+              <HandoffTimeline
+                steps={journeyTimeline.map((step) => ({ icon: step.icon, label: step.title }))}
+                tone="lime"
+              />
             </div>
-          </div>
+          </CommandCard>
         </div>
       </div>
-    </div>
+    </ProductFrame>
   );
 }
 
 export function DashboardSnapshot({ className = "" }: { className?: string }) {
   return (
-    <div className={cn("rounded-[1.55rem] border border-white/14 bg-white/[0.075] p-4 shadow-2xl shadow-black/20 backdrop-blur-2xl", className)}>
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Command snapshot</p>
-          <h3 className="mt-2 text-2xl font-semibold tracking-normal text-white">Example lead operating view.</h3>
-        </div>
-        <TrendingUp className="size-6 text-[#ffb36d]" aria-hidden="true" />
-      </div>
+    <ProductFrame accent="amber" className={className} eyebrow="Command snapshot" title="Example lead operating view.">
+      <TrendingUp className="absolute right-5 top-5 size-6 text-[#ffb36d]" aria-hidden="true" />
 
       <div className="mt-5 grid grid-cols-3 gap-2">
         {[
@@ -221,10 +196,7 @@ export function DashboardSnapshot({ className = "" }: { className?: string }) {
           ["Avg response", "4.3s"],
           ["Follow-ups", "19"]
         ].map(([label, value]) => (
-          <div key={label} className="rounded-2xl border border-white/10 bg-[#17122d]/62 p-3">
-            <p className="text-xl font-semibold text-white">{value}</p>
-            <p className="mt-1 text-[0.64rem] font-semibold uppercase leading-4 text-[#ead0df]/48">{label}</p>
-          </div>
+          <MetricTile key={label} accent="amber" className="p-3" label={label} value={value} />
         ))}
       </div>
 
@@ -250,13 +222,11 @@ export function DashboardSnapshot({ className = "" }: { className?: string }) {
         </div>
 
         <div className="rounded-2xl border border-[#f7ff73]/18 bg-[#f7ff73]/10 p-4">
-          <p className="flex items-center gap-2 text-sm font-semibold text-[#fbffad]">
-            <BellRing className="size-4" aria-hidden="true" />
-            Owner alert
-          </p>
-          <p className="mt-3 text-sm leading-6 text-[#fffbd5]/76">
-            High-intent quote request needs photos and a mobile appointment window.
-          </p>
+          <OwnerAlertCard
+            action="High-intent quote request needs photos and a mobile appointment window."
+            className="border-white/10 bg-white/[0.055] shadow-none"
+            tone="lime"
+          />
           <div className="mt-4 flex flex-wrap gap-2">
             {["Warm", "Needs photos", "Follow-up queued"].map((tag) => (
               <span key={tag} className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold text-white/72">
@@ -266,20 +236,14 @@ export function DashboardSnapshot({ className = "" }: { className?: string }) {
           </div>
         </div>
       </div>
-    </div>
+    </ProductFrame>
   );
 }
 
 export function BeforeAfterFlow({ className = "" }: { className?: string }) {
   return (
-    <div className={cn("rounded-[1.55rem] border border-white/14 bg-white/[0.065] p-4 shadow-2xl shadow-black/18", className)}>
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#37f0bd]">Before / after</p>
-          <h3 className="mt-2 text-2xl font-semibold tracking-normal text-white">The business flow gets cleaner.</h3>
-        </div>
-        <Workflow className="size-6 text-[#37f0bd]" aria-hidden="true" />
-      </div>
+    <ProductFrame accent="emerald" className={className} eyebrow="Before / after" title="The business flow gets cleaner.">
+      <Workflow className="absolute right-5 top-5 size-6 text-[#37f0bd]" aria-hidden="true" />
       <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
         <FlowColumn title="Before SignalOps" tone="before" items={beforeItems} />
         <div className="hidden items-center justify-center lg:flex">
@@ -289,39 +253,25 @@ export function BeforeAfterFlow({ className = "" }: { className?: string }) {
         </div>
         <FlowColumn title="After SignalOps" tone="after" items={afterItems} />
       </div>
-    </div>
+    </ProductFrame>
   );
 }
+
+export { SignalOpsCommandLayer };
 
 function ArtifactCard({
   copy,
   icon: Icon,
   index,
-  label,
   title
 }: {
   copy: string;
   icon: LucideIcon;
   index: number;
-  label: string;
   title: string;
 }) {
   return (
-    <article className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#17122d]/62 p-4">
-      <div className="absolute right-3 top-3 text-5xl font-black leading-none text-white/[0.035]">0{index + 1}</div>
-      <div className="relative">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)]">
-            <Icon className="size-5 text-white" aria-hidden="true" />
-          </div>
-          <span className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[0.65rem] font-semibold uppercase text-[#ead0df]/56">
-            {label}
-          </span>
-        </div>
-        <h3 className="mt-4 text-lg font-semibold tracking-normal text-white">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-[#ead0df]/68">{copy}</p>
-      </div>
-    </article>
+    <SystemPreviewCard accent={index === 0 ? "emerald" : index === 1 ? "pink" : "amber"} copy={copy} icon={Icon} title={title} />
   );
 }
 
