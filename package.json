@@ -8,7 +8,10 @@
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "visual:audit:cloud": "tsx scripts/visual-audit-cloud.ts --base-url=https://www.signalops.pro",
+    "visual:audit:cloud:local": "tsx scripts/visual-audit-cloud.ts --base-url=http://localhost:3000",
+    "visual:audit:cleanup:cloud": "tsx scripts/cleanup-visual-audits-cloud.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.2",
@@ -31,7 +34,9 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
+    "playwright": "^1.60.0",
     "tailwindcss": "^4.2.4",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }
