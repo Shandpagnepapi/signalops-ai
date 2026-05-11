@@ -10,7 +10,7 @@ import {
   ShieldAlert,
   Siren
 } from "lucide-react";
-import { OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
+import { OSCorePipeline, OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
 import { OSLeadPath } from "@/components/site/mobile-os/OSLeadPath";
 import { OSMetricPill } from "@/components/site/mobile-os/OSMetricPill";
 
@@ -42,6 +42,7 @@ export function UrgentResponseOSMockup() {
         <OSMetricPill icon={Flame} label="Urgency" value="Urgent" className="text-amber-100" />
         <OSMetricPill icon={Clock3} label="Response" value="Call now" className="text-amber-100" />
       </div>
+      <OSCorePipeline accent="amber" />
 
       <div className="mt-4 overflow-hidden rounded-3xl border border-red-300/20 bg-red-400/10">
         <div className="flex items-center justify-between gap-3 border-b border-red-200/10 bg-red-400/10 px-3 py-2.5">

@@ -29,7 +29,7 @@ const leadOsOptions: LeadOsOption[] = [
     activeClass: "border-emerald-300/40 bg-emerald-300/15 text-emerald-50 shadow-emerald-950/30",
     bestFor: "Quote requests",
     chip: "Quotes",
-    handles: "Photos, details, owner alerts",
+    handles: "Fleet details, route notes, owner alerts",
     icon: Workflow,
     key: "quote",
     name: "Quote Intake OS",

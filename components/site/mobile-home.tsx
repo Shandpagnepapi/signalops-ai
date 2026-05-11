@@ -16,7 +16,10 @@ import {
   Wrench
 } from "lucide-react";
 import { LeadOSSelector } from "@/components/site/mobile-os/LeadOSSelector";
-import { SignalOpsCommandLayer } from "@/components/site/signalops-gui";
+import {
+  ConsolidateLeadStackSection,
+  WhatsIncludedSection
+} from "@/components/site/signalops-stack-sections";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { ANALYTICS_EVENTS, type AnalyticsEventName } from "@/lib/analytics";
 import { PRIMARY_CTA, SECONDARY_CTA } from "@/lib/constants";
@@ -82,9 +85,10 @@ export function MobileSignalOpsHome() {
         <MobileHeader />
         <Hero />
         <LeadHandoffVisual />
-        <MobileCommandLayer />
         <LeadOSSelector />
+        <ConsolidateLeadStackSection compact />
         <WhatYouGet />
+        <WhatsIncludedSection compact />
         <PersonalTouch />
         <TinyTeasers />
         <PlansLine />
@@ -92,14 +96,6 @@ export function MobileSignalOpsHome() {
       </div>
       <StickyCta />
     </div>
-  );
-}
-
-function MobileCommandLayer() {
-  return (
-    <section className="px-4 pb-6" style={shellStyle} aria-label="SignalOps command layer">
-      <SignalOpsCommandLayer compact className="rounded-[1.75rem] border-white/14 bg-slate-950/72 shadow-2xl shadow-black/25" />
-    </section>
   );
 }
 

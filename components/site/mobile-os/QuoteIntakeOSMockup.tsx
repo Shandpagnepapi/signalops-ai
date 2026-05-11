@@ -11,7 +11,7 @@ import {
   RefreshCcw,
   Truck
 } from "lucide-react";
-import { OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
+import { OSCorePipeline, OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
 import { OSLeadPath } from "@/components/site/mobile-os/OSLeadPath";
 import { OSMetricPill } from "@/components/site/mobile-os/OSMetricPill";
 import { cn } from "@/lib/utils";
@@ -45,6 +45,7 @@ export function QuoteIntakeOSMockup() {
         <OSMetricPill icon={FileText} label="Ticket" value="#QR-1842" className="text-emerald-100" />
         <OSMetricPill icon={RefreshCcw} label="Queue" value="Quote follow-up" className="text-emerald-100" />
       </div>
+      <OSCorePipeline accent="emerald" />
 
       <div className="mt-4 rounded-3xl border border-emerald-300/18 bg-emerald-300/[0.07] p-3">
         <div className="flex items-center justify-between gap-3">

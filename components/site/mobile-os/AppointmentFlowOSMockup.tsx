@@ -8,7 +8,7 @@ import {
   Send,
   UserRoundCheck
 } from "lucide-react";
-import { OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
+import { OSCorePipeline, OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
 import { OSLeadPath } from "@/components/site/mobile-os/OSLeadPath";
 import { OSMetricPill } from "@/components/site/mobile-os/OSMetricPill";
 
@@ -48,6 +48,7 @@ export function AppointmentFlowOSMockup() {
         <OSMetricPill icon={CalendarClock} label="Preferred" value="Thu PM" className="text-sky-100" />
         <OSMetricPill icon={Clock3} label="Status" value="Scheduling" className="text-sky-100" />
       </div>
+      <OSCorePipeline accent="sky" />
 
       <div className="mt-4 rounded-3xl border border-sky-300/18 bg-sky-300/10 p-3">
         <div className="flex items-center justify-between gap-3">

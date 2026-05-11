@@ -25,6 +25,11 @@ import {
   PreviewArtifactShowcase,
   SignalOpsCommandLayer
 } from "@/components/site/product-story-visuals";
+import {
+  ConsolidateLeadStackSection,
+  MessyMiddleSection,
+  WhatsIncludedSection
+} from "@/components/site/signalops-stack-sections";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -178,7 +183,10 @@ export function MarketingHome() {
           <div className={`${shell} relative`}>
             <div className="overflow-hidden rounded-[1.75rem] border border-white/18 bg-white/[0.055] shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:rounded-[2.25rem]">
               <HeroSection />
+              <ConsolidateLeadStackSection />
               <ProductStorySection />
+              <MessyMiddleSection />
+              <WhatsIncludedSection />
               <PricingSection />
               <FeatureSection />
               <HowItWorks />
