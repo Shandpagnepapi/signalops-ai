@@ -15,7 +15,7 @@ import {
   Workflow,
   Wrench
 } from "lucide-react";
-import { MobileLeadOsGallery } from "@/components/site/mobile-lead-os-gallery";
+import { LeadOSSelector } from "@/components/site/mobile-os/LeadOSSelector";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { ANALYTICS_EVENTS, type AnalyticsEventName } from "@/lib/analytics";
 import { PRIMARY_CTA, SECONDARY_CTA } from "@/lib/constants";
@@ -38,12 +38,12 @@ const darkButtonStyle = { backgroundColor: "#071018", color: "#ffffff" } satisfi
 const lightSurfaceStyle = { backgroundColor: "#f8fafc", color: "#071018" } satisfies CSSProperties;
 
 const handoffSteps = [
-  { title: "New lead received", icon: MessageCircle, tone: "text-sky-200" },
-  { title: "AI reply sent", icon: Clock3, tone: "text-lime-300" },
-  { title: "Details collected", icon: FileText, tone: "text-emerald-200" },
-  { title: "Owner alerted", icon: BellRing, tone: "text-amber-200" },
-  { title: "Follow-up ready", icon: RefreshCcw, tone: "text-fuchsia-200" },
-  { title: "Ready for handoff", icon: Route, tone: "text-white" }
+  { title: "Received", icon: MessageCircle, tone: "emerald" },
+  { title: "Replied", icon: Clock3, tone: "emerald" },
+  { title: "Details", icon: FileText, tone: "emerald" },
+  { title: "Alert", icon: BellRing, tone: "emerald" },
+  { title: "Follow-up", icon: RefreshCcw, tone: "emerald" },
+  { title: "Handoff", icon: Route, tone: "active" }
 ];
 
 const previewOutputs = [
@@ -81,7 +81,7 @@ export function MobileSignalOpsHome() {
         <MobileHeader />
         <Hero />
         <LeadHandoffVisual />
-        <MobileLeadOsGallery />
+        <LeadOSSelector />
         <WhatYouGet />
         <PersonalTouch />
         <TinyTeasers />
@@ -188,9 +188,30 @@ function LeadHandoffVisual() {
               </LeadMessage>
             </div>
 
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              {handoffSteps.map((step) => (
-                <HandoffTile key={step.title} {...step} />
+            <div className="mt-4 rounded-3xl border border-white/10 bg-white/[0.06] p-3">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <p className="text-xs font-black uppercase tracking-wide text-white/42">Progress</p>
+                <span className="rounded-full bg-lime-300/15 px-2.5 py-1 text-[0.65rem] font-black text-lime-100">
+                  Moving
+                </span>
+              </div>
+              <div className="grid grid-cols-6 gap-1.5">
+                {handoffSteps.map((step, index) => (
+                  <HandoffTile key={step.title} index={index} {...step} />
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {[
+                ["Source", "Website"],
+                ["Priority", "Warm"],
+                ["Next", "Callback"]
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.06] p-3">
+                  <p className="text-[0.62rem] font-black uppercase tracking-wide text-white/38">{label}</p>
+                  <p className="mt-1 text-xs font-black text-white">{value}</p>
+                </div>
               ))}
             </div>
 
@@ -234,11 +255,31 @@ function LeadMessage({
   );
 }
 
-function HandoffTile({ icon: Icon, title, tone }: { icon: LucideIcon; title: string; tone: string }) {
+function HandoffTile({
+  icon: Icon,
+  index,
+  title,
+  tone
+}: {
+  icon: LucideIcon;
+  index: number;
+  title: string;
+  tone: string;
+}) {
+  const active = tone === "active";
+
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.07] p-3">
-      <Icon className={cn("size-4", tone)} aria-hidden="true" />
-      <p className="mt-3 text-xs font-black leading-4 text-white/78">{title}</p>
+    <div className="relative grid justify-items-center gap-1.5 text-center">
+      {index > 0 ? <span className="absolute left-[-0.45rem] top-4 h-px w-3 bg-white/12" /> : null}
+      <div
+        className={cn(
+          "flex size-8 items-center justify-center rounded-2xl",
+          active ? "bg-lime-300 text-slate-950" : "bg-emerald-300/12 text-emerald-100"
+        )}
+      >
+        <Icon className="size-4" aria-hidden="true" />
+      </div>
+      <p className="text-[0.6rem] font-black uppercase leading-3 text-white/54">{title}</p>
     </div>
   );
 }
