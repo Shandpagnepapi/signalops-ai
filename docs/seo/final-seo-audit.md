@@ -35,7 +35,7 @@ Alternative pages:
 Service pages:
 
 - `/services/ai-lead-response`
-- `/services/ai-lead-qualification`
+- `/services/ai-lead-intake`
 - `/services/automated-lead-follow-up`
 - `/services/missed-lead-recovery`
 - `/services/lead-routing-automation`
@@ -82,7 +82,7 @@ Technical SEO routes:
 - Alternative pages use ethical comparison language and avoid impersonation.
 - Each alternative page states that SignalOps is not affiliated with the named brand.
 - The pages avoid unsupported claims about other products.
-- Each page has a distinct angle, including lead response, qualification, routing, scoring, inbound handling, or quote intake.
+- Each page has a distinct angle, including lead response, intake, routing, scoring, inbound handling, or quote intake.
 - Each page links to `/audit`, `/demo`, `/how-it-works`, and `/roi-calculator`.
 - The alternatives hub links to all alternative-intent pages.
 
@@ -122,7 +122,7 @@ Complete these checks on the live production domain:
 - Visit `/robots.txt` and confirm it references the production sitemap.
 - Open core, service, industry, and alternative pages on mobile.
 - Submit a real test lead through the audit form and confirm the success state appears.
-- Submit a real test lead through the demo form and confirm the qualification result appears.
+- Submit a real test lead through the demo form and confirm the intake result appears.
 - Check the browser console for hydration or runtime errors.
 - Test social sharing previews in LinkedIn, Facebook, X/Twitter, Slack, and messages.
 - Run Lighthouse or PageSpeed Insights on the homepage, audit page, and one SEO landing page.

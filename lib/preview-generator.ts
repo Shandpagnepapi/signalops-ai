@@ -87,7 +87,7 @@ export function recommendPackage(input: PreviewSubmissionInput, fitScore = calcu
 
   if (fitScore >= 88 || input.monthlyLeadVolume === "200+" || sourceCount >= 6 || hasComplexNotes(input)) {
     return {
-      name: "Custom Agent System" as const,
+      name: "Custom" as const,
       reason:
         "Your lead flow looks complex enough to justify custom routing, integrations, approval rules, and reporting.",
       fit: "Complex workflows, larger teams, custom tools, or multi-location operations."
@@ -106,7 +106,7 @@ export function recommendPackage(input: PreviewSubmissionInput, fitScore = calcu
   return {
     name: "Starter" as const,
     reason:
-      "Start with one clean lead source, fast response, basic qualification, and simple follow-up reminders.",
+      "Start with one clean lead source, fast response, basic intake questions, and simple follow-up reminders.",
     fit: "Solo operators or small teams that need a clean first workflow."
   };
 }
@@ -132,7 +132,7 @@ export function generateSampleConversation(input: PreviewSubmissionInput) {
     {
       speaker: "SignalOps AI Receptionist" as const,
       message:
-        `Got it. I will collect a few details from this ${leadSource.toLowerCase()} inquiry and send it to the team as a qualified lead.`
+        `Got it. I will collect a few details from this ${leadSource.toLowerCase()} inquiry and send it to the team with the next step ready.`
     }
   ];
 }
@@ -192,7 +192,7 @@ export function buildPreviewVisualDrafts(
       title: "AI Receptionist Interface",
       description: "A lead conversation screen showing the first response, key questions, and priority state.",
       status: "Pending",
-      prompt: `${base} Image 1 of 3: show a mobile AI receptionist conversation interface for a new ${input.industry.toLowerCase()} lead. Include a customer inquiry, SignalOps reply, collected details, urgency score, and owner-ready summary card.`
+      prompt: `${base} Image 1 of 3: show a mobile AI receptionist conversation interface for a new ${input.industry.toLowerCase()} lead. Include a customer inquiry, SignalOps reply, collected details, priority state, and owner-ready summary card.`
     },
     {
       id: "command-center",
@@ -204,9 +204,9 @@ export function buildPreviewVisualDrafts(
     {
       id: "handoff-flow",
       title: "Booking Handoff Flow",
-      description: "A visual handoff path from lead capture to qualification, follow-up, owner alert, and booking next step.",
+      description: "A visual handoff path from lead capture to intake, follow-up, owner alert, and booking next step.",
       status: "Pending",
-      prompt: `${base} Image 3 of 3: show an operating-system style workflow timeline from lead captured to AI reply, qualification, missing details follow-up, owner alert, and booking/callback handoff.`
+      prompt: `${base} Image 3 of 3: show an operating-system style workflow timeline from lead captured to AI reply, detail intake, missing details follow-up, owner alert, and booking/callback handoff.`
     }
   ];
 }
@@ -231,7 +231,7 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
         name: leadNameForIndustry(input.industry),
         source: primarySource,
         urgency: input.currentProblem === "Missed calls" ? "Soon" : "Needs response",
-        status: "Qualified",
+        status: "Ready for handoff",
         score: clamp(fitScore + 4, 0, 100),
         lastResponseTime: "4 sec",
         nextFollowUp: "5 min",
@@ -261,9 +261,10 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     leadFlow: [
       "Lead comes in",
       "AI responds instantly",
-      "AI qualifies",
+      "AI collects details",
+      "AI sorts priority",
       "AI follows up",
-      "Hot lead sent to owner/team",
+      "Priority lead sent to owner/team",
       "Booking handoff/dashboard updated"
     ],
     followUpTimeline: [
@@ -329,14 +330,14 @@ export function generateManagerDrafts(
         `Detected pain points: ${previewData.painPoints.join(", ")}.`
       ],
       responseSystemRecommendation:
-        `Build a draft-first AI receptionist, qualification, follow-up, booking handoff, and dashboard flow around ${input.industry.toLowerCase()} inquiries.`
+        `Build a draft-first AI receptionist, intake, follow-up, booking handoff, and dashboard flow around ${input.industry.toLowerCase()} inquiries.`
     },
     proposalDraft: {
       title: `${recommendedPackage} proposal draft`,
       recommendedPackage,
       scope: [
         "AI receptionist flow for new inquiries",
-        "Lead qualification questions based on services and lead sources",
+        "Lead intake questions based on services and lead sources",
         "Follow-up sequence for no-replies, quote requests, and missing details",
         "Booking or callback handoff path",
         "Internal dashboard view for lead status and next action"
@@ -365,7 +366,7 @@ export function generateManagerDrafts(
       "Confirm lead sources",
       "Confirm routing owner/team",
       "Confirm services offered",
-      "Confirm qualification questions",
+      "Confirm intake questions",
       "Confirm booking/handoff process",
       "Confirm follow-up rules",
       "Confirm tone and approval rules",

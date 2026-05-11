@@ -1,6 +1,6 @@
 # SignalOps Security Policy
 
-SignalOps is a public marketing/demo project with lead intake, demo qualification, and dashboard preview features. Keep launch security simple and strict.
+SignalOps is a public marketing/demo project with lead intake, priority routing, and dashboard preview features. Keep launch security simple and strict.
 
 ## Secrets
 

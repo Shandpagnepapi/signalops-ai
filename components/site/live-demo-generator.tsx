@@ -350,7 +350,7 @@ function LoadingPreview() {
   const steps = [
     "Selecting the right industry template",
     "Customizing intake questions and replies",
-    "Building scoring, routing, and follow-up examples",
+    "Building priority routing and follow-up examples",
     "Assembling a sales-call-ready strategy preview"
   ];
 
@@ -391,7 +391,7 @@ function EmptyState() {
   return (
     <section className="mx-auto grid max-w-7xl gap-4 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
       {[
-        ["Before", "Prospect says leads are slow, scattered, or hard to qualify."],
+        ["Before", "Prospect says leads are slow, scattered, or hard to sort."],
         ["During", "You enter their details and generate a tailored strategy example live."],
         ["After", "They can see the exact response, routing, follow-up, and dashboard logic SignalOps would install."]
       ].map(([title, body]) => (
@@ -548,7 +548,7 @@ function GeneratedDemoPreview({
           <MessageBlock>{demo.internalSalesNote}</MessageBlock>
         </SectionCard>
 
-        <SectionCard icon={BarChart3} title="Lead scoring logic example">
+        <SectionCard icon={BarChart3} title="Priority routing logic example">
           <div className="grid gap-3">
             {demo.leadScoringLogic.map((rule) => (
               <div key={`${rule.label}-${rule.impact}`} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">

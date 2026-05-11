@@ -72,7 +72,7 @@ const journeyFields = [
 
 const journeyTimeline = [
   { title: "Captured", icon: MessageSquareText },
-  { title: "Qualified", icon: ClipboardList },
+  { title: "Sorted", icon: ClipboardList },
   { title: "Routed", icon: Route },
   { title: "Follow-up", icon: RefreshCcw },
   { title: "Booking", icon: CalendarCheck2 }
@@ -167,11 +167,11 @@ export function LeadJourneyVisual({ className = "" }: { className?: string }) {
           <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#37f0bd]">Lead score card</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#37f0bd]">Priority card</p>
                 <p className="mt-2 text-lg font-semibold text-white">Warm quote request</p>
               </div>
               <span className="rounded-2xl border border-[#f7ff73]/20 bg-[#f7ff73]/12 px-3 py-2 text-lg font-black text-[#fbffad]">
-                86
+                High
               </span>
             </div>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">

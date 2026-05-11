@@ -55,7 +55,7 @@ Use this checklist to review how a business handles calls, texts, forms, DMs, an
 
 - [ ] Follow-up cadence exists beyond first response.
 - [ ] Follow-up messages are channel-appropriate (SMS/email/call).
-- [ ] Stop conditions are defined (booked, disqualified, no response).
+- [ ] Stop conditions are defined (booked, disready, no response).
 
 ## Sales Handoff
 
@@ -72,8 +72,8 @@ Use this checklist to review how a business handles calls, texts, forms, DMs, an
 ## AI Opportunities
 
 - [ ] Instant first response can be automated safely.
-- [ ] Qualification prompts can be automated by service type.
-- [ ] Lead scoring criteria are clear enough to operationalize.
+- [ ] Intake prompts can be automated by service type.
+- [ ] Priority sorting criteria are clear enough to operationalize.
 - [ ] Owner alert rules can be defined for hot leads.
 - [ ] Follow-up sequences can be triggered automatically.
 - [ ] Uncertain or risky scenarios are routed to human review.

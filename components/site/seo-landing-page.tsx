@@ -210,7 +210,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
         <SectionHeader
           eyebrow="Related pages"
           title="Keep exploring the missed-lead system"
-          description="These pages show the other parts of the SignalOps workflow, from first response to qualification, follow-up, tracking, and ROI."
+          description="These pages show the other parts of the SignalOps workflow, from first response to intake, follow-up, tracking, and ROI."
         />
         <div className="grid gap-4 sm:grid-cols-3">
           {page.relatedLinks.map((link) => (

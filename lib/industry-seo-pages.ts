@@ -63,7 +63,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for roofing companies",
     metaTitle: "AI Lead Response for Roofing Companies",
     metaDescription:
-      "SignalOps gives roofing companies AI lead response, speed to lead automation, qualification, routing, and follow-up for repairs, storm damage, and inspections.",
+      "SignalOps gives roofing companies AI lead response, speed to lead automation, intake, routing, and follow-up for repairs, storm damage, and inspections.",
     h1: "AI lead response for roofers who cannot afford slow follow-up.",
     subheadline:
       "SignalOps helps roofing teams capture calls, forms, storm inquiries, inspection requests, and quote follow-ups before homeowners call the next contractor.",
@@ -81,7 +81,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Inspection requests sit too long",
         description:
-          "Homeowners often contact multiple roofers. A delayed reply can turn a qualified inspection lead into a lost job."
+          "Homeowners often contact multiple roofers. A delayed reply can turn a ready inspection lead into a lost job."
       },
       {
         title: "Insurance and repair context is missing",
@@ -167,12 +167,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Owner or sales rep alert",
         description:
-          "Send urgent and high-value roofing leads with summary, score, and next action."
+          "Send urgent and high-value roofing leads with summary, priority, and next action."
       }
     ],
     faqs: [
       {
-        question: "Can SignalOps qualify emergency roof leak leads?",
+        question: "Can SignalOps collect emergency roof leak details?",
         answer:
           "Yes. SignalOps can flag active leak language, request key details, and alert a human for urgent review."
       },
@@ -217,7 +217,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for HVAC companies",
     metaTitle: "AI Lead Response for HVAC Companies",
     metaDescription:
-      "SignalOps helps HVAC companies use AI lead response, lead qualification, routing automation, and follow-up for emergency, repair, replacement, and maintenance leads.",
+      "SignalOps helps HVAC companies use AI lead response, lead intake, routing automation, and follow-up for emergency, repair, replacement, and maintenance leads.",
     h1: "AI lead response for HVAC companies that need faster callbacks and cleaner booking.",
     subheadline:
       "SignalOps helps HVAC teams separate emergency no-heat or no-cool calls from tune-ups, replacement estimates, and general questions so the right leads get handled first.",
@@ -328,7 +328,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can SignalOps separate emergency HVAC leads from routine maintenance?",
         answer:
-          "Yes. The intake and scoring rules can flag no-heat, no-cool, and system-down language for faster human review."
+          "Yes. The intake and priority rules can flag no-heat, no-cool, and system-down language for faster human review."
       },
       {
         question: "Can this help with HVAC replacement estimates?",
@@ -354,8 +354,8 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/ai-lead-qualification",
-        title: "AI Lead Qualification",
-        description: "Score HVAC leads by urgency, job type, and booking intent."
+        title: "AI Lead Intake",
+        description: "Priority HVAC leads by urgency, job type, and booking intent."
       },
       {
         href: "/live-demo",
@@ -371,7 +371,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for plumbing companies",
     metaTitle: "AI Lead Response for Plumbing Companies",
     metaDescription:
-      "SignalOps helps plumbing companies capture emergency calls, quote requests, and service leads with AI lead response, qualification, routing, and follow-up.",
+      "SignalOps helps plumbing companies capture emergency calls, quote requests, and service leads with AI lead response, intake, routing, and follow-up.",
     h1: "AI lead response for plumbers who need to catch urgent jobs fast.",
     subheadline:
       "SignalOps helps plumbing teams triage emergency leaks, drain issues, water heater calls, estimates, and routine service requests without losing leads in missed calls or texts.",
@@ -497,7 +497,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Does SignalOps dispatch plumbers automatically?",
         answer:
-          "Not by default. It can prepare the intake, score the lead, and route the next step. Dispatch rules should be configured carefully with the business."
+          "Not by default. It can prepare the intake, sort the lead, and route the next step. Dispatch rules should be configured carefully with the business."
       }
     ],
     relatedLinks: [
@@ -525,7 +525,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for auto detailers",
     metaTitle: "AI Lead Response for Auto Detailers",
     metaDescription:
-      "SignalOps helps auto detailers respond to package inquiries, qualify quote requests, follow up on photos, and book detailing appointments faster.",
+      "SignalOps helps auto detailers respond to package inquiries, collect quote request details, follow up on photos, and book detailing appointments faster.",
     h1: "AI lead response for auto detailers that depend on quote requests and booking follow-up.",
     subheadline:
       "SignalOps helps detailers answer package questions, collect vehicle and condition details, follow up after quotes, and move high-intent customers toward a booked appointment.",
@@ -578,7 +578,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The system collects vehicle type, condition, package interest, photos if useful, timing, and contact info."
       },
       {
-        title: "Lead is scored",
+        title: "Lead is prioritized",
         description:
           "Ceramic, correction, fleet, and ready-to-book leads can be prioritized over general price shoppers."
       },
@@ -710,12 +710,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it separate ceramic coating leads from basic details?",
         answer:
-          "Yes. High-value services like ceramic coating and paint correction can be scored and routed differently."
+          "Yes. High-value services like ceramic coating and paint correction can be prioritized and routed differently."
       },
       {
         question: "Does it replace talking to customers?",
         answer:
-          "No. It handles first response, missing details, and follow-up so the detailer can focus on qualified conversations."
+          "No. It handles first response, missing details, and follow-up so the detailer can focus on ready conversations."
       }
     ],
     relatedLinks: [
@@ -737,7 +737,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/how-it-works",
         title: "How SignalOps Works",
-        description: "See how intake, qualification, routing, booking, and follow-up connect."
+        description: "See how intake, intake, routing, booking, and follow-up connect."
       }
     ]
   },
@@ -748,7 +748,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for tint and wrap shops",
     metaTitle: "AI Lead Response for Tint Shops and Wrap Shops",
     metaDescription:
-      "SignalOps helps tint and wrap shops automate quote requests, qualify vehicle and package details, follow up, and book more appointments.",
+      "SignalOps helps tint and wrap shops automate quote requests, collect vehicle and package details, follow up, and book more appointments.",
     h1: "AI lead response for tint shops and wrap shops handling quote requests.",
     subheadline:
       "SignalOps helps tint, wrap, and PPF shops respond to quote requests, collect vehicle and coverage details, route high-value jobs, and follow up when customers do not book.",
@@ -921,7 +921,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps qualify tint and wrap quote requests?",
+        question: "Can SignalOps collect tint and wrap quote request details?",
         answer:
           "Yes. SignalOps can collect vehicle, service type, coverage, film or finish preference, and booking timing."
       },
@@ -950,17 +950,17 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/services/ai-appointment-booking",
         title: "AI Appointment Booking",
-        description: "Move qualified install leads toward booking."
+        description: "Move ready install leads toward booking."
       },
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with AI quote intake and lead qualification."
+        description: "See a live SignalOps demo with AI quote intake and lead intake."
       },
       {
         href: "/how-it-works",
         title: "How SignalOps Works",
-        description: "See the full flow from intake to qualification, routing, and follow-up."
+        description: "See the full flow from intake to intake, routing, and follow-up."
       }
     ]
   },
@@ -971,7 +971,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for home service businesses",
     metaTitle: "AI Lead Response for Home Service Businesses",
     metaDescription:
-      "SignalOps helps home service businesses recover missed leads, answer calls and forms faster, qualify urgency, route jobs, and follow up after estimates.",
+      "SignalOps helps home service businesses recover missed leads, answer calls and forms faster, sort urgency, route jobs, and follow up after estimates.",
     h1: "AI lead response for home service businesses and contractors.",
     subheadline:
       "SignalOps helps contractors and local service teams capture calls, texts, forms, emergency requests, quote leads, and follow-ups before homeowners call the next provider.",
@@ -1161,7 +1161,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Does SignalOps replace dispatch?",
         answer:
-          "No. It helps capture, qualify, route, and follow up with leads. Dispatch decisions should stay with the business."
+          "No. It helps capture, sort, route, and follow up with leads. Dispatch decisions should stay with the business."
       }
     ],
     relatedLinks: [
@@ -1183,7 +1183,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with intake, scoring, and follow-up."
+        description: "See a live SignalOps demo with intake, priority routing, and follow-up."
       },
       {
         href: "/how-it-works",
@@ -1199,7 +1199,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for med spas",
     metaTitle: "AI Appointment Booking for Med Spas",
     metaDescription:
-      "SignalOps helps med spas respond to consultation requests with AI lead response, qualification, appointment booking prompts, and automated follow-up.",
+      "SignalOps helps med spas respond to consultation requests with AI lead response, intake, appointment booking prompts, and automated follow-up.",
     h1: "AI lead response for med spas that need faster consultation follow-up.",
     subheadline:
       "SignalOps helps med spas answer new inquiries, collect treatment interest, route sensitive questions to staff, and follow up with prospects who do not book.",
@@ -1274,7 +1274,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Treatment-specific concerns should be routed to staff instead of answered loosely."
       },
       {
-        title: "Promotion leads are not qualified",
+        title: "Promotion leads are not ready",
         description:
           "Promo-driven inquiries may need treatment interest, timeline, and eligibility review before booking."
       }
@@ -1345,7 +1345,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Staff review alert",
         description:
-          "Flag medical, safety, or treatment-specific questions for a qualified team member."
+          "Flag medical, safety, or treatment-specific questions for a ready team member."
       },
       {
         title: "No-booking reminder",
@@ -1396,7 +1396,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/services/ai-appointment-booking",
         title: "AI Appointment Booking",
-        description: "Move qualified consultation inquiries toward the right booking path."
+        description: "Move ready consultation inquiries toward the right booking path."
       },
       {
         href: "/services/automated-lead-follow-up",
@@ -1405,13 +1405,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/services/ai-lead-qualification",
-        title: "AI Lead Qualification",
+        title: "AI Lead Intake",
         description: "Prioritize booking-ready prospects and staff-review cases."
       },
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with AI lead intake, scoring, and follow-up."
+        description: "See a live SignalOps demo with AI lead intake, priority routing, and follow-up."
       },
       {
         href: "/how-it-works",
@@ -1425,12 +1425,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     industryName: "Insurance Agencies",
     path: "/industries/insurance-agencies",
     eyebrow: "SignalOps for insurance agencies",
-    metaTitle: "AI Lead Qualification for Insurance Agencies",
+    metaTitle: "AI Lead Intake for Insurance Agencies",
     metaDescription:
-      "SignalOps helps insurance agencies manage quote requests with AI lead response, lead qualification, producer routing, and automated follow-up.",
+      "SignalOps helps insurance agencies manage quote requests with AI lead response, lead intake, producer routing, and automated follow-up.",
     h1: "AI lead response for insurance agencies that need faster quote follow-up.",
     subheadline:
-      "SignalOps helps agencies organize quote requests, coverage questions, renewal opportunities, and missed calls so producers can focus on qualified prospects.",
+      "SignalOps helps agencies organize quote requests, coverage questions, renewal opportunities, and missed calls so producers can focus on ready prospects.",
     heroBullets: [
       "Capture quote type, timeline, current coverage, and contact preference",
       "Route commercial, personal lines, and urgent policy questions correctly",
@@ -1623,7 +1623,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     relatedLinks: [
       {
         href: "/services/ai-lead-qualification",
-        title: "AI Lead Qualification",
+        title: "AI Lead Intake",
         description: "Prioritize quote requests by coverage type, urgency, and completeness."
       },
       {
@@ -1634,12 +1634,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with lead scoring, routing, and follow-up."
+        description: "See a live SignalOps demo with priority sorting, routing, and follow-up."
       },
       {
         href: "/how-it-works",
         title: "How SignalOps Works",
-        description: "See how qualification, routing, and follow-up connect."
+        description: "See how intake, routing, and follow-up connect."
       }
     ]
   },
@@ -1650,7 +1650,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     eyebrow: "SignalOps for auto shops",
     metaTitle: "AI Lead Response for Auto Shops",
     metaDescription:
-      "SignalOps provides AI lead response for auto shops with repair intake, diagnostic lead qualification, appointment booking prompts, and lead follow-up automation.",
+      "SignalOps provides AI lead response for auto shops with repair intake, diagnostic lead intake, appointment booking prompts, and lead follow-up automation.",
     h1: "AI lead response for auto shops that need cleaner intake and faster booking.",
     subheadline:
       "SignalOps helps repair shops capture vehicle details, symptoms, urgency, service needs, and appointment intent so customers do not get lost between missed calls and busy bays.",
@@ -1825,7 +1825,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can SignalOps diagnose car problems?",
         answer:
-          "No. It can collect symptoms and route the lead, but diagnosis should stay with qualified shop staff."
+          "No. It can collect symptoms and route the lead, but diagnosis should stay with ready shop staff."
       },
       {
         question: "Can it collect year, make, and model?",
@@ -1862,12 +1862,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with quote intake and lead qualification."
+        description: "See a live SignalOps demo with quote intake and lead intake."
       },
       {
         href: "/how-it-works",
         title: "How SignalOps Works",
-        description: "See how intake, qualification, routing, booking, and follow-up connect."
+        description: "See how intake, intake, routing, booking, and follow-up connect."
       },
       {
         href: "/missed-call-text-back",
@@ -1999,7 +1999,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it separate emergency no-water issues from maintenance?",
         answer:
-          "Yes. The scoring rules can flag no-water and major pressure problems while routing filter changes and routine maintenance differently."
+          "Yes. The priority rules can flag no-water and major pressure problems while routing filter changes and routine maintenance differently."
       },
       {
         question: "Can it help with low daily job volume?",
@@ -2040,7 +2040,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       "SignalOps gives wheel repair shops AI lead response and quote intake automation for photo requests, curb rash, bent wheel review, refinishing, mobile repair, and booking.",
     h1: "AI lead response for wheel repair shops that live on quote requests and photos.",
     subheadline:
-      "SignalOps helps wheel repair and refinishing shops respond to quote requests, collect damage photos, qualify mobile repair opportunities, and route urgent or commercial leads quickly.",
+      "SignalOps helps wheel repair and refinishing shops respond to quote requests, collect damage photos, identify mobile repair opportunities, and route urgent or commercial leads quickly.",
     heroBullets: [
       "Request photos, vehicle details, wheel size, damage type, and appointment preference",
       "Flag bent wheels, cracked wheels, and drivability issues for human inspection",
@@ -2234,7 +2234,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View the Apex Wheel Repair AI lead demo",
-        description: "View the live wheel repair demo with AI qualification output."
+        description: "View the live wheel repair demo with AI intake output."
       },
       {
         href: "/services/quote-intake-automation",
@@ -2243,13 +2243,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/services/ai-lead-qualification",
-        title: "AI Lead Qualification",
-        description: "Score wheel leads by damage type, urgency, photos, and value."
+        title: "AI Lead Intake",
+        description: "Priority wheel leads by damage type, urgency, photos, and value."
       },
       {
         href: "/how-it-works",
         title: "How SignalOps Works",
-        description: "See how photo intake, scoring, routing, booking, and follow-up connect."
+        description: "See how photo intake, priority sorting, routing, booking, and follow-up connect."
       }
     ]
   }

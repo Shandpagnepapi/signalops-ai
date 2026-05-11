@@ -124,7 +124,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         <SectionHeader
           eyebrow="Who it is for"
           title="Built for service businesses where timing and context matter"
-          description="SignalOps is most useful when a lead needs a fast reply, a few qualifying details, and a clear handoff before the customer goes cold."
+          description="SignalOps is most useful when a lead needs a fast reply, a few key details, and a clear handoff before the customer goes cold."
         />
         <div className="grid gap-4 sm:grid-cols-3">
           {page.whoFor.map((card) => (

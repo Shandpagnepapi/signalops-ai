@@ -37,7 +37,32 @@ export function Footer() {
     >
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#ff6f9c,#ffb36d,transparent)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,111,156,0.14),transparent_32%),radial-gradient(circle_at_82%_12%,rgba(255,179,109,0.1),transparent_30%)]" />
-      <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_0.9fr_0.78fr_0.62fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-md gap-3 px-4 py-8 md:hidden">
+        {[
+          { href: "/demo", label: "Demo" },
+          { href: "/roi-calculator", label: "ROI Calculator" },
+          { href: "/services/ai-lead-response", label: "Services" },
+          { href: "/privacy", label: "Privacy" },
+          { href: "/terms", label: "Terms" }
+        ].map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-semibold text-[#ead0df]/82 transition hover:text-white"
+          >
+            {link.label}
+          </Link>
+        ))}
+        <TrackedLink
+          href={getEmailHref()}
+          eventName={ANALYTICS_EVENTS.contactClicked}
+          eventProperties={{ location: "mobile_footer", type: "email" }}
+          className="rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm font-semibold text-[#ead0df]/82 transition hover:text-white"
+        >
+          Email SignalOps
+        </TrackedLink>
+      </div>
+      <div className="relative mx-auto hidden max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_0.9fr_0.78fr_0.62fr] lg:px-8">
         <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">
           <div className="flex items-center gap-3">
             <Image

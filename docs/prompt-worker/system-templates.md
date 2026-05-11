@@ -4,13 +4,13 @@
 
 For wheel repair, detailers, contractors, tint/wrap shops, remodelers, auto services, and quote-based businesses.
 
-Core flow: lead comes in -> AI requests missing details/photos -> scores lead -> alerts owner -> follow-up -> booking/quote handoff.
+Core flow: lead comes in -> AI requests missing details/photos -> sorts priority and next action -> alerts owner -> follow-up -> booking/quote handoff.
 
 ## Appointment Booking OS
 
 For med spas, dental, wellness, clinics, and service appointments.
 
-Core flow: lead asks about service -> AI qualifies -> booking handoff -> no-book follow-up.
+Core flow: lead asks about service -> AI collects the right details -> booking handoff -> no-book follow-up.
 
 ## Emergency Response OS
 
@@ -22,7 +22,7 @@ Core flow: urgent inquiry -> AI collects issue/address/urgency -> hot alert -> c
 
 For insurance, real estate, B2B services, and high-consideration sales.
 
-Core flow: lead captured -> qualified by need/timeline -> tagged hot/warm/cold -> nurture sequence -> sales next action.
+Core flow: lead captured -> need/timeline collected -> tagged hot/warm/cold -> nurture sequence -> sales next action.
 
 ## Custom Ops OS
 

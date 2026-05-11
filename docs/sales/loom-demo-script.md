@@ -38,7 +38,7 @@ Screen action: Start on the SignalOps homepage hero.
 
 Say:
 
-"Hey, this is a quick walkthrough of SignalOps. The idea is simple: when someone fills out a form, calls, clicks an ad, or asks for a quote, the business should not have to wait hours to respond, qualify the lead, or figure out who should follow up. SignalOps installs that response system."
+"Hey, this is a quick walkthrough of SignalOps. The idea is simple: when someone fills out a form, calls, clicks an ad, or asks for a quote, the business should not have to wait hours to respond, collect details the lead, or figure out who should follow up. SignalOps installs that response system."
 
 Timing note: Keep this under 15 seconds. Do not explain the whole product yet.
 
@@ -48,7 +48,7 @@ Screen action: Scroll just enough to show the problem or solution section on the
 
 Say:
 
-"Most local businesses do not have a lead problem first. They have a response, qualification, and follow-up problem. A good lead comes in, but nobody responds fast enough. Or the team responds, but they do not know if the lead is urgent, qualified, worth a quote, needs photos, or should be booked right away."
+"Most local businesses do not have a lead problem first. They have a response, intake, and follow-up problem. A good lead comes in, but nobody responds fast enough. Or the team responds, but they do not know if the lead is urgent, ready, worth a quote, needs photos, or should be booked right away."
 
 Timing note: This is the pain. Say it plainly and move on.
 
@@ -58,7 +58,7 @@ Screen action: Point to the homepage CTA and core offer language.
 
 Say:
 
-"SignalOps builds an AI Lead Response and Qualification System around that process. It can respond instantly, ask the right questions, score the opportunity, alert the owner or sales rep, log the lead, and start follow-up if the customer does not book."
+"SignalOps builds an AI Lead Response and Intake System around that process. It can respond instantly, ask the right questions, score the opportunity, alert the owner or sales rep, log the lead, and start follow-up if the customer does not book."
 
 Screen action: Click or point to the "View Demo" link, then move to the Apex Wheel Repair demo tab.
 
@@ -88,7 +88,7 @@ Say:
 
 Timing note: Pause half a second after clicking so the result card can load.
 
-### 1:40-2:10 - Show the AI Qualification Result
+### 1:40-2:10 - Show the AI Intake Result
 
 Screen action: Focus on the result card. Point to score, priority, summary, recommended action, suggested reply, internal note, and tags.
 
@@ -122,7 +122,7 @@ Screen action: Stay on the dashboard or briefly return to the homepage.
 
 Say:
 
-"For your business, the same system can connect to your website forms, missed calls, ads, DMs, email inquiries, quote requests, photo submissions, CRM, and booking calendar. The exact questions and routing rules change by industry, but the goal is the same: respond faster, qualify better, and follow up consistently."
+"For your business, the same system can connect to your website forms, missed calls, ads, DMs, email inquiries, quote requests, photo submissions, CRM, and booking calendar. The exact questions and routing rules change by industry, but the goal is the same: respond faster, collect better details, and follow up consistently."
 
 Timing note: Make this about their operation, not the demo.
 
@@ -140,7 +140,7 @@ Timing note: End cleanly. Do not over-explain after the CTA.
 
 Use this if you want a shorter version while filling the form:
 
-"Avery has a 2022 Tesla Model Y with curb rash on two 20-inch wheels. The vehicle is drivable. They want a quote, they are interested in mobile service, and they can send photos. That is a good qualified cosmetic repair lead. The system should move fast, request or review photos, estimate next steps, and help the shop book the work."
+"Avery has a 2022 Tesla Model Y with curb rash on two 20-inch wheels. The vehicle is drivable. They want a quote, they are interested in mobile service, and they can send photos. That is a good ready cosmetic repair lead. The system should move fast, request or review photos, estimate next steps, and help the shop book the work."
 
 ## Alternate Demo Scenarios
 
@@ -204,7 +204,7 @@ Say:
 
 Value point:
 
-"Lead scoring is not only about emergencies. It also helps identify revenue value."
+"Priority sorting is not only about emergencies. It also helps identify revenue value."
 
 ### Customer Missing Photos
 
@@ -321,4 +321,4 @@ During recording:
 
 ## One-Line Follow-Up Message After Sending the Loom
 
-"I recorded this quick walkthrough using a wheel repair example, but the same idea applies to your business: faster response, better qualification, cleaner routing, and consistent follow-up. If useful, I can run a Free Missed Lead Check and point out where leads may be getting missed now."
+"I recorded this quick walkthrough using a wheel repair example, but the same idea applies to your business: faster response, better intake, cleaner routing, and consistent follow-up. If useful, I can run a Free Missed Lead Check and point out where leads may be getting missed now."

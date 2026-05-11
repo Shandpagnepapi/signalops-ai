@@ -12,7 +12,7 @@ export const homepageStats = [
   },
   {
     value: "4 paths",
-    label: "Intake, qualify, follow up, book"
+    label: "Intake, sort, follow up, book"
   }
 ];
 
@@ -23,8 +23,8 @@ export const operatingSystem = [
     icon: MessagesSquare
   },
   {
-    title: "Qualification logic",
-    description: "Score leads by fit, urgency, value, and readiness to book.",
+    title: "Intake logic",
+    description: "Sort leads by fit, urgency, value, and readiness to book.",
     icon: Gauge
   },
   {
@@ -34,7 +34,7 @@ export const operatingSystem = [
   },
   {
     title: "Booking handoff",
-    description: "Route qualified prospects to the right appointment path.",
+    description: "Route ready prospects to the right appointment path.",
     icon: CalendarCheck2
   }
 ];
@@ -50,10 +50,10 @@ export const servicePillars = [
     ]
   },
   {
-    title: "Qualification engine",
+    title: "Intake engine",
     description: "Turn messy inbound context into clear sales priority.",
     items: [
-      "Fit and intent scoring",
+      "Fit and intent signals",
       "Buyer readiness prompts",
       "CRM-ready lead payloads"
     ]
@@ -74,7 +74,7 @@ export const demoClient = {
   industry: "Automotive wheel repair and refinishing",
   headline: "Dallas wheel repair that gets drivers back on the road.",
   description:
-    "Apex Wheel Repair is a fictional Dallas shop that repairs curb rash, refinishes wheels, inspects bends and cracks, and routes qualified repair requests fast.",
+    "Apex Wheel Repair is a fictional Dallas shop that repairs curb rash, refinishes wheels, inspects bends and cracks, and routes ready repair requests fast.",
   goal: "Turn photo-based quote requests into prioritized repair opportunities with fast follow-up, mobile routing, and clear safety triage.",
   services: ["Curb rash repair", "Bent wheel inspection", "Wheel refinishing", "Mobile cosmetic repair"],
   painPoints: [
@@ -299,17 +299,17 @@ export const apexDashboardLeads: ApexDashboardLead[] = [
     message:
       "I scraped two wheels in a parking garage. Looking for a quote and mobile repair appointment this week if possible.",
     summary:
-      "Qualified cosmetic repair lead for two curb-rash wheels. Mobile service is requested and the vehicle is drivable.",
+      "Ready cosmetic repair lead for two curb-rash wheels. Mobile service is requested and the vehicle is drivable.",
     recommendedAction:
       "Send mobile cosmetic estimate, confirm service address, and offer the first available afternoon window.",
     customerReply:
       "Thanks Avery, Apex received your quote request. The details look like a good mobile cosmetic repair candidate. Please send close-up photos if you have them and we will confirm pricing and timing.",
     internalNote:
       "Good daily revenue lead. Photos are present, two wheels noted, and mobile route is likely a fit. Confirm paint finish before scheduling.",
-    tags: ["mobile-request", "cosmetic-repair", "curb-rash", "multi-wheel", "qualified"],
+    tags: ["mobile-request", "cosmetic-repair", "curb-rash", "multi-wheel", "ready"],
     timeline: [
       { time: "8:18 AM", event: "Website quote form received" },
-      { time: "8:18 AM", event: "AI scored lead and sent photo confirmation text" },
+      { time: "8:18 AM", event: "AI prioritized lead and sent photo confirmation text" },
       { time: "8:20 AM", event: "Tagged as mobile cosmetic fit" }
     ]
   },
@@ -443,7 +443,7 @@ export const apexDashboardLeads: ApexDashboardLead[] = [
     message:
       "The clear coat is peeling on my OEM wheels. I want them to look factory again, not custom.",
     summary:
-      "Qualified OEM-style refinishing lead for peeling clear coat on four wheels.",
+      "Ready OEM-style refinishing lead for peeling clear coat on four wheels.",
     recommendedAction:
       "Send OEM-style refinishing range, explain timeline, and ask for photos of each wheel.",
     customerReply:
@@ -561,7 +561,7 @@ export const apexDashboardLeads: ApexDashboardLead[] = [
     tags: ["won", "mobile-repair", "curb-rash", "referral"],
     timeline: [
       { time: "3:26 PM", event: "Referral form submitted" },
-      { time: "3:27 PM", event: "Photos received and scored" },
+      { time: "3:27 PM", event: "Photos received and prioritized" },
       { time: "Yesterday", event: "Mobile repair completed" }
     ]
   },

@@ -18,7 +18,7 @@ export const industryIds = [
 
 export type IndustryId = (typeof industryIds)[number];
 
-export type TemplatePackage = "Starter" | "Growth" | "Custom Agent System";
+export type TemplatePackage = "Starter" | "Growth" | "Custom";
 
 export type DemoTemplate = {
   id: IndustryId;
@@ -54,7 +54,7 @@ export type DemoTemplate = {
 const sharedFollowUp = [
   {
     timing: "Immediately",
-    message: "Confirm the request, set expectations, and ask for the missing detail needed to qualify the lead.",
+    message: "Confirm the request, set expectations, and ask for the missing detail needed to sort the lead.",
     goal: "Protect speed-to-lead while intent is fresh."
   },
   {
@@ -65,7 +65,7 @@ const sharedFollowUp = [
   {
     timing: "Day 3",
     message: "Send a value-based follow-up tied to the customer's stated problem.",
-    goal: "Keep qualified leads warm without sounding pushy."
+    goal: "Keep ready leads warm without sounding pushy."
   },
   {
     timing: "Day 7",
@@ -213,7 +213,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     ],
     recommendedAutomations: [
       "Safety-risk escalation",
-      "Install quote qualification",
+      "Install quote intake",
       "Estimator appointment routing",
       "Commercial lead tagging"
     ],
@@ -332,7 +332,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
       { before: "Potential clients leave long messages with no structured intake.", after: "The firm receives matter type, urgency, location, and contact context." },
       { before: "Automation risks sounding like legal advice.", after: "SignalOps keeps replies practical and routes legal judgment to humans." }
     ],
-    packageBias: "Custom Agent System"
+    packageBias: "Custom"
   },
   "insurance-agency": {
     id: "insurance-agency",
@@ -376,7 +376,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     label: "Real estate team",
     serviceNoun: "real estate lead",
     customerMoment: "A buyer, seller, investor, or relocation lead asks about timing, property goals, budget, or availability.",
-    leadProblemAngle: "Real estate leads need speed-to-lead, qualification, agent routing, and long-term nurture.",
+    leadProblemAngle: "Real estate leads need speed-to-lead, intake, agent routing, and long-term nurture.",
     defaultServices: ["Buyer consultation", "Seller consultation", "Home valuation", "Relocation support"],
     intakeQuestions: [
       "Are you buying, selling, investing, or relocating?",
@@ -404,7 +404,7 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
       { label: "Nurture leads", value: "37", note: "Long-term follow-up" }
     ],
     recommendedAutomations: [
-      "Buyer/seller qualification",
+      "Buyer/seller intake",
       "Agent routing",
       "Home valuation follow-up",
       "Long-term nurture sequence"
@@ -474,12 +474,12 @@ export const demoTemplates: Record<IndustryId, DemoTemplate> = {
     followUpSequence: sharedFollowUp,
     dashboardCards: [
       { label: "New leads", value: "16", note: "Needs response" },
-      { label: "Qualified", value: "9", note: "Ready for booking" },
+      { label: "Ready", value: "9", note: "Ready for booking" },
       { label: "Follow-up due", value: "7", note: "No reply yet" }
     ],
     recommendedAutomations: [
       "Instant lead response",
-      "Qualification questions",
+      "Intake questions",
       "Owner or sales rep alerts",
       "Follow-up reminders"
     ],

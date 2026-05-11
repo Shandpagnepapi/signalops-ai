@@ -24,7 +24,7 @@ If there is a fit, I will recommend a practical first implementation. If not, I 
 - How often do you lose leads you thought would book?
 - What does a "missed opportunity" usually look like in your business?
 
-## Qualification Questions
+## Intake Questions
 
 - What makes a lead high quality for your team?
 - What signals make a lead low intent or poor fit?
@@ -72,7 +72,7 @@ If you want to move forward, the next step is a Free Missed Lead Check and pilot
 
 ### "We already have a CRM."
 
-Great. SignalOps works with existing CRMs. We are not replacing your system. We are fixing response, qualification, and follow-up execution around it.
+Great. SignalOps works with existing CRMs. We are not replacing your system. We are fixing response, intake, and follow-up execution around it.
 
 ### "We need more leads, not automation."
 

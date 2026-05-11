@@ -74,7 +74,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-white">{page.industryName} lead flow</p>
-                <p className="text-xs leading-5 text-[#ead0df]/42">Capture, qualify, route, and follow up</p>
+                <p className="text-xs leading-5 text-[#ead0df]/42">Capture, sort, route, and follow up</p>
               </div>
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffd7e6]">
                 <Workflow className="size-5" aria-hidden="true" />
@@ -153,7 +153,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <SectionHeader
           eyebrow="Follow-up gaps"
           title="Common follow-up failures"
-          description="These are the practical points where a qualified lead can stall even after someone replies once."
+          description="These are the practical points where a ready lead can stall even after someone replies once."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {page.followUpFailures.map((failure) => (
@@ -171,7 +171,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <section className="border-y border-white/10 bg-[#17122d]/65">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.84fr_1.16fr] lg:px-8">
             <SectionHeader
-              eyebrow="Qualification questions"
+              eyebrow="Intake questions"
               title={`Questions SignalOps can ask for ${page.industryName.toLowerCase()}`}
               description="The questions should match the service, urgency, and level of human review required before quoting or booking."
             />
@@ -230,9 +230,9 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Lead scoring"
-          title="Example scoring rules"
-          description="SignalOps scoring is not magic. It is a practical way to decide who needs a callback, who needs more information, and who should be reviewed by a human."
+          eyebrow="Priority sorting"
+          title="Example priority rules"
+          description="SignalOps uses practical rules to decide who needs a callback, who needs more information, and who should be reviewed by a human."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {page.scoringRules.map((rule) => (
@@ -277,7 +277,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           <SectionHeader
             eyebrow="Dashboard value"
             title={`What ${page.industryName.toLowerCase()} can see in the dashboard`}
-            description="SignalOps gives owners a simple operating view of lead quality, response needs, and follow-up gaps."
+            description="SignalOps gives owners a simple operating view of lead priority, response needs, and follow-up gaps."
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {dashboardValue.map((item) => (

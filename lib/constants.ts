@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically."
+    "SignalOps builds AI-powered lead response systems that help small and local businesses answer, sort, route, follow up with, and book more leads automatically."
 };
 
 export const PRIMARY_CTA = {
@@ -41,8 +41,8 @@ export function getEmailHref({
 
 export function getPlanEmailHref(planName: string) {
   const subject =
-    planName === "Custom Agent System"
-      ? "SignalOps Custom Agent System Inquiry"
+    planName === "Custom"
+      ? "SignalOps Custom Package Inquiry"
       : `SignalOps ${planName} Package Inquiry`;
 
   return getEmailHref({
@@ -82,7 +82,7 @@ export const SEO_SERVICE_LINKS = [
   },
   {
     href: "/services/ai-lead-qualification",
-    label: "AI Lead Qualification"
+    label: "AI Lead Intake"
   },
   {
     href: "/services/automated-lead-follow-up",
@@ -175,7 +175,7 @@ export const PACKAGE_LINKS = [
   },
   {
     href: "/#custom-agent-system",
-    label: "Custom Agent System"
+    label: "Custom Package"
   }
 ];
 
@@ -193,30 +193,30 @@ export const COMPANY_LINKS = [
 export const PACKAGE_NAMES = [
   {
     name: "Starter",
-    price: "$297/mo",
-    summary: "Start with one clean response and follow-up workflow for a core lead source.",
+    price: "$250/mo",
+    summary: "Start with one clean response, intake, and follow-up workflow for a core lead source.",
     features: [
       "Project intake and setup plan",
       "Instant reply workflow",
-      "Practical lead qualification",
+      "Basic intake questions",
       "Owner or rep alerts"
     ]
   },
   {
     name: "Growth",
-    price: "$597/mo",
+    price: "$500/mo",
     summary: "Connect more lead sources, stronger follow-up, and a clearer operating view.",
     features: [
       "Multi-source lead routing",
-      "Lead scoring and routing",
+      "Priority sorting and routing",
       "CRM logging",
       "Follow-up sequences",
       "Dashboard reporting"
     ]
   },
   {
-    name: "Custom Agent System",
-    price: "Custom",
+    name: "Custom",
+    price: "From $1,000/mo",
     summary: "Build a custom lead operations layer for complex sales, quote, or service workflows.",
     features: [
       "Custom lead agents",
@@ -246,8 +246,8 @@ export const TARGET_CUSTOMERS = [
 
 export const AI_LEAD_ENGINE_FEATURES = [
   "Instant response",
-  "Lead qualification",
-  "Lead scoring",
+  "Lead intake",
+  "Priority sorting",
   "Appointment booking",
   "CRM logging",
   "Follow-up automation",
@@ -262,11 +262,11 @@ export const SIGNALOPS_PROCESS = [
   },
   {
     step: "Map",
-    description: "Define sources, qualification rules, routing paths, and handoff logic."
+    description: "Define sources, intake questions, routing paths, and handoff logic."
   },
   {
     step: "Build",
-    description: "Create the lead engine, messages, scoring, alerts, and dashboard."
+    description: "Create the lead engine, messages, priority views, alerts, and dashboard."
   },
   {
     step: "Launch",
@@ -280,7 +280,7 @@ export const SIGNALOPS_PROCESS = [
 
 export const SIGNALOPS_USE_CASES = [
   "Missed-call text back",
-  "Website lead qualification",
+  "Website lead intake",
   "Appointment request handling",
   "Photo-based quote intake",
   "CRM cleanup",
@@ -299,7 +299,7 @@ export const MARKETING_FAQS = [
   {
     question: "Does it replace my team?",
     answer:
-      "No. It handles the repetitive first response, qualification, reminders, and routing so your team can spend more time on the leads that actually need a person."
+      "No. It handles the repetitive first response, intake, reminders, and routing so your team can spend more time on the leads that actually need a person."
   },
   {
     question: "What tools do you work with?",
@@ -344,6 +344,6 @@ export const FUTURE_INTEGRATIONS = [
   "Calendar routing",
   "Email and SMS follow-up",
   "Call tracking",
-  "Lead qualification",
+  "Lead intake",
   "Revenue reporting"
 ];

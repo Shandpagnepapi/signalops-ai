@@ -46,9 +46,9 @@ const features: Array<{ title: string; copy: string; result: string; icon: Lucid
     icon: Zap
   },
   {
-    title: "AI Qualification",
+    title: "Smart Intake",
     copy: "It asks the right questions and collects the details your team needs.",
-    result: "Better leads",
+    result: "Clear next steps",
     icon: UserRound
   },
   {
@@ -69,19 +69,19 @@ const pricing = [
   {
     id: "starter",
     name: "Starter",
-    price: "$297",
+    price: "$250",
     cadence: "/mo",
-    setupFee: "Starting at $750 setup",
-    bestFor: "A business that mainly needs faster replies and basic follow-up for one main lead source.",
+    setupFee: "Setup from $750",
+    bestFor: "A business with one main lead source that needs faster replies, simple intake, and a clean owner handoff.",
     explanation:
-      "We set up your first lead response workflow so new inquiries get answered fast and basic follow-up does not get forgotten.",
+      "We set up your first lead response workflow so new inquiries get answered fast, sorted cleanly, and handed off without extra admin.",
     cta: "Ask About Starter",
     items: [
-      "1 main lead source",
+      "One main lead source",
       "Instant reply workflow",
-      "Basic lead qualification questions",
+      "Basic intake questions",
       "Simple follow-up reminders",
-      "Owner/new lead alerts",
+      "Owner alerts",
       "Basic monthly check-in"
     ],
     examples: ["Website form", "Missed call/text flow", "Simple quote request", "Solo operator or small team"]
@@ -89,19 +89,20 @@ const pricing = [
   {
     id: "growth",
     name: "Growth",
-    price: "$597",
+    price: "$500",
     cadence: "/mo",
-    setupFee: "Starting at $1,500 setup",
-    bestFor: "A business that has multiple lead sources and wants stronger automation, follow-up, and visibility.",
+    setupFee: "Setup from $1,500",
+    bestFor: "A business with multiple lead sources that needs stronger follow-up, routing, and visibility.",
     explanation:
-      "We connect more of your lead flow, add smarter qualification, follow-up sequences, booking handoff, and better visibility into what is happening.",
+      "We connect more of your lead flow, add smarter intake, follow-up sequences, booking or callback handoff, and better visibility into what is happening.",
     cta: "Ask About Growth",
     highlight: true,
     items: [
       "Multiple lead sources",
-      "Smarter lead qualification",
+      "Smarter intake flow",
+      "Priority sorting",
       "Follow-up sequences",
-      "Booking handoff",
+      "Booking or callback handoff",
       "CRM or spreadsheet logging",
       "Dashboard visibility",
       "Monthly optimization"
@@ -110,23 +111,22 @@ const pricing = [
   },
   {
     id: "custom-agent-system",
-    name: "Custom Agent System",
-    price: "Custom",
-    cadence: "",
-    setupFee: "Starting at $5,000+ buildout",
-    supportFee: "Custom monthly support",
-    bestFor: "A business with complex workflows, multiple locations, custom tools, or advanced routing needs.",
+    name: "Custom",
+    price: "From $1,000",
+    cadence: "/mo",
+    setupFee: "Buildout from $5,000+",
+    bestFor: "Businesses with complex workflows, multiple locations, integrations, dashboards, custom routing, or agent workflows.",
     explanation:
-      "We design and build a custom AI-powered lead operations system around your tools, team, services, routing rules, and sales process.",
+      "We design and build a custom AI lead operating system around your tools, team, services, routing rules, and sales process.",
     cta: "Ask About Custom",
     items: [
-      "Custom AI workflows",
-      "Multi-step lead qualification",
-      "CRM/calendar/tool integrations",
-      "Team/location routing",
-      "Custom dashboards or reporting",
-      "Advanced follow-up logic",
-      "Ongoing optimization/support"
+      "Custom workflow mapping",
+      "Multiple lead sources and routing paths",
+      "CRM/job-management integrations",
+      "Custom dashboards",
+      "Human-review paths",
+      "Internal AI agent workflows",
+      "Advanced reporting and optimization"
     ],
     examples: ["Multi-location businesses", "Larger teams", "Complex quote workflows", "Custom integrations"]
   }
@@ -134,7 +134,8 @@ const pricing = [
 
 const comparisonRows = [
   ["Lead sources", "1 main source", "Multiple sources", "Unlimited/custom"],
-  ["Qualification", "Basic questions", "Smarter scoring", "Multi-step logic"],
+  ["Intake", "Basic questions", "Smarter intake", "Multi-step logic"],
+  ["Priority routing", "Simple owner alert", "Priority sorting", "Custom routing"],
   ["Follow-up", "Simple reminders", "Sequences", "Advanced branching"],
   ["Booking handoff", "Basic", "Included", "Custom"],
   ["CRM/logging", "Lightweight", "CRM or spreadsheet", "Deep integrations"],
@@ -256,7 +257,7 @@ function ProductStorySection() {
           Show the lead moving through the system.
         </h2>
         <p className={`mt-3 text-sm leading-6 ${muted}`}>
-          Capture, qualify, route, follow up, and hand off bookings from one operating layer.
+          Capture, sort, route, follow up, and hand off booking-ready leads from one operating layer.
         </p>
       </div>
       <div className="mt-7 grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
@@ -303,8 +304,8 @@ function FeatureSection() {
 function HowItWorks() {
   const steps = [
     ["We capture and respond", "AI instantly replies to every lead across your channels."],
-    ["We qualify and nurture", "AI answers questions, collects info, and follows up automatically."],
-    ["We book and hand off", "Hot leads get booked or routed to your team with context."]
+    ["We sort and follow up", "AI asks the right questions, collects info, and keeps the next step moving."],
+    ["We book and hand off", "Priority leads get booked or routed to your team with context."]
   ];
 
   return (
@@ -373,11 +374,7 @@ function PricingSection() {
               <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#ffb36d]">
                 {plan.setupFee}
               </p>
-              {"supportFee" in plan ? (
-                <p className="mt-1 text-xs text-[#ead0df]/58">{plan.supportFee}</p>
-              ) : (
-                <p className="mt-1 text-xs text-[#ead0df]/58">Monthly support billed separately from setup</p>
-              )}
+              <p className="mt-1 text-xs text-[#ead0df]/58">Monthly support billed separately from setup</p>
             </div>
             <div className="mt-5 rounded-xl border border-white/10 bg-[#17122d]/52 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/50">What we build</p>
@@ -471,7 +468,7 @@ function DemoFaq() {
           See how a lead becomes a booked job.
         </h2>
         <p className={`mt-3 text-sm leading-6 ${muted}`}>
-          Try the client demo to see instant reply, qualification, follow-up, routing, and dashboard visibility in action.
+          Try the client demo to see instant reply, smart intake, follow-up, routing, and dashboard visibility in action.
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
           <TrackedLink

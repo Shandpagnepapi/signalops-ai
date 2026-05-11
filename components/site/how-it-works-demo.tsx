@@ -60,8 +60,8 @@ const flowSteps: FlowStep[] = [
     ownerView: "The lead is acknowledged before a competitor has time to call back."
   },
   {
-    title: "AI qualifies the lead",
-    eyebrow: "Intent, urgency, budget, service",
+    title: "AI collects the right details",
+    eyebrow: "Service, urgency, timing, next step",
     description:
       "SignalOps asks practical follow-up questions and turns messy messages into structured context.",
     icon: SearchCheck,
@@ -73,14 +73,14 @@ const flowSteps: FlowStep[] = [
     ownerView: "The team sees what the prospect needs without reading a long thread first."
   },
   {
-    title: "Lead gets scored and routed",
-    eyebrow: "Hot leads get fast alerts",
+    title: "Priority is sorted and routed",
+    eyebrow: "Important leads get fast alerts",
     description:
       "Strong opportunities are pushed to the right owner, salesperson, or service team immediately.",
     icon: Route,
     details: [
-      "Scores quality from 0 to 100",
-      "Labels hot, warm, cold, or junk",
+      "Sorts priority and next action",
+      "Labels urgent, warm, quiet, or needs review",
       "Routes by service, urgency, and location"
     ],
     ownerView: "High-value or urgent leads move to the top instead of sitting in an inbox."
@@ -89,7 +89,7 @@ const flowSteps: FlowStep[] = [
     title: "Appointment gets booked",
     eyebrow: "Calendar or booking link",
     description:
-      "Qualified prospects are guided toward a calendar, booking link, or direct sales handoff.",
+      "Ready prospects are guided toward a calendar, booking link, or direct sales handoff.",
     icon: CalendarCheck2,
     details: [
       "Sends the right booking path",
@@ -119,7 +119,7 @@ const flowSteps: FlowStep[] = [
     icon: LayoutDashboard,
     details: [
       "Live pipeline and status tracking",
-      "Lead score and priority views",
+      "Priority and next-action views",
       "Missed opportunities and photo requests"
     ],
     ownerView: "The business gets a clear daily operating view instead of scattered notifications."
@@ -132,7 +132,7 @@ const beforeAfter = [
     tone: "warning",
     items: [
       "Leads sit in inboxes, voicemails, and form notifications.",
-      "Staff manually asks the same qualifying questions.",
+      "Staff manually asks the same intake questions.",
       "Hot opportunities get mixed with low-intent shoppers.",
       "Follow-up depends on memory, sticky notes, or spare time."
     ]
@@ -163,9 +163,9 @@ const aiExamples = [
       "High-intent quote request. Customer mentioned vibration and wants availability. Call first, then send booking link if they do not answer."
   },
   {
-    label: "Lead score",
+    label: "Priority view",
     icon: Gauge,
-    value: "92 / Hot / Soon. Complete contact info, clear service need, strong buying intent, appointment language included."
+    value: "High priority / Soon. Complete contact info, clear service need, strong intent, appointment language included."
   },
   {
     label: "Follow-up message",
@@ -196,7 +196,7 @@ export function HowItWorksDemo() {
                   How the SignalOps AI Lead Engine Works
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-[#ead0df]/78 sm:text-lg">
-                  A simple operating layer for capturing, responding, qualifying,
+                  A simple operating layer for capturing, responding, sorting,
                   routing, booking, and following up before good opportunities go cold.
                 </p>
               </div>
@@ -235,15 +235,15 @@ export function HowItWorksDemo() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
-                      Live qualification snapshot
+                      Live intake snapshot
                     </p>
                     <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
                       Lead response in under 60 seconds
                     </h2>
                   </div>
                   <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/10 px-3 py-2 text-right">
-                    <p className="text-xs text-emerald-100">Score</p>
-                    <p className="text-2xl font-semibold text-white">92</p>
+                    <p className="text-xs text-emerald-100">Priority</p>
+                    <p className="text-2xl font-semibold text-white">High</p>
                   </div>
                 </div>
 
@@ -277,7 +277,7 @@ export function HowItWorksDemo() {
           </h2>
           <p className="text-sm leading-6 text-[#ead0df]/78 sm:text-base">
             SignalOps connects the moments that usually live in separate tools: the inquiry,
-            response, qualification, routing, booking, follow-up, and reporting.
+            response, intake, routing, booking, follow-up, and reporting.
           </p>
         </div>
 

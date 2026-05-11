@@ -29,7 +29,7 @@ const initialInputs: CalculatorInputs = {
   currentCloseRate: 28,
   missedLeadPercentage: 20,
   expectedImprovementPercentage: 25,
-  monthlySignalOpsCost: 597
+  monthlySignalOpsCost: 500
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -65,12 +65,12 @@ function getSuggestedPackage(inputs: CalculatorInputs, recoveredRevenue: number)
   if (inputs.monthlyLeads <= 200 || recoveredRevenue <= 10000) {
     return {
       name: PACKAGE_NAMES[1]?.name ?? "Growth",
-      reason: "Best fit when multiple lead sources need qualification, routing, and repeatable follow-up."
+      reason: "Best fit when multiple lead sources need smarter intake, routing, and repeatable follow-up."
     };
   }
 
   return {
-    name: PACKAGE_NAMES[2]?.name ?? "Custom Agent System",
+    name: PACKAGE_NAMES[2]?.name ?? "Custom",
     reason: "Best fit for higher-volume teams that need deeper automation, integrations, and custom workflows."
   };
 }

@@ -297,14 +297,14 @@ export const demoBusinesses = {
       eyebrow: "FAQ",
       title: "Questions drivers ask before they book.",
       description:
-        "Answering these questions up front gives the customer confidence and gives SignalOps better signals for qualification."
+        "Answering these questions up front gives the customer confidence and gives SignalOps better signals for intake and routing."
     },
     faqs: apexWheelRepair.faqs,
     leadOpsPanel: {
       badge: "SignalOps demo workflow",
       title: "What would happen in production?",
       description:
-        "Normally this would instantly text the customer, request photos if needed, score the lead, alert the wheel repair team, log the lead in the CRM, and start follow-up.",
+        "Normally this would instantly text the customer, request photos if needed, sort the lead, alert the wheel repair team, log the lead in the CRM, and start follow-up.",
       items: [
         {
           title: "Customer text",
@@ -312,7 +312,7 @@ export const demoBusinesses = {
         },
         {
           title: "Shop alert",
-          description: "Notify Apex with score, urgency, damage type, and safety note."
+          description: "Notify Apex with priority, urgency, damage type, and safety note."
         },
         {
           title: "CRM logging",
@@ -361,7 +361,7 @@ export const demoBusinesses = {
       photoLabel: "Photo note or upload details",
       descriptionLabel: "Description",
       preferredTimeLabel: "Preferred appointment time",
-      submitLabel: "Score this repair lead",
+      submitLabel: "Priority this repair lead",
       internalNoteLabel: "Internal shop note",
       initial: {
         name: "Avery Stone",
@@ -429,7 +429,7 @@ export const demoBusinesses = {
         },
         {
           title: "Maintenance",
-          description: "Qualified service lead, ask system type and offer a service window."
+          description: "Ready service lead, ask system type and offer a service window."
         },
         {
           title: "Commercial",
@@ -708,7 +708,7 @@ export const demoBusinesses = {
       photoLabel: "Photos, notes, or system details",
       descriptionLabel: "Describe the issue",
       preferredTimeLabel: "Preferred service window",
-      submitLabel: "Score this service request",
+      submitLabel: "Priority this service request",
       internalNoteLabel: "Internal service note",
       initial: {
         name: "Megan Carter",

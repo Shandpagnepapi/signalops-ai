@@ -1,6 +1,6 @@
 # SignalOps AI
 
-SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically. This app contains the marketing site, demo client pages, lead intake demos, dashboard, documentation, and brand assets.
+SignalOps builds AI-powered lead response systems that help small and local businesses capture, sort, route, follow up with, and book more leads automatically. This app contains the marketing site, demo client pages, lead intake demos, dashboard, documentation, and brand assets.
 
 Live site: `https://www.signalops.pro`
 
@@ -205,16 +205,16 @@ EMAIL_DELIVERY_MODE=draft
 
 SignalOps is intentionally draft-only for email replies. Even if `RESEND_API_KEY` is configured later, the current integration layer prepares draft/review output and does not send customer emails automatically. Do not change this behavior unless the owner explicitly approves live sending.
 
-### AI Qualification Setup
+### AI Intake / Priority Setup
 
-AI qualification and the live demo generator are optional. Add these server-only values to `.env.local` when you are ready to use OpenAI:
+AI intake/priority helpers and the live demo generator are optional. Add these server-only values to `.env.local` when you are ready to use OpenAI:
 
 ```bash
 OPENAI_API_KEY=
 OPENAI_MODEL=
 ```
 
-If `OPENAI_API_KEY` is blank or an AI request fails, SignalOps uses deterministic fallbacks. Lead scoring falls back to `lib/lead-scoring.ts`; the live demo generator falls back to stored industry templates in `lib/demo-templates.ts`.
+If `OPENAI_API_KEY` is blank or an AI request fails, SignalOps uses deterministic fallbacks. Priority sorting falls back to `lib/lead-scoring.ts`; the live demo generator falls back to stored industry templates in `lib/demo-templates.ts`.
 
 The Instant AI Lead System Preview currently uses deterministic industry templates in
 `lib/preview-generator.ts`, so it works with or without OpenAI.

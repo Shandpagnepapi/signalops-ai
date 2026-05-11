@@ -51,7 +51,7 @@ const buildSteps = [
   },
   {
     title: "SignalOps scopes the system",
-    description: "We map the response, qualification, follow-up, routing, logging, and handoff work.",
+    description: "We map the response, intake, follow-up, routing, logging, and handoff work.",
     icon: Workflow
   },
   {
@@ -178,7 +178,7 @@ export default function AuditPage() {
         <SectionIntro
           eyebrow="Package-first"
           title="Choose the level of system you need today."
-          description="The questionnaire is built to help SignalOps understand whether Starter, Growth, or a Custom Agent System is the right fit before we talk build details."
+          description="The questionnaire is built to help SignalOps understand whether Starter, Growth, or a Custom is the right fit before we talk build details."
         />
         <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-3">
           {[

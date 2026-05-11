@@ -36,7 +36,7 @@ const industryOutputs: Record<
     handoff: "Summarize package fit and upsell opportunities before booking."
   },
   "Med Spa": {
-    flow: "Consultation intake with treatment interest, timeline, qualification rules, and review handoff.",
+    flow: "Consultation intake with treatment interest, timeline, intake rules, and review handoff.",
     questions: "Treatment goal, timing, prior services, contact preference, consult availability.",
     handoff: "Route sensitive or unsure answers to a person before scheduling."
   },
@@ -56,7 +56,7 @@ export function LeadLeakPreviewBuilder() {
 
   const previewRows = [
     ["Recommended AI receptionist flow", output.flow],
-    ["Lead qualification questions", output.questions],
+    ["Lead intake questions", output.questions],
     ["Follow-up sequence", `${leadSource} + ${biggestLeak.toLowerCase()} recovery path with reminders and owner alerts.`],
     ["Booking handoff", output.handoff],
     ["Dashboard view", "Lead source, priority, missing info, next action, and follow-up status."]

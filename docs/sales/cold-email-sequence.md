@@ -36,7 +36,7 @@ Following up with one practical point:
 
 Most teams send one reply and assume the lead is not serious when no reply comes back. In reality, many leads just need structured follow-up and a clearer next step.
 
-That is what we install at SignalOps: response, qualification, routing, and follow-up as a system.
+That is what we install at SignalOps: response, intake, routing, and follow-up as a system.
 
 Want me to send a short missed lead summary for [Business Name]?
 
@@ -94,7 +94,7 @@ Hi [First Name],
 
 Many auto shops already have demand. The miss is usually speed-to-lead and follow-up consistency.
 
-SignalOps installs response and qualification workflows so service inquiries do not sit in voicemail, form inboxes, or DMs.
+SignalOps installs response and intake workflows so service inquiries do not sit in voicemail, form inboxes, or DMs.
 
 If you want, I can run a Free Missed Lead Check and map the highest-impact fixes for your shop.
 
@@ -106,7 +106,7 @@ Hi [First Name],
 
 Roofing teams often pay for strong lead flow but lose appointments during delayed call-backs and inconsistent follow-up.
 
-SignalOps sets up instant response, qualification, routing, and sequence-based follow-up so estimates get booked faster.
+SignalOps sets up instant response, intake, routing, and sequence-based follow-up so estimates get booked faster.
 
 Worth a quick review of your current process?
 
@@ -116,9 +116,9 @@ Subject: Faster follow-up for inbound policy leads
 
 Hi [First Name],
 
-Insurance agencies lose high-intent leads when response and qualification depend fully on manual callbacks.
+Insurance agencies lose high-intent leads when response and intake depend fully on manual callbacks.
 
-SignalOps helps automate first response, qualification prompts, producer routing, and structured follow-up.
+SignalOps helps automate first response, intake prompts, producer routing, and structured follow-up.
 
 If useful, I can walk through a short Free Missed Lead Check for your agency.
 
@@ -130,18 +130,18 @@ Hi [First Name],
 
 Med spas often lose revenue between inquiry and consult booking due to slow first response and inconsistent nurturing.
 
-SignalOps helps capture and qualify inbound leads, trigger fast replies, and automate follow-up toward consult bookings.
+SignalOps helps capture and sort inbound leads, trigger fast replies, and automate follow-up toward consult bookings.
 
 Open to a short Missed Lead Check call?
 
 ## Law Firms Version
 
-Subject: Better intake follow-up for qualified case inquiries
+Subject: Better intake follow-up for ready case inquiries
 
 Hi [First Name],
 
-Law firms can lose qualified case opportunities when intake response is delayed or inconsistent after first contact.
+Law firms can lose ready case opportunities when intake response is delayed or inconsistent after first contact.
 
-SignalOps helps automate immediate acknowledgment, qualification prompts, and handoff to the right intake or attorney path.
+SignalOps helps automate immediate acknowledgment, intake prompts, and handoff to the right intake or attorney path.
 
 If useful, I can run a practical Free Missed Lead Check and show what to improve first.

@@ -71,7 +71,7 @@ export type PreviewLeadSource = (typeof previewLeadSourceOptions)[number];
 export type PreviewProblem = (typeof previewProblemOptions)[number];
 export type PreviewLeadVolume = (typeof previewLeadVolumeOptions)[number];
 export type PreviewSubmissionStatus = (typeof previewSubmissionStatuses)[number];
-export type PreviewPackageName = "Starter" | "Growth" | "Custom Agent System";
+export type PreviewPackageName = "Starter" | "Growth" | "Custom";
 
 export type PreviewSubmissionInput = {
   businessName: string;

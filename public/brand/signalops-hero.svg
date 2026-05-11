@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">SignalOps lead response signal board</title>
-  <desc id="desc">A dark premium dashboard-style background showing SignalOps lead response, qualification, and follow-up metrics.</desc>
+  <desc id="desc">A dark premium dashboard-style background showing SignalOps lead response, intake, and follow-up metrics.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#100818"/><stop offset="0.5" stop-color="#2b193c"/><stop offset="1" stop-color="#100818"/></linearGradient>
     <radialGradient id="glow" cx="72%" cy="20%" r="60%"><stop offset="0" stop-color="#ffb36d" stop-opacity="0.22"/><stop offset="0.55" stop-color="#ff6f9c" stop-opacity="0.11"/><stop offset="1" stop-color="#100818" stop-opacity="0"/></radialGradient>
@@ -11,7 +11,7 @@
   <g transform="translate(720 110)">
     <rect width="680" height="560" rx="4" fill="#231434" fill-opacity="0.72" stroke="#ff6f9c" stroke-opacity="0.55" stroke-width="2"/>
     <text x="64" y="114" fill="#F8FBFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="62" font-weight="760">SignalOps Board</text>
-    <text x="66" y="154" fill="#ead0df" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22">Live lead response and qualification view</text>
+    <text x="66" y="154" fill="#ead0df" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22">Live lead response and intake view</text>
     <g transform="translate(64 206)">
       <rect width="230" height="126" rx="3" fill="#2b193c"/>
       <text x="38" y="80" fill="#F8FBFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="56" font-weight="760">42s</text>

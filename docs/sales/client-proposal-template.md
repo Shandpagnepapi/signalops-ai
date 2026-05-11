@@ -23,7 +23,7 @@ Current lead channels include [forms/calls/ads/DMs/email/referrals].
 Based on our review, the main issue is not lead volume. The main issue is lead operations:
 
 - Slow or inconsistent first response
-- Incomplete qualification before handoff
+- Incomplete intake before handoff
 - Missed follow-up on leads that do not book immediately
 - Low visibility into lead quality and pipeline status
 
@@ -40,8 +40,8 @@ Business impact:
 SignalOps recommends implementing an AI Lead Engine that:
 
 - Responds to every lead quickly
-- Collects missing qualification details
-- Scores and routes leads by priority
+- Collects missing intake details
+- Sorts and routes leads by priority
 - Supports booking flow and follow-up
 - Gives owner/sales visibility into lead pipeline and outcomes
 
@@ -52,7 +52,7 @@ This is an operational system layered onto your current tools, not a full replac
 ## 5. What SignalOps Will Build
 
 - Lead intake logic across selected channels
-- Qualification and scoring rules aligned to your business
+- Intake and priority rules aligned to your business
 - Routing logic for owner/sales team handoff
 - Follow-up sequence framework (including no-response paths)
 - Internal alert system for high-priority leads
@@ -67,9 +67,9 @@ Lead Source (Form/Call/Ad/DM/Email)
         ->
 Instant Response (SMS/Email/Message)
         ->
-AI Qualification (intent, urgency, service need, missing info)
+AI Intake (intent, urgency, service need, missing info)
         ->
-Lead Score + Routing (hot/warm/cold + owner/sales assignment)
+Priority + Routing (hot/warm/cold + owner/sales assignment)
         ->
 Booking Path (calendar link or sales handoff)
         ->
@@ -83,7 +83,7 @@ Dashboard + Reporting (pipeline, quality, missed opportunities)
 ## 7. Deliverables
 
 - [ ] Lead flow map for approved channels
-- [ ] Qualification criteria and score bands
+- [ ] Intake criteria and priority bands
 - [ ] Messaging templates (initial, follow-up, no-response)
 - [ ] Routing and alert rules
 - [ ] CRM/webhook integration layer (as scoped)
@@ -102,7 +102,7 @@ Dashboard + Reporting (pipeline, quality, missed opportunities)
 
 ### Week 2: Build and Configuration
 
-- Implement qualification, messaging, alerts, and integrations
+- Implement intake, messaging, alerts, and integrations
 - Configure dashboard views and tracking points
 
 ### Week 3: QA and Launch
@@ -118,17 +118,17 @@ Timeline may shift based on access delays, tool constraints, or scope changes.
 
 ### Starter
 
-- **$750 setup + $300/month**
-- Best for one primary lead source and core response/qualification workflow
+- **Setup from $750 + $250/month**
+- Best for one primary lead source and core response/intake workflow
 
 ### Growth
 
-- **$1,500-$3,000 setup + $750/month**
+- **Setup from $1,500 + $500/month**
 - Best for multi-source routing, follow-up automation, and deeper reporting
 
-### Custom Agent System
+### Custom
 
-- **Starting at $5,000+**
+- **Buildout from $5,000+ and support from $1,000/month**
 - Best for advanced workflows, custom agent logic, and complex integrations
 
 Final pricing is based on confirmed scope, integrations, and implementation complexity.
@@ -147,7 +147,7 @@ Final pricing is based on confirmed scope, integrations, and implementation comp
 ## 11. What SignalOps Handles
 
 - System design and implementation
-- Qualification and routing logic
+- Intake and routing logic
 - Messaging and follow-up framework
 - Integration setup within agreed scope
 - QA process and launch coordination

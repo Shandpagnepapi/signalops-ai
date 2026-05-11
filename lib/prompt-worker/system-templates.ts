@@ -5,7 +5,7 @@ export type SystemTemplate = {
   whoItIsFor: string;
   commonLeadSources: string[];
   coreFlow: string[];
-  qualificationQuestions: string[];
+  intakeQuestions: string[];
   routingRules: string[];
   followUpStrategy: string[];
   dashboardFields: string[];
@@ -22,12 +22,12 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
     coreFlow: [
       "Lead comes in",
       "AI requests missing details/photos",
-      "AI scores the lead",
+      "AI sorts the lead by urgency and next action",
       "Owner/team receives the summary",
       "Follow-up keeps the quote request moving",
       "Booking or quote handoff is ready"
     ],
-    qualificationQuestions: [
+    intakeQuestions: [
       "What service do you need?",
       "What city/service area are you in?",
       "When are you hoping to get this done?",
@@ -48,7 +48,7 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
       "Booking/callback nudge",
       "Final quiet-lead check-in"
     ],
-    dashboardFields: ["Lead source", "Service requested", "Photos/details", "Urgency", "Lead score", "Next action", "Owner alert", "Follow-up status"],
+    dashboardFields: ["Lead source", "Service requested", "Photos/details", "Urgency", "Priority / next action", "Owner alert", "Follow-up status"],
     recommendedPackageTendency: "Growth",
     commonAddOns: ["Photo request flow", "Quote follow-up", "Owner alert summaries", "Spreadsheet/CRM logging", "Booking link handoff"]
   },
@@ -58,12 +58,12 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
     commonLeadSources: ["Website forms", "Phone calls", "Missed calls", "Instagram/Facebook DMs", "Google Business Profile"],
     coreFlow: [
       "Lead asks about service",
-      "AI qualifies intent and fit",
+      "AI asks smart intake questions",
       "AI routes sensitive questions to human review",
       "Booking or callback handoff",
       "No-book follow-up"
     ],
-    qualificationQuestions: [
+    intakeQuestions: [
       "Which service are you interested in?",
       "Are you a new or returning client?",
       "What timing are you hoping for?",
@@ -99,7 +99,7 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
       "Callback handoff",
       "Follow-up confirms status"
     ],
-    qualificationQuestions: [
+    intakeQuestions: [
       "What issue is happening right now?",
       "What is the service address or city?",
       "Is this urgent or after-hours?",
@@ -110,7 +110,7 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
     routingRules: [
       "Emergency language triggers hot owner/dispatcher alert.",
       "Safety, structural, or water/electrical risk routes to human review.",
-      "Non-urgent leads are qualified and queued for normal follow-up.",
+      "Non-urgent leads are sorted and queued for normal follow-up.",
       "Missing address/phone gets immediate clarification."
     ],
     followUpStrategy: [
@@ -130,12 +130,12 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
     commonLeadSources: ["Website forms", "Facebook leads", "Google leads", "Referrals", "Email", "Landing pages"],
     coreFlow: [
       "Lead captured",
-      "AI qualifies need/timeline",
+      "AI collects need/timeline details",
       "Lead is tagged hot/warm/cold",
       "Nurture sequence begins",
       "Sales next action is assigned"
     ],
-    qualificationQuestions: [
+    intakeQuestions: [
       "What are you looking for?",
       "What timeline are you considering?",
       "What is prompting the search now?",
@@ -156,9 +156,9 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
       "Reminder to book/call",
       "Quiet lead reactivation"
     ],
-    dashboardFields: ["Need", "Timeline", "Intent", "Lead score", "Owner", "Nurture status", "Next action", "Last touch"],
+    dashboardFields: ["Need", "Timeline", "Intent", "Priority / next action", "Owner", "Nurture status", "Next action", "Last touch"],
     recommendedPackageTendency: "Growth",
-    commonAddOns: ["Nurture sequences", "Sales owner routing", "Pipeline tags", "CRM/spreadsheet logging", "Lead score views"]
+    commonAddOns: ["Nurture sequences", "Sales owner routing", "Pipeline tags", "CRM/spreadsheet logging", "Priority views"]
   },
   "Custom Ops OS": {
     name: "Custom Ops OS",
@@ -171,7 +171,7 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
       "Team receives role-specific next action",
       "Dashboard and follow-up rules stay updated"
     ],
-    qualificationQuestions: [
+    intakeQuestions: [
       "Which location/team/owner should handle this?",
       "Which workflow path applies?",
       "What tools need to be updated?",

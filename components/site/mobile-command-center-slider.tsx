@@ -207,7 +207,7 @@ function GlassyDashboard() {
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.14em] text-[#cfe0ff]">Signal layer</p>
-              <p className="mt-2 text-sm font-black text-white">Lead captured → qualified → routed</p>
+              <p className="mt-2 text-sm font-black text-white">Lead captured / sorted / routed</p>
             </div>
             <Route className="size-5 text-[#37f0bd]" aria-hidden="true" />
           </div>

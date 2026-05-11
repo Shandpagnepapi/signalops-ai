@@ -16,7 +16,7 @@ export const signalOpsRules = [
   "Recommend Starter, Growth, or Custom based on real complexity and need.",
   "Recommend the smallest useful package that solves the lead flow.",
   "Keep customer-facing copy simple, confident, concise, and business-owner friendly.",
-  "Treat AI as an operating layer for response, qualification, routing, follow-up, and handoff, not a gimmick.",
+  "Treat AI as an operating layer for response, intake, priority routing, follow-up, and handoff, not a gimmick.",
   "Route uncertainty, risk, compliance questions, medical/legal/financial advice, and unclear leads to human review.",
   "Use concrete business pain: missed calls, slow replies, quote requests, missing photos/details, follow-up gaps, booking handoff, and scattered notes.",
   "Do not overbuild the recommendation. Start with the smallest useful system that protects the lead flow."

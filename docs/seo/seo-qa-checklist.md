@@ -45,7 +45,7 @@ The script is intentionally lightweight. It does not replace a browser QA pass, 
 
 - Validate JSON-LD with Google's Rich Results Test or Schema.org validator before launch.
 - Confirm Organization and WebSite schema render on the site.
-- Confirm Service schema describes the SignalOps AI Lead Response & Qualification System.
+- Confirm Service schema describes the SignalOps AI Lead Response & Intake System.
 - Confirm FAQPage schema appears only on pages with visible FAQ content.
 - Confirm BreadcrumbList schema uses real, reachable URLs.
 - Do not use fake reviews, ratings, case studies, or claims in schema.

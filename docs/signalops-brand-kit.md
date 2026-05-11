@@ -10,11 +10,11 @@ Every lead answered. Every follow-up handled.
 
 ## Positioning
 
-SignalOps builds AI-powered lead response systems that help small and local businesses capture, qualify, route, follow up with, and book more leads automatically.
+SignalOps builds AI-powered lead response systems that help small and local businesses capture, sort, route, follow up with, and book more leads automatically.
 
 ## Core Offer
 
-AI Lead Response & Qualification System
+AI Lead Response & Intake System
 
 ## Primary Offer
 
@@ -28,7 +28,7 @@ Free Instant AI Lead System Preview
 - `Warm Signal` `#ffb36d`: Secondary accent for signal flow, badges, and active states.
 - `Fog White` `#F8FBFF`: Primary text on dark surfaces.
 - `Orchid Mist` `#d4b6c8`: Secondary copy, helper text, and labels.
-- `Success Mint` `#2ED9A0`: Qualified leads, booked states, and positive status.
+- `Success Mint` `#2ED9A0`: Ready leads, booked states, and positive status.
 - `Alert Amber` `#F6B84A`: Needs-attention, human review, and urgent lead status.
 
 ## Typography
@@ -41,7 +41,7 @@ Free Instant AI Lead System Preview
 ## Voice And Tone
 
 - Practical: explain what happens to calls, texts, forms, DMs, and follow-ups.
-- Operational: focus on response time, routing, qualification, and booked next steps.
+- Operational: focus on response time, routing, intake, and booked next steps.
 - Confident: show expertise without hype or vague AI language.
 - Conservative: avoid guaranteed revenue claims and keep human review in risky cases.
 - Local-business friendly: write for owners who are busy, skeptical, and hands-on.
@@ -50,7 +50,7 @@ Free Instant AI Lead System Preview
 
 1. Speed-to-lead reliability
    SignalOps helps every new inquiry receive a fast, useful response before the prospect moves on.
-2. Qualification clarity
+2. Intake clarity
    Leads are scored and sorted by service need, urgency, fit, contact completeness, and next step.
 3. Follow-up discipline
    Quote reminders, photo requests, appointment nudges, and no-response sequences do not depend on memory.
@@ -72,7 +72,7 @@ Free Instant AI Lead System Preview
 ## Offer Names
 
 - Free Instant AI Lead System Preview
-- AI Lead Response & Qualification System
+- AI Lead Response & Intake System
 - Missed-Call Text Back
 - Lead Routing Blueprint
 - Follow-Up Automation Sprint
@@ -81,10 +81,10 @@ Free Instant AI Lead System Preview
 ## Package Names
 
 1. Starter
-   One lead source, instant reply workflow, practical qualification, and owner or rep alerts.
+   One lead source, instant reply workflow, practical intake, and owner or rep alerts.
 2. Growth
    Multi-source routing, follow-up sequences, CRM logging, and dashboard reporting.
-3. Custom Agent System
+3. Custom
    Advanced lead workflows, custom agents, tool-specific integrations, and optimization support.
 
 ## SEO Positioning
@@ -95,7 +95,7 @@ SignalOps should rank around practical lead handling problems, not vague AI clai
 - missed lead follow-up
 - missed-call text back
 - AI follow-up automation
-- AI lead qualification
+- AI lead intake
 - lead management for small business
 - no CRM lead tracking
 - service business lead follow-up
@@ -138,7 +138,7 @@ H1:
 `See the AI lead system your business should already have.`
 
 Supporting copy:
-`SignalOps builds done-for-you AI receptionist, lead response, qualification, follow-up, and booking handoff systems for local service businesses. Start with a free personalized preview before anything is built.`
+`SignalOps builds done-for-you AI receptionist, lead response, intake, follow-up, and booking handoff systems for local service businesses. Start with a free personalized preview before anything is built.`
 
 Primary CTA:
 `Get My Free Preview`

@@ -80,7 +80,7 @@ Create these outputs in this exact order:
 - Business type
 - Lead sources
 - Core intake fields
-- Qualification questions
+- Intake questions
 - Routing rules
 - Follow-up sequence
 - Dashboard fields
@@ -152,7 +152,7 @@ Upgrade path:
 The recommendation should use the smallest useful package that solves the lead flow.
 
 - Starter: use when there is one simple lead source and a simple handoff.
-- Growth: use when there are multiple sources, quote follow-up, photos/details, scoring, dashboard visibility, or booking handoff.
+- Growth: use when there are multiple sources, quote follow-up, photos/details, priority sorting, dashboard visibility, or booking handoff.
 - Custom: use when there is multi-location routing, deep integrations, custom dashboards, complex approvals, or advanced agent workflows.
 
 ## Test And Spam Handling
@@ -196,7 +196,7 @@ Each output must identify one repeatable SignalOps operating system:
 - Lead Nurture OS
 - Custom Ops OS
 
-The output must include lead sources, intake fields, qualification questions, routing and handoff rules, follow-up sequence, dashboard fields, and human review conditions.
+The output must include lead sources, intake fields, intake questions, routing and handoff rules, follow-up sequence, dashboard fields, and human review conditions.
 
 ## Build Mode
 

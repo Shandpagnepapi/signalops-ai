@@ -41,7 +41,7 @@ export const OG_IMAGE_ASSETS = {
   },
   demo: {
     path: "/og/signalops-demo.png",
-    alt: "SignalOps client demo social image showing AI lead intake, scoring, and routing."
+    alt: "SignalOps client demo social image showing AI lead intake, priority sorting, and routing."
   },
   roi: {
     path: "/og/signalops-roi.png",
@@ -64,21 +64,21 @@ export const PAGE_TITLE_TEMPLATES = {
 
 export const META_DESCRIPTION_TEMPLATES = {
   home:
-    "SignalOps helps local and service businesses respond to leads instantly, qualify prospects automatically, and follow up before opportunities go cold.",
+    "SignalOps helps local and service businesses respond to leads instantly, sort prospects automatically, and follow up before opportunities go cold.",
   preview:
     "Get a personalized SignalOps Free Preview with a draft report, proposal, and email draft for the AI lead system your business should be using.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:
-    "See SignalOps AI lead response demos for Apex Wheel Repair and ClearFlow with quote intake automation, lead qualification, routing, and follow-up.",
+    "See SignalOps AI lead response demos for Apex Wheel Repair and ClearFlow with quote intake automation, lead intake, routing, and follow-up.",
   dashboard:
-    "Explore a SignalOps AI lead management dashboard demo with lead scores, routing status, missed lead recovery, and automated follow-up visibility.",
+    "Explore a SignalOps AI lead management dashboard demo with priority views, routing status, missed lead recovery, and automated follow-up visibility.",
   howItWorks:
-    "See how SignalOps AI lead response systems capture inquiries, qualify leads, route hot opportunities, book appointments, and trigger follow-up.",
+    "See how SignalOps AI lead response systems capture inquiries, collect lead details, route hot opportunities, book appointments, and trigger follow-up.",
   liveDemo:
-    "Generate a tailored SignalOps AI lead response demo with lead qualification, routing automation, follow-up examples, and appointment booking ideas.",
+    "Generate a tailored SignalOps AI lead response demo with lead intake, routing automation, follow-up examples, and appointment booking ideas.",
   roi:
-    "Use the SignalOps ROI calculator to estimate missed lead recovery from faster response, AI lead qualification, and automated follow-up.",
+    "Use the SignalOps ROI calculator to estimate missed lead recovery from faster response, AI lead intake, and automated follow-up.",
   privacy:
     "Read how SignalOps handles website, analytics, and lead form information submitted through its AI lead response system pages.",
   terms:
@@ -248,8 +248,8 @@ export function serviceJsonLd(): JsonLdObject {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": absoluteUrl("/#ai-lead-response-qualification-system"),
-    name: "AI Lead Response & Qualification System",
-    serviceType: "AI lead response, qualification, routing, follow-up, and appointment booking",
+    name: "AI Lead Response & Intake System",
+    serviceType: "AI lead response, intake, routing, follow-up, and appointment booking",
     url: absoluteUrl("/preview"),
     provider: {
       "@id": absoluteUrl("/#organization")
@@ -263,7 +263,7 @@ export function serviceJsonLd(): JsonLdObject {
       audienceType: "Small and mid-sized local service businesses"
     },
     description:
-      "SignalOps builds AI-powered lead response systems that help small and local businesses capture, answer, qualify, follow up with, route, and book more leads automatically.",
+      "SignalOps builds AI-powered lead response systems that help small and local businesses capture, answer, sort, follow up with, route, and book more leads automatically.",
     offers: PACKAGE_NAMES.map((pkg) => ({
       "@type": "Offer",
       name: pkg.name,

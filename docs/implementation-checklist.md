@@ -14,13 +14,13 @@
 - Validate required fields
 - Normalize phone and email data
 - Add source tracking
-- Create lead scoring rules
+- Create priority sorting rules
 
-## Qualification
+## Intake
 
 - Define high-intent keywords
 - Define lead value signals
-- Define disqualification criteria
+- Define disintake criteria
 - Create recommended next actions
 - Test sample leads across A, B, and C grades
 
@@ -36,6 +36,6 @@
 
 - Track new leads
 - Track median first response time
-- Track qualified lead volume
+- Track ready lead volume
 - Track booked appointments
 - Track follow-up completion rate

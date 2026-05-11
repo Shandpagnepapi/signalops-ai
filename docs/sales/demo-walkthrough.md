@@ -20,7 +20,7 @@ Talk track:
 "Most businesses do not have a lead volume problem. They have a response and follow-up execution problem. SignalOps closes that gap."
 
 What to point out:
-- Core promise: instant response, qualification, and booking flow.
+- Core promise: instant response, intake, and booking flow.
 - Problem framing: leads get missed after form submit, missed call, DM, or ad inquiry.
 - Packages: clear path from starter to custom system.
 - CTA: Free Missed Lead Check as low-friction next step.
@@ -66,12 +66,12 @@ Talk track:
 "This is the owner/operator view after implementation."
 
 Show:
-- Lead score, priority, urgency, and recommended action.
+- Priority value, urgency, and recommended action.
 - Pipeline movement from new to booked/won/lost.
 - Lead detail card with customer message, AI summary, internal note, and tags.
 - Timeline events:
   - Lead submitted
-  - AI qualified
+  - AI ready
   - Customer reply prepared/sent
   - Owner alert prepared/sent
   - Follow-up sequence started
@@ -84,7 +84,7 @@ Talk track:
 
 Highlight:
 - Lead capture from forms/calls/ads/DMs.
-- Instant response and qualification.
+- Instant response and intake.
 - Scoring and routing.
 - Booking handoff.
 - Follow-up sequence.
@@ -110,7 +110,7 @@ Secondary close:
 
 ### "Is this replacing my staff?"
 
-"No. It improves staff output by handling response, qualification prep, and follow-up consistency."
+"No. It improves staff output by handling response, intake prep, and follow-up consistency."
 
 ### "Will this work with my current tools?"
 

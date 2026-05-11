@@ -69,7 +69,7 @@ EMAIL_DELIVERY_MODE=draft
 
 If blank, analytics scripts will not load and the app still works.
 
-### AI qualification variable (optional but recommended)
+### AI intake variable (optional but recommended)
 
 - `OPENAI_API_KEY`
 - `OPENAI_MODEL`

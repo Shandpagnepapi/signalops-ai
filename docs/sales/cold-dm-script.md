@@ -8,7 +8,7 @@ Keep the first message short and specific. Do not pitch a full automation stack 
 
 Hi [First Name], quick one.
 
-I work with service businesses that are getting leads but losing them between form submit and real follow-up. We build the backend so every lead gets an instant reply, gets qualified, and gets routed to the right next step.
+I work with service businesses that are getting leads but losing them between form submit and real follow-up. We build the backend so every lead gets an instant reply, gets ready, and gets routed to the right next step.
 
 If I recorded a 5-minute missed lead breakdown for [Business Name], would that be useful?
 
@@ -16,7 +16,7 @@ If I recorded a 5-minute missed lead breakdown for [Business Name], would that b
 
 Hey [First Name], reaching out because [Business Name] looks like the kind of shop that could get more booked jobs from the same lead volume.
 
-We help businesses fix the gap between inquiry and appointment by automating response, qualification, and follow-up.
+We help businesses fix the gap between inquiry and appointment by automating response, intake, and follow-up.
 
 Open to a quick 10-minute lead process review this week?
 
@@ -26,7 +26,7 @@ Hi [First Name], I help SMB teams tighten lead operations.
 
 Most do not have a lead volume problem. They have a response-time and follow-up gap after someone submits a form or calls.
 
-SignalOps installs an AI lead response and qualification layer so hot leads are handled fast and low-intent leads do not waste the team.
+SignalOps installs an AI lead response and intake layer so hot leads are handled fast and low-intent leads do not waste the team.
 
 Would a Free Missed Lead Check be useful for [Business Name]?
 

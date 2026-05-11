@@ -77,7 +77,7 @@ const industries = [
   "Other local service"
 ];
 
-const packageOptions = ["Starter", "Growth", "Custom Agent System", "Not sure"];
+const packageOptions = ["Starter", "Growth", "Custom", "Not sure"];
 const leadTypeOptions = ["Calls", "Forms", "Texts", "DMs", "Ads", "Referrals", "Other"];
 const capabilityOptions = ["Email follow-up", "SMS follow-up", "Booking handoff", "Dashboard", "CRM logging", "Owner alerts"];
 const timelineOptions = ["ASAP", "This month", "Exploring"];

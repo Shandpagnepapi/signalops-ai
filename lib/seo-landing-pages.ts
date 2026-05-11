@@ -127,7 +127,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "CRM or dashboard logging",
         description:
-          "The lead is organized with status, score, tags, and recommended next action."
+          "The lead is organized with status, priority, tags, and recommended next action."
       }
     ],
     workflowTitle: "Example AI lead response workflow",
@@ -148,7 +148,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         label: "3",
-        title: "Lead gets qualified",
+        title: "Lead is ready for handoff",
         description:
           "The system captures need, urgency, service fit, contact completeness, and buying intent."
       },
@@ -156,7 +156,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "4",
         title: "Team gets context",
         description:
-          "The owner or sales rep sees the score, summary, suggested reply, and recommended next action."
+          "The owner or sales rep sees the priority, summary, suggested reply, and recommended next action."
       }
     ],
     industryTitle: "Where AI lead response works well",
@@ -179,7 +179,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Law firms and insurance agencies",
         description:
-          "Gather basic case or coverage context, identify urgency, and route qualified prospects without promising outcomes."
+          "Gather basic case or coverage context, identify urgency, and route ready prospects without promising outcomes."
       }
     ],
     faqs: [
@@ -212,8 +212,8 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/ai-lead-qualification",
-        label: "AI lead qualification",
-        description: "Score and summarize inquiries before the team follows up."
+        label: "AI lead intake",
+        description: "Priority and summarize inquiries before the team follows up."
       },
       {
         href: "/how-it-works",
@@ -228,7 +228,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "Missed-call text back",
     metaTitle: "Missed-Call Text Back and Speed to Lead Automation",
     metaDescription:
-      "SignalOps turns missed calls into captured leads with speed to lead automation, text-back workflows, AI lead qualification, alerts, and follow-up.",
+      "SignalOps turns missed calls into captured leads with speed to lead automation, text-back workflows, AI lead intake, alerts, and follow-up.",
     h1: "Missed-call text back that keeps phone leads from disappearing.",
     subheadline:
       "SignalOps helps busy service teams automatically respond to missed calls, gather the reason for the call, and alert the right person when the opportunity needs attention.",
@@ -284,7 +284,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "The customer gets a practical message asking what they need and how urgent it is."
       },
       {
-        title: "Qualification prompts",
+        title: "Intake prompts",
         description:
           "The system collects the details your team usually needs before calling back."
       },
@@ -325,7 +325,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "4",
         title: "Team follows up",
         description:
-          "SignalOps routes the lead with a summary, score, urgency, and suggested next action."
+          "SignalOps routes the lead with a summary, priority, urgency, and suggested next action."
       }
     ],
     industryTitle: "Missed-call examples by industry",
@@ -545,8 +545,8 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     relatedLinks: [
       {
         href: "/ai-lead-qualification",
-        label: "AI lead qualification",
-        description: "Use qualification to decide which follow-up path fits."
+        label: "AI lead intake",
+        description: "Use intake to decide which follow-up path fits."
       },
       {
         href: "/lead-management-for-small-business",
@@ -563,15 +563,15 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
   "ai-lead-qualification": {
     id: "ai-lead-qualification",
     path: "/ai-lead-qualification",
-    eyebrow: "AI lead qualification",
-    metaTitle: "AI Lead Qualification and Routing Automation",
+    eyebrow: "AI lead intake",
+    metaTitle: "AI Lead Intake and Routing Automation",
     metaDescription:
-      "SignalOps uses AI lead qualification and lead routing automation to score prospects by urgency, service need, buying intent, and follow-up priority.",
-    h1: "AI lead qualification that helps your team know who to call first.",
+      "SignalOps uses AI lead intake and lead routing automation to sort prospects by urgency, service need, buying intent, and follow-up priority.",
+    h1: "AI lead intake that helps your team know who to call first.",
     subheadline:
-      "SignalOps turns messy lead submissions into clear summaries, priority scores, tags, and recommended next actions so your team can focus on the best opportunities.",
+      "SignalOps turns messy lead submissions into clear summaries, priority levels, tags, and recommended next actions so your team can focus on the best opportunities.",
     heroBullets: [
-      "Score leads by urgency, intent, fit, and completeness",
+      "Priority leads by urgency, intent, fit, and completeness",
       "Summarize what the customer needs before a callback",
       "Flag risky, urgent, or unclear leads for human review"
     ],
@@ -582,17 +582,17 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         title: "Warm",
-        description: "Qualified, interested, but needs details, quote, or timing."
+        description: "Ready, interested, but needs details, quote, or timing."
       },
       {
         title: "Review",
         description: "Missing contact info, unclear request, risky claim, or edge case."
       }
     ],
-    plainEnglishTitle: "What AI lead qualification does",
+    plainEnglishTitle: "What AI lead intake does",
     plainEnglishBody:
-      "AI lead qualification reads the information a prospect provides, extracts the important details, and helps your team decide the next move. It can identify service need, urgency, customer intent, missing fields, and whether the lead should be routed to an owner, salesperson, front desk, technician, or follow-up sequence. SignalOps keeps this conservative: if the system is unsure, the lead should be reviewed by a person.",
-    whyTitle: "Why qualification matters",
+      "AI lead intake reads the information a prospect provides, extracts the important details, and helps your team decide the next move. It can identify service need, urgency, customer intent, missing fields, and whether the lead should be routed to an owner, salesperson, front desk, technician, or follow-up sequence. SignalOps keeps this conservative: if the system is unsure, the lead should be reviewed by a person.",
+    whyTitle: "Why intake matters",
     whyIntro:
       "Not every lead needs the same response. Treating every inquiry the same slows down the best prospects and wastes time on vague ones.",
     whyCards: [
@@ -614,12 +614,12 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     solutionTitle: "How SignalOps qualifies leads",
     solutionIntro:
-      "SignalOps creates scoring rules and AI prompts around your actual business, services, service area, team capacity, and risk boundaries.",
+      "SignalOps creates priority rules and AI prompts around your actual business, services, service area, team capacity, and risk boundaries.",
     solutionCards: [
       {
-        title: "Lead scoring",
+        title: "Priority sorting",
         description:
-          "Assign a practical score based on service need, urgency, value, contact completeness, and buying language."
+          "Assign a practical priority based on service need, urgency, value, contact completeness, and buying language."
       },
       {
         title: "Priority labels",
@@ -637,9 +637,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "Apply tags like emergency, photo-needed, mobile-service, commercial, appointment-ready, or inspection-required."
       }
     ],
-    workflowTitle: "Example qualification workflow",
+    workflowTitle: "Example intake workflow",
     workflowIntro:
-      "A useful qualification process should turn a messy inquiry into a clear next action.",
+      "A useful intake process should turn a messy inquiry into a clear next action.",
     workflow: [
       {
         label: "1",
@@ -655,7 +655,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         label: "3",
-        title: "Score and tags are applied",
+        title: "Priority and tags are applied",
         description:
           "The dashboard shows priority, urgency, recommended action, and suggested follow-up."
       },
@@ -666,7 +666,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "Hot leads alert the right person. Incomplete leads get a follow-up. Risky leads go to human review."
       }
     ],
-    industryTitle: "Lead qualification by industry",
+    industryTitle: "Lead intake by industry",
     industryExamples: [
       {
         title: "Wheel repair",
@@ -686,7 +686,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Law and insurance",
         description:
-          "Qualification can capture category, urgency, jurisdiction or coverage context, and hand off without giving advice."
+          "Intake can capture category, urgency, jurisdiction or coverage context, and hand off without giving advice."
       }
     ],
     faqs: [
@@ -696,9 +696,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "It can help prioritize, but it should not be the only decision-maker. SignalOps recommends human review for unclear, risky, or high-value cases."
       },
       {
-        question: "Can we customize the scoring rules?",
+        question: "Can we customize the priority rules?",
         answer:
-          "Yes. Lead scoring should match your services, margins, service area, availability, and sales process."
+          "Yes. Priority sorting should match your services, margins, service area, availability, and sales process."
       },
       {
         question: "What if a lead has missing contact information?",
@@ -706,7 +706,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "The system can mark it as lower confidence, ask for missing details when possible, and flag it for review."
       },
       {
-        question: "Does qualification work with photos?",
+        question: "Does intake work with photos?",
         answer:
           "Yes. Photo requests and photo notes are useful for repair, home service, med spa, auto, and other quote workflows."
       }
@@ -715,7 +715,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/ai-lead-response",
         label: "AI lead response",
-        description: "Respond to qualified leads quickly with the right next step."
+        description: "Respond to ready leads quickly with the right next step."
       },
       {
         href: "/ai-follow-up-automation",
@@ -725,7 +725,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/dashboard",
         label: "Dashboard demo",
-        description: "See how qualified leads appear inside a SignalOps dashboard."
+        description: "See how ready leads appear inside a SignalOps dashboard."
       }
     ]
   },
@@ -735,19 +735,19 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "Lead management for small business",
     metaTitle: "AI Lead Management for Local Businesses",
     metaDescription:
-      "SignalOps provides AI lead management for local businesses that need to capture, qualify, route, follow up with, and organize leads without extra admin.",
+      "SignalOps provides AI lead management for local businesses that need to capture, sort, route, follow up with, and organize leads without extra admin.",
     h1: "Lead management for small businesses that do not need more admin work.",
     subheadline:
       "SignalOps helps owners and lean teams organize new inquiries, follow-ups, statuses, and sales handoffs without forcing a complicated CRM rollout on day one.",
     heroBullets: [
       "Track calls, texts, forms, DMs, quotes, and appointment requests",
-      "Keep status, score, urgency, and next action in one place",
+      "Keep status, priority, urgency, and next action in one place",
       "Start simple, then connect CRM or calendar tools when useful"
     ],
     quickStats: [
       {
         title: "One view",
-        description: "See new, contacted, qualified, booked, won, lost, and needs-follow-up leads."
+        description: "See new, contacted, ready, booked, won, lost, and needs-follow-up leads."
       },
       {
         title: "Simple statuses",
@@ -783,7 +783,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     solutionTitle: "How SignalOps manages leads",
     solutionIntro:
-      "SignalOps gives your business a clear lead flow: capture, qualify, route, follow up, and track status.",
+      "SignalOps gives your business a clear lead flow: capture, sort, route, follow up, and track status.",
     solutionCards: [
       {
         title: "Central lead capture",
@@ -793,7 +793,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Practical pipeline",
         description:
-          "Use clear statuses like new, contacted, needs info, qualified, booked, won, and lost."
+          "Use clear statuses like new, contacted, needs info, ready, booked, won, and lost."
       },
       {
         title: "Lead summaries",
@@ -820,7 +820,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "2",
         title: "Lead is organized",
         description:
-          "The system adds contact details, source, service need, urgency, score, tags, and status."
+          "The system adds contact details, source, service need, urgency, priority, tags, and status."
       },
       {
         label: "3",
@@ -862,7 +862,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Is SignalOps a CRM?",
         answer:
-          "SignalOps can connect to a CRM, but it is not limited to being one. It is a lead operations layer focused on response, qualification, follow-up, routing, and visibility."
+          "SignalOps can connect to a CRM, but it is not limited to being one. It is a lead operations layer focused on response, intake, follow-up, routing, and visibility."
       },
       {
         question: "Can we use SignalOps before choosing a CRM?",
@@ -888,7 +888,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/ai-lead-qualification",
-        label: "AI lead qualification",
+        label: "AI lead intake",
         description: "Prioritize leads inside the management workflow."
       },
       {
@@ -962,7 +962,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Add useful status",
         description:
-          "Mark leads as new, contacted, needs info, qualified, booked, won, lost, or follow-up needed."
+          "Mark leads as new, contacted, needs info, ready, booked, won, lost, or follow-up needed."
       },
       {
         title: "Send owner alerts",
@@ -995,7 +995,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "3",
         title: "Lead is logged",
         description:
-          "A simple record is created with tags, score, status, summary, and recommended next action."
+          "A simple record is created with tags, priority, status, summary, and recommended next action."
       },
       {
         label: "4",
@@ -1041,7 +1041,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "What happens when the business grows?",
         answer:
-          "The same intake and qualification rules can be connected to a CRM, booking tool, email system, or reporting dashboard."
+          "The same intake and intake rules can be connected to a CRM, booking tool, email system, or reporting dashboard."
       },
       {
         question: "Is this only for very small businesses?",

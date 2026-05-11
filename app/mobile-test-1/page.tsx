@@ -28,7 +28,7 @@ import { getEmailHref, PRIMARY_CTA, SITE_CONFIG } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Mobile Test 1 | SignalOps Enterprise Command Center",
   description:
-    "A premium mobile-first SignalOps landing page concept for AI receptionist, lead response, qualification, follow-up, and booking handoff systems.",
+    "A premium mobile-first SignalOps landing page concept for AI receptionist, lead response, intake, follow-up, and booking handoff systems.",
   robots: {
     index: false,
     follow: false
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 const proofItems = [
   { label: "Instant replies", icon: Zap },
-  { label: "Smart qualification", icon: SearchCheck },
+  { label: "Smart intake", icon: SearchCheck },
   { label: "Human handoff", icon: Route },
   { label: "Follow-up automation", icon: MessageSquareReply }
 ];
@@ -72,13 +72,13 @@ const flowSteps = [
     icon: Bot
   },
   {
-    title: "AI qualifies",
+    title: "AI collects details",
     copy: "Service, timing, urgency, photos, location, and fit are collected.",
     icon: ClipboardCheck
   },
   {
     title: "Hot leads get routed",
-    copy: "Qualified leads move to the owner, rep, calendar, or callback queue.",
+    copy: "Ready leads move to the owner, rep, calendar, or callback queue.",
     icon: Route
   },
   {
@@ -91,7 +91,7 @@ const flowSteps = [
 const packages = [
   {
     name: "Starter",
-    copy: "One core lead source, instant reply, basic qualification, and owner alerts."
+    copy: "One core lead source, instant reply, basic intake, and owner alerts."
   },
   {
     name: "Growth",
@@ -124,7 +124,7 @@ export default function MobileTestOnePage() {
               Every lead answered. Every follow-up handled.
             </h1>
             <p className="mt-4 max-w-xs text-sm leading-6 text-[#cbd5e1] sm:max-w-2xl sm:text-lg sm:leading-8">
-              SignalOps builds AI receptionist and lead response systems that capture, qualify, route, follow up, and book local business leads automatically.
+              SignalOps builds AI receptionist and lead response systems that capture, sort, route, follow up, and book local business leads automatically.
             </p>
 
             <div className="mt-5 grid max-w-xs gap-2.5 sm:max-w-xl sm:grid-cols-[1fr_auto]">
@@ -248,7 +248,7 @@ function SolutionSection() {
             SignalOps becomes the response layer behind your business.
           </h2>
           <p className="mt-4 text-sm leading-7 text-[#94a3b8]">
-            The system handles the operational middle: response, qualification, routing, reminders, and handoff.
+            The system handles the operational middle: response, intake, routing, reminders, and handoff.
           </p>
         </div>
 
@@ -313,7 +313,7 @@ function ApexDemoTeaser() {
             See quote intake automation in a real service workflow.
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-[#cbd5e1]">
-            See how a wheel repair shop can qualify curb rash, bent wheel, cracked wheel, refinishing, and mobile repair quote requests automatically.
+            See how a wheel repair shop can sort curb rash, bent wheel, cracked wheel, refinishing, and mobile repair quote requests automatically.
           </p>
           <TrackedLink
             href="/demo"

@@ -153,7 +153,7 @@ Then check priority SEO pages:
 
 - `/ai-lead-response`
 - `/missed-call-text-back`
-- `/ai-lead-qualification`
+- `/ai-lead-intake`
 - `/ai-follow-up-automation`
 - `/lead-management-for-small-business`
 - `/no-crm-lead-tracking`

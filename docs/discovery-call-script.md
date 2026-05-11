@@ -11,10 +11,10 @@ Thanks for taking the time today. I want to understand how leads currently arriv
 - How are form fills, calls, chats, and referrals routed?
 - What happens after hours or on weekends?
 
-## Response and Qualification Questions
+## Response and Intake Questions
 
 - How quickly does your team usually respond?
-- What makes a lead qualified for an appointment or sales call?
+- What makes a lead ready for an appointment or sales call?
 - What information do you wish every lead included?
 - Where does follow-up break down?
 
@@ -27,4 +27,4 @@ Thanks for taking the time today. I want to understand how leads currently arriv
 
 ## Close
 
-Based on what you shared, the biggest opportunity appears to be faster response, cleaner qualification, and more consistent follow-up. The next step would be a short implementation plan that maps your lead sources, scoring rules, and first automation workflow.
+Based on what you shared, the biggest opportunity appears to be faster response, cleaner intake, and more consistent follow-up. The next step would be a short implementation plan that maps your lead sources, priority rules, and first automation workflow.

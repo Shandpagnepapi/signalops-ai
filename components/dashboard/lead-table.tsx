@@ -22,7 +22,7 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
     <Card className="min-w-0">
       <CardHeader>
         <CardTitle>Lead table</CardTitle>
-        <CardDescription>Score, urgency, and recommended next step for each wheel repair inquiry.</CardDescription>
+        <CardDescription>Priority, urgency, and recommended next step for each wheel repair inquiry.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="max-w-full overflow-x-auto">
@@ -33,7 +33,7 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
                 <th className="py-3 pr-4 font-medium">Source</th>
                 <th className="py-3 pr-4 font-medium">Vehicle</th>
                 <th className="py-3 pr-4 font-medium">Damage type</th>
-                <th className="py-3 pr-4 font-medium">Score</th>
+                <th className="py-3 pr-4 font-medium">Priority value</th>
                 <th className="py-3 pr-4 font-medium">Priority</th>
                 <th className="py-3 pr-4 font-medium">Urgency</th>
                 <th className="py-3 pr-4 font-medium">Recommended action</th>

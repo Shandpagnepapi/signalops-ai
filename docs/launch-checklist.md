@@ -30,7 +30,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 - [ ] `/audit` form submits successfully
 - [ ] `/demo` lead intake form submits successfully
 - [ ] Required field validation appears when inputs are missing
-- [ ] Success state renders with score, priority, and AI qualification details
+- [ ] Success state renders with score, priority, and AI intake details
 - [ ] Error state renders friendly messaging when submission fails
 
 ## 5) API Route Testing
@@ -48,7 +48,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 - [ ] Apex Wheel Repair page loads fully (`/demo`)
 - [ ] Service sections and conversion CTAs display correctly
 - [ ] SignalOps demo workflow panel is visible and understandable
-- [ ] Demo lead qualification logic appears realistic and useful
+- [ ] Demo lead intake logic appears realistic and useful
 - [ ] No unsafe repair claims (cracked/structural cases route to inspection/replacement guidance)
 
 ## 7) Dashboard Testing
@@ -58,7 +58,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 - [ ] KPI cards show realistic values
 - [ ] Pipeline columns render correctly
 - [ ] Lead table supports filtering and detail inspection
-- [ ] Timeline events appear for qualification and mock integrations
+- [ ] Timeline events appear for intake and mock integrations
 
 ## 8) SEO Metadata
 

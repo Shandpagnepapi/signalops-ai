@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ClipboardList, FileText, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
 import {
   BeforeAfterFlow,
@@ -32,6 +32,12 @@ const steps = [
   "We review your preview before it is emailed"
 ];
 
+const mobilePreviewOutputs = [
+  { title: "Preview Report", icon: FileText },
+  { title: "Proposal Draft", icon: ClipboardList },
+  { title: "Email Draft", icon: Mail }
+];
+
 export default function PreviewPage() {
   return (
     <>
@@ -50,7 +56,42 @@ export default function PreviewPage() {
         ])}
       />
       <div className="overflow-x-hidden">
-        <section className="relative isolate overflow-hidden border-b border-white/10">
+        <section className="relative isolate overflow-hidden border-b border-white/10 md:hidden">
+          <div className="surface-grid absolute inset-0 opacity-20" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),linear-gradient(180deg,rgba(6,12,24,0.4),#100818_92%)]" />
+          <div className="relative mx-auto max-w-md px-4 py-10">
+            <Badge className="mb-4 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
+              Free Preview
+            </Badge>
+            <h2 className="text-4xl font-semibold leading-tight tracking-normal text-white">
+              Get your Free Preview.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
+              Tell us how leads come in and where things slow down. We draft the system preview and review it before anything is emailed.
+            </p>
+
+            <div className="mt-6 grid grid-cols-3 gap-2">
+              {mobilePreviewOutputs.map((output) => (
+                <div key={output.title} className="rounded-2xl border border-white/10 bg-white/[0.055] p-3">
+                  <output.icon className="size-4 text-[#ffb36d]" aria-hidden="true" />
+                  <p className="mt-3 text-xs font-semibold leading-4 text-white">{output.title}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-4 flex gap-2 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-3 text-sm font-semibold leading-6 text-emerald-100">
+              <ShieldCheck className="mt-1 size-4 shrink-0" aria-hidden="true" />
+              Drafts are reviewed before anything is emailed.
+            </p>
+
+            <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} mt-6 w-full`}>
+              Start Free Preview
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+
+        <section className="relative isolate hidden overflow-hidden border-b border-white/10 md:block">
           <div className="surface-grid absolute inset-0 opacity-20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.22),transparent_34%),radial-gradient(circle_at_78%_12%,rgba(255,179,109,0.16),transparent_30%),linear-gradient(180deg,rgba(6,12,24,0.52),#100818_92%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
@@ -84,7 +125,7 @@ export default function PreviewPage() {
           </div>
         </section>
 
-        <section className="border-b border-white/10 bg-[#17122d]/36">
+        <section className="hidden border-b border-white/10 bg-[#17122d]/36 md:block">
           <div className="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:px-6 md:grid-cols-3 lg:px-8">
             {steps.map((step, index) => (
               <div key={step} className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
@@ -97,13 +138,13 @@ export default function PreviewPage() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-7xl gap-5 px-4 py-10 sm:px-6 xl:grid-cols-[1.08fr_0.92fr] lg:px-8">
+        <section className="mx-auto hidden max-w-7xl gap-5 px-4 py-10 sm:px-6 md:grid xl:grid-cols-[1.08fr_0.92fr] lg:px-8">
           <LeadJourneyVisual />
           <BeforeAfterFlow />
         </section>
 
-        <section id="preview-form" className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
-          <div className="grid gap-4">
+        <section id="preview-form" className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 md:py-10 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
+          <div className="hidden gap-4 md:grid">
             <div className="rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-5">
               <Sparkles className="mb-4 size-7 text-[#ffb36d]" aria-hidden="true" />
               <h2 className="text-2xl font-semibold tracking-normal text-white">A preview before buildout.</h2>
@@ -128,6 +169,10 @@ export default function PreviewPage() {
             </div>
           </div>
           <PreviewRequestForm />
+        </section>
+
+        <section className="px-4 pb-10 text-center text-xs leading-5 text-[#ead0df]/52 md:hidden">
+          SignalOps reviews every preview before anything is sent.
         </section>
       </div>
     </>

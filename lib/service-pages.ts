@@ -69,8 +69,8 @@ const related = {
   },
   qualification: {
     href: "/services/ai-lead-qualification",
-    label: "AI lead qualification",
-    description: "Score, summarize, and prioritize leads before the team follows up."
+    label: "AI lead intake",
+    description: "Priority, summarize, and prioritize leads before the team follows up."
   },
   followUp: {
     href: "/services/automated-lead-follow-up",
@@ -107,7 +107,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     eyebrow: "AI lead response system",
     metaTitle: "AI Lead Response System for Local Businesses | SignalOps",
     metaDescription:
-      "SignalOps builds AI lead response systems that help local businesses answer leads instantly, qualify prospects, route hot opportunities, and follow up.",
+      "SignalOps builds AI lead response systems that help local businesses answer leads instantly, sort prospects, route hot opportunities, and follow up.",
     h1: "AI lead response system for local businesses.",
     subheadline:
       "SignalOps helps service businesses answer calls, texts, forms, DMs, and quote requests quickly with useful next steps, clean lead summaries, and human review when needed.",
@@ -133,7 +133,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps builds the response layer",
     solutionIntro:
-      "SignalOps creates a practical first-response system around the channels your business already uses, then routes the lead into qualification, booking, or follow-up.",
+      "SignalOps creates a practical first-response system around the channels your business already uses, then routes the lead into intake, booking, or follow-up.",
     solutionCards: [
       {
         title: "Instant acknowledgement",
@@ -148,7 +148,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Team-ready summary",
         description:
-          "The business receives a concise summary with source, service need, urgency, score, and recommended next action."
+          "The business receives a concise summary with source, service need, urgency, priority, and recommended next action."
       },
       {
         title: "Follow-up if the lead stalls",
@@ -174,7 +174,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "3",
-        title: "Lead is qualified",
+        title: "Lead is ready for handoff",
         description:
           "The system extracts service need, urgency, source, contact completeness, buying intent, and missing details."
       },
@@ -223,7 +223,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Apex Wheel Repair",
         description:
-          "A customer submits photos of curb rash on two wheels and asks for mobile repair. SignalOps asks for vehicle details, scores the lead, and routes it as a qualified cosmetic repair opportunity."
+          "A customer submits photos of curb rash on two wheels and asks for mobile repair. SignalOps asks for vehicle details, sorts the lead, and routes it as a ready cosmetic repair opportunity."
       },
       {
         title: "ClearFlow Well & Water",
@@ -258,12 +258,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
   "ai-lead-qualification": {
     id: "ai-lead-qualification",
     path: "/services/ai-lead-qualification",
-    targetKeyword: "AI lead qualification",
-    eyebrow: "AI lead qualification",
-    metaTitle: "AI Lead Qualification for Small Business Leads | SignalOps",
+    targetKeyword: "AI lead intake",
+    eyebrow: "AI lead intake",
+    metaTitle: "AI Lead Intake for Small Business Leads | SignalOps",
     metaDescription:
-      "SignalOps uses AI lead qualification to score small business leads, summarize intent, flag urgency, route hot prospects, and trigger follow-up.",
-    h1: "AI lead qualification for small business leads.",
+      "SignalOps uses AI lead intake to sort small business leads, summarize intent, flag urgency, route hot prospects, and trigger follow-up.",
+    h1: "AI lead intake for small business leads.",
     subheadline:
       "SignalOps turns messy inquiries into clear lead quality, urgency, recommended next action, and human-review flags so your team knows who to call first.",
     problemTitle: "Not every lead deserves the same response.",
@@ -288,12 +288,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps qualifies leads",
     solutionIntro:
-      "SignalOps uses service-specific scoring rules and AI summaries to separate hot, warm, cold, junk, and human-review leads.",
+      "SignalOps uses service-specific priority rules and AI summaries to separate hot, warm, cold, junk, and human-review leads.",
     solutionCards: [
       {
-        title: "Lead score",
+        title: "Priority",
         description:
-          "Score based on urgency, service value, buying intent, contact completeness, lead source, and industry-specific details."
+          "Priority based on urgency, service value, buying intent, contact completeness, lead source, and industry-specific details."
       },
       {
         title: "Priority and urgency",
@@ -311,9 +311,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Apply tags such as emergency, needs photos, mobile service, commercial, appointment-ready, or inspection required."
       }
     ],
-    workflowTitle: "Example AI qualification workflow",
+    workflowTitle: "Example AI intake workflow",
     workflowIntro:
-      "Qualification should make the next action obvious without pretending AI can replace expert judgment.",
+      "Intake should make the next action obvious without pretending AI can replace expert judgment.",
     workflow: [
       {
         label: "1",
@@ -329,7 +329,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "3",
-        title: "Score and priority are assigned",
+        title: "Priority and priority are assigned",
         description:
           "The lead is labeled hot, warm, cold, junk, or human-review with a confidence level."
       },
@@ -349,7 +349,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Teams that quote or inspect before selling",
         description:
-          "Wheel repair, auto shops, contractors, med spas, and well service teams often need qualification before a clear next step."
+          "Wheel repair, auto shops, contractors, med spas, and well service teams often need intake before a clear next step."
       },
       {
         title: "Owners who need prioritization",
@@ -371,7 +371,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "More consistent sales handoffs",
         description:
-          "Every rep sees the same summary, tags, score, and recommended next action."
+          "Every rep sees the same summary, tags, priority, and recommended next action."
       }
     ],
     examples: [
@@ -398,7 +398,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "It can help prioritize, but final judgment should stay with the business. SignalOps flags uncertainty and routes sensitive cases to humans."
       },
       {
-        question: "Can scoring rules be customized?",
+        question: "Can priority rules be customized?",
         answer:
           "Yes. Scoring should reflect your service area, average job value, urgency rules, margins, and sales process."
       },
@@ -598,7 +598,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps recovers missed leads",
     solutionIntro:
-      "SignalOps combines response, qualification, follow-up, routing, and dashboard visibility so fewer opportunities disappear silently.",
+      "SignalOps combines response, intake, follow-up, routing, and dashboard visibility so fewer opportunities disappear silently.",
     solutionCards: [
       {
         title: "Missed-call text back",
@@ -608,7 +608,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Lead status tracking",
         description:
-          "Leads can be marked new, contacted, needs photos, qualified, booked, won, lost, or follow-up needed."
+          "Leads can be marked new, contacted, needs photos, ready, booked, won, lost, or follow-up needed."
       },
       {
         title: "Recovery follow-up",
@@ -641,7 +641,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "3",
         title: "Lead is recovered into the pipeline",
         description:
-          "The record is scored, tagged, and given a status so it is visible again."
+          "The record is prioritized, tagged, and given a status so it is visible again."
       },
       {
         label: "4",
@@ -715,7 +715,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Where should we start?",
         answer:
-          "Start by sending project details so SignalOps can scope the right response, qualification, routing, and follow-up system."
+          "Start by sending project details so SignalOps can scope the right response, intake, routing, and follow-up system."
       }
     ],
     relatedLinks: [related.response, related.followUp, related.routing, related.booking]
@@ -773,18 +773,18 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "CRM and dashboard logging",
         description:
-          "The lead record includes status, source, score, tags, internal note, and next action."
+          "The lead record includes status, source, priority, tags, internal note, and next action."
       }
     ],
     workflowTitle: "Example lead routing workflow",
     workflowIntro:
-      "Routing works best after qualification, because the system needs to understand what the lead actually needs.",
+      "Routing works best after intake, because the system needs to understand what the lead actually needs.",
     workflow: [
       {
         label: "1",
-        title: "Lead is qualified",
+        title: "Lead is ready for handoff",
         description:
-          "SignalOps scores service need, urgency, contact info, buying intent, and missing details."
+          "SignalOps sorts service need, urgency, contact info, buying intent, and missing details."
       },
       {
         label: "2",
@@ -796,7 +796,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "3",
         title: "Context is included",
         description:
-          "The alert includes summary, score, urgency, suggested reply, and recommended next action."
+          "The alert includes summary, priority, urgency, suggested reply, and recommended next action."
       },
       {
         label: "4",
@@ -831,7 +831,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Less inbox sorting",
         description:
-          "The system separates urgent, qualified, incomplete, and routine leads for the team."
+          "The system separates urgent, ready, incomplete, and routine leads for the team."
       },
       {
         title: "Cleaner accountability",
@@ -882,10 +882,10 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     eyebrow: "AI appointment booking",
     metaTitle: "AI Appointment Booking for Service Businesses | SignalOps",
     metaDescription:
-      "SignalOps helps service businesses move qualified leads toward appointments with AI booking prompts, lead qualification, routing, and follow-up.",
+      "SignalOps helps service businesses move ready leads toward appointments with AI booking prompts, lead intake, routing, and follow-up.",
     h1: "AI appointment booking for service businesses.",
     subheadline:
-      "SignalOps helps qualified leads move from inquiry to appointment by collecting scheduling intent, confirming service fit, sending the right next step, and alerting staff when a human should book.",
+      "SignalOps helps ready leads move from inquiry to appointment by collecting scheduling intent, confirming service fit, sending the right next step, and alerting staff when a human should book.",
     problemTitle: "Appointment-ready leads often stall before the calendar.",
     problemIntro:
       "Many prospects ask for availability but never get a clear booking path. Others need a quote, photos, or staff review before scheduling. Without a process, ready customers get stuck in back-and-forth messages.",
@@ -898,7 +898,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Wrong leads get booking links",
         description:
-          "Some inquiries need qualification, inspection, photos, or human review before an appointment makes sense."
+          "Some inquiries need intake, inspection, photos, or human review before an appointment makes sense."
       },
       {
         title: "Scheduling follow-up gets forgotten",
@@ -951,7 +951,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "3",
         title: "Booking path is sent",
         description:
-          "Qualified leads can receive a booking link or scheduling reply; complex leads route to staff."
+          "Ready leads can receive a booking link or scheduling reply; complex leads route to staff."
       },
       {
         label: "4",
@@ -1023,9 +1023,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Yes. SignalOps is built to support booking links and calendar integrations when configured."
       },
       {
-        question: "Can it prevent unqualified bookings?",
+        question: "Can it prevent unready bookings?",
         answer:
-          "Yes. The system can ask qualifying questions and route uncertain leads to staff before they reach the calendar."
+          "Yes. The system can ask intake questions and route uncertain leads to staff before they reach the calendar."
       }
     ],
     relatedLinks: [related.response, related.qualification, related.followUp, related.routing]
@@ -1076,7 +1076,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Request photos, system details, vehicle info, address, timeline, and job context when needed."
       },
       {
-        title: "Quote priority scoring",
+        title: "Quote priority sorting",
         description:
           "Separate urgent, high-value, routine, incomplete, and human-review quote requests."
       },
@@ -1104,7 +1104,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "3",
-        title: "Lead is scored and routed",
+        title: "Lead is prioritized and routed",
         description:
           "Urgent, high-value, complete, incomplete, and review-required leads get different paths."
       },

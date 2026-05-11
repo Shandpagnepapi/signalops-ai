@@ -171,7 +171,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             </CardDescription>
           </div>
           <div className="rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 px-3 py-2 text-xs font-medium text-[#ffd7e6]">
-            SignalOps-scored demo
+            SignalOps-sorted demo
           </div>
         </div>
       </CardHeader>
@@ -282,13 +282,13 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
                   <Sparkles className="size-4" aria-hidden="true" />
                   SignalOps AI Report
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">Lead qualified and routed</h3>
+                <h3 className="mt-2 text-2xl font-semibold text-white">Lead sorted and routed</h3>
               </div>
               <Badge variant={priorityVariant(lead.priority)}>{formatLabel(lead.priority)} priority</Badge>
             </div>
 
             <dl className="mt-5 grid gap-3 md:grid-cols-4">
-              <Metric label="Lead score" value={String(lead.score)} />
+              <Metric label="Priority value" value={String(lead.score)} />
               <Metric label="Priority" value={formatLabel(lead.priority)} />
               <Metric label="Urgency" value={formatLabel(lead.aiQualification.urgency)} />
               <Metric label="Confidence" value={`${Math.round(lead.aiQualification.confidence * 100)}%`} />

@@ -168,7 +168,7 @@ function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
   }
 
   if (isAuditLead(lead)) {
-    return `${lead.name} submitted a SignalOps project inquiry${business}${industry}. The main issue appears to be ${lead.message || "lead response, qualification, routing, or follow-up visibility"}.`;
+    return `${lead.name} submitted a SignalOps project inquiry${business}${industry}. The main issue appears to be ${lead.message || "lead response, intake, routing, or follow-up visibility"}.`;
   }
 
   return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
@@ -496,7 +496,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
 
   const recommendedAction = (() => {
     if (needsHumanReview && priority === "junk") {
-      return "Request the missing contact details and ask one specific qualifying question before routing to sales.";
+      return "Request the missing contact details and ask one specific intake question before routing to sales.";
     }
 
     if (wheelLead && isBent && lead.vehicleDrivable === "no") {

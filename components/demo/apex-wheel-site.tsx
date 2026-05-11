@@ -23,7 +23,7 @@ import { DemoLeadForm } from "./wheel-lead-form";
 const timeline = [
   { label: "Inquiry", icon: MessageSquareReply },
   { label: "AI reply", icon: Zap },
-  { label: "Qualified", icon: SearchCheck },
+  { label: "Sorted", icon: SearchCheck },
   { label: "Follow-up", icon: Route },
   { label: "Booked", icon: CalendarCheck2 }
 ];
@@ -44,7 +44,7 @@ export function ApexWheelSite({ business }: { business: DemoBusinessConfig }) {
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#ead0df]/76 sm:text-lg">
               This is a product demo, not a fake business website. Choose a workflow,
-              submit a realistic lead, and see how SignalOps scores, replies, routes, and follows up.
+              submit a realistic lead, and see how SignalOps replies, sorts, routes, and follows up.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#demo-lead-form" className={buttonVariants({ size: "lg" })}>
@@ -163,7 +163,7 @@ function DemoWorkflowPanel({ business }: { business: DemoBusinessConfig }) {
           <Badge className="border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Demo mode</Badge>
         </div>
         <div className="grid gap-3 p-4 sm:grid-cols-3">
-          <Metric label="Lead score" value={business.key === "well-water" ? "94" : "88"} />
+          <Metric label="Priority" value={business.key === "well-water" ? "High" : "Warm"} />
           <Metric label="Priority" value={business.key === "well-water" ? "Hot" : "Warm"} />
           <Metric label="Next action" value="Reply" />
         </div>
@@ -225,7 +225,7 @@ function PreviewCards({ business }: { business: DemoBusinessConfig }) {
     },
     {
       title: "Dashboard update",
-      description: "Logs the lead, score, tags, recommendation, and follow-up status.",
+      description: "Logs the lead, priority, tags, recommendation, and follow-up status.",
       icon: ClipboardList
     }
   ];

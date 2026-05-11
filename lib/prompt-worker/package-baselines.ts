@@ -14,13 +14,13 @@ export type PackageBaseline = {
 export const packageBaselines: Record<PromptWorkerPackageName, PackageBaseline> = {
   Starter: {
     name: "Starter",
-    monthly: "$297/mo",
+    monthly: "$250/mo",
     setup: "Setup from $750",
-    bestFor: "One core lead source and a simple owner handoff.",
+    bestFor: "One main lead source, faster replies, simple intake, and a clean owner handoff.",
     includes: [
-      "One lead source",
+      "One main lead source",
       "Instant reply workflow",
-      "Basic qualification",
+      "Basic intake questions",
       "Simple follow-up reminders",
       "Owner alerts",
       "Basic monthly check-in"
@@ -34,7 +34,7 @@ export const packageBaselines: Record<PromptWorkerPackageName, PackageBaseline> 
     upgradeTriggers: [
       "Adds missed-call text-back plus forms or DMs",
       "Needs multi-step follow-up",
-      "Needs lead scoring or dashboard visibility",
+      "Needs priority sorting or dashboard visibility",
       "Needs booking/callback handoff"
     ],
     commonAddOns: [
@@ -45,15 +45,15 @@ export const packageBaselines: Record<PromptWorkerPackageName, PackageBaseline> 
   },
   Growth: {
     name: "Growth",
-    monthly: "$597/mo",
+    monthly: "$500/mo",
     setup: "Setup from $1,500",
-    bestFor: "Multiple lead sources, stronger qualification, and follow-up visibility.",
+    bestFor: "Multiple lead sources, stronger follow-up, routing, and dashboard visibility.",
     includes: [
       "Multiple lead sources",
-      "Smarter qualification",
-      "Lead scoring",
+      "Smarter intake flow",
+      "Priority sorting",
       "Follow-up sequences",
-      "Booking handoff",
+      "Booking or callback handoff",
       "CRM/spreadsheet logging",
       "Dashboard visibility",
       "Monthly optimization"
@@ -80,7 +80,7 @@ export const packageBaselines: Record<PromptWorkerPackageName, PackageBaseline> 
   },
   Custom: {
     name: "Custom",
-    monthly: "Custom monthly support",
+    monthly: "From $1,000/mo",
     setup: "Buildout from $5,000+",
     bestFor: "Complex workflows, multiple locations, custom routing, integrations, dashboards, or agent workflows.",
     includes: [
@@ -118,7 +118,7 @@ export const packageBaselines: Record<PromptWorkerPackageName, PackageBaseline> 
 
 export const packageDecisionRules = [
   "Starter fits one primary source and a simple response/handoff path.",
-  "Growth fits multiple lead sources, quote follow-up, photos/details, scoring, dashboard visibility, or booking handoff.",
+  "Growth fits multiple lead sources, quote follow-up, photos/details, priority sorting, dashboard visibility, or booking handoff.",
   "Custom fits complex routing, multiple locations, deep integrations, custom dashboards, or internal AI agent workflows.",
   "When uncertain between Starter and Growth, choose Growth only if the intake shows multiple sources, follow-up leakage, quote complexity, or visibility needs.",
   "When uncertain between Growth and Custom, choose Growth unless there is explicit complexity, integration depth, or multi-location/team routing."

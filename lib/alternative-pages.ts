@@ -88,10 +88,10 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     eyebrow: "Ethical alternative guide",
     metaTitle: "LeadOps Alternative for AI Lead Response | SignalOps",
     metaDescription:
-      "Compare LeadOps-style AI lead operations with SignalOps, a hands-on AI lead response system for capture, qualification, routing, follow-up, and booking.",
+      "Compare LeadOps-style AI lead operations with SignalOps, a hands-on AI lead response system for capture, intake, routing, follow-up, and booking.",
     h1: "LeadOps alternative for AI lead response systems.",
     subheadline:
-      "If you are searching for LeadOps-style lead operations, SignalOps helps small and local businesses build the practical response, qualification, routing, and follow-up layer behind every inquiry.",
+      "If you are searching for LeadOps-style lead operations, SignalOps helps small and local businesses build the practical response, intake, routing, and follow-up layer behind every inquiry.",
     comparisonAngle:
       "This page is for businesses comparing AI lead operations options. It does not evaluate LeadOps as a company or product; it explains what to look for and how SignalOps approaches the same missed-lead problem.",
     whoFor: [
@@ -118,7 +118,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "The system should work across calls, texts, forms, DMs, landing pages, and quote requests without forcing every lead into one rigid form."
       },
       {
-        title: "Clear qualification rules",
+        title: "Clear intake rules",
         description:
           "Look for service-specific questions, urgency detection, contact completeness checks, and human review when the situation is unclear."
       },
@@ -137,7 +137,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Build the response system",
         description:
-          "We create the intake forms, instant replies, scoring logic, routing rules, owner alerts, and follow-up paths."
+          "We create the intake forms, instant replies, priority logic, routing rules, owner alerts, and follow-up paths."
       },
       {
         title: "Keep humans in control",
@@ -152,9 +152,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "A missed call receives a quick text asking what the customer needs, how urgent it is, and the best callback time."
       },
       {
-        title: "Website lead qualification",
+        title: "Website lead intake",
         description:
-          "Form submissions are scored, summarized, tagged, and routed based on service need and intent."
+          "Form submissions are prioritized, summarized, tagged, and routed based on service need and intent."
       },
       {
         title: "Quote intake automation",
@@ -182,9 +182,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       },
       {
         label: "3",
-        title: "Lead is qualified",
+        title: "Lead is ready for handoff",
         description:
-          "Service need, urgency, intent, source, and contact completeness are scored and summarized."
+          "Service need, urgency, intent, source, and contact completeness are prioritized and summarized."
       },
       {
         label: "4",
@@ -217,7 +217,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "What makes SignalOps different from buying software?",
         answer:
-          "SignalOps is positioned as a hands-on system build: lead flow mapping, message logic, qualification rules, integrations, alerts, and follow-up paths."
+          "SignalOps is positioned as a hands-on system build: lead flow mapping, message logic, intake rules, integrations, alerts, and follow-up paths."
       }
     ],
     relatedLinks: coreRelatedLinks
@@ -228,10 +228,10 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "LeadPilot",
     targetPhrase: "LeadPilot-style lead automation",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "LeadPilot Alternative for Lead Qualification & Follow-Up | SignalOps",
+    metaTitle: "LeadPilot Alternative for Lead Intake & Follow-Up | SignalOps",
     metaDescription:
-      "Looking for a LeadPilot-style lead automation option? SignalOps builds hands-on AI lead qualification, follow-up, routing, and booking systems.",
-    h1: "LeadPilot alternative for lead qualification and follow-up.",
+      "Looking for a LeadPilot-style lead automation option? SignalOps builds hands-on AI lead intake, follow-up, routing, and booking systems.",
+    h1: "LeadPilot alternative for lead intake and follow-up.",
     subheadline:
       "For businesses searching for a lead pilot or lead automation style solution, SignalOps focuses on implementation: the actual intake questions, routing logic, follow-up messages, and handoffs your team will use.",
     comparisonAngle:
@@ -255,7 +255,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     lookFor: [
       {
-        title: "Qualification before routing",
+        title: "Intake before routing",
         description:
           "A good system should identify service need, urgency, location, budget signals, and missing details before sending the lead downstream."
       },
@@ -284,7 +284,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Connect alerts and records",
         description:
-          "Qualified leads can trigger owner alerts, CRM logs, dashboard updates, booking links, and follow-up sequences."
+          "Ready leads can trigger owner alerts, CRM logs, dashboard updates, booking links, and follow-up sequences."
       }
     ],
     useCases: [
@@ -299,7 +299,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "Nudge customers who received an estimate but have not booked, asked a question, or approved next steps."
       },
       {
-        title: "Photo-based qualification",
+        title: "Photo-based intake",
         description:
           "Ask for photos and job details when the team cannot quote accurately from a short message."
       },
@@ -342,7 +342,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     notFit: [
       "You want to configure every workflow yourself.",
-      "Your leads are already captured, qualified, routed, and followed up perfectly.",
+      "Your leads are already captured, ready, routed, and followed up perfectly.",
       "You expect automation to replace all sales judgment."
     ],
     faqs: [
@@ -357,9 +357,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "No. SignalOps can start with calls, texts, forms, alerts, and a simple dashboard. CRM integration can be added when it helps."
       },
       {
-        question: "Can SignalOps qualify leads differently by service?",
+        question: "Can SignalOps collect lead details differently by service?",
         answer:
-          "Yes. Qualification logic should change for emergencies, quote requests, maintenance, consultations, commercial work, and routine appointments."
+          "Yes. Intake logic should change for emergencies, quote requests, maintenance, consultations, commercial work, and routine appointments."
       }
     ],
     relatedLinks: coreRelatedLinks
@@ -375,7 +375,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       "Explore SignalOps as a LeadRelay-style alternative for lead routing automation, hot lead alerts, CRM logging, follow-up, and appointment handoffs.",
     h1: "LeadRelay alternative for lead routing automation.",
     subheadline:
-      "If you are looking for lead routing automation, SignalOps helps turn incoming inquiries into scored records, urgent alerts, CRM logs, and follow-up paths your team can trust.",
+      "If you are looking for lead routing automation, SignalOps helps turn incoming inquiries into prioritized records, urgent alerts, CRM logs, and follow-up paths your team can trust.",
     comparisonAngle:
       "This guide is for businesses comparing lead relay or lead routing style tools. It avoids claims about LeadRelay and instead explains the routing decisions a practical AI lead response system should support.",
     whoFor: [
@@ -392,7 +392,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Companies using a CRM or simple dashboard",
         description:
-          "You need leads logged with status, score, tags, and next action instead of staying in scattered notifications."
+          "You need leads logged with status, priority, tags, and next action instead of staying in scattered notifications."
       }
     ],
     lookFor: [
@@ -426,7 +426,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Trigger follow-up by status",
         description:
-          "New, contacted, needs photos, qualified, booked, won, and lost leads can each trigger different next steps."
+          "New, contacted, needs photos, ready, booked, won, and lost leads can each trigger different next steps."
       }
     ],
     useCases: [
@@ -454,7 +454,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     workflow: [
       {
         label: "1",
-        title: "Lead is scored",
+        title: "Lead is prioritized",
         description:
           "The system checks urgency, service type, intent, contact details, and value signals."
       },
@@ -474,7 +474,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "4",
         title: "Next status is tracked",
         description:
-          "The lead moves into contacted, needs info, qualified, booked, won, or lost."
+          "The lead moves into contacted, needs info, ready, booked, won, or lost."
       }
     ],
     goodFit: [
@@ -510,16 +510,16 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     id: "leadsignal-alternative",
     path: "/alternatives/leadsignal-alternative",
     targetName: "LeadSignal",
-    targetPhrase: "LeadSignal-style AI lead scoring",
+    targetPhrase: "LeadSignal-style AI priority sorting",
     eyebrow: "Ethical alternative guide",
     metaTitle: "LeadSignal Alternative for AI Lead Scoring | SignalOps",
     metaDescription:
-      "SignalOps is a LeadSignal-style alternative for businesses that need AI lead scoring, summaries, next actions, routing, and follow-up from noisy inquiries.",
-    h1: "LeadSignal alternative for AI lead scoring.",
+      "SignalOps is a LeadSignal-style alternative for businesses that need AI priority sorting, summaries, next actions, routing, and follow-up from noisy inquiries.",
+    h1: "LeadSignal alternative for AI priority sorting.",
     subheadline:
-      "For teams searching for lead signal or lead scoring tools, SignalOps turns messy inbound activity into a clear score, priority, summary, tags, and recommended next action.",
+      "For teams searching for lead signal or priority sorting tools, SignalOps turns messy inbound activity into a clear priority, summary, tags, and recommended next action.",
     comparisonAngle:
-      "This page does not compare against LeadSignal's features. It explains what businesses should look for when they need practical lead scoring and how SignalOps uses scoring to guide response and follow-up.",
+      "This page does not compare against LeadSignal's features. It explains what businesses should look for when they need practical priority sorting and how SignalOps uses priority logic to guide response and follow-up.",
     whoFor: [
       {
         title: "Teams with noisy lead activity",
@@ -539,9 +539,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     lookFor: [
       {
-        title: "Transparent scoring logic",
+        title: "Transparent priority logic",
         description:
-          "A useful score should be explainable: service type, urgency, contact completeness, intent language, value, and missing details."
+          "A useful priority should be explainable: service type, urgency, contact completeness, intent language, value, and missing details."
       },
       {
         title: "Recommended next action",
@@ -556,17 +556,17 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     howSignalOpsHelps: [
       {
-        title: "Build service-specific scores",
+        title: "Build service-specific priority rules",
         description:
-          "SignalOps creates lead scoring around your actual offers, margins, urgency levels, service area, and team capacity."
+          "SignalOps creates priority sorting around your actual offers, margins, urgency levels, service area, and team capacity."
       },
       {
         title: "Write internal sales notes",
         description:
-          "The team sees what matters: why the lead scored that way, what is missing, and what should happen next."
+          "The team sees what matters: why the prioritized that way, what is missing, and what should happen next."
       },
       {
-        title: "Tie scoring to follow-up",
+        title: "Tie priority to follow-up",
         description:
           "Hot leads alert a human. Warm leads get booking or quote follow-up. Incomplete leads receive missing-detail prompts."
       }
@@ -580,7 +580,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Low-confidence review",
         description:
-          "A vague inquiry with no phone number can be tagged for review instead of being treated as a qualified opportunity."
+          "A vague inquiry with no phone number can be tagged for review instead of being treated as a ready opportunity."
       },
       {
         title: "Value-based routing",
@@ -590,7 +590,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Follow-up segmentation",
         description:
-          "Different scores can trigger different timing, tone, and handoff rules."
+          "Different priority levels can trigger different timing, tone, and handoff rules."
       }
     ],
     workflow: [
@@ -602,9 +602,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       },
       {
         label: "2",
-        title: "Score is assigned",
+        title: "Priority is assigned",
         description:
-          "The score reflects lead quality, likely urgency, value potential, and confidence."
+          "The priority reflects lead quality, likely urgency, value potential, and confidence."
       },
       {
         label: "3",
@@ -621,13 +621,13 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     goodFit: [
       "Your team struggles to tell which leads need attention first.",
-      "You want scoring that explains itself in plain English.",
-      "You need lead scores connected to routing and follow-up, not just reporting."
+      "You want priority logic that explains itself in plain English.",
+      "You need priority levels connected to routing and follow-up, not just reporting."
     ],
     notFit: [
-      "You only need a static lead list with no qualification.",
+      "You only need a static lead list with no intake logic.",
       "You want AI to make final decisions without human review paths.",
-      "You do not have enough lead volume or lead variety to need scoring yet."
+      "You do not have enough lead volume or lead variety to need priority sorting yet."
     ],
     faqs: [
       {
@@ -636,14 +636,14 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "No. SignalOps is not affiliated with LeadSignal. This page is for businesses comparing AI lead response and lead management options."
       },
       {
-        question: "Can the score be customized?",
+        question: "Can the priority be customized?",
         answer:
-          "Yes. The score should reflect your services, capacity, urgency rules, average job value, and follow-up process."
+          "Yes. The priority should reflect your services, capacity, urgency rules, average job value, and follow-up process."
       },
       {
-        question: "Does a low score mean the lead is ignored?",
+        question: "Does a low priority mean the lead is ignored?",
         answer:
-          "No. Low-confidence or low-score leads can still receive a polite follow-up or be sent to human review."
+          "No. Low-confidence or low-priority leads can still receive a polite follow-up or be sent to human review."
       }
     ],
     relatedLinks: coreRelatedLinks
@@ -752,7 +752,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "3",
         title: "Lead gets organized",
         description:
-          "Status, score, priority, tags, and recommended action are added."
+          "Status, priority, tags, and recommended action are added."
       },
       {
         label: "4",
@@ -842,7 +842,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Build quote intake flows",
         description:
-          "SignalOps creates lead forms, instant replies, photo prompts, qualification rules, and routing for quote requests."
+          "SignalOps creates lead forms, instant replies, photo prompts, intake rules, and routing for quote requests."
       },
       {
         title: "Separate routine from urgent",
@@ -892,7 +892,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       },
       {
         label: "3",
-        title: "Lead is scored",
+        title: "Lead is prioritized",
         description:
           "The request is tagged by service type, value, urgency, completeness, and booking intent."
       },

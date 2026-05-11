@@ -223,7 +223,7 @@ export function PreviewRequestForm() {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="mb-4 grid gap-3 sm:grid-cols-3">
+        <div className="mb-4 hidden gap-3 md:grid md:grid-cols-3">
           {previewOutputs.map((item) => {
             const Icon = item.icon;
 

@@ -68,7 +68,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
       });
 
       if (!response.ok) {
-        throw new Error("The lead could not be scored.");
+        throw new Error("The lead could not be prioritized.");
       }
 
       const data = (await response.json()) as LeadResponse;
@@ -86,7 +86,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <CardTitle>Lead intake demo</CardTitle>
-            <CardDescription>Submit a realistic inquiry and preview qualification output.</CardDescription>
+            <CardDescription>Submit a realistic inquiry and preview intake output.</CardDescription>
           </div>
           <Badge variant="outline">API ready</Badge>
         </div>
@@ -163,7 +163,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
             ) : (
               <Send className="size-4" aria-hidden="true" />
             )}
-            Score lead
+            Sort lead
           </Button>
         </form>
 
@@ -171,19 +171,19 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
           <div className="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-400/10 p-4">
             <div className="flex items-center gap-2 text-sm font-medium text-emerald-100">
               <CheckCircle2 className="size-4" aria-hidden="true" />
-              Qualified lead created: {result.leadId}
+              Ready lead created: {result.leadId}
             </div>
             <dl className="mt-4 grid gap-3 sm:grid-cols-3">
               <div>
-                <dt className="text-xs text-emerald-100/70">Score</dt>
+                <dt className="text-xs text-emerald-100/70">Priority value</dt>
                 <dd className="text-xl font-semibold text-white">{result.qualification.score}</dd>
               </div>
               <div>
-                <dt className="text-xs text-emerald-100/70">Grade</dt>
+                <dt className="text-xs text-emerald-100/70">Readiness</dt>
                 <dd className="text-xl font-semibold text-white">{result.qualification.grade}</dd>
               </div>
               <div>
-                <dt className="text-xs text-emerald-100/70">Priority</dt>
+                <dt className="text-xs text-emerald-100/70">Next action priority</dt>
                 <dd className="text-xl font-semibold text-white">{result.qualification.priority}</dd>
               </div>
             </dl>

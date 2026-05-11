@@ -37,7 +37,7 @@ Use this checklist to install a SignalOps AI Lead Engine from intake through opt
 ### Intake approvals
 
 - [ ] Client approved implementation scope.
-- [ ] Success metrics agreed (response speed, qualified rate, booking rate).
+- [ ] Success metrics agreed (response speed, ready-lead rate, booking rate).
 - [ ] Escalation contacts documented for urgent lead exceptions.
 
 ---
@@ -63,7 +63,7 @@ Use this checklist to install a SignalOps AI Lead Engine from intake through opt
 
 ---
 
-## Phase 3: Qualification Logic
+## Phase 3: Intake Logic
 
 ### Fit and quality rules
 
@@ -75,7 +75,7 @@ Use this checklist to install a SignalOps AI Lead Engine from intake through opt
 - [ ] Routing rules documented by service type, urgency, and location.
 - [ ] Human review conditions documented (safety-sensitive, legal-sensitive, unclear high-value leads).
 
-### Qualification outputs
+### Intake outputs
 
 - [ ] Score bands approved (for example 0-39, 40-69, 70-84, 85-100).
 - [ ] Priority labels approved (`hot`, `warm`, `cold`, `junk`).
@@ -101,7 +101,7 @@ Use this checklist to install a SignalOps AI Lead Engine from intake through opt
 ### Messaging controls
 
 - [ ] Brand voice and compliance language checks completed.
-- [ ] Stop conditions defined (booked, disqualified, no response threshold).
+- [ ] Stop conditions defined (booked, disready, no response threshold).
 
 ---
 
@@ -111,7 +111,7 @@ Use this checklist to install a SignalOps AI Lead Engine from intake through opt
 
 - [ ] Forms configured and connected.
 - [ ] CRM pipeline stages aligned to new lead flow.
-- [ ] AI qualification rules implemented.
+- [ ] AI intake rules implemented.
 - [ ] Notification adapters configured (customer reply, owner alert, CRM webhook).
 - [ ] Calendar or booking links integrated.
 - [ ] Dashboard views configured for owner and sales team.
@@ -254,7 +254,7 @@ Use this template per client.
 ## Red Flags
 
 - No clear owner on client side.
-- Client cannot define what a qualified lead looks like.
+- Client cannot define what a ready lead looks like.
 - Multiple disconnected tools with no reliable source tracking.
 - Response expectations are high but team availability is low.
 - Compliance concerns are unresolved before build.

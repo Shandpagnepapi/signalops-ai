@@ -22,7 +22,7 @@ SignalOps should feel like an AI lead operating system for local service busines
 
 - AI receptionist
 - Lead response
-- Qualification
+- Intake
 - Routing
 - Follow-up
 - Booking handoff

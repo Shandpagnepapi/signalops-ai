@@ -48,7 +48,7 @@ This checklist documents the SEO foundation added to the SignalOps Next.js app a
   - `WebSite`
 - Page-level schema:
   - `WebPage`
-  - `Service` for the AI Lead Response & Qualification System on service-focused pages
+  - `Service` for the AI Lead Response & Intake System on service-focused pages
   - `BreadcrumbList`
   - `FAQPage` where FAQ content exists
 - Schema is server-rendered with `application/ld+json` script tags.

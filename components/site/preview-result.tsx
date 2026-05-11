@@ -145,11 +145,11 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
           <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
             <CardHeader>
               <CardTitle>Recommended setup</CardTitle>
-              <CardDescription>Based on your lead sources, volume, problem, and fit score.</CardDescription>
+              <CardDescription>Based on your lead sources, volume, bottleneck, and current process.</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                <Metric label="Fit score" value={`${preview.fitScore}/100`} />
+                <Metric label="Preview fit" value={preview.fitScore >= 80 ? "Strong" : preview.fitScore >= 60 ? "Moderate" : "Early"} />
                 <Metric label="Package" value={preview.recommendedPackage.name} />
                 <Metric label="Lead sources" value={String(submission.mainLeadSources.length)} />
               </div>
@@ -194,7 +194,7 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
               <BarChart3 className="size-5 text-[#ffb36d]" aria-hidden="true" />
               <CardTitle>Lead dashboard mockup</CardTitle>
             </div>
-            <CardDescription>How new opportunities could be scored, followed up, and handed off.</CardDescription>
+            <CardDescription>How new opportunities could be sorted, followed up, and handed off.</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid gap-3">
@@ -205,7 +205,9 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
                       <p className="font-semibold text-white">{lead.name}</p>
                       <p className="mt-1 text-xs text-[#ead0df]/58">{lead.source} - {lead.assignedOwner}</p>
                     </div>
-                    <Badge variant={lead.score >= 80 ? "success" : "outline"}>{lead.score}</Badge>
+                    <Badge variant={lead.score >= 80 ? "success" : "outline"}>
+                      {lead.score >= 80 ? "Priority" : "Review"}
+                    </Badge>
                   </div>
                   <div className="mt-4 grid gap-2 text-xs text-[#ead0df]/70 sm:grid-cols-4">
                     <span>Urgency: {lead.urgency}</span>
@@ -229,7 +231,7 @@ function PreviewReport({ submission }: { submission: PreviewSubmission }) {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-3 md:grid-cols-6">
+            <div className="grid gap-3 md:grid-cols-7">
               {preview.leadFlow.map((step, index) => (
                 <div key={step} className="rounded-2xl border border-white/10 bg-white/[0.045] p-3 text-center">
                   <div className="mx-auto mb-3 flex size-8 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-sm font-semibold text-white">

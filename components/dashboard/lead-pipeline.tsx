@@ -60,7 +60,7 @@ export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipeli
                           </Badge>
                         </div>
                         <div className="mt-3 flex items-center justify-between text-xs text-[#ead0df]/42">
-                          <span>{lead.score} score</span>
+                          <span>{lead.score} priority</span>
                           <span>{lead.needsMobileService ? "Mobile" : "Shop"}</span>
                         </div>
                       </button>

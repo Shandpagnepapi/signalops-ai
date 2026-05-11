@@ -40,7 +40,7 @@ const privacySections: LegalSection[] = [
     title: "Lead Form Submissions",
     paragraphs: [
       "When you submit a form, SignalOps may use that information to review your request, respond, and follow up about relevant services.",
-      "If you share lead workflow details, we use that information to prepare recommendations and qualification previews."
+      "If you share lead workflow details, we use that information to prepare recommendations and intake previews."
     ]
   },
   {

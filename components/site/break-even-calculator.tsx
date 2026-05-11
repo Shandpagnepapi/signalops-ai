@@ -7,21 +7,21 @@ import { cn } from "@/lib/utils";
 const packageOptions = [
   {
     name: "Starter",
-    monthly: 297,
+    monthly: 250,
     setup: 750,
-    note: "One main lead source, faster replies, and basic follow-up."
+    note: "One main lead source, faster replies, simple intake, and owner handoff."
   },
   {
     name: "Growth",
-    monthly: 597,
+    monthly: 500,
     setup: 1500,
-    note: "Multiple lead sources, follow-up sequences, and dashboard visibility."
+    note: "Multiple lead sources, follow-up, routing, and dashboard visibility."
   },
   {
-    name: "Custom Agent System",
-    monthly: 1500,
+    name: "Custom",
+    monthly: 1000,
     setup: 5000,
-    note: "Use this as a planning estimate. Final custom pricing depends on scope."
+    note: "From $1,000/mo. Final custom pricing depends on scope."
   }
 ];
 

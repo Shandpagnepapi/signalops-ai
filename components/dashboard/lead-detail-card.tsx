@@ -22,7 +22,7 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
       <Card className="bg-[#17122d]/75">
         <CardHeader>
           <CardTitle>Lead detail</CardTitle>
-          <CardDescription>Select a lead to inspect the qualification record and recommended next action.</CardDescription>
+          <CardDescription>Select a lead to inspect the intake record and recommended next action.</CardDescription>
         </CardHeader>
       </Card>
     );
@@ -35,7 +35,7 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
     },
     {
       time: "AI",
-      event: `AI qualified as ${priorityLabels[lead.priority]} with ${urgencyLabels[lead.urgency]} urgency`
+      event: `AI marked ${priorityLabels[lead.priority]} with ${urgencyLabels[lead.urgency]} urgency`
     },
     {
       time: "Reply",
@@ -96,7 +96,7 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
         <section>
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">Lead signals</p>
           <div className="flex flex-wrap gap-2">
-            <Badge variant="outline">Score {lead.score}</Badge>
+            <Badge variant="outline">Priority {lead.priority}</Badge>
             <Badge variant="outline">Urgency {urgencyLabels[lead.urgency]}</Badge>
             <Badge variant="outline">Created {formatDateTime(lead.createdAt)}</Badge>
             {lead.tags.map((tag) => (

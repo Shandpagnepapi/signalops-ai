@@ -29,7 +29,7 @@ import styles from "./mobile-test-3.module.css";
 export const metadata: Metadata = {
   title: "Mobile Test 3 | SignalOps AI Concierge App",
   description:
-    "An app-like mobile SignalOps landing page concept showing AI receptionist, lead qualification, follow-up, and booking handoff workflows.",
+    "An app-like mobile SignalOps landing page concept showing AI receptionist, lead intake, follow-up, and booking handoff workflows.",
   robots: {
     index: false,
     follow: false
@@ -133,8 +133,8 @@ const useCases = [
     icon: ClipboardList
   },
   {
-    title: "Insurance lead qualification",
-    copy: "Separate high-intent inquiries from low-fit shoppers before a producer calls.",
+    title: "Insurance lead intake",
+    copy: "Sort high-intent inquiries from low-fit shoppers before a producer calls.",
     icon: Route
   }
 ];
@@ -214,7 +214,7 @@ function Hero() {
           Meet the AI layer that answers leads before they go cold.
         </h1>
         <p className={cn(styles.heroCopy, "mt-5 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8")}>
-          SignalOps builds AI receptionist, qualification, follow-up, and booking systems for service businesses that cannot afford missed opportunities.
+          SignalOps builds AI receptionist, intake, follow-up, and booking systems for service businesses that cannot afford missed opportunities.
         </p>
       </div>
 

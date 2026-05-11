@@ -33,7 +33,7 @@ export const statusLabels: Record<DashboardLeadStatus, string> = {
   new: "New",
   contacted: "Contacted",
   "needs-photos": "Needs Photos",
-  qualified: "Qualified",
+  qualified: "Ready",
   booked: "Booked",
   won: "Won",
   lost: "Lost"

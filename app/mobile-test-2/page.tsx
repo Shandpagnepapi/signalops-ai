@@ -128,7 +128,7 @@ const previewIncludes = [
   { title: "Your current lead flow", icon: Route },
   { title: "Where leads are leaking", icon: AlertTriangle },
   { title: "Recommended AI receptionist flow", icon: MessageSquareText },
-  { title: "Qualification questions", icon: ClipboardCheck },
+  { title: "Intake questions", icon: ClipboardCheck },
   { title: "Follow-up timeline", icon: Clock3 },
   { title: "Package recommendation", icon: Layers3 }
 ];
@@ -286,7 +286,7 @@ function LeakMap() {
       <SectionHeading
         eyebrow="Lead leak map"
         title="Every lost lead has a trail."
-        copy="SignalOps turns that trail into a response system: capture, qualify, follow up, and hand off."
+        copy="SignalOps turns that trail into a response system: capture, sort, follow up, and hand off."
       />
       <div className="mt-6 grid gap-3">
         {leakPoints.map((point, index) => (
@@ -463,8 +463,8 @@ function RevenueMeter() {
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {[
             ["Average job value", "$250"],
-            ["Growth monthly support", "$597"],
-            ["Break-even", "2.4 jobs/month"]
+            ["Growth monthly support", "$500"],
+            ["Break-even", "2.0 jobs/month"]
           ].map(([label, value]) => (
             <div key={label} className={cn(styles.scanRow, "rounded-2xl border p-4")}>
               <p className={cn(styles.heroCopy, "text-xs font-black uppercase")}>{label}</p>

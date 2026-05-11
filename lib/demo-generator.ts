@@ -156,7 +156,7 @@ const demoSchema = {
       properties: {
         name: {
           type: "string",
-          enum: ["Starter", "Growth", "Custom Agent System"]
+          enum: ["Starter", "Growth", "Custom"]
         },
         reason: { type: "string" }
       },
@@ -244,12 +244,12 @@ function choosePackage(input: LiveDemoInput, template: DemoTemplate, services: s
   let name: TemplatePackage = template.packageBias;
 
   if (
-    template.packageBias === "Custom Agent System" ||
+    template.packageBias === "Custom" ||
     input.averageCustomerValue >= 5000 ||
     services.length >= 7 ||
     includesAny(combinedText, ["multi-location", "multiple locations", "compliance", "custom agent", "intake team", "complex"])
   ) {
-    name = "Custom Agent System";
+    name = "Custom";
   } else if (
     template.packageBias === "Growth" ||
     input.averageCustomerValue >= 750 ||
@@ -321,7 +321,7 @@ function buildFallbackDemo(input: LiveDemoInput): GeneratedLiveDemo {
   const recommendedAutomations = Array.from(
     new Set([
       ...template.recommendedAutomations,
-      "Website form qualification",
+      "Website form intake",
       "Owner or sales rep alert",
       "No-response follow-up sequence",
       currentLeadHandling.toLowerCase().includes("missed") ? "Missed-call text back" : "Lead source tracking"
@@ -352,7 +352,7 @@ function buildFallbackDemo(input: LiveDemoInput): GeneratedLiveDemo {
 
   const internalSalesNote = `${businessName} lead from ${cityState}. Main issue: ${mainLeadProblem}. Current handling appears to rely on ${currentLeadHandling}. Route this as a ${template.label} lead, confirm service fit, and push the prospect toward the next available booking or estimate path.`;
 
-  const strategySummary = `SignalOps would use the ${template.label} template as the base, then customize the intake questions, scoring rules, replies, alerts, and follow-up around ${businessName}'s services and current lead bottleneck. The goal is practical: faster response, cleaner qualification, and more booked next steps.`;
+  const strategySummary = `SignalOps would use the ${template.label} template as the base, then customize the intake questions, priority rules, replies, alerts, and follow-up around ${businessName}'s services and current lead bottleneck. The goal is practical: faster response, cleaner intake, and more booked next steps.`;
 
   const generatedAt = new Date().toISOString();
   const demo: GeneratedLiveDemo = {
@@ -432,7 +432,7 @@ function normalizePackage(value: unknown, fallback: GeneratedLiveDemo["suggested
 
   const rawName = value.name;
   const name: TemplatePackage =
-    rawName === "Starter" || rawName === "Growth" || rawName === "Custom Agent System"
+    rawName === "Starter" || rawName === "Growth" || rawName === "Custom"
       ? rawName
       : fallback.name;
 
@@ -530,7 +530,7 @@ function buildPrompt(input: LiveDemoInput, template: DemoTemplate, fallback: Gen
   return [
     "Create a tailored SignalOps live demo preview for a sales conversation.",
     "Use the stored industry template as the base. Do not generate a full website. Do not claim to inspect or scrape the optional website URL.",
-    "Keep the output practical for a skeptical business owner: speed-to-lead, qualification, routing, follow-up, booked appointments, and human review when needed.",
+    "Keep the output practical for a skeptical business owner: speed-to-lead, intake, routing, follow-up, booked appointments, and human review when needed.",
     "Avoid hype, robot language, and unsupported revenue guarantees.",
     "Return valid JSON that matches the schema.",
     JSON.stringify(
@@ -646,7 +646,7 @@ export function buildCopyText(demo: Omit<GeneratedLiveDemo, "copyText">) {
     "Internal sales note:",
     demo.internalSalesNote,
     "",
-    "Lead scoring logic:",
+    "Lead priority logic:",
     ...demo.leadScoringLogic.map((rule) => `- ${rule.label}: ${rule.rule} (${rule.impact})`),
     "",
     "Follow-up sequence:",

@@ -77,7 +77,7 @@ export async function runLeadAutomation(lead: LeadSubmission): Promise<LeadAutom
       },
       {
         time: "AI",
-        event: "AI qualified",
+        event: "AI prepared handoff",
         status: "sent"
       },
       ...results.map((result) => ({

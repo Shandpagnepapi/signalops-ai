@@ -144,7 +144,7 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
           <SectionHeader
             eyebrow="Example workflow"
             title="A simple lead response flow"
-            description="The exact setup changes by industry, but the operating pattern should stay clear: capture, qualify, route, follow up, and track."
+            description="The exact setup changes by industry, but the operating pattern should stay clear: capture, sort, route, follow up, and track."
           />
           <div className="mt-8 grid gap-4 lg:grid-cols-4">
             {page.workflow.map((step) => (

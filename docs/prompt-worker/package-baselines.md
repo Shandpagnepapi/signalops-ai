@@ -2,25 +2,25 @@
 
 ## Starter
 
-- $297/mo
+- $250/mo
 - Setup from $750
-- Best for one core lead source
-- Includes one lead source, instant reply workflow, basic qualification, simple follow-up reminders, owner alerts, and a basic monthly check-in
+- Best for one main lead source and simple owner handoff
+- Includes one main lead source, instant reply workflow, basic intake questions, simple follow-up reminders, owner alerts, and a basic monthly check-in
 
 Do not recommend Starter when the business has multiple active lead sources, quote complexity, photo/detail collection, dashboard needs, custom routing, or deep CRM/integration needs.
 
 ## Growth
 
-- $597/mo
+- $500/mo
 - Setup from $1,500
-- Best for multiple lead sources or stronger follow-up
-- Includes multiple lead sources, smarter qualification, lead scoring, follow-up sequences, booking handoff, CRM/spreadsheet logging, dashboard visibility, and monthly optimization
+- Best for multiple lead sources, follow-up, routing, and dashboard visibility
+- Includes multiple lead sources, smarter intake flow, priority sorting, follow-up sequences, booking or callback handoff, CRM/spreadsheet logging, dashboard visibility, and monthly optimization
 
 Growth is the default fit for most active local service businesses with calls, forms, DMs, quote requests, missed calls, follow-up gaps, and owner/team handoff needs.
 
 ## Custom
 
-- Custom monthly support
+- From $1,000/mo
 - Buildout from $5,000+
 - Best for complex workflows, multiple locations, custom routing, deep integrations, custom dashboards, or internal agent workflows
 

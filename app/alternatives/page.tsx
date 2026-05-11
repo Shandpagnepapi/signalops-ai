@@ -26,7 +26,7 @@ import {
 
 const metaTitle = "AI Lead Response Alternatives & Lead Management Options | SignalOps";
 const metaDescription =
-  "Compare AI lead response alternatives and lead management options. Learn what to look for in tools like LeadOps-style systems, LeadPilot-style automation, routing, scoring, and follow-up.";
+  "Compare AI lead response alternatives and lead management options. Learn what to look for in tools like LeadOps-style systems, LeadPilot-style automation, routing, priority sorting, and follow-up.";
 
 export const metadata = createPageMetadata({
   title: metaTitle,
@@ -42,14 +42,14 @@ const featureCards = [
       "Respond to calls, texts, forms, DMs, emails, and quote requests while the prospect is still interested."
   },
   {
-    title: "AI qualification",
+    title: "AI intake",
     description:
       "Ask practical questions, extract service need, identify urgency, and flag missing details."
   },
   {
-    title: "Lead scoring",
+    title: "Priority sorting",
     description:
-      "Prioritize hot, warm, cold, junk, and human-review leads with transparent scoring logic."
+      "Prioritize urgent, warm, quiet, and human-review leads with transparent routing logic."
   },
   {
     title: "Routing",
@@ -59,12 +59,12 @@ const featureCards = [
   {
     title: "CRM logging",
     description:
-      "Log source, status, score, tags, internal notes, recommended action, and follow-up needs."
+      "Log source, status, priority, tags, internal notes, recommended action, and follow-up needs."
   },
   {
     title: "Appointment booking",
     description:
-      "Move qualified leads toward a booking link or staff handoff when they are ready to schedule."
+      "Move ready leads toward a booking link or staff handoff when they are ready to schedule."
   },
   {
     title: "Follow-up",
@@ -87,7 +87,7 @@ const buyerCriteria = [
   {
     title: "Does it improve the next step?",
     description:
-      "Look for practical outputs: a reply, qualification questions, score, summary, owner alert, booking path, CRM log, and follow-up trigger."
+      "Look for practical outputs: a reply, intake questions, priority, summary, owner alert, booking path, CRM log, and follow-up trigger."
   },
   {
     title: "Does it know when to involve a person?",
@@ -156,7 +156,7 @@ export default function AlternativesHubPage() {
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#f2d9e8] sm:text-lg">
                 This hub is for businesses searching for tools like LeadOps-style systems,
-                LeadPilot-style lead automation, lead routing platforms, scoring tools, inbound
+                LeadPilot-style lead automation, lead routing platforms, priority tools, inbound
                 management options, and quote intake automation. SignalOps is not affiliated with
                 those brands.
               </p>
@@ -202,7 +202,7 @@ export default function AlternativesHubPage() {
           <SectionHeader
             eyebrow="Plain English"
             title="What an AI lead response system does"
-            description="An AI lead response system is the operating layer between a new inquiry and the next human action. It should answer quickly, collect the right details, qualify the lead, route the opportunity, and keep follow-up from falling through the cracks."
+            description="An AI lead response system is the operating layer between a new inquiry and the next human action. It should answer quickly, collect the right details, sort the lead, route the opportunity, and keep follow-up from falling through the cracks."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featureCards.map((feature, index) => {
@@ -248,7 +248,7 @@ export default function AlternativesHubPage() {
           <SectionHeader
             eyebrow="When SignalOps fits"
             title="Choose SignalOps when you need the system installed around your actual lead flow"
-            description="SignalOps is positioned for businesses that want response, qualification, routing, booking, and follow-up installed as a practical lead operations system."
+            description="SignalOps is positioned for businesses that want response, intake, routing, booking, and follow-up installed as a practical lead operations system."
           />
           <div className="grid gap-3">
             {fitSignals.map((signal) => (
@@ -356,8 +356,8 @@ const relatedPages = [
   },
   {
     href: "/services/ai-lead-qualification",
-    label: "AI lead qualification",
-    description: "Learn how leads are scored, summarized, and routed."
+    label: "AI lead intake",
+    description: "Learn how leads are summarized, prioritized, and routed."
   },
   {
     href: "/services/quote-intake-automation",

@@ -35,9 +35,9 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
       icon: Flame
     },
     {
-      label: "Average lead score",
+      label: "Average priority",
       value: String(averageScore(leads)),
-      note: "AI-qualified intake quality",
+      note: "AI-ready intake quality",
       icon: Trophy
     },
     {

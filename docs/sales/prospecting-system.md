@@ -40,9 +40,9 @@ Wheel repair and adjacent auto service is a high-leverage first wedge for Signal
 - Many shops have weak lead handling after form submit.
 - Mobile service scheduling is often messy without routing logic.
 
-## 3) Prospect Qualification Criteria
+## 3) Prospect Intake Criteria
 
-Use this checklist before outreach. A prospect is qualified when at least 6 of 9 are true.
+Use this checklist before outreach. A prospect is a fit when at least 6 of 9 are true.
 
 - Has a website
 - Has a contact form or quote request flow
@@ -175,7 +175,7 @@ Auto detailer:
 
 `Hey [First Name], reaching out because detail shops often lose web leads between inquiry and follow-up.`
 
-`I noticed [specific leak]. SignalOps sets up instant response, qualification, and follow-up so quote requests do not die in DMs or email.`
+`I noticed [specific leak]. SignalOps sets up instant response, intake, and follow-up so quote requests do not die in DMs or email.`
 
 `Want a quick 10-minute audit on your current flow?`
 
@@ -191,7 +191,7 @@ General local service business:
 
 `Hey [First Name], quick outreach. Most local businesses are not losing because of lead volume, they are losing in response speed and follow-up.`
 
-`I noticed [specific leak]. SignalOps builds a simple AI lead response and qualification layer so leads get handled fast and routed correctly.`
+`I noticed [specific leak]. SignalOps builds a simple AI lead response and intake layer so leads get handled fast and routed correctly.`
 
 `Open to a short missed lead check?`
 
@@ -219,7 +219,7 @@ Subject: `[Business Name] lead follow-up idea`
 
 `Detail shops often lose good inquiries when follow-up depends on manual bandwidth.`
 
-`SignalOps installs response, qualification, and sequence follow-up so more quote requests convert into booked work.`
+`SignalOps installs response, intake, and sequence follow-up so more quote requests convert into booked work.`
 
 `If you want, I can send a short missed lead summary specific to your current flow.`
 
@@ -231,7 +231,7 @@ Subject: `Potential booking gap in your quote flow`
 
 `I noticed [specific leak] on [Business Name].`
 
-`SignalOps helps tint/wrap shops capture and qualify leads faster, then follow up consistently until booking.`
+`SignalOps helps tint/wrap shops capture and sort leads faster, then follow up consistently until booking.`
 
 `Would a short Free Missed Lead Check be useful?`
 
@@ -243,7 +243,7 @@ Subject: `Quick lead process question for [Business Name]`
 
 `Most teams do not need more leads first. They need tighter response and follow-up after inquiry.`
 
-`SignalOps builds that layer with instant response, qualification, routing, and follow-up workflows.`
+`SignalOps builds that layer with instant response, intake, routing, and follow-up workflows.`
 
 `I can send a short missed lead check if helpful.`
 
@@ -272,13 +272,13 @@ General local service business:
 
 Use this once they agree there is a real lead handling gap.
 
-`Based on what you shared, the issue is not demand. The issue is response speed, qualification structure, and follow-up consistency.`
+`Based on what you shared, the issue is not demand. The issue is response speed, intake structure, and follow-up consistency.`
 
 `The pilot is designed to fix that without overhauling your whole business.`
 
-`In 30 days, we install a focused AI Lead Response and Qualification System for your highest-value lead path.`
+`In 30 days, we install a focused AI Lead Response and Intake System for your highest-value lead path.`
 
-`That includes instant first response, qualification prompts, priority scoring, routing, and follow-up until booking or disqualification.`
+`That includes instant first response, intake prompts, priority sorting, routing, and follow-up until booking or disintake.`
 
 `Pilot pricing is [insert current pilot pricing].`
 

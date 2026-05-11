@@ -185,7 +185,7 @@ function responseForLead(lead: LeadSubmission, automation?: LeadAutomationResult
         },
         {
           time: "AI",
-          event: "AI qualified",
+          event: "AI prepared handoff",
           status: "sent"
         }
       ],
