@@ -31,12 +31,12 @@ type FormState = {
 
 const initialState: FormState = {
   fullName: "Jordan Miles",
-  email: "jordan@apexwheel.example",
-  company: "Apex Wheel Repair",
+  email: "jordan@routewash.example",
+  company: "RouteWash Mobile Fleet Care",
   phone: "(555) 018-2040",
   monthlyLeads: "85",
-  responseGoal: "Route photo quote requests and mobile repair opportunities within 5 minutes",
-  notes: "We are missing after-hours quote requests and need faster follow-up for curb rash, bent wheels, and refinishing leads."
+  responseGoal: "Route fleet quote requests and recurring account opportunities within 5 minutes",
+  notes: "We are missing after-hours fleet quote requests and need faster follow-up for recurring wash plan leads."
 };
 
 export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientName?: string }) {

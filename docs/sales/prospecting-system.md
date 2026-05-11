@@ -12,7 +12,7 @@ Start with niches where inbound quote flow exists, response speed matters, and o
 
 Priority order:
 
-1. Wheel repair shops
+1. Mobile fleet wash companies
 2. Auto repair shops
 3. Detailers
 4. Tint shops
@@ -27,18 +27,18 @@ Priority order:
 13. Law firms
 14. Real estate teams
 
-## 2) Why Wheel Repair and Auto Service Is a Strong First Niche
+## 2) Why Mobile Fleet Wash and Auto Service Is a Strong First Niche
 
-Wheel repair and adjacent auto service is a high-leverage first wedge for SignalOps:
+Mobile fleet wash and adjacent auto service is a high-leverage first wedge for SignalOps:
 
 - Quote requests are common and frequent.
-- Customers often send photos, which makes AI-assisted intake useful immediately.
+- Customers need to share fleet size, vehicle types, locations, frequency, and wash window, which makes AI-assisted intake useful immediately.
 - Fast response matters because customers are comparison shopping and often want same-week service.
-- Missed calls are common during shop hours.
-- Jobs can be high-value, especially multi-wheel refinishing and powder coating.
-- Owners are usually busy in the shop, not in the inbox.
-- Many shops have weak lead handling after form submit.
-- Mobile service scheduling is often messy without routing logic.
+- Missed calls are common during route or service hours.
+- Recurring accounts can be high-value, especially multi-location fleets and dealership lots.
+- Owners are usually busy in the field, not in the inbox.
+- Many operators have weak lead handling after form submit.
+- Route and wash-window scheduling is often messy without routing logic.
 
 ## 3) Prospect Intake Criteria
 
@@ -68,7 +68,7 @@ Quick scoring model:
 Run this sequence in order so your list quality stays high.
 
 1. Google Maps search:
-   Use terms like `wheel repair dallas`, `rim repair near me`, `auto detail [city]`, `tint shop [city]`.
+   Use terms like `mobile fleet wash dallas`, `fleet washing near me`, `auto detail [city]`, `tint shop [city]`.
 2. Open each website:
    Check lead flow, form quality, CTA clarity, and booking friction.
 3. Open Instagram and Facebook:
@@ -91,9 +91,9 @@ Research output per prospect:
 Use these as trigger conditions for outreach:
 
 - Generic contact forms with no intake structure
-- No photo upload or photo request flow
+- No fleet detail or site requirement flow
 - No instant quote response expectation
-- No mobile service CTA where mobile work is relevant
+- No route or wash-window CTA where mobile service is relevant
 - No missed-call text back system
 - Slow-looking email handling
 - No follow-up offer if customer does not reply
@@ -161,13 +161,13 @@ Non-negotiables:
 
 ### Channel 1: Instagram or Facebook DM
 
-Wheel repair shop:
+Mobile fleet wash company:
 
 `Hey [First Name], quick one.`
 
-`I help wheel shops respond faster to curb rash, bent wheel, and refinishing quote requests. I noticed [specific leak: no photo flow / no instant response].`
+`I help fleet wash companies respond faster to quote requests and recurring account inquiries. I noticed [specific leak: no fleet detail flow / no instant response].`
 
-`SignalOps builds the backend so leads get an immediate reply, send photos faster, and route to mobile or in-shop inspection correctly.`
+`SignalOps builds the backend so leads get an immediate reply, share fleet details faster, and route to the right quote or account handoff.`
 
 `Open to a 10-minute Free Missed Lead Check for [Business Name]?`
 
@@ -197,15 +197,15 @@ General local service business:
 
 ### Channel 2: Cold Email
 
-Wheel repair shop:
+Mobile fleet wash company:
 
-Subject: `Quick idea for your wheel quote flow`
+Subject: `Quick idea for your fleet quote flow`
 
 `Hi [First Name],`
 
 `I looked at [Business Name] and noticed [specific leak].`
 
-`SignalOps helps wheel shops instantly respond to quote requests, request photos when needed, flag urgent bent/cracked leads, and route mobile vs shop opportunities.`
+`SignalOps helps fleet wash companies instantly respond to quote requests, collect fleet details, flag recurring account opportunities, and route quote handoffs with context.`
 
 `If useful, I can run a quick Free Missed Lead Check and send practical fixes.`
 
@@ -252,9 +252,9 @@ Subject: `Quick lead process question for [Business Name]`
 
 ### Channel 3: Call Opener
 
-Wheel repair shop:
+Mobile fleet wash company:
 
-`Hey [Name], I will keep this brief. I help wheel shops tighten quote handling after form submit and missed calls. I noticed [specific missed lead sign] and wanted to see if you are open to a quick Missed Lead Check.`
+`Hey [Name], I will keep this brief. I help fleet wash companies tighten quote handling after form submit and missed calls. I noticed [specific missed lead sign] and wanted to see if you are open to a quick Missed Lead Check.`
 
 Auto detailer:
 

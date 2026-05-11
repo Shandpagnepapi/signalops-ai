@@ -1,14 +1,15 @@
 import {
   BellRing,
-  Camera,
-  Car,
+  Building2,
+  CalendarClock,
   CheckCircle2,
   ClipboardList,
   FileText,
-  ImagePlus,
+  MapPin,
   MessageCircle,
+  Repeat,
   RefreshCcw,
-  Route
+  Truck
 } from "lucide-react";
 import { OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
 import { OSLeadPath } from "@/components/site/mobile-os/OSLeadPath";
@@ -16,22 +17,22 @@ import { OSMetricPill } from "@/components/site/mobile-os/OSMetricPill";
 import { cn } from "@/lib/utils";
 
 const requestFields = [
-  { label: "Photos", value: "Requested", icon: Camera },
-  { label: "Vehicle", value: "Needed", icon: Car },
-  { label: "Service", value: "Curb rash", icon: FileText },
-  { label: "Mobile", value: "Requested", icon: Route }
+  { label: "Fleet", value: "28 vans", icon: Truck },
+  { label: "Locations", value: "2 sites", icon: Building2 },
+  { label: "Frequency", value: "Biweekly", icon: Repeat },
+  { label: "Window", value: "After-hours", icon: CalendarClock }
 ];
 
 const estimatePrep = [
-  ["Wheel count", "2"],
-  ["Damage", "Cosmetic"],
-  ["Visit", "Mobile"],
-  ["Next", "Photo check"]
+  ["Fleet size", "28"],
+  ["Locations", "2"],
+  ["Frequency", "Biweekly"],
+  ["Next", "Service area"]
 ];
 
 const flow = [
   { label: "Request", icon: MessageCircle },
-  { label: "Photos", icon: Camera },
+  { label: "Details", icon: Truck },
   { label: "Prep", icon: ClipboardList },
   { label: "Owner", icon: BellRing },
   { label: "Handoff", icon: CheckCircle2 }
@@ -42,47 +43,46 @@ export function QuoteIntakeOSMockup() {
     <OSDeviceFrame accent="emerald" eyebrow="Estimate workbench" title="Quote Intake OS">
       <div className="mt-3 flex flex-wrap gap-2">
         <OSMetricPill icon={FileText} label="Ticket" value="#QR-1842" className="text-emerald-100" />
-        <OSMetricPill icon={RefreshCcw} label="Queue" value="Photo reminder" className="text-emerald-100" />
+        <OSMetricPill icon={RefreshCcw} label="Queue" value="Quote follow-up" className="text-emerald-100" />
       </div>
 
       <div className="mt-4 rounded-3xl border border-emerald-300/18 bg-emerald-300/[0.07] p-3">
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-[0.65rem] font-black uppercase tracking-wide text-emerald-100/60">Customer request</p>
-            <p className="mt-1 text-sm font-black text-white">Apex Wheel Repair</p>
+            <p className="mt-1 text-sm font-black text-white">RouteWash Mobile Fleet Care</p>
           </div>
           <span className="rounded-full bg-white/10 px-2.5 py-1 text-[0.62rem] font-black text-white/58">9:42 AM</span>
         </div>
         <div className="mt-3 grid gap-3">
           <MessageBubble tone="customer" label="Customer">
-            I have curb rash on two wheels. Can you do mobile repair?
+            We have 28 service vans across two locations. Can you quote biweekly after-hours washes?
           </MessageBubble>
           <MessageBubble tone="system" label="SignalOps">
-            Send photos of both wheels and your vehicle details. I will get the quote started.
+            Yes. I will collect vehicle types, locations, frequency, wash window, and site notes so the team can prepare a route-friendly quote.
           </MessageBubble>
         </div>
       </div>
 
       <div className="mt-3 grid gap-3 rounded-3xl border border-white/10 bg-white/[0.055] p-3">
         <div className="flex items-center justify-between gap-3">
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-white/42">Photo + detail request</p>
+          <p className="text-[0.65rem] font-black uppercase tracking-wide text-white/42">Fleet detail request</p>
           <span className="rounded-full bg-emerald-300/18 px-2.5 py-1 text-[0.62rem] font-black text-emerald-50">
             Waiting on customer
           </span>
         </div>
         <div className="grid grid-cols-[0.72fr_1fr] gap-2">
-          <div className="grid grid-cols-2 gap-1.5">
-            {[0, 1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className={cn(
-                  "flex aspect-square items-center justify-center rounded-2xl border",
-                  item < 2 ? "border-emerald-300/20 bg-emerald-300/10 text-emerald-100" : "border-white/10 bg-slate-950/58 text-white/30"
-                )}
-              >
-                <ImagePlus className="size-4" aria-hidden="true" />
-              </div>
-            ))}
+          <div className="grid gap-1.5">
+            <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-3 text-emerald-50">
+              <Truck className="size-5" aria-hidden="true" />
+              <p className="mt-3 text-[0.62rem] font-black uppercase tracking-wide text-emerald-100/60">Account</p>
+              <p className="text-lg font-black text-white">28</p>
+              <p className="text-[0.65rem] font-bold text-white/52">service vans</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-950/58 p-3">
+              <MapPin className="size-4 text-lime-300" aria-hidden="true" />
+              <p className="mt-2 text-[0.65rem] font-black text-white">DFW route</p>
+            </div>
           </div>
           <div className="grid gap-1.5">
             {requestFields.map((field) => {
@@ -122,8 +122,8 @@ export function QuoteIntakeOSMockup() {
             </div>
             <BellRing className="size-5 text-lime-300" aria-hidden="true" />
           </div>
-          <p className="mt-2 text-xs leading-5 text-lime-50/72">
-            Request photos, confirm mobile window, then send quote path.
+              <p className="mt-2 text-xs leading-5 text-lime-50/72">
+            Confirm service area, site notes, and send fleet quote path.
           </p>
         </div>
       </div>
@@ -131,7 +131,7 @@ export function QuoteIntakeOSMockup() {
       <div className="mt-3 flex items-center justify-between gap-3 rounded-3xl border border-emerald-300/18 bg-emerald-300/10 p-3">
         <div>
           <p className="text-[0.65rem] font-black uppercase tracking-wide text-emerald-100/60">Final handoff</p>
-          <p className="mt-1 text-sm font-black text-white">Quote handoff ready</p>
+          <p className="mt-1 text-sm font-black text-white">Account handoff ready</p>
         </div>
         <span className="rounded-full bg-emerald-300 px-3 py-1 text-[0.68rem] font-black text-slate-950">Ready</span>
       </div>

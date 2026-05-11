@@ -162,9 +162,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     industryTitle: "Where AI lead response works well",
     industryExamples: [
       {
-        title: "Auto and wheel repair",
+        title: "Fleet wash and auto services",
         description:
-          "Ask for vehicle details, damage type, photos, drivability, mobile service need, and preferred appointment time."
+          "Ask for fleet size, vehicle details, locations, service windows, account notes, and preferred appointment time."
       },
       {
         title: "Home services",
@@ -331,9 +331,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     industryTitle: "Missed-call examples by industry",
     industryExamples: [
       {
-        title: "Wheel repair shop",
+        title: "Mobile fleet wash company",
         description:
-          "A customer calls about curb rash or a bent wheel. The text asks for vehicle, damage type, photos, and whether mobile repair is needed."
+          "A fleet manager calls about recurring washing. The text asks for fleet size, vehicle types, locations, frequency, and preferred wash window."
       },
       {
         title: "HVAC or plumbing company",
@@ -500,9 +500,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     industryTitle: "Follow-up automation examples",
     industryExamples: [
       {
-        title: "Photo-based repair quotes",
+        title: "Detail-based repair and account quotes",
         description:
-          "Wheel repair, body work, roofing, and med spa inquiries often need photos before a real next step."
+          "Fleet wash, body work, roofing, and med spa inquiries often need details or photos before a real next step."
       },
       {
         title: "Maintenance businesses",
@@ -539,7 +539,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Can follow-up be customized by service?",
         answer:
-          "Yes. A bent wheel, roof leak, med spa consultation, and insurance quote should not receive the same follow-up sequence."
+          "Yes. A fleet wash quote, roof leak, med spa consultation, and insurance quote should not receive the same follow-up sequence."
       }
     ],
     relatedLinks: [
@@ -599,7 +599,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Urgent leads need speed",
         description:
-          "A no-water issue, bent wheel with shaking, roof leak, or legal deadline should not sit beside a general pricing question."
+          "A no-water issue, urgent fleet account request, roof leak, or legal deadline should not sit beside a general pricing question."
       },
       {
         title: "High-value jobs need context",
@@ -669,9 +669,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     industryTitle: "Lead intake by industry",
     industryExamples: [
       {
-        title: "Wheel repair",
+        title: "Mobile fleet wash",
         description:
-          "Bent or cracked wheels can be flagged for inspection, while curb rash with photos can be routed as a strong cosmetic repair quote."
+          "Recurring fleet wash requests can be routed with fleet size, vehicle mix, locations, wash window, and account handoff context."
       },
       {
         title: "Home services",

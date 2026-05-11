@@ -46,7 +46,7 @@ export const servicePillars = [
     items: [
       "Inbound source mapping",
       "Speed-to-lead reply templates",
-      "Basic AI triage and routing"
+      "Basic intake and routing"
     ]
   },
   {
@@ -70,168 +70,169 @@ export const servicePillars = [
 ];
 
 export const demoClient = {
-  name: "Apex Wheel Repair",
-  industry: "Automotive wheel repair and refinishing",
-  headline: "Dallas wheel repair that gets drivers back on the road.",
+  name: "RouteWash Mobile Fleet Care",
+  industry: "Mobile fleet washing and recurring fleet care",
+  headline: "Mobile fleet washing that keeps vehicles clean without slowing down routes.",
   description:
-    "Apex Wheel Repair is a fictional Dallas shop that repairs curb rash, refinishes wheels, inspects bends and cracks, and routes ready repair requests fast.",
-  goal: "Turn photo-based quote requests into prioritized repair opportunities with fast follow-up, mobile routing, and clear safety triage.",
-  services: ["Curb rash repair", "Bent wheel inspection", "Wheel refinishing", "Mobile cosmetic repair"],
+    "RouteWash Mobile Fleet Care is a fictional Dallas-Fort Worth mobile fleet wash company serving delivery vans, service trucks, dealership lots, rental fleets, and company vehicle fleets.",
+  goal: "Turn fleet quote requests into clean recurring account opportunities with faster intake, owner handoff, route-friendly scheduling, and consistent follow-up.",
+  services: [
+    "Mobile fleet washing",
+    "Recurring wash plans",
+    "Service van washing",
+    "Box truck washing",
+    "Dealership lot refresh"
+  ],
   painPoints: [
-    "Photo quote requests arrive from calls, forms, ads, and DMs with inconsistent details.",
-    "Bent or cracked wheel requests need fast triage before a customer keeps driving.",
-    "Mobile repair opportunities are easy to miss without smart routing."
+    "Fleet quote requests arrive with missing vehicle count, locations, frequency, or wash-window details.",
+    "Recurring account opportunities can get buried beside one-off service questions.",
+    "Route-friendly scheduling and site requirements are easy to miss without structured intake."
   ]
 };
 
-export const apexWheelRepair = {
-  name: "Apex Wheel Repair",
-  location: "Dallas, Texas",
+export const routeWashFleetCare = {
+  name: "RouteWash Mobile Fleet Care",
+  location: "Dallas-Fort Worth, Texas",
   phone: "(214) 555-0198",
-  headline: "Premium wheel repair and refinishing in Dallas.",
+  headline: "Mobile fleet washing that keeps your vehicles clean without slowing down your routes.",
   subheadline:
-    "Send photos, get a clear estimate path, and schedule mobile cosmetic repair or in-shop inspection for more serious wheel damage.",
+    "RouteWash helps local businesses keep vans, trucks, lots, and company vehicles clean with on-site service, recurring wash plans, and route-friendly scheduling.",
   trustBadges: [
-    "Same-day quotes",
-    "Mobile service available",
-    "OEM-style finishes",
-    "Inspected before repair",
-    "Locally owned"
+    "On-site service",
+    "Fleet-size quotes",
+    "Recurring plans",
+    "After-hours options",
+    "Route-friendly scheduling"
   ],
   stats: [
     {
-      value: "24 hr",
-      label: "quote response target"
+      value: "DFW",
+      label: "service area"
     },
     {
-      value: "4.9/5",
-      label: "local trust signal"
+      value: "Biweekly",
+      label: "common cadence"
     },
     {
-      value: "Dallas",
-      label: "mobile repair coverage"
+      value: "2+ sites",
+      label: "account intake ready"
     }
   ],
   services: [
     {
-      title: "Curb Rash Repair",
-      description: "Clean up scuffs, gouges, and road rash with careful surface prep and finish blending."
+      title: "Mobile Fleet Washing",
+      description: "On-site exterior washing for delivery vans, service vehicles, light-duty trucks, and fleet accounts."
     },
     {
-      title: "Bent Wheel Repair",
-      description: "Inspect vibration, air-loss, and impact damage, then straighten eligible wheels safely."
+      title: "Recurring Wash Plans",
+      description: "Biweekly, monthly, or custom schedules for businesses that need clean vehicles without constant rebooking."
     },
     {
-      title: "Cracked Wheel Inspection",
-      description: "Evaluate cracks and recommend repair only when the wheel is safe to service."
+      title: "Service Van Washing",
+      description: "Keep HVAC, plumbing, electrical, and home-service vans clean around active route schedules."
     },
     {
-      title: "Wheel Refinishing",
-      description: "Refresh worn finishes with sanding, priming, refinishing, and protective clear coat."
+      title: "Box Truck Washing",
+      description: "Support small logistics, delivery, and operations teams with route-based wash windows."
     },
     {
-      title: "Powder Coating",
-      description: "Durable custom finishes for drivers who want a sharper, longer-lasting wheel look."
+      title: "Dealership Lot Refresh",
+      description: "Refresh inventory presentation before weekend traffic, promotions, or high-volume lot days."
     },
     {
-      title: "Paint Matching",
-      description: "Match OEM-style silver, gloss black, satin, machined, and specialty finishes."
+      title: "Interior Wipe-Down Add-Ons",
+      description: "Add light interior touchpoints when appropriate for account needs and service scope."
     },
     {
-      title: "Mobile Wheel Repair",
-      description: "Handle many cosmetic repairs at home or work when the damage is a good mobile fit."
+      title: "Route-Based Scheduling",
+      description: "Collect locations, frequency, and preferred windows so service can fit the business day."
     },
     {
-      title: "Cosmetic Restoration",
-      description: "Bring tired wheels back with detail-focused cosmetic restoration and finish correction."
+      title: "Site Requirement Intake",
+      description: "Collect water access, parking, timing, and site notes so the team can configure service around local requirements."
     }
   ],
-  damageTypes: [
-    "Curb rash",
-    "Bent wheels",
-    "Cracked wheels",
-    "Peeling clear coat",
-    "Corrosion",
-    "Scratches",
-    "Color mismatch"
+  fleetTypes: [
+    "Delivery vans",
+    "Service trucks",
+    "Dealership inventory",
+    "Rental fleets",
+    "Construction vehicles",
+    "Company cars",
+    "Box trucks"
   ],
   process: [
     {
-      title: "Send Photos",
-      description: "Upload or describe the wheel damage, vehicle, wheel size, and drivability."
+      title: "Share Fleet Size",
+      description: "Tell RouteWash how many vehicles need service and what types are in the account."
     },
     {
-      title: "Get Estimate",
-      description: "Apex reviews the damage and sends a realistic next step, price range, and safety note."
+      title: "Map Locations",
+      description: "Share service cities, site count, parking notes, water access, and any site requirements."
     },
     {
-      title: "Schedule Repair",
-      description: "Cosmetic repairs may be routed mobile; bends and cracks may need in-shop inspection."
+      title: "Choose Frequency",
+      description: "Pick weekly, biweekly, monthly, one-time, or custom recurring service cadence."
     },
     {
-      title: "Repair or Refinish",
-      description: "Eligible wheels are repaired, refinished, paint matched, or powder coated."
+      title: "Set Wash Window",
+      description: "Select business-hours, after-hours, weekend, or low-disruption route windows."
     },
     {
-      title: "Back on the Road",
-      description: "The customer gets clear care notes and follow-up if any additional work is needed."
+      title: "Receive Quote Path",
+      description: "The RouteWash team gets a clean account summary and can prepare the next quote step."
     }
   ],
   testimonials: [
     {
       quote:
-        "I scraped two wheels in a parking garage and thought they would never match again. Apex got the finish looking factory and handled the quote from photos.",
+        "RouteWash made it simple to discuss all 28 service vans without back-and-forth. They understood locations, timing, and the recurring schedule we needed.",
       name: "Marcus R.",
-      vehicle: "BMW 540i"
+      vehicle: "HVAC service fleet"
     },
     {
       quote:
-        "The mobile repair option saved me half a day. They were honest that one wheel needed shop inspection and fixed the cosmetic wheel at my office.",
+        "We needed after-hours washing so trucks were ready before routes started. The quote process collected the details our team cared about.",
       name: "Elena P.",
-      vehicle: "Tesla Model Y"
+      vehicle: "Delivery fleet"
     },
     {
       quote:
-        "Fast estimate, no pressure, and they explained when repair made sense versus replacement. That safety-first approach earned my trust.",
+        "The account intake was clear. Fleet size, lot access, frequency, and service windows were all handled before we talked pricing.",
       name: "Jordan K.",
-      vehicle: "Chevrolet Tahoe"
+      vehicle: "Dealership inventory"
     }
   ],
   faqs: [
     {
-      question: "Can you fix curb rash?",
+      question: "Do you wash fleets on site?",
       answer:
-        "Yes. Most curb rash, scuffs, and cosmetic gouges can be repaired and blended to match the wheel finish."
+        "Yes. RouteWash is built around on-site fleet service for businesses that need vehicles cleaned without pulling them out of operation longer than necessary."
     },
     {
-      question: "Can you fix bent wheels?",
+      question: "Can you handle recurring fleet wash plans?",
       answer:
-        "Many bent wheels can be straightened after inspection. Severe bends, repeated impact damage, or unsafe structural issues may require replacement."
+        "Yes. The intake can capture frequency, vehicle count, locations, preferred wash windows, and account notes so the team can prepare a recurring service path."
     },
     {
-      question: "Can you repair cracked wheels?",
+      question: "Do you serve multiple locations?",
       answer:
-        "Some cracks can be repaired when they are safe and in an eligible area. If a wheel is structurally unsafe, Apex recommends replacement instead of repair."
+        "RouteWash can collect location count, city/service area, access notes, and preferred timing so the account can be reviewed for route-friendly scheduling."
     },
     {
-      question: "Do you offer mobile service?",
+      question: "Can service happen after hours?",
       answer:
-        "Yes. Many cosmetic repairs can be completed mobile in the Dallas area. Bent, cracked, or severe damage may require in-shop inspection."
+        "After-hours options can be discussed during intake. The team should confirm site access, scheduling fit, and local requirements before finalizing service."
     },
     {
-      question: "How long does repair take?",
+      question: "What fleet details do you need?",
       answer:
-        "Many cosmetic repairs are completed the same day. Refinishing, powder coating, bends, and inspections may require more time."
+        "Fleet size, vehicle types, locations, frequency, preferred wash window, water access, and any site-specific requirements help RouteWash prepare a better quote."
     },
     {
-      question: "Can you match my wheel color?",
+      question: "Can you work with dealerships or rental fleets?",
       answer:
-        "Apex can match many OEM-style finishes, including silver, satin, gloss black, machined looks, and custom colors."
-    },
-    {
-      question: "Do I need to send photos?",
-      answer:
-        "Photos help the shop quote faster, identify safety concerns, and route the request to mobile repair or shop inspection."
+        "Yes. Dealership lots, rental fleets, service companies, and logistics teams can be routed as recurring or account-based opportunities."
     }
   ]
 };
@@ -239,24 +240,23 @@ export const apexWheelRepair = {
 export type DashboardLeadStatus =
   | "new"
   | "contacted"
-  | "needs-photos"
-  | "qualified"
+  | "needs-details"
+  | "ready"
   | "booked"
   | "won"
   | "lost";
 
-export type ApexDashboardLead = {
+export type RouteWashDashboardLead = {
   id: string;
   name: string;
   email: string;
   phone: string;
   source: string;
-  vehicle: string;
-  wheelSize: string;
-  damageType: string;
-  numberOfWheels: number;
-  vehicleDrivable: "yes" | "no" | "unsure";
-  needsMobileService: boolean;
+  vehicleTypes: string;
+  locationCount: string;
+  requestType: string;
+  fleetSize: number;
+  afterHoursRequested: boolean;
   address: string;
   score: number;
   priority: LeadPriority;
@@ -276,328 +276,319 @@ export type ApexDashboardLead = {
   }[];
 };
 
-export const apexDashboardLeads: ApexDashboardLead[] = [
+export const routeWashDashboardLeads: RouteWashDashboardLead[] = [
   {
-    id: "apex-lead-001",
+    id: "routewash-lead-001",
     name: "Avery Stone",
     email: "avery@example.com",
     phone: "(214) 555-0149",
-    source: "Website quote form",
-    vehicle: "2022 Tesla Model Y",
-    wheelSize: "20 inch",
-    damageType: "Curb rash",
-    numberOfWheels: 2,
-    vehicleDrivable: "yes",
-    needsMobileService: true,
-    address: "Uptown Dallas",
-    score: 88,
-    priority: "warm",
+    source: "Website fleet quote form",
+    vehicleTypes: "Service vans",
+    locationCount: "2 locations",
+    requestType: "Recurring wash plan",
+    fleetSize: 28,
+    afterHoursRequested: true,
+    address: "Dallas + Irving",
+    score: 92,
+    priority: "hot",
     urgency: "soon",
-    status: "qualified",
+    status: "ready",
     createdAt: "2026-05-06T08:18:00.000Z",
-    preferredTime: "Tomorrow afternoon",
+    preferredTime: "After-hours biweekly",
     message:
-      "I scraped two wheels in a parking garage. Looking for a quote and mobile repair appointment this week if possible.",
+      "We have 28 HVAC service vans across two locations and need biweekly washing after routes are done. Can you quote it?",
     summary:
-      "Ready cosmetic repair lead for two curb-rash wheels. Mobile service is requested and the vehicle is drivable.",
+      "Recurring account opportunity for 28 service vans across two DFW locations with after-hours preference.",
     recommendedAction:
-      "Send mobile cosmetic estimate, confirm service address, and offer the first available afternoon window.",
+      "Confirm service area, water access, exact locations, preferred wash window, and send a route-friendly fleet quote path.",
     customerReply:
-      "Thanks Avery, Apex received your quote request. The details look like a good mobile cosmetic repair candidate. Please send close-up photos if you have them and we will confirm pricing and timing.",
+      "Thanks Avery, RouteWash received your fleet wash request. Can you confirm the two service locations, water access, and preferred after-hours window so we can prepare the right quote path?",
     internalNote:
-      "Good daily revenue lead. Photos are present, two wheels noted, and mobile route is likely a fit. Confirm paint finish before scheduling.",
-    tags: ["mobile-request", "cosmetic-repair", "curb-rash", "multi-wheel", "ready"],
+      "Strong recurring account. Owner should review route density, site access, frequency, and after-hours staffing before quoting.",
+    tags: ["recurring-account", "fleet-size-28", "after-hours", "owner-handoff", "route-ready"],
     timeline: [
-      { time: "8:18 AM", event: "Website quote form received" },
-      { time: "8:18 AM", event: "AI prioritized lead and sent photo confirmation text" },
-      { time: "8:20 AM", event: "Tagged as mobile cosmetic fit" }
+      { time: "8:18 AM", event: "Website fleet quote form received" },
+      { time: "8:18 AM", event: "AI collected fleet size and frequency" },
+      { time: "8:20 AM", event: "Owner alert queued for recurring account" }
     ]
   },
   {
-    id: "apex-lead-002",
+    id: "routewash-lead-002",
     name: "Caleb Rivera",
     email: "caleb.rivera@example.com",
     phone: "(972) 555-0172",
     source: "Google Business Profile",
-    vehicle: "2018 Ford F-150",
-    wheelSize: "22 inch",
-    damageType: "Bent wheel",
-    numberOfWheels: 1,
-    vehicleDrivable: "unsure",
-    needsMobileService: false,
+    vehicleTypes: "Box trucks",
+    locationCount: "1 logistics yard",
+    requestType: "Box truck washing",
+    fleetSize: 14,
+    afterHoursRequested: false,
     address: "Plano",
-    score: 97,
-    priority: "hot",
-    urgency: "emergency",
-    status: "new",
+    score: 86,
+    priority: "warm",
+    urgency: "soon",
+    status: "contacted",
     createdAt: "2026-05-06T09:04:00.000Z",
-    preferredTime: "Today",
+    preferredTime: "Saturday morning",
     message:
-      "Hit a pothole and now the truck shakes at highway speed. I need to know if the wheel can be fixed today.",
+      "We run box trucks out of Plano and need monthly exterior wash service. Looking for availability and account pricing.",
     summary:
-      "Hot safety-sensitive lead for a likely bent wheel with highway-speed vibration. Human inspection is required before repair is promised.",
+      "Mid-size fleet quote request for 14 box trucks with clear location, cadence, and account-pricing intent.",
     recommendedAction:
-      "Call within 5 minutes, advise the customer not to keep driving at highway speed, request photos, and route to shop inspection.",
+      "Ask about truck count by size, site access, water access, preferred monthly window, and prepare account quote follow-up.",
     customerReply:
-      "Thanks Caleb, Apex received your request. Because you mentioned highway-speed shaking, we need to inspect the wheel before confirming repair. Please send photos of the wheel and damaged area and we will call you shortly.",
+      "Thanks Caleb, RouteWash can review this. Can you confirm the number of box trucks, site access notes, water availability, and your preferred monthly wash window?",
     internalNote:
-      "Escalate to technician. Do not promise straightening until inspected. Ask about tire pressure loss and impact location.",
-    tags: ["hot", "bent-wheel", "inspection-required", "safety-risk", "response-needed"],
+      "Good account lead. Confirm vehicle mix and yard access before estimating route time.",
+    tags: ["box-trucks", "monthly-plan", "account-pricing", "location-provided"],
     timeline: [
       { time: "9:04 AM", event: "Google inquiry received" },
-      { time: "9:04 AM", event: "AI flagged emergency vibration language" },
-      { time: "9:05 AM", event: "Owner alert queued" }
+      { time: "9:05 AM", event: "AI asked for site and vehicle mix" },
+      { time: "9:16 AM", event: "Customer confirmed Saturday window" }
     ]
   },
   {
-    id: "apex-lead-003",
+    id: "routewash-lead-003",
     name: "Priya Nair",
     email: "priya.nair@example.com",
     phone: "(469) 555-0136",
     source: "Missed-call text back",
-    vehicle: "2020 Mercedes-Benz GLE",
-    wheelSize: "21 inch",
-    damageType: "Cracked wheel",
-    numberOfWheels: 1,
-    vehicleDrivable: "unsure",
-    needsMobileService: false,
+    vehicleTypes: "Dealership inventory",
+    locationCount: "1 lot",
+    requestType: "Dealership lot refresh",
+    fleetSize: 65,
+    afterHoursRequested: false,
     address: "Frisco",
-    score: 91,
+    score: 94,
     priority: "hot",
     urgency: "soon",
-    status: "contacted",
+    status: "new",
     createdAt: "2026-05-06T09:31:00.000Z",
-    preferredTime: "This afternoon",
+    preferredTime: "Before weekend traffic",
     message:
-      "There is a crack on the inside lip and I want to know if it can be welded instead of replaced.",
+      "We have about 65 units on the lot and want a refresh before a weekend promotion. Can someone call me today?",
     summary:
-      "High-value cracked wheel lead asking about welding. Requires technician review and safety-first language.",
+      "High-volume dealership lot refresh with time-sensitive weekend promotion and same-day callback request.",
     recommendedAction:
-      "Request barrel and crack photos, explain that repair depends on crack location and safety, then schedule in-shop inspection.",
+      "Route to owner, confirm lot size, vehicle mix, access window, water access, and whether this is one-time or recurring.",
     customerReply:
-      "Thanks Priya, Apex can inspect the crack and let you know the safest option. Please send clear photos of the inside lip and crack. If the wheel is structurally unsafe, we will recommend replacement instead of repair.",
+      "Thanks Priya, RouteWash received the dealership lot request. Can you confirm the lot address, approximate unit count, preferred access window, and whether this is one-time or recurring?",
     internalNote:
-      "Use conservative language. Crack location matters. Route to in-shop inspection before quoting weld repair.",
-    tags: ["cracked-wheel", "inspection-required", "staff-handoff", "safety-first"],
+      "High-value account possibility. Call today and confirm route capacity before committing to promotion timing.",
+    tags: ["dealership", "large-fleet", "time-sensitive", "owner-handoff", "callback-today"],
     timeline: [
       { time: "9:31 AM", event: "Missed call captured" },
-      { time: "9:32 AM", event: "Text-back workflow asked for photos" },
-      { time: "9:36 AM", event: "Customer replied with crack location" }
+      { time: "9:32 AM", event: "Text-back workflow collected lot count" },
+      { time: "9:36 AM", event: "Owner alert queued" }
     ]
   },
   {
-    id: "apex-lead-004",
+    id: "routewash-lead-004",
     name: "Marcus Reed",
     email: "marcus.reed@example.com",
     phone: "(214) 555-0187",
-    source: "Instagram ad",
-    vehicle: "2021 Dodge Charger Scat Pack",
-    wheelSize: "20 inch",
-    damageType: "Wheel refinishing",
-    numberOfWheels: 4,
-    vehicleDrivable: "yes",
-    needsMobileService: false,
-    address: "Oak Cliff",
-    score: 86,
-    priority: "warm",
+    source: "Referral",
+    vehicleTypes: "Service trucks",
+    locationCount: "3 locations",
+    requestType: "Route-based schedule",
+    fleetSize: 41,
+    afterHoursRequested: true,
+    address: "Dallas, Mesquite, Garland",
+    score: 90,
+    priority: "hot",
     urgency: "researching",
     status: "booked",
     createdAt: "2026-05-05T16:42:00.000Z",
-    preferredTime: "Friday morning",
+    preferredTime: "Weeknights",
     message:
-      "I want all four wheels refinished gloss black. Can I get appointment availability and a price range?",
+      "We manage service trucks across three DFW yards and need a route-based wash schedule that does not interrupt dispatch.",
     summary:
-      "Four-wheel refinishing opportunity with clear intent and appointment availability request.",
+      "Multi-location route-based account with 41 service trucks and low-disruption scheduling need.",
     recommendedAction:
-      "Confirm finish, timeline, and drop-off expectations, then send appointment options for Friday morning.",
+      "Map all locations, confirm dispatch windows, and propose a phased recurring service schedule.",
     customerReply:
-      "Thanks Marcus, Apex can help with a gloss black refinish quote. We will confirm finish details, timing, and available appointment windows for Friday morning.",
+      "Thanks Marcus, RouteWash can help map a route-based wash plan. Can you send the three addresses, vehicle count by site, and the best weeknight service windows?",
     internalNote:
-      "Higher-ticket refinish job. Confirm whether powder coating or paint refinish is preferred before final price.",
-    tags: ["four-wheels", "refinish", "appointment-request", "high-ticket", "booked"],
+      "Strong Growth/Custom-style workflow. Multiple locations and dispatch constraints need owner review.",
+    tags: ["multi-location", "route-based", "after-hours", "recurring-account", "booked"],
     timeline: [
-      { time: "4:42 PM", event: "Instagram form submitted" },
-      { time: "4:43 PM", event: "AI sent finish questions" },
-      { time: "5:08 PM", event: "Appointment booked for Friday" }
+      { time: "4:42 PM", event: "Referral request captured" },
+      { time: "4:43 PM", event: "AI asked for location split" },
+      { time: "5:08 PM", event: "Discovery call booked" }
     ]
   },
   {
-    id: "apex-lead-005",
+    id: "routewash-lead-005",
     name: "Elena Porter",
     email: "elena.porter@example.com",
     phone: "(214) 555-0164",
     source: "Organic website",
-    vehicle: "2019 Lexus RX 350",
-    wheelSize: "18 inch",
-    damageType: "Peeling clear coat",
-    numberOfWheels: 4,
-    vehicleDrivable: "yes",
-    needsMobileService: false,
+    vehicleTypes: "Company cars",
+    locationCount: "1 office",
+    requestType: "Monthly wash plan",
+    fleetSize: 9,
+    afterHoursRequested: false,
     address: "Lake Highlands",
-    score: 78,
+    score: 68,
     priority: "warm",
     urgency: "researching",
-    status: "qualified",
+    status: "needs-details",
     createdAt: "2026-05-05T14:12:00.000Z",
-    preferredTime: "Next week",
+    preferredTime: "Monthly Friday afternoon",
     message:
-      "The clear coat is peeling on my OEM wheels. I want them to look factory again, not custom.",
+      "We have a small company car fleet and are looking into monthly wash service near our office.",
     summary:
-      "Ready OEM-style refinishing lead for peeling clear coat on four wheels.",
+      "Small fleet monthly plan inquiry with office location and preferred timing, but missing vehicle mix and site notes.",
     recommendedAction:
-      "Send OEM-style refinishing range, explain timeline, and ask for photos of each wheel.",
+      "Ask for vehicle types, parking/access notes, water access, and whether the account needs interior add-ons.",
     customerReply:
-      "Thanks Elena, Apex can review the OEM finish and peeling clear coat. Please send photos of each wheel so we can confirm the best refinishing path and timeline.",
+      "Thanks Elena, RouteWash can review monthly service. Can you confirm vehicle types, parking/access notes, water access, and whether you want any light interior add-ons?",
     internalNote:
-      "Good OEM refinish candidate. Emphasize factory-style finish and manage timeline expectations.",
-    tags: ["oem-finish", "peeling-clear", "refinish", "multi-wheel"],
+      "Starter-style account. Need service scope and site notes before quote.",
+    tags: ["small-fleet", "monthly-plan", "details-needed"],
     timeline: [
       { time: "2:12 PM", event: "Website inquiry received" },
-      { time: "2:12 PM", event: "AI classified OEM-style refinish" },
-      { time: "2:15 PM", event: "Photo request sent" }
+      { time: "2:13 PM", event: "AI asked for vehicle mix and site notes" },
+      { time: "2:15 PM", event: "Follow-up reminder queued" }
     ]
   },
   {
-    id: "apex-lead-006",
+    id: "routewash-lead-006",
     name: "Dustin Hale",
     email: "dustin.hale@example.com",
     phone: "(469) 555-0108",
     source: "Paid search landing page",
-    vehicle: "2023 Toyota Camry",
-    wheelSize: "19 inch",
-    damageType: "Scratches",
-    numberOfWheels: 1,
-    vehicleDrivable: "yes",
-    needsMobileService: true,
-    address: "Richardson",
-    score: 62,
+    vehicleTypes: "Rental fleet",
+    locationCount: "2 lots",
+    requestType: "Seasonal refresh",
+    fleetSize: 38,
+    afterHoursRequested: false,
+    address: "Richardson + Addison",
+    score: 82,
     priority: "warm",
     urgency: "soon",
-    status: "needs-photos",
+    status: "contacted",
     createdAt: "2026-05-06T10:22:00.000Z",
-    preferredTime: "Same day if possible",
+    preferredTime: "Next week",
     message:
-      "Can I get a same-day quote? I do not have photos right now but it is a scraped wheel.",
+      "We manage rental vehicles at two lots and need a refresh next week. We may turn this into recurring if it works.",
     summary:
-      "Same-day cosmetic quote request with missing photos. Good lead, but quote quality is limited until photos arrive.",
+      "Rental fleet refresh with two locations and possible recurring account path.",
     recommendedAction:
-      "Send photo request immediately and hold mobile scheduling until damage photos confirm cosmetic fit.",
+      "Confirm lot addresses, vehicle count by location, service scope, water access, and recurring potential.",
     customerReply:
-      "Thanks Dustin, Apex can usually quote faster with photos. Please send 2-3 close-ups of the scratched wheel and we will confirm if same-day mobile repair is available.",
+      "Thanks Dustin, RouteWash received your rental fleet request. Can you send both lot addresses, vehicle count by location, and preferred service windows for next week?",
     internalNote:
-      "Photo request pending. Do not quote final price yet. Follow up in 2 hours if no photos are received.",
-    tags: ["photo-request", "same-day-quote", "mobile-request", "needs-photos"],
+      "Potential recurring conversion after one-time refresh. Follow up after service proposal.",
+    tags: ["rental-fleet", "two-locations", "recurring-potential", "follow-up"],
     timeline: [
       { time: "10:22 AM", event: "Paid search form submitted" },
-      { time: "10:22 AM", event: "AI requested photos" },
-      { time: "10:22 AM", event: "Follow-up timer started" }
+      { time: "10:23 AM", event: "AI requested location split" },
+      { time: "10:29 AM", event: "Customer confirmed next-week timing" }
     ]
   },
   {
-    id: "apex-lead-007",
+    id: "routewash-lead-007",
     name: "Sofia Martin",
     email: "sofia.martin@example.com",
     phone: "(972) 555-0119",
     source: "Facebook lead ad",
-    vehicle: "2020 Jeep Wrangler",
-    wheelSize: "17 inch",
-    damageType: "Powder coating",
-    numberOfWheels: 5,
-    vehicleDrivable: "yes",
-    needsMobileService: false,
-    address: "Dallas",
-    score: 84,
+    vehicleTypes: "Construction trucks",
+    locationCount: "1 job site",
+    requestType: "One-time cleanup",
+    fleetSize: 12,
+    afterHoursRequested: true,
+    address: "Fort Worth",
+    score: 74,
     priority: "warm",
     urgency: "soon",
-    status: "contacted",
+    status: "booked",
     createdAt: "2026-05-05T11:48:00.000Z",
-    preferredTime: "Next available appointment",
+    preferredTime: "Saturday evening",
     message:
-      "Looking for powder coating on my Wrangler wheels and spare. What appointments are open?",
+      "We need 12 construction trucks cleaned after a dusty job. Saturday evening would be ideal if available.",
     summary:
-      "High-value powder coating lead for five wheels with appointment availability request.",
+      "One-time construction fleet cleanup with clear vehicle count and after-hours preference.",
     recommendedAction:
-      "Confirm color, finish, vehicle logistics, and next available appointment window.",
+      "Confirm site access, soil level, water access, and whether recurring maintenance is worth discussing.",
     customerReply:
-      "Thanks Sofia, Apex received your powder coating request. We will confirm color and finish details, then send the next available appointment options.",
+      "Thanks Sofia, RouteWash can review that Saturday evening window. Can you confirm the job site address, truck types, site access, and water availability?",
     internalNote:
-      "Five-wheel job including spare. Ask about tire dismount/remount expectations and finish choice.",
-    tags: ["powder-coating", "appointment-request", "high-ticket", "five-wheels"],
+      "Bookable one-time job. Ask whether recurring job-site service is needed later.",
+    tags: ["construction-trucks", "after-hours", "booked", "site-access-needed"],
     timeline: [
       { time: "11:48 AM", event: "Facebook lead ad captured" },
-      { time: "11:49 AM", event: "AI asked color and appointment questions" },
-      { time: "12:04 PM", event: "Customer confirmed matte black preference" }
+      { time: "11:49 AM", event: "AI asked site access questions" },
+      { time: "12:04 PM", event: "Saturday evening window booked" }
     ]
   },
   {
-    id: "apex-lead-008",
+    id: "routewash-lead-008",
     name: "Jordan Kim",
     email: "jordan.kim@example.com",
     phone: "(214) 555-0127",
-    source: "Referral",
-    vehicle: "2021 Audi Q5",
-    wheelSize: "19 inch",
-    damageType: "Curb rash",
-    numberOfWheels: 1,
-    vehicleDrivable: "yes",
-    needsMobileService: true,
+    source: "Partner referral",
+    vehicleTypes: "Delivery vans",
+    locationCount: "1 depot",
+    requestType: "Biweekly route",
+    fleetSize: 22,
+    afterHoursRequested: true,
     address: "Design District",
-    score: 81,
-    priority: "warm",
+    score: 88,
+    priority: "hot",
     urgency: "soon",
     status: "won",
     createdAt: "2026-05-04T15:26:00.000Z",
-    preferredTime: "Completed yesterday",
+    preferredTime: "Early mornings",
     message:
-      "One wheel has curb rash from valet parking. I can do mobile if you have a window near my office.",
+      "We need 22 delivery vans washed before morning routes. Looking for a biweekly setup.",
     summary:
-      "Mobile curb-rash repair lead converted after fast photo intake and appointment confirmation.",
+      "Won recurring delivery van account after fast intake and route-window confirmation.",
     recommendedAction:
-      "Send care instructions and review request. Add customer to reactivation list for future cosmetic work.",
+      "Send onboarding checklist, confirm first service window, and add recurring follow-up reminders.",
     customerReply:
-      "Thanks Jordan, your repair is complete. Apex appreciates the quick photo follow-up and we will send care notes shortly.",
+      "Thanks Jordan, RouteWash has your first service window prepared. We will confirm access notes and recurring cadence before the first wash.",
     internalNote:
-      "Won mobile repair. Good testimonial candidate because turnaround was fast and office service mattered.",
-    tags: ["won", "mobile-repair", "curb-rash", "referral"],
+      "Won recurring account. Add to account review list and confirm service quality after first route.",
+    tags: ["won", "delivery-vans", "biweekly", "early-window", "recurring-account"],
     timeline: [
-      { time: "3:26 PM", event: "Referral form submitted" },
-      { time: "3:27 PM", event: "Photos received and prioritized" },
-      { time: "Yesterday", event: "Mobile repair completed" }
+      { time: "3:26 PM", event: "Referral request captured" },
+      { time: "3:27 PM", event: "AI collected depot and timing" },
+      { time: "Yesterday", event: "Recurring account marked won" }
     ]
   },
   {
-    id: "apex-lead-009",
+    id: "routewash-lead-009",
     name: "Nina Brooks",
     email: "nina.brooks@example.com",
     phone: "",
     source: "Chat widget",
-    vehicle: "Unknown BMW sedan",
-    wheelSize: "",
-    damageType: "Color mismatch",
-    numberOfWheels: 1,
-    vehicleDrivable: "yes",
-    needsMobileService: false,
+    vehicleTypes: "Unknown fleet",
+    locationCount: "Unknown",
+    requestType: "Price question",
+    fleetSize: 0,
+    afterHoursRequested: false,
     address: "",
-    score: 38,
+    score: 36,
     priority: "cold",
     urgency: "unknown",
     status: "lost",
     createdAt: "2026-05-03T17:55:00.000Z",
     preferredTime: "",
     message:
-      "How much to fix a wheel that does not match? I do not want to give my number yet.",
+      "How much do you charge for fleet washing? I do not want to give my number yet.",
     summary:
-      "Low-confidence chat lead with vague color-mismatch details and no phone number.",
+      "Low-context pricing question without fleet size, location, vehicle type, or phone number.",
     recommendedAction:
-      "Ask for photos, wheel finish details, and a callback number before routing to the shop.",
+      "Ask for fleet size, vehicle types, service city, desired frequency, and a callback number before routing to owner.",
     customerReply:
-      "Thanks Nina, Apex can review color match issues from photos. Please send a close-up photo of the wheel and the finish you want matched so we can point you in the right direction.",
+      "Thanks Nina, RouteWash can point you in the right direction. Can you share fleet size, vehicle types, service city, desired frequency, and the best callback number?",
     internalNote:
-      "Lost opportunity after no photo response. Missing phone limited follow-up options.",
-    tags: ["lost", "phone-missing", "low-confidence", "needs-photos"],
+      "Lost after no response. Missing account details and phone limited follow-up options.",
+    tags: ["lost", "phone-missing", "low-context", "details-needed"],
     timeline: [
       { time: "5:55 PM", event: "Chat inquiry received" },
-      { time: "5:55 PM", event: "AI requested photos and phone number" },
+      { time: "5:55 PM", event: "AI requested account basics" },
       { time: "Next day", event: "Lead marked lost after no response" }
     ]
   }

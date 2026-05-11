@@ -12,7 +12,7 @@ import {
 type DashboardFiltersProps = {
   filters: DashboardFilters;
   sources: string[];
-  damageTypes: string[];
+  requestTypes: string[];
   onChange: (filters: DashboardFilters) => void;
 };
 
@@ -20,10 +20,10 @@ const selectClass =
   "h-10 w-full min-w-0 rounded-xl border border-input bg-[#17122d]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 const priorities: LeadPriority[] = ["hot", "warm", "cold", "junk"];
-const statuses: DashboardLeadStatus[] = ["new", "contacted", "needs-photos", "qualified", "booked", "won", "lost"];
+const statuses: DashboardLeadStatus[] = ["new", "contacted", "needs-details", "ready", "booked", "won", "lost"];
 const urgencies: LeadUrgency[] = ["emergency", "soon", "researching", "unknown"];
 
-export function DashboardFilters({ filters, sources, damageTypes, onChange }: DashboardFiltersProps) {
+export function DashboardFilters({ filters, sources, requestTypes, onChange }: DashboardFiltersProps) {
   function updateFilter<Key extends keyof DashboardFilters>(key: Key, value: DashboardFilters[Key]) {
     onChange({
       ...filters,
@@ -83,23 +83,23 @@ export function DashboardFilters({ filters, sources, damageTypes, onChange }: Da
         </label>
 
         <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
-          Damage
-          <select value={filters.damageType} onChange={(event) => updateFilter("damageType", event.target.value)} className={selectClass}>
-            <option value="all">All damage</option>
-            {damageTypes.map((damageType) => (
-              <option key={damageType} value={damageType}>
-                {damageType}
+          Request
+          <select value={filters.requestType} onChange={(event) => updateFilter("requestType", event.target.value)} className={selectClass}>
+            <option value="all">All requests</option>
+            {requestTypes.map((requestType) => (
+              <option key={requestType} value={requestType}>
+                {requestType}
               </option>
             ))}
           </select>
         </label>
 
         <label className="grid gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">
-          Mobile
-          <select value={filters.mobileService} onChange={(event) => updateFilter("mobileService", event.target.value as DashboardFilters["mobileService"])} className={selectClass}>
+          Timing
+          <select value={filters.afterHours} onChange={(event) => updateFilter("afterHours", event.target.value as DashboardFilters["afterHours"])} className={selectClass}>
             <option value="all">All leads</option>
-            <option value="yes">Mobile requested</option>
-            <option value="no">Shop or unclear</option>
+            <option value="yes">After-hours requested</option>
+            <option value="no">Standard window</option>
           </select>
         </label>
       </div>

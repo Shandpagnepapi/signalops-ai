@@ -1,13 +1,13 @@
 import type { LeadPriority, LeadUrgency } from "@/lib/lead-scoring";
-import type { ApexDashboardLead, DashboardLeadStatus } from "@/lib/mock-data";
+import type { DashboardLeadStatus, RouteWashDashboardLead } from "@/lib/mock-data";
 
 export type DashboardFilters = {
   priority: LeadPriority | "all";
   status: DashboardLeadStatus | "all";
   source: string;
   urgency: LeadUrgency | "all";
-  damageType: string;
-  mobileService: "all" | "yes" | "no";
+  requestType: string;
+  afterHours: "all" | "yes" | "no";
 };
 
 export const defaultDashboardFilters: DashboardFilters = {
@@ -15,15 +15,15 @@ export const defaultDashboardFilters: DashboardFilters = {
   status: "all",
   source: "all",
   urgency: "all",
-  damageType: "all",
-  mobileService: "all"
+  requestType: "all",
+  afterHours: "all"
 };
 
 export const pipelineStatuses: DashboardLeadStatus[] = [
   "new",
   "contacted",
-  "needs-photos",
-  "qualified",
+  "needs-details",
+  "ready",
   "booked",
   "won",
   "lost"
@@ -32,8 +32,8 @@ export const pipelineStatuses: DashboardLeadStatus[] = [
 export const statusLabels: Record<DashboardLeadStatus, string> = {
   new: "New",
   contacted: "Contacted",
-  "needs-photos": "Needs Photos",
-  qualified: "Ready",
+  "needs-details": "Needs Details",
+  ready: "Ready",
   booked: "Booked",
   won: "Won",
   lost: "Lost"
@@ -73,8 +73,8 @@ export function statusBadgeClass(status: DashboardLeadStatus) {
   const classes: Record<DashboardLeadStatus, string> = {
     new: "border-[#ff9ec0]/25 bg-[#ff6f9c]/12 text-[#ffd7e6]",
     contacted: "border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]",
-    "needs-photos": "border-amber-300/25 bg-amber-400/12 text-amber-100",
-    qualified: "border-emerald-300/25 bg-emerald-400/12 text-emerald-100",
+    "needs-details": "border-amber-300/25 bg-amber-400/12 text-amber-100",
+    ready: "border-emerald-300/25 bg-emerald-400/12 text-emerald-100",
     booked: "border-violet-300/25 bg-violet-400/12 text-violet-100",
     won: "border-green-300/25 bg-green-400/12 text-green-100",
     lost: "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#f2d9e8]"
@@ -92,11 +92,11 @@ export function formatDateTime(value: string) {
   }).format(new Date(value));
 }
 
-export function getUniqueOptions(leads: ApexDashboardLead[], key: "source" | "damageType") {
+export function getUniqueOptions(leads: RouteWashDashboardLead[], key: "source" | "requestType") {
   return Array.from(new Set(leads.map((lead) => lead[key]).filter(Boolean))).sort();
 }
 
-export function filterLeads(leads: ApexDashboardLead[], filters: DashboardFilters) {
+export function filterLeads(leads: RouteWashDashboardLead[], filters: DashboardFilters) {
   return leads.filter((lead) => {
     if (filters.priority !== "all" && lead.priority !== filters.priority) {
       return false;
@@ -114,15 +114,15 @@ export function filterLeads(leads: ApexDashboardLead[], filters: DashboardFilter
       return false;
     }
 
-    if (filters.damageType !== "all" && lead.damageType !== filters.damageType) {
+    if (filters.requestType !== "all" && lead.requestType !== filters.requestType) {
       return false;
     }
 
-    if (filters.mobileService === "yes" && !lead.needsMobileService) {
+    if (filters.afterHours === "yes" && !lead.afterHoursRequested) {
       return false;
     }
 
-    if (filters.mobileService === "no" && lead.needsMobileService) {
+    if (filters.afterHours === "no" && lead.afterHoursRequested) {
       return false;
     }
 

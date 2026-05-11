@@ -2,9 +2,9 @@
 
 ## Quote Intake OS
 
-For wheel repair, detailers, contractors, tint/wrap shops, remodelers, auto services, and quote-based businesses.
+For mobile fleet wash companies, detailers, contractors, tint/wrap shops, remodelers, auto services, and quote-based businesses.
 
-Core flow: lead comes in -> AI requests missing details/photos -> sorts priority and next action -> alerts owner -> follow-up -> booking/quote handoff.
+Core flow: lead comes in -> AI requests missing details, photos, or account context -> sorts priority and next action -> alerts owner -> follow-up -> booking/quote handoff.
 
 ## Appointment Booking OS
 

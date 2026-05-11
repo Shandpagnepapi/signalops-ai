@@ -70,15 +70,19 @@ export type LeadSubmissionDraft = Omit<
 export type LeadScoringResult = QualifiedLeadResult;
 
 const intentKeywords = [
+  "account",
   "appointment",
   "available",
+  "biweekly",
   "book",
   "call",
   "estimate",
-  "fix",
+  "fleet",
   "follow up",
+  "monthly",
   "price",
   "quote",
+  "recurring",
   "schedule",
   "this week",
   "today",
@@ -86,41 +90,34 @@ const intentKeywords = [
 ];
 
 const urgentKeywords = [
-  "air leak",
   "asap",
-  "can't drive",
-  "cannot drive",
   "emergency",
-  "leaking",
   "missed",
-  "not drivable",
   "right away",
+  "same day",
   "slow",
-  "stuck",
-  "urgent",
-  "vibration",
-  "wobble"
+  "today",
+  "urgent"
 ];
 
 const targetIndustries = [
   "auto",
-  "wheel",
+  "dealership",
   "detail",
-  "tint",
-  "wrap",
-  "roof",
+  "fleet",
+  "fleet wash",
+  "home service",
   "hvac",
-  "plumb",
-  "electric",
-  "med spa",
-  "dental",
-  "law",
   "insurance",
-  "real estate",
   "local service",
+  "logistics",
+  "med spa",
+  "mobile wash",
+  "plumb",
+  "rental",
+  "service business",
   "well",
-  "water",
-  "filtration"
+  "water"
 ];
 
 function normalize(value: string) {
@@ -148,40 +145,26 @@ function firstName(name: string) {
   return name.trim().split(/\s+/)[0] || "there";
 }
 
-function createSummary(lead: LeadSubmissionDraft, inspectionRequired: boolean) {
-  const service = lead.serviceNeeded || "a lead response request";
-  const business = lead.businessName ? ` for ${lead.businessName}` : "";
-  const industry = lead.industry ? ` in ${lead.industry}` : "";
-  const contact = lead.phone && lead.email ? "phone and email" : lead.phone ? "phone" : "email";
-
-  if (isWheelLead(lead)) {
-    const wheelCount = lead.numberOfWheels > 0 ? `${lead.numberOfWheels} wheel(s)` : "wheel damage";
-    const damage = lead.serviceNeeded || lead.damageType || "wheel repair";
-    const safety = inspectionRequired ? " Safety-sensitive details should route to the shop before promising repair." : "";
-    return `${lead.name} submitted an Apex Wheel Repair request for ${damage} on ${wheelCount}. Contact is available by ${contact}.${safety}`;
-  }
-
-  if (isWaterLead(lead)) {
-    const service = lead.serviceNeeded || "well or water service";
-    const location = lead.address ? ` Service area: ${lead.address}.` : "";
-    return `${lead.name} submitted a ClearFlow request for ${service}. Contact is available by ${contact}.${location}`;
-  }
-
-  if (isAuditLead(lead)) {
-    return `${lead.name} submitted a SignalOps project inquiry${business}${industry}. The main issue appears to be ${lead.message || "lead response, intake, routing, or follow-up visibility"}.`;
-  }
-
-  return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
-}
-
 function isAuditLead(lead: LeadSubmissionDraft) {
   const text = normalize(`${lead.source} ${lead.serviceNeeded} ${lead.message}`);
   return text.includes("project inquiry") || text.includes("checkup") || text.includes("missed lead") || text.includes("audit");
 }
 
-function isWheelLead(lead: LeadSubmissionDraft) {
-  const text = normalize(`${lead.source} ${lead.industry} ${lead.serviceNeeded} ${lead.damageType}`);
-  return text.includes("wheel") || text.includes("apex");
+function isFleetWashLead(lead: LeadSubmissionDraft) {
+  const text = normalize(
+    `${lead.source} ${lead.businessName} ${lead.industry} ${lead.serviceNeeded} ${lead.damageType} ${lead.message} ${lead.vehicleYearMakeModel}`
+  );
+  return (
+    text.includes("routewash") ||
+    text.includes("fleet") ||
+    text.includes("mobile wash") ||
+    text.includes("fleet wash") ||
+    text.includes("service van") ||
+    text.includes("box truck") ||
+    text.includes("dealership") ||
+    text.includes("rental") ||
+    text.includes("logistics")
+  );
 }
 
 function isWaterLead(lead: LeadSubmissionDraft) {
@@ -199,6 +182,33 @@ function isWaterLead(lead: LeadSubmissionDraft) {
   );
 }
 
+function createSummary(lead: LeadSubmissionDraft, accountReviewNeeded: boolean) {
+  const service = lead.serviceNeeded || "a lead response request";
+  const business = lead.businessName ? ` for ${lead.businessName}` : "";
+  const industry = lead.industry ? ` in ${lead.industry}` : "";
+  const contact = lead.phone && lead.email ? "phone and email" : lead.phone ? "phone" : "email";
+
+  if (isFleetWashLead(lead)) {
+    const fleetSize = lead.numberOfWheels > 0 ? `${lead.numberOfWheels} vehicle fleet` : "fleet account";
+    const vehicleTypes = lead.vehicleYearMakeModel ? ` Vehicle types: ${lead.vehicleYearMakeModel}.` : "";
+    const locations = lead.wheelSize ? ` Locations: ${lead.wheelSize}.` : "";
+    const review = accountReviewNeeded ? " Owner should review route, timing, and account fit before quoting." : "";
+    return `${lead.name} submitted a RouteWash request for ${service} on a ${fleetSize}. Contact is available by ${contact}.${vehicleTypes}${locations}${review}`;
+  }
+
+  if (isWaterLead(lead)) {
+    const waterService = lead.serviceNeeded || "well or water service";
+    const location = lead.address ? ` Service area: ${lead.address}.` : "";
+    return `${lead.name} submitted a ClearFlow request for ${waterService}. Contact is available by ${contact}.${location}`;
+  }
+
+  if (isAuditLead(lead)) {
+    return `${lead.name} submitted a SignalOps project inquiry${business}${industry}. The main issue appears to be ${lead.message || "lead response, intake, routing, or follow-up visibility"}.`;
+  }
+
+  return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
+}
+
 export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   const tags: string[] = [];
   let score = 28;
@@ -211,49 +221,51 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
       lead.industry,
       lead.damageType,
       lead.photoNotes,
-      lead.preferredTime
+      lead.preferredTime,
+      lead.vehicleYearMakeModel,
+      lead.wheelSize
     ].join(" ")
   );
-  const damageText = normalize(`${lead.damageType} ${lead.serviceNeeded} ${lead.message} ${lead.photoNotes}`);
-  const wheelLead = isWheelLead(lead);
+  const requestText = normalize(`${lead.damageType} ${lead.serviceNeeded} ${lead.message} ${lead.photoNotes} ${lead.preferredTime}`);
+  const fleetLead = isFleetWashLead(lead);
   const waterLead = isWaterLead(lead);
   const auditLead = isAuditLead(lead);
   const hasPhone = lead.phone.length > 0;
   const hasEmail = lead.email.length > 0;
   const hasAddress = lead.address.length > 0;
   const hasDetailedMessage = `${lead.message} ${lead.photoNotes}`.trim().length >= 48;
-  const isBent = damageText.includes("bent") || damageText.includes("vibration") || damageText.includes("wobble");
-  const isCracked = damageText.includes("crack") || damageText.includes("air leak") || damageText.includes("leaking");
-  const isCurbRash = damageText.includes("curb") || damageText.includes("rash") || damageText.includes("scuff");
-  const isRefinish =
-    damageText.includes("refinish") || damageText.includes("powder") || damageText.includes("paint") || damageText.includes("color");
-  const inspectionRequired = wheelLead && (isBent || isCracked || lead.vehicleDrivable === "no" || lead.vehicleDrivable === "unsure");
-  const mobileCosmeticFit =
-    wheelLead &&
-    lead.needsMobileService === "yes" &&
-    lead.vehicleDrivable === "yes" &&
-    (isCurbRash || isRefinish || damageText.includes("scratch") || damageText.includes("peeling"));
+  const isRecurring =
+    requestText.includes("recurring") ||
+    requestText.includes("biweekly") ||
+    requestText.includes("monthly") ||
+    requestText.includes("weekly");
+  const isLargeFleet = fleetLead && lead.numberOfWheels >= 25;
+  const multiLocation = fleetLead && (lead.wheelSize.includes("2") || lead.wheelSize.includes("3") || requestText.includes("multiple"));
+  const afterHours = fleetLead && (lead.needsMobileService === "yes" || requestText.includes("after-hours") || requestText.includes("weeknight"));
+  const dealershipOrRental =
+    fleetLead && (requestText.includes("dealership") || requestText.includes("rental") || requestText.includes("lot"));
+  const accountReviewNeeded = fleetLead && (isLargeFleet || multiLocation || afterHours || dealershipOrRental);
+
   const noWaterIssue =
     waterLead &&
-    (damageText.includes("no water") ||
+    (requestText.includes("no water") ||
       text.includes("no water") ||
       lead.damageType.includes("emergency-no-water") ||
       normalize(lead.urgency).includes("no water"));
-  const majorPressureIssue = waterLead && (damageText.includes("pressure") || text.includes("pressure")) && lead.vehicleDrivable !== "yes";
+  const majorPressureIssue = waterLead && (requestText.includes("pressure") || text.includes("pressure")) && lead.vehicleDrivable !== "yes";
   const commercialWaterLead =
     waterLead &&
-    (damageText.includes("commercial") ||
-      damageText.includes("industrial") ||
-      damageText.includes("large project") ||
-      damageText.includes("alabama power") ||
+    (requestText.includes("commercial") ||
+      requestText.includes("industrial") ||
+      requestText.includes("large project") ||
       text.includes("commercial") ||
       text.includes("industrial"));
   const routineWaterMaintenance =
     waterLead &&
-    (damageText.includes("filter") ||
-      damageText.includes("maintenance") ||
-      damageText.includes("testing") ||
-      damageText.includes("quality") ||
+    (requestText.includes("filter") ||
+      requestText.includes("maintenance") ||
+      requestText.includes("testing") ||
+      requestText.includes("quality") ||
       text.includes("routine"));
 
   pushTag(tags, lead.source || "website");
@@ -263,9 +275,9 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     score += 14;
   }
 
-  if (wheelLead) {
-    pushTag(tags, "wheel-repair");
-    score += 10;
+  if (fleetLead) {
+    pushTag(tags, "fleet-wash");
+    score += 12;
   }
 
   if (waterLead) {
@@ -321,74 +333,63 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   }
 
   if (hasAny(text, urgentKeywords) || normalize(lead.urgency).includes("urgent")) {
-    score += 16;
-    pushTag(tags, "urgent");
+    score += 12;
+    pushTag(tags, "fast-response");
   }
 
-  if (wheelLead) {
+  if (fleetLead) {
     if (lead.vehicleYearMakeModel) {
       score += 7;
+      pushTag(tags, "vehicle-types-provided");
     }
 
     if (lead.wheelSize) {
-      score += 4;
+      score += 5;
+      pushTag(tags, "locations-provided");
     }
 
     if (lead.photoNotes) {
-      score += 9;
-      pushTag(tags, "photos-or-notes-provided");
-    }
-
-    if (lead.numberOfWheels >= 2) {
-      score += 10;
-      pushTag(tags, "multi-wheel");
-    }
-
-    if (lead.numberOfWheels >= 4) {
       score += 6;
-      pushTag(tags, "high-ticket");
+      pushTag(tags, "site-notes-provided");
     }
 
-    if (isCurbRash) {
-      score += 10;
-      pushTag(tags, "cosmetic-repair");
-    }
-
-    if (isBent) {
-      score += 17;
-      pushTag(tags, "bent-wheel");
-    }
-
-    if (isCracked) {
-      score += 18;
-      pushTag(tags, "cracked-wheel");
-    }
-
-    if (isRefinish) {
-      score += 10;
-      pushTag(tags, "refinish");
-    }
-
-    if (lead.vehicleDrivable === "no") {
-      score += 20;
-      pushTag(tags, "not-drivable");
-    } else if (lead.vehicleDrivable === "unsure") {
+    if (lead.numberOfWheels >= 10) {
       score += 8;
-      pushTag(tags, "drivability-unclear");
+      pushTag(tags, "fleet-account");
     }
 
-    if (lead.needsMobileService === "yes") {
-      score += 7;
-      pushTag(tags, "mobile-request");
+    if (lead.numberOfWheels >= 25) {
+      score += 12;
+      pushTag(tags, "recurring-account-opportunity");
     }
 
-    if (mobileCosmeticFit) {
+    if (lead.numberOfWheels >= 50) {
+      score += 8;
+      pushTag(tags, "large-account-review");
+    }
+
+    if (isRecurring) {
+      score += 14;
+      pushTag(tags, "recurring-plan");
+    }
+
+    if (multiLocation) {
+      score += 8;
+      pushTag(tags, "multi-location");
+    }
+
+    if (afterHours) {
       score += 6;
-      pushTag(tags, "mobile-cosmetic-fit");
+      pushTag(tags, "after-hours-window");
     }
 
-    if (inspectionRequired) {
-      pushTag(tags, "inspection-required");
+    if (dealershipOrRental) {
+      score += 10;
+      pushTag(tags, "commercial-account");
+    }
+
+    if (accountReviewNeeded) {
+      pushTag(tags, "owner-handoff");
     }
   }
 
@@ -405,7 +406,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
 
     if (lead.photoNotes) {
       score += 6;
-      pushTag(tags, "photos-or-notes-provided");
+      pushTag(tags, "notes-provided");
     }
 
     if (noWaterIssue) {
@@ -447,13 +448,13 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   const normalizedScore = Math.max(5, Math.min(score, 100));
   const needsHumanReview =
     (!hasPhone && !hasDetailedMessage) ||
-    (wheelLead && inspectionRequired) ||
+    (fleetLead && accountReviewNeeded) ||
     (waterLead && (noWaterIssue || majorPressureIssue || commercialWaterLead)) ||
     (!hasEmail && !hasPhone);
   const priority: LeadPriority =
     !hasPhone && !hasDetailedMessage
       ? "junk"
-      : isBent && lead.vehicleDrivable === "no"
+      : fleetLead && (isLargeFleet || isRecurring || dealershipOrRental)
         ? "hot"
         : waterLead && (noWaterIssue || commercialWaterLead || majorPressureIssue)
           ? "hot"
@@ -466,8 +467,6 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
                 : "junk";
   const urgency =
     waterLead && (noWaterIssue || majorPressureIssue)
-      ? "emergency"
-      : wheelLead && (lead.vehicleDrivable === "no" || (isBent && hasAny(text, urgentKeywords)))
       ? "emergency"
       : hasAny(text, urgentKeywords) || normalize(lead.urgency).includes("urgent")
         ? "emergency"
@@ -485,30 +484,27 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
         (hasEmail ? 0.1 : 0) +
         (hasDetailedMessage ? 0.16 : 0) +
         (lead.serviceNeeded ? 0.08 : 0) +
-        (wheelLead && lead.photoNotes ? 0.08 : 0) +
+        (fleetLead && lead.numberOfWheels > 0 ? 0.08 : 0) +
+        (fleetLead && hasAddress ? 0.05 : 0) +
         (waterLead && hasAddress ? 0.06 : 0) +
         (lead.businessName ? 0.05 : 0)
     )
   );
 
   const name = firstName(lead.name);
-  const aiSummary = createSummary(lead, inspectionRequired);
+  const aiSummary = createSummary(lead, accountReviewNeeded);
 
   const recommendedAction = (() => {
     if (needsHumanReview && priority === "junk") {
       return "Request the missing contact details and ask one specific intake question before routing to sales.";
     }
 
-    if (wheelLead && isBent && lead.vehicleDrivable === "no") {
-      return "Call within 5 minutes, request photos if missing, and route to shop inspection before promising repair.";
+    if (fleetLead && accountReviewNeeded) {
+      return "Confirm service area, vehicle mix, locations, service frequency, preferred wash window, water access, and site requirements before sending the fleet quote path.";
     }
 
-    if (wheelLead && inspectionRequired) {
-      return "Flag for technician review, request clear photos, and schedule in-shop inspection if the wheel is safe to evaluate.";
-    }
-
-    if (wheelLead && mobileCosmeticFit) {
-      return "Send a mobile cosmetic repair estimate, confirm service address, and offer the first available appointment window.";
+    if (fleetLead) {
+      return "Send a helpful reply, collect missing fleet details, and place the opportunity into quote follow-up with an owner-ready summary.";
     }
 
     if (waterLead && noWaterIssue) {
@@ -535,12 +531,8 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   })();
 
   const customerReply = (() => {
-    if (wheelLead && inspectionRequired) {
-      return `Thanks ${name}, Apex received your wheel repair request. Please send clear photos of the front, barrel, and damaged area. We'll inspect safety first and recommend replacement if the wheel is structurally unsafe.`;
-    }
-
-    if (wheelLead) {
-      return `Thanks ${name}, Apex received your wheel repair request. Based on the details, this looks like a good quote candidate. Please send 2-3 close-up photos if you have them, and we'll confirm pricing and the best appointment window.`;
+    if (fleetLead) {
+      return `Thanks ${name}, RouteWash received your fleet wash request. Can you confirm fleet size, vehicle types, service locations, desired frequency, preferred wash window, and any site requirements we should know before preparing the quote path?`;
     }
 
     if (waterLead && noWaterIssue) {
@@ -569,12 +561,8 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
   const internalNote = (() => {
     const contactNote = hasPhone ? "Phone is available for fast follow-up." : "Phone is missing; ask for a callback number.";
 
-    if (wheelLead && inspectionRequired) {
-      return `${contactNote} Safety-sensitive wheel lead. Avoid repair guarantees until a technician confirms the wheel is safe to service. Tags: ${tags.join(", ")}.`;
-    }
-
-    if (wheelLead) {
-      return `${contactNote} ${lead.numberOfWheels || 1} wheel(s) noted. Preferred time: ${lead.preferredTime || "not provided"}. Tags: ${tags.join(", ")}.`;
+    if (fleetLead) {
+      return `${contactNote} RouteWash account lead. Confirm fleet size, vehicle types, locations, frequency, preferred wash window, water access, and site requirements. Tags: ${tags.join(", ")}.`;
     }
 
     if (waterLead && noWaterIssue) {

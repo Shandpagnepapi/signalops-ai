@@ -54,17 +54,17 @@ const journeyConversation = [
   {
     speaker: "Customer",
     tone: "customer",
-    text: "Can you quote mobile repair for two damaged wheels?"
+    text: "Can you quote biweekly washing for 28 service vans?"
   },
   {
     speaker: "SignalOps AI",
     tone: "ai",
-    text: "Yes. Send photos, vehicle details, and your preferred appointment window."
+    text: "Yes. Send fleet size, vehicle types, locations, and your preferred wash window."
   },
   {
     speaker: "Owner alert",
     tone: "system",
-    text: "Warm quote request. Needs photos. Suggested action is ready."
+    text: "Recurring account request. Owner handoff and follow-up are ready."
   }
 ] satisfies Array<{
   speaker: string;
@@ -73,10 +73,10 @@ const journeyConversation = [
 }>;
 
 const journeyFields = [
-  ["Service", "Curb rash repair"],
-  ["Intent", "Quote request"],
-  ["Needs", "Photos + mobile window"],
-  ["Priority", "Warm / high intent"]
+  ["Service", "Fleet wash plan"],
+  ["Intent", "Recurring quote"],
+  ["Needs", "Locations + wash window"],
+  ["Priority", "High-intent account"]
 ];
 
 const journeyTimeline = [
@@ -223,12 +223,12 @@ export function DashboardSnapshot({ className = "" }: { className?: string }) {
 
         <div className="rounded-2xl border border-[#f7ff73]/18 bg-[#f7ff73]/10 p-4">
           <OwnerAlertCard
-            action="High-intent quote request needs photos and a mobile appointment window."
+            action="High-intent fleet quote request needs locations, wash window, and account handoff."
             className="border-white/10 bg-white/[0.055] shadow-none"
             tone="lime"
           />
           <div className="mt-4 flex flex-wrap gap-2">
-            {["Warm", "Needs photos", "Follow-up queued"].map((tag) => (
+            {["Recurring", "Needs site notes", "Follow-up queued"].map((tag) => (
               <span key={tag} className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold text-white/72">
                 {tag}
               </span>

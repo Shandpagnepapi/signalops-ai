@@ -252,7 +252,7 @@ function MinimalDashboard() {
         <div className="mt-4 grid gap-3">
           {[
             ["Quote reminders", "91%"],
-            ["Photo requests", "74%"],
+            ["Site detail requests", "74%"],
             ["Owner alerts", "100%"]
           ].map(([label, value]) => (
             <div key={label} className="flex items-center justify-between gap-4 border-b border-[#e8eef3] pb-2 last:border-0 last:pb-0">
@@ -313,7 +313,7 @@ function OwnerAlert({ tone }: { tone: "enterprise" | "glassy" }) {
         <div>
           <p className="text-sm font-black text-white">Owner alert ready</p>
           <p className="mt-1 text-xs leading-5 text-white/64">
-            Warm curb rash quote. Needs photos, mobile availability, and callback window.
+            Warm fleet quote. Needs locations, wash window, and owner callback.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             {["High intent", "Follow-up queued", "Owner handoff"].map((tag) => (

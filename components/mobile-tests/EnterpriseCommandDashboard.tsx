@@ -24,9 +24,9 @@ const leadSources = [
 
 const timeline = [
   { title: "Instant reply sent", detail: "Lead answered in 4.3s", icon: MessageSquareText },
-  { title: "Photos requested", detail: "Damage type and wheel size collected", icon: PhoneCall },
-  { title: "Owner alerted", detail: "Hot quote routed with context", icon: BellRing },
-  { title: "Booking handoff", detail: "Friday mobile repair window suggested", icon: CalendarCheck2 }
+  { title: "Fleet details requested", detail: "Fleet size, sites, and wash window collected", icon: PhoneCall },
+  { title: "Owner alerted", detail: "Recurring account routed with context", icon: BellRing },
+  { title: "Quote handoff", detail: "After-hours route window suggested", icon: CalendarCheck2 }
 ];
 
 export function EnterpriseCommandDashboard() {
@@ -77,14 +77,14 @@ export function EnterpriseCommandDashboard() {
                     <UserRoundCheck className="size-5" aria-hidden="true" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold leading-5 text-white">Apex Wheel Repair</p>
+                    <p className="text-sm font-semibold leading-5 text-white">RouteWash Mobile Fleet Care</p>
                     <p className="mt-1 text-xs leading-5 text-white/60">
-                      Curb rash quote, two wheels, Friday timeline, photos requested.
+                      Fleet wash quote, 28 vans, two sites, after-hours window.
                     </p>
                   </div>
                 </div>
                 <div className="mt-3 grid grid-cols-2 gap-2">
-                  {["Mobile repair", "Owner handoff"].map((tag) => (
+                  {["Recurring account", "Owner handoff"].map((tag) => (
                     <div key={tag} className="rounded-md border border-white/10 bg-[#050914] px-2 py-2 text-[0.68rem] font-medium text-white/70">
                       {tag}
                     </div>
@@ -127,7 +127,7 @@ export function EnterpriseCommandDashboard() {
                   Next best action
                 </div>
                 <p className="mt-2 text-xs leading-5 text-white/60">
-                  Send quote reminder if photos are not received in 20 minutes.
+                  Send quote follow-up if site notes are not confirmed in 20 minutes.
                 </p>
               </div>
             </div>

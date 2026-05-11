@@ -10,13 +10,13 @@ Contact name: Test User
 Email: test@example.com
 Phone: (555) 555-0123
 Website: https://example.com
-Industry: Wheel repair
-Main services: curb rash repair, bent wheel repair, refinishing
-Main lead sources: Website form, Missed calls, Instagram
-Biggest bottleneck: No follow-up
+Industry: Mobile fleet washing
+Main services: Mobile fleet washing, recurring wash plans, dealership lot refresh, service van washing, box truck washing
+Main lead sources: Website form, Missed calls, Google Business Profile, referrals
+Biggest bottleneck: Quotes and recurring account follow-up
 Current tools/CRM: Spreadsheet
-What happens after a lead comes in: This is a smoke test and safe to delete. Do not contact.
-Average job value: 250
+What happens after a lead comes in: Fleet manager asks for pricing. Owner manually asks for fleet size, vehicle types, locations, frequency, and wash window. Follow-up is inconsistent. This is a smoke test and safe to delete. Do not contact.
+Average account value: 750/month
 Monthly lead volume: 21-75
 Anything else: Test submission only.
 ```
@@ -26,7 +26,7 @@ Anything else: Test submission only.
 - isTestSubmission: true
 - contactAllowed: false
 - testReason should mention example.com, 555 phone, smoke-test, safe-to-delete, do-not-contact, or test-submission indicators.
-- Recommended system template may still be Quote Intake OS because the fake business is wheel repair.
+- Recommended system template may still be Quote Intake OS because the fake business is quote-based mobile fleet washing.
 - Recommended package may still be Growth because the fake intake has multiple lead sources and follow-up needs.
 - Confidence should be low because the record is likely internal/test data.
 

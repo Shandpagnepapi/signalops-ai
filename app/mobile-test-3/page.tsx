@@ -40,22 +40,22 @@ const conversation = [
   {
     speaker: "Customer",
     tone: "customer",
-    text: "Hey, I have curb rash on two wheels. Can you do mobile repair?"
+    text: "We have 28 service vans across two locations. Can you quote biweekly after-hours washing?"
   },
   {
     speaker: "SignalOps AI",
     tone: "ai",
-    text: "Yes - send a couple photos of each wheel and your vehicle details. I can help get a quote started and check mobile availability."
+    text: "Yes - send the vehicle mix, service addresses, and preferred wash window. I can get the fleet quote path started."
   },
   {
     speaker: "Customer",
     tone: "customer",
-    text: "2018 BMW, 19 inch wheels, both passenger side."
+    text: "Mostly HVAC vans, Dallas and Irving sites, weeknights are best."
   },
   {
     speaker: "SignalOps AI",
     tone: "ai",
-    text: "Got it. I'll flag this as a mobile cosmetic repair quote and send the shop your details."
+    text: "Got it. I'll flag this as a recurring fleet account opportunity and send the owner the account details."
   }
 ] satisfies Array<{
   speaker: string;
@@ -64,21 +64,21 @@ const conversation = [
 }>;
 
 const leadDetails = [
-  ["Priority", "Warm / High intent"],
-  ["Service", "Curb rash repair"],
-  ["Vehicle", "2018 BMW, 19 inch wheels"],
-  ["Needs photos", "Yes"],
-  ["Suggested action", "Request photos and offer mobile appointment window"]
+  ["Priority", "Recurring account opportunity"],
+  ["Service", "Biweekly fleet washing"],
+  ["Fleet", "28 HVAC service vans"],
+  ["Locations", "Dallas + Irving"],
+  ["Suggested action", "Confirm service area and send fleet quote path"]
 ];
 
 const timelineSteps = [
-  { title: "Lead captured", detail: "Apex Wheel Repair quote request received", icon: MessageCircle },
+  { title: "Lead captured", detail: "RouteWash fleet quote request received", icon: MessageCircle },
   { title: "AI replied in 4.3s", detail: "Customer got a useful first response", icon: Clock3 },
-  { title: "Details collected", detail: "Vehicle, wheel count, damage, and visit type", icon: ClipboardList },
-  { title: "Photos requested", detail: "AI keeps the quote moving", icon: FileText },
-  { title: "Owner alerted", detail: "Summary sent with service context", icon: UserRoundCheck },
-  { title: "Follow-up scheduled", detail: "Missing photos and no-reply nudges ready", icon: RefreshCcw },
-  { title: "Booking handoff ready", detail: "Mobile appointment window can be offered", icon: CalendarCheck2 }
+  { title: "Details collected", detail: "Fleet size, vehicle types, locations, and wash window", icon: ClipboardList },
+  { title: "Site notes requested", detail: "AI keeps the quote moving", icon: FileText },
+  { title: "Owner alerted", detail: "Recurring account summary sent with next action", icon: UserRoundCheck },
+  { title: "Follow-up scheduled", detail: "Missing site notes and no-reply nudges ready", icon: RefreshCcw },
+  { title: "Quote handoff ready", detail: "Route-friendly quote path can be offered", icon: CalendarCheck2 }
 ];
 
 const chatbotItems = [
@@ -99,7 +99,7 @@ const chatbotItems = [
   },
   {
     title: "Follows up automatically",
-    copy: "Photo requests, quote reminders, and no-reply conversations keep moving.",
+    copy: "Detail requests, quote reminders, and no-reply conversations keep moving.",
     icon: RefreshCcw
   }
 ];
@@ -113,8 +113,8 @@ const dashboardMetrics = [
 
 const useCases = [
   {
-    title: "Wheel repair quote intake",
-    copy: "Curb rash, bent wheel, cracked wheel, refinishing, and mobile repair requests.",
+    title: "Fleet wash quote intake",
+    copy: "Fleet size, vehicle types, locations, wash frequency, and route windows.",
     icon: Tags
   },
   {
@@ -221,8 +221,8 @@ function Hero() {
       <div className={cn(styles.heroPanel, "rounded-3xl border p-4")}>
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-sm font-black">Apex Wheel Repair</p>
-            <p className={styles.mutedText}>Live quote intake preview</p>
+            <p className="text-sm font-black">RouteWash Mobile Fleet Care</p>
+            <p className={styles.mutedText}>Live fleet account preview</p>
           </div>
           <span className={cn(styles.reviewBadge, "rounded-full px-3 py-1 text-xs font-black")}>
             Owner handoff ready
@@ -258,7 +258,7 @@ function ConversationMockup() {
               <h2 id="live-conversation-title" className="text-sm font-black">
                 Live conversation
               </h2>
-              <p className={styles.screenMuted}>Apex Wheel Repair quote intake</p>
+              <p className={styles.screenMuted}>RouteWash fleet quote intake</p>
             </div>
           </div>
           <span className={cn(styles.onlineChip, "rounded-full px-2.5 py-1 text-[0.68rem] font-black")}>
@@ -300,7 +300,7 @@ function LeadCard() {
         <div>
           <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>AI lead card</p>
           <h2 id="ai-lead-card-title" className="mt-1 text-2xl font-black tracking-normal">
-            Warm quote request, ready for review.
+            Fleet quote request, ready for owner handoff.
           </h2>
         </div>
         <div className={cn(styles.priorityIcon, "flex size-11 shrink-0 items-center justify-center rounded-2xl")}>
@@ -318,7 +318,7 @@ function LeadCard() {
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        {["mobile repair", "curb rash", "quote request"].map((tag) => (
+        {["recurring account", "after-hours", "fleet quote"].map((tag) => (
           <span key={tag} className={cn(styles.tag, "rounded-full border px-3 py-1 text-xs font-black")}>
             {tag}
           </span>

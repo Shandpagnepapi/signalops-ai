@@ -32,11 +32,11 @@ Use this checklist to review how a business handles calls, texts, forms, DMs, an
 - [ ] Quote requests are prioritized by urgency and value.
 - [ ] Quote turnaround expectations are defined and measured.
 
-## Photo Intake
+## Detail Intake
 
-- [ ] Photo request flow exists when photos are missing.
-- [ ] Photo quality guidelines are sent to prospects.
-- [ ] Auto/wheel shops: cosmetic vs safety-sensitive triage is documented.
+- [ ] Detail request flow exists when key information is missing.
+- [ ] Site, account, or photo guidelines are sent to prospects when useful.
+- [ ] Fleet wash companies: fleet size, vehicle type, location, wash window, and site requirement intake is documented.
 
 ## CRM
 

@@ -1,6 +1,6 @@
-import { apexWheelRepair } from "@/lib/mock-data";
+import { routeWashFleetCare } from "@/lib/mock-data";
 
-export type DemoBusinessKey = "wheel-repair" | "well-water";
+export type DemoBusinessKey = "fleet-wash" | "well-water";
 
 export type DemoSelectOption = {
   value: string;
@@ -170,15 +170,15 @@ export type DemoBusinessConfig = {
   stickySecondaryCta: string;
 };
 
-const wheelServiceOptions: DemoSelectOption[] = [
-  { value: "curb-rash", label: "Curb rash / scuffed lip" },
-  { value: "bent", label: "Bent wheel / vibration" },
-  { value: "cracked", label: "Cracked wheel / air leak" },
-  { value: "peeling-clear", label: "Peeling clear coat" },
-  { value: "corrosion", label: "Corrosion" },
-  { value: "scratches", label: "Scratches" },
-  { value: "color-mismatch", label: "Color mismatch / paint match" },
-  { value: "refinish", label: "Full refinish or powder coating" }
+const fleetWashServiceOptions: DemoSelectOption[] = [
+  { value: "mobile-fleet-washing", label: "Mobile fleet washing" },
+  { value: "recurring-wash-plan", label: "Recurring wash plan" },
+  { value: "service-van-washing", label: "Service van washing" },
+  { value: "box-truck-washing", label: "Box truck washing" },
+  { value: "dealership-lot-refresh", label: "Dealership lot refresh" },
+  { value: "route-based-scheduling", label: "Route-based scheduling" },
+  { value: "interior-wipe-down", label: "Interior wipe-down add-on" },
+  { value: "other", label: "Other fleet wash request" }
 ];
 
 const clearFlowServiceOptions: DemoSelectOption[] = [
@@ -194,133 +194,142 @@ const clearFlowServiceOptions: DemoSelectOption[] = [
 ];
 
 export const demoBusinesses = {
-  "wheel-repair": {
-    key: "wheel-repair",
-    selectorLabel: "Wheel Repair Business",
-    name: apexWheelRepair.name,
-    industry: "Automotive wheel repair and refinishing",
-    location: apexWheelRepair.location,
-    phone: apexWheelRepair.phone,
-    heroBadge: "Dallas wheel repair + SignalOps AI intake demo",
-    headline: apexWheelRepair.headline,
-    subheadline: apexWheelRepair.subheadline,
-    primaryCta: "Request a quote",
-    secondaryCta: "Mobile repair options",
-    secondaryHref: "#mobile-repair",
-    heroImage: {
-      src: "/demo/apex-wheel-hero.png",
-      alt: "Premium alloy wheel with Apex Wheel Repair quote triage overlay"
-    },
-    stats: apexWheelRepair.stats,
-    trustBadges: apexWheelRepair.trustBadges,
+  "fleet-wash": {
+    key: "fleet-wash",
+    selectorLabel: "Mobile Fleet Wash Business",
+    name: routeWashFleetCare.name,
+    industry: "Mobile fleet washing and recurring fleet care",
+    location: routeWashFleetCare.location,
+    phone: routeWashFleetCare.phone,
+    heroBadge: "DFW mobile fleet wash + SignalOps intake demo",
+    headline: routeWashFleetCare.headline,
+    subheadline: routeWashFleetCare.subheadline,
+    primaryCta: "Request Fleet Quote",
+    secondaryCta: "View Service Plans",
+    secondaryHref: "#service-plans",
+    stats: routeWashFleetCare.stats,
+    trustBadges: routeWashFleetCare.trustBadges,
     qualificationPreview: {
-      title: "Quote triage preview",
-      subtitle: "What the shop sees after submit",
-      badge: "Fast follow-up",
+      title: "Fleet account preview",
+      subtitle: "What the owner sees after submit",
+      badge: "Route-ready",
       cards: [
         {
-          title: "Curb rash",
-          description: "Mobile candidate, request or confirm photos, send quote range."
+          title: "Fleet size",
+          description: "28 vehicles, two locations, and service area captured."
         },
         {
-          title: "Bent or cracked",
-          description: "Flag for inspection before any repair promise."
+          title: "Recurring plan",
+          description: "Biweekly wash cadence with after-hours preference."
         },
         {
-          title: "Refinishing",
-          description: "Capture finish, wheel count, and appointment window."
+          title: "Owner handoff",
+          description: "Account summary, next action, and follow-up plan ready."
         }
       ]
     },
     servicesSection: {
-      eyebrow: "Repair services",
-      title: "A wheel repair site should do more than collect a name and phone number.",
+      eyebrow: "Fleet wash services",
+      title: "A fleet wash site should collect the account details before the quote call.",
       description:
-        "Apex captures the damage details that matter: photos, wheel count, drivability, mobile fit, and whether the request needs inspection before anyone quotes repair."
+        "RouteWash captures fleet size, vehicle types, locations, service frequency, preferred wash windows, water access, and site requirements so the owner can prepare a better account path."
     },
-    services: apexWheelRepair.services,
+    services: routeWashFleetCare.services,
     beforeAfter: {
-      eyebrow: "Before / after value",
-      title: "Damaged wheels can move from rough first impression to clean, sale-ready finish.",
+      eyebrow: "Account value",
+      title: "Fleet quote requests can become recurring account opportunities.",
       description:
-        "A polished repair flow does more than make wheels look better. It helps the shop capture photos, set safety expectations, quote the right work, and route the customer to mobile or in-shop service.",
-      image: {
-        src: "/demo/apex-before-after.png",
-        alt: "Before and after alloy wheel restoration preview"
-      },
+        "A premium intake flow does more than collect a name and phone number. It packages route, timing, site, and service details so RouteWash can move faster on accounts that fit.",
       points: [
         {
-          title: "Cosmetic fit",
-          description: "Curb rash, scuffs, scratches, peeling clear, and paint mismatch can often be quoted from photos."
+          title: "Recurring fit",
+          description: "Biweekly, monthly, and route-based requests are separated from one-time price shoppers."
         },
         {
-          title: "Safety triage",
-          description: "Bends, cracks, vibration, and air leaks should be inspected before repair is promised."
+          title: "Route clarity",
+          description: "Locations, service windows, vehicle mix, water access, and site notes are collected before owner handoff."
+        }
+      ],
+      visualCards: [
+        {
+          label: "Fleet size",
+          value: "28",
+          description: "service vans"
+        },
+        {
+          label: "Locations",
+          value: "2",
+          description: "DFW service sites"
+        },
+        {
+          label: "Frequency",
+          value: "Biweekly",
+          description: "recurring account"
         }
       ]
     },
     commonIssues: {
-      id: "damage",
-      eyebrow: "Common wheel damage",
-      title: "Clear damage categories make quote requests easier to sort.",
+      id: "fleet-types",
+      eyebrow: "Fleet types served",
+      title: "Different fleets need different intake paths.",
       description:
-        "SignalOps can turn a messy form submission into a cleaner repair path, with special handling for safety-sensitive cases.",
-      items: apexWheelRepair.damageTypes
+        "SignalOps can turn a messy quote request into a cleaner account handoff for delivery, service, dealership, rental, and company vehicle fleets.",
+      items: routeWashFleetCare.fleetTypes
     },
     process: {
       eyebrow: "How it works",
-      title: "From photo request to repair route in five steps.",
-      steps: apexWheelRepair.process
+      title: "From fleet quote request to route-friendly account handoff.",
+      steps: routeWashFleetCare.process
     },
     callout: {
-      id: "mobile-repair",
-      eyebrow: "Mobile repair callout",
-      title: "Many cosmetic repairs can come to the customer.",
+      id: "service-plans",
+      eyebrow: "Recurring account callout",
+      title: "Recurring wash plans need clean account intake.",
       description:
-        "Curb rash, scuffs, scratches, peeling clear coat, and some paint match jobs can often be handled mobile around Dallas. Bent wheels, cracked wheels, air leaks, vibration, or severe impact damage should be reviewed by the shop before any repair path is confirmed.",
-      noteTitle: "Safety-first repair note",
+        "Fleet size, vehicle types, service locations, frequency, preferred wash window, and site notes help RouteWash prepare a quote without endless back-and-forth.",
+      noteTitle: "Site requirement note",
       noteDescription:
-        "If a wheel is structurally unsafe, Apex recommends replacement instead of repair. The SignalOps workflow should surface that language before a customer receives a promise."
+        "The intake can collect water access, parking, timing, and local site requirements, but the team should confirm final service setup before promising a specific operating approach."
     },
     testimonialsSection: {
-      eyebrow: "Customer proof",
-      title: "The right intake experience feels fast, honest, and local.",
+      eyebrow: "Account proof",
+      title: "The right intake experience feels organized, commercial, and easy to act on.",
       description:
-        "These testimonials are fictional, but they model the buying moments a wheel repair website should capture: trust, convenience, and clear safety guidance."
+        "These fictional examples model the buying moments a fleet wash site should capture: timing, route fit, account value, and clear next steps."
     },
-    testimonials: apexWheelRepair.testimonials.map((testimonial) => ({
+    testimonials: routeWashFleetCare.testimonials.map((testimonial) => ({
       quote: testimonial.quote,
       name: testimonial.name,
       detail: testimonial.vehicle
     })),
     faqSection: {
       eyebrow: "FAQ",
-      title: "Questions drivers ask before they book.",
+      title: "Questions fleet managers ask before they request service.",
       description:
-        "Answering these questions up front gives the customer confidence and gives SignalOps better signals for intake and routing."
+        "Answering these questions up front gives the buyer confidence and gives SignalOps better signals for intake, routing, and follow-up."
     },
-    faqs: apexWheelRepair.faqs,
+    faqs: routeWashFleetCare.faqs,
     leadOpsPanel: {
       badge: "SignalOps demo workflow",
       title: "What would happen in production?",
       description:
-        "Normally this would instantly text the customer, request photos if needed, sort the lead, alert the wheel repair team, log the lead in the CRM, and start follow-up.",
+        "Normally this would reply quickly, collect fleet details, alert the owner, log the account opportunity, and start quote follow-up.",
       items: [
         {
-          title: "Customer text",
-          description: "Send photo request or appointment confirmation within seconds."
+          title: "Customer reply",
+          description: "Ask for fleet size, vehicle types, locations, frequency, and wash window."
         },
         {
-          title: "Shop alert",
-          description: "Notify Apex with priority, urgency, damage type, and safety note."
+          title: "Owner alert",
+          description: "Send RouteWash a recurring account summary with priority and next action."
         },
         {
           title: "CRM logging",
-          description: "Create the lead with tags like mobile-request or inspection-required."
+          description: "Create the lead with tags like recurring-account, after-hours, or route-ready."
         },
         {
           title: "Follow-up",
-          description: "Nudge quote requests that do not send photos or book a time."
+          description: "Nudge quote requests that have not confirmed site details or a service window."
         }
       ]
     },
@@ -329,59 +338,59 @@ export const demoBusinesses = {
       description:
         "A local service business does not just need a prettier form. It needs a lead process that knows what matters.",
       bullets: [
-        "Fast response protects high-intent quote requests.",
-        "Better intake helps customers send the details the shop needs.",
-        "Safety-sensitive cases are flagged before promises are made."
+        "Fast response protects high-intent fleet quote requests.",
+        "Better intake helps customers share the account details the owner needs.",
+        "Recurring account opportunities are routed with a clear next action."
       ]
     },
     form: {
-      source: "apex-wheel-repair-demo",
+      source: "routewash-mobile-fleet-care-demo",
       badge: "SignalOps intake",
-      title: "Request a wheel repair quote",
+      title: "Request a fleet wash quote",
       description:
-        "A conversion-focused intake captures the details Apex needs to quote faster and route safety-sensitive work correctly.",
-      serviceLabel: "Type of damage",
-      serviceOptions: wheelServiceOptions,
-      quantityLabel: "Number of wheels damaged",
-      locationLabel: "Service area / neighborhood",
-      assetLabel: "Vehicle year / make / model",
-      assetSecondaryLabel: "Wheel size if known",
-      statusLabel: "Is the vehicle drivable?",
+        "A conversion-focused intake captures the details RouteWash needs to prepare a route-friendly fleet quote.",
+      serviceLabel: "Service needed",
+      serviceOptions: fleetWashServiceOptions,
+      quantityLabel: "Fleet size",
+      locationLabel: "Service area / city",
+      assetLabel: "Vehicle types",
+      assetSecondaryLabel: "Number of locations",
+      statusLabel: "Is water access available?",
       statusOptions: [
-        { value: "yes", label: "Yes, it drives normally" },
-        { value: "no", label: "No, it is not drivable" },
-        { value: "unsure", label: "Unsure / vibration or air loss" }
+        { value: "yes", label: "Yes, water access available" },
+        { value: "no", label: "No / unsure about water access" },
+        { value: "unsure", label: "Need to confirm site requirements" }
       ],
-      mobileLabel: "Need mobile service?",
+      mobileLabel: "Need after-hours service?",
       mobileOptions: [
-        { value: "yes", label: "Yes, mobile preferred" },
-        { value: "no", label: "No, shop visit is fine" },
+        { value: "yes", label: "Yes, after-hours preferred" },
+        { value: "no", label: "No, business hours are fine" },
         { value: "unsure", label: "Not sure yet" }
       ],
-      photoLabel: "Photo note or upload details",
-      descriptionLabel: "Description",
-      preferredTimeLabel: "Preferred appointment time",
-      submitLabel: "Priority this repair lead",
-      internalNoteLabel: "Internal shop note",
+      photoLabel: "Site notes / current provider",
+      descriptionLabel: "Main problem / notes",
+      preferredTimeLabel: "Desired frequency and wash window",
+      submitLabel: "Package this fleet lead",
+      internalNoteLabel: "Internal account note",
       initial: {
         name: "Avery Stone",
         phone: "(214) 555-0149",
         email: "avery@example.com",
-        address: "Uptown Dallas",
-        asset: "2022 Tesla Model Y",
-        assetSecondary: "20 inch",
-        serviceValue: "curb-rash",
-        quantity: "2",
+        address: "Dallas + Irving",
+        asset: "28 HVAC service vans",
+        assetSecondary: "2 locations",
+        serviceValue: "recurring-wash-plan",
+        quantity: "28",
         status: "yes",
         mobile: "yes",
-        photoNote: "Photos show curb rash on the front passenger wheel and chipped paint on the rear wheel.",
-        description: "Looking for a quote and mobile appointment this week if possible.",
-        preferredTime: "Tomorrow afternoon"
+        photoNote: "Water access is available at both locations. Current provider is inconsistent on timing.",
+        description: "We need biweekly washing for service vans without slowing down daily routes.",
+        preferredTime: "After-hours on weeknights"
       }
     },
-    footerCta: "Request quote",
+    footerCta: "Request fleet quote",
     stickyPrimaryCta: "Get quote",
-    stickySecondaryCta: "Mobile"
+    stickySecondaryCta: "Plans"
   },
   "well-water": {
     key: "well-water",

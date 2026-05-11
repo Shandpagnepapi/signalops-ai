@@ -12,7 +12,7 @@ This audit records the final pre-launch QA pass for the SignalOps rebrand and SE
 - Old predecessor-brand references were searched across the repo.
 - The only intentional predecessor-brand mentions are on ethical alternative-intent pages and related data files, where SignalOps includes clear non-affiliation language.
 - Legacy demo/client references were searched and no active outdated demo branding remains.
-- Apex Wheel Repair remains the wheel repair demo client.
+- RouteWash Mobile Fleet Care is the featured mobile fleet wash demo client.
 - No hardcoded production secrets or API keys were found in source files.
 
 ## Public Pages Checked
@@ -44,7 +44,7 @@ Service pages:
 
 Industry pages:
 
-- `/industries/wheel-repair`
+- `/industries/mobile-fleet-wash`
 - `/industries/auto-shops`
 - `/industries/detailers`
 - `/industries/tint-wrap-shops`
@@ -88,8 +88,8 @@ Technical SEO routes:
 
 ## Safety And Compliance Checks
 
-- Wheel repair copy uses inspection-first language for bent, cracked, leaking, vibration, or structurally unsafe wheel scenarios.
-- The site does not promise that unsafe wheels can be repaired.
+- Fleet wash copy uses site-requirement-first language for access, timing, water, parking, and local operating constraints.
+- The site does not promise compliance, runoff handling, or final service setup before requirements are confirmed.
 - AI copy includes human-review paths for risky, regulated, unclear, urgent, or high-value leads.
 - Terms explain that AI output may require human review.
 - Privacy and Terms pages are linked in the footer.

@@ -375,7 +375,7 @@ function TinyTeasers() {
         <TinyCard
           icon={CalendarCheck2}
           eyebrow="Demo"
-          title="See how this works for Apex Wheel Repair."
+          title="See how this works for a mobile fleet wash company."
           href={SECONDARY_CTA.href}
           label="View Demo"
           eventName={ANALYTICS_EVENTS.demoViewed}

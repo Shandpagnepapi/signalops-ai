@@ -1,12 +1,12 @@
-import { AlertTriangle, CalendarCheck2, Camera, Flame, Gauge, MessageSquareReply, Trophy } from "lucide-react";
+import { AlertTriangle, CalendarCheck2, ClipboardList, Flame, Gauge, MessageSquareReply, Trophy } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import type { ApexDashboardLead } from "@/lib/mock-data";
+import type { RouteWashDashboardLead } from "@/lib/mock-data";
 
 type DashboardMetricsProps = {
-  leads: ApexDashboardLead[];
+  leads: RouteWashDashboardLead[];
 };
 
-function averageScore(leads: ApexDashboardLead[]) {
+function averageScore(leads: RouteWashDashboardLead[]) {
   if (leads.length === 0) {
     return 0;
   }
@@ -19,7 +19,7 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
   const responseNeeded = leads.filter((lead) => lead.status === "new" || lead.tags.includes("response-needed")).length;
   const bookedAppointments = leads.filter((lead) => lead.status === "booked").length;
   const missedOpportunities = leads.filter((lead) => lead.status === "lost").length;
-  const photoRequestsPending = leads.filter((lead) => lead.status === "needs-photos" || lead.tags.includes("needs-photos")).length;
+  const detailsPending = leads.filter((lead) => lead.status === "needs-details" || lead.tags.includes("details-needed")).length;
 
   const metrics = [
     {
@@ -49,7 +49,7 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
     {
       label: "Booked appointments",
       value: String(bookedAppointments),
-      note: "Scheduled repair work",
+      note: "Scheduled account work",
       icon: CalendarCheck2
     },
     {
@@ -59,10 +59,10 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
       icon: AlertTriangle
     },
     {
-      label: "Photo requests pending",
-      value: String(photoRequestsPending),
-      note: "Waiting on damage photos",
-      icon: Camera
+      label: "Details pending",
+      value: String(detailsPending),
+      note: "Waiting on fleet or site info",
+      icon: ClipboardList
     }
   ];
 

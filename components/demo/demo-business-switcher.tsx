@@ -4,10 +4,10 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { demoBusinessOptions, demoBusinesses, type DemoBusinessKey } from "@/lib/demo-businesses";
-import { ApexWheelSite } from "./apex-wheel-site";
+import { RouteWashDemoSite } from "./routewash-site";
 
 export function DemoBusinessSwitcher() {
-  const [selectedBusiness, setSelectedBusiness] = useState<DemoBusinessKey>("wheel-repair");
+  const [selectedBusiness, setSelectedBusiness] = useState<DemoBusinessKey>("fleet-wash");
   const business = demoBusinesses[selectedBusiness];
 
   return (
@@ -38,7 +38,7 @@ export function DemoBusinessSwitcher() {
             </label>
           </div>
 
-          <ApexWheelSite business={business} />
+          <RouteWashDemoSite business={business} />
         </div>
       </section>
     </div>

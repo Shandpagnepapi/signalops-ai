@@ -159,7 +159,7 @@ export default function MobileTestOnePage() {
       <ProblemSection />
       <SolutionSection />
       <PackagesTeaser />
-      <ApexDemoTeaser />
+      <RouteWashDemoTeaser />
       <FinalCTA />
 
       <MobileCommandStickyCTA source="mobile_test_1_enterprise_sticky" />
@@ -300,29 +300,29 @@ function PackagesTeaser() {
   );
 }
 
-function ApexDemoTeaser() {
+function RouteWashDemoTeaser() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="rounded-lg border border-[#38bdf8]/20 bg-[linear-gradient(135deg,rgba(56,189,248,0.12),rgba(99,102,241,0.08),rgba(255,255,255,0.04))] p-5 shadow-2xl shadow-black/24">
           <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold text-white/78">
             <Workflow className="size-4 text-[#7dd3fc]" aria-hidden="true" />
-            Apex Wheel Repair demo
+            RouteWash Mobile Fleet Care demo
           </div>
           <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-normal text-white">
             See quote intake automation in a real service workflow.
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-[#cbd5e1]">
-            See how a wheel repair shop can sort curb rash, bent wheel, cracked wheel, refinishing, and mobile repair quote requests automatically.
+            See how a mobile fleet wash company can collect fleet size, vehicle types, locations, service frequency, wash windows, and recurring account handoffs automatically.
           </p>
           <TrackedLink
             href="/demo"
             eventName={ANALYTICS_EVENTS.demoViewed}
-            eventProperties={{ location: "mobile_test_1_apex_teaser" }}
+            eventProperties={{ location: "mobile_test_1_routewash_teaser" }}
             className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/12 bg-white px-4 text-sm font-semibold transition hover:bg-[#dbeafe]"
             style={{ color: "#05070d" }}
           >
-            View Apex Demo
+            View RouteWash Demo
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

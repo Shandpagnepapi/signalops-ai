@@ -11,7 +11,7 @@ export const INDUSTRY_PAGE_IDS = [
   "insurance-agencies",
   "auto-shops",
   "well-water-service-companies",
-  "wheel-repair"
+  "mobile-fleet-wash"
 ] as const;
 
 export type IndustryPageId = (typeof INDUSTRY_PAGE_IDS)[number];
@@ -732,7 +732,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Automotive Demo",
-        description: "See a similar quote-intake workflow in the Apex Wheel Repair demo."
+        description: "See a similar quote-intake workflow in the RouteWash Mobile Fleet Care demo."
       },
       {
         href: "/how-it-works",
@@ -1845,9 +1845,9 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     relatedLinks: [
       {
-        href: "/industries/wheel-repair",
-        title: "Wheel Repair Demo Niche",
-        description: "See a more specific automotive workflow for wheel repair and refinishing."
+        href: "/industries/mobile-fleet-wash",
+        title: "Mobile Fleet Wash Demo Niche",
+        description: "See a more specific automotive workflow for fleet wash quote intake and recurring account handoff."
       },
       {
         href: "/services/automated-lead-follow-up",
@@ -2030,226 +2030,227 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       }
     ]
   },
-  "wheel-repair": {
-    id: "wheel-repair",
-    industryName: "Wheel Repair Shops",
-    path: "/industries/wheel-repair",
-    eyebrow: "SignalOps for wheel repair shops",
-    metaTitle: "AI Lead Response for Wheel Repair Shops",
+  "mobile-fleet-wash": {
+    id: "mobile-fleet-wash",
+    industryName: "Mobile Fleet Wash Companies",
+    path: "/industries/mobile-fleet-wash",
+    eyebrow: "SignalOps for mobile fleet wash companies",
+    metaTitle: "AI Lead Response for Mobile Fleet Wash Companies",
     metaDescription:
-      "SignalOps gives wheel repair shops AI lead response and quote intake automation for photo requests, curb rash, bent wheel review, refinishing, mobile repair, and booking.",
-    h1: "AI lead response for wheel repair shops that live on quote requests and photos.",
+      "SignalOps gives mobile fleet wash companies AI lead response and quote intake automation for fleet size, vehicle types, service frequency, route scheduling, and recurring account handoff.",
+    h1: "AI lead response for mobile fleet wash companies that live on quote requests and recurring accounts.",
     subheadline:
-      "SignalOps helps wheel repair and refinishing shops respond to quote requests, collect damage photos, identify mobile repair opportunities, and route urgent or commercial leads quickly.",
+      "SignalOps helps mobile fleet washing teams respond to fleet quote requests, collect account details, route recurring opportunities, and follow up before buyers go cold.",
     heroBullets: [
-      "Request photos, vehicle details, wheel size, damage type, and appointment preference",
-      "Flag bent wheels, cracked wheels, and drivability issues for human inspection",
-      "Follow up after estimates for mobile repair, refinishing, and commercial opportunities"
+      "Collect fleet size, vehicle types, locations, frequency, wash window, and site notes",
+      "Route recurring account opportunities to the owner with a clear next action",
+      "Follow up on fleet quotes, service windows, and account handoffs"
     ],
     missedLeadProblems: [
       {
-        title: "Quote requests need photos",
+        title: "Fleet quote requests are incomplete",
         description:
-          "Curb rash, peeling clear coat, bent wheels, refinishing, and powder coating leads are hard to quote without visual context."
+          "Vehicle count, vehicle types, location count, frequency, water access, and preferred wash window are often missing from the first message."
       },
       {
-        title: "Mobile repair requests need scheduling",
+        title: "Recurring accounts get buried",
         description:
-          "Customers often want mobile service, but the shop needs location, damage type, number of wheels, and timing."
+          "A biweekly fleet plan or dealership lot refresh should not sit beside one-off price shoppers without priority routing."
       },
       {
-        title: "Structural issues require careful language",
+        title: "Route windows need better intake",
         description:
-          "Bent or cracked wheels should be flagged for inspection. If a wheel is unsafe, replacement may be recommended instead of repair."
+          "After-hours, weekend, and low-disruption service windows need site access and scheduling details before the quote path is clear."
       },
       {
-        title: "Dealer and commercial leads need routing",
+        title: "Quote follow-up is inconsistent",
         description:
-          "Dealerships, fleets, and repeat commercial accounts should not be buried beside single-wheel cosmetic questions."
+          "Fleet managers may need a short reminder to confirm locations, service frequency, or the first wash window."
       }
     ],
     leadSources: [
-      "Website quote forms",
-      "Photo submissions",
+      "Website fleet quote forms",
       "Missed calls",
       "Google Business Profile",
-      "Instagram DMs",
+      "Referral partners",
+      "Dealership account emails",
       "Facebook messages",
-      "Dealership referrals",
-      "Commercial account emails"
+      "Paid search landing pages",
+      "Chat widgets"
     ],
     exampleLeadFlow: [
       {
-        title: "Customer submits a quote request",
+        title: "Fleet manager submits a quote request",
         description:
-          "The lead asks about curb rash, bent wheels, cracked wheel inspection, refinishing, powder coating, paint matching, or mobile repair."
+          "The lead asks about 28 service vans across two DFW locations with biweekly after-hours washing."
       },
       {
-        title: "SignalOps requests photos and details",
+        title: "SignalOps collects account details",
         description:
-          "The system asks for clear wheel photos, vehicle year/make/model, wheel size if known, damage type, drivability, and preferred appointment time."
+          "The system asks for fleet size, vehicle types, locations, desired frequency, preferred wash window, water access, and site requirements."
       },
       {
-        title: "Damage is routed carefully",
+        title: "Recurring account is routed",
         description:
-          "Cosmetic leads can move toward a quote, while bent, cracked, or unsafe-language leads are flagged for human inspection."
+          "The opportunity is routed with priority, account value context, site notes, and the next action for the owner."
       },
       {
-        title: "Follow-up pushes booking",
+        title: "Follow-up keeps the quote moving",
         description:
-          "If the customer does not send photos or book after an estimate, SignalOps sends a specific next-step follow-up."
+          "If the customer does not confirm locations or a service window, SignalOps sends a specific next-step follow-up."
       }
     ],
     followUpFailures: [
       {
-        title: "Photos are missing",
+        title: "Fleet size is missing",
         description:
-          "A customer asks for a quote but never sends wheel photos, so the opportunity stalls."
+          "A company asks for pricing but does not share vehicle count or vehicle types, so the quote stalls."
       },
       {
-        title: "Urgent bent-wheel leads wait too long",
+        title: "Locations are unclear",
         description:
-          "Shaking, vibration, or drivability concerns need faster shop attention than cosmetic curb rash."
+          "The owner needs service area, number of sites, and route timing before estimating feasibility."
       },
       {
-        title: "Estimates are not followed up",
+        title: "Frequency is not confirmed",
         description:
-          "Customers may need a reminder to book after receiving a curb rash, refinishing, or powder coating estimate."
+          "Recurring account value depends on whether the buyer wants weekly, biweekly, monthly, or one-time service."
       }
     ],
     qualificationQuestions: [
-      "What vehicle year, make, and model is this for?",
-      "What type of wheel damage are you seeing: curb rash, bent wheel, crack, peeling clear coat, corrosion, scratches, or color mismatch?",
-      "How many wheels are damaged?",
-      "Can you send clear photos of each damaged wheel?",
-      "Is the vehicle drivable, or are you noticing shaking, vibration, or air loss?",
-      "Do you need mobile repair, shop inspection, refinishing, powder coating, or paint matching?"
+      "How many vehicles need service?",
+      "What vehicle types are in the fleet?",
+      "How many service locations are involved?",
+      "What service area or city should RouteWash review?",
+      "What wash frequency do you want: one-time, biweekly, monthly, or custom?",
+      "What wash window works best: business hours, after-hours, weekend, or route-based?",
+      "Is water access available, and are there any site requirements the team should know?"
     ],
     instantReply: {
-      scenario: "Customer has curb rash on two wheels and asks about mobile repair",
+      scenario: "Fleet manager asks about biweekly washing for 28 service vans",
       message:
-        "Thanks for reaching out. We can review curb rash photos and let you know the best next step. Can you send clear photos of each wheel, your vehicle year/make/model, wheel size if known, and whether you prefer mobile service?"
+        "Thanks for reaching out. To prepare the right fleet quote path, can you confirm fleet size, vehicle types, service locations, desired frequency, preferred wash window, and whether water access or site requirements need review?"
     },
     internalNote: {
-      scenario: "Wheel repair quote request",
+      scenario: "Mobile fleet wash quote request",
       message:
-        "Good cosmetic repair lead. Customer reports curb rash on two wheels and asks about mobile service. Request photos, confirm location, wheel size, finish, and preferred appointment window."
+        "Recurring account opportunity. Customer has 28 service vans across two locations and wants biweekly after-hours service. Confirm service area, water access, route window, site notes, and first available quote call."
     },
     followUpExamples: [
       {
-        scenario: "Photos missing",
+        scenario: "Location details missing",
         message:
-          "Quick follow-up: can you send clear photos of each damaged wheel? That helps the shop review whether this looks cosmetic, needs inspection, or should be quoted in person."
+          "Quick follow-up: can you send the service city or addresses and how many vehicles are at each location? That helps us prepare a cleaner fleet quote path."
       },
       {
-        scenario: "Estimate sent",
+        scenario: "Frequency unclear",
         message:
-          "Checking in on the wheel repair estimate. Would you like us to look at mobile repair or shop appointment availability?"
+          "Checking in on the fleet wash quote. Are you looking for one-time service, biweekly service, monthly service, or a custom recurring plan?"
       },
       {
-        scenario: "Bent or cracked wheel",
+        scenario: "Wash window unclear",
         message:
-          "Because bent or cracked wheels can involve safety, the shop should inspect this before confirming repair options. Can you share photos and whether the vehicle is drivable?"
+          "One more detail so the team can route this correctly: do you prefer business-hours service, after-hours service, weekend service, or another low-disruption window?"
       }
     ],
     scoringRules: [
       {
         title: "Hot",
         description:
-          "Bent wheel with shaking, cracked wheel question, multiple wheels, dealership/commercial request, clear phone, photos, and appointment intent."
+          "Recurring account, 25+ vehicles, multiple locations, dealership/rental fleet, clear phone, desired frequency, and preferred wash window."
       },
       {
         title: "Warm",
         description:
-          "Curb rash with photos, refinishing interest, powder coating request, peeling clear coat, or mobile repair request."
+          "Single-location fleet quote, small company car fleet, dealership refresh, or clear service request with a few missing details."
       },
       {
-        title: "Staff handoff",
+        title: "Owner handoff",
         description:
-          "Cracked wheel, unsafe structural language, vehicle not drivable, missing contact info, or unclear damage photos."
+          "Multi-location accounts, after-hours needs, large fleet counts, site requirements, or unclear route logistics."
       }
     ],
     automations: [
       {
-        title: "Photo request follow-up",
+        title: "Fleet detail intake",
         description:
-          "Ask for photos when a quote request arrives without enough visual detail."
+          "Ask for vehicle count, vehicle types, location count, service area, frequency, and preferred wash window."
       },
       {
-        title: "Mobile repair routing",
+        title: "Recurring account routing",
         description:
-          "Collect location, damage type, number of wheels, and appointment preference."
+          "Route biweekly, monthly, dealership, rental, and multi-location opportunities to the owner with account context."
       },
       {
-        title: "Inspection-required alert",
+        title: "Site requirement collection",
         description:
-          "Route bent, cracked, or drivability-related wheel leads to the shop for staff handoff."
+          "Collect water access, parking, timing, gate/access notes, and local site requirements without promising compliance."
       },
       {
-        title: "Estimate follow-up",
+        title: "Quote follow-up",
         description:
-          "Follow up after curb rash, refinishing, powder coating, and commercial estimates."
+          "Follow up after quote requests, missing site details, service window questions, or unconfirmed first service dates."
       }
     ],
     dashboardValue: [
       {
-        title: "Photo requests pending",
+        title: "Account opportunities",
         description:
-          "See which wheel leads still need photos before the shop can review a quote."
+          "See which leads are recurring, one-time, dealership, rental, or route-based account opportunities."
       },
       {
-        title: "Inspection-required leads",
+        title: "Details needed",
         description:
-          "Separate bent, cracked, vibration, air-loss, and not-drivable requests for staff handoff."
+          "Separate leads missing fleet size, vehicle types, location count, water access, or wash window."
       },
       {
-        title: "Mobile and commercial pipeline",
+        title: "Route and follow-up view",
         description:
-          "Track mobile repair opportunities, dealership referrals, refinishing jobs, and estimate follow-ups."
+          "Track account handoffs, quote follow-ups, first-service windows, and recurring plan status."
       }
     ],
     faqs: [
       {
-        question: "Can SignalOps ask wheel repair customers for photos?",
+        question: "Can SignalOps collect fleet wash quote details?",
         answer:
-          "Yes. Photo request follow-up is one of the strongest workflows for wheel repair quote requests."
+          "Yes. It can ask for fleet size, vehicle types, locations, frequency, wash window, water access, and site notes before owner handoff."
       },
       {
-        question: "Can it handle bent or cracked wheel leads safely?",
+        question: "Can it route recurring account opportunities?",
         answer:
-          "It can flag those leads for human inspection and avoid unsafe repair promises. If a wheel is structurally unsafe, the shop may recommend replacement."
+          "Yes. Recurring, multi-location, dealership, rental, and larger fleet requests can be routed with priority and a clear next action."
       },
       {
-        question: "Can it route mobile repair appointments?",
+        question: "Can it handle after-hours service questions?",
         answer:
-          "Yes. SignalOps can collect service location, damage type, photos, number of wheels, and preferred time before routing the lead."
+          "Yes. SignalOps can collect preferred service windows, access notes, and site requirements so the team can review feasibility before quoting."
       },
       {
-        question: "Can it help with dealership or fleet opportunities?",
+        question: "Can it follow up on fleet quotes?",
         answer:
-          "Yes. Commercial or repeat-account language can trigger owner or sales routing with a more detailed internal note."
+          "Yes. SignalOps can remind prospects to confirm vehicle counts, locations, service frequency, and first-service windows."
       }
     ],
     relatedLinks: [
       {
         href: "/demo",
-        title: "View the Apex Wheel Repair AI lead demo",
-        description: "View the live wheel repair demo with AI intake output."
+        title: "View the RouteWash Mobile Fleet Care AI lead demo",
+        description: "View the live mobile fleet wash demo with AI intake output."
       },
       {
         href: "/services/quote-intake-automation",
         title: "Quote Intake Automation",
-        description: "Collect wheel photos, damage details, vehicle info, and appointment timing."
+        description: "Collect fleet size, vehicle types, service frequency, route windows, and account notes."
       },
       {
         href: "/services/ai-lead-qualification",
         title: "AI Lead Intake",
-        description: "Priority wheel leads by damage type, urgency, photos, and value."
+        description: "Route fleet wash leads by account value, urgency, service area, and next action."
       },
       {
         href: "/how-it-works",
         title: "How SignalOps Works",
-        description: "See how photo intake, priority sorting, routing, booking, and follow-up connect."
+        description: "See how intake, priority sorting, routing, booking, and follow-up connect."
       }
     ]
   }

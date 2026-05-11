@@ -58,17 +58,17 @@ Last ping from me.
 
 If fixing missed calls, slow replies, and forgotten follow-up is a priority this quarter, I can share a practical audit and rollout plan. If timing is not right, no pressure.
 
-## Auto Shops and Wheel Repair Shops Version
+## Mobile Fleet Wash Version
 
-Hey [First Name], I help auto service shops respond to quote requests faster.
+Hey [First Name], I help mobile fleet wash companies respond to fleet quote requests faster.
 
-Typical issue: customer submits curb rash, bent wheel, or refinishing request, and the shop loses momentum waiting on back-and-forth details.
+Typical issue: fleet manager asks for pricing, but the business still needs fleet size, vehicle types, locations, frequency, and wash window before a quote can move.
 
 SignalOps installs:
 - Instant reply after form submit
-- Photo request flow when details are missing
-- Urgent/bent/cracked wheel flagging
-- Mobile service versus in-shop routing
-- Follow-up until booking
+- Fleet detail request flow when information is missing
+- Recurring account opportunity alerts
+- Route/window and location handoff
+- Follow-up until quote handoff
 
 If useful, I can run a Free Missed Lead Check on your current quote flow and show what to fix first.

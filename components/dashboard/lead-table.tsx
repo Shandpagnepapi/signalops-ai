@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { ApexDashboardLead } from "@/lib/mock-data";
+import type { RouteWashDashboardLead } from "@/lib/mock-data";
 import {
   formatDateTime,
   priorityBadgeClass,
@@ -12,7 +12,7 @@ import {
 } from "./dashboard-utils";
 
 type LeadTableProps = {
-  leads: ApexDashboardLead[];
+  leads: RouteWashDashboardLead[];
   selectedLeadId?: string;
   onSelectLead: (leadId: string) => void;
 };
@@ -22,7 +22,7 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
     <Card className="min-w-0">
       <CardHeader>
         <CardTitle>Lead table</CardTitle>
-        <CardDescription>Priority, urgency, and recommended next step for each wheel repair inquiry.</CardDescription>
+        <CardDescription>Priority, urgency, and recommended next step for each fleet wash inquiry.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="max-w-full overflow-x-auto">
@@ -31,8 +31,8 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
               <tr>
                 <th className="py-3 pr-4 font-medium">Name</th>
                 <th className="py-3 pr-4 font-medium">Source</th>
-                <th className="py-3 pr-4 font-medium">Vehicle</th>
-                <th className="py-3 pr-4 font-medium">Damage type</th>
+                <th className="py-3 pr-4 font-medium">Vehicle types</th>
+                <th className="py-3 pr-4 font-medium">Request type</th>
                 <th className="py-3 pr-4 font-medium">Priority value</th>
                 <th className="py-3 pr-4 font-medium">Priority</th>
                 <th className="py-3 pr-4 font-medium">Urgency</th>
@@ -55,8 +55,8 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
                     <p className="mt-1 text-xs text-[#ead0df]/42">{lead.phone || lead.email}</p>
                   </td>
                   <td className="py-4 pr-4 align-top">{lead.source}</td>
-                  <td className="py-4 pr-4 align-top">{lead.vehicle}</td>
-                  <td className="py-4 pr-4 align-top">{lead.damageType}</td>
+                  <td className="py-4 pr-4 align-top">{lead.vehicleTypes}</td>
+                  <td className="py-4 pr-4 align-top">{lead.requestType}</td>
                   <td className="py-4 pr-4 align-top">
                     <Badge variant={lead.score >= 80 ? "success" : "warning"}>{lead.score}</Badge>
                   </td>

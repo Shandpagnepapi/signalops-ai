@@ -13,7 +13,7 @@ import type {
 import { classifyPreviewIntake } from "@/lib/prompt-worker/intake-classifier";
 
 const serviceExamples: Record<PreviewIndustry, string> = {
-  "Wheel repair": "curb rash repair or wheel refinishing",
+  "Mobile fleet wash": "fleet wash plan, dealership lot refresh, or recurring account request",
   "Auto repair": "diagnostics, repair, or maintenance",
   "Auto detailing": "detail package or ceramic coating",
   "Tint / wrap shop": "tint, wrap, PPF, or quote request",
@@ -31,7 +31,7 @@ const serviceExamples: Record<PreviewIndustry, string> = {
 };
 
 const ownerLabels: Record<PreviewIndustry, string> = {
-  "Wheel repair": "Shop owner",
+  "Mobile fleet wash": "Owner",
   "Auto repair": "Service advisor",
   "Auto detailing": "Detailing manager",
   "Tint / wrap shop": "Shop manager",
@@ -145,13 +145,14 @@ function getPainPoints(input: PreviewSubmissionInput) {
   if (input.mainLeadSources.includes("Facebook") || input.mainLeadSources.includes("Instagram")) points.add("DM follow-up");
   if (input.mainLeadSources.includes("Google Business Profile") || input.mainLeadSources.includes("Google LSA")) points.add("Google lead routing");
   if (input.mainLeadSources.length >= 3) points.add("Scattered lead sources");
-  if (`${input.notes} ${input.leadProcess}`.toLowerCase().includes("photo")) points.add("Photo/detail collection");
+  if (`${input.notes} ${input.leadProcess}`.toLowerCase().includes("fleet")) points.add("Fleet detail collection");
+  if (`${input.notes} ${input.leadProcess}`.toLowerCase().includes("photo")) points.add("Detail collection");
 
   return [...points].slice(0, 5);
 }
 
 function leadNameForIndustry(industry: PreviewIndustry) {
-  if (industry === "Wheel repair") return "Curb rash quote";
+  if (industry === "Mobile fleet wash") return "Fleet wash quote";
   if (industry === "Well / water service") return "No-water service request";
   if (industry === "Med spa") return "Consultation request";
   if (industry === "Insurance agency") return "Policy quote request";
@@ -391,20 +392,20 @@ export function getPreviewSharePath(id: string) {
 export function createDemoPreviewSubmissions(): PreviewSubmission[] {
   const inputs: PreviewSubmissionInput[] = [
     {
-      businessName: "Apex Wheel Repair",
+      businessName: "RouteWash Mobile Fleet Care",
       contactName: "Jordan",
       email: "jordan@example.com",
       phone: "(555) 010-0142",
       website: "https://example.com",
-      industry: "Wheel repair",
-      mainServices: "Curb rash repair, wheel refinishing, bent wheel triage, cracked wheel review, and mobile repair quotes",
-      mainLeadSources: ["Website form", "Missed calls", "Instagram"],
+      industry: "Mobile fleet wash",
+      mainServices: "Mobile fleet washing, recurring wash plans, dealership lot refresh, service van washing, and box truck washing",
+      mainLeadSources: ["Website form", "Missed calls", "Google Business Profile"],
       currentProblem: "No follow-up",
-      currentTools: "Website form, phone calls, Instagram DMs, and a spreadsheet",
-      leadProcess: "Customer sends a form or message, the shop asks for photos, then the owner reviews and quotes manually.",
-      averageJobValue: 260,
-      monthlyLeadVolume: "76-200",
-      notes: "Needs photo collection, mobile repair routing, and quote follow-up."
+      currentTools: "Website form, phone calls, Google Business Profile messages, and a spreadsheet",
+      leadProcess: "Fleet manager asks for pricing. Owner manually asks for fleet size, vehicle types, locations, frequency, and wash window.",
+      averageJobValue: 750,
+      monthlyLeadVolume: "21-75",
+      notes: "Needs fleet detail collection, recurring account routing, and quote follow-up."
     },
     {
       businessName: "ClearFlow Well & Water",

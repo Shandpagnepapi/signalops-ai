@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { apexDashboardLeads } from "@/lib/mock-data";
+import { routeWashDashboardLeads } from "@/lib/mock-data";
 import { DashboardFilters } from "./dashboard-filters";
 import { DashboardMetrics } from "./dashboard-metrics";
 import {
@@ -18,14 +18,14 @@ import { LeadTable } from "./lead-table";
 
 export function DashboardShell() {
   const [filters, setFilters] = useState<DashboardFiltersState>(defaultDashboardFilters);
-  const [selectedLeadId, setSelectedLeadId] = useState(apexDashboardLeads[0]?.id ?? "");
+  const [selectedLeadId, setSelectedLeadId] = useState(routeWashDashboardLeads[0]?.id ?? "");
 
-  const allLeads = apexDashboardLeads;
+  const allLeads = routeWashDashboardLeads;
 
   const filteredLeads = useMemo(() => filterLeads(allLeads, filters), [allLeads, filters]);
   const selectedLead = filteredLeads.find((lead) => lead.id === selectedLeadId) ?? filteredLeads[0] ?? null;
   const sourceOptions = useMemo(() => getUniqueOptions(allLeads, "source"), [allLeads]);
-  const damageOptions = useMemo(() => getUniqueOptions(allLeads, "damageType"), [allLeads]);
+  const requestOptions = useMemo(() => getUniqueOptions(allLeads, "requestType"), [allLeads]);
 
   return (
     <div className="overflow-x-hidden">
@@ -33,18 +33,18 @@ export function DashboardShell() {
         <div className="surface-grid mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="min-w-0">
-              <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">Apex Wheel Repair portal demo</Badge>
+              <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">RouteWash Mobile Fleet Care portal demo</Badge>
               <h1 className="max-w-xs text-3xl font-semibold tracking-normal text-white sm:max-w-none sm:text-4xl">
-                Lead pipeline dashboard for Apex Wheel Repair
+                Lead pipeline dashboard for RouteWash Mobile Fleet Care
               </h1>
               <p className="mt-3 max-w-xs text-base leading-7 text-[#ead0df]/78 sm:max-w-3xl">
-                A daily operating view for quote requests, wheel damage triage, photo follow-up,
-                appointment booking, and shop-owner alerts.
+                A daily operating view for fleet quote requests, recurring account follow-up,
+                route-friendly scheduling, and owner handoffs.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
               <Badge variant="success">Demo data only</Badge>
-              <Badge variant="outline">Dallas wheel repair</Badge>
+              <Badge variant="outline">DFW fleet wash</Badge>
               <Badge variant="outline">No live messages sent</Badge>
             </div>
           </div>
@@ -57,9 +57,9 @@ export function DashboardShell() {
         <Card className="border-[#ff9ec0]/20 bg-[#ff6f9c]/10">
           <CardContent className="p-5">
             <p className="text-sm leading-6 text-[#fff1f7]">
-              This public dashboard uses mock Apex Wheel Repair data only. Production lead records
+              This public dashboard uses mock RouteWash Mobile Fleet Care data only. Production lead records
               stay behind internal access, while real client installs connect securely to CRM,
-              forms, ads, missed calls, quote requests, photo submissions, and calendars.
+              forms, ads, missed calls, quote requests, account handoffs, and calendars.
             </p>
           </CardContent>
         </Card>
@@ -67,7 +67,7 @@ export function DashboardShell() {
         <DashboardFilters
           filters={filters}
           sources={sourceOptions}
-          damageTypes={damageOptions}
+          requestTypes={requestOptions}
           onChange={setFilters}
         />
 

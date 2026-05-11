@@ -8,7 +8,7 @@ import { PRIMARY_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import styles from "./mobile-test-2.module.css";
 
-const industries = ["Wheel Repair", "Auto Shop", "Detailer", "Med Spa", "Home Services"];
+const industries = ["Fleet Wash", "Auto Shop", "Detailer", "Med Spa", "Home Services"];
 const leadSources = ["Website form", "Missed calls", "Instagram DMs", "Quote requests", "Facebook leads"];
 const biggestLeaks = ["Slow replies", "No follow-up", "Bad intake", "No booking handoff", "Scattered lead notes"];
 
@@ -20,10 +20,10 @@ const industryOutputs: Record<
     handoff: string;
   }
 > = {
-  "Wheel Repair": {
-    flow: "Damage-type intake for curb rash, bent wheels, cracked wheels, refinishing, and mobile repair fit.",
-    questions: "Wheel count, photos, vehicle, wheel size, shop or mobile visit, urgency.",
-    handoff: "Route cracked or bent wheels to the shop before quote promises."
+  "Fleet Wash": {
+    flow: "Account intake for fleet size, vehicle types, locations, service frequency, and route window.",
+    questions: "Fleet size, vehicle mix, sites, wash cadence, water access, after-hours need.",
+    handoff: "Route recurring account opportunities to the owner with a clear quote path."
   },
   "Auto Shop": {
     flow: "Repair request intake with urgency, symptoms, vehicle details, and appointment readiness.",

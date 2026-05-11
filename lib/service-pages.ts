@@ -143,7 +143,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Service-specific questions",
         description:
-          "A wheel repair lead can be asked for photos and drivability; a plumber can be asked about leak severity and address; a med spa can be routed to staff for sensitive questions."
+          "A fleet wash lead can be asked for fleet size, vehicle types, locations, and wash window; a plumber can be asked about leak severity and address; a med spa can be routed to staff for sensitive questions."
       },
       {
         title: "Team-ready summary",
@@ -194,7 +194,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Auto service and repair shops",
         description:
-          "Auto shops, wheel repair shops, detailers, tint shops, wrap shops, and performance shops handling quote and appointment requests."
+          "Mobile fleet wash companies, auto shops, detailers, tint shops, wrap shops, and performance shops handling quote and appointment requests."
       },
       {
         title: "Small teams without extra admin",
@@ -221,9 +221,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     examples: [
       {
-        title: "Apex Wheel Repair",
+        title: "RouteWash Mobile Fleet Care",
         description:
-          "A customer submits photos of curb rash on two wheels and asks for mobile repair. SignalOps asks for vehicle details, sorts the lead, and routes it as a ready cosmetic repair opportunity."
+          "A fleet manager asks about biweekly washing for 28 service vans across two DFW locations. SignalOps collects account details and routes it as a recurring fleet quote opportunity."
       },
       {
         title: "ClearFlow Well & Water",
@@ -349,7 +349,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Teams that quote or inspect before selling",
         description:
-          "Wheel repair, auto shops, contractors, med spas, and well service teams often need intake before a clear next step."
+          "Mobile fleet wash companies, auto shops, contractors, med spas, and well service teams often need intake before a clear next step."
       },
       {
         title: "Owners who need prioritization",
@@ -376,9 +376,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     examples: [
       {
-        title: "Bent wheel at highway speed",
+        title: "Large fleet quote request",
         description:
-          "SignalOps flags the lead as urgent, recommends staff handoff, and avoids making unsafe repair promises."
+          "SignalOps flags recurring account potential, recommends owner handoff, and avoids promising final service setup before site requirements are confirmed."
       },
       {
         title: "Routine filter replacement",
@@ -499,7 +499,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Quote-based service businesses",
         description:
-          "Wheel repair, detailing, tint, wraps, contractors, roofers, and HVAC teams that send estimates before booking."
+          "Mobile fleet wash companies, detailing, tint, wraps, contractors, roofers, and HVAC teams that send estimates before booking."
       },
       {
         title: "Businesses with photo requests",
@@ -526,14 +526,14 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Cleaner pipeline visibility",
         description:
-          "See which leads need photos, which got quotes, and which are waiting on booking."
+          "See which leads need details, which got quotes, and which are waiting on booking."
       }
     ],
     examples: [
       {
-        title: "Wheel repair photo reminder",
+        title: "Fleet wash quote reminder",
         description:
-          "A customer asks about curb rash but does not send photos. SignalOps follows up with a short photo request."
+          "A fleet manager asks for pricing but does not confirm locations or wash window. SignalOps follows up with a short detail request."
       },
       {
         title: "Auto shop estimate follow-up",
@@ -686,9 +686,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     examples: [
       {
-        title: "Missed call from a wheel repair customer",
+        title: "Missed call from a fleet wash prospect",
         description:
-          "SignalOps texts back asking for wheel damage photos, vehicle details, and whether mobile repair is needed."
+          "SignalOps texts back asking for fleet size, vehicle types, locations, frequency, and preferred wash window."
       },
       {
         title: "Forgotten HVAC estimate",
@@ -841,9 +841,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     examples: [
       {
-        title: "Cracked wheel request",
+        title: "Site requirement review",
         description:
-          "SignalOps routes the lead for human inspection review and avoids promising repair when replacement may be safer."
+          "SignalOps routes the lead for owner review and avoids promising compliance or final service setup before local site requirements are confirmed."
       },
       {
         title: "Commercial water system inquiry",
@@ -996,9 +996,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     examples: [
       {
-        title: "Mobile wheel repair appointment",
+        title: "Fleet wash account call",
         description:
-          "SignalOps asks for photos, wheel count, vehicle details, address, and preferred mobile appointment window."
+          "SignalOps asks for fleet size, vehicle types, locations, preferred service window, and recurring plan interest."
       },
       {
         title: "Detailing package booking",
@@ -1068,7 +1068,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Dynamic intake questions",
         description:
-          "Ask different questions for curb rash, bent wheels, water pressure issues, roof leaks, detailing packages, or commercial projects."
+          "Ask different questions for fleet wash accounts, water pressure issues, roof leaks, detailing packages, or commercial projects."
       },
       {
         title: "Photo and scope prompts",
@@ -1117,9 +1117,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     whoFor: [
       {
-        title: "Wheel repair and auto shops",
+        title: "Fleet wash and auto shops",
         description:
-          "Collect photos, vehicle details, damage type, drivability, and appointment preferences before quoting."
+          "Collect fleet size, vehicle types, locations, service frequency, site notes, and wash window before quoting."
       },
       {
         title: "Detailing, tint, and wrap shops",
@@ -1151,9 +1151,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     examples: [
       {
-        title: "Curb rash repair quote",
+        title: "Fleet wash recurring quote",
         description:
-          "SignalOps asks for wheel photos, number of wheels, vehicle model, mobile service need, and preferred appointment time."
+          "SignalOps asks for fleet size, vehicle types, locations, water access, after-hours need, and preferred wash cadence."
       },
       {
         title: "Well pump issue quote",

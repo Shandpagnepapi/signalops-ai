@@ -17,11 +17,11 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
   "Quote Intake OS": {
     name: "Quote Intake OS",
     whoItIsFor:
-      "Wheel repair, detailers, contractors, tint/wrap shops, remodelers, auto services, and other quote-based businesses.",
+      "Mobile fleet wash companies, detailers, contractors, tint/wrap shops, remodelers, auto services, and other quote-based businesses.",
     commonLeadSources: ["Website forms", "Phone calls", "Missed calls", "Instagram/Facebook DMs", "Google Business Profile", "Quote request pages"],
     coreFlow: [
       "Lead comes in",
-      "AI requests missing details/photos",
+      "AI requests missing details, photos, or account context",
       "AI sorts the lead by urgency and next action",
       "Owner/team receives the summary",
       "Follow-up keeps the quote request moving",
@@ -31,13 +31,13 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
       "What service do you need?",
       "What city/service area are you in?",
       "When are you hoping to get this done?",
-      "Can you send photos or key details?",
+      "Can you send photos, fleet/account details, or key service context?",
       "Is this mobile, in-shop, onsite, or callback preferred?",
       "What is the best phone/email for follow-up?"
     ],
     routingRules: [
       "Hot quote requests with photos/details go to owner or estimator.",
-      "Missing-photo leads get a photo request sequence.",
+      "Missing-detail leads get the right follow-up request sequence.",
       "Unclear or high-risk jobs route to human review.",
       "Out-of-area or poor-fit leads get polite clarification."
     ],
@@ -48,7 +48,7 @@ export const systemTemplates: Record<PromptWorkerSystemTemplateName, SystemTempl
       "Booking/callback nudge",
       "Final quiet-lead check-in"
     ],
-    dashboardFields: ["Lead source", "Service requested", "Photos/details", "Urgency", "Priority / next action", "Owner alert", "Follow-up status"],
+    dashboardFields: ["Lead source", "Service requested", "Details/account context", "Urgency", "Priority / next action", "Owner alert", "Follow-up status"],
     recommendedPackageTendency: "Growth",
     commonAddOns: ["Photo request flow", "Quote follow-up", "Owner alert summaries", "Spreadsheet/CRM logging", "Booking link handoff"]
   },

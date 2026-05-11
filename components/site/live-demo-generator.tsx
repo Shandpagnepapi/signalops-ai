@@ -70,13 +70,13 @@ const toneLabels: Record<PreferredTone, string> = {
 };
 
 const initialForm: LiveDemoFormState = {
-  businessName: "Northline Auto Care",
-  industry: "auto-shop",
+  businessName: "RouteWash Mobile Fleet Care",
+  industry: "general-local-service",
   cityState: "Dallas, TX",
-  servicesOffered: "Diagnostics, brake repair, maintenance, performance upgrades",
-  mainLeadProblem: "We miss calls during busy shop hours and quote requests do not always get followed up.",
-  currentLeadHandling: "Phone calls, website form notifications, Google Business Profile messages, and manual callbacks.",
-  averageCustomerValue: "950",
+  servicesOffered: "Mobile fleet washing, recurring wash plans, dealership lot refresh, service van washing, box truck washing",
+  mainLeadProblem: "Fleet quote requests need follow-up and recurring account details get scattered.",
+  currentLeadHandling: "Website form notifications, missed calls, Google Business Profile messages, referrals, and manual callbacks.",
+  averageCustomerValue: "750",
   preferredTone: "professional",
   websiteUrl: ""
 };
@@ -206,7 +206,7 @@ export function LiveDemoGenerator() {
                       required
                       value={form.businessName}
                       onChange={(event) => updateField("businessName", event.target.value)}
-                      placeholder="Example: Apex Wheel Repair"
+                      placeholder="Example: RouteWash Mobile Fleet Care"
                     />
                   </Field>
                   <Field label="Industry">
@@ -250,7 +250,7 @@ export function LiveDemoGenerator() {
                     required
                     value={form.servicesOffered}
                     onChange={(event) => updateField("servicesOffered", event.target.value)}
-                    placeholder="Curb rash repair, bent wheel inspection, refinishing, mobile repair"
+                    placeholder="Mobile fleet washing, recurring wash plans, dealership lot refresh, service van washing"
                   />
                 </Field>
 
@@ -259,7 +259,7 @@ export function LiveDemoGenerator() {
                     required
                     value={form.mainLeadProblem}
                     onChange={(event) => updateField("mainLeadProblem", event.target.value)}
-                    placeholder="Slow response, missed calls, no photo follow-up, low-quality quote requests..."
+                    placeholder="Slow response, missed calls, inconsistent quote follow-up, scattered account details..."
                   />
                 </Field>
 

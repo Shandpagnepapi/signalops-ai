@@ -12,7 +12,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 ## 2) Copy Review
 
 - [ ] Homepage copy is clear and free of placeholder text
-- [ ] Demo page copy reflects Apex Wheel Repair use case accurately
+- [ ] Demo page copy reflects RouteWash Mobile Fleet Care use case accurately
 - [ ] Dashboard labels are understandable for non-technical owners
 - [ ] No outdated references (including old client names)
 - [ ] Typos and grammar pass final review
@@ -45,11 +45,11 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 
 ## 6) Demo Testing
 
-- [ ] Apex Wheel Repair page loads fully (`/demo`)
+- [ ] RouteWash Mobile Fleet Care page loads fully (`/demo`)
 - [ ] Service sections and conversion CTAs display correctly
 - [ ] SignalOps demo workflow panel is visible and understandable
 - [ ] Demo lead intake logic appears realistic and useful
-- [ ] No unsafe repair claims (cracked/structural cases route to inspection/replacement guidance)
+- [ ] No unsafe compliance or site-service claims; site requirements are collected before final service setup is promised
 
 ## 7) Dashboard Testing
 
@@ -117,7 +117,7 @@ Use this checklist before making SignalOps publicly accessible. Mark each item c
 
 - [ ] Submit one realistic preview request in production preview
 - [ ] Submit one realistic project inquiry in production preview
-- [ ] Submit one realistic Apex wheel repair lead in production preview
+- [ ] Submit one realistic RouteWash fleet wash lead in production preview
 - [ ] Confirm scoring, priority, and summary output quality
 - [ ] Confirm dashboard reflects new mock/store data path
 - [ ] Confirm no sensitive keys are exposed in browser devtools

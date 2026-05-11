@@ -72,15 +72,15 @@ If now is not the right time, all good.
 Best,  
 [Your Name]
 
-## Wheel Repair Shops Version
+## Mobile Fleet Wash Version
 
-Subject: Quick idea for your wheel quote flow
+Subject: Quick idea for your fleet quote flow
 
 Hi [First Name],
 
-Wheel shops lose jobs when quote requests for curb rash, bent wheels, and refinishing sit too long or come in with incomplete info.
+Mobile fleet wash companies lose recurring accounts when fleet quote requests sit too long or come in without fleet size, locations, timing, and service frequency.
 
-SignalOps helps shops instantly reply, request photos, flag urgent structural issues, and route mobile-service-fit leads vs in-shop inspections.
+SignalOps helps teams instantly reply, collect account details, flag recurring opportunities, and route fleet quote handoffs with the context the owner needs.
 
 If helpful, I can review your current quote path and show exactly where leads are getting missed before booking.
 

@@ -1,8 +1,8 @@
-import { AlertTriangle, CheckCircle2, Clock3, Mail, MapPin, Phone, Wrench } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Clock3, Mail, MapPin, Phone, Truck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { ApexDashboardLead } from "@/lib/mock-data";
+import type { RouteWashDashboardLead } from "@/lib/mock-data";
 import {
   formatDateTime,
   priorityBadgeClass,
@@ -13,7 +13,7 @@ import {
 } from "./dashboard-utils";
 
 type LeadDetailCardProps = {
-  lead: ApexDashboardLead | null;
+  lead: RouteWashDashboardLead | null;
 };
 
 export function LeadDetailCard({ lead }: LeadDetailCardProps) {
@@ -72,18 +72,18 @@ export function LeadDetailCard({ lead }: LeadDetailCardProps) {
       </CardHeader>
 
       <CardContent className="space-y-6">
-        <section className="grid gap-3 sm:grid-cols-2" aria-label="Contact and vehicle info">
+        <section className="grid gap-3 sm:grid-cols-2" aria-label="Contact and fleet info">
           <InfoItem icon={Phone} label="Phone" value={lead.phone || "Missing"} />
           <InfoItem icon={Mail} label="Email" value={lead.email || "Missing"} />
-          <InfoItem icon={Wrench} label="Vehicle" value={lead.vehicle} />
+          <InfoItem icon={Truck} label="Vehicle types" value={lead.vehicleTypes} />
           <InfoItem icon={MapPin} label="Area" value={lead.address || "Not provided"} />
         </section>
 
-        <section className="grid gap-3 sm:grid-cols-4" aria-label="Wheel and damage details">
-          <DetailStat label="Damage" value={lead.damageType} />
-          <DetailStat label="Wheel size" value={lead.wheelSize || "Unknown"} />
-          <DetailStat label="Wheels" value={String(lead.numberOfWheels)} />
-          <DetailStat label="Mobile" value={lead.needsMobileService ? "Requested" : "Not requested"} />
+        <section className="grid gap-3 sm:grid-cols-4" aria-label="Fleet and request details">
+          <DetailStat label="Request" value={lead.requestType} />
+          <DetailStat label="Locations" value={lead.locationCount || "Unknown"} />
+          <DetailStat label="Fleet size" value={String(lead.fleetSize || "Unknown")} />
+          <DetailStat label="After-hours" value={lead.afterHoursRequested ? "Requested" : "Not requested"} />
         </section>
 
         <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">

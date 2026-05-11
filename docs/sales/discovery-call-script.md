@@ -45,12 +45,12 @@ If there is a fit, I will recommend a practical first implementation. If not, I 
 - How often do quote requests go unanswered or delayed?
 - Do you have different quote workflows by service type?
 
-## Photo Submission Questions
+## Detail Submission Questions
 
-- Do you require photos for quoting?
-- If photos are missing, what process asks for them today?
-- How many quote requests die before photos are collected?
-- For auto/wheel businesses: how do you separate cosmetic from safety-sensitive damage?
+- Do you require photos, site notes, account details, or vehicle information for quoting?
+- If details are missing, what process asks for them today?
+- How many quote requests die before enough details are collected?
+- For fleet wash businesses: how do you collect fleet size, vehicle types, locations, frequency, and wash window?
 
 ## Budget and Value Questions
 

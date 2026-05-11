@@ -67,15 +67,15 @@ Not included in pilot by default:
 
 ## Automotive Service Businesses Version
 
-This pilot is ideal for auto shops, wheel repair shops, detailers, tint/wrap shops, and performance shops.
+This pilot is ideal for mobile fleet wash companies, auto shops, detailers, tint/wrap shops, and performance shops.
 
 Automotive-specific pilot outcomes:
-- Faster quote response for repair/refinish requests
-- Structured photo intake for cleaner estimates
-- Urgent/safety-sensitive flagging (bent, cracked, non-drivable)
+- Faster quote response for fleet wash and service requests
+- Structured account intake for cleaner estimates
+- Recurring account opportunity flagging
 - Smart routing:
-  - Mobile cosmetic repair opportunities
-  - In-shop inspection opportunities
+  - Route-friendly recurring account opportunities
+  - Owner review opportunities
 - Follow-up automation until booking
 
 Automotive proof metric examples:

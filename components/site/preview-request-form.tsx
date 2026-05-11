@@ -259,7 +259,7 @@ export function PreviewRequestForm() {
                   required
                   value={form.businessName}
                   onChange={(event) => updateField("businessName", event.target.value)}
-                  placeholder="Apex Wheel Repair"
+                  placeholder="RouteWash Mobile Fleet Care"
                 />
               </Field>
             </div>
@@ -375,7 +375,7 @@ export function PreviewRequestForm() {
                 <Textarea
                   value={form.notes}
                   onChange={(event) => updateField("notes", event.target.value)}
-                  placeholder="Routing rules, photo requests, service area, calendar needs, team handoff, special cases..."
+                  placeholder="Routing rules, fleet details, service area, calendar needs, team handoff, special cases..."
                 />
               </Field>
             </div>

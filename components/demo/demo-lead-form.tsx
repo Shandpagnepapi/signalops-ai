@@ -39,6 +39,24 @@ function getUrgency(business: DemoBusinessConfig, form: DemoFormInitialState) {
   const serviceLabel = getServiceLabel(business, form.serviceValue);
   const joinedText = `${business.key} ${serviceLabel} ${form.description} ${form.photoNote}`.toLowerCase();
 
+  if (business.key === "fleet-wash") {
+    const fleetSize = Number(form.quantity) || 0;
+
+    if (fleetSize >= 25 || joinedText.includes("recurring") || joinedText.includes("biweekly") || joinedText.includes("monthly")) {
+      return "Recurring account opportunity";
+    }
+
+    if (form.mobile === "yes" || joinedText.includes("after-hours") || joinedText.includes("weeknight")) {
+      return "After-hours route window";
+    }
+
+    if (joinedText.includes("dealer") || joinedText.includes("lot") || joinedText.includes("rental")) {
+      return "Account review";
+    }
+
+    return "Fleet quote request";
+  }
+
   if (business.key === "well-water") {
     if (form.status === "no" || joinedText.includes("no water") || joinedText.includes("emergency")) {
       return "Emergency: no water or major issue";
@@ -57,18 +75,6 @@ function getUrgency(business: DemoBusinessConfig, form: DemoFormInitialState) {
     }
 
     return "Just asking questions";
-  }
-
-  if (form.status === "no") {
-    return "Urgent: vehicle is not drivable";
-  }
-
-  if (form.serviceValue === "bent" || form.serviceValue === "cracked" || form.status === "unsure") {
-    return "Inspection needed before repair recommendation";
-  }
-
-  if (form.mobile === "yes") {
-    return "Mobile repair requested";
   }
 
   return "Standard quote request";
@@ -150,7 +156,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
         numberOfWheels: data.lead.numberOfWheels || Number(form.quantity) || 0,
         vehicleDrivable: data.lead.vehicleDrivable || form.status,
         needsMobileService: data.lead.needsMobileService || form.mobile,
-        hasPhotoNotes: Boolean(form.photoNote.trim())
+        hasSiteNotes: Boolean(form.photoNote.trim())
       });
       setStatus("success");
     } catch (caughtError) {
@@ -300,7 +306,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
               <ResultBlock title="Suggested customer reply" body={lead.customerReply} />
               <ResultBlock title={business.form.internalNoteLabel} body={lead.internalNote} icon="warning" />
               {lead.aiQualification.needsHumanReview ? (
-                <ResultBlock title="Owner handoff flag" body="This lead should go to the shop before any automated promise is made." icon="warning" />
+                <ResultBlock title="Owner handoff flag" body="This lead should go to the owner with the account context before the final quote path is confirmed." icon="warning" />
               ) : null}
               <div>
                 <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Suggested tags</p>

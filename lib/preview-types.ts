@@ -8,7 +8,7 @@ import type {
 } from "@/lib/prompt-worker/prompt-types";
 
 export const previewIndustryOptions = [
-  "Wheel repair",
+  "Mobile fleet wash",
   "Auto repair",
   "Auto detailing",
   "Tint / wrap shop",

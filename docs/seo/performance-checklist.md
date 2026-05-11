@@ -25,7 +25,7 @@ Run Lighthouse on:
 - Live Demo: `/live-demo`
 - ROI Calculator: `/roi-calculator`
 - A service SEO page: `/ai-lead-response`
-- An industry SEO page: `/industries/wheel-repair`
+- An industry SEO page: `/industries/mobile-fleet-wash`
 
 Check:
 

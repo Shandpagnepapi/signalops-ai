@@ -118,8 +118,8 @@ function getBusinessType(input: PreviewSubmissionInput): {
   }
 
   if (
-    ["Wheel repair", "Auto repair", "Auto detailing", "Tint / wrap shop"].includes(industry) ||
-    hasAny(text, ["quote", "estimate", "photo", "photos", "repair", "detail", "wrap", "tint", "contractor", "service request"])
+    ["Mobile fleet wash", "Auto repair", "Auto detailing", "Tint / wrap shop"].includes(industry) ||
+    hasAny(text, ["quote", "estimate", "photo", "photos", "fleet", "recurring", "repair", "detail", "wrap", "tint", "contractor", "service request"])
   ) {
     return {
       businessType: "quote_based",

@@ -40,7 +40,7 @@ For X/Twitter `summary_large_image`, the official guidance supports a 2:1 image 
 - ROI Calculator: `/roi-calculator`
 - How It Works: `/how-it-works`
 - A service page: `/ai-lead-response`
-- An industry page: `/industries/wheel-repair`
+- An industry page: `/industries/mobile-fleet-wash`
 
 ## LinkedIn Post Inspector
 

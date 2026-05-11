@@ -798,7 +798,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     eyebrow: "Ethical alternative guide",
     metaTitle: "QuoteRelay Alternative for Quote Intake Automation | SignalOps",
     metaDescription:
-      "SignalOps is a QuoteRelay-style alternative for quote intake automation across wheel repair, auto shops, detailers, tint shops, wrap shops, contractors, and local services.",
+      "SignalOps is a QuoteRelay-style alternative for quote intake automation across mobile fleet wash, auto shops, detailers, tint shops, wrap shops, contractors, and local services.",
     h1: "QuoteRelay alternative for quote intake automation.",
     subheadline:
       "For quote-based businesses, SignalOps helps collect the details needed to estimate work, ask for photos when useful, prioritize urgent requests, and follow up when a prospect does not book.",
@@ -808,7 +808,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Quote-heavy local businesses",
         description:
-          "Wheel repair shops, auto shops, detailers, tint shops, wrap shops, contractors, and service teams need enough context before quoting."
+          "Mobile fleet wash companies, auto shops, detailers, tint shops, wrap shops, contractors, and service teams need enough context before quoting."
       },
       {
         title: "Teams that need photos or details",
@@ -857,9 +857,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     useCases: [
       {
-        title: "Wheel repair quote intake",
+        title: "Fleet wash quote intake",
         description:
-          "Ask for wheel photos, damage type, vehicle details, drivability, mobile repair need, and preferred appointment time."
+          "Ask for fleet size, vehicle types, locations, service frequency, site notes, and preferred wash window."
       },
       {
         title: "Auto and performance shop estimates",
@@ -922,7 +922,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Can SignalOps ask for photos?",
         answer:
-          "Yes. Photo-based intake is a strong fit for wheel repair, auto, detailing, tint, wrap, home services, and other quote-based workflows."
+          "Yes. Photo or detail-based intake is a strong fit for mobile fleet wash, auto, detailing, tint, wrap, home services, and other quote-based workflows."
       },
       {
         question: "Does SignalOps generate the final quote?",

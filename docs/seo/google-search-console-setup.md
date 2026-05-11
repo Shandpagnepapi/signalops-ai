@@ -157,7 +157,7 @@ Then check priority SEO pages:
 - `/ai-follow-up-automation`
 - `/lead-management-for-small-business`
 - `/no-crm-lead-tracking`
-- `/industries/wheel-repair`
+- `/industries/mobile-fleet-wash`
 - `/industries/well-water-service-companies`
 - `/industries/auto-shops`
 - `/industries/roofers`

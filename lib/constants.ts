@@ -108,8 +108,8 @@ export const SEO_SERVICE_LINKS = [
 
 export const SEO_INDUSTRY_LINKS = [
   {
-    href: "/industries/wheel-repair",
-    label: "Wheel Repair Shops"
+    href: "/industries/mobile-fleet-wash",
+    label: "Mobile Fleet Wash"
   },
   {
     href: "/industries/auto-shops",
@@ -229,7 +229,7 @@ export const PACKAGE_NAMES = [
 
 export const TARGET_CUSTOMERS = [
   "Auto shops",
-  "Wheel repair shops",
+  "Mobile fleet wash companies",
   "Detailers",
   "Performance shops",
   "Tint/wrap shops",

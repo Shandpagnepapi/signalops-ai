@@ -332,7 +332,7 @@ export function SignalOpsCommandLayer({ className = "", compact = false }: { cla
           <OwnerAlertCard
             tone="lime"
             title="Priority view"
-            action="Quote request has photos pending, owner alert ready, and follow-up queued."
+            action="Fleet quote has account details pending, owner alert ready, and follow-up queued."
           />
           <StatusPill accent="lime" className={compact ? "col-span-2 w-fit" : "w-fit"}>
             Dashboard updated

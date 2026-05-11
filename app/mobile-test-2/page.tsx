@@ -59,15 +59,15 @@ const leakPoints = [
   {
     leak: "Website form sits too long",
     pain: "The customer is still comparing options while your form waits.",
-    fix: "SignalOps responds, qualifies, and routes the lead.",
+    fix: "SignalOps responds, collects context, and routes the lead.",
     pill: "Speed restored",
     icon: Inbox
   },
   {
-    leak: "Photos never arrive",
-    pain: "Quote requests stall when customers forget the missing details.",
-    fix: "Automated reminders request photos and vehicle info.",
-    pill: "Photos requested",
+    leak: "Fleet details never arrive",
+    pain: "Quote requests stall when customers forget vehicle counts, locations, or timing.",
+    fix: "Automated reminders request the account details needed for a quote.",
+    pill: "Details requested",
     icon: FileQuestion
   },
   {
@@ -86,14 +86,14 @@ const leakPoints = [
   }
 ];
 
-const apexOutput = [
-  ["Service", "Curb rash repair"],
-  ["Vehicle", "2018 BMW, 19-inch wheels"],
-  ["Intent", "Quote request"],
-  ["Needs photos", "Yes"],
-  ["Mobile repair", "Requested"],
-  ["Priority", "Warm / high intent"],
-  ["Next action", "Request photos + offer appointment window"]
+const routeWashOutput = [
+  ["Service", "Recurring fleet wash"],
+  ["Fleet", "28 service vans"],
+  ["Locations", "2 DFW sites"],
+  ["Frequency", "Biweekly"],
+  ["Wash window", "After-hours requested"],
+  ["Priority", "Recurring account opportunity"],
+  ["Next action", "Confirm service area + send fleet quote path"]
 ];
 
 const responseLayers = [
@@ -103,13 +103,13 @@ const responseLayers = [
     icon: MessageSquareText
   },
   {
-    title: "AI Qualifier",
+    title: "AI Intake",
     copy: "Asks the right questions and structures the lead.",
     icon: ClipboardCheck
   },
   {
     title: "Follow-Up Engine",
-    copy: "Nudges quotes, photo requests, and no-replies.",
+    copy: "Nudges quotes, detail requests, and no-replies.",
     icon: TimerReset
   },
   {
@@ -155,7 +155,7 @@ export default function MobileTestTwoPage() {
         <LeadLeakPreviewBuilder />
       </div>
 
-      <ApexExample />
+      <RouteWashExample />
       <ResponseLayer />
       <RevenueMeter />
       <PreviewIncludes />
@@ -338,40 +338,40 @@ function LeakPoint({
   );
 }
 
-function ApexExample() {
+function RouteWashExample() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8" aria-labelledby="apex-title">
-      <div className={cn(styles.apexCard, "rounded-[2rem] border p-4 sm:p-6")}>
+    <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8" aria-labelledby="routewash-title">
+      <div className={cn(styles.routewashCard, "rounded-[2rem] border p-4 sm:p-6")}>
         <SectionHeading
-          eyebrow="Apex Wheel Repair example"
-          title="Example: a wheel repair quote that does not go cold."
-          copy="The AI system keeps the quote moving before the customer disappears."
+          eyebrow="RouteWash Mobile Fleet Care example"
+          title="Example: a fleet quote that does not go cold."
+          copy="The AI system keeps account details moving before the fleet manager disappears."
         />
 
         <div className="mt-6 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="grid gap-3">
             <article className={cn(styles.chatCustomer, "max-w-[88%] rounded-[1.35rem] p-4")}>
               <p className={cn(styles.speakerMutedDark, "text-xs font-black uppercase")}>Customer</p>
-              <p className="mt-2 text-sm leading-6">I have curb rash on two wheels. Can you do mobile repair?</p>
+              <p className="mt-2 text-sm leading-6">We have 28 service vans across two DFW locations. Can you quote biweekly after-hours washing?</p>
             </article>
             <article className={cn(styles.chatAi, "max-w-[92%] rounded-[1.35rem] p-4")}>
               <p className={cn(styles.speakerMutedLight, "text-xs font-black uppercase")}>SignalOps</p>
               <p className="mt-2 text-sm leading-6">
-                Send photos of both wheels and your vehicle details. I&apos;ll get your quote started and check mobile availability.
+                Send the vehicle mix, service addresses, and preferred wash window. I&apos;ll get the account details ready for a fleet quote.
               </p>
             </article>
           </div>
 
-          <div className={cn(styles.apexOutput, "rounded-[1.5rem] border p-4")}>
+          <div className={cn(styles.routewashOutput, "rounded-[1.5rem] border p-4")}>
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>AI output</p>
-                <h3 className="mt-1 text-2xl font-black tracking-normal text-white">Quote summary</h3>
+                <h3 className="mt-1 text-2xl font-black tracking-normal text-white">Account summary</h3>
               </div>
               <Wrench className={cn(styles.accent, "size-7 shrink-0")} aria-hidden="true" />
             </div>
             <div className="mt-4 grid gap-2">
-              {apexOutput.map(([label, value]) => (
+              {routeWashOutput.map(([label, value]) => (
                 <div key={label} className={cn(styles.outputRow, "grid gap-1 rounded-2xl border p-3 sm:grid-cols-[8rem_1fr]")}>
                   <p className={cn(styles.heroCopy, "text-xs font-black uppercase")}>{label}</p>
                   <p className="text-sm font-black leading-5 text-white">{value}</p>
@@ -381,10 +381,10 @@ function ApexExample() {
             <TrackedLink
               href="/demo"
               eventName={ANALYTICS_EVENTS.demoViewed}
-              eventProperties={{ location: "mobile_test_2_apex" }}
+              eventProperties={{ location: "mobile_test_2_routewash" }}
               className={cn(styles.secondaryButton, "mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl border px-5 text-sm font-black transition")}
             >
-              View Apex Wheel Repair Demo
+              View RouteWash Demo
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { ApexDashboardLead } from "@/lib/mock-data";
+import type { RouteWashDashboardLead } from "@/lib/mock-data";
 import {
   pipelineStatuses,
   priorityBadgeClass,
@@ -10,7 +10,7 @@ import {
 } from "./dashboard-utils";
 
 type LeadPipelineProps = {
-  leads: ApexDashboardLead[];
+  leads: RouteWashDashboardLead[];
   selectedLeadId?: string;
   onSelectLead: (leadId: string) => void;
 };
@@ -22,7 +22,7 @@ export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipeli
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardTitle>Lead pipeline</CardTitle>
-            <CardDescription>From new quote requests to booked and won work.</CardDescription>
+            <CardDescription>From new fleet quote requests to booked and won accounts.</CardDescription>
           </div>
           <Badge variant="outline">{leads.length} visible leads</Badge>
         </div>
@@ -53,7 +53,7 @@ export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipeli
                         <div className="flex items-start justify-between gap-2">
                           <div className="min-w-0">
                             <p className="truncate text-sm font-medium text-white">{lead.name}</p>
-                            <p className="mt-1 truncate text-xs text-[#ead0df]/62">{lead.damageType}</p>
+                            <p className="mt-1 truncate text-xs text-[#ead0df]/62">{lead.requestType}</p>
                           </div>
                           <Badge className={cn("shrink-0", priorityBadgeClass(lead.priority))}>
                             {priorityLabels[lead.priority]}
@@ -61,7 +61,7 @@ export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipeli
                         </div>
                         <div className="mt-3 flex items-center justify-between text-xs text-[#ead0df]/42">
                           <span>{lead.score} priority</span>
-                          <span>{lead.needsMobileService ? "Mobile" : "Shop"}</span>
+                          <span>{lead.afterHoursRequested ? "After-hours" : "Standard"}</span>
                         </div>
                       </button>
                     ))

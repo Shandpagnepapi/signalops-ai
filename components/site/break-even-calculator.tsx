@@ -98,10 +98,10 @@ export function BreakEvenCalculator({
             See how many jobs cover SignalOps.
           </h2>
           <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-            Put in what one typical service is worth. We will translate the package into a simple break-even number, like how many wheels, jobs, or appointments cover the monthly investment.
+            Put in what one typical service or account is worth. We will translate the package into a simple break-even number, like how many jobs, accounts, or appointments cover the monthly investment.
           </p>
           <p className="mt-2 text-xs leading-5 text-[#ead0df]/54">
-            For a wheel shop, use your average repair or refinish value and type wheels as the sale label.
+            For a fleet wash company, use your average monthly account value and type accounts as the sale label.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export function BreakEvenCalculator({
               <input
                 value={unitLabel}
                 onChange={(event) => setUnitLabel(event.target.value)}
-                placeholder="jobs, wheels, appointments"
+                placeholder="jobs, accounts, appointments"
                 className="h-11 rounded-xl border border-white/12 bg-[#17122d]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </label>

@@ -53,7 +53,7 @@ export const PAGE_TITLE_TEMPLATES = {
   home: "AI Lead Response Systems for Local Businesses",
   preview: "Free Preview",
   audit: "Start a Project for AI Lead Response",
-  demo: "AI Lead Response Demo for Local Service Businesses",
+  demo: "Mobile Fleet Wash Lead System Demo",
   dashboard: "AI Lead Management Dashboard Demo",
   howItWorks: "How AI Lead Response Systems Work",
   liveDemo: "AI Lead Response Live Demo Generator",
@@ -70,7 +70,7 @@ export const META_DESCRIPTION_TEMPLATES = {
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:
-    "See SignalOps AI lead response demos for Apex Wheel Repair and ClearFlow with quote intake automation, lead intake, routing, and follow-up.",
+    "See how SignalOps could help a mobile fleet wash business collect fleet details, route quote requests, follow up, and prepare recurring account handoffs.",
   dashboard:
     "Explore a SignalOps AI lead management dashboard demo with priority views, routing status, missed lead recovery, and automated follow-up visibility.",
   howItWorks:

@@ -7,7 +7,7 @@ Show skeptical business owners that SignalOps is an operational system, not a ch
 ## Demo Flow At A Glance
 
 1. SignalOps homepage  
-2. Apex Wheel Repair demo  
+2. RouteWash Mobile Fleet Care demo  
 3. Missed Lead Check form  
 4. Dashboard  
 5. How-it-works page  
@@ -25,7 +25,7 @@ What to point out:
 - Packages: clear path from starter to custom system.
 - CTA: Free Missed Lead Check as low-friction next step.
 
-## 2) Apex Wheel Repair Demo Walkthrough
+## 2) RouteWash Mobile Fleet Care Demo Walkthrough
 
 Talk track:
 
@@ -33,16 +33,16 @@ Talk track:
 
 Narrative to present step-by-step:
 
-1. Customer submits wheel repair quote request:
-   "A customer comes in for curb rash, bent wheel, cracked wheel, or refinishing."
-2. AI identifies likely damage type:
-   "The system parses service intent and urgency from plain language."
-3. AI asks for photos if needed:
-   "If details are missing, it requests the exact photos needed to quote safely."
-4. AI flags urgent/bent/cracked wheel leads:
-   "Safety-sensitive language is escalated for human review."
-5. AI recommends mobile service or shop inspection:
-   "Cosmetic mobile-fit requests are routed differently than structural concerns."
+1. Customer submits fleet wash quote request:
+   "A fleet manager asks for biweekly washing for 28 service vans across two locations."
+2. AI identifies account context:
+   "The system parses fleet size, vehicle type, service frequency, and timing from plain language."
+3. AI asks for missing account details:
+   "If details are missing, it requests locations, wash window, water access, and site notes."
+4. AI flags recurring account opportunities:
+   "Higher-value recurring requests get a clearer owner handoff."
+5. AI prepares quote or callback path:
+   "Route-friendly requests are packaged differently than one-time or unclear requests."
 6. AI sends internal sales note:
    "Owner/rep gets summary, urgency, and next action without reading a full thread."
 7. Dashboard updates automatically:

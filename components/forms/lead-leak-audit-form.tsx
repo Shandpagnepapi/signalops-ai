@@ -45,7 +45,7 @@ const initialState: ProjectFormState = {
   website: "",
   email: "",
   phone: "",
-  industry: "Auto / wheel repair",
+  industry: "Mobile fleet wash",
   packageInterest: "Not sure",
   leadTypes: ["Calls", "Website forms"],
   biggestProblem: "",
@@ -61,7 +61,7 @@ const initialState: ProjectFormState = {
 };
 
 const industries = [
-  "Auto / wheel repair",
+  "Mobile fleet wash",
   "Auto shop",
   "Detailing",
   "Tint / wrap",
