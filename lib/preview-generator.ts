@@ -65,7 +65,7 @@ function isHighFrictionProblem(problem: PreviewProblem) {
 }
 
 function hasComplexNotes(input: PreviewSubmissionInput) {
-  const notes = `${input.notes} ${input.currentTools} ${input.leadProcess}`.toLowerCase();
+  const notes = `${input.notes} ${input.currentTools} ${input.leadProcess} ${input.otherIndustry ?? ""} ${input.otherLeadSource ?? ""}`.toLowerCase();
   return ["multi-location", "multiple locations", "custom", "routing", "crm", "calendar", "team", "franchise"].some((term) =>
     notes.includes(term)
   );
@@ -144,6 +144,7 @@ function getPainPoints(input: PreviewSubmissionInput) {
   if (input.mainLeadSources.includes("Missed calls")) points.add("Missed-call recovery");
   if (input.mainLeadSources.includes("Facebook") || input.mainLeadSources.includes("Instagram")) points.add("DM follow-up");
   if (input.mainLeadSources.includes("Google Business Profile") || input.mainLeadSources.includes("Google LSA")) points.add("Google lead routing");
+  if (input.mainLeadSources.includes("Other") && input.otherLeadSource) points.add(`${input.otherLeadSource} intake`);
   if (input.mainLeadSources.length >= 3) points.add("Scattered lead sources");
   if (`${input.notes} ${input.leadProcess}`.toLowerCase().includes("fleet")) points.add("Fleet detail collection");
   if (`${input.notes} ${input.leadProcess}`.toLowerCase().includes("photo")) points.add("Detail collection");
@@ -163,6 +164,8 @@ function leadNameForIndustry(industry: PreviewIndustry) {
 
 function visualPromptBase(input: PreviewSubmissionInput, previewData: PreviewData) {
   const leadSources = input.mainLeadSources.length > 0 ? input.mainLeadSources.join(", ") : "website forms and phone calls";
+  const customLeadSource = input.otherLeadSource ? ` Other lead source: ${input.otherLeadSource}.` : "";
+  const customIndustry = input.otherIndustry ? ` Specific industry: ${input.otherIndustry}.` : "";
   const services = input.mainServices || serviceExamples[input.industry];
   const packageName = previewData.recommendedPackage.name;
 
@@ -174,8 +177,9 @@ function visualPromptBase(input: PreviewSubmissionInput, previewData: PreviewDat
     "Do not rely on tiny unreadable text; use a few short realistic labels only.",
     `Business: ${input.businessName}.`,
     `Industry: ${input.industry}.`,
+    customIndustry,
     `Main services: ${services}.`,
-    `Lead sources: ${leadSources}.`,
+    `Lead sources: ${leadSources}.${customLeadSource}`,
     `Primary bottleneck: ${input.currentProblem}.`,
     `Recommended system level: ${packageName}.`
   ].join(" ");
@@ -200,7 +204,7 @@ export function buildPreviewVisualDrafts(
       title: "Lead Command Center",
       description: "A dashboard-style view of new leads, hot opportunities, bookings, sources, and follow-up status.",
       status: "Pending",
-      prompt: `${base} Image 2 of 3: show a premium command center dashboard for this business. Include new leads, hot leads, booked jobs, lead sources, response time, follow-up queue, and one top-priority owner alert.`
+      prompt: `${base} Image 2 of 3: show a premium command center dashboard for this business. Include new leads, priority leads, booked jobs, lead sources, response time, follow-up queue, and one top-priority owner alert.`
     },
     {
       id: "handoff-flow",
@@ -305,26 +309,31 @@ export function generateManagerDrafts(
   const recommendedPackage = previewData.recommendedPackage.name;
   const promptClassification = classifyPreviewIntake(input);
   const sourceSummary = input.mainLeadSources.length > 0 ? input.mainLeadSources.join(", ") : "unknown lead sources";
+  const sourceSummaryWithOther = input.otherLeadSource ? `${sourceSummary} (${input.otherLeadSource})` : sourceSummary;
+  const industrySummary = input.otherIndustry ? `${input.industry} (${input.otherIndustry})` : input.industry;
   const services = input.mainServices || serviceExamples[input.industry];
   const previewPathNote = previewPath ? `Draft preview path: ${previewPath}` : "Draft preview path pending.";
 
   return {
     submissionDetails: {
       mainServices: input.mainServices,
+      otherIndustry: input.otherIndustry,
+      otherLeadSource: input.otherLeadSource,
       currentTools: input.currentTools,
       leadProcess: input.leadProcess,
       anythingElse: input.notes
     },
     prospectSummary:
-      `${input.businessName} likely needs faster response across ${sourceSummary}. Main bottleneck: ${input.currentProblem.toLowerCase()}. Services: ${services}. Recommended package: ${recommendedPackage}.`,
+      `${input.businessName} likely needs faster response across ${sourceSummaryWithOther}. Main bottleneck: ${input.currentProblem.toLowerCase()}. Services: ${services}. Recommended package: ${recommendedPackage}.`,
     fitScore: previewData.fitScore,
     painPointsDetected: previewData.painPoints,
     recommendedPackage,
     previewReport: {
       title: `${input.businessName} Free Preview Report`,
       executiveSummary:
-        `SignalOps should focus on protecting ${input.businessName}'s lead flow across ${sourceSummary}, with special attention to ${input.currentProblem.toLowerCase()}.`,
+        `SignalOps should focus on protecting ${input.businessName}'s lead flow across ${sourceSummaryWithOther}, with special attention to ${input.currentProblem.toLowerCase()}.`,
       leadFlowFindings: [
+        `Industry: ${industrySummary}.`,
         `Primary services: ${services}.`,
         `Current lead process: ${input.leadProcess || "Not provided yet."}`,
         `Current tools/CRM: ${input.currentTools || "Not provided."}`,
@@ -353,7 +362,7 @@ export function generateManagerDrafts(
     emailDraft: {
       subject: "Your SignalOps Free Preview",
       body:
-        `Hey ${input.contactName},\n\nI put together a draft Free Preview for ${input.businessName}. It includes a preview report, proposal draft, and suggested AI response system for your lead flow.\n\n${previewPathNote}\n\nI reviewed this before sending so we can keep it practical and accurate. If it looks useful, we can walk through what should actually be built.\n\n- SignalOps`,
+        `Hey ${input.contactName},\n\nI put together a draft Free Preview for ${input.businessName}. It includes a system map, build plan, and suggested AI response system for your lead flow.\n\n${previewPathNote}\n\nIf it looks useful, we can walk through what should actually be built.\n\n- SignalOps`,
       approvalStatus: "Needs Review",
       deliveryStatus: "Draft only - not sent"
     },

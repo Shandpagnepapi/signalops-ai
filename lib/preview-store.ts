@@ -82,6 +82,8 @@ function safeStatus(value: unknown): PreviewSubmissionStatus {
 function getStoredNotes(submission: PreviewSubmission) {
   return [
     submission.mainServices ? `Main services: ${submission.mainServices}` : "",
+    submission.otherIndustry ? `Other industry: ${submission.otherIndustry}` : "",
+    submission.otherLeadSource ? `Other lead source: ${submission.otherLeadSource}` : "",
     submission.currentTools ? `Current tools/CRM: ${submission.currentTools}` : "",
     submission.leadProcess ? `After a lead comes in: ${submission.leadProcess}` : "",
     submission.notes ? `Anything else: ${submission.notes}` : ""
@@ -116,7 +118,9 @@ function toPreviewInsert(submission: PreviewSubmission): PreviewInsert {
     phone: submission.phone || null,
     website: submission.website || null,
     industry: submission.industry,
+    other_industry: submission.otherIndustry || null,
     main_lead_sources: submission.mainLeadSources,
+    other_lead_source: submission.otherLeadSource || null,
     current_problem: submission.currentProblem,
     average_job_value: submission.averageJobValue || null,
     monthly_lead_volume: submission.monthlyLeadVolume,
@@ -134,7 +138,9 @@ function toPromptColumnValues(submission: PreviewSubmission): Partial<PreviewIns
 
   return {
     main_services: submission.mainServices || submission.managerNotes.submissionDetails?.mainServices || null,
+    other_industry: submission.otherIndustry || submission.managerNotes.submissionDetails?.otherIndustry || null,
     biggest_bottleneck: submission.currentProblem || null,
+    other_lead_source: submission.otherLeadSource || submission.managerNotes.submissionDetails?.otherLeadSource || null,
     current_tools: submission.currentTools || submission.managerNotes.submissionDetails?.currentTools || null,
     lead_process: submission.leadProcess || submission.managerNotes.submissionDetails?.leadProcess || null,
     anything_else: submission.notes || submission.managerNotes.submissionDetails?.anythingElse || null,
@@ -196,7 +202,9 @@ function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
     phone: safeString(row.phone),
     website: safeString(row.website),
     industry: safeString(row.industry) as PreviewSubmissionInput["industry"],
+    otherIndustry: safeString(row.other_industry) || submissionDetails?.otherIndustry || "",
     mainLeadSources: safeStringArray(row.main_lead_sources) as PreviewSubmissionInput["mainLeadSources"],
+    otherLeadSource: safeString(row.other_lead_source) || submissionDetails?.otherLeadSource || "",
     currentProblem: safeString(row.current_problem) as PreviewSubmissionInput["currentProblem"],
     averageJobValue: safeNumber(row.average_job_value),
     monthlyLeadVolume: safeString(row.monthly_lead_volume) as PreviewSubmissionInput["monthlyLeadVolume"],

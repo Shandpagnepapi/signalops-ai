@@ -95,7 +95,7 @@ export default function PrivacyPage() {
         <CardDescription className="mt-4 text-base leading-7">
           This page explains how SignalOps may collect and use information from website visitors and form submissions.
         </CardDescription>
-        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: [Month DD, YYYY]</p>
+        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: May 11, 2026</p>
       </header>
 
       <div className="mt-10 space-y-4">

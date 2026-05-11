@@ -81,8 +81,10 @@ create table if not exists public.preview_submissions (
   phone text,
   website text,
   industry text not null,
+  other_industry text,
   main_services text,
   main_lead_sources text[] not null default '{}',
+  other_lead_source text,
   biggest_bottleneck text,
   current_problem text not null,
   current_tools text,
@@ -129,7 +131,9 @@ create table if not exists public.preview_submissions (
 );
 
 alter table public.preview_submissions add column if not exists updated_at timestamptz not null default now();
+alter table public.preview_submissions add column if not exists other_industry text;
 alter table public.preview_submissions add column if not exists main_services text;
+alter table public.preview_submissions add column if not exists other_lead_source text;
 alter table public.preview_submissions add column if not exists biggest_bottleneck text;
 alter table public.preview_submissions add column if not exists current_tools text;
 alter table public.preview_submissions add column if not exists lead_process text;

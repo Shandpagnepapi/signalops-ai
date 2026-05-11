@@ -40,7 +40,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
                 eventProperties={{ location: `${page.id}_service_hero` }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                {PRIMARY_CTA.label}
+                See Your System
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -208,7 +208,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
             eventProperties={{ location: `${page.id}_service_final_cta` }}
             className={buttonVariants({ size: "lg" })}
           >
-            {PRIMARY_CTA.label}
+            Get Started
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

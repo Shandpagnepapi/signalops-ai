@@ -473,7 +473,7 @@ function PricingSection() {
         Not sure which package fits? Generate the free preview first, then email SignalOps when you are ready to talk through the build.
       </div>
 
-      <BreakEvenCalculator className="mt-6" defaultAverageValue={250} defaultUnitLabel="jobs" />
+      <BreakEvenCalculator className="mt-6" defaultAverageValue={250} defaultUnitLabel="job" />
     </section>
   );
 }

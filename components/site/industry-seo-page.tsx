@@ -21,7 +21,7 @@ import type { IndustrySeoPageConfig } from "@/lib/industry-seo-pages";
 
 export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
   const exampleLeadFlow = page.exampleLeadFlow ?? [];
-  const qualificationQuestions = page.qualificationQuestions ?? [];
+  const intakeQuestions = page.qualificationQuestions ?? [];
   const followUpExamples = page.followUpExamples ?? [];
   const dashboardValue = page.dashboardValue ?? [];
 
@@ -48,7 +48,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
                 eventProperties={{ location: `${page.id}_industry_hero` }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                {PRIMARY_CTA.label}
+                See Your System
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -167,7 +167,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
-      {qualificationQuestions.length > 0 ? (
+      {intakeQuestions.length > 0 ? (
         <section className="border-y border-white/10 bg-[#17122d]/65">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.84fr_1.16fr] lg:px-8">
             <SectionHeader
@@ -176,7 +176,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
               description="The questions should match the service, urgency, and team handoff required before quoting or booking."
             />
             <div className="grid gap-3 sm:grid-cols-2">
-              {qualificationQuestions.map((question) => (
+              {intakeQuestions.map((question) => (
                 <div key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/78">
                   <ListChecks className="mt-0.5 size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
                   <span>{question}</span>
@@ -351,7 +351,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             eventProperties={{ location: `${page.id}_industry_final_cta` }}
             className={buttonVariants({ size: "lg" })}
           >
-            {PRIMARY_CTA.label}
+            Get Started
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

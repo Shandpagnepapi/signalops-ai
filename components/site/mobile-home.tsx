@@ -72,7 +72,7 @@ export function MobileSignalOpsHome() {
   return (
     <div
       data-mobile-home
-      className="relative overflow-hidden bg-slate-950 pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white md:hidden"
+      className="relative overflow-hidden bg-slate-950 pb-[calc(2rem+env(safe-area-inset-bottom))] text-white md:hidden"
     >
       <div
         className="pointer-events-none absolute inset-0"
@@ -94,7 +94,6 @@ export function MobileSignalOpsHome() {
         <PlansLine />
         <FinalCta />
       </div>
-      <StickyCta />
     </div>
   );
 }
@@ -476,24 +475,5 @@ function FinalCta() {
         </TrackedLink>
       </div>
     </section>
-  );
-}
-
-function StickyCta() {
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-slate-950/90 px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl md:hidden">
-      <div className="mx-auto flex max-w-md items-center justify-between gap-3">
-        <p className="text-sm font-black text-white">Lead OS</p>
-        <TrackedLink
-          href={PRIMARY_CTA.href}
-          eventName={ANALYTICS_EVENTS.previewCtaClicked}
-          eventProperties={{ location: "mobile_home_sticky" }}
-          className="inline-flex h-11 min-w-28 items-center justify-center rounded-2xl bg-lime-300 px-4 text-sm font-black text-slate-950"
-          style={accentButtonStyle}
-        >
-          Start
-        </TrackedLink>
-      </div>
-    </div>
   );
 }

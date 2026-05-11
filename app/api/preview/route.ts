@@ -19,6 +19,8 @@ const maxFieldLengths = {
   email: 180,
   phone: 40,
   website: 240,
+  otherIndustry: 120,
+  otherLeadSource: 240,
   mainServices: 500,
   currentTools: 500,
   leadProcess: 1400,
@@ -80,10 +82,12 @@ function normalizeInput(payload: IncomingPayload): PreviewSubmissionInput {
     industry: (previewIndustryOptions as readonly string[]).includes(industry)
       ? (industry as PreviewSubmissionInput["industry"])
       : "Other local service",
+    otherIndustry: getString(payload, "otherIndustry"),
     mainServices: getString(payload, "mainServices"),
     mainLeadSources: mainLeadSources.filter((source) =>
       (previewLeadSourceOptions as readonly string[]).includes(source)
     ) as PreviewSubmissionInput["mainLeadSources"],
+    otherLeadSource: getString(payload, "otherLeadSource"),
     currentProblem: (previewProblemOptions as readonly string[]).includes(currentProblem)
       ? (currentProblem as PreviewSubmissionInput["currentProblem"])
       : "Not sure",
@@ -141,6 +145,8 @@ function validateInput(input: PreviewSubmissionInput) {
   validateFieldLength(input, "email", "Email", errors);
   validateFieldLength(input, "phone", "Phone", errors);
   validateFieldLength(input, "website", "Website", errors);
+  validateFieldLength(input, "otherIndustry", "Other industry", errors);
+  validateFieldLength(input, "otherLeadSource", "Other lead source", errors);
   validateFieldLength(input, "mainServices", "Main services", errors);
   validateFieldLength(input, "currentTools", "Current tools/CRM", errors);
   validateFieldLength(input, "leadProcess", "Lead process", errors);
@@ -148,6 +154,10 @@ function validateInput(input: PreviewSubmissionInput) {
 
   if (input.mainLeadSources.length > 8) {
     errors.push("Choose no more than 8 lead sources.");
+  }
+
+  if (input.mainLeadSources.includes("Other") && !input.otherLeadSource) {
+    errors.push("Other lead source is required when Other is selected.");
   }
 
   return errors;
@@ -221,7 +231,7 @@ export async function POST(request: Request) {
       submission: receipt,
       previewUrl: `/preview/${submission.id}`,
       status: submission.status,
-      message: "Draft preview package generated for internal review. Nothing has been sent."
+      message: "Your request was received. SignalOps will prepare your system map and next steps."
     },
     { status: 201 }
   );

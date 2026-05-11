@@ -70,7 +70,7 @@ const related = {
   qualification: {
     href: "/services/ai-lead-qualification",
     label: "AI lead intake",
-    description: "Priority, summarize, and prioritize leads before the team follows up."
+    description: "Organize, summarize, and route leads before the team follows up."
   },
   followUp: {
     href: "/services/automated-lead-follow-up",
@@ -262,10 +262,10 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     eyebrow: "AI lead intake",
     metaTitle: "AI Lead Intake for Small Business Leads | SignalOps",
     metaDescription:
-      "SignalOps uses AI lead intake to sort small business leads, summarize intent, flag urgency, route hot prospects, and trigger follow-up.",
+      "SignalOps uses AI lead intake to organize small business leads, summarize intent, flag urgency, route priority prospects, and trigger follow-up.",
     h1: "AI lead intake for small business leads.",
     subheadline:
-      "SignalOps turns messy inquiries into clear lead quality, urgency, recommended next action, and staff-handoff flags so your team knows who to call first.",
+      "SignalOps turns messy inquiries into clear lead details, urgency, recommended next action, and staff-handoff flags so your team knows who to call first.",
     problemTitle: "Not every lead deserves the same response.",
     problemIntro:
       "A ready-to-book customer, a vague price shopper, an urgent repair, and a commercial opportunity all need different handling. When every inquiry is treated the same, strong leads wait too long and weak leads consume too much time.",
@@ -286,9 +286,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Words like shaking, leaking, no water, emergency, today, or deadline should change how quickly a lead is handled."
       }
     ],
-    solutionTitle: "How SignalOps qualifies leads",
+    solutionTitle: "How SignalOps organizes lead intake",
     solutionIntro:
-      "SignalOps uses service-specific priority rules and AI summaries to separate hot, warm, cold, junk, and staff-handoff leads.",
+      "SignalOps uses service-specific priority rules and AI summaries to separate priority, routine, needs-details, and staff-handoff leads.",
     solutionCards: [
       {
         title: "Priority",
@@ -298,7 +298,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Priority and urgency",
         description:
-          "Flag hot opportunities, routine requests, research-stage leads, and issues that need immediate staff handoff."
+          "Flag priority opportunities, routine requests, research-stage leads, and issues that need immediate staff handoff."
       },
       {
         title: "Internal sales note",
@@ -329,9 +329,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "3",
-        title: "Priority and priority are assigned",
+        title: "Priority and next action are assigned",
         description:
-          "The lead is labeled hot, warm, cold, junk, or staff-handoff with a confidence level."
+          "The lead is labeled priority, routine, needs details, or staff-handoff with a clear next action."
       },
       {
         label: "4",
@@ -352,7 +352,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Mobile fleet wash companies, auto shops, contractors, med spas, and well service teams often need intake before a clear next step."
       },
       {
-        title: "Owners who need prioritization",
+        title: "Owners who need a priority view",
         description:
           "A daily lead list is not enough. You need to know what deserves attention first."
       }
@@ -364,7 +364,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Incomplete or low-intent leads can receive a clarifying follow-up before the team spends manual time."
       },
       {
-        title: "Faster action on hot leads",
+        title: "Faster action on priority leads",
         description:
           "Urgent or high-value inquiries can trigger alerts and move to the front of the queue."
       },
@@ -395,12 +395,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Can AI decide whether a lead is worth pursuing?",
         answer:
-          "It can help prioritize, but final judgment should stay with the business. SignalOps flags uncertainty and routes sensitive cases to humans."
+          "It can help organize priority, but final judgment should stay with the business. SignalOps flags uncertainty and routes sensitive cases to staff."
       },
       {
         question: "Can priority rules be customized?",
         answer:
-          "Yes. Scoring should reflect your service area, average job value, urgency rules, margins, and sales process."
+          "Yes. Priority sorting should reflect your service area, average job value, urgency rules, margins, and sales process."
       },
       {
         question: "What if a lead is vague?",
@@ -647,7 +647,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "4",
         title: "Team acts or automation follows up",
         description:
-          "Hot leads alert a person. Warm leads get booking or quote follow-up."
+          "Priority leads alert a person. Routine leads get booking or quote follow-up."
       }
     ],
     whoFor: [
@@ -727,7 +727,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     eyebrow: "Lead routing automation",
     metaTitle: "Lead Routing Automation for Sales Teams | SignalOps",
     metaDescription:
-      "SignalOps builds lead routing automation that sends hot leads, urgent requests, quote inquiries, and appointment-ready prospects to the right person.",
+      "SignalOps builds lead routing automation that sends priority leads, urgent requests, quote inquiries, and appointment-ready prospects to the right person.",
     h1: "Lead routing automation for sales teams and busy owners.",
     subheadline:
       "SignalOps routes leads based on urgency, service type, value, source, missing details, and staff-handoff needs so the right person sees the right opportunity faster.",
@@ -756,7 +756,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       "SignalOps creates routing logic around lead quality, urgency, service type, location, team roles, CRM status, and follow-up paths.",
     solutionCards: [
       {
-        title: "Hot lead alerts",
+        title: "Priority lead alerts",
         description:
           "Urgent, high-value, or appointment-ready leads can alert the owner or rep immediately."
       },
@@ -908,7 +908,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     solutionTitle: "How SignalOps supports appointment booking",
     solutionIntro:
-      "SignalOps does not blindly book every lead. It qualifies the request, collects preferred timing, and routes the right booking path based on service fit.",
+      "SignalOps does not blindly book every lead. It collects the right details, confirms preferred timing, and routes the right booking path based on service fit.",
     solutionCards: [
       {
         title: "Booking readiness",

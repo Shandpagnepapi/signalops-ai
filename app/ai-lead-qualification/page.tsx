@@ -30,7 +30,7 @@ export default function AiLeadQualificationPage() {
           faqPageJsonLd(page.faqs),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
-            { name: "AI Lead Qualification", path: page.path }
+            { name: "AI Lead Intake", path: page.path }
           ])
         ])}
       />

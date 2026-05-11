@@ -49,7 +49,7 @@ const featureCards = [
   {
     title: "Priority sorting",
     description:
-      "Prioritize urgent, warm, quiet, and staff-handoff leads with transparent routing logic."
+      "Sort priority, routine, quiet, and staff-handoff leads with transparent routing logic."
   },
   {
     title: "Routing",
@@ -167,7 +167,7 @@ export default function AlternativesHubPage() {
                   eventProperties={{ location: "alternatives_hub_hero" }}
                   className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
                 >
-                  {PRIMARY_CTA.label}
+                  See Your System
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </TrackedLink>
                 <Link href="/how-it-works" className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full sm:w-auto`}>
@@ -329,7 +329,7 @@ export default function AlternativesHubPage() {
               eventProperties={{ location: "alternatives_hub_final_cta" }}
               className={buttonVariants({ size: "lg" })}
             >
-              {PRIMARY_CTA.label}
+              Get Started
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

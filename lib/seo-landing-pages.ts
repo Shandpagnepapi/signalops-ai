@@ -213,7 +213,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/ai-lead-qualification",
         label: "AI lead intake",
-        description: "Priority and summarize inquiries before the team follows up."
+        description: "Organize and summarize inquiries before the team follows up."
       },
       {
         href: "/how-it-works",
@@ -612,7 +612,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "A vague lead may still be real. The system can ask for missing details before a person spends time chasing."
       }
     ],
-    solutionTitle: "How SignalOps qualifies leads",
+    solutionTitle: "How SignalOps organizes lead intake",
     solutionIntro:
       "SignalOps creates priority rules and AI prompts around your actual business, services, service area, team capacity, and risk boundaries.",
     solutionCards: [
@@ -624,7 +624,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Priority labels",
         description:
-          "Classify leads as hot, warm, cold, junk, or staff-handoff so the team knows what to do."
+          "Sort leads as priority, routine, needs details, or staff-handoff so the team knows what to do."
       },
       {
         title: "Summaries and internal notes",
@@ -663,7 +663,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "4",
         title: "Lead is routed",
         description:
-          "Hot leads alert the right person. Incomplete leads get a follow-up. Risky leads go to staff handoff."
+          "Priority leads alert the right person. Incomplete leads get a follow-up. Risky leads go to staff handoff."
       }
     ],
     industryTitle: "Lead intake by industry",
@@ -889,7 +889,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/ai-lead-qualification",
         label: "AI lead intake",
-        description: "Prioritize leads inside the management workflow."
+        description: "Organize priority inside the management workflow."
       },
       {
         href: "/dashboard",

@@ -33,7 +33,7 @@ function formatCurrency(value: number) {
   }).format(value);
 }
 
-function formatJobs(value: number) {
+function formatUnits(value: number) {
   if (!Number.isFinite(value)) {
     return "0";
   }
@@ -48,10 +48,40 @@ function parseCurrencyInput(value: string) {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
+function getUnitForms(label: string) {
+  const cleaned = label.trim().toLowerCase() || "job";
+
+  if (cleaned.endsWith("ies") && cleaned.length > 3) {
+    return {
+      singular: `${cleaned.slice(0, -3)}y`,
+      plural: cleaned
+    };
+  }
+
+  if (cleaned.endsWith("s") && !cleaned.endsWith("ss") && cleaned.length > 1) {
+    return {
+      singular: cleaned.slice(0, -1),
+      plural: cleaned
+    };
+  }
+
+  return {
+    singular: cleaned,
+    plural: `${cleaned}s`
+  };
+}
+
+function formatUnitLabel(value: number, label: string) {
+  const forms = getUnitForms(label);
+  const isOne = Math.abs(value - 1) < 0.05;
+
+  return `${formatUnits(value)} ${isOne ? forms.singular : forms.plural}`;
+}
+
 export function BreakEvenCalculator({
   className,
   defaultAverageValue = 250,
-  defaultUnitLabel = "jobs"
+  defaultUnitLabel = "job"
 }: {
   className?: string;
   defaultAverageValue?: number;
@@ -63,6 +93,7 @@ export function BreakEvenCalculator({
 
   const selectedPackage =
     packageOptions.find((option) => option.name === selectedPackageName) ?? packageOptions[1];
+  const unitForms = getUnitForms(unitLabel);
 
   const result = useMemo(() => {
     const safeAverageValue = Math.max(averageValue, 1);
@@ -101,7 +132,7 @@ export function BreakEvenCalculator({
             Put in what one typical service or account is worth. We will translate the package into a simple break-even number, like how many jobs, accounts, or appointments cover the monthly investment.
           </p>
           <p className="mt-2 text-xs leading-5 text-[#ead0df]/54">
-            For a fleet wash company, use your average monthly account value and type accounts as the sale label.
+            For a fleet wash company, use average monthly account value and type account as the sale label.
           </p>
         </div>
 
@@ -138,7 +169,7 @@ export function BreakEvenCalculator({
               <input
                 value={unitLabel}
                 onChange={(event) => setUnitLabel(event.target.value)}
-                placeholder="jobs, accounts, appointments"
+                placeholder="job, account, appointment"
                 className="h-11 rounded-xl border border-white/12 bg-[#17122d]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </label>
@@ -151,10 +182,10 @@ export function BreakEvenCalculator({
                 <p className="text-xs font-semibold uppercase tracking-[0.14em]">Monthly support</p>
               </div>
               <p className="mt-3 text-3xl font-semibold text-white">
-                {formatJobs(result.monthlyUnits)} {unitLabel || "jobs"}
+                {formatUnitLabel(result.monthlyUnits, unitLabel)}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#ead0df]/70">
-                {formatCurrency(selectedPackage.monthly)} per month at {formatCurrency(result.safeAverageValue)} per {unitLabel || "job"}.
+                {formatCurrency(selectedPackage.monthly)} per month at {formatCurrency(result.safeAverageValue)} per {unitForms.singular}.
               </p>
             </div>
 
@@ -164,7 +195,7 @@ export function BreakEvenCalculator({
                 <p className="text-xs font-semibold uppercase tracking-[0.14em]">Setup/build fee</p>
               </div>
               <p className="mt-3 text-3xl font-semibold text-white">
-                {formatJobs(result.setupUnits)} {unitLabel || "jobs"}
+                {formatUnitLabel(result.setupUnits, unitLabel)}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#ead0df]/70">
                 {formatCurrency(selectedPackage.setup)} starting build fee as a one-time benchmark.
@@ -173,8 +204,8 @@ export function BreakEvenCalculator({
           </div>
 
           <div className="mt-4 rounded-xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-3 text-sm leading-6 text-[#ffe1bd]">
-            If one {unitLabel || "job"} is worth {formatCurrency(result.safeAverageValue)}, {selectedPackage.name} needs about{" "}
-            <span className="font-semibold text-white">{formatJobs(result.monthlyUnits)} {unitLabel || "jobs"} per month</span>{" "}
+            If one {unitForms.singular} is worth {formatCurrency(result.safeAverageValue)}, {selectedPackage.name} needs about{" "}
+            <span className="font-semibold text-white">{formatUnitLabel(result.monthlyUnits, unitLabel)} per month</span>{" "}
             to cover monthly support.
           </div>
           <p className="mt-3 flex gap-2 text-xs leading-5 text-[#ead0df]/52">

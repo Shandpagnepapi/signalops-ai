@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps builds AI-powered lead response systems that help small and local businesses answer, sort, route, follow up with, and book more leads automatically."
+    "SignalOps builds AI-powered lead operating systems that reply, collect details, route priorities, follow up, and hand off ready leads."
 };
 
 export const PRIMARY_CTA = {

@@ -54,7 +54,7 @@ const termsSections: LegalSection[] = [
     title: "Limitation of Liability",
     paragraphs: [
       "SignalOps services and website content are provided as-is and as-available.",
-      "This limitation of liability language should be finalized by legal counsel before launch."
+      "SignalOps is not responsible for indirect, incidental, special, or consequential damages to the fullest extent permitted by law."
     ]
   },
   {
@@ -89,7 +89,7 @@ export default function TermsPage() {
         <CardDescription className="mt-4 text-base leading-7">
           These terms describe how this website and related demo materials may be used.
         </CardDescription>
-        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: [Month DD, YYYY]</p>
+        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: May 11, 2026</p>
       </header>
 
       <div className="mt-10 space-y-4">

@@ -133,12 +133,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     },
     scoringRules: [
       {
-        title: "Hot",
+        title: "Priority",
         description:
           "Active leak, storm damage, replacement request, clear address, phone number, and inspection intent."
       },
       {
-        title: "Warm",
+        title: "Routine",
         description:
           "Roof repair question, older roof, photo provided, or homeowner wants pricing soon."
       },
@@ -287,17 +287,17 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     },
     scoringRules: [
       {
-        title: "Hot",
+        title: "Priority",
         description:
           "No heat, no cooling, system down, replacement interest, clear contact info, address, and ready-to-schedule language."
       },
       {
-        title: "Warm",
+        title: "Routine",
         description:
           "Tune-up, maintenance, mild performance issue, quote request, or customer comparing options soon."
       },
       {
-        title: "Cold or review",
+        title: "Needs details or review",
         description:
           "General pricing question, incomplete contact info, vague future project, or unsupported service need."
       }
@@ -642,17 +642,17 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     scoringRules: [
       {
-        title: "Hot",
+        title: "Priority",
         description:
           "Ready-to-book, ceramic coating, paint correction, fleet/dealership request, clear vehicle details, phone number, and preferred time."
       },
       {
-        title: "Warm",
+        title: "Routine",
         description:
           "Package inquiry, maintenance detail, interior deep clean, photos provided, or customer wants service soon."
       },
       {
-        title: "Cold or review",
+        title: "Needs details or review",
         description:
           "Vague pricing question, no vehicle details, no contact info, or unrealistic timeline."
       }
@@ -1953,17 +1953,17 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     },
     scoringRules: [
       {
-        title: "Hot",
+        title: "Priority",
         description:
           "No water, major pressure issue, commercial request, large project, repeat customer with urgent need, phone number, location, and clear issue."
       },
       {
-        title: "Warm",
+        title: "Routine",
         description:
           "Filter replacement, routine maintenance, water testing, mild pressure issue, or quote request with good contact details."
       },
       {
-        title: "Cold or review",
+        title: "Needs details or review",
         description:
           "General question, missing phone/location, vague future project, or commercial scope that needs owner review."
       }

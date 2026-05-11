@@ -39,8 +39,10 @@ type PreviewFormState = {
   email: string;
   phone: string;
   industry: PreviewSubmissionInput["industry"];
+  otherIndustry: string;
   mainServices: string;
   mainLeadSources: PreviewSubmissionInput["mainLeadSources"];
+  otherLeadSource: string;
   currentProblem: PreviewSubmissionInput["currentProblem"];
   currentTools: string;
   leadProcess: string;
@@ -54,8 +56,10 @@ const initialState: PreviewFormState = {
   email: "",
   phone: "",
   industry: "Auto repair",
+  otherIndustry: "",
   mainServices: "",
   mainLeadSources: ["Website form", "Phone calls"],
+  otherLeadSource: "",
   currentProblem: "Slow replies",
   currentTools: "",
   leadProcess: "",
@@ -106,6 +110,26 @@ export function PreviewRequestForm() {
     }));
   }
 
+  function updateIndustry(value: PreviewSubmissionInput["industry"]) {
+    setForm((current) => ({
+      ...current,
+      industry: value,
+      otherIndustry: value === "Other local service" ? current.otherIndustry : ""
+    }));
+  }
+
+  function updateLeadSource(source: PreviewSubmissionInput["mainLeadSources"][number]) {
+    setForm((current) => {
+      const nextSources = toggleSource(current.mainLeadSources, source);
+
+      return {
+        ...current,
+        mainLeadSources: nextSources,
+        otherLeadSource: nextSources.includes("Other") ? current.otherLeadSource : ""
+      };
+    });
+  }
+
   function handleStart() {
     if (hasTrackedStart.current) {
       return;
@@ -133,6 +157,8 @@ export function PreviewRequestForm() {
         },
         body: JSON.stringify({
           ...form,
+          otherIndustry: form.industry === "Other local service" ? form.otherIndustry : "",
+          otherLeadSource: form.mainLeadSources.includes("Other") ? form.otherLeadSource : "",
           companyWebsite,
           averageJobValue: 0,
           monthlyLeadVolume: "Not sure"
@@ -298,7 +324,7 @@ export function PreviewRequestForm() {
               <Field label="Industry">
                 <select
                   value={form.industry}
-                  onChange={(event) => updateField("industry", event.target.value as PreviewSubmissionInput["industry"])}
+                  onChange={(event) => updateIndustry(event.target.value as PreviewSubmissionInput["industry"])}
                   className={selectClass}
                 >
                   {previewIndustryOptions.map((industry) => (
@@ -308,6 +334,15 @@ export function PreviewRequestForm() {
                   ))}
                 </select>
               </Field>
+              {form.industry === "Other local service" ? (
+                <Field label="Other industry">
+                  <Input
+                    value={form.otherIndustry}
+                    onChange={(event) => updateField("otherIndustry", event.target.value)}
+                    placeholder="Tell us your industry"
+                  />
+                </Field>
+              ) : null}
               <Field label="Main services">
                 <Input
                   required
@@ -329,13 +364,24 @@ export function PreviewRequestForm() {
                     <input
                       type="checkbox"
                       checked={form.mainLeadSources.includes(source)}
-                      onChange={() => updateField("mainLeadSources", toggleSource(form.mainLeadSources, source))}
+                      onChange={() => updateLeadSource(source)}
                       className="size-4 accent-[#ff6f9c]"
                     />
                     {source}
                   </label>
                 ))}
               </div>
+              {form.mainLeadSources.includes("Other") ? (
+                <div className="mt-4">
+                  <Field label="Other lead source">
+                    <Input
+                      value={form.otherLeadSource}
+                      onChange={(event) => updateField("otherLeadSource", event.target.value)}
+                      placeholder="Example: referrals, vendor portal, radio ads, trade show leads..."
+                    />
+                  </Field>
+                </div>
+              ) : null}
             </div>
           </FormPanel>
 

@@ -80,8 +80,10 @@ export type PreviewSubmissionInput = {
   phone: string;
   website: string;
   industry: PreviewIndustry;
+  otherIndustry?: string;
   mainServices: string;
   mainLeadSources: PreviewLeadSource[];
+  otherLeadSource?: string;
   currentProblem: PreviewProblem;
   currentTools: string;
   leadProcess: string;
@@ -151,6 +153,8 @@ export type PreviewData = {
 export type PreviewManagerNotes = {
   submissionDetails: {
     mainServices: string;
+    otherIndustry?: string;
+    otherLeadSource?: string;
     currentTools: string;
     leadProcess: string;
     anythingElse: string;

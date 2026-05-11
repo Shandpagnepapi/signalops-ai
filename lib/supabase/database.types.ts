@@ -150,8 +150,10 @@ export type Database = {
           phone: string | null;
           website: string | null;
           industry: string;
+          other_industry: string | null;
           main_services: string | null;
           main_lead_sources: string[];
+          other_lead_source: string | null;
           biggest_bottleneck: string | null;
           current_problem: string;
           current_tools: string | null;
@@ -188,8 +190,10 @@ export type Database = {
           phone?: string | null;
           website?: string | null;
           industry: string;
+          other_industry?: string | null;
           main_services?: string | null;
           main_lead_sources?: string[];
+          other_lead_source?: string | null;
           biggest_bottleneck?: string | null;
           current_problem: string;
           current_tools?: string | null;

@@ -434,7 +434,7 @@ export const demoBusinesses = {
       cards: [
         {
           title: "No water",
-          description: "Hot lead, prioritize callback, get address and system details."
+          description: "Priority lead, prioritize callback, get address and system details."
         },
         {
           title: "Maintenance",

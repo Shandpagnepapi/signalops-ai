@@ -14,8 +14,10 @@ function textBlob(input: PreviewSubmissionInput) {
     input.phone,
     input.website,
     input.industry,
+    input.otherIndustry ?? "",
     input.mainServices,
     input.mainLeadSources.join(" "),
+    input.otherLeadSource ?? "",
     input.currentProblem,
     input.currentTools,
     input.leadProcess,
@@ -142,6 +144,8 @@ function getMissingInfo(input: PreviewSubmissionInput) {
   if (!input.phone) missing.push("Best phone number");
   if (!input.mainServices) missing.push("Main services");
   if (input.mainLeadSources.length === 0) missing.push("Main lead sources");
+  if (input.mainLeadSources.includes("Other") && !input.otherLeadSource) missing.push("Other lead source");
+  if (input.industry === "Other local service" && !input.otherIndustry) missing.push("Other industry");
   if (!input.currentTools) missing.push("Current tools or CRM");
   if (!input.leadProcess) missing.push("What happens after a lead comes in");
   if (input.averageJobValue <= 0) missing.push("Average job value");

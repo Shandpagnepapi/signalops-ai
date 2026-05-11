@@ -105,7 +105,7 @@ const afterItems = [
 
 export function PreviewArtifactShowcase({ className = "" }: { className?: string }) {
   return (
-    <ProductFrame accent="emerald" className={className} eyebrow="Lead OS preview" title="Three practical outputs, one build path.">
+    <ProductFrame accent="emerald" className={className} eyebrow="System preview" title="Three practical outputs, one build path.">
       <div className="-mt-1 mb-4">
         <StatusPill accent="emerald">Mapped</StatusPill>
       </div>

@@ -651,9 +651,14 @@ function getSubmissionDetails(selected: PreviewSubmission): DetailItem[] {
   return [
     { label: "Contact", value: `${selected.contactName} - ${selected.email}${selected.phone ? ` - ${selected.phone}` : ""}` },
     { label: "Website", value: selected.website },
-    { label: "Industry", value: selected.industry },
+    { label: "Industry", value: selected.otherIndustry ? `${selected.industry} - ${selected.otherIndustry}` : selected.industry },
     { label: "Main services", value: selected.mainServices || selected.managerNotes.submissionDetails?.mainServices },
-    { label: "Lead sources", value: selected.mainLeadSources.join(", ") },
+    {
+      label: "Lead sources",
+      value: selected.otherLeadSource
+        ? `${selected.mainLeadSources.join(", ")} - Other: ${selected.otherLeadSource}`
+        : selected.mainLeadSources.join(", ")
+    },
     { label: "Biggest bottleneck", value: selected.currentProblem },
     { label: "Current tools/CRM", value: selected.currentTools || selected.managerNotes.submissionDetails?.currentTools },
     { label: "After a lead comes in", value: selected.leadProcess || selected.managerNotes.submissionDetails?.leadProcess },

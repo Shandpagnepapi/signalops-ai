@@ -1,5 +1,6 @@
 import "./globals.css";
 import { AnalyticsProvider } from "@/components/site/AnalyticsProvider";
+import { FloatingEmailCta } from "@/components/site/floating-email-cta";
 import { Footer } from "@/components/site/footer";
 import { Navbar } from "@/components/site/navbar";
 import {
@@ -31,6 +32,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <FloatingEmailCta />
         </div>
       </body>
     </html>

@@ -1,10 +1,5 @@
 import { ArrowRight, CheckCircle2, ClipboardList, FileText, Route, Sparkles, Workflow } from "lucide-react";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
-import {
-  BeforeAfterFlow,
-  LeadJourneyVisual,
-  PreviewArtifactShowcase
-} from "@/components/site/product-story-visuals";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -21,21 +16,27 @@ const previewDescription =
   "Tell us how your leads come in and where things slow down. SignalOps maps the lead operating system your business should be using.";
 
 export const metadata = createPageMetadata({
-  title: "Free Preview",
+  title: "See Your System",
   description: previewDescription,
   path: "/preview"
 });
 
-const steps = [
-  "Tell us how leads come in",
-  "SignalOps maps the right Lead OS",
-  "You get a clear next step"
-];
-
 const mobilePreviewOutputs = [
-  { title: "System Map", icon: Workflow },
-  { title: "Build Plan", icon: ClipboardList },
-  { title: "Next Steps", icon: Route }
+  {
+    title: "System Map",
+    copy: "Lead sources, slow spots, handoffs, and follow-up gaps.",
+    icon: Workflow
+  },
+  {
+    title: "Build Plan",
+    copy: "The operating system SignalOps would shape around your business.",
+    icon: ClipboardList
+  },
+  {
+    title: "Next Steps",
+    copy: "What to connect, what to automate, and what comes first.",
+    icon: Route
+  }
 ];
 
 export default function PreviewPage() {
@@ -45,13 +46,13 @@ export default function PreviewPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "Free Preview",
+            title: "See Your System",
             description: previewDescription,
             path: "/preview"
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
-            { name: "Free Preview", path: "/preview" }
+            { name: "See Your System", path: "/preview" }
           ])
         ])}
       />
@@ -71,17 +72,17 @@ export default function PreviewPage() {
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-2">
-              {mobilePreviewOutputs.map((output) => (
-                <div key={output.title} className="rounded-2xl border border-white/10 bg-white/[0.055] p-3">
-                  <output.icon className="size-4 text-[#ffb36d]" aria-hidden="true" />
-                  <p className="mt-3 text-xs font-semibold leading-4 text-white">{output.title}</p>
-                </div>
-              ))}
-            </div>
+              {mobilePreviewOutputs.map((output) => {
+                const Icon = output.icon;
 
-            <p className="mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-3 text-sm font-semibold leading-6 text-emerald-100">
-              Tell us how your leads come in and where things slow down.
-            </p>
+                return (
+                  <div key={output.title} className="rounded-2xl border border-white/10 bg-white/[0.055] p-3">
+                    <Icon className="size-4 text-[#ffb36d]" aria-hidden="true" />
+                    <p className="mt-3 text-xs font-semibold leading-4 text-white">{output.title}</p>
+                  </div>
+                );
+              })}
+            </div>
 
             <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} mt-6 w-full`}>
               Get Started
@@ -95,18 +96,18 @@ export default function PreviewPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.22),transparent_34%),radial-gradient(circle_at_78%_12%,rgba(255,179,109,0.16),transparent_30%),linear-gradient(180deg,rgba(6,12,24,0.52),#100818_92%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
             <div className="flex flex-col justify-center">
-              <Badge className="mb-5 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-                Free Preview
+              <Badge className="mb-5 w-fit border border-lime-300/25 bg-lime-300/10 text-lime-100">
+                Lead OS
               </Badge>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-                Get Your Free Preview
+                See Your System
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
                 {previewDescription}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}>
-                  Start Free Preview
+                  Get Started
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
                 <TrackedLink
@@ -120,26 +121,23 @@ export default function PreviewPage() {
               </div>
             </div>
 
-            <PreviewArtifactShowcase />
-          </div>
-        </section>
+            <div className="grid gap-4 self-center rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/20 backdrop-blur-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lime-300">What you get back</p>
+              <div className="grid gap-3">
+                {mobilePreviewOutputs.map((output) => {
+                  const Icon = output.icon;
 
-        <section className="hidden border-b border-white/10 bg-[#17122d]/36 md:block">
-          <div className="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:px-6 md:grid-cols-3 lg:px-8">
-            {steps.map((step, index) => (
-              <div key={step} className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-                <div className="mb-3 flex size-9 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-sm font-semibold text-white">
-                  {index + 1}
-                </div>
-                <p className="font-semibold text-white">{step}</p>
+                  return (
+                    <div key={output.title} className="rounded-2xl border border-white/10 bg-[#17122d]/62 p-4">
+                      <Icon className="mb-3 size-5 text-lime-300" aria-hidden="true" />
+                      <p className="font-semibold text-white">{output.title}</p>
+                      <p className="mt-1 text-sm leading-6 text-[#ead0df]/68">{output.copy}</p>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
+            </div>
           </div>
-        </section>
-
-        <section className="mx-auto hidden max-w-7xl gap-5 px-4 py-10 sm:px-6 md:grid xl:grid-cols-[1.08fr_0.92fr] lg:px-8">
-          <LeadJourneyVisual />
-          <BeforeAfterFlow />
         </section>
 
         <section id="preview-form" className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 md:py-10 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
@@ -148,7 +146,7 @@ export default function PreviewPage() {
               <Sparkles className="mb-4 size-7 text-[#ffb36d]" aria-hidden="true" />
               <h2 className="text-2xl font-semibold tracking-normal text-white">A preview before buildout.</h2>
               <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-                The form gives SignalOps enough context to map your lead flow, recommended system, and next steps.
+                The form gives SignalOps enough context to map your lead flow, operating system, and next steps.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">

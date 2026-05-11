@@ -56,7 +56,7 @@ const coreRelatedLinks: AlternativeRelatedLink[] = [
   {
     href: "/demo",
     label: "Client demo",
-    description: "See how SignalOps qualifies and routes real service-business quote requests."
+    description: "See how SignalOps collects details and routes real service-business quote requests."
   },
   {
     href: "/how-it-works",
@@ -164,7 +164,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Owner alerts",
         description:
-          "Hot leads and high-value opportunities reach the right person with context, not just another notification."
+          "Priority and high-value opportunities reach the right person with context, not just another notification."
       }
     ],
     workflow: [
@@ -306,7 +306,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Daily lead review",
         description:
-          "Give the owner a clean view of hot leads, missing-info leads, and follow-up tasks."
+          "Give the owner a clean view of priority leads, missing-info leads, and follow-up tasks."
       }
     ],
     workflow: [
@@ -326,7 +326,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "3",
         title: "Lead is prioritized",
         description:
-          "Hot, warm, cold, and staff-handoff labels help your team act in the right order."
+          "Priority, routine, needs-details, and staff-handoff labels help your team act in the right order."
       },
       {
         label: "4",
@@ -372,7 +372,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     eyebrow: "Ethical alternative guide",
     metaTitle: "LeadRelay Alternative for Lead Routing Automation | SignalOps",
     metaDescription:
-      "Explore SignalOps as a LeadRelay-style alternative for lead routing automation, hot lead alerts, CRM logging, follow-up, and appointment handoffs.",
+      "Explore SignalOps as a LeadRelay-style alternative for lead routing automation, priority alerts, CRM logging, follow-up, and appointment handoffs.",
     h1: "LeadRelay alternative for lead routing automation.",
     subheadline:
       "If you are looking for lead routing automation, SignalOps helps turn incoming inquiries into prioritized records, urgent alerts, CRM logs, and follow-up paths your team can trust.",
@@ -402,7 +402,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "Route leads by service, urgency, location, value, contact completeness, and risk rather than by source alone."
       },
       {
-        title: "Hot lead alerts",
+        title: "Priority lead alerts",
         description:
           "The right person should receive a concise alert when a prospect is urgent, valuable, appointment-ready, or asking to buy."
       },
@@ -568,12 +568,12 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Tie priority to follow-up",
         description:
-          "Hot leads alert a human. Warm leads get booking or quote follow-up. Incomplete leads receive missing-detail prompts."
+          "Priority leads alert a person. Routine leads get booking or quote follow-up. Incomplete leads receive missing-detail prompts."
       }
     ],
     useCases: [
       {
-        title: "Hot lead detection",
+        title: "Priority lead detection",
         description:
           "Emergency language, ready-to-book intent, high-value service requests, and complete contact info can raise priority."
       },
@@ -608,9 +608,9 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       },
       {
         label: "3",
-        title: "Priority is labeled",
+        title: "Next action is labeled",
         description:
-          "Leads can be marked hot, warm, cold, junk, or staff-handoff based on practical rules."
+          "Leads can be marked priority, routine, needs details, or staff-handoff based on practical rules."
       },
       {
         label: "4",

@@ -251,7 +251,7 @@ export function HowItWorksDemo() {
                 <div className="space-y-3">
                   {[
                     ["Source", "Website quote form"],
-                    ["Priority", "Hot lead"],
+                    ["Priority", "Priority lead"],
                     ["Route", "Owner alert + booking link"],
                     ["Next step", "Request photos, then schedule"]
                   ].map(([label, value]) => (
