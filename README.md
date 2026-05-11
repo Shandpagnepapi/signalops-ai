@@ -137,7 +137,7 @@ NEXT_PUBLIC_SITE_URL=https://www.signalops.pro
 
 ### Supabase Setup
 
-SignalOps works in mock mode when Supabase variables are blank. To use Supabase:
+Supabase is required for production Free Preview and Prompt Worker admin persistence. To use Supabase:
 
 1. Create a Supabase project.
 2. Open the Supabase SQL editor and run `docs/supabase-schema.sql`.
@@ -155,7 +155,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 
 Lead submissions are written through `/api/lead`, which uses the server storage layer. With only the public key configured, the app can submit leads if the public insert policy from `docs/supabase-schema.sql` has been applied. For dashboard reads, status updates, and internal operations, add `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`.
 
-If the Supabase variables are missing, the public demo paths can still use the in-memory mock lead store for local review. The admin workflow will show a warning because cross-device persistence is disabled.
+If the Supabase variables are missing, the public demo paths can still use temporary mock data for local review. That mock path is not production persistence. The admin workflow will show a warning because cross-device persistence is disabled.
 
 Preview submissions for the Free Instant AI Lead System Preview use `preview_submissions`.
 For a fresh database, `docs/supabase-schema.sql` includes the preview table. For an
@@ -165,7 +165,7 @@ existing database that already has the lead tables, run:
 docs/supabase-preview-submissions.sql
 ```
 
-Cross-device admin workflow requires Supabase. `/admin/manager` uses Supabase as the source of truth for Free Preview submissions, generated ChatGPT prompts, prompt status, internal notes, selected packages, selected system templates, test/do-not-contact flags, sent/paid/lost markers, and prompt archive records. Browser `localStorage` and `sessionStorage` are not used for business workflow persistence.
+Cross-device admin workflow requires Supabase. `/admin/manager` uses Supabase as the source of truth for Free Preview submissions, generated ChatGPT prompts, prompt status, internal notes, selected packages, selected system templates, test/do-not-contact flags, paid/lost/sent markers, and prompt archive records. Browser `localStorage` and `sessionStorage` are not used for business workflow persistence.
 
 If Supabase is missing or the preview table has not been created yet, `/admin/manager` clearly warns:
 

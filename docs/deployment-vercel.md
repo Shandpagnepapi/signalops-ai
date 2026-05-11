@@ -76,7 +76,7 @@ If blank, analytics scripts will not load and the app still works.
 
 If missing, app uses deterministic fallback scoring.
 
-### Supabase variables (optional if staying in mock mode)
+### Supabase variables (required for admin persistence)
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
@@ -86,6 +86,10 @@ If missing, app uses deterministic fallback scoring.
 Important:
 - `SUPABASE_SERVICE_ROLE_KEY` is server-only.
 - Never put service role keys in client code.
+- Cross-device `/admin/manager` persistence requires Supabase.
+- Generated prompts, prompt status, internal notes, paid/lost/sent markers, and test flags persist through Supabase.
+- Browser `localStorage` and `sessionStorage` must not be used for business workflow persistence.
+- If Supabase is missing, admin persistence is disabled or local mock-only for development.
 
 ### Integration placeholders (optional)
 
@@ -180,6 +184,7 @@ After production deploy:
 - Confirm `NEXT_PUBLIC_SUPABASE_URL` and public key values.
 - Confirm `SUPABASE_SERVICE_ROLE_KEY` for server operations when needed.
 - Confirm schema and policies are applied.
+- Confirm `docs/supabase-preview-submissions.sql` has been run so prompt-worker persistence columns exist.
 
 ## 10) Recommended Operating Rhythm
 

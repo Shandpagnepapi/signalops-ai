@@ -220,7 +220,7 @@ Build Mode includes:
 
 Supabase is the source of truth for the admin workflow. Browser `localStorage` and `sessionStorage` must not store Free Preview submissions, generated prompts, prompt status, internal notes, selected packages, selected system templates, paid/lost/sent state, or prompt worker results.
 
-The current manager UI persists:
+Generated prompts, prompt status, internal notes, paid/lost/sent markers, and test flags persist through Supabase. The current manager UI persists:
 
 - Not generated
 - Generated
@@ -232,7 +232,7 @@ The current manager UI persists:
 
 The admin can work across devices by opening `/admin/manager`; submissions, generated ChatGPT prompts, prompt archive, status, test/do-not-contact flags, and internal notes are loaded from Supabase.
 
-If Supabase is missing or the preview table is not available, `/admin/manager` shows a warning that persistence is disabled and data will not sync across devices. The app may still run local mock demos, but that is not a production workflow.
+If Supabase is missing or the preview table is not available, `/admin/manager` shows a warning that persistence is disabled and data will not sync across devices. The app may still run local mock-only demos for development, but that is not a production workflow.
 
 ## Regenerating Prompts
 
