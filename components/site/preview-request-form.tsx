@@ -119,6 +119,8 @@ export function PreviewRequestForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const companyWebsite = String(formData.get("companyWebsite") ?? "");
     setStatus("submitting");
     setError("");
     setSubmission(null);
@@ -131,6 +133,7 @@ export function PreviewRequestForm() {
         },
         body: JSON.stringify({
           ...form,
+          companyWebsite,
           averageJobValue: 0,
           monthlyLeadVolume: "Not sure"
         })
@@ -235,6 +238,11 @@ export function PreviewRequestForm() {
         </div>
 
         <form className="grid gap-4" onFocus={handleStart} onSubmit={handleSubmit}>
+          <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+            <label htmlFor="companyWebsite">Company website</label>
+            <input id="companyWebsite" name="companyWebsite" tabIndex={-1} autoComplete="off" />
+          </div>
+
           <FormPanel label="Contact">
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Name">

@@ -91,6 +91,17 @@ Important:
 - Browser `localStorage` and `sessionStorage` must not be used for business workflow persistence.
 - If Supabase is missing, admin persistence is disabled or local mock-only for development.
 
+### Admin Basic Auth variables
+
+- `ADMIN_USERNAME`
+- `ADMIN_PASSWORD`
+
+Important:
+- These protect `/admin/*` and `/api/admin/*`.
+- Do not prefix them with `NEXT_PUBLIC_`.
+- If either value is missing, admin access is blocked.
+- Store real values only in Vercel Environment Variables.
+
 ### Integration placeholders (optional)
 
 - Calendar: `CALENDLY_URL`, `CALENDLY_ROUTING_URL`

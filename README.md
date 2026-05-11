@@ -135,6 +135,17 @@ Set the public site URL before production launch so canonical URLs, sitemap URLs
 NEXT_PUBLIC_SITE_URL=https://www.signalops.pro
 ```
 
+### Admin Access
+
+`/admin/*` and `/api/admin/*` are protected by simple HTTP Basic Auth:
+
+```bash
+ADMIN_USERNAME=
+ADMIN_PASSWORD=
+```
+
+Set these in Vercel Environment Variables. Do not use `NEXT_PUBLIC_`, do not hardcode real credentials, and do not commit real values.
+
 ### Supabase Setup
 
 Supabase is required for production Free Preview and Prompt Worker admin persistence. To use Supabase:

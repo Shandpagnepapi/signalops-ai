@@ -12,6 +12,17 @@ import { enforceRateLimit, parseLimitedJsonBody } from "@/lib/server/request-gua
 type IncomingPayload = Record<string, unknown>;
 
 const MAX_PREVIEW_PAYLOAD_BYTES = 18_000;
+const maxFieldLengths = {
+  businessName: 120,
+  contactName: 100,
+  email: 180,
+  phone: 40,
+  website: 240,
+  mainServices: 500,
+  currentTools: 500,
+  leadProcess: 1400,
+  notes: 1400
+} as const;
 
 export const maxDuration = 60;
 
@@ -49,6 +60,10 @@ function getStringArray(payload: IncomingPayload, key: string) {
   return value.filter((item): item is string => typeof item === "string").map((item) => item.trim()).filter(Boolean);
 }
 
+function isHoneypotFilled(payload: IncomingPayload) {
+  return typeof payload.companyWebsite === "string" && payload.companyWebsite.trim().length > 0;
+}
+
 function normalizeInput(payload: IncomingPayload): PreviewSubmissionInput {
   const industry = getString(payload, "industry");
   const currentProblem = getString(payload, "currentProblem");
@@ -81,6 +96,14 @@ function normalizeInput(payload: IncomingPayload): PreviewSubmissionInput {
   };
 }
 
+function validateFieldLength(input: PreviewSubmissionInput, key: keyof typeof maxFieldLengths, label: string, errors: string[]) {
+  const value = input[key];
+
+  if (typeof value === "string" && value.length > maxFieldLengths[key]) {
+    errors.push(`${label} must be ${maxFieldLengths[key]} characters or fewer.`);
+  }
+}
+
 function validateInput(input: PreviewSubmissionInput) {
   const errors: string[] = [];
 
@@ -110,6 +133,20 @@ function validateInput(input: PreviewSubmissionInput) {
 
   if (!input.leadProcess) {
     errors.push("Tell us what happens after a lead comes in.");
+  }
+
+  validateFieldLength(input, "businessName", "Business name", errors);
+  validateFieldLength(input, "contactName", "Contact name", errors);
+  validateFieldLength(input, "email", "Email", errors);
+  validateFieldLength(input, "phone", "Phone", errors);
+  validateFieldLength(input, "website", "Website", errors);
+  validateFieldLength(input, "mainServices", "Main services", errors);
+  validateFieldLength(input, "currentTools", "Current tools/CRM", errors);
+  validateFieldLength(input, "leadProcess", "Lead process", errors);
+  validateFieldLength(input, "notes", "Anything else", errors);
+
+  if (input.mainLeadSources.length > 8) {
+    errors.push("Choose no more than 8 lead sources.");
   }
 
   return errors;
@@ -150,6 +187,10 @@ export async function POST(request: Request) {
 
   if (!isRecord(body.payload)) {
     return NextResponse.json({ error: "Request body must be a JSON object." }, { status: 400 });
+  }
+
+  if (isHoneypotFilled(body.payload)) {
+    return NextResponse.json({ error: "Preview request rejected." }, { status: 400 });
   }
 
   const input = normalizeInput(body.payload);
