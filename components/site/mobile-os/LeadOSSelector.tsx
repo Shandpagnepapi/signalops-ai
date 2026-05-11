@@ -80,7 +80,7 @@ export function LeadOSSelector() {
             Switch between operating systems and see the kind of interface SignalOps can shape around your lead flow.
           </p>
 
-          <div className="mt-5 grid grid-cols-3 gap-2" role="tablist" aria-label="Lead operating system options">
+          <div className="mt-5 grid grid-cols-[0.78fr_1.16fr_1.06fr] gap-2" role="tablist" aria-label="Lead operating system options">
             {leadOsOptions.map((option) => {
               const Icon = option.icon;
               const isActive = active.key === option.key;
@@ -105,7 +105,7 @@ export function LeadOSSelector() {
                     )}
                   />
                   <Icon className="mb-2 mt-2 size-4" aria-hidden="true" />
-                  <span className="block text-[0.64rem] font-black leading-3 [overflow-wrap:anywhere]">{option.chip}</span>
+                  <span className="block text-[0.64rem] font-black leading-3">{option.chip}</span>
                 </button>
               );
             })}
