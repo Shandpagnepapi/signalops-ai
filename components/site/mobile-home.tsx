@@ -195,7 +195,7 @@ function LeadHandoffVisual() {
                   Moving
                 </span>
               </div>
-              <div className="grid grid-cols-6 gap-1.5">
+              <div className="grid grid-cols-2 gap-2">
                 {handoffSteps.map((step, index) => (
                   <HandoffTile key={step.title} index={index} {...step} />
                 ))}
@@ -269,17 +269,19 @@ function HandoffTile({
   const active = tone === "active";
 
   return (
-    <div className="relative grid justify-items-center gap-1.5 text-center">
-      {index > 0 ? <span className="absolute left-[-0.45rem] top-4 h-px w-3 bg-white/12" /> : null}
+    <div className="relative flex items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/45 p-2.5">
       <div
         className={cn(
-          "flex size-8 items-center justify-center rounded-2xl",
+          "flex size-8 shrink-0 items-center justify-center rounded-2xl",
           active ? "bg-lime-300 text-slate-950" : "bg-emerald-300/12 text-emerald-100"
         )}
       >
         <Icon className="size-4" aria-hidden="true" />
       </div>
-      <p className="text-[0.6rem] font-black uppercase leading-3 text-white/54">{title}</p>
+      <div className="min-w-0">
+        <p className="text-[0.6rem] font-black uppercase tracking-wide text-white/32">0{index + 1}</p>
+        <p className="text-xs font-black leading-4 text-white/74">{title}</p>
+      </div>
     </div>
   );
 }
