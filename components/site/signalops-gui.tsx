@@ -281,7 +281,7 @@ export function SystemPreviewCard({
   );
 }
 
-export function SignalOpsCommandLayer({ className = "" }: { className?: string }) {
+export function SignalOpsCommandLayer({ className = "", compact = false }: { className?: string; compact?: boolean }) {
   const steps = [
     "Incoming",
     "Response",
@@ -296,20 +296,26 @@ export function SignalOpsCommandLayer({ className = "" }: { className?: string }
       accent="lime"
       className={className}
       eyebrow="SignalOps Command Layer"
-      title="One operating layer from lead to next action."
+      title={compact ? "Incoming to handoff, one layer." : "One operating layer from lead to next action."}
     >
-      <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-4">
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+      <div className={cn("grid gap-4", compact ? "" : "lg:grid-cols-[1.05fr_0.95fr]")}>
+        <div className={cn("rounded-3xl border border-white/10 bg-white/[0.045]", compact ? "p-3" : "p-4")}>
+          <div className={cn("grid gap-2", compact ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-3")}>
             {steps.map((step, index) => (
-              <div key={step} className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/52 p-3">
-                <div className="mb-3 flex items-center justify-between gap-2">
+              <div
+                key={step}
+                className={cn(
+                  "relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/52",
+                  compact ? "p-2.5" : "p-3"
+                )}
+              >
+                <div className={cn("flex items-center justify-between gap-2", compact ? "mb-2" : "mb-3")}>
                   <span className="text-[0.62rem] font-black uppercase tracking-wide text-white/34">
                     0{index + 1}
                   </span>
                   <CheckCircle2 className="size-3.5 text-lime-300" aria-hidden="true" />
                 </div>
-                <p className="text-sm font-semibold text-white">{step}</p>
+                <p className={cn("font-semibold text-white", compact ? "text-xs" : "text-sm")}>{step}</p>
                 <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/8">
                   <div
                     className="h-full rounded-full bg-[linear-gradient(90deg,#37f0bd,#dfff5f)]"
@@ -321,14 +327,14 @@ export function SignalOpsCommandLayer({ className = "" }: { className?: string }
           </div>
         </div>
 
-        <div className="grid gap-3">
+        <div className={cn("grid gap-3", compact ? "grid-cols-[0.85fr_1.15fr]" : "")}>
           <MetricTile accent="lime" label="Avg response" value="4.3s" />
           <OwnerAlertCard
             tone="lime"
             title="Priority view"
             action="Quote request has photos pending, owner alert ready, and follow-up queued."
           />
-          <StatusPill accent="lime" className="w-fit">
+          <StatusPill accent="lime" className={compact ? "col-span-2 w-fit" : "w-fit"}>
             Dashboard updated
           </StatusPill>
         </div>
