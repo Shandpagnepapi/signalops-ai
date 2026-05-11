@@ -94,7 +94,7 @@ export function LeadOSSelector() {
                   aria-controls={`lead-os-panel-${option.key}`}
                   onClick={() => setActiveKey(option.key)}
                   className={cn(
-                    "relative min-h-20 rounded-3xl border p-2 text-left shadow-lg transition duration-200",
+                    "relative min-h-20 overflow-hidden rounded-3xl border p-2 text-left shadow-lg transition duration-200",
                     isActive ? option.activeClass : "border-white/10 bg-slate-950/40 text-white/56 shadow-black/15"
                   )}
                 >
@@ -105,7 +105,7 @@ export function LeadOSSelector() {
                     )}
                   />
                   <Icon className="mb-2 mt-2 size-4" aria-hidden="true" />
-                  <span className="block text-[0.7rem] font-black leading-4">{option.chip}</span>
+                  <span className="block text-[0.64rem] font-black leading-3 [overflow-wrap:anywhere]">{option.chip}</span>
                 </button>
               );
             })}
