@@ -87,6 +87,23 @@ https://www.signalops.pro/visual-audits?key=YOUR_PUBLIC_REVIEW_KEY
 
 The page is hidden and noindex/nofollow. It is not added to navigation or the sitemap.
 
+## ChatGPT Review URL
+
+Use this format:
+
+```text
+https://www.signalops.pro/visual-audits?key=YOUR_VISUAL_AUDIT_PUBLIC_KEY
+```
+
+Workflow:
+
+1. Run the visual audit first so `latest.json` and the screenshots exist in Supabase Storage.
+2. Paste the review URL into ChatGPT.
+3. ChatGPT can open the hidden page and review the screenshots visually.
+4. No manual screenshot upload is needed.
+
+Do not commit the actual key to the repo. Keep it in Vercel and GitHub secrets only.
+
 ## GitHub Action
 
 Manual workflow:
