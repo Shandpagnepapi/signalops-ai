@@ -8,13 +8,13 @@ import { TrackedLink } from "@/components/site/tracked-link";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { EMAIL_CTA, getEmailHref, NAV_LINKS, PRIMARY_CTA, SITE_CONFIG } from "@/lib/constants";
-import { isMobileTestRoute } from "@/lib/mobile-test-routes";
+import { shouldHidePublicChrome } from "@/lib/mobile-test-routes";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const pathname = usePathname();
 
-  if (isMobileTestRoute(pathname)) {
+  if (shouldHidePublicChrome(pathname)) {
     return null;
   }
 

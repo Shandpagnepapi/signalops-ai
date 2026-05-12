@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { SITE_CONFIG } from "@/lib/constants";
-import { isMobileTestRoute } from "@/lib/mobile-test-routes";
+import { shouldHidePublicChrome } from "@/lib/mobile-test-routes";
 
 const emailHref = `mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent("SignalOps question")}`;
 
@@ -15,7 +15,7 @@ function shouldHide(pathname: string) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/auth") ||
     pathname.startsWith("/dashboard") ||
-    isMobileTestRoute(pathname)
+    shouldHidePublicChrome(pathname)
   );
 }
 

@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { EnvoProductPage } from "@/components/site/envo-showcase";
+import { EnvoLabPage, getDesignReferenceImages } from "@/components/design-lab/lab-components";
 
 export const metadata: Metadata = {
-  title: "Design Lab - Warm Envo Product Page",
+  title: "Design Lab - Warm Envo Product Concept",
+  description: "Internal premium warm Envo product page concept.",
   robots: {
     index: false,
     follow: false
   }
 };
 
-export default function DesignLabEnvoPage() {
-  return <EnvoProductPage designLab />;
+export default async function DesignLabEnvoPage() {
+  const referenceImages = await getDesignReferenceImages();
+
+  return <EnvoLabPage referenceImages={referenceImages} />;
 }
