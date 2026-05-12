@@ -7,6 +7,7 @@ on:
       - main
     paths-ignore:
       - "docs/visual-audit-latest.json"
+      - "public/visual-review/**"
       - "public/visual-audits/latest.json"
       - "public/visual-audits/latest.pdf"
 
@@ -15,7 +16,7 @@ permissions:
 
 jobs:
   visual-audit-artifact:
-    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip visual-audit]') }}
+    if: ${{ github.event_name != 'push' || (!contains(github.event.head_commit.message, '[skip visual-audit]') && !contains(github.event.head_commit.message, '[skip visual-review]')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -66,6 +67,9 @@ jobs:
           const manifestPath = path.join(".visual-audit-output", "latest", "manifest.json");
           const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 
+          const reviewManifestPath = path.join("public", "visual-review", "latest", "manifest.json");
+          const reviewManifest = JSON.parse(fs.readFileSync(reviewManifestPath, "utf8"));
+
           const metadata = {
             createdAt: manifest.createdAt,
             baseUrl: manifest.baseUrl,
@@ -74,39 +78,32 @@ jobs:
             artifactId: process.env.ARTIFACT_ID,
             artifactName: process.env.ARTIFACT_NAME,
             artifactUrl: process.env.ARTIFACT_URL,
-            pdfUrl: "/visual-audits/latest.pdf",
+            reviewUrl: "/visual-review",
             artifactRetentionDays: 30,
             routes: manifest.routes,
             viewports: manifest.viewports,
-            note: "Tell ChatGPT: review latest visual audit."
+            note: "Tell ChatGPT: review https://www.signalops.pro/visual-review."
           };
 
-          const publicMetadata = {
-            createdAt: manifest.createdAt,
-            commitSha: process.env.GITHUB_SHA,
-            workflowRunId: process.env.GITHUB_RUN_ID,
-            artifactId: process.env.ARTIFACT_ID,
-            pdfUrl: "/visual-audits/latest.pdf",
-            routes: manifest.routes,
-            viewports: manifest.viewports
-          };
+          reviewManifest.commitSha = process.env.GITHUB_SHA;
+          reviewManifest.workflowRunId = process.env.GITHUB_RUN_ID;
+          reviewManifest.artifactId = process.env.ARTIFACT_ID;
 
           fs.mkdirSync("docs", { recursive: true });
-          fs.mkdirSync(path.join("public", "visual-audits"), { recursive: true });
           fs.writeFileSync(
             path.join("docs", "visual-audit-latest.json"),
             `${JSON.stringify(metadata, null, 2)}\n`
           );
           fs.writeFileSync(
-            path.join("public", "visual-audits", "latest.json"),
-            `${JSON.stringify(publicMetadata, null, 2)}\n`
+            reviewManifestPath,
+            `${JSON.stringify(reviewManifest, null, 2)}\n`
           );
           NODE
 
-      - name: Commit latest visual audit PDF
+      - name: Commit latest visual review screenshots
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/visual-audit-latest.json public/visual-audits/latest.json public/visual-audits/latest.pdf
-          git diff --cached --quiet || git commit -m "Update visual audit PDF [skip visual-audit]"
+          git add docs/visual-audit-latest.json public/visual-review/latest
+          git diff --cached --quiet || git commit -m "Update visual review screenshots [skip visual-audit]"
           git push origin HEAD:${{ github.ref_name }}

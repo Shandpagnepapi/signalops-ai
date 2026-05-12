@@ -1,47 +1,30 @@
-# SignalOps Visual Audit
+# SignalOps Visual Review
 
-SignalOps uses a public PDF contact sheet as the normal visual audit workflow. After a push to `main`, GitHub captures screenshots of the live public site, publishes the latest PDF at `/visual-audits/latest.pdf`, and stores the full screenshot folder as a backup artifact for 30 days.
-
-## How It Works
-
-1. Push a release update to `main`, or run the `Visual Audit Artifact` workflow manually.
-2. GitHub waits 90 seconds for the live Vercel site to update.
-3. Playwright captures public-page screenshots from `https://www.signalops.pro`.
-4. The workflow creates a PDF contact sheet.
-5. The workflow uploads the full screenshot folder as a GitHub Actions artifact.
-6. The workflow commits only the latest public PDF and metadata JSON files back to `main`.
-
-Raw screenshots are not committed to GitHub. Only `public/visual-audits/latest.pdf`, `public/visual-audits/latest.json`, and `docs/visual-audit-latest.json` are updated.
+SignalOps now uses a normal public noindex webpage for visual review. This is the preferred path because ChatGPT can inspect regular images on a webpage more reliably than artifact ZIPs, PDFs, or external screenshot URLs.
 
 ## Preferred Review Workflow
 
 1. Codex pushes an update to `main`.
 2. The `Visual Audit Artifact` workflow runs automatically.
-3. It publishes:
+3. GitHub waits 90 seconds for the live Vercel site to update.
+4. Playwright captures public-page screenshots from `https://www.signalops.pro`.
+5. The workflow replaces the latest screenshot set in `public/visual-review/latest/`.
+6. The workflow commits the latest screenshots and manifest back to `main`.
+7. Dillon tells ChatGPT:
 
 ```text
-https://www.signalops.pro/visual-audits/latest.pdf
+Review https://www.signalops.pro/visual-review
 ```
 
-4. Dillon tells ChatGPT:
+## ChatGPT Review URL
+
+Use:
 
 ```text
-Review the latest visual audit PDF.
+https://www.signalops.pro/visual-review
 ```
 
-5. ChatGPT opens the PDF and visually reviews the site.
-
-No manual upload and no artifact ZIP download is needed for normal review.
-
-## Backup Artifact Review
-
-The GitHub Actions artifact still exists as a backup. Tell ChatGPT:
-
-```text
-review latest visual audit
-```
-
-ChatGPT can use the GitHub connector to inspect `docs/visual-audit-latest.json`, find the latest workflow run and artifact, and review the full screenshot folder if the PDF is not enough.
+The page displays the latest screenshots as normal images grouped by route and viewport. No manual upload, artifact ZIP, PDF, public key, or Supabase setup is needed.
 
 ## Captured Routes
 
@@ -52,61 +35,59 @@ Public pages only:
 - `/demo`
 - `/roi-calculator`
 - `/how-it-works`
-- `/privacy`
-- `/terms`
 - `/services/ai-lead-response`
 - `/industries/mobile-fleet-wash`
 - `/alternatives`
 
-The audit must never capture `/admin/*`, `/api/*`, or private/authenticated pages.
+The audit must never capture `/admin/*`, `/api/*`, authenticated pages, private pages, or customer/admin screenshots.
 
 ## Viewports
 
 - `mobile-390`: `390x844`
+- `desktop-1440`: `1440x1400`
 - `mobile-430`: `430x932`, homepage and preview only
-- `desktop`: `1440x1400`
 
-## Artifact Contents
+## Storage Rules
 
-Artifact name:
+- Only the latest screenshot set is committed.
+- Latest files live under `public/visual-review/latest/`.
+- Historical screenshot runs are not kept in the repo.
+- Raw temporary output stays under `.visual-audit-output/` and is ignored by Git.
+- The GitHub Actions artifact is still uploaded as a backup for 30 days.
+
+## Workflow Details
+
+Workflow:
 
 ```text
-signalops-visual-audit-${GITHUB_RUN_ID}
+.github/workflows/visual-audit-artifact.yml
 ```
 
-Contents:
+Script:
 
-- page screenshots as JPEG files
-- `contact-sheet.html`
-- `contact-sheet.png`
-- `contact-sheet.pdf`
-- `manifest.json`
+```text
+scripts/visual-audit-artifact.ts
+```
 
-Retention: 30 days.
+Commit message used by the workflow:
 
-## Manual Run
+```text
+Update visual review screenshots [skip visual-audit]
+```
 
-In GitHub:
-
-1. Open the repository Actions tab.
-2. Choose `Visual Audit Artifact`.
-3. Click `Run workflow`.
-
-## Skip Behavior
-
-The workflow skips commits that contain:
+The workflow skips commits containing either:
 
 ```text
 [skip visual-audit]
+[skip visual-review]
 ```
 
-It also ignores pushes where only `docs/visual-audit-latest.json` changed. This prevents the metadata update commit from triggering another screenshot run.
+It also ignores pushes where only `public/visual-review/**` or `docs/visual-audit-latest.json` changed. This prevents loops.
 
-The workflow also ignores pushes where only the latest public visual-audit files changed:
+## Deprecated Fallbacks
 
-- `public/visual-audits/latest.pdf`
-- `public/visual-audits/latest.json`
+The old PDF, GitHub artifact ZIP, and Supabase Storage approaches are fallback/deprecated for normal review. The primary review path is the public noindex image page:
 
-## Legacy Supabase Workflow
-
-The older Supabase Storage visual audit workflow is deprecated for normal review. Keep it only as a fallback or archive path. The preferred workflow is GitHub Actions artifacts.
+```text
+https://www.signalops.pro/visual-review
+```

@@ -1,0 +1,218 @@
+{
+  "createdAt": "2026-05-12T01:29:53.396Z",
+  "baseUrl": "https://www.signalops.pro",
+  "commitSha": "0bf6859",
+  "workflowRunId": null,
+  "artifactId": null,
+  "reviewUrl": "/visual-review",
+  "routes": [
+    "/",
+    "/preview",
+    "/demo",
+    "/roi-calculator",
+    "/how-it-works",
+    "/services/ai-lead-response",
+    "/industries/mobile-fleet-wash",
+    "/alternatives"
+  ],
+  "viewports": [
+    {
+      "name": "mobile-390",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "mobile-430",
+      "width": 430,
+      "height": 932
+    },
+    {
+      "name": "desktop-1440",
+      "width": 1440,
+      "height": 1400
+    }
+  ],
+  "screenshots": [
+    {
+      "route": "/",
+      "routeSlug": "home",
+      "routeLabel": "Home",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "home-mobile-390.jpg",
+      "src": "/visual-review/latest/home-mobile-390.jpg"
+    },
+    {
+      "route": "/",
+      "routeSlug": "home",
+      "routeLabel": "Home",
+      "viewport": "mobile-430",
+      "width": 430,
+      "height": 932,
+      "fileName": "home-mobile-430.jpg",
+      "src": "/visual-review/latest/home-mobile-430.jpg"
+    },
+    {
+      "route": "/",
+      "routeSlug": "home",
+      "routeLabel": "Home",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "home-desktop-1440.jpg",
+      "src": "/visual-review/latest/home-desktop-1440.jpg"
+    },
+    {
+      "route": "/preview",
+      "routeSlug": "preview",
+      "routeLabel": "Preview",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "preview-mobile-390.jpg",
+      "src": "/visual-review/latest/preview-mobile-390.jpg"
+    },
+    {
+      "route": "/preview",
+      "routeSlug": "preview",
+      "routeLabel": "Preview",
+      "viewport": "mobile-430",
+      "width": 430,
+      "height": 932,
+      "fileName": "preview-mobile-430.jpg",
+      "src": "/visual-review/latest/preview-mobile-430.jpg"
+    },
+    {
+      "route": "/preview",
+      "routeSlug": "preview",
+      "routeLabel": "Preview",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "preview-desktop-1440.jpg",
+      "src": "/visual-review/latest/preview-desktop-1440.jpg"
+    },
+    {
+      "route": "/demo",
+      "routeSlug": "demo",
+      "routeLabel": "Demo",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "demo-mobile-390.jpg",
+      "src": "/visual-review/latest/demo-mobile-390.jpg"
+    },
+    {
+      "route": "/demo",
+      "routeSlug": "demo",
+      "routeLabel": "Demo",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "demo-desktop-1440.jpg",
+      "src": "/visual-review/latest/demo-desktop-1440.jpg"
+    },
+    {
+      "route": "/roi-calculator",
+      "routeSlug": "roi-calculator",
+      "routeLabel": "ROI Calculator",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "roi-calculator-mobile-390.jpg",
+      "src": "/visual-review/latest/roi-calculator-mobile-390.jpg"
+    },
+    {
+      "route": "/roi-calculator",
+      "routeSlug": "roi-calculator",
+      "routeLabel": "ROI Calculator",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "roi-calculator-desktop-1440.jpg",
+      "src": "/visual-review/latest/roi-calculator-desktop-1440.jpg"
+    },
+    {
+      "route": "/how-it-works",
+      "routeSlug": "how-it-works",
+      "routeLabel": "How It Works",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "how-it-works-mobile-390.jpg",
+      "src": "/visual-review/latest/how-it-works-mobile-390.jpg"
+    },
+    {
+      "route": "/how-it-works",
+      "routeSlug": "how-it-works",
+      "routeLabel": "How It Works",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "how-it-works-desktop-1440.jpg",
+      "src": "/visual-review/latest/how-it-works-desktop-1440.jpg"
+    },
+    {
+      "route": "/services/ai-lead-response",
+      "routeSlug": "service-ai-lead-response",
+      "routeLabel": "Service: AI Lead Response",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "service-ai-lead-response-mobile-390.jpg",
+      "src": "/visual-review/latest/service-ai-lead-response-mobile-390.jpg"
+    },
+    {
+      "route": "/services/ai-lead-response",
+      "routeSlug": "service-ai-lead-response",
+      "routeLabel": "Service: AI Lead Response",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "service-ai-lead-response-desktop-1440.jpg",
+      "src": "/visual-review/latest/service-ai-lead-response-desktop-1440.jpg"
+    },
+    {
+      "route": "/industries/mobile-fleet-wash",
+      "routeSlug": "industry-mobile-fleet-wash",
+      "routeLabel": "Industry: Mobile Fleet Wash",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "industry-mobile-fleet-wash-mobile-390.jpg",
+      "src": "/visual-review/latest/industry-mobile-fleet-wash-mobile-390.jpg"
+    },
+    {
+      "route": "/industries/mobile-fleet-wash",
+      "routeSlug": "industry-mobile-fleet-wash",
+      "routeLabel": "Industry: Mobile Fleet Wash",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "industry-mobile-fleet-wash-desktop-1440.jpg",
+      "src": "/visual-review/latest/industry-mobile-fleet-wash-desktop-1440.jpg"
+    },
+    {
+      "route": "/alternatives",
+      "routeSlug": "alternatives",
+      "routeLabel": "Alternatives",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "alternatives-mobile-390.jpg",
+      "src": "/visual-review/latest/alternatives-mobile-390.jpg"
+    },
+    {
+      "route": "/alternatives",
+      "routeSlug": "alternatives",
+      "routeLabel": "Alternatives",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "alternatives-desktop-1440.jpg",
+      "src": "/visual-review/latest/alternatives-desktop-1440.jpg"
+    }
+  ],
+  "note": "Tell ChatGPT: review https://www.signalops.pro/visual-review."
+}

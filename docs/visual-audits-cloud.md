@@ -1,6 +1,6 @@
 # SignalOps Cloud Visual Audits
 
-Deprecated for normal review. Use GitHub Actions artifact visual audits instead. See `docs/visual-audit.md`.
+Deprecated for normal review. Use the public noindex visual review page instead: `https://www.signalops.pro/visual-review`. See `docs/visual-audit.md`.
 
 SignalOps can generate browser screenshots of public pages, upload them to Supabase Storage, and display the latest run at a hidden noindex URL for design review.
 

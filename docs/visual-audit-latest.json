@@ -1,12 +1,12 @@
 {
-  "createdAt": "2026-05-12T01:23:10.221Z",
+  "createdAt": "2026-05-12T01:29:53.396Z",
   "baseUrl": "https://www.signalops.pro",
   "commitSha": "0bf685925943ff516cbd55926c403b9d5a02e701",
   "workflowRunId": "25707356380",
   "artifactId": "6933635424",
   "artifactName": "signalops-visual-audit-25707356380",
   "artifactUrl": "https://github.com/Shandpagnepapi/signalops-ai/actions/runs/25707356380/artifacts/6933635424",
-  "pdfUrl": "/visual-audits/latest.pdf",
+  "reviewUrl": "/visual-review",
   "artifactRetentionDays": 30,
   "routes": [
     "/",
@@ -14,8 +14,6 @@
     "/demo",
     "/roi-calculator",
     "/how-it-works",
-    "/privacy",
-    "/terms",
     "/services/ai-lead-response",
     "/industries/mobile-fleet-wash",
     "/alternatives"
@@ -32,10 +30,10 @@
       "height": 932
     },
     {
-      "name": "desktop",
+      "name": "desktop-1440",
       "width": 1440,
       "height": 1400
     }
   ],
-  "note": "Tell ChatGPT: review latest visual audit."
+  "note": "Tell ChatGPT: review https://www.signalops.pro/visual-review."
 }
