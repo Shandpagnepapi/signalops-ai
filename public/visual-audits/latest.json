@@ -1,8 +1,8 @@
 {
-  "createdAt": "2026-05-12T01:13:55.502Z",
-  "commitSha": "a9168aa",
-  "workflowRunId": null,
-  "artifactId": null,
+  "createdAt": "2026-05-12T01:23:10.221Z",
+  "commitSha": "0bf685925943ff516cbd55926c403b9d5a02e701",
+  "workflowRunId": "25707356380",
+  "artifactId": "6933635424",
   "pdfUrl": "/visual-audits/latest.pdf",
   "routes": [
     "/",
