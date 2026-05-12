@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_CTA = {
-  label: "Free Preview",
+  label: "See Your System",
   href: "/preview"
 };
 
@@ -140,7 +140,7 @@ export const SEO_INDUSTRY_LINKS = [
 export const RESOURCE_LINKS = [
   {
     href: "/preview",
-    label: "Free Preview"
+    label: "See Your System"
   },
   {
     href: "/demo",

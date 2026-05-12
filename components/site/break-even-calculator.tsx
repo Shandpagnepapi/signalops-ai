@@ -126,10 +126,10 @@ export function BreakEvenCalculator({
             </p>
           </div>
           <h2 id="break-even-heading" className="mt-4 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-            See how many jobs cover SignalOps.
+            See how many {unitForms.plural} cover SignalOps.
           </h2>
           <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
-            Put in what one typical service or account is worth. We will translate the package into a simple break-even number, like how many jobs, accounts, or appointments cover the monthly investment.
+            Put in what one typical service or account is worth. We will translate the package into a simple break-even number, like how many accounts, jobs, or appointments cover the monthly investment.
           </p>
           <p className="mt-2 text-xs leading-5 text-[#ead0df]/54">
             For a fleet wash company, use average monthly account value and type account as the sale label.

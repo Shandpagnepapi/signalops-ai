@@ -1,33 +1,23 @@
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
-  BellRing,
-  CalendarCheck2,
   CheckCircle2,
   ClipboardList,
   Mail,
-  MessageSquareReply,
   PlayCircle,
-  RefreshCcw,
-  Route,
   ShieldCheck,
   TrendingUp,
-  UserRound,
-  Workflow,
-  Zap
+  Workflow
 } from "lucide-react";
 import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
 import { MobileSignalOpsHome } from "@/components/site/mobile-home";
 import {
   BeforeAfterFlow,
-  DashboardSnapshot,
-  LeadJourneyVisual,
   PreviewArtifactShowcase,
   SignalOpsCommandLayer
 } from "@/components/site/product-story-visuals";
 import {
   ConsolidateLeadStackSection,
-  MessyMiddleSection,
   WhatsIncludedSection
 } from "@/components/site/signalops-stack-sections";
 import { TrackedLink } from "@/components/site/tracked-link";
@@ -39,39 +29,11 @@ import {
   getEmailHref,
   getPlanEmailHref,
   PRIMARY_CTA,
-  SECONDARY_CTA,
-  SITE_CONFIG
+  SECONDARY_CTA
 } from "@/lib/constants";
 
 const shell = "mx-auto max-w-[1500px] px-3 sm:px-5 lg:px-8";
 const muted = "text-[#ead0df]/76";
-
-const features: Array<{ title: string; copy: string; result: string; icon: LucideIcon }> = [
-  {
-    title: "Instant Reply",
-    copy: "AI answers new leads in seconds across calls, texts, forms, and DMs.",
-    result: "Always on",
-    icon: Zap
-  },
-  {
-    title: "Smart Intake",
-    copy: "It asks the right questions and collects the details your team needs.",
-    result: "Clear next steps",
-    icon: UserRound
-  },
-  {
-    title: "Smart Follow-Up",
-    copy: "Every quote, photo request, and no-reply gets a timely nudge.",
-    result: "More conversations",
-    icon: MessageSquareReply
-  },
-  {
-    title: "Booking Handoff",
-    copy: "Ready leads move toward a calendar, callback, or sales handoff.",
-    result: "More bookings",
-    icon: CalendarCheck2
-  }
-];
 
 const pricing = [
   {
@@ -152,25 +114,6 @@ const comparisonRows = [
   ["Monthly optimization", "Basic check-in", "Included", "Custom support"]
 ];
 
-const faqs = [
-  {
-    question: "Is this a chatbot?",
-    answer: "No. SignalOps works behind your lead flow: forms, missed calls, texts, DMs, quotes, and booking handoffs."
-  },
-  {
-    question: "Do I need a CRM?",
-    answer: "No. We can start with the way you already work, then connect a CRM later if it helps."
-  },
-  {
-    question: "Will it replace my team?",
-    answer: "No. It handles fast replies and follow-up so your team can focus on serious customers."
-  },
-  {
-    question: "What happens when AI is unsure?",
-    answer: "Unclear, urgent, or sensitive leads are routed to a person with clean context and a clear next step."
-  }
-];
-
 export function MarketingHome() {
   return (
     <>
@@ -185,14 +128,9 @@ export function MarketingHome() {
               <HeroSection />
               <ConsolidateLeadStackSection />
               <ProductStorySection />
-              <MessyMiddleSection />
               <WhatsIncludedSection />
               <PricingSection />
-              <FeatureSection />
-              <HowItWorks />
-              <DemoFaq />
               <FinalCTA />
-              <ContactSection />
             </div>
           </div>
         </section>
@@ -210,16 +148,16 @@ function HeroSection() {
       <div className="relative grid gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="max-w-2xl">
           <Badge className="border border-[#ff9ec0]/22 bg-white/8 px-3 py-1.5 text-[#ffd7e6]">
-            Free Preview
+            AI lead operating system
           </Badge>
           <div className="mt-8 text-[2.95rem] font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.35rem]">
-            Get Your Free Preview
+            Every lead answered.
             <span className="block bg-[linear-gradient(90deg,#ffb36d,#ff6f9c,#d770ff)] bg-clip-text text-transparent">
-              before anything is built.
+              Every follow-up handled.
             </span>
           </div>
           <p className={`mt-6 max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${muted}`}>
-            Tell us how your leads come in and where things slow down. SignalOps builds a personalized preview of the AI lead system your business should be using.
+            SignalOps builds done-for-you lead operating systems that reply fast, collect the right details, route priority leads, and keep follow-up moving.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -229,7 +167,7 @@ function HeroSection() {
               eventProperties={{ location: "homepage_hero" }}
               className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
             >
-              {PRIMARY_CTA.label}
+              See Your System
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
             <TrackedLink
@@ -245,7 +183,7 @@ function HeroSection() {
 
           <div className="mt-9 grid grid-cols-3 gap-2 sm:max-w-xl sm:gap-4">
             <HeroStat icon={ClipboardList} value="1" label="You tell us how leads come in" />
-            <HeroStat icon={Workflow} value="2" label="We map the right Lead OS" />
+            <HeroStat icon={Workflow} value="2" label="We map the right operating system" />
             <HeroStat icon={ShieldCheck} value="3" label="You get a clear next step" />
           </div>
         </div>
@@ -261,96 +199,19 @@ function HeroSection() {
 
 function ProductStorySection() {
   return (
-    <section className="border-y border-white/10 bg-[#17122d]/34 px-5 py-9 sm:px-9 lg:px-11" aria-labelledby="product-story-title">
+    <section id="how-it-works" className="border-y border-white/10 bg-[#17122d]/34 px-5 py-9 sm:px-9 lg:px-11" aria-labelledby="product-story-title">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#37f0bd]">AI lead operating system</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Command layer</p>
         <h2 id="product-story-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
-          Show the lead moving through the system.
+          See the messy middle get organized.
         </h2>
         <p className={`mt-3 text-sm leading-6 ${muted}`}>
           Capture, sort, route, follow up, and hand off booking-ready leads from one operating layer.
         </p>
       </div>
       <div className="mt-7 grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
-        <LeadJourneyVisual />
-        <DashboardSnapshot />
-        <div className="xl:col-span-2">
-          <SignalOpsCommandLayer />
-        </div>
-        <div className="xl:col-span-2">
-          <BeforeAfterFlow />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FeatureSection() {
-  return (
-    <section className="px-5 py-8 sm:px-9 lg:px-11">
-      <div className="text-center">
-        <h2 className="text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-          Everything you need.
-        </h2>
-      </div>
-      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        {features.map((feature) => {
-          const Icon = feature.icon;
-          return (
-            <div key={feature.title} className="group rounded-2xl border border-white/12 bg-white/[0.055] p-5 shadow-xl shadow-black/15 transition hover:-translate-y-1 hover:border-[#ffb36d]/35 hover:bg-white/[0.075]">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] shadow-lg shadow-pink-950/25">
-                <Icon className="size-6 text-white" aria-hidden="true" />
-              </div>
-              <h3 className="mt-5 text-lg font-semibold text-white">{feature.title}</h3>
-              <p className={`mt-2 text-sm leading-6 ${muted}`}>{feature.copy}</p>
-              <div className="mt-5 border-t border-white/10 pt-4 text-xs text-[#ffd7e6]">
-                <CheckCircle2 className="mr-2 inline size-3.5 text-[#ffb36d]" aria-hidden="true" />
-                {feature.result}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-function HowItWorks() {
-  const steps: Array<[string, string, LucideIcon]> = [
-    ["Lead comes in", "Forms, calls, DMs, and quote requests enter one operating layer.", MessageSquareReply],
-    ["Reply sent", "The customer gets a useful first response while intent is fresh.", Zap],
-    ["Details collected", "SignalOps asks the right questions and structures the request.", ClipboardList],
-    ["Priority routed", "Urgent or ready leads move to the right person with context.", Route],
-    ["Follow-up queued", "Photo requests, quotes, and no-replies keep moving.", RefreshCcw],
-    ["Handoff ready", "Your team sees the source, details, status, and next action.", BellRing]
-  ];
-
-  return (
-    <section id="how-it-works" className="px-5 py-8 sm:px-9 lg:px-11">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Operating flow</p>
-        <h2 className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-          How the lead moves through SignalOps
-        </h2>
-      </div>
-      <div className="relative mt-8 overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/18 sm:p-6">
-        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#ff6f9c,#ffb36d,#37f0bd,transparent)]" />
-        <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
-          {steps.map(([title, copy, Icon], index) => (
-            <div key={String(title)} className="rounded-2xl border border-white/10 bg-[#0a0f18]/54 p-4">
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <div className="flex size-10 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] shadow-lg shadow-pink-950/20">
-                  <Icon className="size-5 text-white" aria-hidden="true" />
-                </div>
-                <span className="text-xs font-semibold text-[#ead0df]/42">0{index + 1}</span>
-              </div>
-                <div>
-                  <h3 className="font-semibold text-white">{String(title)}</h3>
-                  <p className={`mt-2 text-sm leading-6 ${muted}`}>{String(copy)}</p>
-                </div>
-            </div>
-          ))}
-        </div>
+        <SignalOpsCommandLayer />
+        <BeforeAfterFlow />
       </div>
     </section>
   );
@@ -470,54 +331,10 @@ function PricingSection() {
       </div>
 
       <div className="mt-5 rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-4 text-center text-sm leading-6 text-[#ffe1bd]">
-        Not sure which package fits? Generate the free preview first, then email SignalOps when you are ready to talk through the build.
+        Not sure which package fits? Start with the system map, then email SignalOps when you are ready to talk through the build.
       </div>
 
-      <BreakEvenCalculator className="mt-6" defaultAverageValue={250} defaultUnitLabel="job" />
-    </section>
-  );
-}
-
-function DemoFaq() {
-  return (
-    <section id="demo" className="grid gap-4 px-5 py-8 sm:px-9 lg:grid-cols-[0.86fr_1.14fr] lg:px-11">
-      <div className="rounded-2xl border border-white/12 bg-white/[0.055] p-5">
-        <div className="flex size-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] shadow-lg shadow-pink-950/25">
-          <TrendingUp className="size-7 text-white" aria-hidden="true" />
-        </div>
-        <h2 className="mt-5 text-2xl font-semibold tracking-normal text-white">
-          See how a lead becomes a booked job.
-        </h2>
-        <p className={`mt-3 text-sm leading-6 ${muted}`}>
-          Try the client demo to see instant reply, smart intake, follow-up, routing, and dashboard visibility in action.
-        </p>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-          <TrackedLink
-            href="/demo"
-            eventName={ANALYTICS_EVENTS.demoViewed}
-            eventProperties={{ location: "homepage_demo_card" }}
-            className={`${buttonVariants({ size: "lg" })} w-full`}
-          >
-            View Live Demo
-            <PlayCircle className="size-4" aria-hidden="true" />
-          </TrackedLink>
-        </div>
-      </div>
-
-      <div id="faq" className="rounded-2xl border border-white/12 bg-white/[0.045] p-5">
-        <h2 className="text-xl font-semibold tracking-normal text-white">Quick answers</h2>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group rounded-xl border border-white/10 bg-[#17122d]/62 p-4 open:border-[#ffb36d]/28">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-white">
-                <span>{faq.question}</span>
-                <span className="text-xl text-[#ffb36d] transition group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className={`mt-3 text-sm leading-6 ${muted}`}>{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </div>
+      <BreakEvenCalculator className="mt-6" defaultAverageValue={750} defaultUnitLabel="account" />
     </section>
   );
 }
@@ -533,7 +350,7 @@ function FinalCTA() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold tracking-normal text-white">
-                Get Your Free Preview
+                Want to see the system your business should be using?
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
                 Tell us how your leads come in. SignalOps maps your System Map, Build Plan, and Next Steps so you can see the right operating system before setup.
@@ -546,7 +363,7 @@ function FinalCTA() {
             eventProperties={{ location: "homepage_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
-            {PRIMARY_CTA.label}
+            Get Started
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
@@ -560,7 +377,7 @@ function FinalCTA() {
           </TrackedLink>
         </div>
         <div className="mt-5 rounded-2xl border border-white/10 bg-[#17122d]/52 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
-            <p className="text-sm leading-6 text-[#ead0df]/76">
+          <p className="text-sm leading-6 text-[#ead0df]/76">
             Prefer email? Send your business, website, lead sources, and what you need help with.
           </p>
           <TrackedLink
@@ -572,47 +389,6 @@ function FinalCTA() {
             <Mail className="size-4" aria-hidden="true" />
             {EMAIL_CTA.label}
           </TrackedLink>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ContactSection() {
-  return (
-    <section className="px-5 pb-5 sm:px-9 sm:pb-9 lg:px-11">
-      <div className="rounded-[1.5rem] border border-[#ffb36d]/20 bg-[radial-gradient(circle_at_20%_0%,rgba(255,179,109,0.12),transparent_36%),rgba(255,255,255,0.055)] p-5 shadow-2xl shadow-black/18 sm:p-7">
-        <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Email SignalOps</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-              Want to talk through the preview?
-            </h2>
-            <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-              Send a quick email with your business, website, current lead flow, and what you want the AI lead system to handle.
-            </p>
-            <p className="mt-3 text-sm font-semibold text-[#ffe1bd]">{SITE_CONFIG.email}</p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-            <TrackedLink
-              href={getEmailHref()}
-              eventName={ANALYTICS_EVENTS.contactClicked}
-              eventProperties={{ location: "homepage_contact_section", type: "email" }}
-              className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
-            >
-              <Mail className="size-4" aria-hidden="true" />
-              {EMAIL_CTA.label}
-            </TrackedLink>
-            <TrackedLink
-              href={PRIMARY_CTA.href}
-              eventName={ANALYTICS_EVENTS.previewCtaClicked}
-              eventProperties={{ location: "homepage_contact_section" }}
-              className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
-            >
-              {PRIMARY_CTA.label}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </TrackedLink>
-          </div>
         </div>
       </div>
     </section>

@@ -55,6 +55,13 @@ function formatPercent(value: number) {
   return `${formatNumber(value)}%`;
 }
 
+function formatAccountCount(value: number) {
+  const formatted = formatNumber(value);
+  const isOne = Math.abs(value - 1) < 0.05;
+
+  return `${formatted} ${isOne ? "account" : "accounts"}`;
+}
+
 function getSuggestedPackage(inputs: CalculatorInputs, recoveredRevenue: number): SuggestedPackage {
   if (inputs.monthlyLeads <= 70 || recoveredRevenue <= 2500) {
     return {
@@ -117,7 +124,7 @@ export function RoiCalculator() {
       inputs.monthlySignalOpsCost > 0
         ? ((estimatedRecoveredRevenue - inputs.monthlySignalOpsCost) / inputs.monthlySignalOpsCost) * 100
         : 0;
-    const estimatedBreakEvenJobs =
+    const estimatedBreakEvenAccounts =
       inputs.averageCustomerValue > 0 ? inputs.monthlySignalOpsCost / inputs.averageCustomerValue : 0;
 
     const suggestedPackage = getSuggestedPackage(inputs, estimatedRecoveredRevenue);
@@ -127,7 +134,7 @@ export function RoiCalculator() {
       estimatedRecoveredLeads,
       estimatedRecoveredRevenue,
       estimatedRoi,
-      estimatedBreakEvenJobs,
+      estimatedBreakEvenAccounts,
       suggestedPackage
     };
   }, [inputs]);
@@ -251,8 +258,8 @@ export function RoiCalculator() {
               tone={results.estimatedRoi >= 0 ? "positive" : "neutral"}
             />
             <OutputTile
-              label="Jobs to cover monthly cost"
-              value={`${formatNumber(results.estimatedBreakEvenJobs)} jobs`}
+              label="Accounts to cover monthly cost"
+              value={formatAccountCount(results.estimatedBreakEvenAccounts)}
             />
           </div>
 
@@ -291,7 +298,7 @@ export function RoiCalculator() {
             eventProperties={{ location: "roi_calculator" }}
             className={`${buttonVariants({ size: "lg" })} mt-6 w-full sm:w-auto`}
           >
-            {PRIMARY_CTA.label}
+            See Your System
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
@@ -310,7 +317,7 @@ export function RoiCalculator() {
       </div>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
-        <BreakEvenCalculator defaultAverageValue={inputs.averageCustomerValue} />
+        <BreakEvenCalculator defaultAverageValue={inputs.averageCustomerValue} defaultUnitLabel="account" />
       </section>
 
       <section className="mx-auto mb-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">

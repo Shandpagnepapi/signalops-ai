@@ -38,12 +38,12 @@ type PreviewFormState = {
   website: string;
   email: string;
   phone: string;
-  industry: PreviewSubmissionInput["industry"];
+  industry: PreviewSubmissionInput["industry"] | "";
   otherIndustry: string;
   mainServices: string;
   mainLeadSources: PreviewSubmissionInput["mainLeadSources"];
   otherLeadSource: string;
-  currentProblem: PreviewSubmissionInput["currentProblem"];
+  currentProblem: PreviewSubmissionInput["currentProblem"] | "";
   currentTools: string;
   leadProcess: string;
   notes: string;
@@ -55,12 +55,12 @@ const initialState: PreviewFormState = {
   website: "",
   email: "",
   phone: "",
-  industry: "Mobile fleet wash",
+  industry: "",
   otherIndustry: "",
   mainServices: "",
   mainLeadSources: [],
   otherLeadSource: "",
-  currentProblem: "Slow replies",
+  currentProblem: "",
   currentTools: "",
   leadProcess: "",
   notes: ""
@@ -110,7 +110,7 @@ export function PreviewRequestForm() {
     }));
   }
 
-  function updateIndustry(value: PreviewSubmissionInput["industry"]) {
+  function updateIndustry(value: PreviewSubmissionInput["industry"] | "") {
     setForm((current) => ({
       ...current,
       industry: value,
@@ -157,6 +157,8 @@ export function PreviewRequestForm() {
         },
         body: JSON.stringify({
           ...form,
+          industry: form.industry as PreviewSubmissionInput["industry"],
+          currentProblem: form.currentProblem as PreviewSubmissionInput["currentProblem"],
           otherIndustry: form.industry === "Other local service" ? form.otherIndustry : "",
           otherLeadSource: form.mainLeadSources.includes("Other") ? form.otherLeadSource : "",
           companyWebsite,
@@ -168,7 +170,7 @@ export function PreviewRequestForm() {
       const payload = (await response.json()) as PreviewApiResponse;
 
       if (!response.ok || !payload.submission) {
-        throw new Error(payload.errors?.join(" ") || payload.error || "Free Preview request could not be created.");
+        throw new Error(payload.errors?.join(" ") || payload.error || "System request could not be created.");
       }
 
       trackEvent(ANALYTICS_EVENTS.previewSubmitted, {
@@ -249,20 +251,6 @@ export function PreviewRequestForm() {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="mb-4 hidden gap-3 md:grid md:grid-cols-3">
-          {previewOutputs.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-                <Icon className="mb-3 size-5 text-[#ffb36d]" aria-hidden="true" />
-                <p className="text-sm font-semibold text-white">{item.title}</p>
-                <p className="mt-1 text-xs leading-5 text-[#ead0df]/62">{item.copy}</p>
-              </div>
-            );
-          })}
-        </div>
-
         <form className="grid gap-4" onFocus={handleStart} onSubmit={handleSubmit}>
           <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
             <label htmlFor="companyWebsite">Company website</label>
@@ -323,10 +311,14 @@ export function PreviewRequestForm() {
             <div className="grid gap-4 sm:grid-cols-[0.42fr_0.58fr]">
               <Field label="Industry">
                 <select
+                  required
                   value={form.industry}
-                  onChange={(event) => updateIndustry(event.target.value as PreviewSubmissionInput["industry"])}
+                  onChange={(event) => updateIndustry(event.target.value as PreviewSubmissionInput["industry"] | "")}
                   className={selectClass}
                 >
+                  <option value="" disabled>
+                    Select your industry
+                  </option>
                   {previewIndustryOptions.map((industry) => (
                     <option key={industry} value={industry}>
                       {industry}
@@ -389,10 +381,14 @@ export function PreviewRequestForm() {
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Biggest lead bottleneck">
                 <select
+                  required
                   value={form.currentProblem}
-                  onChange={(event) => updateField("currentProblem", event.target.value as PreviewSubmissionInput["currentProblem"])}
+                  onChange={(event) => updateField("currentProblem", event.target.value as PreviewSubmissionInput["currentProblem"] | "")}
                   className={selectClass}
                 >
+                  <option value="" disabled>
+                    Select the biggest bottleneck
+                  </option>
                   {previewProblemOptions.map((problem) => (
                     <option key={problem} value={problem}>
                       {problem}
