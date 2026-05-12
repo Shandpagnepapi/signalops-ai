@@ -1,15 +1,16 @@
 {
-  "createdAt": "2026-05-12T03:39:30.684Z",
+  "createdAt": "2026-05-12T04:13:37.261Z",
   "baseUrl": "https://www.signalops.pro",
-  "commitSha": "ea74287f4774c533a153b874c5644c33d04bcf7f",
-  "workflowRunId": "25711792241",
-  "artifactId": "6935141309",
-  "artifactName": "signalops-visual-audit-25711792241",
-  "artifactUrl": "https://github.com/Shandpagnepapi/signalops-ai/actions/runs/25711792241/artifacts/6935141309",
+  "commitSha": "3445fa25ee10e4f72216d78e184b51d8f35b15b2",
+  "workflowRunId": "25712845378",
+  "artifactId": "6935498227",
+  "artifactName": "signalops-visual-audit-25712845378",
+  "artifactUrl": "https://github.com/Shandpagnepapi/signalops-ai/actions/runs/25712845378/artifacts/6935498227",
   "reviewUrl": "/visual-review",
   "artifactRetentionDays": 30,
   "routes": [
     "/",
+    "/envo",
     "/preview",
     "/demo",
     "/roi-calculator",
@@ -37,10 +38,11 @@
   ],
   "contactSheets": [
     {
-      "label": "Home + Preview",
+      "label": "Home + Envo + Preview",
       "fileName": "contact-sheet-home-preview.jpg",
       "routes": [
         "/",
+        "/envo",
         "/preview"
       ],
       "src": "/visual-review/latest/contact-sheet-home-preview.jpg"

@@ -1,12 +1,13 @@
 {
-  "createdAt": "2026-05-12T03:39:30.684Z",
+  "createdAt": "2026-05-12T04:13:37.261Z",
   "baseUrl": "https://www.signalops.pro",
-  "commitSha": "ea74287f4774c533a153b874c5644c33d04bcf7f",
-  "workflowRunId": "25711792241",
-  "artifactId": "6935141309",
+  "commitSha": "3445fa25ee10e4f72216d78e184b51d8f35b15b2",
+  "workflowRunId": "25712845378",
+  "artifactId": "6935498227",
   "reviewUrl": "/visual-review",
   "routes": [
     "/",
+    "/envo",
     "/preview",
     "/demo",
     "/roi-calculator",
@@ -34,10 +35,11 @@
   ],
   "contactSheets": [
     {
-      "label": "Home + Preview",
+      "label": "Home + Envo + Preview",
       "fileName": "contact-sheet-home-preview.jpg",
       "routes": [
         "/",
+        "/envo",
         "/preview"
       ],
       "src": "/visual-review/latest/contact-sheet-home-preview.jpg"
@@ -93,6 +95,36 @@
       "height": 1400,
       "fileName": "home-desktop-1440.jpg",
       "src": "/visual-review/latest/home-desktop-1440.jpg"
+    },
+    {
+      "route": "/envo",
+      "routeSlug": "envo",
+      "routeLabel": "Envo",
+      "viewport": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "fileName": "envo-mobile-390.jpg",
+      "src": "/visual-review/latest/envo-mobile-390.jpg"
+    },
+    {
+      "route": "/envo",
+      "routeSlug": "envo",
+      "routeLabel": "Envo",
+      "viewport": "mobile-430",
+      "width": 430,
+      "height": 932,
+      "fileName": "envo-mobile-430.jpg",
+      "src": "/visual-review/latest/envo-mobile-430.jpg"
+    },
+    {
+      "route": "/envo",
+      "routeSlug": "envo",
+      "routeLabel": "Envo",
+      "viewport": "desktop-1440",
+      "width": 1440,
+      "height": 1400,
+      "fileName": "envo-desktop-1440.jpg",
+      "src": "/visual-review/latest/envo-desktop-1440.jpg"
     },
     {
       "route": "/preview",
