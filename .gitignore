@@ -4,6 +4,7 @@ node_modules/
 # Next.js
 .next/
 /.visual-audit-temp/
+/.visual-audit-output/
 out/
 
 # Production

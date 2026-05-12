@@ -1,0 +1,94 @@
+name: Visual Audit Artifact
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "docs/visual-audit-latest.json"
+
+permissions:
+  contents: write
+
+jobs:
+  visual-audit-artifact:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip visual-audit]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Wait for production deployment
+        run: |
+          echo "Waiting 90 seconds for the live site to finish updating..."
+          sleep 90
+
+      - name: Capture public-site screenshots
+        run: npm run visual:audit:artifact -- --base-url=https://www.signalops.pro
+
+      - name: Upload visual audit artifact
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: signalops-visual-audit-${{ github.run_id }}
+          path: .visual-audit-output/latest/
+          retention-days: 30
+
+      - name: Update latest visual audit metadata
+        env:
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_NAME: signalops-visual-audit-${{ github.run_id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: |
+          node - <<'NODE'
+          const fs = require("node:fs");
+          const path = require("node:path");
+
+          const manifestPath = path.join(".visual-audit-output", "latest", "manifest.json");
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+
+          const metadata = {
+            createdAt: manifest.createdAt,
+            baseUrl: manifest.baseUrl,
+            commitSha: process.env.GITHUB_SHA,
+            workflowRunId: process.env.GITHUB_RUN_ID,
+            artifactId: process.env.ARTIFACT_ID,
+            artifactName: process.env.ARTIFACT_NAME,
+            artifactUrl: process.env.ARTIFACT_URL,
+            artifactRetentionDays: 30,
+            routes: manifest.routes,
+            viewports: manifest.viewports,
+            note: "Tell ChatGPT: review latest visual audit."
+          };
+
+          fs.mkdirSync("docs", { recursive: true });
+          fs.writeFileSync(
+            path.join("docs", "visual-audit-latest.json"),
+            `${JSON.stringify(metadata, null, 2)}\n`
+          );
+          NODE
+
+      - name: Commit latest visual audit metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/visual-audit-latest.json
+          git diff --cached --quiet || git commit -m "Update visual audit metadata [skip visual-audit]"
+          git push origin HEAD:${{ github.ref_name }}
