@@ -351,7 +351,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             eventProperties={{ location: `${page.id}_industry_final_cta` }}
             className={buttonVariants({ size: "lg" })}
           >
-            Get Started
+            {PRIMARY_CTA.label}
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

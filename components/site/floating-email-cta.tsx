@@ -4,10 +4,10 @@ import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { SITE_CONFIG } from "@/lib/constants";
+import { getEmailHref } from "@/lib/constants";
 import { shouldHidePublicChrome } from "@/lib/mobile-test-routes";
 
-const emailHref = `mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent("SignalOps question")}`;
+const emailHref = getEmailHref();
 
 function shouldHide(pathname: string) {
   return (

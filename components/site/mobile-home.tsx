@@ -438,7 +438,7 @@ function WhatYouGet() {
             className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black text-white shadow-xl shadow-pink-950/20"
             style={accentButtonStyle}
           >
-            Get Started
+            {PRIMARY_CTA.label}
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

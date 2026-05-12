@@ -194,7 +194,7 @@ export function PreviewRequestForm() {
       const payload = (await response.json()) as PreviewApiResponse;
 
       if (!response.ok || !payload.submission) {
-        throw new Error(payload.errors?.join(" ") || payload.error || "System request could not be created.");
+        throw new Error(payload.errors?.join(" ") || payload.error || "Envo preview request could not be created.");
       }
 
       trackEvent(ANALYTICS_EVENTS.previewSubmitted, {
@@ -220,7 +220,7 @@ export function PreviewRequestForm() {
           </Badge>
           <CardTitle className="text-2xl">Your Envo preview request is in.</CardTitle>
           <CardDescription>
-            Dillon and SignalOps will use your answers to shape a practical Envo setup for {submission.businessName}.
+            SignalOps will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -243,7 +243,7 @@ export function PreviewRequestForm() {
               What happens next
             </p>
             <p className="mt-2 text-sm leading-6 text-[#ead0df]/76">
-              SignalOps maps your lead flow, recommended responsibilities, guardrails, and setup path.
+              SignalOps will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>

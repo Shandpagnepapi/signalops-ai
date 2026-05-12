@@ -19,7 +19,9 @@ export function DemoBusinessSwitcher() {
           <div className="mb-4 flex flex-col gap-3 rounded-3xl border border-white/14 bg-white/[0.07] p-4 shadow-2xl shadow-black/20 backdrop-blur-2xl sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Badge className="mb-2 bg-[#ff6f9c]/14 text-[#ffd7e6]">Envo by SignalOps demo</Badge>
-              <p className="text-sm text-[#ead0df]/72">Choose a demo workflow and see how Envo packages a lead.</p>
+              <p className="text-sm text-[#ead0df]/72">
+                See Envo handle a lead. Watch Envo answer, qualify, follow up, and prepare the handoff.
+              </p>
             </div>
             <label className="relative grid gap-2 text-sm font-medium text-[#ead0df] sm:w-80">
               <span className="sr-only">Choose a demo workflow</span>

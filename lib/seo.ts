@@ -41,7 +41,7 @@ export const OG_IMAGE_ASSETS = {
   },
   demo: {
     path: "/og/signalops-demo.png",
-    alt: "SignalOps client demo social image showing AI lead intake, priority sorting, and routing."
+    alt: "Envo by SignalOps demo social image showing AI lead intake, priority sorting, and routing."
   },
   roi: {
     path: "/og/signalops-roi.png",
@@ -53,7 +53,7 @@ export const PAGE_TITLE_TEMPLATES = {
   home: "AI Workers for Local Businesses",
   preview: "Preview Envo",
   audit: "Start a Project for AI Lead Response",
-  demo: "Mobile Fleet Wash Lead System Demo",
+  demo: "Envo AI Lead Manager Demo",
   dashboard: "AI Lead Management Dashboard Demo",
   howItWorks: "How AI Lead Response Systems Work",
   liveDemo: "AI Lead Response Live Demo Generator",
@@ -66,11 +66,11 @@ export const META_DESCRIPTION_TEMPLATES = {
   home:
     "SignalOps builds AI workers for local businesses. Meet Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads.",
   preview:
-    "Preview how Envo by SignalOps would answer leads, ask intake questions, follow up, escalate, and hand off ready leads for your business.",
+    "Tell us how your leads come in and where things slow down. SignalOps maps how Envo would answer, follow up, escalate, and hand off leads for your business.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:
-    "See how SignalOps could help a mobile fleet wash business collect fleet details, route quote requests, follow up, and prepare recurring account handoffs.",
+    "See Envo handle a lead. Watch Envo answer, qualify, follow up, and prepare the handoff with AI lead response, quote intake automation, and lead routing automation.",
   dashboard:
     "Explore a SignalOps AI lead management dashboard demo with priority views, routing status, missed lead recovery, and automated follow-up visibility.",
   howItWorks:
@@ -263,7 +263,7 @@ export function serviceJsonLd(): JsonLdObject {
       audienceType: "Small and mid-sized local service businesses"
     },
     description:
-      "SignalOps builds AI-powered lead response systems that help small and local businesses capture, answer, sort, follow up with, route, and book more leads automatically.",
+      "SignalOps builds Envo by SignalOps, an AI Lead Manager and AI front desk that helps small and local businesses capture, answer, sort, follow up with, route, and book leads with automated lead follow-up and missed lead recovery.",
     offers: PACKAGE_NAMES.map((pkg) => ({
       "@type": "Offer",
       name: pkg.name,

@@ -68,7 +68,7 @@ export default function PreviewPage() {
               Preview Envo for your business.
             </h2>
             <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
-              Tell us how leads come in, what Envo should ask, and when you want a person to review.
+              {previewDescription}
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-2">
@@ -85,7 +85,7 @@ export default function PreviewPage() {
             </div>
 
             <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} mt-6 w-full`}>
-              Get Started
+              Preview Envo
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           </div>
@@ -107,7 +107,7 @@ export default function PreviewPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}>
-                  Get Started
+                  Preview Envo
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
                 <TrackedLink

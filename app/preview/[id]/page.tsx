@@ -16,9 +16,9 @@ export async function generateMetadata({
   const businessName = submission?.businessName ?? "Business";
 
   return createPageMetadata({
-    title: `${businessName} AI Lead System Preview`,
+    title: `${businessName} Envo Preview`,
     description:
-      "A private SignalOps preview showing a sample AI receptionist, lead dashboard, follow-up timeline, value snapshot, and recommended package.",
+      "A private Envo by SignalOps preview showing AI lead response, intake questions, automated lead follow-up, lead routing automation, and handoff next steps.",
     path: `/preview/${id}`,
     noIndex: true
   });

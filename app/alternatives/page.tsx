@@ -329,7 +329,7 @@ export default function AlternativesHubPage() {
               eventProperties={{ location: "alternatives_hub_final_cta" }}
               className={buttonVariants({ size: "lg" })}
             >
-              Get Started
+              {PRIMARY_CTA.label}
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

@@ -133,7 +133,7 @@ export function LeadJourneyVisual({ className = "" }: { className?: string }) {
       <div className="mt-5 grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
         <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-3">
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <p className="text-sm font-semibold text-white">AI receptionist</p>
+            <p className="text-sm font-semibold text-white">Envo AI Lead Manager</p>
             <StatusPill accent="emerald">4.3s reply</StatusPill>
           </div>
           <div className="mt-3 grid gap-3">

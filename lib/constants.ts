@@ -19,8 +19,8 @@ export const PRODUCT_FULL_NAME = "Envo by SignalOps";
 export const PRODUCT_ROLE = "AI Lead Manager";
 
 export const PRIMARY_CTA = {
-  label: "Explore Envo",
-  href: "/envo"
+  label: "Preview Envo",
+  href: "/preview"
 };
 
 export const OFFER_NAME = "Free Preview";
@@ -30,7 +30,7 @@ export const EMAIL_CTA = {
   shortLabel: "Contact",
   subject: "Envo by SignalOps Inquiry",
   body:
-    "Hi SignalOps, I'm interested in Envo, the AI Lead Manager by SignalOps.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
+    "Hi SignalOps, I'm interested in Envo, the AI Lead Manager. I'd like help with lead response and follow-up for my business.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
 };
 
 export function getEmailHref({

@@ -164,10 +164,10 @@ export function LiveDemoGenerator() {
               Live prospect demo
             </Badge>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-              Generate a tailored SignalOps preview in seconds.
+              Generate a tailored Envo preview in seconds.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
-              Enter a business name, industry, services, and lead problem. SignalOps turns it into a mini strategy report you can walk through live.
+              Enter a business name, industry, services, and lead problem. SignalOps turns it into an Envo mini strategy report you can walk through live.
             </p>
             <div className="mt-6 grid gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
               {[
@@ -393,7 +393,7 @@ function EmptyState() {
       {[
         ["Before", "Prospect says leads are slow, scattered, or hard to sort."],
         ["During", "You enter their details and generate a tailored strategy example live."],
-        ["After", "They can see the exact response, routing, follow-up, and dashboard logic SignalOps would install."]
+        ["After", "They can see the exact response, routing, follow-up, and dashboard logic Envo would run."]
       ].map(([title, body]) => (
         <Card key={title} className="bg-[#17122d]/72">
           <CardHeader>
@@ -498,7 +498,7 @@ function GeneratedDemoPreview({
             <TrackedLink
               href={getEmailHref({
                 subject: `SignalOps Inquiry for ${demo.businessName}`,
-                body: `Hi SignalOps, I generated a live demo for ${demo.businessName} and want help with missed leads. Here's a little about my business:`
+                body: `Hi SignalOps, I generated a live Envo demo for ${demo.businessName} and want help with lead response and follow-up. Here's a little about my business:`
               })}
               eventName={ANALYTICS_EVENTS.contactClicked}
               eventProperties={{ location: "live_demo_generated_package", type: "email", businessName: demo.businessName }}

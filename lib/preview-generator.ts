@@ -194,8 +194,8 @@ export function buildPreviewVisualDrafts(
   return [
     {
       id: "ai-receptionist",
-      title: "AI Receptionist Interface",
-      description: "A lead conversation screen showing the first response, key questions, and priority state.",
+      title: "Envo Lead Manager Interface",
+      description: "A lead conversation screen showing Envo's first response, key questions, and priority state.",
       status: "Pending",
       prompt: `${base} Image 1 of 3: show a mobile Envo conversation interface for a new ${input.industry.toLowerCase()} lead. Include a customer inquiry, Envo reply, collected details, priority state, and owner-ready summary card.`
     },
@@ -284,8 +284,8 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
       monthlyLeadVolume: input.monthlyLeadVolume,
       text:
         input.averageJobValue > 0
-          ? `At $${input.averageJobValue.toLocaleString()} per job, recovering even 1-3 missed leads may cover a large part of the monthly system.`
-          : "Add an average job value to estimate how many recovered leads could offset the monthly system.",
+          ? `At $${input.averageJobValue.toLocaleString()} per job, recovering even 1-3 missed leads may cover a large part of Envo's monthly coverage.`
+          : "Add an average job value to estimate how many recovered leads could offset Envo's monthly coverage.",
       disclaimer: "Estimates are planning examples only and do not guarantee revenue, bookings, or profit."
     },
     recommendedPackage,
@@ -340,13 +340,13 @@ export function generateManagerDrafts(
         `Detected pain points: ${previewData.painPoints.join(", ")}.`
       ],
       responseSystemRecommendation:
-        `Build a draft-first AI receptionist, intake, follow-up, booking handoff, and dashboard flow around ${input.industry.toLowerCase()} inquiries.`
+        `Build a draft-first Envo AI Lead Manager flow for response, intake, follow-up, booking handoff, and dashboard visibility around ${input.industry.toLowerCase()} inquiries.`
     },
     proposalDraft: {
       title: `${recommendedPackage} proposal draft`,
       recommendedPackage,
       scope: [
-        "AI receptionist flow for new inquiries",
+        "Envo lead response flow for new inquiries",
         "Lead intake questions based on services and lead sources",
         "Follow-up sequence for no-replies, quote requests, and missing details",
         "Booking or callback handoff path",
@@ -360,9 +360,9 @@ export function generateManagerDrafts(
       ]
     },
     emailDraft: {
-      subject: "Your SignalOps Free Preview",
+      subject: "Your Envo Preview",
       body:
-        `Hey ${input.contactName},\n\nI put together a draft Free Preview for ${input.businessName}. It includes a system map, build plan, and suggested AI response system for your lead flow.\n\n${previewPathNote}\n\nIf it looks useful, we can walk through what should actually be built.\n\n- SignalOps`,
+        `Hey ${input.contactName},\n\nI put together a draft Envo Preview for ${input.businessName}. It includes a lead map, Envo build plan, and suggested AI Lead Manager path for your lead flow.\n\n${previewPathNote}\n\nIf it looks useful, we can walk through what should actually be built.\n\n- SignalOps`,
       approvalStatus: "Needs Review",
       deliveryStatus: "Draft only - not sent"
     },
@@ -384,7 +384,7 @@ export function generateManagerDrafts(
     ],
     buildPlan: [
       { phase: "Phase 1", work: "Intake + lead storage" },
-      { phase: "Phase 2", work: "AI receptionist/response scripts" },
+      { phase: "Phase 2", work: "Envo response scripts" },
       { phase: "Phase 3", work: "Follow-up logic" },
       { phase: "Phase 4", work: "Owner notifications/dashboard" },
       { phase: "Phase 5", work: "Testing" },

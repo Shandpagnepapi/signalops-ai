@@ -231,7 +231,8 @@ export async function POST(request: Request) {
       submission: receipt,
       previewUrl: `/preview/${submission.id}`,
       status: submission.status,
-      message: "Your request was received. SignalOps will prepare your system map and next steps."
+      message:
+        "Your Envo preview request was received. SignalOps will map how Envo should handle your lead flow, rules, handoffs, and follow-ups."
     },
     { status: 201 }
   );

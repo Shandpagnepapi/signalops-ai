@@ -201,7 +201,7 @@ export const demoBusinesses = {
     industry: "Mobile fleet washing and recurring fleet care",
     location: routeWashFleetCare.location,
     phone: routeWashFleetCare.phone,
-    heroBadge: "DFW mobile fleet wash + SignalOps intake demo",
+    heroBadge: "DFW mobile fleet wash + Envo intake demo",
     headline: routeWashFleetCare.headline,
     subheadline: routeWashFleetCare.subheadline,
     primaryCta: "Request Fleet Quote",
@@ -273,7 +273,7 @@ export const demoBusinesses = {
       eyebrow: "Fleet types served",
       title: "Different fleets need different intake paths.",
       description:
-        "SignalOps can turn a messy quote request into a cleaner account handoff for delivery, service, dealership, rental, and company vehicle fleets.",
+        "Envo can turn a messy quote request into a cleaner account handoff for delivery, service, dealership, rental, and company vehicle fleets.",
       items: routeWashFleetCare.fleetTypes
     },
     process: {
@@ -345,7 +345,7 @@ export const demoBusinesses = {
     },
     form: {
       source: "routewash-mobile-fleet-care-demo",
-      badge: "SignalOps intake",
+      badge: "Envo intake",
       title: "Request a fleet wash quote",
       description:
         "A conversion-focused intake captures the details RouteWash needs to prepare a route-friendly fleet quote.",
@@ -399,7 +399,7 @@ export const demoBusinesses = {
     industry: "Well and water processing service",
     location: "Central Alabama",
     phone: "(334) 555-0186",
-    heroBadge: "Small well and water service company + SignalOps intake demo",
+    heroBadge: "Small well and water service company + Envo intake demo",
     headline: "Local well and water service without missed calls or buried follow-ups.",
     subheadline:
       "ClearFlow is a small 3-person operation handling filter changes, pump issues, pressure problems, water testing, routine maintenance, and occasional commercial water system projects.",
@@ -429,7 +429,7 @@ export const demoBusinesses = {
     ],
     qualificationPreview: {
       title: "Service request triage",
-      subtitle: "How SignalOps sorts the next callback",
+      subtitle: "How Envo sorts the next callback",
       badge: "Owner-ready notes",
       cards: [
         {
@@ -450,7 +450,7 @@ export const demoBusinesses = {
       eyebrow: "Well and water services",
       title: "A small service company needs intake that separates urgent calls from routine work.",
       description:
-        "ClearFlow can keep using calls and texts, while SignalOps captures the details that decide whether a request needs a fast callback, routine scheduling, or owner review."
+        "ClearFlow can keep using calls and texts, while Envo captures the details that decide whether a request needs a fast callback, routine scheduling, or owner review."
     },
     services: [
       {
@@ -524,7 +524,7 @@ export const demoBusinesses = {
       eyebrow: "Common service requests",
       title: "Simple categories make the next callback obvious.",
       description:
-        "SignalOps helps ClearFlow avoid treating every message the same. Urgent water issues, routine maintenance, and larger project requests need different handling.",
+        "Envo helps ClearFlow avoid treating every message the same. Urgent water issues, routine maintenance, and larger project requests need different handling.",
       items: [
         "No water",
         "Well pump issue",
@@ -545,7 +545,7 @@ export const demoBusinesses = {
         },
         {
           title: "Issue Gets Sorted",
-          description: "SignalOps identifies emergency, maintenance, testing, pressure, pump, or commercial context."
+          description: "Envo identifies emergency, maintenance, testing, pressure, pump, or commercial context."
         },
         {
           title: "Details Are Requested",
@@ -566,7 +566,7 @@ export const demoBusinesses = {
       eyebrow: "Small team callout",
       title: "Built around the way ClearFlow already works.",
       description:
-        "ClearFlow does not need a complicated CRM to start. SignalOps can wrap a simple intake and follow-up system around calls, texts, forms, and DMs so the team knows who needs a callback and what the customer needs.",
+        "ClearFlow does not need a complicated CRM to start. Envo can wrap a simple intake and follow-up system around calls, texts, forms, and DMs so the team knows who needs a callback and what the customer needs.",
       noteTitle: "Practical service note",
       noteDescription:
         "No-water and major pressure issues should be prioritized for staff handoff. Routine maintenance can be organized into available service windows, while large commercial requests should route to the owner."
@@ -575,7 +575,7 @@ export const demoBusinesses = {
       eyebrow: "Why this matters for a small 3-person operation",
       title: "Small teams lose opportunities in the handoff between doing the work and following up.",
       description:
-        "When a small team is doing the work, answering calls, texting customers, quoting jobs, and handling follow-ups, it is easy for opportunities to get lost. SignalOps gives the business a simple system that captures every request, separates urgent jobs from routine maintenance, reminds the team who needs follow-up, and keeps bigger opportunities from getting buried in text threads.",
+        "When a small team is doing the work, answering calls, texting customers, quoting jobs, and handling follow-ups, it is easy for opportunities to get lost. Envo gives the business a simple system that captures every request, separates urgent jobs from routine maintenance, reminds the team who needs follow-up, and keeps bigger opportunities from getting buried in text threads.",
       points: [
         "Missed-call text back",
         "Service request intake form",
@@ -657,10 +657,10 @@ export const demoBusinesses = {
       }
     ],
     leadOpsPanel: {
-      badge: "SignalOps demo workflow",
+      badge: "Envo demo workflow",
       title: "What would happen in production?",
       description:
-        "Normally this would text the customer, ask for missing address or system details, alert the owner on urgent issues, log the lead, and start maintenance or quote follow-up.",
+        "Normally Envo would text the customer, ask for missing address or system details, alert the owner on urgent issues, log the lead, and start maintenance or quote follow-up.",
       items: [
         {
           title: "Customer reply",
@@ -692,7 +692,7 @@ export const demoBusinesses = {
     },
     form: {
       source: "clearflow-well-water-demo",
-      badge: "SignalOps service intake",
+      badge: "Envo service intake",
       title: "Request well or water service help",
       description:
         "This intake keeps a small team organized by capturing the issue, urgency, location, system details, and next follow-up step.",

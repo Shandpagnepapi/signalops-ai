@@ -198,7 +198,7 @@ function requestedOutputsText(classification: PromptWorkerClassification) {
     "The template name must be one of: Quote Intake OS, Appointment Booking OS, Emergency Response OS, Lead Nurture OS, Custom Ops OS.",
     "",
     "## 6. Visual Preview Notes",
-    "- AI Receptionist Interface",
+    "- Envo Lead Manager Interface",
     "- Lead Command Center",
     "- Booking/Quote Handoff Flow",
     "- Suggested preview screenshots/cards Dillon could show the prospect",
@@ -228,7 +228,7 @@ function requestedOutputsText(classification: PromptWorkerClassification) {
     "- Follow-up 1 must be under 120 words.",
     "- Follow-up 2 must be under 100 words.",
     "- Email should sound like Dillon at SignalOps, not a corporate robot.",
-    "- Include simple visual descriptions for AI Receptionist Interface, Lead Command Center, and Booking/Quote Handoff Flow."
+    "- Include simple visual descriptions for Envo Lead Manager Interface, Lead Command Center, and Booking/Quote Handoff Flow."
   ].join("\n");
 }
 
