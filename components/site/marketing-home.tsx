@@ -34,7 +34,6 @@ import { TrackedLink } from "@/components/site/tracked-link";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import {
-  getEmailHref,
   getPlanEmailHref,
   PACKAGE_NAMES,
   PRODUCT_FULL_NAME,
@@ -47,15 +46,13 @@ import type { VisualTheme } from "@/lib/visual-themes";
 
 const studioTheme = visualThemes.studioWarm;
 const envoTheme = visualThemes.envoWarm;
-const coolTheme = visualThemes.studioCool;
 
 const navItems = [
   { href: "/#studio", label: "Studio" },
-  { href: "/#products", label: "Products" },
   { href: "/envo", label: "Envo" },
   { href: "/demo", label: "Demo" },
-  { href: "/#pricing", label: "Packages" },
-  { href: getEmailHref(), label: "Contact" }
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/preview", label: "Preview Envo" }
 ];
 
 const leadSources = [
@@ -87,7 +84,7 @@ const productLineup = [
     name: "Flux",
     role: "AI Operations Assistant",
     status: "Coming Soon",
-    theme: coolTheme
+    theme: studioTheme
   },
   {
     copy: "Surfaces cash-flow, invoices, job value, and finance follow-ups for owner review.",
@@ -131,16 +128,19 @@ const outcomeMetrics = [
 const pricingCards = [
   {
     copy: `${PACKAGE_NAMES[0].summary} Setup from $750.`,
+    id: "starter",
     name: PACKAGE_NAMES[0].name,
     price: PACKAGE_NAMES[0].price
   },
   {
     copy: `${PACKAGE_NAMES[1].summary} Setup from $1,500.`,
+    id: "growth",
     name: PACKAGE_NAMES[1].name,
     price: PACKAGE_NAMES[1].price
   },
   {
     copy: `${PACKAGE_NAMES[2].summary} Buildout from $5,000+.`,
+    id: "custom-agent-system",
     name: PACKAGE_NAMES[2].name,
     price: PACKAGE_NAMES[2].price
   }
@@ -154,7 +154,7 @@ export function MarketingHome() {
       <ProductLineupSection />
       <StudioVisionSection />
       <TrustAndOutcomesSection />
-      <PackagesSection />
+      <PricingSection />
       <FinalCTASection />
     </main>
   );
@@ -358,15 +358,15 @@ function ProductCard({
 function StudioVisionSection() {
   return (
     <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={coolTheme} />
+      <AmbientBackground intensity="quiet" theme={studioTheme} />
       <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <GlassPanel className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center" theme={coolTheme}>
+        <GlassPanel className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center" theme={studioTheme}>
           <div>
-            <FloatingBadge icon={Sparkles} theme={coolTheme}>Studio Vision</FloatingBadge>
+            <FloatingBadge icon={Sparkles} theme={studioTheme}>Studio Vision</FloatingBadge>
             <h2 className="mt-4 text-4xl font-black leading-tight tracking-normal text-white sm:text-6xl">
               The future workforce is AI.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[#c8d6e5]">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[#ead0df]">
               We build autonomous AI workers that operate in the background, get things done, and deliver measurable
               results for local businesses.
             </p>
@@ -378,7 +378,7 @@ function StudioVisionSection() {
               ["Measure", "Owners get visibility into what happened and what needs action."],
               ["Improve", "SignalOps keeps the product layer practical, useful, and focused."]
             ].map(([title, copy]) => (
-              <RuleCard key={title} copy={copy} icon={Workflow} title={title} theme={coolTheme} />
+              <RuleCard key={title} copy={copy} icon={Workflow} title={title} theme={studioTheme} />
             ))}
           </div>
         </GlassPanel>
@@ -420,14 +420,14 @@ function TrustAndOutcomesSection() {
   );
 }
 
-function PackagesSection() {
+function PricingSection() {
   return (
     <section className="premium-section" id="pricing">
       <AmbientBackground intensity="quiet" theme={envoTheme} />
       <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <FloatingBadge icon={BarChart3} theme={envoTheme}>Packages</FloatingBadge>
+            <FloatingBadge icon={BarChart3} theme={envoTheme}>Pricing</FloatingBadge>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-white sm:text-5xl">
               Start with the Envo package that matches your lead flow.
             </h2>
@@ -438,12 +438,15 @@ function PackagesSection() {
         </div>
         <div className="mt-7 grid gap-4 lg:grid-cols-3">
           {pricingCards.map((plan) => (
-            <PremiumPricingCard
-              key={plan.name}
-              {...plan}
-              cta={`Ask About ${plan.name}`}
-              theme={envoTheme}
-            />
+            <div key={plan.name} id={plan.id} className="scroll-mt-28">
+              <PremiumPricingCard
+                copy={plan.copy}
+                cta={`Ask About ${plan.name}`}
+                name={plan.name}
+                price={plan.price}
+                theme={envoTheme}
+              />
+            </div>
           ))}
         </div>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">

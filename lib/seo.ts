@@ -53,7 +53,7 @@ export const PAGE_TITLE_TEMPLATES = {
   home: "AI Workers for Local Businesses",
   preview: "Preview Envo",
   audit: "Start a Project for AI Lead Response",
-  demo: "Envo AI Lead Manager Demo",
+  demo: "Envo Demo",
   dashboard: "AI Lead Management Dashboard Demo",
   howItWorks: "How AI Lead Response Systems Work",
   liveDemo: "AI Lead Response Live Demo Generator",

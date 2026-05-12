@@ -72,7 +72,7 @@ export function Footer() {
           </p>
           <div className="mt-5 border-t border-white/10 pt-4">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#ead0df]/42">
-              Packages
+              Pricing
             </p>
             <div className="grid gap-2 text-sm text-[#ead0df]/78">
               {PACKAGE_LINKS.map((link) => (

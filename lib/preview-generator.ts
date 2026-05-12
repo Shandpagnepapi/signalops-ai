@@ -181,7 +181,7 @@ function visualPromptBase(input: PreviewSubmissionInput, previewData: PreviewDat
     `Main services: ${services}.`,
     `Lead sources: ${leadSources}.${customLeadSource}`,
     `Primary bottleneck: ${input.currentProblem}.`,
-    `Recommended system level: ${packageName}.`
+    `Recommended Envo coverage level: ${packageName}.`
   ].join(" ");
 }
 
@@ -211,7 +211,7 @@ export function buildPreviewVisualDrafts(
       title: "Booking Handoff Flow",
       description: "A visual handoff path from lead capture to intake, follow-up, owner alert, and booking next step.",
       status: "Pending",
-      prompt: `${base} Image 3 of 3: show an operating-system style workflow timeline from lead captured to AI reply, detail intake, missing details follow-up, owner alert, and booking/callback handoff.`
+      prompt: `${base} Image 3 of 3: show an Envo Workbench workflow timeline from lead captured to AI reply, detail intake, missing details follow-up, owner alert, and booking/callback handoff.`
     }
   ];
 }

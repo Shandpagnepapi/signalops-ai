@@ -221,9 +221,9 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
 
   return (
     <DesignLabShell
-      copy="Temporary noindex previews for testing the next SignalOps / Envo visual direction. The public homepage, pricing, production CTAs, and public navigation are intentionally left alone."
+      copy="Temporary noindex previews for reviewing the selected SignalOps Warm direction, the Envo Warm product treatment, and any remaining alternate concepts before this lab is deleted."
       eyebrow="Internal visual playground"
-      title="Premium glassmorphism components before production."
+      title="Premium glassmorphism reference lab."
     >
       <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         {cards.map((card) => (
@@ -244,18 +244,18 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
       <section id="current-site-notes" className="mt-8 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
         <GlassPanel className="p-5" theme={visualThemes.currentSignalOps}>
           <FloatingBadge icon={Sparkles} theme={visualThemes.currentSignalOps}>Current Site Notes</FloatingBadge>
-          <h2 className="mt-5 text-3xl font-black tracking-normal text-white">Production stays untouched.</h2>
+          <h2 className="mt-5 text-3xl font-black tracking-normal text-white">SignalOps Warm is selected.</h2>
           <p className="mt-4 text-sm leading-7 text-[color:var(--vs-muted)]">
-            This lab is for pressure-testing the visual system foundation only. The current homepage, live pricing
-            blocks, production calls to action, and public navigation are not redesigned here.
+            This lab is now a temporary reference for the chosen warm production direction. It remains hidden from
+            public navigation and marked noindex while final visual decisions are reviewed.
           </p>
         </GlassPanel>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            "Design lab routes are noindex and kept out of public navigation.",
-            "The new visual system is reusable before it touches production pages.",
-            "Warm Envo now has product-ready components for orb, triage, rules, and pricing.",
-            "Cool SignalOps has a separate theme token set for parent-studio exploration."
+            "Design lab routes stay noindex and out of public navigation.",
+            "Production pages now use the warm SignalOps studio direction.",
+            "Warm Envo remains the product system for orb, triage, rules, and pricing.",
+            "Cool SignalOps remains here only as a comparison reference."
           ].map((note) => (
             <RuleCard key={note} copy={note} icon={CheckCircle2} title="Foundation note" theme={visualThemes.envoWarm} />
           ))}

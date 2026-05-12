@@ -44,7 +44,7 @@ const actions = [
   {
     copy: "Your team gets source, status, details, and the recommended next action.",
     icon: PackageCheck,
-    title: "Packages owner handoffs"
+    title: "Prepares owner handoffs"
   }
 ] satisfies Array<{ copy: string; icon: LucideIcon; title: string }>;
 

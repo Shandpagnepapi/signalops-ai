@@ -295,7 +295,7 @@ export function WhatsIncludedSection({
             eventProperties={{ location: "included_layers_view_packages" }}
             className={`${buttonVariants({ variant: "outline" })} mt-4 w-full border-white/18 bg-white/[0.045] sm:mt-0 sm:w-auto`}
           >
-            View Packages
+            View Pricing
           </TrackedLink>
         </div>
       </div>

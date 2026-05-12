@@ -8,7 +8,7 @@ import {
 } from "@/lib/seo";
 
 const description =
-  "Meet Envo, the AI Lead Manager by SignalOps. Envo answers leads, asks intake questions, follows up, routes priority requests, and hands off to your team.";
+  "Envo is the AI Lead Manager by SignalOps. It answers leads, asks intake questions, follows up, routes priority requests, and hands off to your team.";
 
 export const metadata = createPageMetadata({
   title: "Envo by SignalOps | AI Lead Manager for Local Businesses",

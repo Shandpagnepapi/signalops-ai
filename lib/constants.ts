@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps builds AI workers for local businesses, starting with Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads."
+    "SignalOps is an AI venture studio that builds AI workers for local businesses, starting with Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads."
 };
 
 export const PRODUCT_NAME = "Envo";
@@ -66,10 +66,6 @@ export const NAV_LINKS = [
     label: "Studio"
   },
   {
-    href: "/#products",
-    label: "Products"
-  },
-  {
     href: "/envo",
     label: "Envo"
   },
@@ -79,7 +75,7 @@ export const NAV_LINKS = [
   },
   {
     href: "/#pricing",
-    label: "Packages"
+    label: "Pricing"
   }
 ];
 
@@ -179,15 +175,15 @@ export const RESOURCE_LINKS = [
 export const PACKAGE_LINKS = [
   {
     href: "/#starter",
-    label: "Starter Package"
+    label: "Starter Pricing"
   },
   {
     href: "/#growth",
-    label: "Growth Package"
+    label: "Growth Pricing"
   },
   {
     href: "/#custom-agent-system",
-    label: "Custom Package"
+    label: "Custom Pricing"
   }
 ];
 

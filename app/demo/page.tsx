@@ -12,11 +12,12 @@ import {
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: PAGE_TITLE_TEMPLATES.demo,
+  title: "Envo Demo | SignalOps",
   description: META_DESCRIPTION_TEMPLATES.demo,
   path: "/demo",
   image: OG_IMAGE_ASSETS.demo.path,
-  imageAlt: OG_IMAGE_ASSETS.demo.alt
+  imageAlt: OG_IMAGE_ASSETS.demo.alt,
+  absoluteTitle: true
 });
 
 export default function DemoPage() {
@@ -33,9 +34,10 @@ export default function DemoPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: PAGE_TITLE_TEMPLATES.demo,
+            title: "Envo Demo | SignalOps",
             description: META_DESCRIPTION_TEMPLATES.demo,
-            path: "/demo"
+            path: "/demo",
+            absoluteTitle: true
           }),
           faqPageJsonLd(demoFaqs),
           breadcrumbJsonLd([

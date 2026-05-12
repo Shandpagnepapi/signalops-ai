@@ -16,9 +16,10 @@ const previewDescription =
   "Tell us how your leads come in and where things slow down. SignalOps maps how Envo would answer, follow up, escalate, and hand off leads for your business.";
 
 export const metadata = createPageMetadata({
-  title: "Preview Envo",
+  title: "Preview Envo | SignalOps",
   description: previewDescription,
-  path: "/preview"
+  path: "/preview",
+  absoluteTitle: true
 });
 
 const mobilePreviewOutputs = [
@@ -46,9 +47,10 @@ export default function PreviewPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "Preview Envo",
+            title: "Preview Envo | SignalOps",
             description: previewDescription,
-            path: "/preview"
+            path: "/preview",
+            absoluteTitle: true
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
