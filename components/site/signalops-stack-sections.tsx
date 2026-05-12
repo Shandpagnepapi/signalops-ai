@@ -90,7 +90,7 @@ const outputNodes = [
 
 const includedLayers = [
   {
-    layer: "Instant Reply Layer",
+    layer: "Instant Reply",
     handles: "New inquiries from forms, calls, texts, DMs, and quote requests.",
     replaces: "Missed-call text-back tools, simple webchat, manual first replies.",
     cost: "$50-$200/mo",
@@ -99,7 +99,7 @@ const includedLayers = [
     icon: Zap
   },
   {
-    layer: "Smart Intake Layer",
+    layer: "Smart Intake",
     handles: "Collects the right details, service needs, timing, locations, and contact info.",
     replaces: "Long manual back-and-forth, intake forms, scattered notes.",
     cost: "$50-$150/mo",
@@ -108,7 +108,7 @@ const includedLayers = [
     icon: ClipboardList
   },
   {
-    layer: "Priority Routing Layer",
+    layer: "Priority Routing",
     handles: "Sorts urgent, high-value, or ready leads and prepares owner/team handoff.",
     replaces: "Manual triage, spreadsheet sorting, missed internal alerts.",
     cost: "$50-$200/mo",
@@ -117,7 +117,7 @@ const includedLayers = [
     icon: Route
   },
   {
-    layer: "Follow-Up Layer",
+    layer: "Follow-Up",
     handles: "Quote follow-up, missing-details reminders, no-reply nudges, booking/callback reminders.",
     replaces: "Reminder tools, manual texting, basic campaign automations.",
     cost: "$100-$300/mo",
@@ -135,8 +135,8 @@ const includedLayers = [
     icon: TableProperties
   },
   {
-    layer: "OS Build Plan",
-    handles: "Maps the right lead operating system before setup.",
+    layer: "Manager Build Plan",
+    handles: "Maps what your AI Lead Manager should handle before setup.",
     replaces: "Generic AI consulting, unclear automation plans, trial-and-error setup.",
     cost: "Varies",
     included: "Free starting path",
@@ -178,10 +178,10 @@ export function ConsolidateLeadStackSection({
         <div className={mobileShell}>
           <div className="overflow-hidden rounded-[1.85rem] border border-white/15 bg-white/[0.075] p-4 shadow-2xl shadow-black/25">
             <SectionHeading
-              eyebrow="SignalOps OS Core"
+              eyebrow="AI Lead Manager"
               id="mobile-lead-stack-title"
-              title="Consolidate your lead stack."
-              copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through one operating layer."
+              title="One manager for the messy middle."
+              copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through one supervised lead workflow."
               compact
             />
             <LeadStackVisual compact />
@@ -196,10 +196,10 @@ export function ConsolidateLeadStackSection({
       <div className={shell}>
         <div className="grid gap-7 xl:grid-cols-[0.78fr_1.22fr] xl:items-center">
           <SectionHeading
-            eyebrow="SignalOps OS Core"
+            eyebrow="AI Lead Manager"
             id="lead-stack-title"
             title="Consolidate your lead stack."
-            copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through one operating layer instead of scattered tools and manual work."
+            copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through one AI Lead Manager instead of scattered tools and manual work."
           >
             <TrackedLink
               href={PRIMARY_CTA.href}
@@ -207,7 +207,7 @@ export function ConsolidateLeadStackSection({
               eventProperties={{ location: "lead_stack_section" }}
               className={`${buttonVariants({ size: "lg" })} mt-6`}
             >
-              See Your System
+              See Your AI Lead Manager
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </SectionHeading>
@@ -235,8 +235,8 @@ export function WhatsIncludedSection({
             <SectionHeading
               eyebrow="Included layers"
               id="mobile-included-title"
-              title="What's included with SignalOps"
-              copy="One lead operating layer instead of scattered tools, inboxes, reminders, and manual follow-up."
+              title="What's included with your AI Lead Manager"
+              copy="One supervised lead workflow instead of scattered tools, inboxes, reminders, and manual follow-up."
               compact
             />
             <div className="mt-4 grid gap-3">
@@ -245,7 +245,7 @@ export function WhatsIncludedSection({
               ))}
             </div>
             <p className="mt-4 text-xs leading-5 text-white/50">
-              More layers are mapped in your preview when the workflow needs deeper routing, dashboards, or integrations.
+              More responsibilities are mapped in your preview when the workflow needs deeper routing, dashboards, or integrations.
             </p>
           </div>
         </div>
@@ -262,13 +262,13 @@ export function WhatsIncludedSection({
             What&apos;s included with SignalOps
           </h2>
           <p className={`mt-3 text-sm leading-6 ${muted}`}>
-            One lead operating layer instead of scattered tools, inboxes, reminders, and manual follow-up.
+            One AI Lead Manager instead of scattered tools, inboxes, reminders, and manual follow-up.
           </p>
         </div>
 
         <div className="mt-7 hidden overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.05] shadow-2xl shadow-black/18 lg:block">
           <div className="grid grid-cols-[0.95fr_1.35fr_1.35fr_0.75fr_0.72fr] border-b border-white/10 bg-white/[0.04] text-xs font-semibold uppercase tracking-[0.14em] text-white/44">
-            <div className="p-4">SignalOps layer</div>
+            <div className="p-4">Manager responsibility</div>
             <div className="p-4">What it handles</div>
             <div className="p-4">What it can replace</div>
             <div className="p-4">Typical separate-tool cost</div>
@@ -461,9 +461,9 @@ function OSCorePanel({ compact = false }: { compact?: boolean }) {
     <div className="relative overflow-hidden rounded-[1.45rem] border border-[#ffb36d]/24 bg-[radial-gradient(circle_at_50%_0%,rgba(255,179,109,0.16),transparent_13rem),rgba(255,255,255,0.055)] p-3 shadow-2xl shadow-pink-950/10">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-[0.64rem] font-black uppercase tracking-wide text-[#ffe1bd]/70">Center layer</p>
+          <p className="text-[0.64rem] font-black uppercase tracking-wide text-[#ffe1bd]/70">Manager core</p>
           <h3 className={cn("mt-1 font-black tracking-normal text-white", compact ? "text-lg" : "text-2xl")}>
-            SignalOps OS Core
+            AI Lead Manager
           </h3>
         </div>
         <span className="rounded-full bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] px-2.5 py-1 text-[0.62rem] font-black text-white">

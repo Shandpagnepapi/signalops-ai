@@ -77,10 +77,10 @@ export function LeadOSSelector() {
             </div>
           </div>
           <p className="mt-3 text-sm leading-6 text-white/62">
-            Switch between operating systems and see the kind of interface SignalOps can shape around your lead flow.
+            Switch between Lead OS types and see the responsibilities your AI Lead Manager could supervise.
           </p>
 
-          <div className="mt-5 grid grid-cols-3 gap-2" role="tablist" aria-label="Lead operating system options">
+          <div className="mt-5 grid grid-cols-3 gap-2" role="tablist" aria-label="Lead OS options">
             {leadOsOptions.map((option) => {
               const Icon = option.icon;
               const isActive = active.key === option.key;
@@ -126,7 +126,7 @@ export function LeadOSSelector() {
           eventProperties={{ location: `mobile_lead_os_${active.key}` }}
           className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ff9f75_46%,#ffb36d)] px-5 text-sm font-black text-white shadow-xl shadow-pink-950/25"
         >
-          Show Me My OS
+          Show Me My AI Lead Manager
           <ArrowRight className="size-4" aria-hidden="true" />
         </TrackedLink>
       </div>

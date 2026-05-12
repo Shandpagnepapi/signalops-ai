@@ -7,15 +7,15 @@ const normalizedSiteUrl =
 export const SITE_CONFIG = {
   brandName: "SignalOps",
   name: "SignalOps",
-  tagline: "Every lead answered. Every follow-up handled.",
+  tagline: "Your AI Lead Manager by SignalOps.",
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps builds AI-powered lead operating systems that reply, collect details, route priorities, follow up, and hand off ready leads."
+    "SignalOps builds AI Lead Managers that answer new inquiries, collect details, follow up, and hand off ready leads for local service businesses."
 };
 
 export const PRIMARY_CTA = {
-  label: "See Your System",
+  label: "See Your AI Lead Manager",
   href: "/preview"
 };
 
@@ -140,7 +140,7 @@ export const SEO_INDUSTRY_LINKS = [
 export const RESOURCE_LINKS = [
   {
     href: "/preview",
-    label: "See Your System"
+    label: "See Your AI Lead Manager"
   },
   {
     href: "/demo",
@@ -194,7 +194,7 @@ export const PACKAGE_NAMES = [
   {
     name: "Starter",
     price: "$250/mo",
-    summary: "Start with one clean response, intake, and follow-up workflow for a core lead source.",
+    summary: "Start with one AI Lead Manager flow for a core lead source.",
     features: [
       "Project intake and setup plan",
       "Instant reply workflow",
@@ -205,7 +205,7 @@ export const PACKAGE_NAMES = [
   {
     name: "Growth",
     price: "$500/mo",
-    summary: "Connect more lead sources, stronger follow-up, and a clearer operating view.",
+    summary: "Give your AI Lead Manager more sources, follow-up paths, and owner visibility.",
     features: [
       "Multi-source lead routing",
       "Priority sorting and routing",
@@ -217,7 +217,7 @@ export const PACKAGE_NAMES = [
   {
     name: "Custom",
     price: "From $1,000/mo",
-    summary: "Build a custom lead operations layer for complex sales, quote, or service workflows.",
+    summary: "Build a custom AI Lead Manager for complex sales, quote, or service workflows.",
     features: [
       "Custom lead agents",
       "Advanced workflow automation",

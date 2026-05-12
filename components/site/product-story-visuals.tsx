@@ -33,19 +33,19 @@ const artifactCards = [
   {
     title: "System Map",
     label: "Map",
-    copy: "Lead sources, bottlenecks, routing points, and follow-up gaps.",
+    copy: "What your AI Lead Manager will handle, watch, and hand off.",
     icon: FileText
   },
   {
     title: "Build Plan",
     label: "Plan",
-    copy: "The Lead OS, package fit, build scope, and setup path.",
+    copy: "The intake questions, guardrails, escalation rules, and setup path.",
     icon: ClipboardList
   },
   {
     title: "Next Steps",
     label: "Action",
-    copy: "What to connect, what to automate, and what should happen first.",
+    copy: "What to connect first and what the owner or team should review.",
     icon: Route
   }
 ];
@@ -57,7 +57,7 @@ const journeyConversation = [
     text: "Can you quote biweekly washing for 28 service vans?"
   },
   {
-    speaker: "SignalOps AI",
+    speaker: "AI Lead Manager",
     tone: "ai",
     text: "Yes. Send fleet size, vehicle types, locations, and your preferred wash window."
   },
@@ -105,7 +105,7 @@ const afterItems = [
 
 export function PreviewArtifactShowcase({ className = "" }: { className?: string }) {
   return (
-    <ProductFrame accent="emerald" className={className} eyebrow="System preview" title="Three practical outputs, one build path.">
+    <ProductFrame accent="emerald" className={className} eyebrow="AI Lead Manager preview" title="Three practical outputs, one build path.">
       <div className="-mt-1 mb-4">
         <StatusPill accent="emerald">Mapped</StatusPill>
       </div>
@@ -118,7 +118,7 @@ export function PreviewArtifactShowcase({ className = "" }: { className?: string
 
       <CommandCard accent="emerald" className="mt-4">
         <p className="text-sm font-semibold leading-6 text-emerald-100">
-          Built to show what SignalOps would shape around your lead flow before setup begins.
+          Built to show what your AI Lead Manager should handle, ask, escalate, and hand off before setup begins.
         </p>
       </CommandCard>
     </ProductFrame>

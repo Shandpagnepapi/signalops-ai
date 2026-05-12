@@ -46,6 +46,7 @@ type PreviewFormState = {
   currentProblem: PreviewSubmissionInput["currentProblem"] | "";
   currentTools: string;
   leadProcess: string;
+  guardrails: string;
   notes: string;
 };
 
@@ -63,6 +64,7 @@ const initialState: PreviewFormState = {
   currentProblem: "",
   currentTools: "",
   leadProcess: "",
+  guardrails: "",
   notes: ""
 };
 
@@ -72,17 +74,17 @@ const selectClass =
 const previewOutputs = [
   {
     title: "System Map",
-    copy: "Lead sources, slow spots, handoff points, and follow-up gaps.",
+    copy: "What it will handle, what the owner sees, and where leads slow down.",
     icon: FileText
   },
   {
     title: "Build Plan",
-    copy: "The Lead OS, package fit, build scope, and setup path.",
+    copy: "The intake questions, guardrails, escalation rules, and setup path.",
     icon: ClipboardList
   },
   {
     title: "Next Steps",
-    copy: "What to connect, what to automate, and what should happen first.",
+    copy: "What to connect first and what should need approval.",
     icon: Route
   }
 ];
@@ -148,6 +150,15 @@ export function PreviewRequestForm() {
     setStatus("submitting");
     setError("");
     setSubmission(null);
+    const notesWithGuardrails = [
+      form.notes,
+      form.guardrails
+        ? `AI Lead Manager guardrails, service area, pricing rules, never-promise items, and owner-review triggers: ${form.guardrails}`
+        : ""
+    ]
+      .filter(Boolean)
+      .join("\n\n")
+      .slice(0, 1400);
 
     try {
       const response = await fetch("/api/preview", {
@@ -159,6 +170,7 @@ export function PreviewRequestForm() {
           ...form,
           industry: form.industry as PreviewSubmissionInput["industry"],
           currentProblem: form.currentProblem as PreviewSubmissionInput["currentProblem"],
+          notes: notesWithGuardrails,
           otherIndustry: form.industry === "Other local service" ? form.otherIndustry : "",
           otherLeadSource: form.mainLeadSources.includes("Other") ? form.otherLeadSource : "",
           companyWebsite,
@@ -194,9 +206,9 @@ export function PreviewRequestForm() {
           <Badge className="mb-3 w-fit border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
             Request received
           </Badge>
-          <CardTitle className="text-2xl">Your system request is in.</CardTitle>
+          <CardTitle className="text-2xl">Your AI Lead Manager request is in.</CardTitle>
           <CardDescription>
-            Dillon and SignalOps will use your answers to shape a practical lead operating system for {submission.businessName}.
+            Dillon and SignalOps will use your answers to shape a practical AI Lead Manager for {submission.businessName}.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -219,7 +231,7 @@ export function PreviewRequestForm() {
               What happens next
             </p>
             <p className="mt-2 text-sm leading-6 text-[#ead0df]/76">
-              SignalOps maps your lead flow, recommends the right system level, and gives you a clear setup path.
+              SignalOps maps your lead flow, recommended responsibilities, guardrails, and setup path.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>
@@ -238,11 +250,11 @@ export function PreviewRequestForm() {
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">
-              Lead OS
+              AI Lead Manager
             </Badge>
             <CardTitle className="text-2xl">Tell us how your leads work today.</CardTitle>
             <CardDescription>
-              SignalOps uses your answers to map the operating system that fits your calls, forms, DMs, quotes, and appointments.
+              SignalOps uses your answers to map what your AI Lead Manager should answer, ask, follow up on, and escalate.
             </CardDescription>
           </div>
           <div className="rounded-xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 px-3 py-2 text-xs font-medium text-[#ffe1bd]">
@@ -423,6 +435,16 @@ export function PreviewRequestForm() {
             </div>
           </FormPanel>
 
+          <FormPanel label="Guardrails">
+            <Field label="Service area, pricing rules, and owner-review triggers">
+              <Textarea
+                value={form.guardrails}
+                onChange={(event) => updateField("guardrails", event.target.value)}
+                placeholder="Example: service cities, price ranges, discounts it should not offer, things it should never promise, and when a person should review."
+              />
+            </Field>
+          </FormPanel>
+
           {status === "error" ? (
             <div className="flex gap-3 rounded-2xl border border-red-300/20 bg-red-400/10 p-4 text-sm leading-6 text-red-100">
               <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
@@ -436,12 +458,12 @@ export function PreviewRequestForm() {
             ) : (
               <ArrowRight className="size-4" aria-hidden="true" />
             )}
-            Show Me My OS
+            Preview My AI Lead Manager
           </Button>
 
           <p className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
             <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
-            Share the messy reality. SignalOps will shape the system around how your business actually runs.
+            Share the messy reality. SignalOps will shape the AI Lead Manager around how your business actually runs.
           </p>
         </form>
       </CardContent>

@@ -2,11 +2,15 @@ import type { CSSProperties } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
+  AlertTriangle,
   BellRing,
   CalendarCheck2,
+  CheckCircle2,
   Clock3,
+  Edit3,
   FileText,
   Gauge,
+  Hand,
   MessageCircle,
   RefreshCcw,
   Route,
@@ -52,17 +56,17 @@ const handoffSteps = [
 const previewOutputs = [
   {
     title: "System Map",
-    copy: "Your lead sources, slow spots, handoff points, and follow-up gaps.",
+    copy: "What your AI Lead Manager should handle, watch, and hand off.",
     icon: Workflow
   },
   {
     title: "Build Plan",
-    copy: "The operating system SignalOps would shape around your business.",
+    copy: "The intake questions, guardrails, and setup path SignalOps would shape.",
     icon: Wrench
   },
   {
     title: "Next Steps",
-    copy: "A clear path for what to connect, what to automate, and what comes first.",
+    copy: "What to connect first and when the owner should review.",
     icon: ArrowRight
   }
 ];
@@ -84,6 +88,7 @@ export function MobileSignalOpsHome() {
         <MobileHeader />
         <Hero />
         <LeadHandoffVisual />
+        <OwnerTriageCard />
         <LeadOSSelector />
         <ConsolidateLeadStackSection compact />
         <WhatYouGet />
@@ -131,13 +136,13 @@ function Hero() {
     <section className="px-4 pt-9" style={shellStyle}>
       <p className="inline-flex items-center gap-2 rounded-full border border-[#ffb36d]/24 bg-[#ffb36d]/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-[#ffe1bd]">
         <Sparkles className="size-4" aria-hidden="true" />
-        AI lead systems for local businesses
+        AI Lead Manager for local businesses
       </p>
       <h1 className="mt-6 text-[2.42rem] font-black leading-[0.98] tracking-normal text-white">
-        Every lead answered. Every follow-up handled.
+        Your AI Lead Manager, right in your pocket.
       </h1>
       <p className="mt-5 text-base leading-7 text-[#ead0df]/76">
-        SignalOps builds lead operating systems that reply fast, collect the right details, route priorities, and keep work moving.
+        It answers leads, asks the right questions, follows up, and shows you what needs approval or takeover.
       </p>
       <div className="mt-6 grid gap-3">
         <TrackedLink
@@ -147,7 +152,7 @@ function Hero() {
           className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black shadow-xl shadow-pink-950/28"
           style={accentButtonStyle}
         >
-          See Your System
+          See Your AI Lead Manager
           <ArrowRight className="size-4" aria-hidden="true" />
         </TrackedLink>
         <TrackedLink
@@ -173,7 +178,7 @@ function LeadHandoffVisual() {
               <div>
                 <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Live handoff</p>
                 <h2 className="mt-1 text-xl font-black leading-tight tracking-normal text-white">
-                  A lead comes in. The next step is already moving.
+                  A lead comes in. Your AI manager starts the work.
                 </h2>
               </div>
               <span className="rounded-full bg-[#ffb36d]/16 px-3 py-1 text-xs font-black text-[#ffe1bd]">
@@ -188,7 +193,7 @@ function LeadHandoffVisual() {
                 Can I get a quote this week?
               </LeadMessage>
               <LeadMessage tone="system" label="SignalOps">
-                Absolutely. I will collect the details and send your request to the team with the best next step.
+                Absolutely. I will grab the details and flag the team if this needs a person.
               </LeadMessage>
             </div>
 
@@ -232,6 +237,114 @@ function LeadHandoffVisual() {
         </div>
       </div>
     </section>
+  );
+}
+
+const triageLeads = [
+  {
+    title: "Fleet quote request",
+    detail: "28 vans, two DFW locations, biweekly after-hours.",
+    status: "Ready to send",
+    tone: "ready",
+    icon: CheckCircle2
+  },
+  {
+    title: "Discount question",
+    detail: "Customer asked for a lower monthly rate.",
+    status: "Needs approval",
+    tone: "approval",
+    icon: Edit3
+  },
+  {
+    title: "Urgent service issue",
+    detail: "Outside normal service area and time window.",
+    status: "Human review recommended",
+    tone: "review",
+    icon: AlertTriangle
+  }
+] satisfies Array<{
+  detail: string;
+  icon: LucideIcon;
+  status: string;
+  title: string;
+  tone: "ready" | "approval" | "review";
+}>;
+
+function OwnerTriageCard() {
+  return (
+    <section className="px-4 pb-7" style={shellStyle} aria-labelledby="mobile-owner-triage-title">
+      <div className="overflow-hidden rounded-[1.85rem] border border-white/14 bg-white/[0.085] p-4 shadow-2xl shadow-black/22 backdrop-blur-2xl">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Owner triage</p>
+            <h2 id="mobile-owner-triage-title" className="mt-1 text-2xl font-black leading-tight tracking-normal text-white">
+              Supervise the AI worker from your phone.
+            </h2>
+          </div>
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#ffb36d]/12 text-[#ffb36d]">
+            <Hand className="size-5" aria-hidden="true" />
+          </span>
+        </div>
+        <p className="mt-3 text-sm leading-6 text-white/62">
+          Approve, edit, or take over when the lead needs owner judgment.
+        </p>
+
+        <div className="mt-5 grid gap-3">
+          {triageLeads.map((lead) => (
+            <TriageLeadCard key={lead.title} {...lead} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TriageLeadCard({
+  detail,
+  icon: Icon,
+  status,
+  title,
+  tone
+}: {
+  detail: string;
+  icon: LucideIcon;
+  status: string;
+  title: string;
+  tone: "ready" | "approval" | "review";
+}) {
+  const toneClass =
+    tone === "ready"
+      ? "border-emerald-300/18 bg-emerald-300/10 text-emerald-100"
+      : tone === "approval"
+        ? "border-[#ffb36d]/20 bg-[#ffb36d]/10 text-[#ffe1bd]"
+        : "border-amber-300/22 bg-amber-300/10 text-amber-100";
+
+  return (
+    <article className="rounded-3xl border border-white/10 bg-[#100818]/46 p-3">
+      <div className="flex items-start gap-3">
+        <div className={cn("flex size-10 shrink-0 items-center justify-center rounded-2xl border", toneClass)}>
+          <Icon className="size-5" aria-hidden="true" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="text-sm font-black text-white">{title}</h3>
+            <span className={cn("rounded-full border px-2 py-1 text-[0.62rem] font-black", toneClass)}>{status}</span>
+          </div>
+          <p className="mt-2 text-xs leading-5 text-white/60">{detail}</p>
+          <div className="mt-3 grid grid-cols-3 gap-1.5">
+            {["Approve", "Edit", "Take over"].map((action) => (
+              <button
+                key={action}
+                type="button"
+                className="h-9 rounded-2xl border border-white/10 bg-white/[0.055] px-2 text-[0.68rem] font-black text-white/78"
+              >
+                {action}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -297,10 +410,10 @@ function WhatYouGet() {
         <div className="rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/10">
           <p className="text-xs font-black uppercase tracking-wide text-[#b84d69]">What you get back</p>
           <h2 id="mobile-outputs-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
-            A clear picture of the system that fits.
+            A clear picture of the AI Lead Manager that fits.
           </h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Tell us about your business and SignalOps will map the operating system that fits your lead flow.
+            Tell us about your business and SignalOps will map what your AI Lead Manager should handle, ask, escalate, and hand off.
           </p>
 
           <div className="mt-5 grid gap-2">
@@ -350,12 +463,12 @@ function PersonalTouch() {
           <div>
             <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Done for you</p>
             <h2 id="mobile-personal-title" className="mt-1 text-2xl font-black leading-tight tracking-normal">
-              Built around your business.
+              Trained around your business.
             </h2>
           </div>
         </div>
         <p className="mt-4 text-sm leading-6 text-white/68">
-          SignalOps shapes the system around how your calls, forms, DMs, quotes, appointments, and team handoffs actually work.
+          SignalOps shapes your AI Lead Manager around how your calls, forms, DMs, quotes, appointments, and team handoffs actually work.
         </p>
       </div>
     </section>
@@ -460,7 +573,7 @@ function FinalCta() {
         }}
       >
         <h2 id="mobile-final-title" className="text-2xl font-black leading-tight tracking-normal">
-          Want to see the system your business should be using?
+          Want to see the AI Lead Manager your business should be using?
         </h2>
         <TrackedLink
           href={PRIMARY_CTA.href}
