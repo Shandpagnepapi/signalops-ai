@@ -18,13 +18,12 @@ export function Navbar() {
     return null;
   }
 
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 bg-[#14102b]/74 px-3 py-3 backdrop-blur-xl sm:px-5",
-        pathname === "/" && "hidden md:block"
-      )}
-    >
+    <header className="sticky top-0 z-50 bg-[#14102b]/74 px-3 py-3 backdrop-blur-xl sm:px-5">
       <nav
         className="mx-auto flex max-w-[1450px] items-center justify-between gap-4 rounded-2xl border border-white/14 bg-white/[0.075] px-4 py-3 shadow-2xl shadow-black/18 backdrop-blur-2xl sm:px-6"
         aria-label="Primary navigation"

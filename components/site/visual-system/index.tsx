@@ -72,9 +72,9 @@ export function AmbientBackground({
       <div className="absolute inset-0 bg-[image:var(--vs-page-gradient)]" />
       <div className="ambient-grid absolute inset-0 opacity-[0.11]" />
       <div className="gradient-noise absolute inset-0 opacity-[0.16]" />
-      <span className="light-orb animate-slow-glow left-[6%] top-[-8rem] size-[24rem]" />
-      <span className="light-orb animate-slow-glow animation-delay-2000 right-[5%] top-[8%] size-[20rem] opacity-70" />
-      <span className="light-orb animate-slow-glow animation-delay-4000 bottom-[-10rem] left-[38%] size-[22rem] opacity-45" />
+      <span className="light-orb animate-slow-glow left-[6%] top-[-8rem] size-[16rem] sm:size-[24rem]" />
+      <span className="light-orb animate-slow-glow animation-delay-2000 right-[5%] top-[8%] size-[14rem] opacity-70 sm:size-[20rem]" />
+      <span className="light-orb animate-slow-glow animation-delay-4000 bottom-[-10rem] left-[15%] size-[16rem] opacity-45 sm:left-[38%] sm:size-[22rem]" />
     </div>
   );
 }
@@ -210,17 +210,19 @@ export function FloatingBadge({
 
 export function TranslucentNav({
   brand = "SignalOps Design Lab",
+  brandHref = "/",
   className,
   items,
   style,
   theme = visualThemes.envoWarm
 }: VisualComponentProps & {
   brand?: string;
+  brandHref?: string;
   items: Array<{ href: string; label: string }>;
 }) {
   return (
     <GlassPanel className={cn("flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between", className)} style={style} theme={theme}>
-      <Link href={items[0]?.href ?? "/"} className="flex min-w-0 items-center gap-3">
+      <Link href={brandHref} className="flex min-w-0 items-center gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-[color:var(--vs-border)] bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_36px_var(--vs-glow)]">
           <Sparkles className="size-5" aria-hidden="true" />
         </span>
@@ -228,13 +230,23 @@ export function TranslucentNav({
       </Link>
       <nav className="flex flex-wrap gap-2" aria-label={`${brand} navigation`}>
         {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
-          >
-            {item.label}
-          </Link>
+          item.href.startsWith("mailto:") ? (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
+            >
+              {item.label}
+            </a>
+          ) : (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
+            >
+              {item.label}
+            </Link>
+          )
         ))}
       </nav>
     </GlassPanel>
@@ -294,9 +306,9 @@ export function OrbitalProductVisual({
   return (
     <div className={cn("floating-layer relative min-h-[32rem] overflow-hidden rounded-[1.75rem] border border-white/12 bg-black/24 p-4 shadow-2xl shadow-black/30 backdrop-blur-2xl", className)} style={themeVars(theme, style)}>
       <div className="absolute inset-0 bg-[image:var(--vs-spotlight-gradient)]" />
-      <div className="absolute left-1/2 top-1/2 size-52 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_90px_var(--vs-glow)]" />
-      <div className="absolute left-1/2 top-1/2 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-      <div className="absolute left-1/2 top-1/2 size-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]" />
+      <div className="absolute left-1/2 top-1/2 size-40 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_90px_var(--vs-glow)] sm:size-52" />
+      <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:size-72" />
+      <div className="absolute left-1/2 top-1/2 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06] sm:size-96" />
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
         <p className="bg-[image:var(--vs-button-gradient)] bg-clip-text text-5xl font-black text-transparent sm:text-6xl">{label}</p>
         <p className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-white/54">Product core</p>

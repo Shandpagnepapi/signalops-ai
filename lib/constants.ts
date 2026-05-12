@@ -7,11 +7,11 @@ const normalizedSiteUrl =
 export const SITE_CONFIG = {
   brandName: "SignalOps",
   name: "SignalOps",
-  tagline: "Envo by SignalOps.",
+  tagline: "AI workers for local businesses.",
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps builds Envo, an AI Lead Manager that answers new inquiries, collects details, follows up, and hands off ready leads for local service businesses."
+    "SignalOps builds AI workers for local businesses, starting with Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads."
 };
 
 export const PRODUCT_NAME = "Envo";
@@ -19,7 +19,7 @@ export const PRODUCT_FULL_NAME = "Envo by SignalOps";
 export const PRODUCT_ROLE = "AI Lead Manager";
 
 export const PRIMARY_CTA = {
-  label: "Meet Envo",
+  label: "Explore Envo",
   href: "/envo"
 };
 
@@ -62,24 +62,24 @@ export const SECONDARY_CTA = {
 
 export const NAV_LINKS = [
   {
+    href: "/#studio",
+    label: "Studio"
+  },
+  {
+    href: "/#products",
+    label: "Products"
+  },
+  {
     href: "/envo",
     label: "Envo"
-  },
-  {
-    href: "/#how-it-works",
-    label: "How It Works"
-  },
-  {
-    href: "/#pricing",
-    label: "Packages"
   },
   {
     href: "/demo",
     label: "Demo"
   },
   {
-    href: "/roi-calculator",
-    label: "ROI Calculator"
+    href: "/#pricing",
+    label: "Packages"
   }
 ];
 

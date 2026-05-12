@@ -17,6 +17,7 @@ const intentionallyNonIndexableRoutes = new Set([
   "/design-lab",
   "/design-lab/envo",
   "/design-lab/studio",
+  "/design-lab/themes",
   "/visual-review"
 ]);
 const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt", "/design-lab/studio"]);

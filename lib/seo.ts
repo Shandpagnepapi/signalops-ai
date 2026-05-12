@@ -29,11 +29,11 @@ export const SEO_DEFAULT_IMAGE = "/og/signalops-default.png";
 export const OG_IMAGE_ASSETS = {
   default: {
     path: "/og/signalops-default.png",
-    alt: "SignalOps branded social image for Every lead answered. Every follow-up handled."
+    alt: "SignalOps branded social image for AI workers for local businesses."
   },
   home: {
     path: "/og/signalops-home.png",
-    alt: "SignalOps homepage social image for AI lead response and follow-up systems."
+    alt: "SignalOps homepage social image for AI workers and Envo, the AI Lead Manager."
   },
   audit: {
     path: "/og/signalops-audit.png",
@@ -50,7 +50,7 @@ export const OG_IMAGE_ASSETS = {
 } as const;
 
 export const PAGE_TITLE_TEMPLATES = {
-  home: "Envo AI Lead Manager for Local Businesses",
+  home: "AI Workers for Local Businesses",
   preview: "Preview Envo",
   audit: "Start a Project for AI Lead Response",
   demo: "Mobile Fleet Wash Lead System Demo",
@@ -64,7 +64,7 @@ export const PAGE_TITLE_TEMPLATES = {
 
 export const META_DESCRIPTION_TEMPLATES = {
   home:
-    "Meet Envo by SignalOps, an AI Lead Manager for local service businesses that handles AI lead response, intake, follow-up, routing, and owner handoff.",
+    "SignalOps builds AI workers for local businesses. Meet Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads.",
   preview:
     "Preview how Envo by SignalOps would answer leads, ask intake questions, follow up, escalate, and hand off ready leads for your business.",
   audit:
