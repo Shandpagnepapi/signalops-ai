@@ -1,9 +1,9 @@
 {
-  "createdAt": "2026-05-12T20:55:03.652Z",
+  "createdAt": "2026-05-12T21:34:26.713Z",
   "baseUrl": "https://www.signalops.pro",
-  "commitSha": "d0c83c2082c18602805ef2e4462fabfb04bb9bc3",
-  "workflowRunId": "25761535023",
-  "artifactId": "6955646116",
+  "commitSha": "c259c80632b54be76fb5b3dabcb1aae4d18f59fb",
+  "workflowRunId": "25763195343",
+  "artifactId": "6956409589",
   "reviewUrl": "/visual-review",
   "routes": [
     "/",
