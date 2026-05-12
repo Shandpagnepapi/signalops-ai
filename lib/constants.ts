@@ -7,16 +7,20 @@ const normalizedSiteUrl =
 export const SITE_CONFIG = {
   brandName: "SignalOps",
   name: "SignalOps",
-  tagline: "Your AI Lead Manager by SignalOps.",
+  tagline: "Envo by SignalOps.",
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps builds AI Lead Managers that answer new inquiries, collect details, follow up, and hand off ready leads for local service businesses."
+    "SignalOps builds Envo, an AI Lead Manager that answers new inquiries, collects details, follows up, and hands off ready leads for local service businesses."
 };
 
+export const PRODUCT_NAME = "Envo";
+export const PRODUCT_FULL_NAME = "Envo by SignalOps";
+export const PRODUCT_ROLE = "AI Lead Manager";
+
 export const PRIMARY_CTA = {
-  label: "See Your AI Lead Manager",
-  href: "/preview"
+  label: "Meet Envo",
+  href: "/envo"
 };
 
 export const OFFER_NAME = "Free Preview";
@@ -24,9 +28,9 @@ export const OFFER_NAME = "Free Preview";
 export const EMAIL_CTA = {
   label: "Email SignalOps",
   shortLabel: "Contact",
-  subject: "SignalOps Project Inquiry",
+  subject: "Envo by SignalOps Inquiry",
   body:
-    "Hi SignalOps, I'm interested in getting help with lead response and follow-up for my business.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
+    "Hi SignalOps, I'm interested in Envo, the AI Lead Manager by SignalOps.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
 };
 
 export function getEmailHref({
@@ -47,7 +51,7 @@ export function getPlanEmailHref(planName: string) {
 
   return getEmailHref({
     subject,
-    body: `Hi SignalOps, I'm interested in the ${planName} package.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat I need help with:\nBest phone/email:\nTimeline:`
+    body: `Hi SignalOps, I'm interested in Envo and the ${planName} package.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat I need help with:\nBest phone/email:\nTimeline:`
   });
 }
 
@@ -57,6 +61,10 @@ export const SECONDARY_CTA = {
 };
 
 export const NAV_LINKS = [
+  {
+    href: "/envo",
+    label: "Envo"
+  },
   {
     href: "/#how-it-works",
     label: "How It Works"
@@ -139,8 +147,12 @@ export const SEO_INDUSTRY_LINKS = [
 
 export const RESOURCE_LINKS = [
   {
+    href: "/envo",
+    label: "Meet Envo"
+  },
+  {
     href: "/preview",
-    label: "See Your AI Lead Manager"
+    label: "Preview Envo"
   },
   {
     href: "/demo",
@@ -194,7 +206,7 @@ export const PACKAGE_NAMES = [
   {
     name: "Starter",
     price: "$250/mo",
-    summary: "Start with one AI Lead Manager flow for a core lead source.",
+    summary: "Start Envo on one main lead source.",
     features: [
       "Project intake and setup plan",
       "Instant reply workflow",
@@ -205,7 +217,7 @@ export const PACKAGE_NAMES = [
   {
     name: "Growth",
     price: "$500/mo",
-    summary: "Give your AI Lead Manager more sources, follow-up paths, and owner visibility.",
+    summary: "Let Envo manage multiple lead sources and follow-up paths.",
     features: [
       "Multi-source lead routing",
       "Priority sorting and routing",
@@ -217,7 +229,7 @@ export const PACKAGE_NAMES = [
   {
     name: "Custom",
     price: "From $1,000/mo",
-    summary: "Build a custom AI Lead Manager for complex sales, quote, or service workflows.",
+    summary: "Build Envo around complex routing, dashboards, teams, and integrations.",
     features: [
       "Custom lead agents",
       "Advanced workflow automation",

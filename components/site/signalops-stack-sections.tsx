@@ -23,7 +23,7 @@ import {
 import { TrackedLink } from "@/components/site/tracked-link";
 import { buttonVariants } from "@/components/ui/button";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { PRIMARY_CTA } from "@/lib/constants";
+import { PRIMARY_CTA, PRODUCT_NAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type Accent = "emerald" | "sky" | "amber" | "pink";
@@ -135,8 +135,8 @@ const includedLayers = [
     icon: TableProperties
   },
   {
-    layer: "Manager Build Plan",
-    handles: "Maps what your AI Lead Manager should handle before setup.",
+    layer: "Envo Build Plan",
+    handles: "Maps what Envo should handle before setup.",
     replaces: "Generic AI consulting, unclear automation plans, trial-and-error setup.",
     cost: "Varies",
     included: "Free starting path",
@@ -178,10 +178,10 @@ export function ConsolidateLeadStackSection({
         <div className={mobileShell}>
           <div className="overflow-hidden rounded-[1.85rem] border border-white/15 bg-white/[0.075] p-4 shadow-2xl shadow-black/25">
             <SectionHeading
-              eyebrow="AI Lead Manager"
+              eyebrow={`${PRODUCT_NAME} at work`}
               id="mobile-lead-stack-title"
-              title="One manager for the messy middle."
-              copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through one supervised lead workflow."
+              title="One lead manager for the messy middle."
+              copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through Envo."
               compact
             />
             <LeadStackVisual compact />
@@ -196,10 +196,10 @@ export function ConsolidateLeadStackSection({
       <div className={shell}>
         <div className="grid gap-7 xl:grid-cols-[0.78fr_1.22fr] xl:items-center">
           <SectionHeading
-            eyebrow="AI Lead Manager"
+            eyebrow={`${PRODUCT_NAME} at work`}
             id="lead-stack-title"
             title="Consolidate your lead stack."
-            copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through one AI Lead Manager instead of scattered tools and manual work."
+            copy="Forms, calls, DMs, quotes, follow-up, and handoffs move through Envo instead of scattered tools and manual work."
           >
             <TrackedLink
               href={PRIMARY_CTA.href}
@@ -207,7 +207,7 @@ export function ConsolidateLeadStackSection({
               eventProperties={{ location: "lead_stack_section" }}
               className={`${buttonVariants({ size: "lg" })} mt-6`}
             >
-              See Your AI Lead Manager
+              Meet Envo
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </SectionHeading>
@@ -235,7 +235,7 @@ export function WhatsIncludedSection({
             <SectionHeading
               eyebrow="Included layers"
               id="mobile-included-title"
-              title="What's included with your AI Lead Manager"
+              title="What's included with Envo"
               copy="One supervised lead workflow instead of scattered tools, inboxes, reminders, and manual follow-up."
               compact
             />
@@ -259,10 +259,10 @@ export function WhatsIncludedSection({
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Included layers</p>
           <h2 id="included-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
-            What&apos;s included with SignalOps
+            What&apos;s included with Envo by SignalOps
           </h2>
           <p className={`mt-3 text-sm leading-6 ${muted}`}>
-            One AI Lead Manager instead of scattered tools, inboxes, reminders, and manual follow-up.
+            Envo instead of scattered tools, inboxes, reminders, and manual follow-up.
           </p>
         </div>
 
@@ -461,9 +461,9 @@ function OSCorePanel({ compact = false }: { compact?: boolean }) {
     <div className="relative overflow-hidden rounded-[1.45rem] border border-[#ffb36d]/24 bg-[radial-gradient(circle_at_50%_0%,rgba(255,179,109,0.16),transparent_13rem),rgba(255,255,255,0.055)] p-3 shadow-2xl shadow-pink-950/10">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-[0.64rem] font-black uppercase tracking-wide text-[#ffe1bd]/70">Manager core</p>
+          <p className="text-[0.64rem] font-black uppercase tracking-wide text-[#ffe1bd]/70">Envo Core</p>
           <h3 className={cn("mt-1 font-black tracking-normal text-white", compact ? "text-lg" : "text-2xl")}>
-            AI Lead Manager
+            Envo Lead Desk
           </h3>
         </div>
         <span className="rounded-full bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] px-2.5 py-1 text-[0.62rem] font-black text-white">

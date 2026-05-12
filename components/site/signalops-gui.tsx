@@ -295,8 +295,8 @@ export function SignalOpsCommandLayer({ className = "", compact = false }: { cla
     <ProductFrame
       accent="lime"
       className={className}
-      eyebrow="AI Lead Manager activity"
-      title={compact ? "Incoming to handoff, one manager." : "Your AI Lead Manager from inquiry to next action."}
+      eyebrow="Envo at work"
+      title={compact ? "Incoming to handoff, one manager." : "Envo from inquiry to next action."}
     >
       <div className={cn("grid gap-4", compact ? "" : "lg:grid-cols-[1.05fr_0.95fr]")}>
         <div className={cn("rounded-3xl border border-white/10 bg-white/[0.045]", compact ? "p-3" : "p-4")}>

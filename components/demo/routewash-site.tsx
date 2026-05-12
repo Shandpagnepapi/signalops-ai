@@ -24,7 +24,7 @@ import { DemoLeadForm } from "./demo-lead-form";
 
 const timeline = [
   { label: "Inquiry", icon: MessageSquareReply },
-  { label: "AI reply", icon: Zap },
+  { label: "Envo reply", icon: Zap },
   { label: "Details", icon: SearchCheck },
   { label: "Follow-up", icon: Route },
   { label: "Booked", icon: CalendarCheck2 }
@@ -186,7 +186,7 @@ export function RouteWashDemoSite({ business }: { business: DemoBusinessConfig }
                 Want this built for your business?
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[#ead0df]/76">
-                Send your lead sources, tools, package interest, and timeline so SignalOps can scope the right system.
+                Send your lead sources, tools, package interest, and timeline so SignalOps can scope where Envo should start.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
@@ -226,7 +226,7 @@ function DemoWorkflowPanel({ business }: { business: DemoBusinessConfig }) {
       <div className="relative overflow-hidden rounded-[1.6rem] border border-white/14 bg-[#17122d]/82 shadow-2xl shadow-black/25 backdrop-blur-2xl">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div>
-            <p className="text-sm font-semibold text-white">SignalOps command workspace</p>
+            <p className="text-sm font-semibold text-white">Envo command workspace</p>
             <p className="text-xs text-[#ead0df]/52">{business.industry}</p>
           </div>
           <Badge className="border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Demo mode</Badge>

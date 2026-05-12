@@ -26,7 +26,7 @@ import {
 } from "@/components/site/signalops-stack-sections";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { ANALYTICS_EVENTS, type AnalyticsEventName } from "@/lib/analytics";
-import { PRIMARY_CTA, SECONDARY_CTA } from "@/lib/constants";
+import { PRIMARY_CTA, PRODUCT_FULL_NAME, PRODUCT_NAME, SECONDARY_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const shellStyle = {
@@ -55,18 +55,18 @@ const handoffSteps = [
 
 const previewOutputs = [
   {
-    title: "System Map",
-    copy: "What your AI Lead Manager should handle, watch, and hand off.",
+    title: "Lead Map",
+    copy: "Where leads come from, where they slow down, and what Envo should handle.",
     icon: Workflow
   },
   {
-    title: "Build Plan",
-    copy: "The intake questions, guardrails, and setup path SignalOps would shape.",
+    title: "Envo Build Plan",
+    copy: "What Envo should answer, ask, log, follow up on, and escalate.",
     icon: Wrench
   },
   {
     title: "Next Steps",
-    copy: "What to connect first and when the owner should review.",
+    copy: "What to connect first and what rules Envo needs before going live.",
     icon: ArrowRight
   }
 ];
@@ -106,7 +106,10 @@ function MobileHeader() {
   return (
     <header className="px-4 pt-3" style={shellStyle}>
       <div className="flex items-center justify-between gap-2 rounded-[1.55rem] border border-white/14 bg-white/[0.095] px-3 py-3 shadow-2xl shadow-black/20 backdrop-blur-2xl">
-        <p className="shrink-0 text-base font-black tracking-normal">SignalOps</p>
+        <div className="min-w-0">
+          <p className="shrink-0 text-base font-black tracking-normal">SignalOps</p>
+          <p className="truncate text-[0.62rem] font-black uppercase tracking-wide text-[#ffb36d]">Envo AI Lead Manager</p>
+        </div>
         <nav className="flex min-w-0 items-center gap-2" aria-label="Mobile homepage navigation">
           <TrackedLink
             href={SECONDARY_CTA.href}
@@ -123,7 +126,7 @@ function MobileHeader() {
             className="inline-flex h-10 items-center justify-center rounded-2xl px-3 text-sm font-black shadow-lg shadow-pink-950/25"
             style={accentButtonStyle}
           >
-            Get Started
+            Meet Envo
           </TrackedLink>
         </nav>
       </div>
@@ -136,13 +139,13 @@ function Hero() {
     <section className="px-4 pt-9" style={shellStyle}>
       <p className="inline-flex items-center gap-2 rounded-full border border-[#ffb36d]/24 bg-[#ffb36d]/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-[#ffe1bd]">
         <Sparkles className="size-4" aria-hidden="true" />
-        AI Lead Manager for local businesses
+        {PRODUCT_FULL_NAME}
       </p>
       <h1 className="mt-6 text-[2.42rem] font-black leading-[0.98] tracking-normal text-white">
-        Your AI Lead Manager, right in your pocket.
+        Meet {PRODUCT_NAME}, your AI Lead Manager.
       </h1>
       <p className="mt-5 text-base leading-7 text-[#ead0df]/76">
-        It answers leads, asks the right questions, follows up, and shows you what needs approval or takeover.
+        Envo answers leads, asks questions, follows up, and tells you when a human needs to step in.
       </p>
       <div className="mt-6 grid gap-3">
         <TrackedLink
@@ -152,7 +155,7 @@ function Hero() {
           className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black shadow-xl shadow-pink-950/28"
           style={accentButtonStyle}
         >
-          See Your AI Lead Manager
+          {PRIMARY_CTA.label}
           <ArrowRight className="size-4" aria-hidden="true" />
         </TrackedLink>
         <TrackedLink
@@ -178,7 +181,7 @@ function LeadHandoffVisual() {
               <div>
                 <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Live handoff</p>
                 <h2 className="mt-1 text-xl font-black leading-tight tracking-normal text-white">
-                  A lead comes in. Your AI manager starts the work.
+                  A lead comes in. Envo starts the work.
                 </h2>
               </div>
               <span className="rounded-full bg-[#ffb36d]/16 px-3 py-1 text-xs font-black text-[#ffe1bd]">
@@ -192,8 +195,8 @@ function LeadHandoffVisual() {
               <LeadMessage tone="customer" label="Customer">
                 Can I get a quote this week?
               </LeadMessage>
-              <LeadMessage tone="system" label="SignalOps">
-                Absolutely. I will grab the details and flag the team if this needs a person.
+              <LeadMessage tone="system" label="Envo">
+                Absolutely. I will collect the details and package the next step for the team.
               </LeadMessage>
             </div>
 
@@ -242,27 +245,31 @@ function LeadHandoffVisual() {
 
 const triageLeads = [
   {
-    title: "Fleet quote request",
-    detail: "28 vans, two DFW locations, biweekly after-hours.",
+    title: "Customer asks for a quote",
+    detail: "Envo drafted a safe reply with the next intake question.",
     status: "Ready to send",
+    actions: ["Approve", "Edit"],
     tone: "ready",
     icon: CheckCircle2
   },
   {
-    title: "Discount question",
-    detail: "Customer asked for a lower monthly rate.",
+    title: "Customer asks about pricing",
+    detail: "Discount or quote language needs your approval first.",
     status: "Needs approval",
+    actions: ["Review", "Take over"],
     tone: "approval",
     icon: Edit3
   },
   {
-    title: "Urgent service issue",
-    detail: "Outside normal service area and time window.",
-    status: "Human review recommended",
+    title: "Urgent or unclear request",
+    detail: "Envo recommends a person handle this one.",
+    status: "Human recommended",
+    actions: ["Call back", "Assign"],
     tone: "review",
     icon: AlertTriangle
   }
 ] satisfies Array<{
+  actions: string[];
   detail: string;
   icon: LucideIcon;
   status: string;
@@ -278,7 +285,7 @@ function OwnerTriageCard() {
           <div>
             <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Owner triage</p>
             <h2 id="mobile-owner-triage-title" className="mt-1 text-2xl font-black leading-tight tracking-normal text-white">
-              Supervise the AI worker from your phone.
+              Supervise Envo from your phone.
             </h2>
           </div>
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#ffb36d]/12 text-[#ffb36d]">
@@ -286,7 +293,7 @@ function OwnerTriageCard() {
           </span>
         </div>
         <p className="mt-3 text-sm leading-6 text-white/62">
-          Approve, edit, or take over when the lead needs owner judgment.
+          Approve, edit, or take over when Envo needs a human.
         </p>
 
         <div className="mt-5 grid gap-3">
@@ -302,10 +309,12 @@ function OwnerTriageCard() {
 function TriageLeadCard({
   detail,
   icon: Icon,
+  actions,
   status,
   title,
   tone
 }: {
+  actions: string[];
   detail: string;
   icon: LucideIcon;
   status: string;
@@ -331,8 +340,8 @@ function TriageLeadCard({
             <span className={cn("rounded-full border px-2 py-1 text-[0.62rem] font-black", toneClass)}>{status}</span>
           </div>
           <p className="mt-2 text-xs leading-5 text-white/60">{detail}</p>
-          <div className="mt-3 grid grid-cols-3 gap-1.5">
-            {["Approve", "Edit", "Take over"].map((action) => (
+          <div className="mt-3 grid grid-cols-2 gap-1.5">
+            {actions.map((action) => (
               <button
                 key={action}
                 type="button"
@@ -410,10 +419,10 @@ function WhatYouGet() {
         <div className="rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/10">
           <p className="text-xs font-black uppercase tracking-wide text-[#b84d69]">What you get back</p>
           <h2 id="mobile-outputs-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
-            A clear picture of the AI Lead Manager that fits.
+            A clear picture of how Envo would work.
           </h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Tell us about your business and SignalOps will map what your AI Lead Manager should handle, ask, escalate, and hand off.
+            Tell us about your business and SignalOps will map what Envo should handle, ask, escalate, and hand off.
           </p>
 
           <div className="mt-5 grid gap-2">
@@ -468,7 +477,7 @@ function PersonalTouch() {
           </div>
         </div>
         <p className="mt-4 text-sm leading-6 text-white/68">
-          SignalOps shapes your AI Lead Manager around how your calls, forms, DMs, quotes, appointments, and team handoffs actually work.
+          SignalOps shapes Envo around how your calls, forms, DMs, quotes, appointments, and team handoffs actually work.
         </p>
       </div>
     </section>
@@ -573,7 +582,7 @@ function FinalCta() {
         }}
       >
         <h2 id="mobile-final-title" className="text-2xl font-black leading-tight tracking-normal">
-          Want to see the AI Lead Manager your business should be using?
+          Want to see how Envo would work inside your business?
         </h2>
         <TrackedLink
           href={PRIMARY_CTA.href}
@@ -582,7 +591,7 @@ function FinalCta() {
           className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black shadow-xl shadow-pink-950/24"
           style={accentButtonStyle}
         >
-          Get Started
+          Meet Envo
           <ArrowRight className="size-4" aria-hidden="true" />
         </TrackedLink>
       </div>

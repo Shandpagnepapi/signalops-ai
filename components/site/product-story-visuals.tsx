@@ -31,21 +31,21 @@ import { cn } from "@/lib/utils";
 
 const artifactCards = [
   {
-    title: "System Map",
+    title: "Lead Map",
     label: "Map",
-    copy: "What your AI Lead Manager will handle, watch, and hand off.",
+    copy: "Where leads come from, where they slow down, and what Envo should handle.",
     icon: FileText
   },
   {
-    title: "Build Plan",
+    title: "Envo Build Plan",
     label: "Plan",
-    copy: "The intake questions, guardrails, escalation rules, and setup path.",
+    copy: "What Envo should answer, ask, log, follow up on, and escalate.",
     icon: ClipboardList
   },
   {
     title: "Next Steps",
     label: "Action",
-    copy: "What to connect first and what the owner or team should review.",
+    copy: "What to connect first and what rules Envo needs before going live.",
     icon: Route
   }
 ];
@@ -57,7 +57,7 @@ const journeyConversation = [
     text: "Can you quote biweekly washing for 28 service vans?"
   },
   {
-    speaker: "AI Lead Manager",
+    speaker: "Envo",
     tone: "ai",
     text: "Yes. Send fleet size, vehicle types, locations, and your preferred wash window."
   },
@@ -105,7 +105,7 @@ const afterItems = [
 
 export function PreviewArtifactShowcase({ className = "" }: { className?: string }) {
   return (
-    <ProductFrame accent="emerald" className={className} eyebrow="AI Lead Manager preview" title="Three practical outputs, one build path.">
+    <ProductFrame accent="emerald" className={className} eyebrow="Envo preview" title="Three practical outputs, one build path.">
       <div className="-mt-1 mb-4">
         <StatusPill accent="emerald">Mapped</StatusPill>
       </div>
@@ -118,7 +118,7 @@ export function PreviewArtifactShowcase({ className = "" }: { className?: string
 
       <CommandCard accent="emerald" className="mt-4">
         <p className="text-sm font-semibold leading-6 text-emerald-100">
-          Built to show what your AI Lead Manager should handle, ask, escalate, and hand off before setup begins.
+          Built to show what Envo should handle, ask, escalate, and hand off before setup begins.
         </p>
       </CommandCard>
     </ProductFrame>
@@ -251,7 +251,7 @@ export function BeforeAfterFlow({ className = "" }: { className?: string }) {
             <ArrowRight className="size-5 text-[#37f0bd]" aria-hidden="true" />
           </div>
         </div>
-        <FlowColumn title="After SignalOps" tone="after" items={afterItems} />
+        <FlowColumn title="After Envo" tone="after" items={afterItems} />
       </div>
     </ProductFrame>
   );

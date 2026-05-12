@@ -13,28 +13,28 @@ import {
 } from "@/lib/seo";
 
 const previewDescription =
-  "Tell us how your leads come in, what your AI Lead Manager should handle, and when it should escalate to you.";
+  "Tell us how your leads come in and where things slow down. SignalOps maps how Envo would answer, follow up, escalate, and hand off leads for your business.";
 
 export const metadata = createPageMetadata({
-  title: "See Your AI Lead Manager",
+  title: "Preview Envo",
   description: previewDescription,
   path: "/preview"
 });
 
 const mobilePreviewOutputs = [
   {
-    title: "System Map",
-    copy: "What it will handle, what the owner sees, and where leads slow down.",
+    title: "Lead Map",
+    copy: "Where leads come from, where they slow down, and what Envo should handle.",
     icon: Workflow
   },
   {
-    title: "Build Plan",
-    copy: "What it should ask, when it should follow up, and where it should route leads.",
+    title: "Envo Build Plan",
+    copy: "What Envo should answer, ask, log, follow up on, and escalate.",
     icon: ClipboardList
   },
   {
     title: "Next Steps",
-    copy: "What to connect first, what guardrails to set, and what needs approval.",
+    copy: "What to connect first and what rules Envo needs before going live.",
     icon: Route
   }
 ];
@@ -46,13 +46,13 @@ export default function PreviewPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "See Your AI Lead Manager",
+            title: "Preview Envo",
             description: previewDescription,
             path: "/preview"
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
-            { name: "See Your AI Lead Manager", path: "/preview" }
+            { name: "Preview Envo", path: "/preview" }
           ])
         ])}
       />
@@ -62,13 +62,13 @@ export default function PreviewPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),linear-gradient(180deg,rgba(6,12,24,0.4),#100818_92%)]" />
           <div className="relative mx-auto max-w-md px-4 py-10">
             <Badge className="mb-4 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-              AI Lead Manager
+              Envo Preview
             </Badge>
             <h2 className="text-4xl font-semibold leading-tight tracking-normal text-white">
-              Preview Your AI Lead Manager
+              Preview Envo for your business.
             </h2>
             <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
-              Tell us how leads come in, what it should ask, and when you want a person to review.
+              Tell us how leads come in, what Envo should ask, and when you want a person to review.
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-2">
@@ -97,10 +97,10 @@ export default function PreviewPage() {
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
             <div className="flex flex-col justify-center">
               <Badge className="mb-5 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-                AI Lead Manager
+                Envo Preview
               </Badge>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
-                See Your AI Lead Manager
+                Preview Envo for your business.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
                 {previewDescription}

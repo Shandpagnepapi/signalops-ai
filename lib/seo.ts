@@ -50,8 +50,8 @@ export const OG_IMAGE_ASSETS = {
 } as const;
 
 export const PAGE_TITLE_TEMPLATES = {
-  home: "AI Lead Manager for Local Businesses",
-  preview: "See Your AI Lead Manager",
+  home: "Envo AI Lead Manager for Local Businesses",
+  preview: "Preview Envo",
   audit: "Start a Project for AI Lead Response",
   demo: "Mobile Fleet Wash Lead System Demo",
   dashboard: "AI Lead Management Dashboard Demo",
@@ -64,9 +64,9 @@ export const PAGE_TITLE_TEMPLATES = {
 
 export const META_DESCRIPTION_TEMPLATES = {
   home:
-    "SignalOps gives local service businesses an AI Lead Manager that answers inquiries, asks the right questions, follows up, and alerts the owner when needed.",
+    "Meet Envo by SignalOps, an AI Lead Manager for local service businesses that handles AI lead response, intake, follow-up, routing, and owner handoff.",
   preview:
-    "Preview your SignalOps AI Lead Manager with a system map, build plan, guardrails, and next steps for your lead flow.",
+    "Preview how Envo by SignalOps would answer leads, ask intake questions, follow up, escalate, and hand off ready leads for your business.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:

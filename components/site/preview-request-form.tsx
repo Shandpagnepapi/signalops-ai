@@ -46,6 +46,10 @@ type PreviewFormState = {
   currentProblem: PreviewSubmissionInput["currentProblem"] | "";
   currentTools: string;
   leadProcess: string;
+  serviceArea: string;
+  pricingRules: string;
+  neverPromise: string;
+  approvalTriggers: string;
   guardrails: string;
   notes: string;
 };
@@ -64,6 +68,10 @@ const initialState: PreviewFormState = {
   currentProblem: "",
   currentTools: "",
   leadProcess: "",
+  serviceArea: "",
+  pricingRules: "",
+  neverPromise: "",
+  approvalTriggers: "",
   guardrails: "",
   notes: ""
 };
@@ -73,18 +81,18 @@ const selectClass =
 
 const previewOutputs = [
   {
-    title: "System Map",
-    copy: "What it will handle, what the owner sees, and where leads slow down.",
+    title: "Lead Map",
+    copy: "Where leads come from, where they slow down, and what Envo should handle.",
     icon: FileText
   },
   {
-    title: "Build Plan",
-    copy: "The intake questions, guardrails, escalation rules, and setup path.",
+    title: "Envo Build Plan",
+    copy: "What Envo should answer, ask, log, follow up on, and escalate.",
     icon: ClipboardList
   },
   {
     title: "Next Steps",
-    copy: "What to connect first and what should need approval.",
+    copy: "What to connect first and what rules Envo needs before going live.",
     icon: Route
   }
 ];
@@ -152,8 +160,12 @@ export function PreviewRequestForm() {
     setSubmission(null);
     const notesWithGuardrails = [
       form.notes,
+      form.serviceArea ? `Service area: ${form.serviceArea}` : "",
+      form.pricingRules ? `Pricing or quote rules: ${form.pricingRules}` : "",
+      form.neverPromise ? `Things Envo should never promise: ${form.neverPromise}` : "",
+      form.approvalTriggers ? `When Envo should ask for approval: ${form.approvalTriggers}` : "",
       form.guardrails
-        ? `AI Lead Manager guardrails, service area, pricing rules, never-promise items, and owner-review triggers: ${form.guardrails}`
+        ? `Additional Envo guardrails: ${form.guardrails}`
         : ""
     ]
       .filter(Boolean)
@@ -206,9 +218,9 @@ export function PreviewRequestForm() {
           <Badge className="mb-3 w-fit border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
             Request received
           </Badge>
-          <CardTitle className="text-2xl">Your AI Lead Manager request is in.</CardTitle>
+          <CardTitle className="text-2xl">Your Envo preview request is in.</CardTitle>
           <CardDescription>
-            Dillon and SignalOps will use your answers to shape a practical AI Lead Manager for {submission.businessName}.
+            Dillon and SignalOps will use your answers to shape a practical Envo setup for {submission.businessName}.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -250,11 +262,11 @@ export function PreviewRequestForm() {
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">
-              AI Lead Manager
+              Envo Preview
             </Badge>
-            <CardTitle className="text-2xl">Tell us how your leads work today.</CardTitle>
+            <CardTitle className="text-2xl">Tell us how Envo should handle your leads.</CardTitle>
             <CardDescription>
-              SignalOps uses your answers to map what your AI Lead Manager should answer, ask, follow up on, and escalate.
+              SignalOps uses your answers to map how Envo would work inside your business.
             </CardDescription>
           </div>
           <div className="rounded-xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 px-3 py-2 text-xs font-medium text-[#ffe1bd]">
@@ -285,7 +297,7 @@ export function PreviewRequestForm() {
                   required
                   value={form.businessName}
                   onChange={(event) => updateField("businessName", event.target.value)}
-                    placeholder="Your business name"
+                  placeholder="Your business name"
                 />
               </Field>
             </div>
@@ -435,14 +447,48 @@ export function PreviewRequestForm() {
             </div>
           </FormPanel>
 
-          <FormPanel label="Guardrails">
-            <Field label="Service area, pricing rules, and owner-review triggers">
-              <Textarea
-                value={form.guardrails}
-                onChange={(event) => updateField("guardrails", event.target.value)}
-                placeholder="Example: service cities, price ranges, discounts it should not offer, things it should never promise, and when a person should review."
-              />
-            </Field>
+          <FormPanel label="Envo guardrails">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label="Service area">
+                <Input
+                  value={form.serviceArea}
+                  onChange={(event) => updateField("serviceArea", event.target.value)}
+                  placeholder="Cities, radius, routes, or locations you serve"
+                />
+              </Field>
+              <Field label="Pricing or quote rules">
+                <Input
+                  value={form.pricingRules}
+                  onChange={(event) => updateField("pricingRules", event.target.value)}
+                  placeholder="Example: starting prices, price ranges, quote rules..."
+                />
+              </Field>
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <Field label="Things Envo should never promise">
+                <Textarea
+                  value={form.neverPromise}
+                  onChange={(event) => updateField("neverPromise", event.target.value)}
+                  placeholder="Example: exact pricing, same-day service, compliance claims, discounts..."
+                />
+              </Field>
+              <Field label="When Envo should ask for approval">
+                <Textarea
+                  value={form.approvalTriggers}
+                  onChange={(event) => updateField("approvalTriggers", event.target.value)}
+                  placeholder="Example: urgent issues, unclear requests, high-value accounts, special pricing..."
+                />
+              </Field>
+            </div>
+            <div className="mt-4">
+              <Field label="Other guardrails or handoff rules">
+                <Textarea
+                  value={form.guardrails}
+                  onChange={(event) => updateField("guardrails", event.target.value)}
+                  placeholder="Anything else Envo should know before answering or handing off leads."
+                />
+              </Field>
+            </div>
           </FormPanel>
 
           {status === "error" ? (
@@ -458,12 +504,12 @@ export function PreviewRequestForm() {
             ) : (
               <ArrowRight className="size-4" aria-hidden="true" />
             )}
-            Preview My AI Lead Manager
+            Preview Envo
           </Button>
 
           <p className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
             <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
-            Share the messy reality. SignalOps will shape the AI Lead Manager around how your business actually runs.
+            Share the messy reality. SignalOps will shape Envo around how your business actually runs.
           </p>
         </form>
       </CardContent>

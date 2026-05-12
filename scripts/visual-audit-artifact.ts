@@ -54,6 +54,7 @@ const publicReviewUrl = "/visual-review";
 
 const routes: AuditRoute[] = [
   { path: "/", slug: "home", label: "Home" },
+  { path: "/envo", slug: "envo", label: "Envo" },
   { path: "/preview", slug: "preview", label: "Preview" },
   { path: "/demo", slug: "demo", label: "Demo" },
   { path: "/roi-calculator", slug: "roi-calculator", label: "ROI Calculator" },
@@ -65,9 +66,9 @@ const routes: AuditRoute[] = [
 
 const contactSheetGroups: Array<Omit<VisualReviewContactSheet, "src">> = [
   {
-    label: "Home + Preview",
+    label: "Home + Envo + Preview",
     fileName: "contact-sheet-home-preview.jpg",
-    routes: ["/", "/preview"]
+    routes: ["/", "/envo", "/preview"]
   },
   {
     label: "Demo + ROI + How It Works",
@@ -128,7 +129,7 @@ function assertPublicRoute(route: AuditRoute) {
 }
 
 function getRouteViewports(route: AuditRoute) {
-  if (route.path === "/" || route.path === "/preview") {
+  if (route.path === "/" || route.path === "/envo" || route.path === "/preview") {
     return [mobile390, mobile430, desktop1440];
   }
 

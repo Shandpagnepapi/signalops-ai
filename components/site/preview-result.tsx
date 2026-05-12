@@ -58,7 +58,7 @@ export function PreviewResult({
         <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
           <CardContent className="flex items-center gap-3 p-6 text-[#ffe1bd]">
             <Sparkles className="size-5 animate-pulse" aria-hidden="true" />
-            Loading your SignalOps preview...
+            Loading your Envo preview...
           </CardContent>
         </Card>
       </section>
@@ -93,7 +93,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
   const preview = submission.previewData;
   const emailBody = useMemo(
     () =>
-      `Hi SignalOps, I looked through the AI Lead System Preview for ${submission.businessName}.\n\nI have questions about:\n\nBest phone/email:\nPreferred walkthrough time:`,
+      `Hi SignalOps, I looked through the Envo preview for ${submission.businessName}.\n\nI have questions about:\n\nBest phone/email:\nPreferred walkthrough time:`,
     [submission.businessName]
   );
 
@@ -105,7 +105,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
         <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
           <div>
             <Badge className="mb-5 bg-[#ff6f9c]/14 text-[#ffd7e6]">
-              Your SignalOps AI Lead System Preview
+              Your Envo Preview
             </Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
               {preview.headline}
@@ -167,7 +167,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
               <MessageSquareReply className="size-5 text-[#ffb36d]" aria-hidden="true" />
               <CardTitle>{preview.receptionistTitle}</CardTitle>
             </div>
-            <CardDescription>Sample conversation your AI receptionist could start.</CardDescription>
+            <CardDescription>Sample conversation Envo could start.</CardDescription>
           </CardHeader>
           <CardContent className="grid gap-3">
             {preview.conversation.map((message, index) => (
@@ -284,14 +284,14 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
             <div className="flex flex-col gap-3 sm:flex-row">
               <TrackedLink
                 href={getEmailHref({
-                  subject: `Start my SignalOps build plan for ${submission.businessName}`,
+                  subject: `Start my Envo build plan for ${submission.businessName}`,
                   body: emailBody
                 })}
                 eventName={ANALYTICS_EVENTS.contactClicked}
                 eventProperties={{ location: "preview_result", type: "start_build", previewId: submission.id }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                Start My Build Plan
+                Start My Envo Build
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -323,7 +323,7 @@ function VisualDraftGallery({ submission }: { submission: PublicPreviewSubmissio
         <div>
           <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">AI visual preview</Badge>
           <h2 className="text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-            Three draft views of your likely SignalOps system.
+            Three draft views of your likely Envo setup.
           </h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[#ead0df]/72">
             Generated from your industry, services, lead sources, bottleneck, and current process. These are concept visuals, not final build screens.

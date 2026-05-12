@@ -104,7 +104,7 @@ export type PreviewDashboardLead = {
 };
 
 export type PreviewConversationMessage = {
-  speaker: "Customer" | "SignalOps AI Receptionist";
+  speaker: "Customer" | "Envo" | "SignalOps AI Receptionist";
   message: string;
 };
 

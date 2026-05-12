@@ -48,7 +48,7 @@ const flowSteps: FlowStep[] = [
     ownerView: "A new lead appears with source, contact details, service need, and timestamp."
   },
   {
-    title: "AI responds instantly",
+    title: "Envo responds instantly",
     eyebrow: "SMS, email, or chat",
     description:
       "The customer gets a useful reply while their intent is still fresh, even after hours.",
@@ -61,10 +61,10 @@ const flowSteps: FlowStep[] = [
     ownerView: "The lead is acknowledged before a competitor has time to call back."
   },
   {
-    title: "AI collects the right details",
+    title: "Envo collects the right details",
     eyebrow: "Service, urgency, timing, next step",
     description:
-      "SignalOps asks practical follow-up questions and turns messy messages into structured context.",
+      "Envo asks practical follow-up questions and turns messy messages into structured context.",
     icon: SearchCheck,
     details: [
       "Extracts service need and buying intent",
@@ -143,7 +143,7 @@ const beforeAfter = [
     tone: "success",
     items: [
       "Every lead gets an instant response and a clear next step.",
-      "AI collects the details your team needs before handoff.",
+      "Envo collects the details your team needs before handoff.",
       "Urgent and high-intent prospects get routed first.",
       "Follow-up happens automatically until the lead books or cools off."
     ]
@@ -190,14 +190,14 @@ export function HowItWorksDemo() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
             <div className="space-y-6">
               <Badge variant="outline" className="border-[#ff9ec0]/25 bg-[#ff6f9c]/10 text-[#ffd7e6]">
-                AI Lead Engine
+                Envo by SignalOps
               </Badge>
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
-                  How the SignalOps AI Lead Engine Works
+                  How Envo handles lead work
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-[#ead0df]/78 sm:text-lg">
-                  A simple operating layer for capturing, responding, sorting,
+                  A simple AI lead manager for capturing, responding, sorting,
                   routing, booking, and following up before good opportunities go cold.
                 </p>
               </div>
@@ -281,7 +281,7 @@ export function HowItWorksDemo() {
             From first touch to booked appointment
           </h2>
           <p className="text-sm leading-6 text-[#ead0df]/78 sm:text-base">
-            SignalOps connects the moments that usually live in separate tools: the inquiry,
+            Envo connects the moments that usually live in separate tools: the inquiry,
             response, intake, routing, booking, follow-up, and reporting.
           </p>
         </div>
@@ -440,7 +440,7 @@ export function HowItWorksDemo() {
               </h2>
               <p className="max-w-2xl text-sm leading-6 text-[#ead0df]/78 sm:text-base">
                 Tell us how leads come in, what tools you use, and which package you are considering.
-                SignalOps will reply with the best next step.
+            SignalOps will reply with the best next step for Envo.
               </p>
             </div>
             <TrackedLink
@@ -449,7 +449,7 @@ export function HowItWorksDemo() {
               eventProperties={{ location: "how_it_works_final_cta" }}
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}
             >
-              Free Preview
+              Meet Envo
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>

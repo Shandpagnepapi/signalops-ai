@@ -39,6 +39,9 @@ import {
   getEmailHref,
   getPlanEmailHref,
   PRIMARY_CTA,
+  PRODUCT_FULL_NAME,
+  PRODUCT_NAME,
+  PRODUCT_ROLE,
   SECONDARY_CTA
 } from "@/lib/constants";
 
@@ -121,10 +124,10 @@ const pricing = [
     price: "$250",
     cadence: "/mo",
     setupFee: "Setup from $750",
-    bestFor: "A business that wants one AI Lead Manager flow for faster replies, simple intake, and owner handoff.",
+    bestFor: "A business that wants Envo on one main lead source for faster replies, simple intake, and owner handoff.",
     valueFrame: "Costs less than a part-time assistant for one core lead source.",
     explanation:
-      "We train your first AI Lead Manager workflow so new inquiries get answered fast, sorted cleanly, and handed off without extra admin.",
+      "We train Envo on your first lead flow so new inquiries get answered fast, sorted cleanly, and handed off without extra admin.",
     cta: "Ask About Starter",
     items: [
       "One main lead source",
@@ -142,10 +145,10 @@ const pricing = [
     price: "$500",
     cadence: "/mo",
     setupFee: "Setup from $1,500",
-    bestFor: "A business that wants its AI Lead Manager supervising multiple lead sources, follow-up, routing, and visibility.",
+    bestFor: "A business that wants Envo managing multiple lead sources, follow-up paths, routing, and visibility.",
     valueFrame: "Often covered by a few recovered jobs or accounts, depending on your offer.",
     explanation:
-      "We connect more of your lead flow, add smarter intake, follow-up sequences, booking or callback handoff, and a clearer owner view.",
+      "We connect more of your lead flow so Envo can manage smarter intake, follow-up sequences, booking or callback handoff, and a clearer owner view.",
     cta: "Ask About Growth",
     highlight: true,
     items: [
@@ -166,10 +169,10 @@ const pricing = [
     price: "From $1,000",
     cadence: "/mo",
     setupFee: "Buildout from $5,000+",
-    bestFor: "Businesses that need a custom AI Lead Manager across complex workflows, locations, integrations, dashboards, or routing rules.",
+    bestFor: "Businesses that need Envo shaped around complex workflows, locations, integrations, dashboards, or routing rules.",
     valueFrame: "Built for operations where dropped handoffs and manual admin are already expensive.",
     explanation:
-      "We design and build a custom AI Lead Manager around your tools, team, services, routing rules, guardrails, and sales process.",
+      "We design and train Envo around your tools, team, services, routing rules, guardrails, and sales process.",
     cta: "Ask About Custom",
     items: [
       "Custom workflow mapping",
@@ -233,16 +236,19 @@ function HeroSection() {
       <div className="relative grid gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div className="max-w-2xl">
           <Badge className="border border-[#ff9ec0]/22 bg-white/8 px-3 py-1.5 text-[#ffd7e6]">
-            AI Lead Manager for busy local businesses
+            {PRODUCT_FULL_NAME}
           </Badge>
           <div className="mt-8 text-[2.95rem] font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.35rem]">
-            Hire an AI Lead Manager
+            Meet {PRODUCT_NAME} -
             <span className="block bg-[linear-gradient(90deg,#ffb36d,#ff6f9c,#d770ff)] bg-clip-text text-transparent">
-              that handles every lead.
+              your {PRODUCT_ROLE}.
             </span>
           </div>
+          <p className="mt-5 max-w-xl text-xl font-semibold leading-8 text-white sm:text-2xl">
+            It answers, follows up, and hands off leads while you work.
+          </p>
           <p className={`mt-6 max-w-xl text-base leading-7 sm:text-lg sm:leading-8 ${muted}`}>
-            SignalOps gives your business an AI front desk that answers new inquiries, asks the right questions, follows up, and alerts the owner or team when a person should step in.
+            Envo replies to new inquiries, asks the right intake questions, follows up when people go quiet, and alerts you when a lead needs a human.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -252,7 +258,7 @@ function HeroSection() {
               eventProperties={{ location: "homepage_hero" }}
               className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
             >
-              See Your AI Lead Manager
+              {PRIMARY_CTA.label}
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
             <TrackedLink
@@ -267,9 +273,9 @@ function HeroSection() {
           </div>
 
           <div className="mt-9 grid grid-cols-3 gap-2 sm:max-w-xl sm:gap-4">
-            <HeroStat icon={ClipboardList} value="1" label="You tell us how leads come in" />
-            <HeroStat icon={Workflow} value="2" label="We train the manager and rules" />
-            <HeroStat icon={ShieldCheck} value="3" label="You approve the guardrails" />
+            <HeroStat icon={ClipboardList} value="1" label="Tell Envo how leads come in" />
+            <HeroStat icon={Workflow} value="2" label="Set services, pricing, and guardrails" />
+            <HeroStat icon={ShieldCheck} value="3" label="Approve first replies, then let it work" />
           </div>
         </div>
 
@@ -286,12 +292,12 @@ function LeadManagerDutiesSection() {
   return (
     <section className="border-y border-white/10 bg-[#17122d]/32 px-5 py-9 sm:px-9 lg:px-11" aria-labelledby="lead-manager-duties-title">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">What your AI Lead Manager does</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">What Envo does for you</p>
         <h2 id="lead-manager-duties-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
           It handles the repetitive lead work your team keeps dropping.
         </h2>
         <p className={`mt-3 text-sm leading-6 ${muted}`}>
-          Think of it like a trained front-desk assistant for new inquiries: fast replies, clean intake, steady follow-up, and owner handoff when judgment matters.
+          Think of Envo like a trained front-desk helper for new inquiries: fast replies, clean intake, steady follow-up, and owner handoff when judgment matters.
         </p>
       </div>
       <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -318,12 +324,12 @@ function GuardrailsSection() {
     <section className="px-5 py-9 sm:px-9 lg:px-11" aria-labelledby="guardrails-title">
       <div className="grid gap-6 rounded-[1.5rem] border border-[#ffb36d]/18 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.15),transparent_34%),rgba(255,255,255,0.055)] p-5 shadow-2xl shadow-black/18 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Guardrails</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Envo follows your rules</p>
           <h2 id="guardrails-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
             It does not have to guess.
           </h2>
           <p className={`mt-3 text-sm leading-6 ${muted}`}>
-            SignalOps is built around business rules, owner approvals, and clear escalation paths so the AI Lead Manager knows when to help and when to hand it to a person.
+            SignalOps trains Envo around business rules, owner approvals, and clear escalation paths so it knows when to help and when to hand it to a person.
           </p>
           <div className="mt-5 rounded-2xl border border-emerald-300/18 bg-emerald-300/10 p-4">
             <p className="flex items-center gap-2 text-sm font-semibold text-emerald-100">
@@ -370,7 +376,7 @@ function OnboardingSection() {
             Onboard it like a new employee.
           </h2>
           <p className={`mt-3 text-sm leading-6 ${muted}`}>
-            Give it the basics once, then let it handle the repetitive lead work with the rules your business already follows.
+            Give Envo the basics once, then let it handle the repetitive lead work with the rules your business already follows.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
@@ -396,12 +402,12 @@ function ProductStorySection() {
   return (
     <section id="how-it-works" className="border-y border-white/10 bg-[#17122d]/34 px-5 py-9 sm:px-9 lg:px-11" aria-labelledby="product-story-title">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Command layer</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Envo at work</p>
         <h2 id="product-story-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
-          See the messy middle get organized.
+          Watch Envo turn messy lead flow into clear next steps.
         </h2>
         <p className={`mt-3 text-sm leading-6 ${muted}`}>
-          Capture, sort, route, follow up, and hand off booking-ready leads through one AI Lead Manager.
+          It captures, sorts, routes, follows up, and hands off ready leads while SignalOps keeps the setup practical.
         </p>
       </div>
       <div className="mt-7 grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
@@ -417,10 +423,10 @@ function PricingSection() {
     <section id="pricing" className="border-y border-white/10 bg-[#17122d]/38 px-5 py-9 sm:px-9 lg:px-11">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-          Choose the AI Lead Manager level you need.
+          Choose how much of your lead work Envo should handle.
         </h2>
         <p className={`mt-3 text-sm leading-6 ${muted}`}>
-          Clear monthly support, clear build fees, and a practical way to hire help for lead work without adding another person to payroll.
+          Envo costs less than hiring a part-time assistant and can usually be covered by recovering a few missed jobs. Results depend on your offer, market, and follow-up quality.
         </p>
       </div>
       <div className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -493,7 +499,7 @@ function PricingSection() {
               eventProperties={{ package: plan.name, price: plan.price }}
               className={`${buttonVariants({ variant: "ghost" })} mt-3 w-full border border-white/10 bg-white/[0.035]`}
             >
-              See Your AI Lead Manager
+              Meet Envo
               <ArrowRight className="size-4" aria-hidden="true" />
             </TrackedLink>
           </div>
@@ -529,7 +535,7 @@ function PricingSection() {
       </div>
 
       <div className="mt-5 rounded-2xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-4 text-center text-sm leading-6 text-[#ffe1bd]">
-        Not sure which package fits? Start with the system map, then email SignalOps when you are ready to talk through the build.
+        Not sure which package fits? Preview Envo first, then email SignalOps when you are ready to talk through the build.
       </div>
 
       <BreakEvenCalculator className="mt-6" defaultAverageValue={750} defaultUnitLabel="account" />
@@ -548,10 +554,10 @@ function FinalCTA() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold tracking-normal text-white">
-                Want to see the AI Lead Manager your business should be using?
+                Want to see how Envo would work inside your business?
               </h2>
               <p className={`mt-2 max-w-2xl text-sm leading-6 ${muted}`}>
-                Tell us how your leads come in. SignalOps maps what it should handle, what it should ask, when it should escalate, and what your team should see.
+                Tell us how your leads come in. SignalOps maps what Envo should handle, ask, escalate, and show your team.
               </p>
             </div>
           </div>
@@ -561,7 +567,7 @@ function FinalCTA() {
             eventProperties={{ location: "homepage_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
-            Get Started
+            Meet Envo
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink

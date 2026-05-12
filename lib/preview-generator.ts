@@ -121,7 +121,7 @@ export function generateSampleConversation(input: PreviewSubmissionInput) {
       message: `Hey, I need a quote for ${service}. Are you available this week?`
     },
     {
-      speaker: "SignalOps AI Receptionist" as const,
+      speaker: "Envo" as const,
       message:
         `Absolutely - I can help get this started. What service do you need, what city or area are you in, and how soon are you looking to book?`
     },
@@ -130,7 +130,7 @@ export function generateSampleConversation(input: PreviewSubmissionInput) {
       message: "I am in your service area and hoping to get something scheduled this week."
     },
     {
-      speaker: "SignalOps AI Receptionist" as const,
+      speaker: "Envo" as const,
       message:
         `Got it. I will collect a few details from this ${leadSource.toLowerCase()} inquiry and send it to the team with the next step ready.`
     }
@@ -170,8 +170,8 @@ function visualPromptBase(input: PreviewSubmissionInput, previewData: PreviewDat
   const packageName = previewData.recommendedPackage.name;
 
   return [
-    "Create a premium SaaS product mockup image for SignalOps.",
-    "Style: polished AI lead operating system, dark executive UI, crisp cards, subtle glow accents, app-like mobile/product screenshot.",
+    "Create a premium SaaS product mockup image for Envo by SignalOps.",
+    "Style: polished AI Lead Manager, dark executive UI, crisp cards, subtle glow accents, app-like mobile/product screenshot.",
     "No robots, no people, no fake client logos, no stock photos, no clutter.",
     "Use clean realistic UI panels, charts, message cards, lead status chips, owner alerts, and timeline elements.",
     "Do not rely on tiny unreadable text; use a few short realistic labels only.",
@@ -197,7 +197,7 @@ export function buildPreviewVisualDrafts(
       title: "AI Receptionist Interface",
       description: "A lead conversation screen showing the first response, key questions, and priority state.",
       status: "Pending",
-      prompt: `${base} Image 1 of 3: show a mobile AI receptionist conversation interface for a new ${input.industry.toLowerCase()} lead. Include a customer inquiry, SignalOps reply, collected details, priority state, and owner-ready summary card.`
+      prompt: `${base} Image 1 of 3: show a mobile Envo conversation interface for a new ${input.industry.toLowerCase()} lead. Include a customer inquiry, Envo reply, collected details, priority state, and owner-ready summary card.`
     },
     {
       id: "command-center",
@@ -226,10 +226,10 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
   const painPoints = getPainPoints(input);
 
   const previewData: PreviewData = {
-    headline: `A SignalOps AI lead system for ${input.businessName}`,
+    headline: `An Envo lead manager preview for ${input.businessName}`,
     subheadline:
-      `A personalized mockup of the AI receptionist, lead dashboard, follow-up flow, and handoff system we would build around your ${input.industry.toLowerCase()} lead flow.`,
-    receptionistTitle: `${input.industry} AI receptionist preview`,
+      `A personalized mockup of how Envo would answer, collect details, follow up, and hand off leads around your ${input.industry.toLowerCase()} lead flow.`,
+    receptionistTitle: `${input.industry} Envo preview`,
     conversation: generateSampleConversation(input),
     dashboardLeads: [
       {
@@ -265,15 +265,15 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     ],
     leadFlow: [
       "Lead comes in",
-      "AI responds instantly",
-      "AI collects details",
-      "AI sorts priority",
-      "AI follows up",
+      "Envo responds instantly",
+      "Envo collects details",
+      "Envo sorts priority",
+      "Envo follows up",
       "Priority lead sent to owner/team",
       "Booking handoff/dashboard updated"
     ],
     followUpTimeline: [
-      { time: "0 seconds", action: "AI receptionist sends the first helpful reply." },
+      { time: "0 seconds", action: "Envo sends the first helpful reply." },
       { time: "5 minutes", action: "Missing detail nudge if the lead has not answered key questions." },
       { time: "1 hour", action: "Follow-up with the next best step, booking link, callback path, or quote reminder." },
       { time: "24 hours", action: "Second follow-up keeps the lead from getting buried." },
@@ -292,7 +292,7 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     fitScore,
     painPoints,
     approvalNote:
-      "SignalOps turns the system map into a practical build path before setup begins."
+      "SignalOps turns the Envo map into a practical build path before setup begins."
   };
 
   return {

@@ -8,7 +8,7 @@ import { QuoteIntakeOSMockup } from "@/components/site/mobile-os/QuoteIntakeOSMo
 import { UrgentResponseOSMockup } from "@/components/site/mobile-os/UrgentResponseOSMockup";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { PRIMARY_CTA } from "@/lib/constants";
+import { PRIMARY_CTA, PRODUCT_NAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 type LeadOsKey = "quote" | "appointment" | "urgent";
@@ -67,7 +67,7 @@ export function LeadOSSelector() {
         <div className="rounded-[2rem] border border-white/14 bg-white/[0.085] p-4 shadow-2xl shadow-black/22">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Choose Your Lead OS</p>
+              <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">{PRODUCT_NAME} lead modes</p>
               <h2 id="mobile-lead-os-title" className="mt-2 text-2xl font-black leading-tight tracking-normal text-white">
                 What kind of lead system does your business need?
               </h2>
@@ -77,10 +77,10 @@ export function LeadOSSelector() {
             </div>
           </div>
           <p className="mt-3 text-sm leading-6 text-white/62">
-            Switch between Lead OS types and see the responsibilities your AI Lead Manager could supervise.
+            Switch between lead modes and see what Envo could supervise for your business.
           </p>
 
-          <div className="mt-5 grid grid-cols-3 gap-2" role="tablist" aria-label="Lead OS options">
+          <div className="mt-5 grid grid-cols-3 gap-2" role="tablist" aria-label="Envo lead mode options">
             {leadOsOptions.map((option) => {
               const Icon = option.icon;
               const isActive = active.key === option.key;
@@ -126,7 +126,7 @@ export function LeadOSSelector() {
           eventProperties={{ location: `mobile_lead_os_${active.key}` }}
           className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ff9f75_46%,#ffb36d)] px-5 text-sm font-black text-white shadow-xl shadow-pink-950/25"
         >
-          Show Me My AI Lead Manager
+          Meet Envo
           <ArrowRight className="size-4" aria-hidden="true" />
         </TrackedLink>
       </div>

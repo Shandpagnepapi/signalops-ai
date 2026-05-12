@@ -170,14 +170,14 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Lead intake demo</Badge>
+            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Envo intake demo</Badge>
             <CardTitle className="text-2xl">Submit a sample lead</CardTitle>
             <CardDescription>
-              The form updates for {business.name}, then posts to the same `/api/lead` route used by real intake pages.
+              The form updates for {business.name}, then shows how Envo packages a lead for handoff.
             </CardDescription>
           </div>
           <div className="rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 px-3 py-2 text-xs font-medium text-[#ffd7e6]">
-                  SignalOps demo
+                  Envo demo
           </div>
         </div>
       </CardHeader>
@@ -286,7 +286,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
               <div>
                 <p className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
                   <Sparkles className="size-4" aria-hidden="true" />
-                  SignalOps Command Center
+                  Envo Lead Desk
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-white">Lead packaged for handoff</h3>
               </div>

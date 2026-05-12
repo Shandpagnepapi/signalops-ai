@@ -21,6 +21,11 @@ const routes = [
     changeFrequency: "monthly"
   },
   {
+    path: "/envo",
+    priority: 0.96,
+    changeFrequency: "monthly"
+  },
+  {
     path: "/ai-lead-response",
     priority: 0.88,
     changeFrequency: "monthly"

@@ -40,7 +40,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
                 eventProperties={{ location: `${page.id}_hero` }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                See Your System
+                {PRIMARY_CTA.label}
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <Link href="/how-it-works" className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full sm:w-auto`}>

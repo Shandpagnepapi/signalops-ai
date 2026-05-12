@@ -14,9 +14,12 @@ const intentionallyNonIndexableRoutes = new Set([
   "/mobile-test-1",
   "/mobile-test-2",
   "/mobile-test-3",
+  "/design-lab",
+  "/design-lab/envo",
+  "/design-lab/studio",
   "/visual-review"
 ]);
-const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt"]);
+const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt", "/design-lab/studio"]);
 
 const failures = [];
 const warnings = [];

@@ -88,7 +88,7 @@ export function OSCorePipeline({ accent = "emerald" }: { accent?: OSAccent }) {
   return (
     <div className="mt-4 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-3">
       <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="text-[0.62rem] font-black uppercase tracking-wide text-white/40">SignalOps OS Core</p>
+        <p className="text-[0.62rem] font-black uppercase tracking-wide text-white/40">Envo Workbench</p>
         <span className={cn("rounded-full px-2.5 py-1 text-[0.6rem] font-black", style.soft, style.text)}>
           Connected
         </span>

@@ -310,10 +310,10 @@ export const demoBusinesses = {
     },
     faqs: routeWashFleetCare.faqs,
     leadOpsPanel: {
-      badge: "SignalOps demo workflow",
+      badge: "Envo demo workflow",
       title: "What would happen in production?",
       description:
-        "Normally this would reply quickly, collect fleet details, alert the owner, log the account opportunity, and start quote follow-up.",
+        "Normally Envo would reply quickly, collect fleet details, alert the owner, log the account opportunity, and start quote follow-up.",
       items: [
         {
           title: "Customer reply",

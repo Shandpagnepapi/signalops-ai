@@ -9,6 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: [
           "/",
           "/preview",
+          "/envo",
           "/audit",
           "/ai-lead-response",
           "/missed-call-text-back",
@@ -31,6 +32,7 @@ export default function robots(): MetadataRoute.Robots {
           "/auth/",
           "/dashboard",
           "/admin/",
+          "/design-lab",
           "/mobile-tests",
           "/mobile-test-1",
           "/mobile-test-2",
