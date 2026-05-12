@@ -27,6 +27,13 @@ type AuditScreenshot = {
   src: string;
 };
 
+type VisualReviewContactSheet = {
+  label: string;
+  fileName: string;
+  src: string;
+  routes: string[];
+};
+
 type VisualReviewManifest = {
   createdAt: string;
   baseUrl: string;
@@ -36,6 +43,7 @@ type VisualReviewManifest = {
   reviewUrl: string;
   routes: string[];
   viewports: AuditViewport[];
+  contactSheets: VisualReviewContactSheet[];
   screenshots: AuditScreenshot[];
   note: string;
 };
@@ -53,6 +61,24 @@ const routes: AuditRoute[] = [
   { path: "/services/ai-lead-response", slug: "service-ai-lead-response", label: "Service: AI Lead Response" },
   { path: "/industries/mobile-fleet-wash", slug: "industry-mobile-fleet-wash", label: "Industry: Mobile Fleet Wash" },
   { path: "/alternatives", slug: "alternatives", label: "Alternatives" }
+];
+
+const contactSheetGroups: Array<Omit<VisualReviewContactSheet, "src">> = [
+  {
+    label: "Home + Preview",
+    fileName: "contact-sheet-home-preview.jpg",
+    routes: ["/", "/preview"]
+  },
+  {
+    label: "Demo + ROI + How It Works",
+    fileName: "contact-sheet-demo-roi.jpg",
+    routes: ["/demo", "/roi-calculator", "/how-it-works"]
+  },
+  {
+    label: "Service + Industry + Alternatives",
+    fileName: "contact-sheet-seo-pages.jpg",
+    routes: ["/services/ai-lead-response", "/industries/mobile-fleet-wash", "/alternatives"]
+  }
 ];
 
 const mobile390: AuditViewport = {
@@ -353,6 +379,199 @@ function renderArtifactContactSheet(manifest: VisualReviewManifest) {
 `;
 }
 
+function renderCommittedContactSheet(manifest: VisualReviewManifest, sheet: VisualReviewContactSheet) {
+  const screenshots = manifest.screenshots.filter((screenshot) => sheet.routes.includes(screenshot.route));
+  const grouped = new Map<string, AuditScreenshot[]>();
+
+  for (const screenshot of screenshots) {
+    const group = grouped.get(screenshot.route) ?? [];
+    group.push(screenshot);
+    grouped.set(screenshot.route, group);
+  }
+
+  const sections = Array.from(grouped.entries())
+    .map(([route, routeScreenshots]) => {
+      const label = routeScreenshots[0]?.routeLabel ?? route;
+      const cards = routeScreenshots
+        .map((screenshot) => {
+          const isMobile = screenshot.viewport.startsWith("mobile");
+          return `
+            <figure class="${isMobile ? "mobile-shot" : "desktop-shot"}">
+              <figcaption>
+                <strong>${escapeHtml(route)}</strong>
+                <span>${escapeHtml(screenshot.viewport)} · ${screenshot.width}x${screenshot.height}</span>
+              </figcaption>
+              <img src="./${escapeHtml(screenshot.fileName)}" alt="${escapeHtml(label)} ${escapeHtml(screenshot.viewport)} screenshot" />
+            </figure>
+          `;
+        })
+        .join("");
+
+      return `
+        <section>
+          <div class="route-title">
+            <h2>${escapeHtml(label)}</h2>
+            <code>${escapeHtml(route)}</code>
+          </div>
+          <div class="shots">${cards}</div>
+        </section>
+      `;
+    })
+    .join("");
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SignalOps Visual Review ${escapeHtml(sheet.label)}</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080611;
+        --panel: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.14);
+        --text: #fff8fb;
+        --muted: rgba(235, 218, 230, 0.72);
+        --accent: #c8ff69;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 16% 0%, rgba(255, 111, 156, 0.2), transparent 22%),
+          radial-gradient(circle at 86% 0%, rgba(200, 255, 105, 0.14), transparent 24%),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main {
+        width: 1780px;
+        padding: 34px;
+      }
+      header {
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.07);
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font-size: 54px;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+      .meta {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+      section {
+        border: 1px solid var(--border);
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.045);
+        padding: 22px;
+        margin-top: 24px;
+      }
+      .route-title {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 18px;
+      }
+      h2 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 0;
+      }
+      code {
+        color: var(--muted);
+        font-size: 18px;
+      }
+      .shots {
+        display: grid;
+        grid-template-columns: 560px 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+      figure {
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: rgba(0, 0, 0, 0.32);
+      }
+      figcaption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.055);
+        padding: 14px 16px;
+        font-size: 15px;
+      }
+      figcaption strong {
+        color: var(--text);
+      }
+      figcaption span {
+        color: var(--accent);
+        font-weight: 800;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #05040a;
+      }
+      .mobile-shot img {
+        max-height: 2200px;
+        object-fit: contain;
+        object-position: top;
+      }
+      .desktop-shot {
+        grid-column: 2;
+      }
+      .desktop-shot img {
+        max-height: 2200px;
+        object-fit: contain;
+        object-position: top;
+      }
+      .mobile-shot + .mobile-shot {
+        grid-column: 1;
+      }
+      @media (max-width: 1200px) {
+        main { width: 1100px; }
+        .shots { grid-template-columns: 1fr; }
+        .desktop-shot { grid-column: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">SignalOps Visual Review</p>
+        <h1>${escapeHtml(sheet.label)}</h1>
+        <p class="meta">
+          Created ${escapeHtml(manifest.createdAt)} · Commit ${escapeHtml(manifest.commitSha ?? "not available")} · ${escapeHtml(manifest.baseUrl)}
+        </p>
+      </header>
+      ${sections}
+    </main>
+  </body>
+</html>`;
+}
+
 async function saveArtifactContactSheet(browser: Browser, manifest: VisualReviewManifest) {
   const html = renderArtifactContactSheet(manifest);
   const htmlPath = path.join(outputDir, "contact-sheet.html");
@@ -386,6 +605,35 @@ async function saveArtifactContactSheet(browser: Browser, manifest: VisualReview
   }
 }
 
+async function saveCommittedContactSheets(browser: Browser, manifest: VisualReviewManifest) {
+  for (const sheet of manifest.contactSheets) {
+    const html = renderCommittedContactSheet(manifest, sheet);
+    const htmlPath = path.join(outputDir, sheet.fileName.replace(/\.jpg$/, ".html"));
+    const imagePath = path.join(outputDir, sheet.fileName);
+    const page = await newPage(browser, {
+      name: sheet.fileName,
+      width: 1848,
+      height: 2400
+    });
+
+    await writeFile(htmlPath, html);
+
+    try {
+      await page.goto(pathToFileURL(htmlPath).toString(), {
+        waitUntil: "domcontentloaded"
+      });
+      await page.screenshot({
+        path: imagePath,
+        type: "jpeg",
+        quality: 82,
+        fullPage: true
+      });
+    } finally {
+      await page.context().close();
+    }
+  }
+}
+
 async function publishLatestVisualReview(manifest: VisualReviewManifest) {
   await rm(publicReviewDir, {
     force: true,
@@ -397,6 +645,10 @@ async function publishLatestVisualReview(manifest: VisualReviewManifest) {
 
   for (const screenshot of manifest.screenshots) {
     await copyFile(path.join(outputDir, screenshot.fileName), path.join(publicReviewDir, screenshot.fileName));
+  }
+
+  for (const sheet of manifest.contactSheets) {
+    await copyFile(path.join(outputDir, sheet.fileName), path.join(publicReviewDir, sheet.fileName));
   }
 
   await writeFile(path.join(publicReviewDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
@@ -444,12 +696,17 @@ async function main() {
       reviewUrl: publicReviewUrl,
       routes: routes.map((route) => route.path),
       viewports: [mobile390, mobile430, desktop1440],
+      contactSheets: contactSheetGroups.map((sheet) => ({
+        ...sheet,
+        src: `/visual-review/latest/${sheet.fileName}`
+      })),
       screenshots,
       note: "Tell ChatGPT: review https://www.signalops.pro/visual-review."
     };
 
     await writeFile(path.join(outputDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
     await saveArtifactContactSheet(browser, manifest);
+    await saveCommittedContactSheets(browser, manifest);
     await publishLatestVisualReview(manifest);
   } finally {
     await browser.close();

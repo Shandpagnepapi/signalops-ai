@@ -14,6 +14,13 @@ type VisualReviewScreenshot = {
   src: string;
 };
 
+type VisualReviewContactSheet = {
+  label: string;
+  fileName: string;
+  src: string;
+  routes: string[];
+};
+
 type VisualReviewManifest = {
   createdAt: string;
   baseUrl: string;
@@ -27,6 +34,7 @@ type VisualReviewManifest = {
     width: number;
     height: number;
   }>;
+  contactSheets?: VisualReviewContactSheet[];
   screenshots: VisualReviewScreenshot[];
   note: string;
 };
@@ -108,6 +116,33 @@ export default async function VisualReviewPage() {
             Public pages only. No admin routes, API routes, private customer data, or authenticated screens are captured.
           </p>
         </header>
+
+        {manifest.contactSheets?.length ? (
+          <section className="mt-5 rounded-[28px] border border-lime-200/15 bg-lime-200/[0.045] p-4 sm:p-5">
+            <div className="pb-4">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-lime-200">Contact sheets</p>
+              <h2 className="mt-2 text-2xl font-black tracking-normal">Review these first</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-white/62">
+                These committed images combine the latest screenshots into larger GitHub-friendly review sheets.
+              </p>
+            </div>
+            <div className="grid gap-5">
+              {manifest.contactSheets.map((sheet) => (
+                <figure key={sheet.fileName} className="overflow-hidden rounded-3xl border border-white/10 bg-black/25">
+                  <figcaption className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-3 text-sm">
+                    <span className="font-bold text-white">{sheet.label}</span>
+                    <span className="font-mono text-xs text-white/52">{sheet.fileName}</span>
+                  </figcaption>
+                  <img
+                    src={sheet.src}
+                    alt={`${sheet.label} visual review contact sheet`}
+                    className="block w-full bg-[#05040a]"
+                  />
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <div className="mt-5 space-y-8">
           {grouped.map(([route, screenshots]) => {

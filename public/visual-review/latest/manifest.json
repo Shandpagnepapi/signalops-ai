@@ -32,6 +32,37 @@
       "height": 1400
     }
   ],
+  "contactSheets": [
+    {
+      "label": "Home + Preview",
+      "fileName": "contact-sheet-home-preview.jpg",
+      "routes": [
+        "/",
+        "/preview"
+      ],
+      "src": "/visual-review/latest/contact-sheet-home-preview.jpg"
+    },
+    {
+      "label": "Demo + ROI + How It Works",
+      "fileName": "contact-sheet-demo-roi.jpg",
+      "routes": [
+        "/demo",
+        "/roi-calculator",
+        "/how-it-works"
+      ],
+      "src": "/visual-review/latest/contact-sheet-demo-roi.jpg"
+    },
+    {
+      "label": "Service + Industry + Alternatives",
+      "fileName": "contact-sheet-seo-pages.jpg",
+      "routes": [
+        "/services/ai-lead-response",
+        "/industries/mobile-fleet-wash",
+        "/alternatives"
+      ],
+      "src": "/visual-review/latest/contact-sheet-seo-pages.jpg"
+    }
+  ],
   "screenshots": [
     {
       "route": "/",

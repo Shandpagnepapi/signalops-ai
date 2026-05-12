@@ -82,6 +82,7 @@ jobs:
             artifactRetentionDays: 30,
             routes: manifest.routes,
             viewports: manifest.viewports,
+            contactSheets: manifest.contactSheets,
             note: "Tell ChatGPT: review https://www.signalops.pro/visual-review."
           };
 

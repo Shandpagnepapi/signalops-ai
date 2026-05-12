@@ -24,7 +24,7 @@ Use:
 https://www.signalops.pro/visual-review
 ```
 
-The page displays the latest screenshots as normal images grouped by route and viewport. No manual upload, artifact ZIP, PDF, public key, or Supabase setup is needed.
+The page displays committed contact sheet images first, then the individual latest screenshots grouped by route and viewport. No manual upload, artifact ZIP, PDF, public key, or Supabase setup is needed.
 
 ## Captured Routes
 
@@ -51,6 +51,10 @@ The audit must never capture `/admin/*`, `/api/*`, authenticated pages, private 
 
 - Only the latest screenshot set is committed.
 - Latest files live under `public/visual-review/latest/`.
+- Contact sheets are committed in the same folder, currently:
+  - `contact-sheet-home-preview.jpg`
+  - `contact-sheet-demo-roi.jpg`
+  - `contact-sheet-seo-pages.jpg`
 - Historical screenshot runs are not kept in the repo.
 - Raw temporary output stays under `.visual-audit-output/` and is ignored by Git.
 - The GitHub Actions artifact is still uploaded as a backup for 30 days.
