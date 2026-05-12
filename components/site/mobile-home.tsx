@@ -28,17 +28,16 @@ import { cn } from "@/lib/utils";
 const shellStyle = {
   marginLeft: "auto",
   marginRight: "auto",
-  maxWidth: "23rem",
+  maxWidth: "24rem",
   width: "calc(100vw - 2rem)"
 } satisfies CSSProperties;
 
 const accentButtonStyle = {
-  backgroundColor: "#dfff5f",
-  color: "#071018",
+  backgroundImage: "linear-gradient(135deg,#ff6f9c,#ff9f75 46%,#ffb36d)",
+  color: "#ffffff",
   whiteSpace: "nowrap"
 } satisfies CSSProperties;
 
-const darkButtonStyle = { backgroundColor: "#071018", color: "#ffffff" } satisfies CSSProperties;
 const lightSurfaceStyle = { backgroundColor: "#f8fafc", color: "#071018" } satisfies CSSProperties;
 
 const handoffSteps = [
@@ -72,13 +71,13 @@ export function MobileSignalOpsHome() {
   return (
     <div
       data-mobile-home
-      className="relative overflow-hidden bg-slate-950 pb-[calc(2rem+env(safe-area-inset-bottom))] text-white md:hidden"
+      className="relative overflow-hidden bg-[#100818] pb-[calc(2rem+env(safe-area-inset-bottom))] text-white md:hidden"
     >
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 18% -6%, rgba(52,211,153,0.22), transparent 17rem), radial-gradient(circle at 92% 2%, rgba(129,140,248,0.18), transparent 16rem), linear-gradient(180deg,#020617 0%,#0f172a 44%,#020617 100%)"
+            "radial-gradient(circle at 16% -4%, rgba(255,111,156,0.28), transparent 18rem), radial-gradient(circle at 90% 4%, rgba(255,179,109,0.18), transparent 16rem), linear-gradient(180deg,#100818 0%,#17122d 48%,#100818 100%)"
         }}
       />
       <div className="relative">
@@ -101,7 +100,7 @@ export function MobileSignalOpsHome() {
 function MobileHeader() {
   return (
     <header className="px-4 pt-3" style={shellStyle}>
-      <div className="flex items-center justify-between gap-2 rounded-3xl border border-white/15 bg-white/10 px-3 py-3 shadow-2xl shadow-black/25 backdrop-blur-2xl">
+      <div className="flex items-center justify-between gap-2 rounded-[1.55rem] border border-white/14 bg-white/[0.095] px-3 py-3 shadow-2xl shadow-black/20 backdrop-blur-2xl">
         <p className="shrink-0 text-base font-black tracking-normal">SignalOps</p>
         <nav className="flex min-w-0 items-center gap-2" aria-label="Mobile homepage navigation">
           <TrackedLink
@@ -116,7 +115,7 @@ function MobileHeader() {
             href={PRIMARY_CTA.href}
             eventName={ANALYTICS_EVENTS.previewCtaClicked}
             eventProperties={{ location: "mobile_home_header" }}
-            className="inline-flex h-10 items-center justify-center rounded-2xl bg-lime-300 px-3 text-sm font-black text-slate-950 shadow-lg shadow-lime-300/15"
+            className="inline-flex h-10 items-center justify-center rounded-2xl px-3 text-sm font-black shadow-lg shadow-pink-950/25"
             style={accentButtonStyle}
           >
             Get Started
@@ -129,15 +128,15 @@ function MobileHeader() {
 
 function Hero() {
   return (
-    <section className="px-4 pt-8" style={shellStyle}>
-      <p className="inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-400/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-emerald-100">
+    <section className="px-4 pt-9" style={shellStyle}>
+      <p className="inline-flex items-center gap-2 rounded-full border border-[#ffb36d]/24 bg-[#ffb36d]/10 px-3 py-2 text-xs font-black uppercase tracking-wide text-[#ffe1bd]">
         <Sparkles className="size-4" aria-hidden="true" />
         AI lead systems for local businesses
       </p>
-      <h1 className="mt-5 text-3xl font-black leading-[1.05] tracking-normal text-white">
+      <h1 className="mt-6 text-[2.42rem] font-black leading-[0.98] tracking-normal text-white">
         Every lead answered. Every follow-up handled.
       </h1>
-      <p className="mt-4 text-base leading-7 text-white/70">
+      <p className="mt-5 text-base leading-7 text-[#ead0df]/76">
         SignalOps builds lead operating systems that reply fast, collect the right details, route priorities, and keep work moving.
       </p>
       <div className="mt-6 grid gap-3">
@@ -145,7 +144,7 @@ function Hero() {
           href={PRIMARY_CTA.href}
           eventName={ANALYTICS_EVENTS.previewCtaClicked}
           eventProperties={{ location: "mobile_home_hero" }}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-lime-300 px-5 text-sm font-black text-slate-950 shadow-xl shadow-lime-300/15"
+          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black shadow-xl shadow-pink-950/28"
           style={accentButtonStyle}
         >
           See Your System
@@ -155,7 +154,7 @@ function Hero() {
           href={SECONDARY_CTA.href}
           eventName={ANALYTICS_EVENTS.demoViewed}
           eventProperties={{ location: "mobile_home_hero_demo" }}
-          className="inline-flex h-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-5 text-sm font-black text-white"
+          className="inline-flex h-12 items-center justify-center rounded-2xl border border-white/14 bg-white/[0.075] px-5 text-sm font-black text-white shadow-lg shadow-black/15"
         >
           View Demo
         </TrackedLink>
@@ -167,17 +166,17 @@ function Hero() {
 function LeadHandoffVisual() {
   return (
     <section className="px-4 py-6" style={shellStyle} aria-label="SignalOps lead handoff example">
-      <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-3 shadow-2xl shadow-black/25 backdrop-blur-2xl">
-        <div className="overflow-hidden rounded-[1.35rem] bg-slate-950">
-          <div className="border-b border-white/10 bg-white/[0.04] p-4">
+      <div className="rounded-[1.85rem] border border-white/14 bg-white/[0.085] p-3 shadow-2xl shadow-black/22 backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-[1.45rem] bg-[#17122d]/94">
+          <div className="border-b border-white/10 bg-white/[0.045] p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-xs font-black uppercase tracking-wide text-lime-300">Live handoff</p>
+                <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Live handoff</p>
                 <h2 className="mt-1 text-xl font-black leading-tight tracking-normal text-white">
                   A lead comes in. The next step is already moving.
                 </h2>
               </div>
-              <span className="rounded-full bg-lime-300 px-3 py-1 text-xs font-black text-slate-950">
+              <span className="rounded-full bg-[#ffb36d]/16 px-3 py-1 text-xs font-black text-[#ffe1bd]">
                 4.3s
               </span>
             </div>
@@ -196,7 +195,7 @@ function LeadHandoffVisual() {
             <div className="mt-4 rounded-3xl border border-white/10 bg-white/[0.06] p-3">
               <div className="mb-3 flex items-center justify-between gap-3">
                 <p className="text-xs font-black uppercase tracking-wide text-white/42">Progress</p>
-                <span className="rounded-full bg-lime-300/15 px-2.5 py-1 text-[0.65rem] font-black text-lime-100">
+                <span className="rounded-full bg-[#ffb36d]/12 px-2.5 py-1 text-[0.65rem] font-black text-[#ffe1bd]">
                   Moving
                 </span>
               </div>
@@ -213,14 +212,14 @@ function LeadHandoffVisual() {
                 ["Priority", "Warm"],
                 ["Next", "Callback"]
               ].map(([label, value]) => (
-                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.06] p-3">
+                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.055] p-3">
                   <p className="text-[0.62rem] font-black uppercase tracking-wide text-white/38">{label}</p>
                   <p className="mt-1 text-xs font-black text-white">{value}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-4 rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-3">
+            <div className="mt-4 rounded-3xl border border-emerald-300/18 bg-emerald-300/10 p-3">
               <p className="flex items-center gap-2 text-sm font-black text-emerald-100">
                 <UserRoundCheck className="size-4" aria-hidden="true" />
                 Owner handoff
@@ -251,10 +250,10 @@ function LeadMessage({
         "max-w-xs rounded-3xl p-3 text-sm leading-6",
         tone === "customer"
           ? "ml-auto bg-white text-slate-950"
-          : "mr-auto border border-emerald-300/20 bg-emerald-300/10 text-emerald-50"
+          : "mr-auto border border-[#ffb36d]/20 bg-[#ffb36d]/10 text-[#ffe1bd]"
       )}
     >
-      <p className={cn("text-xs font-black uppercase", tone === "customer" ? "text-slate-500" : "text-emerald-100/70")}>{label}</p>
+      <p className={cn("text-xs font-black uppercase", tone === "customer" ? "text-slate-500" : "text-[#ffe1bd]/70")}>{label}</p>
       <p className="mt-1">{children}</p>
     </div>
   );
@@ -274,11 +273,11 @@ function HandoffTile({
   const active = tone === "active";
 
   return (
-    <div className="relative flex items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/45 p-2.5">
+    <div className="relative flex items-center gap-2 rounded-2xl border border-white/10 bg-[#100818]/45 p-2.5">
       <div
         className={cn(
           "flex size-8 shrink-0 items-center justify-center rounded-2xl",
-          active ? "bg-lime-300 text-slate-950" : "bg-emerald-300/12 text-emerald-100"
+          active ? "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white" : "bg-[#ffb36d]/12 text-[#ffe1bd]"
         )}
       >
         <Icon className="size-4" aria-hidden="true" />
@@ -296,7 +295,7 @@ function WhatYouGet() {
     <section className="px-4 py-8 text-slate-950" style={lightSurfaceStyle} aria-labelledby="mobile-outputs-title">
       <div className="mx-auto max-w-md">
         <div className="rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/10">
-          <p className="text-xs font-black uppercase tracking-wide text-emerald-700">What you get back</p>
+          <p className="text-xs font-black uppercase tracking-wide text-[#b84d69]">What you get back</p>
           <h2 id="mobile-outputs-title" className="mt-2 text-2xl font-black leading-tight tracking-normal">
             A clear picture of the system that fits.
           </h2>
@@ -314,8 +313,8 @@ function WhatYouGet() {
             href={PRIMARY_CTA.href}
             eventName={ANALYTICS_EVENTS.previewCtaClicked}
             eventProperties={{ location: "mobile_home_outputs" }}
-            className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 text-sm font-black text-white"
-            style={darkButtonStyle}
+            className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black text-white shadow-xl shadow-pink-950/20"
+            style={accentButtonStyle}
           >
             Get Started
             <ArrowRight className="size-4" aria-hidden="true" />
@@ -329,7 +328,7 @@ function WhatYouGet() {
 function OutputCard({ copy, icon: Icon, title }: { copy: string; icon: LucideIcon; title: string }) {
   return (
     <article className="flex items-start gap-3 rounded-3xl border border-slate-200 bg-slate-50 p-3">
-      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-lime-300">
+      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#100818] text-[#ffb36d]">
         <Icon className="size-5" aria-hidden="true" />
       </div>
       <div>
@@ -345,11 +344,11 @@ function PersonalTouch() {
     <section className="px-4 py-8" style={shellStyle} aria-labelledby="mobile-personal-title">
       <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-5 shadow-2xl shadow-black/20">
         <div className="flex items-start gap-3">
-          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-lime-300/12 text-lime-300">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[#ffb36d]/12 text-[#ffb36d]">
             <Wrench className="size-6" aria-hidden="true" />
           </div>
           <div>
-            <p className="text-xs font-black uppercase tracking-wide text-lime-300">Done for you</p>
+            <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">Done for you</p>
             <h2 id="mobile-personal-title" className="mt-1 text-2xl font-black leading-tight tracking-normal">
               Built around your business.
             </h2>
@@ -410,11 +409,11 @@ function TinyCard({
   return (
     <article className="rounded-3xl border border-white/15 bg-white/10 p-4">
       <div className="flex items-start gap-3">
-        <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-lime-300/10 text-lime-300">
+        <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#ffb36d]/10 text-[#ffb36d]">
           <Icon className="size-5" aria-hidden="true" />
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-black uppercase tracking-wide text-lime-300">{eyebrow}</p>
+          <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">{eyebrow}</p>
           <h2 className="mt-1 text-lg font-black leading-tight tracking-normal">{title}</h2>
         </div>
       </div>
@@ -441,7 +440,7 @@ function PlansLine() {
           href="/#pricing"
           eventName={ANALYTICS_EVENTS.packageClicked}
           eventProperties={{ location: "mobile_home_view_packages" }}
-          className="mt-2 inline-flex text-sm font-black text-lime-300"
+          className="mt-2 inline-flex text-sm font-black text-[#ffb36d]"
         >
           View packages
         </TrackedLink>
@@ -457,7 +456,7 @@ function FinalCta() {
         className="rounded-[1.75rem] border border-white/15 p-5"
         style={{
           background:
-            "radial-gradient(circle at 80% 0%, rgba(52,211,153,0.18), transparent 14rem), rgba(255,255,255,0.1)"
+            "radial-gradient(circle at 80% 0%, rgba(255,179,109,0.18), transparent 14rem), rgba(255,255,255,0.1)"
         }}
       >
         <h2 id="mobile-final-title" className="text-2xl font-black leading-tight tracking-normal">
@@ -467,7 +466,7 @@ function FinalCta() {
           href={PRIMARY_CTA.href}
           eventName={ANALYTICS_EVENTS.previewCtaClicked}
           eventProperties={{ location: "mobile_home_final" }}
-          className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-lime-300 px-5 text-sm font-black text-slate-950"
+          className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black shadow-xl shadow-pink-950/24"
           style={accentButtonStyle}
         >
           Get Started

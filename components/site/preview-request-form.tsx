@@ -55,10 +55,10 @@ const initialState: PreviewFormState = {
   website: "",
   email: "",
   phone: "",
-  industry: "Auto repair",
+  industry: "Mobile fleet wash",
   otherIndustry: "",
   mainServices: "",
-  mainLeadSources: ["Website form", "Phone calls"],
+  mainLeadSources: [],
   otherLeadSource: "",
   currentProblem: "Slow replies",
   currentTools: "",
@@ -67,7 +67,7 @@ const initialState: PreviewFormState = {
 };
 
 const selectClass =
-  "h-11 w-full rounded-xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-12 w-full rounded-2xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb36d]/55";
 
 const previewOutputs = [
   {
@@ -243,7 +243,7 @@ export function PreviewRequestForm() {
               SignalOps uses your answers to map the operating system that fits your calls, forms, DMs, quotes, and appointments.
             </CardDescription>
           </div>
-          <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-medium text-emerald-100">
+          <div className="rounded-xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 px-3 py-2 text-xs font-medium text-[#ffe1bd]">
             Done for you
           </div>
         </div>
@@ -285,7 +285,7 @@ export function PreviewRequestForm() {
                   required
                   value={form.businessName}
                   onChange={(event) => updateField("businessName", event.target.value)}
-                  placeholder="RouteWash Mobile Fleet Care"
+                    placeholder="Your business name"
                 />
               </Field>
             </div>
@@ -294,7 +294,7 @@ export function PreviewRequestForm() {
                 <Input
                   value={form.website}
                   onChange={(event) => updateField("website", event.target.value)}
-                  placeholder="https://example.com"
+                  placeholder="https://yourbusiness.com"
                 />
               </Field>
               <Field label="Email">
@@ -312,7 +312,7 @@ export function PreviewRequestForm() {
                   required
                   value={form.phone}
                   onChange={(event) => updateField("phone", event.target.value)}
-                  placeholder="(555) 555-0123"
+                  placeholder="Best phone number"
                   autoComplete="tel"
                 />
               </Field>

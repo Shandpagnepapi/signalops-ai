@@ -13,7 +13,8 @@ const intentionallyNonIndexableRoutes = new Set([
   "/mobile-tests",
   "/mobile-test-1",
   "/mobile-test-2",
-  "/mobile-test-3"
+  "/mobile-test-3",
+  "/visual-review"
 ]);
 const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt"]);
 

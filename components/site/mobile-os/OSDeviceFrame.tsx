@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { BellRing, ClipboardList, Gauge, RefreshCcw, Route, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type OSAccent = "emerald" | "sky" | "amber";
+type OSAccent = "emerald" | "sky" | "amber" | "pink";
 
 const accentStyles: Record<OSAccent, { border: string; fill: string; glow: string; soft: string; text: string }> = {
   amber: {
@@ -18,6 +18,13 @@ const accentStyles: Record<OSAccent, { border: string; fill: string; glow: strin
     glow: "radial-gradient(circle at 8% 0%, rgba(52,211,153,0.24), transparent 9rem)",
     soft: "bg-emerald-300/10",
     text: "text-emerald-200"
+  },
+  pink: {
+    border: "border-[#ffb36d]/20",
+    fill: "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white",
+    glow: "radial-gradient(circle at 16% -6%, rgba(255,111,156,0.24), transparent 10rem), radial-gradient(circle at 92% 2%, rgba(255,179,109,0.16), transparent 9rem)",
+    soft: "bg-[#ffb36d]/10",
+    text: "text-[#ffe1bd]"
   },
   sky: {
     border: "border-sky-300/18",
@@ -53,15 +60,14 @@ export function OSDeviceFrame({
 
   return (
     <div
-      className={cn("relative overflow-hidden rounded-[1.85rem] border bg-slate-950 shadow-2xl shadow-black/30", style.border, style.text, className)}
+      className={cn("relative overflow-hidden rounded-[1.85rem] border bg-[#100818] shadow-2xl shadow-black/24", style.border, style.text, className)}
       style={{ backgroundImage: style.glow }}
     >
-      <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:22px_22px]" />
-      <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-white/[0.045] px-4 py-3">
+      <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-white/[0.055] px-4 py-3">
         <div className="flex items-center gap-2">
-          <span className="size-2 rounded-full bg-red-300/85" />
-          <span className="size-2 rounded-full bg-amber-300/85" />
-          <span className="size-2 rounded-full bg-emerald-300/85" />
+          <span className="size-2 rounded-full bg-[#ff6f9c]/85" />
+          <span className="size-2 rounded-full bg-[#ffb36d]/85" />
+          <span className="size-2 rounded-full bg-emerald-300/75" />
         </div>
         <div className="flex items-center gap-2">
           <span className={cn("size-1.5 rounded-full shadow-[0_0_16px_currentColor]", style.text)} />
@@ -80,7 +86,7 @@ export function OSCorePipeline({ accent = "emerald" }: { accent?: OSAccent }) {
   const style = accentStyles[accent];
 
   return (
-    <div className="mt-3 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-3">
+    <div className="mt-4 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-3">
       <div className="mb-3 flex items-center justify-between gap-3">
         <p className="text-[0.62rem] font-black uppercase tracking-wide text-white/40">SignalOps OS Core</p>
         <span className={cn("rounded-full px-2.5 py-1 text-[0.6rem] font-black", style.soft, style.text)}>
@@ -92,7 +98,7 @@ export function OSCorePipeline({ accent = "emerald" }: { accent?: OSAccent }) {
           const Icon = step.icon;
 
           return (
-            <div key={step.label} className="relative rounded-2xl border border-white/10 bg-slate-950/56 p-2 text-center">
+            <div key={step.label} className="relative rounded-2xl border border-white/10 bg-[#100818]/58 p-2 text-center">
               {index > 0 ? (
                 <span className="absolute -left-1 top-1/2 h-px w-2 -translate-y-1/2 bg-white/20" aria-hidden="true" />
               ) : null}

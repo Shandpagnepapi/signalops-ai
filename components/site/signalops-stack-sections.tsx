@@ -26,10 +26,10 @@ import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { PRIMARY_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-type Accent = "lime" | "emerald" | "sky" | "amber" | "pink";
+type Accent = "emerald" | "sky" | "amber" | "pink";
 
 const shell = "mx-auto max-w-[1500px] px-5 sm:px-9 lg:px-11";
-const mobileShell = "mx-auto max-w-[23rem] px-4";
+const mobileShell = "mx-auto max-w-[24rem] px-4";
 const muted = "text-[#ead0df]/74";
 
 const accentMap: Record<Accent, { border: string; bg: string; fill: string; text: string; glow: string }> = {
@@ -46,13 +46,6 @@ const accentMap: Record<Accent, { border: string; bg: string; fill: string; text
     fill: "bg-emerald-300 text-slate-950",
     glow: "shadow-emerald-950/20",
     text: "text-emerald-100"
-  },
-  lime: {
-    bg: "bg-lime-300/10",
-    border: "border-lime-300/22",
-    fill: "bg-lime-300 text-slate-950",
-    glow: "shadow-lime-950/20",
-    text: "text-lime-100"
   },
   pink: {
     bg: "bg-[#ff6f9c]/12",
@@ -71,12 +64,12 @@ const accentMap: Record<Accent, { border: string; bg: string; fill: string; text
 };
 
 const sourceNodes = [
-  { label: "Website forms", icon: FileText, accent: "emerald" },
+  { label: "Website forms", icon: FileText, accent: "pink" },
   { label: "Missed calls", icon: BellRing, accent: "amber" },
   { label: "Texts", icon: MessageSquareReply, accent: "sky" },
   { label: "Instagram / Facebook DMs", icon: Send, accent: "pink" },
-  { label: "Google Business Profile", icon: MousePointer2, accent: "lime" },
-  { label: "Quote requests", icon: ClipboardList, accent: "emerald" }
+  { label: "Google Business Profile", icon: MousePointer2, accent: "amber" },
+  { label: "Quote requests", icon: ClipboardList, accent: "pink" }
 ] satisfies Array<{ label: string; icon: LucideIcon; accent: Accent }>;
 
 const coreSteps = [
@@ -89,7 +82,7 @@ const coreSteps = [
 
 const outputNodes = [
   { label: "Owner alert", icon: BellRing, accent: "amber" },
-  { label: "Command center", icon: TableProperties, accent: "lime" },
+  { label: "Command center", icon: TableProperties, accent: "pink" },
   { label: "Quote / booking handoff", icon: CalendarCheck2, accent: "sky" },
   { label: "Follow-up queue", icon: RefreshCcw, accent: "emerald" },
   { label: "Build plan / next action", icon: Workflow, accent: "pink" }
@@ -102,7 +95,7 @@ const includedLayers = [
     replaces: "Missed-call text-back tools, simple webchat, manual first replies.",
     cost: "$50-$200/mo",
     included: "Starter+",
-    accent: "lime",
+    accent: "pink",
     icon: Zap
   },
   {
@@ -138,7 +131,7 @@ const includedLayers = [
     replaces: "Basic CRM views, spreadsheets, scattered owner notes.",
     cost: "$100-$300/mo",
     included: "Growth+",
-    accent: "lime",
+    accent: "pink",
     icon: TableProperties
   },
   {
@@ -233,10 +226,12 @@ export function WhatsIncludedSection({
   compact?: boolean;
 }) {
   if (compact) {
+    const compactLayers = includedLayers.slice(0, 4);
+
     return (
       <section className={cn("py-8", className)} aria-labelledby="mobile-included-title">
         <div className={mobileShell}>
-          <div className="rounded-[1.85rem] border border-white/15 bg-white/[0.075] p-4 shadow-2xl shadow-black/22">
+          <div className="rounded-[1.85rem] border border-white/14 bg-white/[0.08] p-4 shadow-2xl shadow-black/20">
             <SectionHeading
               eyebrow="Included layers"
               id="mobile-included-title"
@@ -245,12 +240,12 @@ export function WhatsIncludedSection({
               compact
             />
             <div className="mt-4 grid gap-3">
-              {includedLayers.map((item) => (
+              {compactLayers.map((item) => (
                 <IncludedLayerCard key={item.layer} item={item} compact />
               ))}
             </div>
             <p className="mt-4 text-xs leading-5 text-white/50">
-              Costs are rough planning ranges for standalone tools. Actual tools and savings depend on your stack.
+              More layers are mapped in your preview when the workflow needs deeper routing, dashboards, or integrations.
             </p>
           </div>
         </div>
@@ -262,7 +257,7 @@ export function WhatsIncludedSection({
     <section id="included" className={cn("border-y border-white/10 bg-[#17122d]/38 py-9", className)} aria-labelledby="included-title">
       <div className={shell}>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#37f0bd]">Included layers</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Included layers</p>
           <h2 id="included-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
             What&apos;s included with SignalOps
           </h2>
@@ -320,7 +315,7 @@ export function MessyMiddleSection({
       <section className={cn("py-6", className)} aria-labelledby="mobile-messy-middle-title">
         <div className={mobileShell}>
           <div className="rounded-[1.75rem] border border-white/15 bg-white/[0.075] p-4 shadow-2xl shadow-black/20">
-            <p className="text-xs font-black uppercase tracking-wide text-lime-300">The messy middle</p>
+            <p className="text-xs font-black uppercase tracking-wide text-[#ffb36d]">The messy middle</p>
             <h2 id="mobile-messy-middle-title" className="mt-2 text-2xl font-black leading-tight tracking-normal text-white">
               Most businesses already have leads.
             </h2>
@@ -369,7 +364,7 @@ function SectionHeading({
 }) {
   return (
     <div>
-      <p className={cn("font-black uppercase tracking-wide", compact ? "text-xs text-lime-300" : "text-xs text-[#37f0bd]")}>
+      <p className={cn("font-black uppercase tracking-wide", compact ? "text-xs text-[#ffb36d]" : "text-xs text-[#ffb36d]")}>
         {eyebrow}
       </p>
       <h2
@@ -393,12 +388,11 @@ function LeadStackVisual({ compact = false }: { compact?: boolean }) {
   return (
     <div
       className={cn(
-        "relative mt-5 overflow-hidden rounded-[1.65rem] border border-white/12 bg-slate-950/86 shadow-2xl shadow-black/24",
+        "relative mt-5 overflow-hidden rounded-[1.65rem] border border-white/12 bg-[#100818]/82 shadow-2xl shadow-black/22",
         compact ? "p-3" : "mt-0 p-5"
       )}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(52,211,153,0.16),transparent_16rem),radial-gradient(circle_at_82%_6%,rgba(129,140,248,0.14),transparent_16rem)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(255,111,156,0.18),transparent_16rem),radial-gradient(circle_at_82%_6%,rgba(255,179,109,0.14),transparent_16rem)]" />
 
       <div className="relative">
         <div className={cn("grid gap-4", compact ? "" : "xl:grid-cols-[0.92fr_1.18fr_0.9fr] xl:items-center")}>
@@ -453,7 +447,7 @@ function StackNode({
   const classes = accentMap[accent];
 
   return (
-    <div className={cn("flex items-center gap-2 rounded-2xl border bg-slate-950/54 px-3 py-2.5", classes.border)}>
+    <div className={cn("flex items-center gap-2 rounded-2xl border bg-[#100818]/54 px-3 py-2.5", classes.border)}>
       <div className={cn("flex size-8 shrink-0 items-center justify-center rounded-2xl", classes.bg, classes.text)}>
         <Icon className="size-4" aria-hidden="true" />
       </div>
@@ -464,15 +458,15 @@ function StackNode({
 
 function OSCorePanel({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="relative overflow-hidden rounded-[1.45rem] border border-lime-300/24 bg-[radial-gradient(circle_at_50%_0%,rgba(223,255,95,0.16),transparent_13rem),rgba(255,255,255,0.055)] p-3 shadow-2xl shadow-lime-950/10">
+    <div className="relative overflow-hidden rounded-[1.45rem] border border-[#ffb36d]/24 bg-[radial-gradient(circle_at_50%_0%,rgba(255,179,109,0.16),transparent_13rem),rgba(255,255,255,0.055)] p-3 shadow-2xl shadow-pink-950/10">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-[0.64rem] font-black uppercase tracking-wide text-lime-200/70">Center layer</p>
+          <p className="text-[0.64rem] font-black uppercase tracking-wide text-[#ffe1bd]/70">Center layer</p>
           <h3 className={cn("mt-1 font-black tracking-normal text-white", compact ? "text-lg" : "text-2xl")}>
             SignalOps OS Core
           </h3>
         </div>
-        <span className="rounded-full bg-lime-300 px-2.5 py-1 text-[0.62rem] font-black text-slate-950">
+        <span className="rounded-full bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] px-2.5 py-1 text-[0.62rem] font-black text-white">
           Active
         </span>
       </div>
@@ -482,12 +476,12 @@ function OSCorePanel({ compact = false }: { compact?: boolean }) {
           const Icon = step.icon;
 
           return (
-            <div key={step.label} className="relative rounded-2xl border border-white/10 bg-slate-950/58 p-3">
+            <div key={step.label} className="relative rounded-2xl border border-white/10 bg-[#100818]/58 p-3">
               {index > 0 ? (
-                <span className="absolute -top-2 left-1/2 h-2 w-px -translate-x-1/2 bg-lime-300/35 sm:hidden xl:block" aria-hidden="true" />
+                <span className="absolute -top-2 left-1/2 h-2 w-px -translate-x-1/2 bg-[#ffb36d]/35 sm:hidden xl:block" aria-hidden="true" />
               ) : null}
               <div className="flex items-center gap-2">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-lime-300 text-slate-950">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white">
                   <Icon className="size-4" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
@@ -532,7 +526,7 @@ function IncludedLayerCard({ compact, item }: { compact?: boolean; item: (typeof
   const classes = accentMap[item.accent];
 
   return (
-    <article className={cn("rounded-3xl border bg-slate-950/54 p-4", classes.border)}>
+    <article className={cn("rounded-3xl border bg-[#100818]/54 p-4", classes.border)}>
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
           <div className={cn("flex size-11 shrink-0 items-center justify-center rounded-2xl", classes.bg, classes.text)}>
@@ -568,7 +562,7 @@ function MessyMiddleVisual({ compact = false }: { compact?: boolean }) {
   return (
     <div className={cn("mt-5 grid gap-3", compact ? "" : "mt-0 sm:grid-cols-[1fr_auto_1.1fr] sm:items-center")}>
       <FlowList title="Before" items={beforeItems} tone="before" />
-      <div className="hidden size-12 items-center justify-center rounded-full border border-lime-300/24 bg-lime-300/10 text-lime-200 sm:flex">
+      <div className="hidden size-12 items-center justify-center rounded-full border border-[#ffb36d]/24 bg-[#ffb36d]/10 text-[#ffb36d] sm:flex">
         <ArrowRight className="size-5" aria-hidden="true" />
       </div>
       <FlowList title="SignalOps" items={afterItems} tone="after" />
@@ -580,15 +574,15 @@ function FlowList({ items, title, tone }: { items: string[]; title: string; tone
   const active = tone === "after";
 
   return (
-    <div className={cn("rounded-3xl border p-3", active ? "border-lime-300/20 bg-lime-300/10" : "border-white/10 bg-slate-950/50")}>
+    <div className={cn("rounded-3xl border p-3", active ? "border-[#ffb36d]/20 bg-[#ffb36d]/10" : "border-white/10 bg-[#100818]/50")}>
       <div className="mb-3 flex items-center justify-between gap-3">
-        <p className={cn("text-xs font-black uppercase tracking-wide", active ? "text-lime-100" : "text-white/42")}>{title}</p>
-        {active ? <Sparkles className="size-4 text-lime-300" aria-hidden="true" /> : <Inbox className="size-4 text-white/34" aria-hidden="true" />}
+        <p className={cn("text-xs font-black uppercase tracking-wide", active ? "text-[#ffe1bd]" : "text-white/42")}>{title}</p>
+        {active ? <Sparkles className="size-4 text-[#ffb36d]" aria-hidden="true" /> : <Inbox className="size-4 text-white/34" aria-hidden="true" />}
       </div>
       <div className="grid gap-2">
         {items.map((item) => (
-          <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/46 px-3 py-2">
-            <CheckCircle2 className={cn("size-4 shrink-0", active ? "text-lime-300" : "text-white/34")} aria-hidden="true" />
+          <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#100818]/46 px-3 py-2">
+            <CheckCircle2 className={cn("size-4 shrink-0", active ? "text-[#ffb36d]" : "text-white/34")} aria-hidden="true" />
             <span className="text-xs font-bold leading-5 text-white/72">{item}</span>
           </div>
         ))}

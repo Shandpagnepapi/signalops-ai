@@ -56,12 +56,12 @@ export default function PreviewPage() {
           ])
         ])}
       />
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden pb-20 md:pb-0">
         <section className="relative isolate overflow-hidden border-b border-white/10 md:hidden">
           <div className="surface-grid absolute inset-0 opacity-20" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),linear-gradient(180deg,rgba(6,12,24,0.4),#100818_92%)]" />
           <div className="relative mx-auto max-w-md px-4 py-10">
-            <Badge className="mb-4 w-fit border border-lime-300/25 bg-lime-300/10 text-lime-100">
+            <Badge className="mb-4 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
               Lead OS
             </Badge>
             <h2 className="text-4xl font-semibold leading-tight tracking-normal text-white">
@@ -96,7 +96,7 @@ export default function PreviewPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.22),transparent_34%),radial-gradient(circle_at_78%_12%,rgba(255,179,109,0.16),transparent_30%),linear-gradient(180deg,rgba(6,12,24,0.52),#100818_92%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
             <div className="flex flex-col justify-center">
-              <Badge className="mb-5 w-fit border border-lime-300/25 bg-lime-300/10 text-lime-100">
+              <Badge className="mb-5 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
                 Lead OS
               </Badge>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
@@ -122,14 +122,14 @@ export default function PreviewPage() {
             </div>
 
             <div className="grid gap-4 self-center rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/20 backdrop-blur-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lime-300">What you get back</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">What you get back</p>
               <div className="grid gap-3">
                 {mobilePreviewOutputs.map((output) => {
                   const Icon = output.icon;
 
                   return (
                     <div key={output.title} className="rounded-2xl border border-white/10 bg-[#17122d]/62 p-4">
-                      <Icon className="mb-3 size-5 text-lime-300" aria-hidden="true" />
+                      <Icon className="mb-3 size-5 text-[#ffb36d]" aria-hidden="true" />
                       <p className="font-semibold text-white">{output.title}</p>
                       <p className="mt-1 text-sm leading-6 text-[#ead0df]/68">{output.copy}</p>
                     </div>
@@ -150,7 +150,7 @@ export default function PreviewPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">
-              <FileText className="mb-4 size-7 text-emerald-300" aria-hidden="true" />
+              <FileText className="mb-4 size-7 text-[#ffb36d]" aria-hidden="true" />
               <h2 className="text-xl font-semibold tracking-normal text-white">What happens after submission</h2>
               <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
                 SignalOps uses your answers to shape a practical operating system map for your business.

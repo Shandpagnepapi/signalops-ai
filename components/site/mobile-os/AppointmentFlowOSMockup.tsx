@@ -1,141 +1,90 @@
-import {
-  BellRing,
-  CalendarCheck2,
-  CalendarClock,
-  CheckCircle2,
-  Clock3,
-  MessageCircle,
-  Send,
-  UserRoundCheck
-} from "lucide-react";
-import { OSCorePipeline, OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
-import { OSLeadPath } from "@/components/site/mobile-os/OSLeadPath";
-import { OSMetricPill } from "@/components/site/mobile-os/OSMetricPill";
+import { BellRing, CalendarCheck2, CalendarClock, CheckCircle2, MessageCircle, Send, UserRoundCheck } from "lucide-react";
+import { OSDeviceFrame } from "@/components/site/mobile-os/OSDeviceFrame";
 
 const intakeItems = [
   ["Service", "Consultation"],
-  ["Window", "Thu afternoon"],
+  ["Preferred time", "Thursday PM"],
   ["Customer", "New"],
   ["Contact", "Text first"]
-];
-
-const calendarDays = [
-  ["Mon", "Full"],
-  ["Tue", "2 open"],
-  ["Wed", "AM"],
-  ["Thu", "PM"],
-  ["Fri", "Waitlist"]
-];
-
-const reminders = [
-  ["No-book", "If link is not used"],
-  ["Day-before", "Confirm appointment"],
-  ["No-response", "Soft follow-up"]
-];
-
-const flow = [
-  { label: "Inquiry", icon: MessageCircle },
-  { label: "Intake", icon: UserRoundCheck },
-  { label: "Window", icon: CalendarClock },
-  { label: "Reminder", icon: BellRing },
-  { label: "Booking", icon: CalendarCheck2 }
 ];
 
 export function AppointmentFlowOSMockup() {
   return (
     <OSDeviceFrame accent="sky" eyebrow="Booking console" title="Appointment Flow OS">
-      <div className="mt-3 flex flex-wrap gap-2">
-        <OSMetricPill icon={CalendarClock} label="Preferred" value="Thu PM" className="text-sky-100" />
-        <OSMetricPill icon={Clock3} label="Status" value="Scheduling" className="text-sky-100" />
-      </div>
-      <OSCorePipeline accent="sky" />
-
-      <div className="mt-4 rounded-3xl border border-sky-300/18 bg-sky-300/10 p-3">
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-sky-100/64">Customer inquiry</p>
-          <span className="rounded-full bg-white/10 px-2.5 py-1 text-[0.62rem] font-black text-white/58">11:18 AM</span>
-        </div>
-        <p className="mt-2 text-sm leading-6 text-sky-50">
-          I am interested in a consultation this week.
-        </p>
-      </div>
-
-      <div className="mt-3 rounded-3xl border border-white/10 bg-white/[0.055] p-3">
-        <div className="mb-3 flex items-center justify-between">
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-white/42">Schedule view</p>
-          <span className="rounded-full bg-sky-300/18 px-2.5 py-1 text-[0.62rem] font-black text-sky-50">
-            Match found
+      <div className="mt-4 rounded-[1.45rem] border border-white/10 bg-white/[0.055] p-4">
+        <div className="flex items-center gap-3">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-sky-300/12 text-sky-200">
+            <MessageCircle className="size-5" aria-hidden="true" />
           </span>
-        </div>
-        <div className="grid grid-cols-5 gap-1.5">
-          {calendarDays.map(([day, label]) => {
-            const isActive = day === "Thu";
-
-            return (
-              <div
-                key={day}
-                className={
-                  isActive
-                    ? "rounded-2xl bg-sky-300 p-2 text-center text-slate-950 shadow-lg shadow-sky-300/15"
-                    : "rounded-2xl border border-white/10 bg-slate-950/54 p-2 text-center"
-                }
-              >
-                <p className="text-[0.6rem] font-black uppercase">{day}</p>
-                <p className="mt-1 text-[0.58rem] font-bold opacity-70">{label}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="mt-3 grid gap-2 rounded-3xl border border-white/10 bg-slate-950/56 p-3">
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-white/42">Smart intake</p>
-          <span className="rounded-full border border-sky-300/20 bg-sky-300/10 px-2.5 py-1 text-[0.62rem] font-black text-sky-100">
-            4 fields
-          </span>
-        </div>
-        {intakeItems.map(([label, value]) => (
-          <div key={label} className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2.5">
-            <span className="text-[0.65rem] font-black uppercase tracking-wide text-white/38">{label}</span>
-            <span className="text-xs font-black text-white">{value}</span>
+          <div>
+            <p className="text-xs font-black uppercase tracking-wide text-white/42">Service inquiry</p>
+            <p className="text-sm font-black leading-5 text-white">I am interested in a consultation this week.</p>
           </div>
-        ))}
-      </div>
-
-      <div className="mt-3 grid grid-cols-[1.05fr_0.95fr] gap-2">
-        <div className="rounded-3xl border border-sky-300/18 bg-sky-300/10 p-3">
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-sky-100/70">Booking handoff</p>
-          <p className="mt-2 text-sm font-black text-white">Thursday afternoon</p>
-          <p className="mt-1 text-xs leading-5 text-sky-50/72">Time window and next step prepared.</p>
-        </div>
-        <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-3">
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-white/42">Team sees</p>
-          <p className="mt-2 text-sm font-black leading-5 text-white">Consultation request ready</p>
         </div>
       </div>
 
-      <div className="mt-3 rounded-3xl border border-white/10 bg-white/[0.055] p-3">
-        <div className="mb-3 flex items-center gap-2">
-          <Send className="size-4 text-sky-200" aria-hidden="true" />
-          <p className="text-[0.65rem] font-black uppercase tracking-wide text-white/42">Reminder flow</p>
+      <div className="mt-3 rounded-[1.45rem] border border-sky-300/20 bg-sky-300/10 p-4">
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-black uppercase tracking-wide text-sky-100/70">Smart intake</p>
+            <h4 className="mt-1 text-lg font-black text-white">Appointment-ready details</h4>
+          </div>
+          <UserRoundCheck className="size-7 text-sky-200" aria-hidden="true" />
         </div>
         <div className="grid gap-2">
-          {reminders.map(([name, detail]) => (
-            <div key={name} className="grid grid-cols-[4.4rem_1fr] gap-2 rounded-2xl border border-white/10 bg-slate-950/56 px-3 py-2">
-              <p className="text-[0.65rem] font-black text-sky-100">{name}</p>
-              <p className="text-[0.65rem] font-bold text-white/56">{detail}</p>
+          {intakeItems.map(([label, value]) => (
+            <div key={label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#100818]/46 px-3 py-3">
+              <span className="text-xs font-bold text-white/48">{label}</span>
+              <span className="text-sm font-black text-white">{value}</span>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mt-3 flex items-center justify-between gap-3 rounded-3xl border border-sky-300/18 bg-sky-300/10 p-3">
-        <p className="text-sm font-black text-sky-50">Booking handoff ready</p>
-        <CheckCircle2 className="size-5 text-sky-200" aria-hidden="true" />
+      <div className="mt-3 grid gap-3">
+        <div className="rounded-[1.45rem] border border-white/10 bg-white/[0.055] p-4">
+          <div className="flex items-start gap-3">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-sky-300/12 text-sky-200">
+              <CalendarClock className="size-5" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-xs font-black uppercase tracking-wide text-white/42">Booking handoff</p>
+              <p className="mt-1 text-base font-black leading-5 text-white">Preferred window prepared for scheduling.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-[1.45rem] border border-white/10 bg-white/[0.055] p-4">
+          <div className="flex items-start gap-3">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#ffb36d]/12 text-[#ffb36d]">
+              <BellRing className="size-5" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-xs font-black uppercase tracking-wide text-white/42">Reminder flow</p>
+              <p className="mt-1 text-base font-black leading-5 text-white">No-book and day-before reminders ready.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-[1fr_auto] items-center gap-3 rounded-[1.45rem] border border-emerald-300/18 bg-emerald-300/10 p-4">
+          <div>
+            <p className="text-xs font-black uppercase tracking-wide text-emerald-100/70">Team view</p>
+            <p className="mt-1 text-base font-black text-white">Booking handoff ready</p>
+          </div>
+          <CheckCircle2 className="size-6 text-emerald-300" aria-hidden="true" />
+        </div>
       </div>
 
-      <OSLeadPath activeIndex={4} steps={flow} tone="sky" />
+      <div className="mt-3 flex items-center justify-between rounded-full border border-white/10 bg-white/[0.055] px-4 py-3">
+        <span className="inline-flex items-center gap-2 text-xs font-black text-white/60">
+          <CalendarCheck2 className="size-4 text-sky-200" aria-hidden="true" />
+          Thu PM
+        </span>
+        <span className="inline-flex items-center gap-2 text-xs font-black text-white/60">
+          <Send className="size-4 text-[#ffb36d]" aria-hidden="true" />
+          Reminder ready
+        </span>
+      </div>
     </OSDeviceFrame>
   );
 }

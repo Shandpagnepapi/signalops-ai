@@ -11,7 +11,7 @@ type OSLeadPathStep = {
 
 const connectorClass: Record<Tone, string> = {
   amber: "from-amber-300/70 via-amber-200/35 to-white/8",
-  emerald: "from-emerald-300/70 via-lime-200/35 to-white/8",
+  emerald: "from-emerald-300/65 via-teal-200/30 to-white/8",
   sky: "from-sky-300/70 via-cyan-200/35 to-white/8"
 };
 
