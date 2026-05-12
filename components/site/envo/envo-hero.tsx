@@ -13,18 +13,18 @@ const theme = visualThemes.envoWarm;
 
 export function EnvoHero() {
   return (
-    <section className="premium-section min-h-[calc(100vh-6rem)]">
+    <section className="premium-section lg:min-h-[calc(100vh-6rem)]">
       <div className="absolute inset-0 bg-[image:var(--vs-page-gradient)]" style={{ "--vs-page-gradient": theme.gradients.page } as CSSProperties} />
       <div className="ambient-grid absolute inset-0 opacity-[0.12]" />
       <div className="gradient-noise absolute inset-0 opacity-[0.14]" />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        <GlassPanel className="grid gap-8 p-4 sm:p-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:p-8" theme={theme}>
-          <div className="py-4 lg:py-8">
+      <div className="relative mx-auto max-w-[1450px] px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12">
+        <GlassPanel className="cinematic-panel grid gap-7 p-4 sm:p-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:p-8" theme={theme}>
+          <div className="py-3 lg:py-8">
             <FloatingBadge icon={BadgeCheck} theme={theme}>{PRODUCT_FULL_NAME}</FloatingBadge>
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-4xl text-[2.65rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl">
               Meet Envo, your AI Lead Manager.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[color:var(--vs-muted)] sm:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[color:var(--vs-muted)] sm:mt-6 sm:text-xl">
               Envo answers leads instantly, asks the right intake questions, follows up automatically, and hands off
               to your team when it&apos;s time.
             </p>

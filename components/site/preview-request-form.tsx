@@ -77,7 +77,7 @@ const initialState: PreviewFormState = {
 };
 
 const selectClass =
-  "h-12 w-full rounded-2xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb36d]/55";
+  "h-12 w-full min-w-0 rounded-2xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb36d]/55";
 
 const previewOutputs = [
   {
@@ -213,7 +213,7 @@ export function PreviewRequestForm() {
 
   if (status === "success" && submission) {
     return (
-      <Card className="border-emerald-300/20 bg-emerald-300/[0.07] shadow-2xl shadow-black/24">
+      <Card className="glass-panel border-emerald-300/20 bg-emerald-300/[0.07] shadow-2xl shadow-black/24">
         <CardHeader>
           <Badge className="mb-3 w-fit border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
             Request received
@@ -257,7 +257,7 @@ export function PreviewRequestForm() {
   }
 
   return (
-    <Card className="border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
+    <Card className="glass-panel border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
@@ -282,7 +282,7 @@ export function PreviewRequestForm() {
           </div>
 
           <FormPanel label="Contact">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               <Field label="Name">
                 <Input
                   required
@@ -301,7 +301,7 @@ export function PreviewRequestForm() {
                 />
               </Field>
             </div>
-            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            <div className="mt-4 grid gap-3 sm:grid-cols-3 sm:gap-4">
               <Field label="Website">
                 <Input
                   value={form.website}
@@ -332,7 +332,7 @@ export function PreviewRequestForm() {
           </FormPanel>
 
           <FormPanel label="Lead flow">
-            <div className="grid gap-4 sm:grid-cols-[0.42fr_0.58fr]">
+            <div className="grid gap-3 sm:grid-cols-[0.42fr_0.58fr] sm:gap-4">
               <Field label="Industry">
                 <select
                   required
@@ -402,7 +402,7 @@ export function PreviewRequestForm() {
           </FormPanel>
 
           <FormPanel label="Bottleneck">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               <Field label="Biggest lead bottleneck">
                 <select
                   required
@@ -428,7 +428,7 @@ export function PreviewRequestForm() {
                 />
               </Field>
             </div>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-4">
               <Field label="What happens after a lead comes in?">
                 <Textarea
                   required
@@ -448,7 +448,7 @@ export function PreviewRequestForm() {
           </FormPanel>
 
           <FormPanel label="Envo guardrails">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               <Field label="Service area">
                 <Input
                   value={form.serviceArea}
@@ -464,7 +464,7 @@ export function PreviewRequestForm() {
                 />
               </Field>
             </div>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-4">
               <Field label="Things Envo should never promise">
                 <Textarea
                   value={form.neverPromise}
@@ -498,7 +498,7 @@ export function PreviewRequestForm() {
             </div>
           ) : null}
 
-          <Button type="submit" size="lg" disabled={status === "submitting"}>
+          <Button className="shadow-[0_18px_55px_rgba(255,111,156,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(255,111,156,0.3)]" type="submit" size="lg" disabled={status === "submitting"}>
             {status === "submitting" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             ) : (
@@ -519,7 +519,7 @@ export function PreviewRequestForm() {
 
 function FormPanel({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
+    <div className="glass-card rounded-2xl border border-white/10 bg-[#17122d]/42 p-3.5 sm:p-4">
       <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">{label}</p>
       {children}
     </div>
@@ -534,7 +534,7 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
       {label}
       {children}
     </label>

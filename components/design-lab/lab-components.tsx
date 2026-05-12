@@ -142,13 +142,13 @@ function DesignLabShell({
 }) {
   return (
     <div className="min-h-screen bg-[#05030a] text-white">
-      <section className="premium-section min-h-screen" style={themeStyle(theme)}>
+      <section className="premium-section lg:min-h-screen" style={themeStyle(theme)}>
         <AmbientBackground theme={theme} />
-        <div className="relative mx-auto max-w-[1450px] px-4 pb-14 pt-5 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pt-5 lg:px-8">
           <TranslucentNav brand="SignalOps Design Lab" items={labNavLinks} theme={theme} />
           <div className="mt-10 max-w-4xl">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-[color:var(--vs-accent-3)]">{eyebrow}</p>
-            <h1 className="mt-4 text-4xl font-black leading-[0.98] tracking-normal text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 text-[2.35rem] font-black leading-[0.98] tracking-normal text-white sm:text-6xl lg:text-7xl">
               {title}
             </h1>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">{copy}</p>
@@ -228,7 +228,7 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
       <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         {cards.map((card) => (
           <Link key={card.label} href={card.href} className="block">
-            <GlassCard className="flex min-h-[16rem] flex-col justify-between p-5" hover theme={card.theme}>
+            <GlassCard className="flex min-h-[13rem] flex-col justify-between p-5 sm:min-h-[16rem]" hover theme={card.theme}>
               <span className="flex size-11 items-center justify-center rounded-2xl border border-white/12 bg-[image:var(--vs-button-gradient)] text-white shadow-xl shadow-black/20">
                 <ArrowRight className="size-4" aria-hidden="true" />
               </span>
@@ -319,7 +319,7 @@ function StudioConcept({ id, theme }: { id: "cool" | "warm"; theme: VisualTheme 
             <GlowButton href="/design-lab/themes" icon={false} theme={theme}>View Components</GlowButton>
           </div>
         </div>
-        <div className="relative min-h-[30rem]">
+        <div className="relative min-h-[23rem] sm:min-h-[30rem]">
           <OrbitalProductVisual
             features={products.map(([name, role, status]) => ({
               copy: `${role} / ${status}`,
@@ -381,7 +381,15 @@ export function EnvoLabPage({ referenceImages }: { referenceImages: ReferenceIma
           </div>
         </GlassPanel>
         <GlassPanel className="p-5" theme={visualThemes.envoWarm}>
-          <MobileDeviceFrame theme={visualThemes.envoWarm}>
+          <MobileDeviceFrame
+            footerItems={["Queue", "Rules", "Team"]}
+            stats={[
+              { label: "Ready", value: "12" },
+              { label: "Owner", value: "5" },
+              { label: "Review", value: "3" }
+            ]}
+            theme={visualThemes.envoWarm}
+          >
             <OwnerTriageCard count="12" detail="Safe replies waiting for approval." label="Ready to approve" theme={visualThemes.envoWarm} />
             <OwnerTriageCard count="5" detail="Pricing, discounts, or special requests." label="Needs owner" secondaryAction="Assign" theme={visualThemes.envoWarm} />
             <OwnerTriageCard action="Take over" count="3" detail="Urgent, unclear, or sensitive leads." label="Human review" secondaryAction="Route" theme={visualThemes.envoWarm} />
@@ -447,7 +455,15 @@ export function ThemesLabPage() {
               theme={visualThemes.envoWarm}
               title="Reusable hero layer for product pages."
             />
-            <MobileDeviceFrame theme={visualThemes.envoWarm}>
+            <MobileDeviceFrame
+              footerItems={["Queue", "Rules", "Team"]}
+              stats={[
+                { label: "Ready", value: "12" },
+                { label: "Owner", value: "5" },
+                { label: "Review", value: "3" }
+              ]}
+              theme={visualThemes.envoWarm}
+            >
               <OwnerTriageCard count="12" detail="Safe replies waiting for approval." label="Ready to approve" theme={visualThemes.envoWarm} />
               <OwnerTriageCard count="5" detail="Pricing or edge-case requests." label="Needs owner" theme={visualThemes.envoWarm} />
             </MobileDeviceFrame>

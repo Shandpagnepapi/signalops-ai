@@ -162,18 +162,18 @@ export function MarketingHome() {
 
 function HeroSection() {
   return (
-    <section id="studio" className="premium-section min-h-screen">
+    <section id="studio" className="premium-section lg:min-h-screen">
       <AmbientBackground intensity="strong" theme={studioTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 pb-14 pt-5 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pt-5 lg:px-8">
         <TranslucentNav brand={SITE_CONFIG.name} brandHref="/" items={navItems} theme={studioTheme} />
 
-        <div className="grid gap-8 pb-6 pt-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:pt-16">
+        <div className="grid gap-8 pb-4 pt-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:pt-16">
           <div>
             <FloatingBadge icon={Sparkles} theme={studioTheme}>AI venture studio for local operators</FloatingBadge>
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="mt-5 max-w-4xl text-[2.75rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
               SignalOps builds AI workers for local businesses.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#ead0df] sm:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[#ead0df] sm:mt-6 sm:text-xl">
               We build AI products that handle real work, book more jobs, and help local businesses grow.
             </p>
             <GlassCard className="mt-6 p-4 sm:hidden" theme={envoTheme}>
@@ -201,7 +201,9 @@ function HeroSection() {
             </div>
           </div>
 
-          <StudioHeroVisual />
+          <div className="hidden md:block">
+            <StudioHeroVisual />
+          </div>
         </div>
       </div>
     </section>
@@ -210,12 +212,12 @@ function HeroSection() {
 
 function StudioHeroVisual() {
   return (
-    <GlassPanel className="relative p-4 sm:p-5" theme={envoTheme}>
+    <GlassPanel className="cinematic-panel relative p-4 sm:p-5" theme={envoTheme}>
       <div className="absolute right-8 top-8 hidden rounded-full border border-white/10 bg-white/[0.08] px-3 py-1 text-xs font-black text-white/70 sm:block">
         Flagship product
       </div>
       <div className="grid gap-4 xl:grid-cols-[0.92fr_1.08fr]">
-        <GlassCard className="p-5" theme={envoTheme}>
+        <GlassCard className="p-5 lg:min-h-[30rem]" theme={envoTheme}>
           <FloatingBadge icon={BadgeCheck} theme={envoTheme}>{PRODUCT_FULL_NAME}</FloatingBadge>
           <h2 className="mt-5 text-4xl font-black tracking-normal text-white">{PRODUCT_NAME}</h2>
           <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
@@ -330,11 +332,11 @@ function ProductCard({
   theme: VisualTheme;
 }) {
   return (
-    <GlassCard className={featured ? "min-h-[26rem] p-5 sm:p-6" : "min-h-[20rem] p-5"} hover theme={theme}>
+    <GlassCard className={featured ? "min-h-[21rem] p-5 sm:min-h-[26rem] sm:p-6" : "min-h-[16rem] p-5 sm:min-h-[20rem]"} hover theme={theme}>
       <div className="flex h-full flex-col justify-between gap-8">
         <div>
           <FloatingBadge icon={featured ? BadgeCheck : Sparkles} theme={theme}>{status}</FloatingBadge>
-          <h3 className={featured ? "mt-5 text-5xl font-black tracking-normal text-white" : "mt-5 text-3xl font-black tracking-normal text-white"}>
+          <h3 className={featured ? "mt-5 text-4xl font-black tracking-normal text-white sm:text-5xl" : "mt-5 text-3xl font-black tracking-normal text-white"}>
             {name}
           </h3>
           <p className="mt-2 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">{role}</p>
@@ -468,7 +470,7 @@ function FinalCTASection() {
     <section className="premium-section">
       <AmbientBackground intensity="quiet" theme={studioTheme} />
       <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <GlassPanel className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[1fr_auto_auto] lg:items-center" theme={studioTheme}>
+        <GlassPanel className="cinematic-panel grid gap-6 p-5 sm:p-7 lg:grid-cols-[1fr_auto_auto] lg:items-center" theme={studioTheme}>
           <div>
             <FloatingBadge icon={Eye} theme={studioTheme}>Next Step</FloatingBadge>
             <h2 className="mt-4 text-4xl font-black tracking-normal text-white">Ready to see Envo in action?</h2>
@@ -476,8 +478,8 @@ function FinalCTASection() {
               Explore the flagship AI employee now, or preview how SignalOps could shape Envo around your lead sources.
             </p>
           </div>
-          <GlowButton href="/envo" theme={studioTheme}>Explore Envo</GlowButton>
-          <GlowButton href="/preview" icon={false} theme={studioTheme}>Preview Envo</GlowButton>
+          <GlowButton className="w-full sm:w-auto" href="/envo" theme={studioTheme}>Explore Envo</GlowButton>
+          <GlowButton className="w-full sm:w-auto" href="/preview" icon={false} theme={studioTheme}>Preview Envo</GlowButton>
         </GlassPanel>
       </div>
     </section>

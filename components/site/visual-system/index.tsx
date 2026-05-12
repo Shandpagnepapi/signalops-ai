@@ -96,7 +96,7 @@ export function SectionShell({
   return (
     <section className={cn("premium-section section-reveal-ready", className)} style={themeVars(theme, style)}>
       <AmbientBackground theme={theme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         {eyebrow || title || intro ? (
           <div className="max-w-4xl">
             {eyebrow ? (
@@ -221,7 +221,7 @@ export function TranslucentNav({
   items: Array<{ href: string; label: string }>;
 }) {
   return (
-    <GlassPanel className={cn("flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between", className)} style={style} theme={theme}>
+    <GlassPanel className={cn("flex flex-col gap-4 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4", className)} style={style} theme={theme}>
       <Link href={brandHref} className="flex min-w-0 items-center gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-[color:var(--vs-border)] bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_36px_var(--vs-glow)]">
           <Sparkles className="size-5" aria-hidden="true" />
@@ -270,7 +270,7 @@ export function ProductSpotlight({
   title: string;
 }) {
   return (
-    <GlassPanel className={cn("grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:p-9", className)} style={style} theme={theme}>
+    <GlassPanel className={cn("cinematic-panel grid gap-7 p-4 sm:p-7 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:p-9", className)} style={style} theme={theme}>
       <div>
         <FloatingBadge theme={theme}>{eyebrow}</FloatingBadge>
         <h2 className="mt-5 text-4xl font-black leading-[0.96] tracking-normal text-white sm:text-6xl lg:text-7xl">
@@ -304,16 +304,16 @@ export function OrbitalProductVisual({
     ];
 
   return (
-    <div className={cn("floating-layer relative min-h-[32rem] overflow-hidden rounded-[1.75rem] border border-white/12 bg-black/24 p-4 shadow-2xl shadow-black/30 backdrop-blur-2xl", className)} style={themeVars(theme, style)}>
+    <div className={cn("floating-layer relative min-h-[23rem] overflow-hidden rounded-[1.45rem] border border-white/12 bg-black/24 p-3 shadow-2xl shadow-black/30 backdrop-blur-2xl sm:min-h-[30rem] sm:rounded-[1.75rem] sm:p-4", className)} style={themeVars(theme, style)}>
       <div className="absolute inset-0 bg-[image:var(--vs-spotlight-gradient)]" />
-      <div className="absolute left-1/2 top-1/2 size-40 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_90px_var(--vs-glow)] sm:size-52" />
-      <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:size-72" />
-      <div className="absolute left-1/2 top-1/2 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06] sm:size-96" />
+      <div className="soft-pulse absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_90px_var(--vs-glow)] sm:size-52" />
+      <div className="absolute left-1/2 top-1/2 size-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:size-72" />
+      <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06] sm:size-96" />
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
-        <p className="bg-[image:var(--vs-button-gradient)] bg-clip-text text-5xl font-black text-transparent sm:text-6xl">{label}</p>
+        <p className="bg-[image:var(--vs-button-gradient)] bg-clip-text text-4xl font-black text-transparent sm:text-6xl">{label}</p>
         <p className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-white/54">Product core</p>
       </div>
-      <div className="relative z-20 grid min-h-[30rem] gap-3 sm:grid-cols-2">
+      <div className="relative z-20 grid min-h-[21rem] gap-2 sm:min-h-[28rem] sm:grid-cols-2 sm:gap-3">
         {items.map((item, index) => {
           const Icon = item.icon ?? Layers3;
 
@@ -321,7 +321,7 @@ export function OrbitalProductVisual({
             <GlassCard
               key={item.title}
               className={cn(
-                "w-full max-w-[15.5rem] p-3",
+                "gentle-float w-full max-w-[14.5rem] p-2.5 sm:max-w-[15.5rem] sm:p-3",
                 index === 0 && "self-start justify-self-start",
                 index === 1 && "self-center justify-self-end",
                 index === 2 && "self-center justify-self-start",
@@ -334,8 +334,8 @@ export function OrbitalProductVisual({
                   <Icon className="size-4" aria-hidden="true" />
                 </span>
                 <span>
-                  <span className="block text-sm font-black text-white">{item.title}</span>
-                  <span className="mt-1 block text-xs leading-5 text-[color:var(--vs-muted)]">{item.copy}</span>
+                  <span className="block text-xs font-black text-white sm:text-sm">{item.title}</span>
+                  <span className="mt-1 block text-[0.7rem] leading-4 text-[color:var(--vs-muted)] sm:text-xs sm:leading-5">{item.copy}</span>
                 </span>
               </div>
             </GlassCard>
@@ -350,6 +350,8 @@ export function MobileDeviceFrame({
   children,
   className,
   eyebrow = "Owner Triage",
+  footerItems,
+  stats,
   status = "Live",
   style,
   theme = visualThemes.envoWarm,
@@ -357,22 +359,50 @@ export function MobileDeviceFrame({
 }: VisualComponentProps & {
   children: ReactNode;
   eyebrow?: string;
+  footerItems?: string[];
+  stats?: Array<{ label: string; value: string }>;
   status?: string;
   title?: string;
 }) {
   return (
-    <div className={cn("relative mx-auto max-w-sm rounded-[2rem] border border-white/14 bg-[#05030a]/88 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.42)]", className)} style={themeVars(theme, style)}>
-      <div className="rounded-[1.6rem] border border-white/10 bg-[image:var(--vs-panel-gradient)] p-4 backdrop-blur-2xl">
+    <div className={cn("relative mx-auto w-full max-w-sm rounded-[2rem] border border-white/14 bg-[#05030a]/88 p-2.5 shadow-[0_24px_80px_rgba(0,0,0,0.42)] sm:p-3", className)} style={themeVars(theme, style)}>
+      <div className="rounded-[1.6rem] border border-white/10 bg-[image:var(--vs-panel-gradient)] p-3 backdrop-blur-2xl sm:p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">{eyebrow}</p>
-            <h3 className="mt-2 text-2xl font-black tracking-normal text-white">{title}</h3>
+            <h3 className="mt-2 text-xl font-black tracking-normal text-white sm:text-2xl">{title}</h3>
           </div>
           <span className="rounded-full border border-[color:var(--vs-success)] bg-white/[0.06] px-2.5 py-1 text-xs font-black text-[color:var(--vs-success)]">
             {status}
           </span>
         </div>
-        <div className="mt-5 grid gap-3">{children}</div>
+        {stats ? (
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            {stats.map((item) => (
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-white/[0.045] px-2 py-2 text-center">
+                <p className="text-lg font-black leading-none text-white">{item.value}</p>
+                <p className="mt-1 text-[0.62rem] font-bold leading-3 text-[color:var(--vs-muted)]">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        ) : null}
+        <div className="mt-4 grid gap-2.5 sm:gap-3">{children}</div>
+        {footerItems ? (
+          <div className="mt-4 grid grid-cols-3 gap-2 rounded-[1.2rem] border border-white/10 bg-black/18 p-2">
+            {footerItems.map((item, index) => (
+              <button
+                key={item}
+                className={cn(
+                  "h-9 rounded-2xl text-[0.68rem] font-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]",
+                  index === 0 ? "bg-white/[0.1] text-white" : "text-white/48 hover:bg-white/[0.06] hover:text-white/78"
+                )}
+                type="button"
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );
@@ -406,7 +436,7 @@ export function OwnerTriageCard({
         </span>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2">
-        <button className="glow-button h-10 rounded-2xl text-xs" type="button">
+        <button className="glow-button h-10 rounded-2xl px-2 text-xs" type="button">
           {action}
         </button>
         <button
@@ -433,7 +463,7 @@ export function RuleCard({
   title: string;
 }) {
   return (
-    <GlassCard className={cn("p-4", className)} style={style} theme={theme}>
+    <GlassCard className={cn("p-4", className)} hover style={style} theme={theme}>
       <div className="flex items-start gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-[color:var(--vs-border)] bg-white/[0.06] text-[color:var(--vs-accent-3)]">
           <Icon className="size-5" aria-hidden="true" />
@@ -480,13 +510,13 @@ export function PremiumPricingCard({
   price: string;
 }) {
   return (
-    <GlassCard className={cn("p-5", className)} hover style={style} theme={theme}>
+    <GlassCard className={cn("flex h-full flex-col p-5", className)} hover style={style} theme={theme}>
       <div className="flex items-center justify-between gap-3">
         <p className="text-lg font-black text-white">{name}</p>
         <CircleDollarSign className="size-5 text-[color:var(--vs-accent-3)]" aria-hidden="true" />
       </div>
       <p className="mt-5 text-4xl font-black tracking-normal text-white">{price}</p>
-      <p className="mt-4 text-sm leading-6 text-[color:var(--vs-muted)]">{copy}</p>
+      <p className="mt-4 flex-1 text-sm leading-6 text-[color:var(--vs-muted)]">{copy}</p>
       <div className="mt-6 h-px bg-[image:linear-gradient(90deg,var(--vs-accent),var(--vs-accent-3),transparent)]" />
       <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[color:var(--vs-accent-3)]">
         {cta}
