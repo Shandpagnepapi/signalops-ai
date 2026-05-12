@@ -6,6 +6,7 @@
   "artifactId": "6933440274",
   "artifactName": "signalops-visual-audit-25706813903",
   "artifactUrl": "https://github.com/Shandpagnepapi/signalops-ai/actions/runs/25706813903/artifacts/6933440274",
+  "pdfUrl": "/visual-audits/latest.pdf",
   "artifactRetentionDays": 30,
   "routes": [
     "/",

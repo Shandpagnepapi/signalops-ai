@@ -1,26 +1,47 @@
 # SignalOps Visual Audit
 
-SignalOps uses GitHub Actions artifacts as the normal visual audit workflow. After a push to `main`, GitHub captures screenshots of the live public site and stores them as a downloadable artifact for 30 days.
+SignalOps uses a public PDF contact sheet as the normal visual audit workflow. After a push to `main`, GitHub captures screenshots of the live public site, publishes the latest PDF at `/visual-audits/latest.pdf`, and stores the full screenshot folder as a backup artifact for 30 days.
 
 ## How It Works
 
 1. Push a release update to `main`, or run the `Visual Audit Artifact` workflow manually.
 2. GitHub waits 90 seconds for the live Vercel site to update.
 3. Playwright captures public-page screenshots from `https://www.signalops.pro`.
-4. The workflow uploads the screenshots and contact sheet as a GitHub Actions artifact.
-5. The workflow updates `docs/visual-audit-latest.json` with the latest artifact metadata.
+4. The workflow creates a PDF contact sheet.
+5. The workflow uploads the full screenshot folder as a GitHub Actions artifact.
+6. The workflow commits only the latest public PDF and metadata JSON files back to `main`.
 
-Screenshots are not committed to GitHub. Only the small metadata JSON file is committed.
+Raw screenshots are not committed to GitHub. Only `public/visual-audits/latest.pdf`, `public/visual-audits/latest.json`, and `docs/visual-audit-latest.json` are updated.
 
-## ChatGPT Review
+## Preferred Review Workflow
 
-Tell ChatGPT:
+1. Codex pushes an update to `main`.
+2. The `Visual Audit Artifact` workflow runs automatically.
+3. It publishes:
+
+```text
+https://www.signalops.pro/visual-audits/latest.pdf
+```
+
+4. Dillon tells ChatGPT:
+
+```text
+Review the latest visual audit PDF.
+```
+
+5. ChatGPT opens the PDF and visually reviews the site.
+
+No manual upload and no artifact ZIP download is needed for normal review.
+
+## Backup Artifact Review
+
+The GitHub Actions artifact still exists as a backup. Tell ChatGPT:
 
 ```text
 review latest visual audit
 ```
 
-ChatGPT can use the GitHub connector to inspect `docs/visual-audit-latest.json`, find the latest workflow run and artifact, and review the contact sheet/screenshots. No manual screenshot upload is needed.
+ChatGPT can use the GitHub connector to inspect `docs/visual-audit-latest.json`, find the latest workflow run and artifact, and review the full screenshot folder if the PDF is not enough.
 
 ## Captured Routes
 
@@ -58,6 +79,7 @@ Contents:
 - page screenshots as JPEG files
 - `contact-sheet.html`
 - `contact-sheet.png`
+- `contact-sheet.pdf`
 - `manifest.json`
 
 Retention: 30 days.
@@ -79,6 +101,11 @@ The workflow skips commits that contain:
 ```
 
 It also ignores pushes where only `docs/visual-audit-latest.json` changed. This prevents the metadata update commit from triggering another screenshot run.
+
+The workflow also ignores pushes where only the latest public visual-audit files changed:
+
+- `public/visual-audits/latest.pdf`
+- `public/visual-audits/latest.json`
 
 ## Legacy Supabase Workflow
 

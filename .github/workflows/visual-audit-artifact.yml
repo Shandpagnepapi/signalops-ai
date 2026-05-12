@@ -7,6 +7,8 @@ on:
       - main
     paths-ignore:
       - "docs/visual-audit-latest.json"
+      - "public/visual-audits/latest.json"
+      - "public/visual-audits/latest.pdf"
 
 permissions:
   contents: write
@@ -72,23 +74,39 @@ jobs:
             artifactId: process.env.ARTIFACT_ID,
             artifactName: process.env.ARTIFACT_NAME,
             artifactUrl: process.env.ARTIFACT_URL,
+            pdfUrl: "/visual-audits/latest.pdf",
             artifactRetentionDays: 30,
             routes: manifest.routes,
             viewports: manifest.viewports,
             note: "Tell ChatGPT: review latest visual audit."
           };
 
+          const publicMetadata = {
+            createdAt: manifest.createdAt,
+            commitSha: process.env.GITHUB_SHA,
+            workflowRunId: process.env.GITHUB_RUN_ID,
+            artifactId: process.env.ARTIFACT_ID,
+            pdfUrl: "/visual-audits/latest.pdf",
+            routes: manifest.routes,
+            viewports: manifest.viewports
+          };
+
           fs.mkdirSync("docs", { recursive: true });
+          fs.mkdirSync(path.join("public", "visual-audits"), { recursive: true });
           fs.writeFileSync(
             path.join("docs", "visual-audit-latest.json"),
             `${JSON.stringify(metadata, null, 2)}\n`
           );
+          fs.writeFileSync(
+            path.join("public", "visual-audits", "latest.json"),
+            `${JSON.stringify(publicMetadata, null, 2)}\n`
+          );
           NODE
 
-      - name: Commit latest visual audit metadata
+      - name: Commit latest visual audit PDF
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/visual-audit-latest.json
-          git diff --cached --quiet || git commit -m "Update visual audit metadata [skip visual-audit]"
+          git add docs/visual-audit-latest.json public/visual-audits/latest.json public/visual-audits/latest.pdf
+          git diff --cached --quiet || git commit -m "Update visual audit PDF [skip visual-audit]"
           git push origin HEAD:${{ github.ref_name }}
