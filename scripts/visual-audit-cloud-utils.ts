@@ -39,7 +39,8 @@ export type VisualAuditCleanupSummary = {
 
 export type VisualAuditEnv = {
   supabaseUrl: string;
-  serviceRoleKey: string;
+  supabaseAdminKey: string;
+  supabaseAdminKeySource: "SUPABASE_SECRET_KEY" | "SUPABASE_SERVICE_ROLE_KEY";
   bucket: string;
   maxAgeDays: number;
   maxRuns: number;
@@ -89,34 +90,73 @@ export function loadEnvFiles() {
   }
 }
 
-function readEnv(name: string) {
+export function readVisualAuditEnv(name: string) {
   return process.env[name]?.trim() ?? "";
 }
 
 function parseNumberEnv(name: string, fallback: number) {
-  const parsed = Number(readEnv(name));
+  const parsed = Number(readVisualAuditEnv(name));
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+export function getVisualAuditAdminKey() {
+  const secretKey = readVisualAuditEnv("SUPABASE_SECRET_KEY");
+  const serviceRoleKey = readVisualAuditEnv("SUPABASE_SERVICE_ROLE_KEY");
+
+  if (secretKey) {
+    return {
+      key: secretKey,
+      source: "SUPABASE_SECRET_KEY" as const
+    };
+  }
+
+  if (serviceRoleKey) {
+    return {
+      key: serviceRoleKey,
+      source: "SUPABASE_SERVICE_ROLE_KEY" as const
+    };
+  }
+
+  return {
+    key: "",
+    source: "SUPABASE_SERVICE_ROLE_KEY" as const
+  };
+}
+
+export function getSupabaseProjectRefFromUrl(supabaseUrl: string) {
+  try {
+    const hostname = new URL(supabaseUrl).hostname;
+
+    if (!hostname.includes(".supabase.")) {
+      return "";
+    }
+
+    return hostname.split(".")[0] ?? "";
+  } catch {
+    return "";
+  }
 }
 
 export function getVisualAuditEnv(): VisualAuditEnv {
   loadEnvFiles();
 
-  const supabaseUrl = readEnv("NEXT_PUBLIC_SUPABASE_URL").replace(/\/$/, "");
-  const serviceRoleKey = readEnv("SUPABASE_SERVICE_ROLE_KEY");
-  const enabledValue = readEnv("VISUAL_AUDIT_ENABLED").toLowerCase();
+  const supabaseUrl = readVisualAuditEnv("NEXT_PUBLIC_SUPABASE_URL").replace(/\/$/, "");
+  const adminKey = getVisualAuditAdminKey();
+  const enabledValue = readVisualAuditEnv("VISUAL_AUDIT_ENABLED").toLowerCase();
 
   if (!supabaseUrl) {
     throw new Error("NEXT_PUBLIC_SUPABASE_URL is required for cloud visual audits.");
   }
 
-  if (!serviceRoleKey) {
-    throw new Error("SUPABASE_SERVICE_ROLE_KEY is required for cloud visual audits.");
+  if (!adminKey.key) {
+    throw new Error("SUPABASE_SECRET_KEY or SUPABASE_SERVICE_ROLE_KEY is required for cloud visual audits.");
   }
 
   return {
     supabaseUrl,
-    serviceRoleKey,
-    bucket: readEnv("VISUAL_AUDIT_BUCKET") || "visual-audits",
+    supabaseAdminKey: adminKey.key,
+    supabaseAdminKeySource: adminKey.source,
+    bucket: readVisualAuditEnv("VISUAL_AUDIT_BUCKET") || "visual-audits",
     maxAgeDays: parseNumberEnv("VISUAL_AUDIT_MAX_AGE_DAYS", 30),
     maxRuns: parseNumberEnv("VISUAL_AUDIT_MAX_RUNS", 12),
     maxStorageMb: parseNumberEnv("VISUAL_AUDIT_MAX_STORAGE_MB", 300),
@@ -129,7 +169,7 @@ export function createVisualAuditSupabaseClient(env = getVisualAuditEnv()) {
     throw new Error("VISUAL_AUDIT_ENABLED is set to false.");
   }
 
-  return createClient(env.supabaseUrl, env.serviceRoleKey, {
+  return createClient(env.supabaseUrl, env.supabaseAdminKey, {
     auth: {
       autoRefreshToken: false,
       detectSessionInUrl: false,

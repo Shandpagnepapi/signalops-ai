@@ -29,7 +29,7 @@ visual-audits
 
 Set the bucket to public. This is acceptable because the screenshots are public website pages only. Do not upload admin or private screenshots.
 
-The script will also try to create or update the bucket as public when it has `SUPABASE_SERVICE_ROLE_KEY`.
+The upload script can create or update the bucket as public when it has `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY`. The preflight check is stricter and expects the bucket to already exist so configuration problems are caught before screenshots start.
 
 ## Environment Variables
 
@@ -37,6 +37,7 @@ Set these in Vercel and GitHub Actions secrets:
 
 ```text
 NEXT_PUBLIC_SUPABASE_URL=
+SUPABASE_SECRET_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 VISUAL_AUDIT_ENABLED=true
 VISUAL_AUDIT_PUBLIC_KEY=choose-a-long-unlisted-review-key
@@ -46,7 +47,11 @@ VISUAL_AUDIT_MAX_RUNS=12
 VISUAL_AUDIT_MAX_STORAGE_MB=300
 ```
 
-`SUPABASE_SERVICE_ROLE_KEY` is server-side/script-only. Never expose it to browser code.
+Use `SUPABASE_SECRET_KEY` for new Supabase API keys when available. Use `SUPABASE_SERVICE_ROLE_KEY` only for legacy `service_role` JWT keys.
+
+`SUPABASE_SECRET_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are server-side/script-only. Never expose them to browser code. Never use anon or publishable keys for visual audit uploads.
+
+GitHub Actions secrets are separate from Vercel environment variables. If the site works in Vercel but the workflow fails, check the GitHub repo secrets too.
 
 `VISUAL_AUDIT_PUBLIC_KEY` is not an admin password. It is only an unlisted review key for the hidden visual audit page.
 
@@ -76,6 +81,14 @@ Optional direct usage:
 ```bash
 npm exec -- tsx scripts/visual-audit-cloud.ts --base-url=https://www.signalops.pro --run-label=pre-launch
 ```
+
+Run the safe Supabase preflight before a screenshot run:
+
+```bash
+npm run visual:audit:preflight
+```
+
+The preflight prints only safe diagnostics. It never prints full keys.
 
 ## View Screenshots
 
@@ -114,9 +127,12 @@ Manual workflow:
 
 Run it from GitHub Actions with `workflow_dispatch`. It installs dependencies, installs Playwright Chromium, captures public pages, uploads screenshots, uploads `manifest.json`, updates `latest.json`, and applies retention cleanup.
 
+The workflow runs `scripts/supabase-visual-audit-preflight.ts` before Playwright starts. If Supabase rejects the URL/key/bucket, the job stops before screenshot capture.
+
 Required GitHub secrets:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
+- `SUPABASE_SECRET_KEY` if using new Supabase secret keys
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `VISUAL_AUDIT_ENABLED`
 - `VISUAL_AUDIT_PUBLIC_KEY`
@@ -190,6 +206,48 @@ Dry run:
 ```bash
 npm exec -- tsx scripts/cleanup-visual-audits-cloud.ts --dry-run
 ```
+
+## Troubleshooting
+
+### `StorageApiError: signature verification failed`
+
+This means Supabase rejected the key signature. Common causes:
+
+- The key belongs to a different Supabase project than `NEXT_PUBLIC_SUPABASE_URL`.
+- The key was rotated and GitHub Actions still has the stale value.
+- An anon or publishable key was copied instead of `SUPABASE_SECRET_KEY` or legacy `service_role`.
+- The GitHub secret has extra spaces, quotes, or newlines.
+- Vercel has the right env var but GitHub Actions does not. They are separate stores.
+
+Run:
+
+```bash
+npm run visual:audit:preflight
+```
+
+The preflight prints safe fingerprints only, such as the key source, key format, first 6 / last 4 character fingerprint, parsed URL project ref, JWT role if using a legacy JWT, and whether Storage bucket access works.
+
+### Wrong Project Key
+
+The project ref in `NEXT_PUBLIC_SUPABASE_URL` should match the Supabase project where the admin/secret key was created. If using a legacy JWT and the token includes a `ref` claim, the preflight compares it to the URL ref.
+
+### Anon Or Publishable Key Used
+
+Visual audit uploads require elevated server-side access. Do not use:
+
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+- `sb_publishable_...`
+- legacy JWTs with role `anon`
+
+Use:
+
+- `SUPABASE_SECRET_KEY=sb_secret_...`
+- or legacy `SUPABASE_SERVICE_ROLE_KEY=eyJ...` with role `service_role`
+
+### Bucket Missing Or Private
+
+Create the `visual-audits` bucket in Supabase Storage and make it public. The viewer page uses public object URLs, and screenshots are public-site-only.
 
 ## Security Rules
 

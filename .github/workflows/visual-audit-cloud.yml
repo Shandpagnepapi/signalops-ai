@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       VISUAL_AUDIT_ENABLED: ${{ secrets.VISUAL_AUDIT_ENABLED }}
       VISUAL_AUDIT_PUBLIC_KEY: ${{ secrets.VISUAL_AUDIT_PUBLIC_KEY }}
@@ -36,6 +37,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Supabase visual audit preflight
+        run: npm exec -- tsx scripts/supabase-visual-audit-preflight.ts
 
       - name: Install Playwright Chromium
         run: npx playwright install chromium

@@ -9,6 +9,7 @@
     "seo:qa": "node scripts/seo-qa.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
+    "visual:audit:preflight": "tsx scripts/supabase-visual-audit-preflight.ts",
     "visual:audit:cloud": "tsx scripts/visual-audit-cloud.ts --base-url=https://www.signalops.pro",
     "visual:audit:cloud:local": "tsx scripts/visual-audit-cloud.ts --base-url=http://localhost:3000",
     "visual:audit:cleanup:cloud": "tsx scripts/cleanup-visual-audits-cloud.ts"
