@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { routeWashDashboardLeads } from "@/lib/mock-data";
@@ -28,16 +29,17 @@ export function DashboardShell() {
   const requestOptions = useMemo(() => getUniqueOptions(allLeads, "requestType"), [allLeads]);
 
   return (
-    <div className="overflow-x-hidden">
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(50,139,255,0.12),rgba(6,12,24,0))]">
-        <div className="surface-grid mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
+      <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="min-w-0">
-              <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">RouteWash Mobile Fleet Care portal demo</Badge>
-              <h1 className="max-w-xs text-3xl font-semibold tracking-normal text-white sm:max-w-none sm:text-4xl">
+              <EnvoLogo size="sm" />
+              <Badge className="mb-4 mt-4 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">RouteWash Mobile Fleet Care portal demo</Badge>
+              <h1 className="max-w-xs text-3xl font-black tracking-normal text-[#071126] sm:max-w-none sm:text-4xl">
                 Lead pipeline dashboard for RouteWash Mobile Fleet Care
               </h1>
-              <p className="mt-3 max-w-xs text-base leading-7 text-[#D7E2F7]/78 sm:max-w-3xl">
+              <p className="mt-3 max-w-xs text-base leading-7 text-[#647084] sm:max-w-3xl">
                 A daily operating view for fleet quote requests, recurring account follow-up,
                 route-friendly scheduling, and owner handoffs.
               </p>
@@ -54,7 +56,7 @@ export function DashboardShell() {
       <div className="mx-auto w-full max-w-xs space-y-6 px-4 py-8 sm:max-w-7xl sm:px-6 lg:px-8">
         <DashboardMetrics leads={allLeads} />
 
-        <Card className="border-[#8EBBFF]/20 bg-[#328BFF]/10">
+        <Card className="border-white/10 bg-[#071126]">
           <CardContent className="p-5">
             <p className="text-sm leading-6 text-[#F8FAFF]">
               This public dashboard uses mock RouteWash Mobile Fleet Care data only. Production lead records

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, CheckCircle2, MessageSquareReply, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Bot, Sparkles, UsersRound, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const envoBrandTokens = {
@@ -23,15 +23,21 @@ export const envoBrandTokens = {
 export const envoFeatureItems = [
   {
     title: "Respond Faster",
-    copy: "Capture, prioritize, and reply in real time."
+    copy: "Capture, prioritize, and reply in real time.",
+    icon: Zap,
+    iconClassName: "bg-[#EEEAFE] text-[#5968FF]"
   },
   {
     title: "Automate Smarter",
-    copy: "Automate repetitive conversations with ease."
+    copy: "Automate repetitive conversations with ease.",
+    icon: Bot,
+    iconClassName: "bg-[#EAF1FF] text-[#2563EB]"
   },
   {
     title: "Delight Customers",
-    copy: "Provide faster, more personalized experiences."
+    copy: "Provide faster, more personalized experiences.",
+    icon: UsersRound,
+    iconClassName: "bg-[#E3F8E9] text-[#34C759]"
   }
 ] as const;
 
@@ -144,7 +150,7 @@ export function EnvoAppIcon({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex aspect-square items-center justify-center rounded-[1.55rem] border border-white/70 bg-[linear-gradient(145deg,#F8FAFF,#EEEAFE)] p-3 shadow-[0_24px_70px_rgba(37,99,235,0.18)]",
+        "flex aspect-square items-center justify-center rounded-[1.7rem] border border-white bg-[linear-gradient(145deg,#FFFFFF,#F7F8FC)] p-3 shadow-[0_22px_56px_rgba(7,17,38,0.16),inset_0_1px_0_rgba(255,255,255,0.95)]",
         className
       )}
     >
@@ -190,6 +196,21 @@ export function EnvoDarkCard({
       )}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.28),transparent_30%),radial-gradient(circle_at_88%_16%,rgba(111,77,255,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.07),transparent)]" />
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-8 -right-6 h-44 w-64 text-[#6F4DFF]/42"
+        fill="none"
+        viewBox="0 0 260 180"
+      >
+        {[0, 18, 36, 54, 72].map((offset) => (
+          <path
+            key={offset}
+            d={`M12 ${170 - offset}C74 ${154 - offset} 88 ${92 - offset} 136 ${76 - offset}C178 ${62 - offset} 210 ${96 - offset} 248 ${34 - offset}`}
+            stroke="currentColor"
+            strokeWidth="1.25"
+          />
+        ))}
+      </svg>
       <div className="relative">{children}</div>
     </div>
   );
@@ -281,23 +302,146 @@ export function EnvoFeaturePill({
   );
 }
 
-export function EnvoFeatureStack({ className }: { className?: string }) {
+export function EnvoFeatureItem({
+  className,
+  dark = false,
+  index,
+  item
+}: {
+  className?: string;
+  dark?: boolean;
+  index: number;
+  item: (typeof envoFeatureItems)[number];
+}) {
+  const Icon = item.icon;
+
   return (
-    <div className={cn("grid gap-3", className)}>
-      {envoFeatureItems.map((item) => (
-        <EnvoGlassCard key={item.title} className="p-4">
-          <div className="flex gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-[#EAF1FF] text-[#2563EB]">
-              <CheckCircle2 className="size-5" aria-hidden="true" />
-            </span>
-            <div>
-              <h3 className="text-base font-black text-[#071126]">{item.title}</h3>
-              <p className="mt-1 text-sm leading-6 text-[#647084]">{item.copy}</p>
-            </div>
-          </div>
-        </EnvoGlassCard>
+    <div
+      className={cn(
+        "flex gap-4 py-4",
+        index > 0 && (dark ? "border-t border-white/10" : "border-t border-[#D8E2F7]"),
+        className
+      )}
+    >
+      <span
+        className={cn(
+          "flex size-14 shrink-0 items-center justify-center rounded-full shadow-[0_12px_28px_rgba(37,99,235,0.12)]",
+          item.iconClassName,
+          dark && "bg-white/10 text-[#BFD3FF]"
+        )}
+      >
+        <Icon className="size-7" aria-hidden="true" />
+      </span>
+      <div>
+        <h3 className={cn("text-base font-black", dark ? "text-white" : "text-[#071126]")}>
+          {item.title}
+        </h3>
+        <p className={cn("mt-1 text-sm leading-6", dark ? "text-[#D7E2F7]/72" : "text-[#647084]")}>
+          {item.copy}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function EnvoFeatureStack({
+  className,
+  dark = false,
+  panel = false
+}: {
+  className?: string;
+  dark?: boolean;
+  panel?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        panel &&
+          (dark
+            ? "rounded-[1.45rem] border border-white/10 bg-white/[0.045] px-4"
+            : "rounded-[1.45rem] border border-[#D8E2F7] bg-white/70 px-4 shadow-[0_18px_54px_rgba(37,99,235,0.1)]"),
+        className
+      )}
+    >
+      {envoFeatureItems.map((item, index) => (
+        <EnvoFeatureItem key={item.title} dark={dark} index={index} item={item} />
       ))}
     </div>
+  );
+}
+
+export function EnvoBrandBoard({
+  className,
+  compact = false,
+  showVariations = true
+}: {
+  className?: string;
+  compact?: boolean;
+  showVariations?: boolean;
+}) {
+  return (
+    <EnvoGlassCard
+      className={cn(
+        "overflow-hidden rounded-[2rem] bg-[linear-gradient(145deg,rgba(255,255,255,0.96),rgba(248,250,255,0.9)_52%,rgba(238,234,254,0.7))] p-0",
+        className
+      )}
+    >
+      <div className={cn("px-5 pb-6 pt-7 sm:px-8 sm:pt-9", compact ? "lg:px-7" : "lg:px-10 lg:pt-11")}>
+        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+          <EnvoLogo size={compact ? "md" : "lg"} className="justify-center" />
+          <p className="mt-4 text-xs font-black uppercase tracking-[0.32em] text-[#647084] sm:text-sm">
+            RESPOND FASTER. AUTOMATE SMARTER.
+          </p>
+        </div>
+
+        <div
+          className={cn(
+            "mt-8 grid gap-5 lg:items-center",
+            compact ? "lg:grid-cols-[0.68fr_1.16fr_0.92fr]" : "lg:grid-cols-[0.72fr_1.2fr_0.92fr]"
+          )}
+        >
+          <div className="text-center">
+            <EnvoGlassCard className="mx-auto flex max-w-[13.5rem] items-center justify-center rounded-[2rem] bg-white p-6 shadow-[0_22px_58px_rgba(7,17,38,0.16)]">
+              <EnvoAppIcon className="w-full max-w-[10rem] rounded-[1.65rem]" />
+            </EnvoGlassCard>
+            <p className="mt-4 text-xs font-black uppercase tracking-[0.14em] text-[#647084]">
+              App icon
+            </p>
+          </div>
+
+          <EnvoDarkCard className="flex min-h-[16rem] flex-col justify-between rounded-[1.45rem] p-6 sm:p-7">
+            <EnvoLogo size="md" tone="dark" />
+            <div className="mt-8">
+              <p className="text-2xl font-black leading-tight tracking-normal text-white sm:text-3xl">
+                <span className="text-[#328BFF]">Smarter</span> conversations.
+                <br />
+                Stronger <span className="text-[#A99BFF]">connections.</span>
+              </p>
+            </div>
+          </EnvoDarkCard>
+
+          <EnvoFeatureStack panel />
+        </div>
+      </div>
+
+      {showVariations ? (
+        <div className="grid border-t border-[#D8E2F7] sm:grid-cols-4">
+          {[
+            { name: "White", className: "bg-white", tone: "light" as const },
+            { name: "Lavender", className: "bg-[#EEEAFE]", tone: "light" as const },
+            { name: "Navy", className: "bg-[#071126]", tone: "dark" as const },
+            { name: "Black", className: "bg-black", tone: "dark" as const }
+          ].map((surface) => (
+            <div
+              key={surface.name}
+              className={cn("flex min-h-24 items-center justify-center px-4 py-6", surface.className)}
+            >
+              <EnvoLogo size="sm" tone={surface.tone} />
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </EnvoGlassCard>
   );
 }
 
@@ -336,36 +480,12 @@ export function EnvoBrandHero({
           </div>
         </div>
 
-        <EnvoDarkCard className="p-4 sm:p-6">
-          <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div className="rounded-[1.35rem] border border-white/12 bg-white/8 p-4 backdrop-blur-xl">
-              <EnvoAppIcon className="mx-auto max-w-[11rem]" />
-              <p className="mt-5 text-center text-xs font-black uppercase tracking-[0.18em] text-[#BFD3FF]">
-                RESPOND FASTER. AUTOMATE SMARTER.
-              </p>
-            </div>
-            <div>
-              <EnvoFeaturePill className="border-white/12 bg-white/10 text-[#BFD3FF]" icon={Zap}>
-                AI employee
-              </EnvoFeaturePill>
-              <h2 className="mt-5 text-4xl font-black leading-tight tracking-normal text-white sm:text-5xl">
-                Smarter conversations. Stronger connections.
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-[#D7E2F7]">
-                A premium, glass-like workspace for capturing lead intent, answering quickly, and keeping the owner in control.
-              </p>
-              <div className="mt-5 grid gap-2">
-                {["Capture every inquiry", "Prioritize the next action", "Route the clean handoff"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/7 px-3 py-2 text-sm font-bold text-white/82">
-                    <MessageSquareReply className="size-4 text-[#8EBBFF]" aria-hidden="true" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </EnvoDarkCard>
+        <EnvoBrandBoard compact showVariations={false} />
       </div>
     </EnvoSection>
   );
 }
+
+export const EnvoHeroSection = EnvoBrandHero;
+export const EnvoSectionShell = EnvoSection;
+export const EnvoButton = EnvoCtaButton;

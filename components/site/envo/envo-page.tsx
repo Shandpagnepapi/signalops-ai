@@ -16,11 +16,10 @@ import {
   Workflow
 } from "lucide-react";
 import {
-  EnvoAppIcon,
+  EnvoBrandBoard,
   EnvoCtaButton,
   EnvoDarkCard,
   EnvoFeaturePill,
-  EnvoFeatureStack,
   EnvoGlassCard,
   EnvoLogo,
   EnvoMark,
@@ -140,51 +139,9 @@ function HeroSection() {
           </div>
         </div>
 
-        <HeroBrandBoard />
+        <EnvoBrandBoard compact />
       </div>
     </EnvoSection>
-  );
-}
-
-function HeroBrandBoard() {
-  return (
-    <EnvoGlassCard className="relative overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.94),rgba(238,234,254,0.82))] p-4 sm:p-5 lg:p-6">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(50,139,255,0.18),transparent_34%),radial-gradient(circle_at_90%_12%,rgba(111,77,255,0.16),transparent_32%)]" />
-      <div className="relative flex flex-col gap-5">
-        <div className="flex flex-col gap-3 border-b border-[#D8E2F7] pb-5 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <EnvoLogo size="md" />
-            <p className="mt-3 text-xs font-black uppercase tracking-[0.2em] text-[#2563EB]">
-              RESPOND FASTER. AUTOMATE SMARTER.
-            </p>
-          </div>
-          <EnvoAppIcon className="w-20 sm:w-24" />
-        </div>
-
-        <div className="grid gap-4 lg:grid-cols-[0.92fr_1fr]">
-          <EnvoDarkCard className="flex min-h-[18rem] flex-col justify-between p-5 sm:p-6">
-            <div className="flex items-start justify-between gap-4">
-              <EnvoLogo size="sm" tone="dark" />
-              <EnvoMark className="size-10 shrink-0" />
-            </div>
-            <div>
-              <p className="text-3xl font-black leading-tight tracking-normal text-white sm:text-4xl xl:text-[2.65rem]">
-                Smarter
-                <br />
-                conversations.
-                <br />
-                Stronger
-                <br />
-                connections.
-              </p>
-              <div className="mt-5 h-1.5 w-24 rounded-full bg-[linear-gradient(90deg,#328BFF,#6F4DFF)]" />
-            </div>
-          </EnvoDarkCard>
-
-          <EnvoFeatureStack />
-        </div>
-      </div>
-    </EnvoGlassCard>
   );
 }
 

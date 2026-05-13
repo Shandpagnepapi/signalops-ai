@@ -18,19 +18,18 @@ import type { ServicePageConfig } from "@/lib/service-pages";
 
 export function ServicePage({ page }: { page: ServicePageConfig }) {
   return (
-    <div className="overflow-x-hidden">
-      <section className="relative isolate overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_8%,rgba(50,139,255,0.28),transparent_34%),radial-gradient(circle_at_78%_18%,rgba(111,77,255,0.18),transparent_30%),linear-gradient(180deg,#111A3A,#071126_88%)]" />
-        <div className="surface-grid absolute inset-0 opacity-20" />
+    <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
+      <section className="relative isolate overflow-hidden border-b border-[#D8E2F7] bg-[#FBFAF7]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_0%,rgba(50,139,255,0.18),transparent_34%),radial-gradient(circle_at_78%_12%,rgba(111,77,255,0.12),transparent_30%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[1fr_0.92fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <Badge variant="outline" className="mb-6 border-[#6F4DFF]/30 bg-[#6F4DFF]/10 text-[#EAF1FF]">
+            <Badge variant="outline" className="mb-6 w-fit border-[#CBD8F2] bg-white/74 text-[#2563EB]">
               {page.eyebrow}
             </Badge>
-            <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-normal text-[#071126] sm:text-5xl lg:text-6xl">
               {page.h1}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#EAF1FF] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#647084] sm:text-lg">
               {page.subheadline}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -47,7 +46,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
                 href="/demo"
                 eventName={ANALYTICS_EVENTS.demoViewed}
                 eventProperties={{ location: `${page.id}_service_demo` }}
-                className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full sm:w-auto`}
+                className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-[#CBD8F2] bg-white/72 text-[#071126] hover:bg-white sm:w-auto`}
               >
                 View Client Demo
               </TrackedLink>
@@ -81,14 +80,14 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         <CardGrid cards={page.problemCards} tone="dark" />
       </section>
 
-      <section className="border-y border-white/10 bg-[#0B1024]/65">
+      <section className="border-y border-[#D8E2F7] bg-[#F8FAFF]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Envo system" title={page.solutionTitle} description={page.solutionIntro} />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {page.solutionCards.map((card, index) => {
               const Icon = solutionIcons[index % solutionIcons.length];
               return (
-                <Card key={card.title} className="bg-white/[0.035]">
+                <Card key={card.title} className="bg-[#0B1024]/74">
                   <CardHeader>
                     <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/14 text-[#D7E8FF]">
                       <Icon className="size-5" aria-hidden="true" />
@@ -103,7 +102,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,#071126,#071126)]">
+      <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Workflow" title={page.workflowTitle} description={page.workflowIntro} />
           <div className="mt-8 grid gap-4 lg:grid-cols-4">
@@ -138,7 +137,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0B1024]/65">
+      <section className="border-y border-[#D8E2F7] bg-[#F8FAFF]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Benefits"
@@ -167,7 +166,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0B1024]/70">
+      <section className="border-y border-[#D8E2F7] bg-[#F8FAFF]">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:px-8">
           <SectionHeader
             eyebrow="Related services"
@@ -179,7 +178,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#8EBBFF]/35 hover:bg-[#328BFF]/10"
+                className="rounded-2xl border border-white/10 bg-[#0B1024]/74 p-5 transition hover:border-[#8EBBFF]/35 hover:bg-[#152044]"
               >
                 <p className="font-semibold text-white">{link.label}</p>
                 <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/62">{link.description}</p>
@@ -190,7 +189,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[1.5rem] border border-white/12 bg-[#071126] p-6 shadow-[0_24px_80px_rgba(7,17,38,0.18)] sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#D7E8FF]">
               Preview Envo
@@ -226,7 +225,7 @@ function CardGrid({
   cards: { title: string; description: string }[];
   tone: "dark" | "light";
 }) {
-  const className = tone === "dark" ? "bg-[#0B1024]/74" : "bg-white/[0.035]";
+  const className = tone === "dark" ? "bg-[#0B1024]/74" : "bg-[#0B1024]/68";
 
   return (
     <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -253,9 +252,9 @@ function SectionHeader({
 }) {
   return (
     <div className="max-w-3xl">
-      <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">{eyebrow}</Badge>
-      <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-[#D7E2F7]/78">{description}</p>
+      <Badge className="mb-4 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">{eyebrow}</Badge>
+      <h2 className="text-3xl font-black tracking-normal text-[#071126] sm:text-4xl">{title}</h2>
+      <p className="mt-4 text-base leading-7 text-[#647084]">{description}</p>
     </div>
   );
 }

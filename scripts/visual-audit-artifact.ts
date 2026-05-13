@@ -268,19 +268,19 @@ function renderArtifactContactSheet(manifest: VisualReviewManifest) {
     <style>
       :root {
         color-scheme: dark;
-        --bg: #100818;
+        --bg: #071126;
         --panel: rgba(255, 255, 255, 0.055);
         --border: rgba(255, 255, 255, 0.12);
-        --text: #fff8fb;
-        --muted: rgba(234, 208, 223, 0.68);
-        --accent: #c8ff69;
+        --text: #f8faff;
+        --muted: rgba(215, 226, 247, 0.72);
+        --accent: #8ebbff;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
         background:
-          radial-gradient(circle at 18% 0%, rgba(255, 111, 156, 0.18), transparent 28%),
-          radial-gradient(circle at 78% 8%, rgba(255, 179, 109, 0.16), transparent 26%),
+          radial-gradient(circle at 18% 0%, rgba(50, 139, 255, 0.18), transparent 28%),
+          radial-gradient(circle at 78% 8%, rgba(111, 77, 255, 0.16), transparent 26%),
           var(--bg);
         color: var(--text);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

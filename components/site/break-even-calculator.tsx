@@ -110,7 +110,7 @@ export function BreakEvenCalculator({
   return (
     <section
       className={cn(
-        "overflow-hidden rounded-2xl border border-[#6F4DFF]/18 bg-[radial-gradient(circle_at_15%_0%,rgba(50,139,255,0.16),transparent_35%),rgba(111,77,255,0.07)] p-5 shadow-2xl shadow-black/18",
+        "overflow-hidden rounded-2xl border border-white/12 bg-[radial-gradient(circle_at_15%_0%,rgba(50,139,255,0.18),transparent_35%),#071126] p-5 shadow-2xl shadow-black/18",
         className
       )}
       aria-labelledby="break-even-heading"

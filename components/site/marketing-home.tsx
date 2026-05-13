@@ -4,10 +4,10 @@ import {
   EnvoCtaButton,
   EnvoDarkCard,
   EnvoFeaturePill,
+  EnvoFeatureStack,
   EnvoGlassCard,
   EnvoLogo,
-  EnvoMark,
-  envoFeatureItems
+  EnvoMark
 } from "@/components/site/envo/envo-brand-system";
 import {
   AmbientBackground,
@@ -94,16 +94,7 @@ function EnvoDoorwayCard() {
               Trained to your business. Built to answer, organize, follow up, and hand off every opportunity.
             </p>
 
-            <div className="mt-5 grid gap-2.5 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              {envoFeatureItems.map((feature) => (
-                <EnvoGlassCard
-                  key={feature.title}
-                  className="rounded-2xl bg-white/68 px-3 py-3 shadow-[0_12px_34px_rgba(37,99,235,0.08)]"
-                >
-                  <p className="text-sm font-black leading-5 text-[#071126]">{feature.title}</p>
-                </EnvoGlassCard>
-              ))}
-            </div>
+            <EnvoFeatureStack className="mt-5" panel />
           </div>
 
           <EnvoCtaButton className="mt-6 w-full sm:w-fit" href="/envo">

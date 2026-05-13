@@ -19,7 +19,7 @@ type LeadTableProps = {
 
 export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProps) {
   return (
-    <Card className="min-w-0">
+    <Card className="min-w-0 bg-[#0B1024]/74">
       <CardHeader>
         <CardTitle>Lead table</CardTitle>
         <CardDescription>Priority, urgency, and recommended next step for each fleet wash inquiry.</CardDescription>

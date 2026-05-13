@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, Mail, TrendingUp } from "lucide-react";
 import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
+import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { ProductFrame, StatusPill } from "@/components/site/signalops-gui";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
@@ -140,15 +141,16 @@ export function RoiCalculator() {
   }, [inputs]);
 
   return (
-    <div className="overflow-x-hidden">
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(50,139,255,0.14),rgba(6,12,24,0))]">
-        <div className="surface-grid mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
+    <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
+      <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
           <div className="max-w-3xl">
-            <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">ROI calculator</Badge>
-            <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
+            <EnvoLogo size="sm" />
+            <Badge className="mb-4 mt-5 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">ROI calculator</Badge>
+            <h1 className="text-4xl font-black leading-tight tracking-normal text-[#071126] sm:text-5xl">
               Estimate how much slow response and weak follow-up may be costing you.
             </h1>
-            <p className="mt-4 text-base leading-7 text-[#D7E2F7]/78">
+            <p className="mt-4 text-base leading-7 text-[#647084]">
               Use conservative inputs to model missed revenue, likely recovered leads, and whether an Envo package could make financial sense.
             </p>
           </div>

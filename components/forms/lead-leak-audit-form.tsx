@@ -188,7 +188,7 @@ export function LeadLeakAuditForm() {
   }
 
   return (
-    <Card id="audit-form" className="scroll-mt-24 border-[#6F4DFF]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
+    <Card id="audit-form" className="scroll-mt-24 border-white/12 bg-[#071126] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>

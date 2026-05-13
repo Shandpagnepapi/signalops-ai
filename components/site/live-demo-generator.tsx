@@ -155,30 +155,29 @@ export function LiveDemoGenerator() {
   }
 
   return (
-    <div className="overflow-x-hidden">
-      <section className="relative isolate overflow-hidden border-b border-white/10">
-        <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(50,139,255,0.16),rgba(6,12,24,0)_64%)]" />
+    <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
+      <section className="relative isolate overflow-hidden border-b border-[#D8E2F7] bg-[#FBFAF7]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(50,139,255,0.18),transparent_34%),radial-gradient(circle_at_82%_14%,rgba(111,77,255,0.12),transparent_32%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <EnvoLogo size="md" tone="dark" />
-            <EnvoFeaturePill className="mb-5 mt-5 border-white/12 bg-white/10 text-[#BFD3FF]" icon={Sparkles}>
+            <EnvoLogo size="md" />
+            <EnvoFeaturePill className="mb-5 mt-5" icon={Sparkles}>
               Live prospect demo
             </EnvoFeaturePill>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#071126] sm:text-6xl">
               Generate a tailored Envo preview in seconds.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#D7E2F7]/78 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#647084] sm:text-lg">
               Enter a business name, industry, services, and lead problem. Envo turns it into a mini strategy report you can walk through live.
             </p>
-            <div className="mt-6 grid gap-3 text-sm text-[#D7E2F7]/78 sm:grid-cols-3">
+            <div className="mt-6 grid gap-3 text-sm text-[#647084] sm:grid-cols-3">
               {[
                 "Industry-specific workflows",
                 "Personalized replies and notes",
                 "Built for live sales calls"
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
+                  <CheckCircle2 className="size-4 shrink-0 text-[#34C759]" aria-hidden="true" />
                   {item}
                 </div>
               ))}
@@ -357,9 +356,9 @@ function LoadingPreview() {
   ];
 
   return (
-    <section className="border-b border-white/10 bg-[#0B1024]/50">
+      <section className="border-b border-[#D8E2F7] bg-[#F8FAFF]">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <Card className="border-[#6F4DFF]/20 bg-[#6F4DFF]/10">
+        <Card className="border-white/10 bg-[#0B1024]/78">
           <CardContent className="p-6">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -427,16 +426,16 @@ function GeneratedDemoPreview({
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">
+          <Badge className="mb-4 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">
             {demo.generatedBy === "ai-enhanced" ? "AI-enhanced strategy" : "Template fallback strategy"}
           </Badge>
-          <h2 className="max-w-4xl text-3xl font-semibold tracking-normal text-white sm:text-4xl">
+          <h2 className="max-w-4xl text-3xl font-black tracking-normal text-[#071126] sm:text-4xl">
             {demo.installTitle}
           </h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-[#D7E2F7]/78">{demo.strategySummary}</p>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-[#647084]">{demo.strategySummary}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Button type="button" variant="outline" onClick={onCopy}>
+          <Button type="button" variant="outline" className="border-[#CBD8F2] bg-white/72 text-[#071126] hover:bg-white" onClick={onCopy}>
             <Copy className="size-4" aria-hidden="true" />
             {copyStatus === "copied" ? "Copied" : "Copy strategy"}
           </Button>
@@ -444,7 +443,7 @@ function GeneratedDemoPreview({
             <Save className="size-4" aria-hidden="true" />
             Save Demo
           </Button>
-          <Button type="button" variant="ghost" onClick={onReset}>
+          <Button type="button" variant="ghost" className="text-[#071126] hover:bg-[#EAF1FF]" onClick={onReset}>
             <RefreshCw className="size-4" aria-hidden="true" />
             Generate Another Demo
           </Button>
@@ -464,7 +463,7 @@ function GeneratedDemoPreview({
       ) : null}
 
       <div className="grid gap-6 lg:grid-cols-[1fr_0.78fr]">
-        <Card className="border-[#8EBBFF]/20 bg-[#328BFF]/10">
+        <Card className="border-white/10 bg-[#0B1024]/74">
           <CardHeader>
             <Badge className="mb-3 bg-[#0B1024] text-[#D7E8FF]">Generated positioning</Badge>
             <CardTitle className="text-3xl leading-tight">{demo.headline}</CardTitle>
@@ -479,7 +478,7 @@ function GeneratedDemoPreview({
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-[#0B1024]/74">
           <CardHeader>
             <CardTitle>Suggested package</CardTitle>
             <CardDescription>Based on lead complexity, customer value, and likely automation scope.</CardDescription>
@@ -632,7 +631,7 @@ function SectionCard({
   children: ReactNode;
 }) {
   return (
-    <Card>
+    <Card className="bg-[#0B1024]/74">
       <CardHeader>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#BFD3FF]">

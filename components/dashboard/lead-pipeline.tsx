@@ -17,7 +17,7 @@ type LeadPipelineProps = {
 
 export function LeadPipeline({ leads, selectedLeadId, onSelectLead }: LeadPipelineProps) {
   return (
-    <Card>
+    <Card className="bg-[#0B1024]/74">
       <CardHeader>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>

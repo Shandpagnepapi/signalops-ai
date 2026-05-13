@@ -15,6 +15,7 @@ import {
   SearchCheck,
   type LucideIcon
 } from "lucide-react";
+import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -184,19 +185,20 @@ export function HowItWorksDemo() {
   const activeNumber = String(activeIndex + 1).padStart(2, "0");
 
   return (
-    <div className="overflow-x-hidden">
-      <section className="surface-grid border-b border-white/10">
+    <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
+      <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
             <div className="space-y-6">
-              <Badge variant="outline" className="border-[#8EBBFF]/25 bg-[#328BFF]/10 text-[#D7E8FF]">
+              <EnvoLogo size="sm" />
+              <Badge variant="outline" className="border-[#CBD8F2] bg-white/74 text-[#2563EB]">
                 Envo by SignalOpsAI
               </Badge>
               <div className="space-y-4">
-                <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
+                <h1 className="text-4xl font-black leading-tight tracking-normal text-[#071126] sm:text-5xl">
                   How Envo handles lead work
                 </h1>
-                <p className="max-w-2xl text-base leading-7 text-[#D7E2F7]/78 sm:text-lg">
+                <p className="max-w-2xl text-base leading-7 text-[#647084] sm:text-lg">
                   A simple AI lead manager for capturing, responding, sorting,
                   routing, booking, and following up before good opportunities go cold.
                 </p>
@@ -215,22 +217,22 @@ export function HowItWorksDemo() {
                   href="/demo"
                   eventName={ANALYTICS_EVENTS.demoViewed}
                   eventProperties={{ location: "how_it_works_hero_demo_click" }}
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto")}
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full border-[#CBD8F2] bg-white/72 text-[#071126] hover:bg-white sm:w-auto")}
                 >
                   View Demo
                 </TrackedLink>
               </div>
-              <div className="grid gap-3 text-sm text-[#D7E2F7]/78 sm:grid-cols-3">
+              <div className="grid gap-3 text-sm text-[#647084] sm:grid-cols-3">
                 {["No vague autoresponder", "Clear team handoff", "Follow-up that keeps moving"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
-                    <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
+                    <CheckCircle2 className="size-4 shrink-0 text-[#34C759]" aria-hidden="true" />
                     {item}
                   </div>
                 ))}
               </div>
             </div>
 
-            <Card className="relative overflow-hidden p-5">
+            <Card className="relative overflow-hidden bg-[#0B1024]/78 p-5">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#328BFF] via-[#6F4DFF] to-[#8d6bff]" />
               <div className="space-y-5">
                 <div className="flex items-start justify-between gap-4">
@@ -276,11 +278,11 @@ export function HowItWorksDemo() {
 
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col gap-3 sm:max-w-3xl">
-          <Badge>Step-by-step flow</Badge>
-          <h2 className="text-3xl font-semibold tracking-normal text-white">
+          <Badge className="border border-[#CBD8F2] bg-white/74 text-[#2563EB]">Step-by-step flow</Badge>
+          <h2 className="text-3xl font-black tracking-normal text-[#071126]">
             From first touch to booked appointment
           </h2>
-          <p className="text-sm leading-6 text-[#D7E2F7]/78 sm:text-base">
+          <p className="text-sm leading-6 text-[#647084] sm:text-base">
             Envo connects the moments that usually live in separate tools: the inquiry,
             response, intake, routing, booking, follow-up, and reporting.
           </p>
@@ -335,7 +337,7 @@ export function HowItWorksDemo() {
             </div>
           </div>
 
-          <Card className="p-5">
+          <Card className="bg-[#0B1024]/78 p-5">
             <div className="flex items-start gap-4">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-[#6F4DFF]/25 bg-[#6F4DFF]/10 text-[#EAF1FF]">
                 <ActiveStepIcon className="size-6" aria-hidden="true" />
@@ -370,10 +372,10 @@ export function HowItWorksDemo() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0B1024]/35">
+      <section className="border-y border-[#D8E2F7] bg-[#F8FAFF]">
         <div className="mx-auto grid w-full max-w-7xl gap-4 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:px-8">
           {beforeAfter.map((group) => (
-            <Card key={group.label} className="p-5">
+            <Card key={group.label} className="bg-[#0B1024]/78 p-5">
               <div className="mb-5 flex items-center justify-between gap-3">
                 <h2 className="text-2xl font-semibold tracking-normal text-white">{group.label}</h2>
                 <Badge variant={group.tone}>{group.tone === "success" ? "Cleaner" : "Leaky"}</Badge>
@@ -400,14 +402,14 @@ export function HowItWorksDemo() {
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="mb-8 grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-end">
           <div className="space-y-3">
-            <Badge variant="outline" className="border-[#6F4DFF]/25 bg-[#6F4DFF]/10 text-[#EAF1FF]">
+            <Badge variant="outline" className="border-[#CBD8F2] bg-white/74 text-[#2563EB]">
               Generated operating examples
             </Badge>
-            <h2 className="text-3xl font-semibold tracking-normal text-white">
+            <h2 className="text-3xl font-black tracking-normal text-[#071126]">
               The useful output your team actually needs
             </h2>
           </div>
-          <p className="text-sm leading-6 text-[#D7E2F7]/78 sm:text-base">
+          <p className="text-sm leading-6 text-[#647084] sm:text-base">
             The system is designed to make the next action obvious, not bury your team in generic
             automation noise.
           </p>
@@ -418,7 +420,7 @@ export function HowItWorksDemo() {
             const ExampleIcon = example.icon;
 
             return (
-              <Card key={example.label} className="p-5">
+              <Card key={example.label} className="bg-[#0B1024]/78 p-5">
                 <div className="mb-4 flex size-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#D7E8FF]">
                   <ExampleIcon className="size-5" aria-hidden="true" />
                 </div>

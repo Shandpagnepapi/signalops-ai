@@ -14,22 +14,22 @@ SignalOps builds AI-powered lead response systems that help small and local busi
 
 ## Core Offer
 
-AI Lead Response & Intake System
+Envo AI Lead Manager
 
 ## Primary Offer
 
-Free Instant AI Lead System Preview
+Envo Preview
 
 ## Color Palette
 
-- `Midnight` `#100818`: Primary background and major dark surfaces.
-- `Deep Slate` `#24122d`: Cards, dashboard panels, and content sections.
-- `Sunset Coral` `#ff6f9c`: Primary CTA, links, routing lines, and key highlights.
-- `Warm Signal` `#ffb36d`: Secondary accent for signal flow, badges, and active states.
-- `Fog White` `#F8FBFF`: Primary text on dark surfaces.
-- `Orchid Mist` `#d4b6c8`: Secondary copy, helper text, and labels.
-- `Success Mint` `#2ED9A0`: Ready leads, booked states, and positive status.
-- `Alert Amber` `#F6B84A`: Needs-attention, human review, and urgent lead status.
+- `Envo Ink` `#071126`: Primary dark navy background and major dark surfaces.
+- `Envo Ink 2` `#0B1024`: Dashboard panels, dark cards, and product previews.
+- `Envo Blue` `#328BFF`: Primary CTA, links, routing lines, and key highlights.
+- `Envo Purple` `#6F4DFF`: Gradient accent, badges, and active states.
+- `Envo Background` `#F8FAFF`: Main light page surface.
+- `Envo Warm Background` `#FBFAF7`: Premium off-white canvas.
+- `Envo Muted` `#647084`: Secondary copy, helper text, and labels.
+- `Envo Green` `#34C759`: Ready leads, booked states, and positive status.
 
 ## Typography
 
@@ -59,7 +59,7 @@ Free Instant AI Lead System Preview
 
 ## CTA Language
 
-- Get My Free Preview
+- Preview Envo
 - Contact SignalOps
 - Email SignalOps
 - Ask About Starter
@@ -71,8 +71,8 @@ Free Instant AI Lead System Preview
 
 ## Offer Names
 
-- Free Instant AI Lead System Preview
-- AI Lead Response & Intake System
+- Envo Preview
+- Envo AI Lead Manager
 - Missed-Call Text Back
 - Lead Routing Blueprint
 - Follow-Up Automation Sprint
@@ -101,7 +101,7 @@ SignalOps should rank around practical lead handling problems, not vague AI clai
 - service business lead follow-up
 - AI appointment setting
 
-Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a path to get the Free Instant AI Lead System Preview.
+Every SEO page should include a clear business problem, examples by industry, a simple workflow, FAQs, and a path to preview Envo.
 
 ## Logo Usage Notes
 
@@ -132,16 +132,16 @@ Every SEO page should include a clear business problem, examples by industry, a 
 ## Homepage Hero Copy
 
 Eyebrow:
-`Free Instant AI Lead System Preview`
+`Envo Preview`
 
 H1:
-`See the AI lead system your business should already have.`
+`Your AI worker for customer calls and leads.`
 
 Supporting copy:
-`SignalOps builds done-for-you AI receptionist, lead response, intake, follow-up, and booking handoff systems for local service businesses. Start with a free personalized preview before anything is built.`
+`SignalOpsAI builds Envo, an AI Lead Manager trained around customer calls, texts, forms, DMs, follow-up, owner handoffs, and dashboards.`
 
 Primary CTA:
-`Get My Free Preview`
+`Preview Envo`
 
 Secondary CTA:
 `See Demo`
