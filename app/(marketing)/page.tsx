@@ -3,15 +3,17 @@ import {
   breadcrumbJsonLd,
   createPageMetadata,
   jsonLdScript,
-  META_DESCRIPTION_TEMPLATES,
   OG_IMAGE_ASSETS,
-  serviceJsonLd,
   webPageJsonLd
 } from "@/lib/seo";
 
+const title = "SignalOpsAI | Envo and Drone Services";
+const description =
+  "SignalOpsAI offers Envo AI lead automation and FAA Part 107 aerial photo and video services for small businesses.";
+
 export const metadata = createPageMetadata({
-  title: "SignalOpsAI | Envo AI Worker for Customer Calls and Leads",
-  description: META_DESCRIPTION_TEMPLATES.home,
+  title,
+  description,
   path: "/",
   image: OG_IMAGE_ASSETS.home.path,
   imageAlt: OG_IMAGE_ASSETS.home.alt,
@@ -25,12 +27,11 @@ export default function MarketingHomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "SignalOpsAI | Envo AI Worker for Customer Calls and Leads",
-            description: META_DESCRIPTION_TEMPLATES.home,
+            title,
+            description,
             path: "/",
             absoluteTitle: true
           }),
-          serviceJsonLd(),
           breadcrumbJsonLd([{ name: "Home", path: "/" }])
         ])}
       />

@@ -28,6 +28,10 @@ export function Footer() {
     return null;
   }
 
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#14102b]">
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#ff6f9c,#ffb36d,transparent)]" />

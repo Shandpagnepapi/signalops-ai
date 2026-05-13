@@ -1,175 +1,120 @@
 import Image from "next/image";
-import {
-  Camera,
-  MapPin,
-  Sparkles,
-  Video,
-  Zap
-} from "lucide-react";
+import { Camera, Sparkles, Zap } from "lucide-react";
 import {
   AmbientBackground,
   FloatingBadge,
   GlassCard,
   GlassPanel,
-  GlowButton,
-  TranslucentNav
+  GlowButton
 } from "@/components/site/visual-system";
-import {
-  PRODUCT_NAME,
-  PRODUCT_ROLE,
-  PUBLIC_BRAND_NAME
-} from "@/lib/constants";
+import { getEmailHref, PUBLIC_BRAND_NAME } from "@/lib/constants";
 import { visualThemes } from "@/lib/visual-themes";
 
 const theme = visualThemes.envoWarm;
 
-const navItems = [
-  { href: "/envo", label: "Envo" },
-  { href: "/drone", label: "Drone" },
-  { href: "/demo", label: "Demo" },
-  { href: "/preview", label: "Preview Envo" }
-];
-
 export function MarketingHome() {
   return (
     <div className="overflow-hidden bg-[#05030a] text-white">
-      <HeroSplash />
-      <DoorwayCards />
-    </div>
-  );
-}
+      <section className="premium-section min-h-[100svh]">
+        <AmbientBackground intensity="strong" theme={theme} />
+        <div className="relative mx-auto flex min-h-[100svh] max-w-[1180px] flex-col px-4 py-6 sm:px-6 lg:px-8">
+          <div className="flex flex-1 flex-col items-center justify-center gap-7 py-6 sm:gap-9 lg:py-10">
+            <header className="mx-auto max-w-3xl text-center">
+              <div className="mx-auto flex w-fit items-center gap-3 rounded-[1.35rem] border border-white/12 bg-white/[0.055] px-4 py-3 shadow-2xl shadow-black/24 backdrop-blur-2xl">
+                <Image
+                  src="/brand/signalops-logo-mark.svg"
+                  alt=""
+                  width={42}
+                  height={42}
+                  priority
+                  className="size-10"
+                />
+                <h1 className="text-2xl font-black tracking-normal text-white sm:text-3xl">
+                  {PUBLIC_BRAND_NAME}
+                </h1>
+              </div>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[color:var(--vs-muted)] sm:text-lg">
+                AI lead automation and local aerial media, built for small businesses.
+              </p>
+            </header>
 
-function HeroSplash() {
-  return (
-    <section className="premium-section min-h-[70vh]">
-      <AmbientBackground intensity="strong" theme={theme} />
-      <div className="relative mx-auto flex min-h-[70vh] max-w-[1450px] flex-col px-4 pb-8 pt-4 sm:px-6 sm:pt-5 lg:px-8">
-        <TranslucentNav brand={PUBLIC_BRAND_NAME} brandHref="/" items={navItems} theme={theme} />
-
-        <div className="flex flex-1 items-center py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-5xl text-center">
-            <FloatingBadge icon={Sparkles} theme={theme}>
-              {PUBLIC_BRAND_NAME}
-            </FloatingBadge>
-            <h1 className="mt-5 text-[2.65rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
-              SignalOpsAI builds Envo, your AI worker for customer calls and leads.
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[color:var(--vs-muted)] sm:text-xl">
-              Envo is trained to your business, handles customer calls and leads, follows up, and keeps every opportunity organized.
-            </p>
-            <div className="mx-auto mt-8 grid max-w-md grid-cols-2 gap-3 sm:flex sm:max-w-none sm:justify-center">
-              <GlowButton className="w-full !px-3 sm:w-auto" href="/envo" theme={theme}>
-                Enter Envo
-              </GlowButton>
-              <GlowButton className="w-full !px-3 sm:w-auto" href="/preview" icon={false} theme={theme} variant="secondary">
-                Preview Envo
-              </GlowButton>
+            <div className="grid w-full gap-4 lg:grid-cols-[1.07fr_0.93fr] lg:items-stretch">
+              <EnvoDoorwayCard />
+              <DroneDoorwayCard />
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function DoorwayCards() {
-  return (
-    <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={theme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pb-16 lg:px-8">
-        <div className="grid gap-4 lg:grid-cols-[1.32fr_0.68fr] lg:items-stretch">
-          <EnvoDoorwayCard />
-          <DroneDoorwayCard />
+          <footer className="flex flex-wrap items-center justify-center gap-3 pb-1 text-xs font-bold text-white/48">
+            <a className="transition hover:text-white" href={getEmailHref()}>
+              Contact
+            </a>
+            <span aria-hidden="true">/</span>
+            <a className="transition hover:text-white" href="/privacy">
+              Privacy
+            </a>
+            <span aria-hidden="true">/</span>
+            <a className="transition hover:text-white" href="/terms">
+              Terms
+            </a>
+          </footer>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
 function EnvoDoorwayCard() {
   return (
-    <GlassPanel className="cinematic-panel grid gap-5 p-4 sm:p-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-center" theme={theme}>
-      <GlassCard className="p-5 sm:p-6" theme={theme}>
-        <FloatingBadge icon={Zap} theme={theme}>Main focus</FloatingBadge>
-        <h2 className="mt-5 text-4xl font-black tracking-normal text-white sm:text-5xl">
-          {PRODUCT_NAME}
-        </h2>
-        <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
-          {PRODUCT_ROLE}
-        </p>
-        <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
-          AI worker for customer calls, missed calls, messages, leads, follow-ups, organization, and owner handoffs.
-        </p>
-        <div className="mt-6 grid gap-2">
-          {["Customer calls", "Lead dashboard", "Owner handoffs"].map((item) => (
-            <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-black text-white/78">
-              <span className="size-2 rounded-full bg-[color:var(--vs-accent-3)]" />
-              {item}
-            </div>
-          ))}
+    <GlassPanel className="cinematic-panel flex h-full flex-col justify-between p-5 sm:p-6 lg:p-7" theme={theme}>
+      <div>
+        <FloatingBadge icon={Zap} theme={theme}>Main option</FloatingBadge>
+        <div className="mt-7 flex items-start justify-between gap-5">
+          <div>
+            <h2 className="text-5xl font-black tracking-normal text-white sm:text-6xl">
+              Envo
+            </h2>
+            <p className="mt-3 text-xl font-black leading-snug text-white sm:text-2xl">
+              Your AI worker for customer calls and leads.
+            </p>
+          </div>
+          <div className="hidden size-16 shrink-0 items-center justify-center rounded-[1.35rem] border border-white/12 bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_42px_var(--vs-glow)] sm:flex">
+            <Sparkles className="size-7" aria-hidden="true" />
+          </div>
         </div>
-        <GlowButton className="mt-6 w-full sm:w-auto" href="/envo" theme={theme}>
-          Enter Envo
-        </GlowButton>
-      </GlassCard>
-
-      <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08050d]/62 p-2 shadow-2xl shadow-black/30">
-        <Image
-          src="/product-previews/envo-dashboard-desktop.svg"
-          alt="Envo customer dashboard preview with lead stages and customer messages"
-          width={1200}
-          height={760}
-          priority
-          className="hidden h-auto w-full rounded-[1.25rem] md:block"
-        />
-        <Image
-          src="/product-previews/envo-dashboard-mobile.svg"
-          alt="Envo mobile owner inbox preview"
-          width={430}
-          height={760}
-          priority
-          className="mx-auto h-auto max-h-[28rem] w-auto rounded-[1.25rem] md:hidden"
-        />
+        <p className="mt-5 max-w-2xl text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
+          Trained to your business. Built to answer, organize, follow up, and hand off every opportunity.
+        </p>
       </div>
+      <GlowButton className="mt-7 w-full sm:w-fit" href="/envo" theme={theme}>
+        Enter Envo
+      </GlowButton>
     </GlassPanel>
   );
 }
 
 function DroneDoorwayCard() {
   return (
-    <GlassCard className="flex h-full flex-col justify-between p-5 sm:p-6" hover theme={theme}>
+    <GlassCard className="flex h-full flex-col justify-between p-5 sm:p-6 lg:p-7" hover theme={theme}>
       <div>
-        <FloatingBadge icon={Camera} theme={theme}>Coming Soon / Planning</FloatingBadge>
-        <div className="mt-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#08050d]/54 p-4">
-          <div className="relative min-h-44">
-            <div className="absolute inset-0 rounded-[1rem] bg-[radial-gradient(circle_at_50%_45%,rgba(255,179,109,0.2),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.075),rgba(255,255,255,0.02))]" />
-            <div className="absolute inset-4 rounded-[1rem] border border-white/10" />
-            <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/26 px-3 py-2 text-xs font-black text-white/72">
-              <MapPin className="size-3.5 text-[color:var(--vs-accent-3)]" aria-hidden="true" />
-              Local aerial visuals
-            </div>
-            <div className="absolute bottom-5 right-5 flex size-16 items-center justify-center rounded-[1.25rem] border border-white/12 bg-white/[0.06] text-[color:var(--vs-accent-3)] shadow-[0_0_36px_var(--vs-glow)]">
-              <Video className="size-7" aria-hidden="true" />
-            </div>
-            <div className="absolute bottom-8 left-7 h-px w-32 bg-[linear-gradient(90deg,var(--vs-accent-3),transparent)]" />
-            <div className="absolute bottom-14 left-12 h-px w-20 bg-[linear-gradient(90deg,var(--vs-accent),transparent)]" />
+        <FloatingBadge icon={Camera} theme={theme}>FAA Part 107</FloatingBadge>
+        <div className="mt-7 flex items-start justify-between gap-5">
+          <div>
+            <h2 className="text-4xl font-black tracking-normal text-white sm:text-5xl">
+              Drone Services
+            </h2>
+            <p className="mt-3 text-lg font-black leading-snug text-white sm:text-xl">
+              FAA Part 107 aerial photo and video in Birmingham, AL.
+            </p>
+          </div>
+          <div className="hidden size-14 shrink-0 items-center justify-center rounded-[1.2rem] border border-white/12 bg-white/[0.06] text-[color:var(--vs-accent-3)] shadow-[0_0_32px_var(--vs-glow)] sm:flex">
+            <Camera className="size-6" aria-hidden="true" />
           </div>
         </div>
-        <h2 className="mt-6 text-3xl font-black tracking-normal text-white sm:text-4xl">
-          Local Drone Operator
-        </h2>
-        <p className="mt-4 text-sm leading-7 text-[color:var(--vs-muted)]">
-          Aerial photo and video services for real estate, property, construction, local businesses, and special projects.
+        <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
+          Real estate, property, construction, local business, land, event, and vehicle visuals.
         </p>
-        <div className="mt-5 grid gap-2 text-xs font-black text-white/70">
-          {["Property photos", "Listing visuals", "Construction progress", "Local promo footage"].map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2">
-              {item}
-            </div>
-          ))}
-        </div>
       </div>
-      <GlowButton className="mt-6 w-full" href="/drone" icon={false} theme={theme} variant="secondary">
+      <GlowButton className="mt-7 w-full sm:w-fit" href="/drone" icon={false} theme={theme} variant="secondary">
         View Drone Services
       </GlowButton>
     </GlassCard>
