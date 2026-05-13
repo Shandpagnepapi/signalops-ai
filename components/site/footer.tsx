@@ -34,9 +34,9 @@ export function Footer() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,111,156,0.14),transparent_32%),radial-gradient(circle_at_82%_12%,rgba(255,179,109,0.1),transparent_30%)]" />
       <div className="relative mx-auto grid max-w-md gap-3 px-4 py-8 md:hidden">
         {[
+          { href: "/envo", label: "Envo" },
+          { href: "/drone", label: "Drone Services" },
           { href: "/demo", label: "Demo" },
-          { href: "/roi-calculator", label: "ROI Calculator" },
-          { href: "/services/ai-lead-response", label: "Services" },
           { href: "/privacy", label: "Privacy" },
           { href: "/terms", label: "Terms" }
         ].map((link) => (

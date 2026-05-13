@@ -10,6 +10,7 @@ export default function robots(): MetadataRoute.Robots {
           "/",
           "/preview",
           "/envo",
+          "/drone",
           "/audit",
           "/ai-lead-response",
           "/missed-call-text-back",

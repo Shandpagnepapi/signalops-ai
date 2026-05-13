@@ -13,6 +13,7 @@ function shouldHide(pathname: string) {
   return (
     pathname === "/" ||
     pathname === "/envo" ||
+    pathname === "/drone" ||
     pathname.startsWith("/admin") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/auth") ||

@@ -230,7 +230,7 @@ export function TranslucentNav({
         </span>
         <span className="truncate text-sm font-black text-white sm:text-base">{brand}</span>
       </Link>
-      <nav className="-mx-1 flex max-w-full flex-nowrap gap-2 overflow-x-auto px-1 pb-1 sm:mx-0 sm:flex-wrap sm:justify-end sm:overflow-visible sm:pb-0" aria-label={`${brand} navigation`}>
+      <nav className="-mx-1 flex max-w-full flex-wrap gap-2 overflow-visible px-1 sm:mx-0 sm:justify-end" aria-label={`${brand} navigation`}>
         {items.map((item) => (
           item.href.startsWith("mailto:") ? (
             <a

@@ -67,12 +67,12 @@ export const NAV_LINKS = [
     label: "Envo"
   },
   {
-    href: "/demo",
-    label: "Demo"
+    href: "/drone",
+    label: "Drone"
   },
   {
-    href: "/envo#pricing",
-    label: "Pricing"
+    href: "/demo",
+    label: "Demo"
   }
 ];
 
@@ -142,6 +142,10 @@ export const RESOURCE_LINKS = [
   {
     href: "/envo",
     label: "Meet Envo"
+  },
+  {
+    href: "/drone",
+    label: "Drone Services"
   },
   {
     href: "/preview",

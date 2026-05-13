@@ -1,12 +1,9 @@
 import Image from "next/image";
-import type { LucideIcon } from "lucide-react";
 import {
-  BellRing,
-  MessageSquareReply,
-  PhoneCall,
+  Camera,
+  MapPin,
   Sparkles,
-  SquarePen,
-  Workflow,
+  Video,
   Zap
 } from "lucide-react";
 import {
@@ -28,64 +25,39 @@ const theme = visualThemes.envoWarm;
 
 const navItems = [
   { href: "/envo", label: "Envo" },
+  { href: "/drone", label: "Drone" },
   { href: "/demo", label: "Demo" },
-  { href: "/envo#pricing", label: "Pricing" },
   { href: "/preview", label: "Preview Envo" }
 ];
-
-const handleCards = [
-  {
-    copy: "Answer, organize, and route customer calls.",
-    icon: PhoneCall,
-    title: "Customer calls"
-  },
-  {
-    copy: "Turn missed calls and texts into clean next steps.",
-    icon: MessageSquareReply,
-    title: "Missed calls and texts"
-  },
-  {
-    copy: "Collect quote details without losing the lead.",
-    icon: SquarePen,
-    title: "New leads and quote requests"
-  },
-  {
-    copy: "Follow up and hand off when a person should step in.",
-    icon: BellRing,
-    title: "Follow-ups and handoffs"
-  }
-] satisfies Array<{ copy: string; icon: LucideIcon; title: string }>;
 
 export function MarketingHome() {
   return (
     <div className="overflow-hidden bg-[#05030a] text-white">
       <HeroSplash />
-      <WhatEnvoHandles />
-      <DashboardPreview />
-      <FinalCta />
+      <DoorwayCards />
     </div>
   );
 }
 
 function HeroSplash() {
   return (
-    <section className="premium-section min-h-[92vh]">
+    <section className="premium-section min-h-[70vh]">
       <AmbientBackground intensity="strong" theme={theme} />
-      <div className="relative mx-auto flex min-h-[92vh] max-w-[1450px] flex-col px-4 pb-10 pt-4 sm:px-6 sm:pt-5 lg:px-8">
+      <div className="relative mx-auto flex min-h-[70vh] max-w-[1450px] flex-col px-4 pb-8 pt-4 sm:px-6 sm:pt-5 lg:px-8">
         <TranslucentNav brand={PUBLIC_BRAND_NAME} brandHref="/" items={navItems} theme={theme} />
 
-        <div className="grid flex-1 gap-8 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-14">
-          <div className="max-w-4xl">
+        <div className="flex flex-1 items-center py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-5xl text-center">
             <FloatingBadge icon={Sparkles} theme={theme}>
-              {PUBLIC_BRAND_NAME} builds Envo
+              {PUBLIC_BRAND_NAME}
             </FloatingBadge>
-            <h1 className="mt-5 text-[2.8rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
-              Meet Envo, the AI worker for customer calls and leads.
+            <h1 className="mt-5 text-[2.65rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+              SignalOpsAI builds Envo, your AI worker for customer calls and leads.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[color:var(--vs-muted)] sm:text-xl">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[color:var(--vs-muted)] sm:text-xl">
               Envo is trained to your business, handles customer calls and leads, follows up, and keeps every opportunity organized.
             </p>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-row">
+            <div className="mx-auto mt-8 grid max-w-md grid-cols-2 gap-3 sm:flex sm:max-w-none sm:justify-center">
               <GlowButton className="w-full !px-3 sm:w-auto" href="/envo" theme={theme}>
                 Enter Envo
               </GlowButton>
@@ -94,34 +66,51 @@ function HeroSplash() {
               </GlowButton>
             </div>
           </div>
-
-          <SplashProductVisual />
         </div>
       </div>
     </section>
   );
 }
 
-function SplashProductVisual() {
+function DoorwayCards() {
   return (
-    <GlassPanel className="cinematic-panel grid gap-4 p-4 sm:p-5 xl:grid-cols-[0.72fr_1.28fr] xl:items-center" theme={theme}>
-      <GlassCard className="p-5" theme={theme}>
-        <FloatingBadge icon={Zap} theme={theme}>One product</FloatingBadge>
-        <h2 className="mt-5 text-4xl font-black tracking-normal text-white">{PRODUCT_NAME}</h2>
+    <section className="premium-section">
+      <AmbientBackground intensity="quiet" theme={theme} />
+      <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="grid gap-4 lg:grid-cols-[1.32fr_0.68fr] lg:items-stretch">
+          <EnvoDoorwayCard />
+          <DroneDoorwayCard />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EnvoDoorwayCard() {
+  return (
+    <GlassPanel className="cinematic-panel grid gap-5 p-4 sm:p-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-center" theme={theme}>
+      <GlassCard className="p-5 sm:p-6" theme={theme}>
+        <FloatingBadge icon={Zap} theme={theme}>Main focus</FloatingBadge>
+        <h2 className="mt-5 text-4xl font-black tracking-normal text-white sm:text-5xl">
+          {PRODUCT_NAME}
+        </h2>
         <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
           {PRODUCT_ROLE}
         </p>
-        <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)]">
-          Envo answers, organizes, follows up, and prepares owner handoffs from one customer lead dashboard.
+        <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
+          AI worker for customer calls, missed calls, messages, leads, follow-ups, organization, and owner handoffs.
         </p>
         <div className="mt-6 grid gap-2">
-          {["Trained to your business", "Customer inbox organized", "Owner handoff ready"].map((item) => (
+          {["Customer calls", "Lead dashboard", "Owner handoffs"].map((item) => (
             <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-black text-white/78">
               <span className="size-2 rounded-full bg-[color:var(--vs-accent-3)]" />
               {item}
             </div>
           ))}
         </div>
+        <GlowButton className="mt-6 w-full sm:w-auto" href="/envo" theme={theme}>
+          Enter Envo
+        </GlowButton>
       </GlassCard>
 
       <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08050d]/62 p-2 shadow-2xl shadow-black/30">
@@ -139,95 +128,50 @@ function SplashProductVisual() {
           width={430}
           height={760}
           priority
-          className="mx-auto h-auto max-h-[34rem] w-auto rounded-[1.25rem] md:hidden"
+          className="mx-auto h-auto max-h-[28rem] w-auto rounded-[1.25rem] md:hidden"
         />
       </div>
     </GlassPanel>
   );
 }
 
-function WhatEnvoHandles() {
+function DroneDoorwayCard() {
   return (
-    <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={theme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {handleCards.map((card) => {
-            const Icon = card.icon;
-
-            return (
-              <GlassCard key={card.title} className="p-5" hover theme={theme}>
-                <span className="flex size-11 items-center justify-center rounded-2xl bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_28px_var(--vs-glow)]">
-                  <Icon className="size-5" aria-hidden="true" />
-                </span>
-                <h2 className="mt-5 text-xl font-black text-white">{card.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-[color:var(--vs-muted)]">{card.copy}</p>
-              </GlassCard>
-            );
-          })}
+    <GlassCard className="flex h-full flex-col justify-between p-5 sm:p-6" hover theme={theme}>
+      <div>
+        <FloatingBadge icon={Camera} theme={theme}>Coming Soon / Planning</FloatingBadge>
+        <div className="mt-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#08050d]/54 p-4">
+          <div className="relative min-h-44">
+            <div className="absolute inset-0 rounded-[1rem] bg-[radial-gradient(circle_at_50%_45%,rgba(255,179,109,0.2),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.075),rgba(255,255,255,0.02))]" />
+            <div className="absolute inset-4 rounded-[1rem] border border-white/10" />
+            <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/26 px-3 py-2 text-xs font-black text-white/72">
+              <MapPin className="size-3.5 text-[color:var(--vs-accent-3)]" aria-hidden="true" />
+              Local aerial visuals
+            </div>
+            <div className="absolute bottom-5 right-5 flex size-16 items-center justify-center rounded-[1.25rem] border border-white/12 bg-white/[0.06] text-[color:var(--vs-accent-3)] shadow-[0_0_36px_var(--vs-glow)]">
+              <Video className="size-7" aria-hidden="true" />
+            </div>
+            <div className="absolute bottom-8 left-7 h-px w-32 bg-[linear-gradient(90deg,var(--vs-accent-3),transparent)]" />
+            <div className="absolute bottom-14 left-12 h-px w-20 bg-[linear-gradient(90deg,var(--vs-accent),transparent)]" />
+          </div>
+        </div>
+        <h2 className="mt-6 text-3xl font-black tracking-normal text-white sm:text-4xl">
+          Local Drone Operator
+        </h2>
+        <p className="mt-4 text-sm leading-7 text-[color:var(--vs-muted)]">
+          Aerial photo and video services for real estate, property, construction, local businesses, and special projects.
+        </p>
+        <div className="mt-5 grid gap-2 text-xs font-black text-white/70">
+          {["Property photos", "Listing visuals", "Construction progress", "Local promo footage"].map((item) => (
+            <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2">
+              {item}
+            </div>
+          ))}
         </div>
       </div>
-    </section>
-  );
-}
-
-function DashboardPreview() {
-  return (
-    <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={theme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 lg:px-8">
-        <GlassPanel className="grid gap-7 p-5 sm:p-7 lg:grid-cols-[0.68fr_1.32fr] lg:items-center" theme={theme}>
-          <div>
-            <FloatingBadge icon={Workflow} theme={theme}>Customer dashboard preview</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-normal text-white sm:text-5xl">
-              A simple owner inbox for every opportunity.
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
-              Envo keeps calls, missed calls, messages, social leads, quote requests, follow-ups, and handoffs in one clean control center.
-            </p>
-          </div>
-          <Image
-            src="/product-previews/envo-dashboard-desktop.svg"
-            alt="Dark glass Envo dashboard preview with lead stages and customer lead cards"
-            width={1200}
-            height={760}
-            className="hidden h-auto w-full rounded-[1.6rem] md:block"
-          />
-          <Image
-            src="/product-previews/envo-dashboard-mobile.svg"
-            alt="Mobile Envo lead queue preview with owner action buttons"
-            width={430}
-            height={760}
-            className="mx-auto h-auto max-h-[34rem] w-auto rounded-[1.6rem] md:hidden"
-          />
-        </GlassPanel>
-      </div>
-    </section>
-  );
-}
-
-function FinalCta() {
-  return (
-    <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={theme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 lg:px-8">
-        <GlassPanel className="p-6 text-center sm:p-8 lg:p-10" theme={theme}>
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[color:var(--vs-accent-3)]">
-            Envo by {PUBLIC_BRAND_NAME}
-          </p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black tracking-normal text-white sm:text-5xl">
-            See how Envo would work for your business.
-          </h2>
-          <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:justify-center">
-            <GlowButton className="w-full !px-3 sm:w-auto" href="/envo" theme={theme}>
-              Enter Envo
-            </GlowButton>
-            <GlowButton className="w-full !px-3 sm:w-auto" href="/preview" icon={false} theme={theme} variant="secondary">
-              Preview Envo
-            </GlowButton>
-          </div>
-        </GlassPanel>
-      </div>
-    </section>
+      <GlowButton className="mt-6 w-full" href="/drone" icon={false} theme={theme} variant="secondary">
+        View Drone Services
+      </GlowButton>
+    </GlassCard>
   );
 }
