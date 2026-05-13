@@ -352,7 +352,7 @@ export function EnvoLabPage({ referenceImages }: { referenceImages: ReferenceIma
         }
         className="mt-10"
         description="Envo captures lead intent the moment it appears, asks the right next question, keeps follow-up warm, and sends the owner the action that matters."
-        eyebrow="Envo by SignalOps"
+        eyebrow="Envo by SignalOpsAI"
         orbLabel="envo"
         theme={visualThemes.envoWarm}
         title="Meet Envo, your AI Lead Manager"

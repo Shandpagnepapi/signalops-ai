@@ -13,10 +13,10 @@ import {
 } from "@/lib/seo";
 
 const previewDescription =
-  "Tell us how your leads come in and where things slow down. SignalOps maps how Envo would answer, follow up, escalate, and hand off leads for your business.";
+  "Tell us how your leads come in and where things slow down. SignalOpsAI maps how Envo would answer, follow up, escalate, and hand off leads for your business.";
 
 export const metadata = createPageMetadata({
-  title: "Preview Envo | SignalOps",
+  title: "Preview Envo | SignalOpsAI",
   description: previewDescription,
   path: "/preview",
   absoluteTitle: true
@@ -47,7 +47,7 @@ export default function PreviewPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "Preview Envo | SignalOps",
+            title: "Preview Envo | SignalOpsAI",
             description: previewDescription,
             path: "/preview",
             absoluteTitle: true

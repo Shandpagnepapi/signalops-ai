@@ -220,7 +220,7 @@ export function PreviewRequestForm() {
           </Badge>
           <CardTitle className="text-2xl">Your Envo preview request is in.</CardTitle>
           <CardDescription>
-            SignalOps will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
+            SignalOpsAI will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -243,7 +243,7 @@ export function PreviewRequestForm() {
               What happens next
             </p>
             <p className="mt-2 text-sm leading-6 text-[#ead0df]/76">
-              SignalOps will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
+              SignalOpsAI will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>
@@ -266,7 +266,7 @@ export function PreviewRequestForm() {
             </Badge>
             <CardTitle className="text-2xl">Tell us how Envo should handle your leads.</CardTitle>
             <CardDescription>
-              SignalOps uses your answers to map how Envo would work inside your business.
+              SignalOpsAI uses your answers to map how Envo would work inside your business.
             </CardDescription>
           </div>
           <div className="rounded-xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 px-3 py-2 text-xs font-medium text-[#ffe1bd]">
@@ -509,7 +509,7 @@ export function PreviewRequestForm() {
 
           <p className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
             <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
-            Share the messy reality. SignalOps will shape Envo around how your business actually runs.
+            Share the messy reality. SignalOpsAI will shape Envo around how your business actually runs.
           </p>
         </form>
       </CardContent>

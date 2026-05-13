@@ -12,7 +12,7 @@ import {
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Envo Demo | SignalOps",
+  title: "Envo Demo | SignalOpsAI",
   description: META_DESCRIPTION_TEMPLATES.demo,
   path: "/demo",
   image: OG_IMAGE_ASSETS.demo.path,
@@ -34,7 +34,7 @@ export default function DemoPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "Envo Demo | SignalOps",
+            title: "Envo Demo | SignalOpsAI",
             description: META_DESCRIPTION_TEMPLATES.demo,
             path: "/demo",
             absoluteTitle: true

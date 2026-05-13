@@ -11,10 +11,13 @@ const emailHref = getEmailHref();
 
 function shouldHide(pathname: string) {
   return (
+    pathname === "/" ||
+    pathname === "/envo" ||
     pathname.startsWith("/admin") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/auth") ||
     pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/design-lab") ||
     shouldHidePublicChrome(pathname)
   );
 }

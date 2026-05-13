@@ -13,6 +13,7 @@ import {
   getEmailHref,
   PACKAGE_LINKS,
   PRIMARY_CTA,
+  PUBLIC_BRAND_NAME,
   RESOURCE_LINKS,
   SEO_INDUSTRY_LINKS,
   SEO_SERVICE_LINKS,
@@ -60,12 +61,13 @@ export function Footer() {
         <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-5">
           <div className="flex items-center gap-3">
             <Image
-              src="/brand/signalops-logo-horizontal.svg"
-              alt="SignalOps logo"
-              width="154"
+              src="/brand/signalops-logo-mark.svg"
+              alt=""
+              width="36"
               height="36"
-              className="h-9 w-auto"
+              className="h-9 w-9"
             />
+            <span className="text-lg font-black text-white">{PUBLIC_BRAND_NAME}</span>
           </div>
           <p className="mt-4 max-w-xl text-sm leading-6 text-[#ead0df]/70">
             {SITE_CONFIG.description}

@@ -259,7 +259,7 @@ export function WhatsIncludedSection({
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">Included layers</p>
           <h2 id="included-title" className="mt-3 text-2xl font-semibold tracking-normal text-white sm:text-4xl">
-            What&apos;s included with Envo by SignalOps
+            What&apos;s included with Envo by SignalOpsAI
           </h2>
           <p className={`mt-3 text-sm leading-6 ${muted}`}>
             Envo instead of scattered tools, inboxes, reminders, and manual follow-up.

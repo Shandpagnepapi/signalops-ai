@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT_PLACEHOLDER, PACKAGE_NAMES, SITE_CONFIG } from "@/lib/constants";
+import { CONTACT_PLACEHOLDER, PACKAGE_NAMES, PUBLIC_BRAND_NAME, SITE_CONFIG } from "@/lib/constants";
 
 export type SeoFaq = {
   question: string;
@@ -29,11 +29,11 @@ export const SEO_DEFAULT_IMAGE = "/og/signalops-default.png";
 export const OG_IMAGE_ASSETS = {
   default: {
     path: "/og/signalops-default.png",
-    alt: "SignalOps branded social image for AI workers for local businesses."
+    alt: "SignalOpsAI branded social image for Envo, the AI worker for customer calls and leads."
   },
   home: {
     path: "/og/signalops-home.png",
-    alt: "SignalOps homepage social image for AI workers and Envo, the AI Lead Manager."
+    alt: "SignalOpsAI homepage social image for Envo, the AI worker for customer calls and leads."
   },
   audit: {
     path: "/og/signalops-audit.png",
@@ -41,7 +41,7 @@ export const OG_IMAGE_ASSETS = {
   },
   demo: {
     path: "/og/signalops-demo.png",
-    alt: "Envo by SignalOps demo social image showing AI lead intake, priority sorting, and routing."
+    alt: "Envo by SignalOpsAI demo social image showing AI lead intake, priority sorting, and routing."
   },
   roi: {
     path: "/og/signalops-roi.png",
@@ -50,7 +50,7 @@ export const OG_IMAGE_ASSETS = {
 } as const;
 
 export const PAGE_TITLE_TEMPLATES = {
-  home: "AI Workers for Local Businesses",
+  home: "Envo AI Worker for Customer Calls and Leads",
   preview: "Preview Envo",
   audit: "Start a Project for AI Lead Response",
   demo: "Envo Demo",
@@ -64,9 +64,9 @@ export const PAGE_TITLE_TEMPLATES = {
 
 export const META_DESCRIPTION_TEMPLATES = {
   home:
-    "SignalOps builds AI workers for local businesses. Meet Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads.",
+    "SignalOpsAI builds Envo, an AI worker trained to your business to handle customer calls, leads, follow-ups, and owner handoffs.",
   preview:
-    "Tell us how your leads come in and where things slow down. SignalOps maps how Envo would answer, follow up, escalate, and hand off leads for your business.",
+    "Tell us how your leads come in and where things slow down. SignalOpsAI maps how Envo would answer, follow up, escalate, and hand off leads for your business.",
   audit:
     "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
   demo:
@@ -99,7 +99,7 @@ export function absoluteUrl(path = "/") {
 }
 
 export function formatPageTitle(title: string) {
-  return `${SITE_CONFIG.name} | ${title}`;
+  return `${PUBLIC_BRAND_NAME} | ${title}`;
 }
 
 export function createCanonical(path: string) {
@@ -140,7 +140,7 @@ export function createPageMetadata({
       title: socialTitle,
       description,
       url: canonical,
-      siteName: SITE_CONFIG.name,
+      siteName: PUBLIC_BRAND_NAME,
       images: [
         {
           url: imageUrl,
@@ -172,14 +172,14 @@ export function createRootMetadata(): Metadata {
     metadataBase: new URL(getSiteUrl()),
     title: {
       default: formatPageTitle(PAGE_TITLE_TEMPLATES.home),
-      template: `${SITE_CONFIG.name} | %s`
+      template: `${PUBLIC_BRAND_NAME} | %s`
     },
     description: META_DESCRIPTION_TEMPLATES.home,
     openGraph: {
       title: formatPageTitle(PAGE_TITLE_TEMPLATES.home),
       description: META_DESCRIPTION_TEMPLATES.home,
       url: getSiteUrl(),
-      siteName: SITE_CONFIG.name,
+      siteName: PUBLIC_BRAND_NAME,
       images: [
         {
           url: absoluteUrl(SEO_DEFAULT_IMAGE),
@@ -210,7 +210,7 @@ export function organizationJsonLd(): JsonLdObject {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": absoluteUrl("/#organization"),
-    name: SITE_CONFIG.name,
+    name: PUBLIC_BRAND_NAME,
     url: getSiteUrl(),
     logo: absoluteUrl("/brand/signalops-logo-horizontal.svg"),
     description: SITE_CONFIG.description,
@@ -233,7 +233,7 @@ export function websiteJsonLd(): JsonLdObject {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": absoluteUrl("/#website"),
-    name: SITE_CONFIG.name,
+    name: PUBLIC_BRAND_NAME,
     url: getSiteUrl(),
     description: SITE_CONFIG.description,
     publisher: {
@@ -263,7 +263,7 @@ export function serviceJsonLd(): JsonLdObject {
       audienceType: "Small and mid-sized local service businesses"
     },
     description:
-      "SignalOps builds Envo by SignalOps, an AI Lead Manager and AI front desk that helps small and local businesses capture, answer, sort, follow up with, route, and book leads with automated lead follow-up and missed lead recovery.",
+      "SignalOpsAI builds Envo, an AI Lead Manager and AI front desk that helps small businesses capture, answer, sort, follow up with, route, and book leads with automated lead follow-up and missed call text back.",
     offers: PACKAGE_NAMES.map((pkg) => ({
       "@type": "Offer",
       name: pkg.name,

@@ -190,7 +190,7 @@ export function HowItWorksDemo() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
             <div className="space-y-6">
               <Badge variant="outline" className="border-[#ff9ec0]/25 bg-[#ff6f9c]/10 text-[#ffd7e6]">
-                Envo by SignalOps
+                Envo by SignalOpsAI
               </Badge>
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">

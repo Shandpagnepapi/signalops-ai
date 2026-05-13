@@ -18,7 +18,7 @@ export function DemoBusinessSwitcher() {
         <div className="relative mx-auto max-w-[1500px]">
           <div className="glass-panel mb-4 flex flex-col gap-3 rounded-3xl border border-white/14 bg-white/[0.07] p-3.5 shadow-2xl shadow-black/20 backdrop-blur-2xl sm:flex-row sm:items-center sm:justify-between sm:p-4">
             <div>
-              <Badge className="mb-2 bg-[#ff6f9c]/14 text-[#ffd7e6]">Envo by SignalOps demo</Badge>
+              <Badge className="mb-2 bg-[#ff6f9c]/14 text-[#ffd7e6]">Envo by SignalOpsAI demo</Badge>
               <p className="text-sm text-[#ead0df]/72">
                 See Envo handle a lead. Watch Envo answer, qualify, follow up, and prepare the handoff.
               </p>

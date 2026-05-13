@@ -8,10 +8,10 @@ import {
 } from "@/lib/seo";
 
 const description =
-  "Envo is the AI Lead Manager by SignalOps. It answers leads, asks intake questions, follows up, routes priority requests, and hands off to your team.";
+  "Meet Envo, the AI worker trained to your business to organize customer calls, texts, new leads, follow-ups, and handoffs.";
 
 export const metadata = createPageMetadata({
-  title: "Envo by SignalOps | AI Lead Manager for Local Businesses",
+  title: "Envo by SignalOpsAI | AI Lead Manager for Small Businesses",
   description,
   path: "/envo",
   absoluteTitle: true
@@ -24,17 +24,17 @@ export default function EnvoPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript([
           webPageJsonLd({
-            title: "Envo by SignalOps | AI Lead Manager for Local Businesses",
+            title: "Envo by SignalOpsAI | AI Lead Manager for Small Businesses",
             description,
             path: "/envo",
             absoluteTitle: true
           }),
           serviceOfferingJsonLd({
-            name: "Envo by SignalOps",
+            name: "Envo by SignalOpsAI",
             description,
             path: "/envo",
             serviceType:
-              "AI Lead Manager, AI lead response, AI appointment booking, automated lead follow-up, missed lead recovery, and local business lead automation"
+              "AI Lead Manager, AI lead response, AI appointment booking, automated lead follow-up, missed call text back, AI receptionist, AI front desk, and customer lead dashboard"
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },

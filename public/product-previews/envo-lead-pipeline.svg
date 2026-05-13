@@ -1,0 +1,62 @@
+<svg width="980" height="560" viewBox="0 0 980 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Envo lead pipeline preview</title>
+  <desc id="desc">Simple dark glass pipeline showing how Envo trains, handles the front line, and keeps the owner in control.</desc>
+  <defs>
+    <linearGradient id="panel" x1="48" y1="40" x2="920" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4b3c4f"/>
+      <stop offset=".48" stop-color="#1d1724"/>
+      <stop offset="1" stop-color="#08050d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffffff" stop-opacity=".13"/>
+      <stop offset=".6" stop-color="#ffffff" stop-opacity=".045"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".025"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ff5f93"/>
+      <stop offset="1" stop-color="#ffad66"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(500 205) scale(440 300)">
+      <stop stop-color="#ff6f9c" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#05030a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="980" height="560" rx="42" fill="#07040f"/>
+  <rect width="980" height="560" rx="42" fill="url(#glow)"/>
+  <rect x="48" y="46" width="884" height="468" rx="36" fill="url(#panel)" stroke="#fff" stroke-opacity=".2" stroke-width="1.5"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="92" y="112" fill="#ffbf78" font-size="13" font-weight="900" letter-spacing="3">ENVO FLOW</text>
+    <text x="92" y="158" fill="#fff" font-size="40" font-weight="900">From messy lead to clean handoff.</text>
+    <text x="92" y="192" fill="#eee8ef" font-size="17" opacity=".78">A simple customer pipeline for calls, messages, quotes, follow-ups, and owner review.</text>
+
+    <g transform="translate(92 252)">
+      <rect width="238" height="164" rx="28" fill="url(#card)" stroke="#ffffff" stroke-opacity=".16"/>
+      <circle cx="42" cy="44" r="24" fill="url(#warm)"/>
+      <text x="42" y="52" fill="#fff" font-size="23" font-weight="900" text-anchor="middle">1</text>
+      <text x="28" y="92" fill="#fff" font-size="24" font-weight="900">Train Envo</text>
+      <text x="28" y="122" fill="#eee8ef" font-size="14" opacity=".75">Services, pricing rules, hours, area, tone, and handoff process.</text>
+    </g>
+
+    <path d="M350 334h70" stroke="#ffbf78" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    <path d="M410 322l16 12-16 12" stroke="#ffbf78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+
+    <g transform="translate(440 252)">
+      <rect width="238" height="164" rx="28" fill="url(#card)" stroke="#ffffff" stroke-opacity=".16"/>
+      <circle cx="42" cy="44" r="24" fill="url(#warm)"/>
+      <text x="42" y="52" fill="#fff" font-size="23" font-weight="900" text-anchor="middle">2</text>
+      <text x="28" y="92" fill="#fff" font-size="24" font-weight="900">Front line</text>
+      <text x="28" y="122" fill="#eee8ef" font-size="14" opacity=".75">Calls, texts, forms, DMs, missed calls, quote requests, and follow-ups.</text>
+    </g>
+
+    <path d="M698 334h70" stroke="#ffbf78" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    <path d="M758 322l16 12-16 12" stroke="#ffbf78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+
+    <g transform="translate(788 252)">
+      <rect width="98" height="164" rx="28" fill="url(#card)" stroke="#ffffff" stroke-opacity=".16"/>
+      <text x="49" y="50" fill="#86efac" font-size="13" font-weight="900" text-anchor="middle">LIVE</text>
+      <text x="49" y="90" fill="#fff" font-size="22" font-weight="900" text-anchor="middle">Owner</text>
+      <text x="49" y="116" fill="#fff" font-size="22" font-weight="900" text-anchor="middle">control</text>
+      <circle cx="49" cy="136" r="12" fill="#86efac" fill-opacity=".22" stroke="#86efac" stroke-opacity=".8"/>
+    </g>
+  </g>
+</svg>

@@ -18,7 +18,7 @@ export async function generateMetadata({
   return createPageMetadata({
     title: `${businessName} Envo Preview`,
     description:
-      "A private Envo by SignalOps preview showing AI lead response, intake questions, automated lead follow-up, lead routing automation, and handoff next steps.",
+      "A private Envo by SignalOpsAI preview showing AI lead response, intake questions, automated lead follow-up, lead routing automation, and handoff next steps.",
     path: `/preview/${id}`,
     noIndex: true
   });

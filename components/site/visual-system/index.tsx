@@ -502,6 +502,7 @@ export function PremiumPricingCard({
   className,
   copy,
   cta = "Select preview",
+  href,
   name,
   price,
   style,
@@ -509,6 +510,7 @@ export function PremiumPricingCard({
 }: VisualComponentProps & {
   copy: string;
   cta?: string;
+  href?: string;
   name: string;
   price: string;
 }) {
@@ -521,10 +523,20 @@ export function PremiumPricingCard({
       <p className="mt-5 text-4xl font-black tracking-normal text-white">{price}</p>
       <p className="mt-4 flex-1 text-sm leading-6 text-[color:var(--vs-muted)]">{copy}</p>
       <div className="mt-6 h-px bg-[image:linear-gradient(90deg,var(--vs-accent),var(--vs-accent-3),transparent)]" />
-      <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[color:var(--vs-accent-3)]">
-        {cta}
-        <ChevronRight className="size-4" aria-hidden="true" />
-      </span>
+      {href ? (
+        <Link
+          href={href}
+          className="mt-5 inline-flex w-fit items-center gap-2 rounded-xl text-sm font-black text-[color:var(--vs-accent-3)] transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          {cta}
+          <ChevronRight className="size-4" aria-hidden="true" />
+        </Link>
+      ) : (
+        <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[color:var(--vs-accent-3)]">
+          {cta}
+          <ChevronRight className="size-4" aria-hidden="true" />
+        </span>
+      )}
     </GlassCard>
   );
 }

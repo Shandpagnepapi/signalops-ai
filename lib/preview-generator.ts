@@ -170,7 +170,7 @@ function visualPromptBase(input: PreviewSubmissionInput, previewData: PreviewDat
   const packageName = previewData.recommendedPackage.name;
 
   return [
-    "Create a premium SaaS product mockup image for Envo by SignalOps.",
+    "Create a premium product mockup image for Envo by SignalOpsAI.",
     "Style: polished AI Lead Manager, dark executive UI, crisp cards, subtle glow accents, app-like mobile/product screenshot.",
     "No robots, no people, no fake client logos, no stock photos, no clutter.",
     "Use clean realistic UI panels, charts, message cards, lead status chips, owner alerts, and timeline elements.",

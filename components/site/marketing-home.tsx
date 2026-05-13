@@ -1,19 +1,11 @@
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
-  ArrowRight,
-  BadgeCheck,
-  BarChart3,
   BellRing,
-  Bot,
-  CalendarCheck2,
-  CheckCircle2,
-  ClipboardCheck,
-  Eye,
-  Mail,
   MessageSquareReply,
-  RefreshCcw,
-  ShieldCheck,
+  PhoneCall,
   Sparkles,
+  SquarePen,
   Workflow,
   Zap
 } from "lucide-react";
@@ -23,474 +15,217 @@ import {
   GlassCard,
   GlassPanel,
   GlowButton,
-  LeadSourceTile,
-  OrbitalProductVisual,
-  PremiumPricingCard,
-  RuleCard,
-  TranslucentNav,
-  TrustLogoStrip
+  TranslucentNav
 } from "@/components/site/visual-system";
-import { TrackedLink } from "@/components/site/tracked-link";
-import { buttonVariants } from "@/components/ui/button";
-import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import {
-  getPlanEmailHref,
-  PACKAGE_NAMES,
-  PRODUCT_FULL_NAME,
   PRODUCT_NAME,
   PRODUCT_ROLE,
-  SITE_CONFIG
+  PUBLIC_BRAND_NAME
 } from "@/lib/constants";
 import { visualThemes } from "@/lib/visual-themes";
-import type { VisualTheme } from "@/lib/visual-themes";
 
-const studioTheme = visualThemes.studioWarm;
-const envoTheme = visualThemes.envoWarm;
+const theme = visualThemes.envoWarm;
 
 const navItems = [
-  { href: "/#studio", label: "Studio" },
   { href: "/envo", label: "Envo" },
   { href: "/demo", label: "Demo" },
-  { href: "/#pricing", label: "Pricing" },
+  { href: "/envo#pricing", label: "Pricing" },
   { href: "/preview", label: "Preview Envo" }
 ];
 
-const leadSources = [
-  { label: "Calls", icon: MessageSquareReply },
-  { label: "Forms", icon: ClipboardCheck },
-  { label: "Texts", icon: Mail },
-  { label: "Calendar", icon: CalendarCheck2 },
-  { label: "CRM", icon: Workflow },
-  { label: "Owner", icon: BellRing }
-] satisfies Array<{ icon: LucideIcon; label: string }>;
-
-const productLineup = [
+const handleCards = [
   {
-    copy: "Answers, qualifies, follows up, and hands off leads so you never miss the next job.",
-    name: "Envo",
-    role: "AI Lead Manager",
-    status: "Featured / Live",
-    theme: envoTheme
+    copy: "Answer, organize, and route customer calls.",
+    icon: PhoneCall,
+    title: "Customer calls"
   },
   {
-    copy: "Turns happy-customer moments into review requests and reputation workflows.",
-    name: "Rally",
-    role: "AI Review Manager",
-    status: "Coming Soon",
-    theme: studioTheme
-  },
-  {
-    copy: "Keeps internal workflows moving across teams, tools, and recurring operating tasks.",
-    name: "Flux",
-    role: "AI Operations Assistant",
-    status: "Coming Soon",
-    theme: studioTheme
-  },
-  {
-    copy: "Surfaces cash-flow, invoices, job value, and finance follow-ups for owner review.",
-    name: "Ledger",
-    role: "AI Finance Copilot",
-    status: "Coming Soon",
-    theme: studioTheme
-  }
-];
-
-const envoFeatures = [
-  {
-    copy: "Replies to new inquiries while intent is still fresh.",
+    copy: "Turn missed calls and texts into clean next steps.",
     icon: MessageSquareReply,
-    title: "24/7 AI lead response"
+    title: "Missed calls and texts"
   },
   {
-    copy: "Asks for timing, service needs, location, photos, and missing details.",
-    icon: ClipboardCheck,
-    title: "Smart lead qualification"
+    copy: "Collect quote details without losing the lead.",
+    icon: SquarePen,
+    title: "New leads and quote requests"
   },
   {
-    copy: "Keeps quote requests and no-replies from quietly going cold.",
-    icon: RefreshCcw,
-    title: "Automated follow-ups"
-  },
-  {
-    copy: "Prepares booking, CRM notes, owner alerts, and clean next steps.",
-    icon: CalendarCheck2,
-    title: "Calendar / CRM sync"
+    copy: "Follow up and hand off when a person should step in.",
+    icon: BellRing,
+    title: "Follow-ups and handoffs"
   }
-];
-
-const outcomeMetrics = [
-  { copy: "Answer while the lead is still paying attention.", label: "Faster response" },
-  { copy: "Send the owner source, details, status, and suggested next action.", label: "Cleaner handoffs" },
-  { copy: "Keep no-replies and missing details from disappearing.", label: "Fewer forgotten follow-ups" },
-  { copy: "See where leads came from and what needs attention next.", label: "Better lead visibility" }
-];
-
-const pricingCards = [
-  {
-    copy: `${PACKAGE_NAMES[0].summary} Setup from $750.`,
-    id: "starter",
-    name: PACKAGE_NAMES[0].name,
-    price: PACKAGE_NAMES[0].price
-  },
-  {
-    copy: `${PACKAGE_NAMES[1].summary} Setup from $1,500.`,
-    id: "growth",
-    name: PACKAGE_NAMES[1].name,
-    price: PACKAGE_NAMES[1].price
-  },
-  {
-    copy: `${PACKAGE_NAMES[2].summary} Buildout from $5,000+.`,
-    id: "custom-agent-system",
-    name: PACKAGE_NAMES[2].name,
-    price: PACKAGE_NAMES[2].price
-  }
-];
+] satisfies Array<{ copy: string; icon: LucideIcon; title: string }>;
 
 export function MarketingHome() {
   return (
-    <main className="overflow-hidden bg-[#07040f] text-white">
-      <HeroSection />
-      <FeaturedProductSection />
-      <ProductLineupSection />
-      <StudioVisionSection />
-      <TrustAndOutcomesSection />
-      <PricingSection />
-      <FinalCTASection />
-    </main>
+    <div className="overflow-hidden bg-[#05030a] text-white">
+      <HeroSplash />
+      <WhatEnvoHandles />
+      <DashboardPreview />
+      <FinalCta />
+    </div>
   );
 }
 
-function HeroSection() {
+function HeroSplash() {
   return (
-    <section id="studio" className="premium-section lg:min-h-screen">
-      <AmbientBackground intensity="strong" theme={studioTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pt-5 lg:px-8">
-        <TranslucentNav brand={SITE_CONFIG.name} brandHref="/" items={navItems} theme={studioTheme} />
+    <section className="premium-section min-h-[92vh]">
+      <AmbientBackground intensity="strong" theme={theme} />
+      <div className="relative mx-auto flex min-h-[92vh] max-w-[1450px] flex-col px-4 pb-10 pt-4 sm:px-6 sm:pt-5 lg:px-8">
+        <TranslucentNav brand={PUBLIC_BRAND_NAME} brandHref="/" items={navItems} theme={theme} />
 
-        <div className="grid gap-8 pb-4 pt-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:pt-16">
-          <div>
-            <FloatingBadge icon={Sparkles} theme={studioTheme}>AI venture studio for local operators</FloatingBadge>
-            <h1 className="mt-5 max-w-4xl text-[2.75rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
-              SignalOps builds AI workers for local businesses.
+        <div className="grid flex-1 gap-8 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-14">
+          <div className="max-w-4xl">
+            <FloatingBadge icon={Sparkles} theme={theme}>
+              {PUBLIC_BRAND_NAME} builds Envo
+            </FloatingBadge>
+            <h1 className="mt-5 text-[2.8rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+              Meet Envo, the AI worker for customer calls and leads.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[#ead0df] sm:mt-6 sm:text-xl">
-              We build AI products that handle real work, book more jobs, and help local businesses grow.
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[color:var(--vs-muted)] sm:text-xl">
+              Envo is trained to your business, handles customer calls and leads, follows up, and keeps every opportunity organized.
             </p>
-            <GlassCard className="mt-6 p-4 sm:hidden" theme={envoTheme}>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
-                {PRODUCT_FULL_NAME}
-              </p>
-              <p className="mt-2 text-2xl font-black tracking-normal text-white">{PRODUCT_ROLE}</p>
-              <p className="mt-2 text-sm leading-6 text-[color:var(--vs-muted)]">
-                Answers, qualifies, follows up, and hands off leads so you never miss the next job.
-              </p>
-            </GlassCard>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-row">
-              <GlowButton className="w-full !px-3" href="/envo" theme={studioTheme}>Explore Envo</GlowButton>
-              <GlowButton className="w-full !px-3" href="#products" icon={false} theme={studioTheme} variant="secondary">View Products</GlowButton>
-            </div>
-            <div className="mt-8 hidden gap-2 sm:grid sm:grid-cols-3">
-              {["AI lead response", "Automated follow-up", "Owner-ready handoffs"].map((item) => (
-                <GlassCard key={item} className="p-3" theme={studioTheme}>
-                  <p className="flex items-center gap-2 text-sm font-black text-white">
-                    <CheckCircle2 className="size-4 text-[color:var(--vs-accent-3)]" aria-hidden="true" />
-                    {item}
-                  </p>
-                </GlassCard>
-              ))}
+              <GlowButton className="w-full !px-3 sm:w-auto" href="/envo" theme={theme}>
+                Enter Envo
+              </GlowButton>
+              <GlowButton className="w-full !px-3 sm:w-auto" href="/preview" icon={false} theme={theme} variant="secondary">
+                Preview Envo
+              </GlowButton>
             </div>
           </div>
 
-          <div className="hidden md:block">
-            <StudioHeroVisual />
-          </div>
+          <SplashProductVisual />
         </div>
       </div>
     </section>
   );
 }
 
-function StudioHeroVisual() {
+function SplashProductVisual() {
   return (
-    <GlassPanel className="cinematic-panel relative p-4 sm:p-5" theme={envoTheme}>
-      <div className="grid gap-4 xl:grid-cols-[0.92fr_1.08fr]">
-        <GlassCard className="p-5 lg:min-h-[30rem]" theme={envoTheme}>
-          <FloatingBadge icon={BadgeCheck} theme={envoTheme}>{PRODUCT_FULL_NAME}</FloatingBadge>
-          <div className="mt-5 flex flex-wrap items-end justify-between gap-3">
-            <div>
-              <h2 className="text-4xl font-black tracking-normal text-white">{PRODUCT_NAME}</h2>
-              <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
-                {PRODUCT_ROLE}
-              </p>
+    <GlassPanel className="cinematic-panel grid gap-4 p-4 sm:p-5 xl:grid-cols-[0.72fr_1.28fr] xl:items-center" theme={theme}>
+      <GlassCard className="p-5" theme={theme}>
+        <FloatingBadge icon={Zap} theme={theme}>One product</FloatingBadge>
+        <h2 className="mt-5 text-4xl font-black tracking-normal text-white">{PRODUCT_NAME}</h2>
+        <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
+          {PRODUCT_ROLE}
+        </p>
+        <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)]">
+          Envo answers, organizes, follows up, and prepares owner handoffs from one customer lead dashboard.
+        </p>
+        <div className="mt-6 grid gap-2">
+          {["Trained to your business", "Customer inbox organized", "Owner handoff ready"].map((item) => (
+            <div key={item} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-black text-white/78">
+              <span className="size-2 rounded-full bg-[color:var(--vs-accent-3)]" />
+              {item}
             </div>
-            <span className="rounded-full border border-white/10 bg-white/[0.055] px-3 py-1 text-xs font-black text-white/62">
-              Flagship
-            </span>
-          </div>
-          <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)]">
-            Answers, qualifies, follows up, and hands off leads so you never miss the next job.
-          </p>
-          <div className="mt-6 grid gap-2">
-            {["New lead captured", "Qualification in progress", "Owner handoff ready"].map((item, index) => (
-              <div key={item} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2">
-                <span className="text-xs font-bold text-white/78">{item}</span>
-                <span className="rounded-full bg-[image:var(--vs-button-gradient)] px-2 py-1 text-[0.65rem] font-black text-white">
-                  {index === 0 ? "Now" : index === 1 ? "AI" : "Next"}
-                </span>
-              </div>
-            ))}
-          </div>
-        </GlassCard>
-        <OrbitalProductVisual
-          features={[
-            { copy: "Lead source detected", icon: MessageSquareReply, title: "Answers" },
-            { copy: "Service, timing, and details", icon: ClipboardCheck, title: "Qualifies" },
-            { copy: "No-reply sequence ready", icon: RefreshCcw, title: "Follows up" },
-            { copy: "Owner action prepared", icon: BellRing, title: "Hands off" }
-          ]}
-          label="envo"
-          theme={envoTheme}
+          ))}
+        </div>
+      </GlassCard>
+
+      <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08050d]/62 p-2 shadow-2xl shadow-black/30">
+        <Image
+          src="/product-previews/envo-dashboard-desktop.svg"
+          alt="Envo customer dashboard preview with lead stages and customer messages"
+          width={1200}
+          height={760}
+          priority
+          className="hidden h-auto w-full rounded-[1.25rem] md:block"
+        />
+        <Image
+          src="/product-previews/envo-dashboard-mobile.svg"
+          alt="Envo mobile owner inbox preview"
+          width={430}
+          height={760}
+          priority
+          className="mx-auto h-auto max-h-[34rem] w-auto rounded-[1.25rem] md:hidden"
         />
       </div>
     </GlassPanel>
   );
 }
 
-function FeaturedProductSection() {
-  return (
-    <section className="premium-section" id="envo">
-      <AmbientBackground intensity="quiet" theme={envoTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <FloatingBadge icon={Zap} theme={envoTheme}>Featured Product</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-normal text-white sm:text-5xl">
-              Envo by SignalOps is the AI Lead Manager.
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#ead0df] sm:text-base">
-              Envo handles the first mile of lead management: response, qualification, follow-up, and clean human handoff.
-              It is the flagship AI employee in the SignalOps studio.
-            </p>
-            <div className="mt-6">
-              <GlowButton href="/envo" theme={envoTheme}>Explore Envo</GlowButton>
-            </div>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {envoFeatures.map((feature) => (
-              <RuleCard key={feature.title} copy={feature.copy} icon={feature.icon} title={feature.title} theme={envoTheme} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
-          {leadSources.map((source) => (
-            <LeadSourceTile key={source.label} icon={source.icon} label={source.label} theme={envoTheme} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProductLineupSection() {
-  return (
-    <section className="premium-section" id="products">
-      <AmbientBackground intensity="quiet" theme={studioTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <FloatingBadge icon={Bot} theme={studioTheme}>Product Lineup</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-white sm:text-5xl">
-              A studio of AI workers, starting with Envo.
-            </h2>
-          </div>
-          <p className="max-w-xl text-sm leading-7 text-[#ead0df]">
-            Future products should feel exciting, but Envo is the live flagship product and the center of the current SignalOps offer.
-          </p>
-        </div>
-
-        <div className="mt-7 grid gap-4 lg:grid-cols-[1.25fr_0.75fr_0.75fr_0.75fr]">
-          {productLineup.map((product, index) => (
-            <ProductCard key={product.name} featured={index === 0} {...product} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProductCard({
-  copy,
-  featured = false,
-  name,
-  role,
-  status,
-  theme
-}: {
-  copy: string;
-  featured?: boolean;
-  name: string;
-  role: string;
-  status: string;
-  theme: VisualTheme;
-}) {
-  return (
-    <GlassCard
-      className={featured ? "min-h-[21rem] p-5 sm:min-h-[26rem] sm:p-6" : "min-h-[15rem] p-5 opacity-85 sm:min-h-[19rem]"}
-      hover
-      theme={theme}
-    >
-      <div className="flex h-full flex-col justify-between gap-8">
-        <div>
-          <FloatingBadge className={featured ? undefined : "text-white/70"} icon={featured ? BadgeCheck : Sparkles} theme={theme}>{status}</FloatingBadge>
-          <h3 className={featured ? "mt-5 text-4xl font-black tracking-normal text-white sm:text-5xl" : "mt-5 text-2xl font-black tracking-normal text-white sm:text-3xl"}>
-            {name}
-          </h3>
-          <p className="mt-2 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">{role}</p>
-          <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)]">{copy}</p>
-        </div>
-        {featured ? (
-          <GlowButton href="/envo" theme={theme}>Explore Envo</GlowButton>
-        ) : (
-          <span className="inline-flex items-center gap-2 text-sm font-black text-white/58">
-            Product concept
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </span>
-        )}
-      </div>
-    </GlassCard>
-  );
-}
-
-function StudioVisionSection() {
+function WhatEnvoHandles() {
   return (
     <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={studioTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <GlassPanel className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center" theme={studioTheme}>
+      <AmbientBackground intensity="quiet" theme={theme} />
+      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {handleCards.map((card) => {
+            const Icon = card.icon;
+
+            return (
+              <GlassCard key={card.title} className="p-5" hover theme={theme}>
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_28px_var(--vs-glow)]">
+                  <Icon className="size-5" aria-hidden="true" />
+                </span>
+                <h2 className="mt-5 text-xl font-black text-white">{card.title}</h2>
+                <p className="mt-2 text-sm leading-6 text-[color:var(--vs-muted)]">{card.copy}</p>
+              </GlassCard>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DashboardPreview() {
+  return (
+    <section className="premium-section">
+      <AmbientBackground intensity="quiet" theme={theme} />
+      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 lg:px-8">
+        <GlassPanel className="grid gap-7 p-5 sm:p-7 lg:grid-cols-[0.68fr_1.32fr] lg:items-center" theme={theme}>
           <div>
-            <FloatingBadge icon={Sparkles} theme={studioTheme}>Studio Vision</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-normal text-white sm:text-6xl">
-              The future workforce is AI.
+            <FloatingBadge icon={Workflow} theme={theme}>Customer dashboard preview</FloatingBadge>
+            <h2 className="mt-4 text-4xl font-black leading-tight tracking-normal text-white sm:text-5xl">
+              A simple owner inbox for every opportunity.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[#ead0df]">
-              We build autonomous AI workers that operate in the background, get things done, and deliver measurable
-              results for local businesses.
+            <p className="mt-4 text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
+              Envo keeps calls, missed calls, messages, social leads, quote requests, follow-ups, and handoffs in one clean control center.
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {[
-              ["Operate", "AI workers run recurring workflows without adding more admin."],
-              ["Escalate", "Unclear, urgent, or sensitive work moves to the right person."],
-              ["Measure", "Owners get visibility into what happened and what needs action."],
-              ["Improve", "SignalOps keeps the product layer practical, useful, and focused."]
-            ].map(([title, copy]) => (
-              <RuleCard key={title} copy={copy} icon={Workflow} title={title} theme={studioTheme} />
-            ))}
-          </div>
+          <Image
+            src="/product-previews/envo-dashboard-desktop.svg"
+            alt="Dark glass Envo dashboard preview with lead stages and customer lead cards"
+            width={1200}
+            height={760}
+            className="hidden h-auto w-full rounded-[1.6rem] md:block"
+          />
+          <Image
+            src="/product-previews/envo-dashboard-mobile.svg"
+            alt="Mobile Envo lead queue preview with owner action buttons"
+            width={430}
+            height={760}
+            className="mx-auto h-auto max-h-[34rem] w-auto rounded-[1.6rem] md:hidden"
+          />
         </GlassPanel>
       </div>
     </section>
   );
 }
 
-function TrustAndOutcomesSection() {
+function FinalCta() {
   return (
     <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={studioTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
-          <div>
-            <FloatingBadge icon={ShieldCheck} theme={studioTheme}>Built for local operators</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-white sm:text-5xl">
-              Built for local operators, service teams, and growing businesses.
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-[#ead0df]">
-              SignalOps is designed around practical workflows: missed calls, quote intake, appointment booking,
-              automated lead follow-up, missed lead recovery, lead routing automation, and better owner visibility.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            <TrustLogoStrip items={["Owner-led crews", "Service teams", "Route operators", "Front desks"]} theme={studioTheme} />
-            <div className="grid gap-3 sm:grid-cols-2">
-              {outcomeMetrics.map((metric) => (
-                <GlassCard key={metric.label} className="p-4" theme={studioTheme}>
-                  <p className="text-lg font-black text-white">{metric.label}</p>
-                  <p className="mt-2 text-sm leading-6 text-[color:var(--vs-muted)]">{metric.copy}</p>
-                </GlassCard>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PricingSection() {
-  return (
-    <section className="premium-section" id="pricing">
-      <AmbientBackground intensity="quiet" theme={envoTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <FloatingBadge icon={BarChart3} theme={envoTheme}>Pricing</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-white sm:text-5xl">
-              Start with the Envo package that matches your lead flow.
-            </h2>
-          </div>
-          <p className="max-w-xl text-sm leading-7 text-[#ead0df]">
-            Pricing values are preserved from the current SignalOps packages. Use these as a starting point for the build conversation.
+      <AmbientBackground intensity="quiet" theme={theme} />
+      <div className="relative mx-auto max-w-[1450px] px-4 py-10 sm:px-6 lg:px-8">
+        <GlassPanel className="p-6 text-center sm:p-8 lg:p-10" theme={theme}>
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[color:var(--vs-accent-3)]">
+            Envo by {PUBLIC_BRAND_NAME}
           </p>
-        </div>
-        <div className="mt-7 grid gap-4 lg:grid-cols-3">
-          {pricingCards.map((plan) => (
-            <div key={plan.name} id={plan.id} className="scroll-mt-28">
-              <PremiumPricingCard
-                copy={plan.copy}
-                cta={`Ask About ${plan.name}`}
-                name={plan.name}
-                price={plan.price}
-                theme={envoTheme}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-          {PACKAGE_NAMES.map((plan) => (
-            <TrackedLink
-              key={plan.name}
-              href={getPlanEmailHref(plan.name)}
-              eventName={ANALYTICS_EVENTS.contactClicked}
-              eventProperties={{ location: "studio_home_packages", type: "email", package: plan.name }}
-              className={`${buttonVariants({ variant: "outline" })} border-white/14 bg-white/[0.045]`}
-            >
-              Ask About {plan.name}
-              <Mail className="size-4" aria-hidden="true" />
-            </TrackedLink>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FinalCTASection() {
-  return (
-    <section className="premium-section">
-      <AmbientBackground intensity="quiet" theme={studioTheme} />
-      <div className="relative mx-auto max-w-[1450px] px-4 py-12 sm:px-6 lg:px-8">
-        <GlassPanel className="cinematic-panel grid gap-6 p-5 sm:p-7 lg:grid-cols-[1fr_auto_auto] lg:items-center" theme={studioTheme}>
-          <div>
-            <FloatingBadge icon={Eye} theme={studioTheme}>Next Step</FloatingBadge>
-            <h2 className="mt-4 text-4xl font-black tracking-normal text-white">Ready to see Envo in action?</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-[color:var(--vs-muted)]">
-              Explore the flagship AI employee now, or preview how SignalOps could shape Envo around your lead sources.
-            </p>
+          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black tracking-normal text-white sm:text-5xl">
+            See how Envo would work for your business.
+          </h2>
+          <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:justify-center">
+            <GlowButton className="w-full !px-3 sm:w-auto" href="/envo" theme={theme}>
+              Enter Envo
+            </GlowButton>
+            <GlowButton className="w-full !px-3 sm:w-auto" href="/preview" icon={false} theme={theme} variant="secondary">
+              Preview Envo
+            </GlowButton>
           </div>
-          <GlowButton className="w-full sm:w-auto" href="/envo" theme={studioTheme}>Explore Envo</GlowButton>
-          <GlowButton className="w-full sm:w-auto" href="/preview" icon={false} theme={studioTheme} variant="secondary">Preview Envo</GlowButton>
         </GlassPanel>
       </div>
     </section>

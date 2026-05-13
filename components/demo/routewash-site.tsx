@@ -186,7 +186,7 @@ export function RouteWashDemoSite({ business }: { business: DemoBusinessConfig }
                 Want this built for your business?
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[#ead0df]/76">
-                Send your lead sources, tools, package interest, and timeline so SignalOps can scope where Envo should start.
+                Send your lead sources, tools, package interest, and timeline so SignalOpsAI can scope where Envo should start.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">

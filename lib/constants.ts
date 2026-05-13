@@ -7,15 +7,16 @@ const normalizedSiteUrl =
 export const SITE_CONFIG = {
   brandName: "SignalOps",
   name: "SignalOps",
-  tagline: "AI workers for local businesses.",
+  tagline: "Envo handles customer calls and leads.",
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOps is an AI venture studio that builds AI workers for local businesses, starting with Envo, the AI Lead Manager that answers, qualifies, follows up, and hands off leads."
+    "SignalOpsAI builds Envo, an AI worker trained to each business to handle customer calls, leads, follow-ups, and owner handoffs."
 };
 
+export const PUBLIC_BRAND_NAME = "SignalOpsAI";
 export const PRODUCT_NAME = "Envo";
-export const PRODUCT_FULL_NAME = "Envo by SignalOps";
+export const PRODUCT_FULL_NAME = "Envo by SignalOpsAI";
 export const PRODUCT_ROLE = "AI Lead Manager";
 
 export const PRIMARY_CTA = {
@@ -62,10 +63,6 @@ export const SECONDARY_CTA = {
 
 export const NAV_LINKS = [
   {
-    href: "/#studio",
-    label: "Studio"
-  },
-  {
     href: "/envo",
     label: "Envo"
   },
@@ -74,7 +71,7 @@ export const NAV_LINKS = [
     label: "Demo"
   },
   {
-    href: "/#pricing",
+    href: "/envo#pricing",
     label: "Pricing"
   }
 ];
@@ -174,15 +171,15 @@ export const RESOURCE_LINKS = [
 
 export const PACKAGE_LINKS = [
   {
-    href: "/#starter",
+    href: "/envo#starter",
     label: "Starter Pricing"
   },
   {
-    href: "/#growth",
+    href: "/envo#growth",
     label: "Growth Pricing"
   },
   {
-    href: "/#custom-agent-system",
+    href: "/envo#custom-agent-system",
     label: "Custom Pricing"
   }
 ];
