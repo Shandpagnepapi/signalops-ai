@@ -167,7 +167,7 @@ function HeroSection() {
       <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pt-5 lg:px-8">
         <TranslucentNav brand={SITE_CONFIG.name} brandHref="/" items={navItems} theme={studioTheme} />
 
-        <div className="grid gap-8 pb-4 pt-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:pt-16">
+        <div className="grid gap-8 pb-4 pt-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:pt-16">
           <div>
             <FloatingBadge icon={Sparkles} theme={studioTheme}>AI venture studio for local operators</FloatingBadge>
             <h1 className="mt-5 max-w-4xl text-[2.75rem] font-black leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl">
@@ -187,7 +187,7 @@ function HeroSection() {
             </GlassCard>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-row">
               <GlowButton className="w-full !px-3" href="/envo" theme={studioTheme}>Explore Envo</GlowButton>
-              <GlowButton className="w-full !px-3" href="#products" icon={false} theme={studioTheme}>View Products</GlowButton>
+              <GlowButton className="w-full !px-3" href="#products" icon={false} theme={studioTheme} variant="secondary">View Products</GlowButton>
             </div>
             <div className="mt-8 hidden gap-2 sm:grid sm:grid-cols-3">
               {["AI lead response", "Automated follow-up", "Owner-ready handoffs"].map((item) => (
@@ -213,16 +213,20 @@ function HeroSection() {
 function StudioHeroVisual() {
   return (
     <GlassPanel className="cinematic-panel relative p-4 sm:p-5" theme={envoTheme}>
-      <div className="absolute right-8 top-8 hidden rounded-full border border-white/10 bg-white/[0.08] px-3 py-1 text-xs font-black text-white/70 sm:block">
-        Flagship product
-      </div>
       <div className="grid gap-4 xl:grid-cols-[0.92fr_1.08fr]">
         <GlassCard className="p-5 lg:min-h-[30rem]" theme={envoTheme}>
           <FloatingBadge icon={BadgeCheck} theme={envoTheme}>{PRODUCT_FULL_NAME}</FloatingBadge>
-          <h2 className="mt-5 text-4xl font-black tracking-normal text-white">{PRODUCT_NAME}</h2>
-          <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
-            {PRODUCT_ROLE}
-          </p>
+          <div className="mt-5 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="text-4xl font-black tracking-normal text-white">{PRODUCT_NAME}</h2>
+              <p className="mt-1 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">
+                {PRODUCT_ROLE}
+              </p>
+            </div>
+            <span className="rounded-full border border-white/10 bg-white/[0.055] px-3 py-1 text-xs font-black text-white/62">
+              Flagship
+            </span>
+          </div>
           <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)]">
             Answers, qualifies, follows up, and hands off leads so you never miss the next job.
           </p>
@@ -332,11 +336,15 @@ function ProductCard({
   theme: VisualTheme;
 }) {
   return (
-    <GlassCard className={featured ? "min-h-[21rem] p-5 sm:min-h-[26rem] sm:p-6" : "min-h-[16rem] p-5 sm:min-h-[20rem]"} hover theme={theme}>
+    <GlassCard
+      className={featured ? "min-h-[21rem] p-5 sm:min-h-[26rem] sm:p-6" : "min-h-[15rem] p-5 opacity-85 sm:min-h-[19rem]"}
+      hover
+      theme={theme}
+    >
       <div className="flex h-full flex-col justify-between gap-8">
         <div>
-          <FloatingBadge icon={featured ? BadgeCheck : Sparkles} theme={theme}>{status}</FloatingBadge>
-          <h3 className={featured ? "mt-5 text-4xl font-black tracking-normal text-white sm:text-5xl" : "mt-5 text-3xl font-black tracking-normal text-white"}>
+          <FloatingBadge className={featured ? undefined : "text-white/70"} icon={featured ? BadgeCheck : Sparkles} theme={theme}>{status}</FloatingBadge>
+          <h3 className={featured ? "mt-5 text-4xl font-black tracking-normal text-white sm:text-5xl" : "mt-5 text-2xl font-black tracking-normal text-white sm:text-3xl"}>
             {name}
           </h3>
           <p className="mt-2 text-sm font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">{role}</p>
@@ -482,7 +490,7 @@ function FinalCTASection() {
             </p>
           </div>
           <GlowButton className="w-full sm:w-auto" href="/envo" theme={studioTheme}>Explore Envo</GlowButton>
-          <GlowButton className="w-full sm:w-auto" href="/preview" icon={false} theme={studioTheme}>Preview Envo</GlowButton>
+          <GlowButton className="w-full sm:w-auto" href="/preview" icon={false} theme={studioTheme} variant="secondary">Preview Envo</GlowButton>
         </GlassPanel>
       </div>
     </section>

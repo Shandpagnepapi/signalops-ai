@@ -42,24 +42,24 @@ export const visualThemes = {
     colors: {
       base: "#05030a",
       baseAlt: "#17091f",
-      surface: "rgba(255,255,255,0.07)",
-      surfaceStrong: "rgba(255,255,255,0.12)",
-      border: "rgba(255,179,109,0.28)",
+      surface: "rgba(255,255,255,0.052)",
+      surfaceStrong: "rgba(255,255,255,0.095)",
+      border: "rgba(255,179,109,0.22)",
       text: "#fff8fb",
       muted: "#ead0df",
       accent: "#ff6f9c",
       accent2: "#ff9f75",
       accent3: "#ffb36d",
-      glow: "rgba(255,111,156,0.32)",
-      glow2: "rgba(255,179,109,0.24)",
+      glow: "rgba(255,111,156,0.26)",
+      glow2: "rgba(255,179,109,0.18)",
       success: "#86efac",
       warning: "#fde68a"
     },
     gradients: {
       page:
-        "radial-gradient(circle at 14% 0%, rgba(255,111,156,0.24), transparent 34%), radial-gradient(circle at 86% 6%, rgba(255,179,109,0.2), transparent 30%), linear-gradient(135deg, #05030a, #17091f 52%, #260e25)",
+        "radial-gradient(circle at 14% 0%, rgba(255,111,156,0.2), transparent 34%), radial-gradient(circle at 86% 6%, rgba(255,179,109,0.16), transparent 30%), linear-gradient(135deg, #05030a, #17091f 52%, #260e25)",
       panel:
-        "linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.045))",
+        "linear-gradient(180deg, rgba(255,255,255,0.082), rgba(255,255,255,0.034))",
       button: "linear-gradient(135deg, #ff6f9c, #ff9f75 52%, #ffb36d)",
       border: "linear-gradient(135deg, rgba(255,111,156,0.75), rgba(255,179,109,0.56), rgba(255,255,255,0.08))",
       orb:
@@ -78,24 +78,24 @@ export const visualThemes = {
     colors: {
       base: "#07040f",
       baseAlt: "#1b0b22",
-      surface: "rgba(255,255,255,0.065)",
-      surfaceStrong: "rgba(255,255,255,0.11)",
-      border: "rgba(255,111,156,0.25)",
+      surface: "rgba(255,255,255,0.048)",
+      surfaceStrong: "rgba(255,255,255,0.09)",
+      border: "rgba(255,111,156,0.2)",
       text: "#fff8fb",
       muted: "#ead0df",
       accent: "#f43f8a",
       accent2: "#f97316",
       accent3: "#fde68a",
-      glow: "rgba(244,63,138,0.28)",
-      glow2: "rgba(249,115,22,0.2)",
+      glow: "rgba(244,63,138,0.22)",
+      glow2: "rgba(249,115,22,0.16)",
       success: "#86efac",
       warning: "#fde68a"
     },
     gradients: {
       page:
-        "radial-gradient(circle at 18% 0%, rgba(244,63,138,0.22), transparent 34%), radial-gradient(circle at 82% 8%, rgba(249,115,22,0.18), transparent 30%), linear-gradient(135deg, #07040f, #1b0b22 52%, #291124)",
+        "radial-gradient(circle at 18% 0%, rgba(244,63,138,0.18), transparent 34%), radial-gradient(circle at 82% 8%, rgba(249,115,22,0.14), transparent 30%), linear-gradient(135deg, #07040f, #1b0b22 52%, #291124)",
       panel:
-        "linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.04))",
+        "linear-gradient(180deg, rgba(255,255,255,0.078), rgba(255,255,255,0.032))",
       button: "linear-gradient(135deg, #f43f8a, #f97316)",
       border: "linear-gradient(135deg, rgba(244,63,138,0.7), rgba(249,115,22,0.5), rgba(255,255,255,0.08))",
       orb:

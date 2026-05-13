@@ -159,12 +159,14 @@ export function GlowButton({
   icon = true,
   style,
   theme = visualThemes.envoWarm,
-  type = "button"
+  type = "button",
+  variant = "primary"
 }: VisualComponentProps & {
   children: ReactNode;
   href?: string;
   icon?: boolean;
   type?: "button" | "reset" | "submit";
+  variant?: "primary" | "secondary";
 }) {
   const content = (
     <>
@@ -172,7 +174,7 @@ export function GlowButton({
       {icon ? <ArrowRight className="size-4" aria-hidden="true" /> : null}
     </>
   );
-  const buttonClassName = cn("glow-button hover-lift", className);
+  const buttonClassName = cn("glow-button hover-lift", variant === "secondary" && "glow-button-secondary", className);
   const buttonStyle = themeVars(theme, style);
 
   if (href) {
@@ -221,20 +223,20 @@ export function TranslucentNav({
   items: Array<{ href: string; label: string }>;
 }) {
   return (
-    <GlassPanel className={cn("flex flex-col gap-4 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4", className)} style={style} theme={theme}>
-      <Link href={brandHref} className="flex min-w-0 items-center gap-3">
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-[color:var(--vs-border)] bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_36px_var(--vs-glow)]">
-          <Sparkles className="size-5" aria-hidden="true" />
+    <GlassPanel className={cn("flex flex-col gap-3 p-2.5 sm:flex-row sm:items-center sm:justify-between sm:p-3.5", className)} style={style} theme={theme}>
+      <Link href={brandHref} className="flex min-w-0 items-center gap-2.5 px-1">
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-[1rem] border border-[color:var(--vs-border)] bg-[image:var(--vs-button-gradient)] text-white shadow-[0_0_26px_var(--vs-glow)] sm:size-10 sm:rounded-2xl">
+          <Sparkles className="size-4" aria-hidden="true" />
         </span>
-        <span className="font-black text-white">{brand}</span>
+        <span className="truncate text-sm font-black text-white sm:text-base">{brand}</span>
       </Link>
-      <nav className="flex flex-wrap gap-2" aria-label={`${brand} navigation`}>
+      <nav className="-mx-1 flex max-w-full flex-nowrap gap-2 overflow-x-auto px-1 pb-1 sm:mx-0 sm:flex-wrap sm:justify-end sm:overflow-visible sm:pb-0" aria-label={`${brand} navigation`}>
         {items.map((item) => (
           item.href.startsWith("mailto:") ? (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
+              className="whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
             >
               {item.label}
             </a>
@@ -242,7 +244,7 @@ export function TranslucentNav({
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-2xl border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
+              className="whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-bold text-white/72 transition hover:border-white/22 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]"
             >
               {item.label}
             </Link>
@@ -304,16 +306,16 @@ export function OrbitalProductVisual({
     ];
 
   return (
-    <div className={cn("floating-layer relative min-h-[23rem] overflow-hidden rounded-[1.45rem] border border-white/12 bg-black/24 p-3 shadow-2xl shadow-black/30 backdrop-blur-2xl sm:min-h-[30rem] sm:rounded-[1.75rem] sm:p-4", className)} style={themeVars(theme, style)}>
+    <div className={cn("floating-layer relative min-h-[22rem] overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#07040f]/48 p-3 shadow-2xl shadow-black/34 backdrop-blur-xl sm:min-h-[30rem] sm:rounded-[1.75rem] sm:p-4", className)} style={themeVars(theme, style)}>
       <div className="absolute inset-0 bg-[image:var(--vs-spotlight-gradient)]" />
-      <div className="soft-pulse absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_90px_var(--vs-glow)] sm:size-52" />
-      <div className="absolute left-1/2 top-1/2 size-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:size-72" />
+      <div className="soft-pulse absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_78px_var(--vs-glow)] sm:size-52" />
+      <div className="absolute left-1/2 top-1/2 size-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.085] sm:size-72" />
       <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06] sm:size-96" />
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
         <p className="bg-[image:var(--vs-button-gradient)] bg-clip-text text-4xl font-black text-transparent sm:text-6xl">{label}</p>
         <p className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-white/54">Product core</p>
       </div>
-      <div className="relative z-20 grid min-h-[21rem] gap-2 sm:min-h-[28rem] sm:grid-cols-2 sm:gap-3">
+      <div className="relative z-20 grid min-h-[20rem] gap-2 sm:min-h-[28rem] sm:grid-cols-2 sm:gap-3">
         {items.map((item, index) => {
           const Icon = item.icon ?? Layers3;
 
@@ -321,7 +323,7 @@ export function OrbitalProductVisual({
             <GlassCard
               key={item.title}
               className={cn(
-                "gentle-float w-full max-w-[14.5rem] p-2.5 sm:max-w-[15.5rem] sm:p-3",
+                "gentle-float w-full max-w-[13.5rem] p-2.5 sm:max-w-[15rem] sm:p-3",
                 index === 0 && "self-start justify-self-start",
                 index === 1 && "self-center justify-self-end",
                 index === 2 && "self-center justify-self-start",
@@ -365,21 +367,22 @@ export function MobileDeviceFrame({
   title?: string;
 }) {
   return (
-    <div className={cn("relative mx-auto w-full max-w-sm rounded-[2rem] border border-white/14 bg-[#05030a]/88 p-2.5 shadow-[0_24px_80px_rgba(0,0,0,0.42)] sm:p-3", className)} style={themeVars(theme, style)}>
-      <div className="rounded-[1.6rem] border border-white/10 bg-[image:var(--vs-panel-gradient)] p-3 backdrop-blur-2xl sm:p-4">
+    <div className={cn("relative mx-auto w-full max-w-sm rounded-[2rem] border border-white/14 bg-[#030208]/92 p-2 shadow-[0_24px_78px_rgba(0,0,0,0.48)] sm:p-2.5", className)} style={themeVars(theme, style)}>
+      <div className="mx-auto mb-2 h-1.5 w-16 rounded-full bg-white/12" />
+      <div className="rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.028)),rgba(8,4,16,0.76)] p-3 backdrop-blur-xl sm:p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">{eyebrow}</p>
             <h3 className="mt-2 text-xl font-black tracking-normal text-white sm:text-2xl">{title}</h3>
           </div>
-          <span className="rounded-full border border-[color:var(--vs-success)] bg-white/[0.06] px-2.5 py-1 text-xs font-black text-[color:var(--vs-success)]">
+          <span className="rounded-full border border-[color:var(--vs-success)] bg-emerald-300/[0.08] px-2.5 py-1 text-xs font-black text-[color:var(--vs-success)]">
             {status}
           </span>
         </div>
         {stats ? (
-          <div className="mt-4 grid grid-cols-3 gap-2">
+          <div className="mt-4 grid grid-cols-3 gap-1.5 sm:gap-2">
             {stats.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-white/10 bg-white/[0.045] px-2 py-2 text-center">
+              <div key={item.label} className="rounded-[1rem] border border-white/10 bg-white/[0.045] px-2 py-2 text-center">
                 <p className="text-lg font-black leading-none text-white">{item.value}</p>
                 <p className="mt-1 text-[0.62rem] font-bold leading-3 text-[color:var(--vs-muted)]">{item.label}</p>
               </div>
@@ -388,13 +391,13 @@ export function MobileDeviceFrame({
         ) : null}
         <div className="mt-4 grid gap-2.5 sm:gap-3">{children}</div>
         {footerItems ? (
-          <div className="mt-4 grid grid-cols-3 gap-2 rounded-[1.2rem] border border-white/10 bg-black/18 p-2">
+          <div className="mt-4 grid grid-cols-3 gap-1.5 rounded-[1.2rem] border border-white/10 bg-black/24 p-1.5">
             {footerItems.map((item, index) => (
               <button
                 key={item}
                 className={cn(
-                  "h-9 rounded-2xl text-[0.68rem] font-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]",
-                  index === 0 ? "bg-white/[0.1] text-white" : "text-white/48 hover:bg-white/[0.06] hover:text-white/78"
+                  "h-9 rounded-[0.95rem] text-[0.68rem] font-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--vs-accent-2)]",
+                  index === 0 ? "bg-white/[0.12] text-white shadow-inner shadow-white/5" : "text-white/48 hover:bg-white/[0.06] hover:text-white/78"
                 )}
                 type="button"
               >

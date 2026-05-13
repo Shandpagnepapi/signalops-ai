@@ -39,7 +39,7 @@ export function EnvoOrbVisual({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "cinematic-panel floating-layer relative min-h-[24rem] overflow-hidden rounded-[1.45rem] border border-white/12 bg-black/24 p-3 shadow-2xl shadow-black/30 backdrop-blur-2xl sm:min-h-[34rem] sm:rounded-[1.75rem] sm:p-4",
+        "cinematic-panel floating-layer relative min-h-[22rem] overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#07040f]/50 p-3 shadow-2xl shadow-black/34 backdrop-blur-xl sm:min-h-[34rem] sm:rounded-[1.75rem] sm:p-4",
         className
       )}
       style={{
@@ -53,8 +53,8 @@ export function EnvoOrbVisual({ className }: { className?: string }) {
       } as CSSProperties}
     >
       <div className="absolute inset-0 bg-[image:var(--vs-spotlight-gradient)]" />
-      <div className="soft-pulse absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_110px_var(--vs-glow)] sm:size-56" />
-      <div className="absolute left-1/2 top-1/2 size-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:size-80" />
+      <div className="soft-pulse absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_92px_var(--vs-glow)] sm:size-56" />
+      <div className="absolute left-1/2 top-1/2 size-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.085] sm:size-80" />
       <div className="absolute left-1/2 top-1/2 size-60 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06] sm:size-[26rem]" />
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
         <p className="bg-[image:var(--vs-button-gradient)] bg-clip-text text-4xl font-black text-transparent sm:text-7xl">
@@ -63,7 +63,7 @@ export function EnvoOrbVisual({ className }: { className?: string }) {
         <p className="mt-2 text-[0.65rem] font-black uppercase tracking-[0.28em] text-white/58">AI Lead Core</p>
       </div>
 
-      <div className="relative z-20 grid min-h-[22rem] gap-2 sm:min-h-[32rem] sm:grid-cols-2 sm:gap-3">
+      <div className="relative z-20 grid min-h-[20rem] gap-2 sm:min-h-[32rem] sm:grid-cols-2 sm:gap-3">
         {orbActions.map((action, index) => {
           const Icon = action.icon;
 
@@ -71,7 +71,7 @@ export function EnvoOrbVisual({ className }: { className?: string }) {
             <GlassCard
               key={action.label}
               className={cn(
-                "gentle-float w-full max-w-[14.25rem] p-2.5 sm:max-w-[15.5rem] sm:p-3",
+                "gentle-float w-full max-w-[13.5rem] p-2.5 sm:max-w-[15.5rem] sm:p-3",
                 index === 0 && "self-start justify-self-start",
                 index === 1 && "self-center justify-self-end",
                 index === 2 && "self-center justify-self-start",

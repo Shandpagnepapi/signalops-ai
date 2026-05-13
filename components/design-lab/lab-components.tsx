@@ -209,7 +209,7 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
       copy: "Reusable tokens, utilities, and visual components for the premium glassmorphism direction.",
       href: "/design-lab/themes",
       label: "Theme + Component System",
-      theme: visualThemes.studioCool
+      theme: visualThemes.studioWarm
     },
     {
       copy: "Internal notes on how this lab compares to the current live SignalOps site.",
@@ -316,7 +316,7 @@ function StudioConcept({ id, theme }: { id: "cool" | "warm"; theme: VisualTheme 
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <GlowButton href="/design-lab/envo" theme={theme}>Explore Envo</GlowButton>
-            <GlowButton href="/design-lab/themes" icon={false} theme={theme}>View Components</GlowButton>
+            <GlowButton href="/design-lab/themes" icon={false} theme={theme} variant="secondary">View Components</GlowButton>
           </div>
         </div>
         <div className="relative min-h-[23rem] sm:min-h-[30rem]">
@@ -347,7 +347,7 @@ export function EnvoLabPage({ referenceImages }: { referenceImages: ReferenceIma
         actions={
           <>
             <GlowButton href="/preview" theme={visualThemes.envoWarm}>Preview Envo</GlowButton>
-            <GlowButton href="/design-lab/themes" icon={false} theme={visualThemes.envoWarm}>System preview</GlowButton>
+            <GlowButton href="/design-lab/themes" icon={false} theme={visualThemes.envoWarm} variant="secondary">View components</GlowButton>
           </>
         }
         className="mt-10"
@@ -427,9 +427,9 @@ function PricingPreview({ theme }: { theme: VisualTheme }) {
 export function ThemesLabPage() {
   return (
     <DesignLabShell
-      copy="Reusable ingredients for the next SignalOps / Envo direction: theme tokens, CSS utilities, nav, glass cards, glow buttons, floating badges, pricing cards, owner triage cards, rule cards, lead tiles, mobile frames, product spotlights, trust strips, and ambient backgrounds."
+      copy="Reusable ingredients for the selected SignalOps Warm / Envo Warm direction: theme tokens, CSS utilities, nav, glass cards, glow buttons, floating badges, pricing cards, owner triage cards, rule cards, lead tiles, mobile frames, product spotlights, trust strips, and ambient backgrounds."
       eyebrow="Theme and component system"
-      theme={visualThemes.studioCool}
+      theme={visualThemes.studioWarm}
       title="Every reusable component under the same light."
     >
       <section className="mt-10 grid gap-6">
@@ -492,7 +492,7 @@ function ThemeSystemCard({ theme }: { theme: VisualTheme }) {
             <p className="text-xs font-black uppercase tracking-[0.18em] text-white/48">Buttons and badges</p>
             <div className="mt-4 flex flex-wrap gap-3">
               <GlowButton theme={theme}>Primary</GlowButton>
-              <GlowButton icon={false} theme={theme}>Secondary</GlowButton>
+              <GlowButton icon={false} theme={theme} variant="secondary">Secondary</GlowButton>
               <FloatingBadge icon={BadgeCheck} theme={theme}>Qualified</FloatingBadge>
             </div>
           </GlassCard>

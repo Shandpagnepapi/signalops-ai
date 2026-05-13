@@ -100,17 +100,17 @@ a {
 
 .ambient-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 44px 44px;
-  mask-image: radial-gradient(circle at 50% 26%, black, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 24%, black, transparent 68%);
 }
 
 .gradient-noise {
   background:
-    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.08), transparent 17%),
-    radial-gradient(circle at 78% 4%, rgba(255, 255, 255, 0.05), transparent 18%),
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 7px);
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.052), transparent 17%),
+    radial-gradient(circle at 78% 4%, rgba(255, 255, 255, 0.036), transparent 18%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 7px);
   mix-blend-mode: screen;
 }
 
@@ -123,16 +123,17 @@ a {
 .glass-panel {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--vs-border, rgba(255, 255, 255, 0.14));
+  border: 1px solid var(--vs-border, rgba(255, 255, 255, 0.12));
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035)),
-    var(--vs-surface, rgba(255, 255, 255, 0.065));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.072), rgba(255, 255, 255, 0.026)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.036), rgba(255, 255, 255, 0.012)),
+    var(--vs-surface, rgba(255, 255, 255, 0.052));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.035),
-    0 18px 56px rgba(0, 0, 0, 0.24),
-    0 0 44px var(--vs-glow, rgba(255, 111, 156, 0.12));
-  backdrop-filter: blur(18px) saturate(135%);
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.028),
+    0 16px 46px rgba(0, 0, 0, 0.3),
+    0 0 30px var(--vs-glow, rgba(255, 111, 156, 0.1));
+  backdrop-filter: blur(14px) saturate(128%);
 }
 
 .glass-card {
@@ -150,9 +151,9 @@ a {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 24%, transparent 70%, rgba(255, 255, 255, 0.08)),
-    radial-gradient(circle at 18% 0%, var(--vs-glow, rgba(255, 111, 156, 0.16)), transparent 34%);
-  opacity: 0.72;
+    linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 22%, transparent 74%, rgba(255, 255, 255, 0.07)),
+    radial-gradient(circle at 18% 0%, var(--vs-glow, rgba(255, 111, 156, 0.12)), transparent 31%);
+  opacity: 0.58;
 }
 
 .glass-card::after,
@@ -162,7 +163,9 @@ a {
   pointer-events: none;
   content: "";
   border-radius: inherit;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.13);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.018);
 }
 
 .glass-card > *,
@@ -173,7 +176,7 @@ a {
 
 .glow-button {
   display: inline-flex;
-  min-height: 3rem;
+  min-height: 2.875rem;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -187,7 +190,7 @@ a {
   line-height: 1;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 18px 55px var(--vs-glow, rgba(255, 111, 156, 0.24));
+    0 16px 48px var(--vs-glow, rgba(255, 111, 156, 0.23));
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -200,12 +203,36 @@ a {
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.24),
-    0 22px 70px var(--vs-glow, rgba(255, 111, 156, 0.34));
+    0 20px 64px var(--vs-glow, rgba(255, 111, 156, 0.34));
 }
 
 .glow-button:focus-visible {
   outline: 2px solid var(--vs-accent-2, #ff9f75);
   outline-offset: 3px;
+}
+
+.glow-button-secondary {
+  border-color: rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.034);
+  color: var(--vs-text, #fff8fb);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 14px 36px rgba(0, 0, 0, 0.24),
+    0 0 22px color-mix(in srgb, var(--vs-glow, rgba(255, 111, 156, 0.18)) 52%, transparent);
+}
+
+.glow-button-secondary:hover {
+  filter: none;
+  border-color: color-mix(in srgb, var(--vs-accent-3, #ffb36d) 46%, rgba(255, 255, 255, 0.14));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.092), rgba(255, 255, 255, 0.038)),
+    rgba(255, 255, 255, 0.052);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 16px 42px rgba(0, 0, 0, 0.3),
+    0 0 28px color-mix(in srgb, var(--vs-glow, rgba(255, 111, 156, 0.22)) 62%, transparent);
 }
 
 .floating-badge {
@@ -214,8 +241,10 @@ a {
   align-items: center;
   gap: 0.45rem;
   border-radius: 999px;
-  border: 1px solid var(--vs-border, rgba(255, 255, 255, 0.14));
-  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid var(--vs-border, rgba(255, 255, 255, 0.12));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.028)),
+    rgba(255, 255, 255, 0.04);
   padding: 0.45rem 0.7rem;
   color: var(--vs-accent-3, #ffb36d);
   font-size: 0.75rem;
@@ -223,16 +252,17 @@ a {
   line-height: 1;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 14px 36px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(18px);
+    0 12px 30px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
 }
 
 .light-orb {
   position: absolute;
   display: block;
   border-radius: 9999px;
-  background: radial-gradient(circle, var(--vs-glow, rgba(255, 111, 156, 0.34)), transparent 64%);
-  filter: blur(16px);
+  background: radial-gradient(circle, var(--vs-glow, rgba(255, 111, 156, 0.3)), transparent 64%);
+  filter: blur(18px);
+  opacity: 0.86;
 }
 
 .floating-layer {
@@ -253,9 +283,9 @@ a {
 
 .cinematic-panel {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.13),
-    0 30px 110px rgba(0, 0, 0, 0.34),
-    0 0 70px var(--vs-glow, rgba(255, 111, 156, 0.16));
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 28px 96px rgba(0, 0, 0, 0.38),
+    0 0 56px var(--vs-glow, rgba(255, 111, 156, 0.13));
 }
 
 .section-reveal-ready {
@@ -340,10 +370,10 @@ a {
   .glass-card,
   .glass-panel {
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.13),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.04),
-      0 24px 80px rgba(0, 0, 0, 0.28),
-      0 0 58px var(--vs-glow, rgba(255, 111, 156, 0.14));
-    backdrop-filter: blur(24px) saturate(145%);
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.035),
+      0 24px 76px rgba(0, 0, 0, 0.34),
+      0 0 44px var(--vs-glow, rgba(255, 111, 156, 0.12));
+    backdrop-filter: blur(22px) saturate(138%);
   }
 }

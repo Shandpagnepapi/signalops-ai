@@ -23,9 +23,9 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-[#14102b]/74 px-3 py-3 backdrop-blur-xl sm:px-5">
+    <header className="sticky top-0 z-50 bg-[#08040f]/78 px-3 py-3 backdrop-blur-xl sm:px-5">
       <nav
-        className="mx-auto flex max-w-[1450px] items-center justify-between gap-4 rounded-2xl border border-white/14 bg-white/[0.075] px-4 py-3 shadow-2xl shadow-black/18 backdrop-blur-2xl sm:px-6"
+        className="mx-auto flex max-w-[1450px] items-center justify-between gap-4 rounded-2xl border border-[#ff6f9c]/18 bg-white/[0.052] px-3 py-2.5 shadow-2xl shadow-black/24 backdrop-blur-2xl sm:px-5 sm:py-3"
         aria-label="Primary navigation"
       >
         <Link href="/" className="flex min-w-0 items-center gap-3">
@@ -38,7 +38,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-xl px-3 py-2 text-sm text-[#ead0df]/76 transition hover:bg-white/8 hover:text-white"
+              className="rounded-xl px-3 py-2 text-sm font-semibold text-[#ead0df]/72 transition hover:bg-white/8 hover:text-white"
             >
               {link.label}
             </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
             eventName={ANALYTICS_EVENTS.contactClicked}
             eventProperties={{ location: "navbar", type: "email" }}
             aria-label={EMAIL_CTA.label}
-            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "border-white/18 bg-white/[0.045] max-sm:h-10 max-sm:px-3")}
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "border-white/14 bg-white/[0.035] max-sm:h-10 max-sm:px-3")}
           >
             <span>{EMAIL_CTA.shortLabel}</span>
             <Mail className="size-4" aria-hidden="true" />

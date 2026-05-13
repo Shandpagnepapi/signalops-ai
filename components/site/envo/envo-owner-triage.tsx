@@ -85,18 +85,28 @@ export function EnvoOwnerTriage() {
               <article
                 key={card.label}
                 className={cn(
-                  "rounded-[1.35rem] border p-3 shadow-xl shadow-black/18 transition hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-black/24",
+                  "rounded-[1.25rem] border p-3 shadow-xl shadow-black/18 transition hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-black/24",
                   card.tone === "ready" && "border-emerald-300/24 bg-emerald-300/10",
                   card.tone === "approval" && "border-[color:var(--vs-border)] bg-white/[0.07]",
-                  card.tone === "review" && "border-[#ff6f9c]/28 bg-[#ff6f9c]/10"
+                  card.tone === "review" && "border-red-300/28 bg-red-500/10"
                 )}
               >
                 <div className="flex items-start gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-[image:var(--vs-button-gradient)] text-white">
+                  <span
+                    className={cn(
+                      "flex size-9 shrink-0 items-center justify-center rounded-2xl text-white",
+                      card.tone === "review" ? "bg-red-500/70" : "bg-[image:var(--vs-button-gradient)]"
+                    )}
+                  >
                     <Icon className="size-4" aria-hidden="true" />
                   </span>
-                  <div>
-                    <p className="w-fit rounded-full border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.62rem] font-black uppercase tracking-[0.12em] text-[color:var(--vs-accent-3)]">
+                  <div className="min-w-0">
+                    <p
+                      className={cn(
+                        "w-fit rounded-full border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.62rem] font-black uppercase tracking-[0.12em]",
+                        card.tone === "review" ? "text-red-100" : "text-[color:var(--vs-accent-3)]"
+                      )}
+                    >
                       {card.status}
                     </p>
                     <p className="mt-1 text-sm font-black leading-5 text-white">{card.label}</p>

@@ -29,14 +29,14 @@ export function EnvoHero() {
               to your team when it&apos;s time.
             </p>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-white/62">
-              Built for AI lead response, AI appointment booking, automated lead follow-up, missed lead recovery, and
-              local business lead automation without pretending every edge case should be handled by software.
+              Built for AI lead response, AI appointment booking, automated lead follow-up, and missed lead recovery,
+              with uncertain cases routed to people instead of guessed at.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:flex">
               <GlowButton className="w-full !px-3 sm:w-auto" href="/preview" theme={theme}>
                 Preview Envo
               </GlowButton>
-              <GlowButton className="w-full !px-3 sm:w-auto" href="/demo" icon={false} theme={theme}>
+              <GlowButton className="w-full !px-3 sm:w-auto" href="/demo" icon={false} theme={theme} variant="secondary">
                 View Demo
               </GlowButton>
             </div>
