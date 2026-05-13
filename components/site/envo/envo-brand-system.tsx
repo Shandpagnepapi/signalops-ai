@@ -22,6 +22,7 @@ export {
   EnvoCtaButton,
   EnvoDarkCard,
   EnvoFeatureItem,
+  EnvoFeaturePanel,
   EnvoFeaturePill,
   EnvoFeatureStack,
   EnvoGlassCard,

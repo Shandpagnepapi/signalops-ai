@@ -4,11 +4,10 @@ import {
   ClipboardList,
   Mail,
   Route,
-  Sparkles,
   Workflow
 } from "lucide-react";
 import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
-import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePanel, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -34,15 +33,6 @@ export const metadata = createPageMetadata({
   image: OG_IMAGE_ASSETS.audit.path,
   imageAlt: OG_IMAGE_ASSETS.audit.alt
 });
-
-const scopeItems = [
-  "How leads currently arrive",
-  "Which package looks closest",
-  "Current tools and handoffs",
-  "Biggest follow-up gaps",
-  "Timeline and build priorities",
-  "Best way to contact you"
-];
 
 const buildSteps = [
   {
@@ -160,18 +150,7 @@ export default function AuditPage() {
             </div>
           </div>
 
-          <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-[#0B1024]/82 p-5 shadow-2xl shadow-black/25 sm:max-w-none">
-            <p className="text-sm font-semibold text-white">Envo project snapshot</p>
-            <p className="mt-1 text-sm text-[#D7E2F7]/42">What we need to scope your AI lead manager</p>
-            <div className="mt-5 grid gap-3">
-              {scopeItems.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                  <Sparkles className="size-4 shrink-0 text-[#6F4DFF]" aria-hidden="true" />
-                  <p className="text-sm font-medium text-white">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <EnvoFeaturePanel className="w-full max-w-xs sm:max-w-none" />
         </div>
       </section>
 

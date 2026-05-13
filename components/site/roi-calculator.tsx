@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowRight, Calculator, CheckCircle2, CircleDollarSign, Info, Mail, TrendingUp } from "lucide-react";
+import { ArrowRight, Calculator, CircleDollarSign, Info, Mail, TrendingUp } from "lucide-react";
 import { BreakEvenCalculator } from "@/components/site/break-even-calculator";
-import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePanel, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { ProductFrame, StatusPill } from "@/components/site/signalops-gui";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
@@ -155,21 +155,7 @@ export function RoiCalculator() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#8EBBFF]/20 bg-[#0B1024]/78 p-5 shadow-2xl shadow-black/20">
-            <p className="text-sm font-semibold text-white">What this estimates</p>
-            <div className="mt-4 grid gap-3">
-              {[
-                "How many leads may be slipping between inquiry and follow-up",
-                "How much revenue could be recovered from cleaner response habits",
-                "Which package is most realistic for your current lead volume"
-              ].map((item) => (
-                <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
-                  <p className="text-sm leading-6 text-[#D7E2F7]/78">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <EnvoFeaturePanel className="self-center" />
         </div>
       </section>
 

@@ -3,11 +3,11 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
-  Layers3,
   MessageSquareReply,
   Route,
   SearchCheck
 } from "lucide-react";
+import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -56,40 +56,7 @@ export function SeoLandingPage({ page }: { page: SeoLandingPageConfig }) {
             </ul>
           </div>
 
-          <div className="self-center rounded-2xl border border-white/10 bg-[#0B1024]/80 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold text-white">Envo service blueprint</p>
-                <p className="text-xs leading-5 text-[#D7E2F7]/42">Practical workflows for calls, texts, forms, DMs, follow-ups, and handoffs</p>
-              </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#D7E8FF]">
-                <Layers3 className="size-5" aria-hidden="true" />
-              </div>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {page.quickStats.map((stat) => (
-                <div key={stat.title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                  <p className="text-base font-semibold text-white">{stat.title}</p>
-                  <p className="mt-2 text-xs leading-5 text-[#D7E2F7]/62">{stat.description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 space-y-3">
-              {page.workflow.slice(0, 3).map((step) => (
-                <div key={step.title} className="rounded-xl border border-white/10 bg-[#152044]/72 p-4">
-                  <div className="flex items-start gap-3">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-[#6F4DFF]/12 text-xs font-semibold text-[#EAF1FF]">
-                      {step.label}
-                    </span>
-                    <div>
-                      <p className="text-sm font-medium text-white">{step.title}</p>
-                      <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/62">{step.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <EnvoFeaturePanel className="self-center" />
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeatureStack, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { routeWashDashboardLeads } from "@/lib/mock-data";
@@ -32,7 +32,7 @@ export function DashboardShell() {
     <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
       <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.58fr)] lg:items-end">
             <div className="min-w-0">
               <EnvoLogo size="sm" />
               <Badge className="mb-4 mt-4 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">RouteWash Mobile Fleet Care portal demo</Badge>
@@ -44,10 +44,13 @@ export function DashboardShell() {
                 route-friendly scheduling, and owner handoffs.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="success">Demo data only</Badge>
-              <Badge variant="outline">DFW fleet wash</Badge>
-              <Badge variant="outline">No live messages sent</Badge>
+            <div>
+              <div className="mb-3 flex flex-wrap gap-2">
+                <Badge variant="success">Demo data only</Badge>
+                <Badge variant="outline">DFW fleet wash</Badge>
+                <Badge variant="outline">No live messages sent</Badge>
+              </div>
+              <EnvoFeatureStack panel />
             </div>
           </div>
         </div>

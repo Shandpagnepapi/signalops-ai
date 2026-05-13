@@ -5,12 +5,12 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
-  GitBranch,
   MessageSquareReply,
   Route,
   SearchCheck,
   XCircle
 } from "lucide-react";
+import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -66,35 +66,7 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
             </div>
           </div>
 
-          <div className="self-center rounded-2xl border border-white/10 bg-[#0B1024]/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold text-white">{page.targetPhrase}</p>
-                <p className="text-xs leading-5 text-[#D7E2F7]/42">A practical buyer guide, not a competitor teardown</p>
-              </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#D7E8FF]">
-                <GitBranch className="size-5" aria-hidden="true" />
-              </div>
-            </div>
-            <p className="rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#D7E2F7]/78">
-              {page.comparisonAngle}
-            </p>
-            <div className="mt-4 grid gap-3">
-              {page.workflow.slice(0, 3).map((step) => (
-                <div key={step.title} className="rounded-xl border border-white/10 bg-[#152044]/72 p-4">
-                  <div className="flex items-start gap-3">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-[#6F4DFF]/12 text-xs font-semibold text-[#EAF1FF]">
-                      {step.label}
-                    </span>
-                    <div>
-                      <p className="text-sm font-medium text-white">{step.title}</p>
-                      <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/62">{step.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <EnvoFeaturePanel className="self-center" />
         </div>
       </section>
 

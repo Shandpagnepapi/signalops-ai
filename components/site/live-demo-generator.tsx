@@ -17,7 +17,7 @@ import {
   Save,
   Sparkles
 } from "lucide-react";
-import { EnvoFeaturePill, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePill, EnvoFeatureStack, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -198,6 +198,7 @@ export function LiveDemoGenerator() {
                   {demo?.generatedBy === "ai-enhanced" ? "AI-enhanced" : "Template-ready"}
                 </Badge>
               </div>
+              <EnvoFeatureStack className="mt-5" panel />
             </CardHeader>
             <CardContent>
               <form className="grid gap-4" onSubmit={handleSubmit}>

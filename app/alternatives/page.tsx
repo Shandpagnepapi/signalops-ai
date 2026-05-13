@@ -9,6 +9,7 @@ import {
   SearchCheck,
   UserCheck
 } from "lucide-react";
+import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -75,24 +76,6 @@ const featureCards = [
     title: "Team handoff",
     description:
       "Escalate unclear, urgent, sensitive, risky, or high-value leads instead of pretending automation should handle everything."
-  }
-];
-
-const buyerCriteria = [
-  {
-    title: "Does it cover the channels you actually use?",
-    description:
-      "A useful AI lead response system should support the real mix: missed calls, forms, texts, DMs, quote requests, landing pages, ads, and email."
-  },
-  {
-    title: "Does it improve the next step?",
-    description:
-      "Look for practical outputs: a reply, intake questions, priority, summary, owner alert, booking path, CRM log, and follow-up trigger."
-  },
-  {
-    title: "Does it know when to involve a person?",
-    description:
-      "Good automation should route emergency, sensitive, high-value, or low-confidence leads to the right person with context."
   }
 ];
 
@@ -175,25 +158,7 @@ export default function AlternativesHubPage() {
               </div>
             </div>
 
-            <div className="self-center rounded-2xl border border-white/10 bg-[#0B1024]/82 p-5 shadow-2xl shadow-black/25 backdrop-blur">
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm font-semibold text-white">Comparison framework</p>
-                  <p className="text-xs leading-5 text-[#D7E2F7]/42">Useful buying criteria without fake competitor claims</p>
-                </div>
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#D7E8FF]">
-                  <GitBranch className="size-5" aria-hidden="true" />
-                </div>
-              </div>
-              <div className="grid gap-3">
-                {buyerCriteria.map((item) => (
-                  <div key={item.title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                    <p className="text-sm font-medium text-white">{item.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/62">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <EnvoFeaturePanel className="self-center" />
           </div>
         </section>
 

@@ -445,6 +445,47 @@ export function EnvoBrandBoard({
   );
 }
 
+export function EnvoFeaturePanel({
+  className,
+  compact = false,
+  title = "Smarter conversations. Stronger connections."
+}: {
+  className?: string;
+  compact?: boolean;
+  title?: string;
+}) {
+  return (
+    <EnvoGlassCard
+      className={cn(
+        "overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.96),rgba(248,250,255,0.88)_58%,rgba(238,234,254,0.72))] p-4",
+        className
+      )}
+    >
+      <div className="flex flex-col gap-3 border-b border-[#D8E2F7] pb-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <EnvoLogo size="sm" />
+          <p className="mt-2 text-[0.68rem] font-black uppercase tracking-[0.22em] text-[#647084]">
+            RESPOND FASTER. AUTOMATE SMARTER.
+          </p>
+        </div>
+        <EnvoAppIcon className="size-16 shrink-0 rounded-[1.25rem] p-2" />
+      </div>
+
+      <div className={cn("mt-4 grid gap-4", compact ? "" : "xl:grid-cols-[0.9fr_1.1fr] xl:items-stretch")}>
+        <EnvoDarkCard className="flex min-h-[13rem] flex-col justify-between rounded-[1.25rem] p-5">
+          <EnvoLogo size="sm" tone="dark" />
+          <p className="mt-8 text-2xl font-black leading-tight tracking-normal text-white">
+            <span className="text-[#328BFF]">{title.split(". ")[0]}.</span>
+            <br />
+            {title.split(". ")[1] ?? "Stronger connections."}
+          </p>
+        </EnvoDarkCard>
+        <EnvoFeatureStack panel />
+      </div>
+    </EnvoGlassCard>
+  );
+}
+
 export function EnvoBrandHero({
   actions,
   className,

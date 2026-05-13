@@ -15,7 +15,7 @@ import {
   SearchCheck,
   type LucideIcon
 } from "lucide-react";
-import { EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePanel, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -232,42 +232,7 @@ export function HowItWorksDemo() {
               </div>
             </div>
 
-            <Card className="relative overflow-hidden bg-[#0B1024]/78 p-5">
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#328BFF] via-[#6F4DFF] to-[#8d6bff]" />
-              <div className="space-y-5">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-normal text-[#D7E2F7]/62">
-                      Live intake snapshot
-                    </p>
-                    <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
-                      Lead response in under 60 seconds
-                    </h2>
-                  </div>
-                  <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/10 px-3 py-2 text-right">
-                    <p className="text-xs text-emerald-100">Priority</p>
-                    <p className="text-2xl font-semibold text-white">High</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {[
-                    ["Source", "Website quote form"],
-                    ["Priority", "Priority lead"],
-                    ["Route", "Owner alert + booking link"],
-                    ["Next step", "Request photos, then schedule"]
-                  ].map(([label, value]) => (
-                    <div
-                      key={label}
-                      className="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-3 py-3"
-                    >
-                      <span className="text-sm text-[#D7E2F7]/62">{label}</span>
-                      <span className="text-right text-sm font-medium text-[#F8FAFF]">{value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Card>
+            <EnvoFeaturePanel />
           </div>
         </div>
       </section>

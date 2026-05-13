@@ -8,6 +8,7 @@ import {
   Route,
   SearchCheck
 } from "lucide-react";
+import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -53,25 +54,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
             </div>
           </div>
 
-          <div className="self-center rounded-2xl border border-white/10 bg-[#0B1024]/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold text-white">{page.targetKeyword}</p>
-                <p className="text-xs leading-5 text-[#D7E2F7]/42">Built around real local lead flows</p>
-              </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#D7E8FF]">
-                <MessageSquareReply className="size-5" aria-hidden="true" />
-              </div>
-            </div>
-            <div className="grid gap-3">
-              {page.examples.map((example) => (
-                <div key={example.title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                  <p className="text-sm font-medium text-white">{example.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/62">{example.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <EnvoFeaturePanel className="self-center" />
         </div>
       </section>
 
