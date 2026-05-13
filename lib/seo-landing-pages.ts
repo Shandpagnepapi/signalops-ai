@@ -59,10 +59,10 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "AI lead response system",
     metaTitle: "AI Lead Response Systems for Small Businesses",
     metaDescription:
-      "SignalOps installs AI lead response systems that help small businesses answer calls, texts, forms, DMs, and quote requests before leads go cold.",
+      "SignalOpsAI builds Envo, an AI Lead Manager that helps small businesses answer calls, texts, forms, DMs, and quote requests before leads go cold.",
     h1: "AI lead response that answers new inquiries before they go cold.",
     subheadline:
-      "SignalOps helps small and mid-sized businesses respond to every new lead quickly, collect the right details, and route the next step without adding more admin work.",
+      "Envo helps small and mid-sized businesses respond to every new lead quickly, collect the right details, and route the next step without adding more admin work.",
     heroBullets: [
       "Works with calls, texts, forms, DMs, email, and landing pages",
       "Sends useful first replies, not vague automated messages",
@@ -84,7 +84,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     plainEnglishTitle: "What AI lead response means in plain English",
     plainEnglishBody:
-      "When someone calls, fills out a form, sends a DM, or asks for a quote, they should not wait hours for a useful answer. SignalOps creates a first-response layer that acknowledges the request, asks for missing details, explains the next step, and gives your team a clean summary. It is not meant to replace judgment. It keeps good opportunities moving until a person can step in.",
+      "When someone calls, fills out a form, sends a DM, or asks for a quote, they should not wait hours for a useful answer. Envo creates a first-response layer that acknowledges the request, asks for missing details, explains the next step, and gives your team a clean summary. It is not meant to replace judgment. It keeps good opportunities moving until a person can step in.",
     whyTitle: "Why fast response matters",
     whyIntro:
       "Most service businesses do not lose deals because the lead was bad. They lose deals because the first few minutes were slow, unclear, or inconsistent.",
@@ -105,9 +105,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "Service type, photos, location, timeline, and urgency often live across separate text threads and emails."
       }
     ],
-    solutionTitle: "How SignalOps solves lead response",
+    solutionTitle: "How Envo solves lead response",
     solutionIntro:
-      "SignalOps maps your current intake process, writes practical response logic, and connects the workflow to the channels your business already uses.",
+      "SignalOpsAI maps your current intake process, writes practical response logic, and connects the workflow to the channels your business already uses.",
     solutionCards: [
       {
         title: "Instant acknowledgement",
@@ -144,7 +144,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "2",
         title: "Response goes out",
         description:
-          "SignalOps confirms the request, asks for missing details, and explains what happens next."
+          "Envo confirms the request, asks for missing details, and explains what happens next."
       },
       {
         label: "3",
@@ -186,17 +186,17 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Is AI lead response the same as a website chatbot?",
         answer:
-          "No. SignalOps focuses on the response process behind your calls, texts, forms, DMs, and quote requests. A chat widget can be one channel, but the real value is making sure every inquiry gets a clear next step."
+          "No. Envo focuses on the response process behind your calls, texts, forms, DMs, and quote requests. A chat widget can be one channel, but the real value is making sure every inquiry gets a clear next step."
       },
       {
         question: "Can it work if most of our leads come from phone calls?",
         answer:
-          "Yes. Missed-call text back and call follow-up workflows are a strong use case. SignalOps can start with calls and texts before adding CRM or website integrations."
+          "Yes. Missed-call text back and call follow-up workflows are a strong use case. Envo can start with calls and texts before adding CRM or website integrations."
       },
       {
         question: "What happens if the lead is urgent or complicated?",
         answer:
-          "The system should flag it for staff handoff and alert the right person. SignalOps is designed to escalate uncertainty instead of pretending every question can be fully automated."
+          "The system should flag it for staff handoff and alert the right person. Envo is designed to escalate uncertainty instead of pretending every question can be fully automated."
       },
       {
         question: "Do customers know they are getting an automated reply?",
@@ -217,7 +217,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/how-it-works",
-        label: "How the SignalOps engine works",
+        label: "How the Envo system works",
         description: "See the full flow from lead capture to follow-up."
       }
     ]
@@ -228,10 +228,10 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "Missed-call text back",
     metaTitle: "Missed-Call Text Back and Speed to Lead Automation",
     metaDescription:
-      "SignalOps turns missed calls into captured leads with speed to lead automation, text-back workflows, AI lead intake, alerts, and follow-up.",
+      "Envo turns missed calls into captured leads with speed to lead automation, text-back workflows, AI lead intake, alerts, and follow-up.",
     h1: "Missed-call text back that keeps phone leads from disappearing.",
     subheadline:
-      "SignalOps helps busy service teams automatically respond to missed calls, gather the reason for the call, and alert the right person when the opportunity needs attention.",
+      "Envo helps busy service teams automatically respond to missed calls, gather the reason for the call, and alert the right person when the opportunity needs attention.",
     heroBullets: [
       "Capture customers who call while your team is busy",
       "Ask for the service need, location, urgency, and best callback time",
@@ -274,9 +274,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "By the time someone checks the missed-call list, the customer may have booked elsewhere."
       }
     ],
-    solutionTitle: "How SignalOps handles missed calls",
+    solutionTitle: "How Envo handles missed calls",
     solutionIntro:
-      "SignalOps creates a text-back workflow that feels like a helpful front desk, then routes replies into a simple lead process.",
+      "Envo creates a text-back workflow that feels like a helpful front desk, then routes replies into a simple lead process.",
     solutionCards: [
       {
         title: "Fast text reply",
@@ -325,7 +325,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "4",
         title: "Team follows up",
         description:
-          "SignalOps routes the lead with a summary, priority, urgency, and suggested next action."
+          "Envo routes the lead with a summary, priority, urgency, and suggested next action."
       }
     ],
     industryTitle: "Missed-call examples by industry",
@@ -360,7 +360,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Can this work without a CRM?",
         answer:
-          "Yes. SignalOps can start with simple call/text capture, owner alerts, and a lightweight dashboard. A CRM can be added later if the business needs it."
+          "Yes. Envo can start with simple call/text capture, owner alerts, and a lightweight dashboard. A CRM can be added later if the business needs it."
       },
       {
         question: "Can the system identify emergencies?",
@@ -377,7 +377,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/ai-lead-response",
         label: "AI lead response",
-        description: "See how SignalOps answers all lead sources, not just missed calls."
+        description: "See how Envo answers all lead sources, not just missed calls."
       },
       {
         href: "/no-crm-lead-tracking",
@@ -397,10 +397,10 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "AI follow-up automation",
     metaTitle: "Automated Lead Follow-Up for Service Businesses",
     metaDescription:
-      "SignalOps helps service businesses recover missed leads with automated lead follow-up after calls, quote requests, DMs, forms, and appointments.",
+      "Envo helps service businesses recover missed leads with automated lead follow-up after calls, quote requests, DMs, forms, and appointments.",
     h1: "AI follow-up automation for leads that are interested but not booked yet.",
     subheadline:
-      "SignalOps keeps prospects from slipping away after the first reply by sending useful reminders, asking for missing details, and alerting your team when a lead is ready for action.",
+      "Envo keeps prospects from slipping away after the first reply by sending useful reminders, asking for missing details, and alerting your team when a lead is ready for action.",
     heroBullets: [
       "Follow up after forms, quote requests, calls, texts, and DMs",
       "Ask for missing photos, appointment times, or decision details",
@@ -422,7 +422,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     plainEnglishTitle: "What AI follow-up automation means",
     plainEnglishBody:
-      "Follow-up automation is the system that keeps asking, reminding, and routing after the first conversation. It can request missing photos, remind a customer to book, check whether they still need service, or alert a sales rep when someone replies with buying intent. SignalOps uses AI carefully here: the messages should be specific to the lead context and should escalate when the situation is sensitive, urgent, or unclear.",
+      "Follow-up automation is the system that keeps asking, reminding, and routing after the first conversation. It can request missing photos, remind a customer to book, check whether they still need service, or alert a sales rep when someone replies with buying intent. Envo uses AI carefully here: the messages should be specific to the lead context and should escalate when the situation is sensitive, urgent, or unclear.",
     whyTitle: "Why follow-up breaks down",
     whyIntro:
       "Many businesses respond once, then depend on memory. That creates lost quotes, stale estimates, and customers who never get a clear next step.",
@@ -443,9 +443,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "Without templates and timing rules, the quality of follow-up depends on who is working that day."
       }
     ],
-    solutionTitle: "How SignalOps builds follow-up automation",
+    solutionTitle: "How Envo supports follow-up automation",
     solutionIntro:
-      "SignalOps creates follow-up paths based on lead status, missing details, urgency, service type, and whether the customer has booked.",
+      "Envo creates follow-up paths based on lead status, missing details, urgency, service type, and whether the customer has booked.",
     solutionCards: [
       {
         title: "Missing information follow-up",
@@ -482,7 +482,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "2",
         title: "First follow-up asks for details",
         description:
-          "SignalOps requests the specific information needed to move the quote forward."
+          "Envo requests the specific information needed to move the quote forward."
       },
       {
         label: "3",
@@ -494,7 +494,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "4",
         title: "Team gets alerted",
         description:
-          "When the customer replies with intent, SignalOps sends the context to the right person."
+          "When the customer replies with intent, Envo sends the context to the right person."
       }
     ],
     industryTitle: "Follow-up automation examples",
@@ -524,7 +524,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "How many follow-up messages should a business send?",
         answer:
-          "It depends on the service and the customer's intent. SignalOps usually recommends a few useful touches with clear stop conditions, not endless automated chasing."
+          "It depends on the service and the customer's intent. SignalOpsAI usually recommends a few useful touches with clear stop conditions, not endless automated chasing."
       },
       {
         question: "Can follow-up messages sound human?",
@@ -534,7 +534,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "What if a customer says no?",
         answer:
-          "The workflow should stop or move the lead to a long-term nurture path. SignalOps is designed to respect customer intent."
+          "The workflow should stop or move the lead to a long-term nurture path. Envo is designed to respect customer intent."
       },
       {
         question: "Can follow-up be customized by service?",
@@ -555,7 +555,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/preview",
-        label: "Free Preview",
+        label: "Envo Preview",
         description: "Find where follow-ups are getting delayed or forgotten."
       }
     ]
@@ -566,10 +566,10 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "AI lead intake",
     metaTitle: "AI Lead Intake and Routing Automation",
     metaDescription:
-      "SignalOps uses AI lead intake and lead routing automation to sort prospects by urgency, service need, buying intent, and follow-up priority.",
+      "Envo uses AI lead intake and lead routing automation to sort prospects by urgency, service need, buying intent, and follow-up priority.",
     h1: "AI lead intake that helps your team know who to call first.",
     subheadline:
-      "SignalOps turns messy lead submissions into clear summaries, priority levels, tags, and recommended next actions so your team can focus on the best opportunities.",
+      "Envo turns messy lead submissions into clear summaries, priority levels, tags, and recommended next actions so your team can focus on the best opportunities.",
     heroBullets: [
       "Priority leads by urgency, intent, fit, and completeness",
       "Summarize what the customer needs before a callback",
@@ -591,7 +591,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     plainEnglishTitle: "What AI lead intake does",
     plainEnglishBody:
-      "AI lead intake reads the information a prospect provides, extracts the important details, and helps your team decide the next move. It can identify service need, urgency, customer intent, missing fields, and whether the lead should be routed to an owner, salesperson, front desk, technician, or follow-up sequence. SignalOps keeps this conservative: if the system is unsure, the lead should be reviewed by a person.",
+      "AI lead intake reads the information a prospect provides, extracts the important details, and helps your team decide the next move. It can identify service need, urgency, customer intent, missing fields, and whether the lead should be routed to an owner, salesperson, front desk, technician, or follow-up sequence. Envo keeps this conservative: if the system is unsure, the lead should be reviewed by a person.",
     whyTitle: "Why intake matters",
     whyIntro:
       "Not every lead needs the same response. Treating every inquiry the same slows down the best prospects and wastes time on vague ones.",
@@ -612,9 +612,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "A vague lead may still be real. The system can ask for missing details before a person spends time chasing."
       }
     ],
-    solutionTitle: "How SignalOps organizes lead intake",
+    solutionTitle: "How Envo organizes lead intake",
     solutionIntro:
-      "SignalOps creates priority rules and AI prompts around your actual business, services, service area, team capacity, and risk boundaries.",
+      "Envo creates priority rules and AI prompts around your actual business, services, service area, team capacity, and risk boundaries.",
     solutionCards: [
       {
         title: "Priority sorting",
@@ -649,7 +649,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         label: "2",
-        title: "SignalOps extracts signals",
+        title: "Envo extracts signals",
         description:
           "The system identifies urgency, value, missing details, intent, and safety or compliance concerns."
       },
@@ -693,7 +693,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Can AI decide whether a lead is worth pursuing?",
         answer:
-          "It can help prioritize, but it should not be the only decision-maker. SignalOps recommends staff handoff for unclear, risky, or high-value cases."
+          "It can help prioritize, but it should not be the only decision-maker. SignalOpsAI recommends staff handoff for unclear, risky, or high-value cases."
       },
       {
         question: "Can we customize the priority rules?",
@@ -725,7 +725,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/dashboard",
         label: "Dashboard demo",
-        description: "See how ready leads appear inside a SignalOps dashboard."
+        description: "See how ready leads appear inside an Envo dashboard."
       }
     ]
   },
@@ -735,10 +735,10 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "Lead management for small business",
     metaTitle: "AI Lead Management for Local Businesses",
     metaDescription:
-      "SignalOps provides AI lead management for local businesses that need to capture, sort, route, follow up with, and organize leads without extra admin.",
+      "Envo provides AI lead management for local businesses that need to capture, sort, route, follow up with, and organize leads without extra admin.",
     h1: "Lead management for small businesses that do not need more admin work.",
     subheadline:
-      "SignalOps helps owners and lean teams organize new inquiries, follow-ups, statuses, and sales handoffs without forcing a complicated CRM rollout on day one.",
+      "Envo helps owners and lean teams organize new inquiries, follow-ups, statuses, and sales handoffs without forcing a complicated CRM rollout on day one.",
     heroBullets: [
       "Track calls, texts, forms, DMs, quotes, and appointment requests",
       "Keep status, priority, urgency, and next action in one place",
@@ -760,7 +760,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     plainEnglishTitle: "What small business lead management should do",
     plainEnglishBody:
-      "Lead management does not have to mean a huge software migration. For many small businesses, the first step is simply making sure every inquiry is captured, labeled, followed up with, and visible. SignalOps creates a lightweight operating layer around your existing calls, texts, forms, DMs, email, and quote requests so the team can see what came in and what needs to happen next.",
+      "Lead management does not have to mean a huge software migration. For many small businesses, the first step is simply making sure every inquiry is captured, labeled, followed up with, and visible. Envo creates a lightweight operating layer around your existing calls, texts, forms, DMs, email, and quote requests so the team can see what came in and what needs to happen next.",
     whyTitle: "Why small teams lose track of leads",
     whyIntro:
       "Small businesses often have real demand but no central place to manage it. That is where calls, quote requests, and follow-ups get scattered.",
@@ -778,12 +778,12 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "CRMs can be too heavy at first",
         description:
-          "A complex system only works if the team uses it. SignalOps can start with the simplest useful workflow."
+          "A complex system only works if the team uses it. Envo can start with the simplest useful workflow."
       }
     ],
-    solutionTitle: "How SignalOps manages leads",
+    solutionTitle: "How Envo manages leads",
     solutionIntro:
-      "SignalOps gives your business a clear lead flow: capture, sort, route, follow up, and track status.",
+      "Envo gives your business a clear lead flow: capture, sort, route, follow up, and track status.",
     solutionCards: [
       {
         title: "Central lead capture",
@@ -814,7 +814,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
         label: "1",
         title: "Inquiry is captured",
         description:
-          "A call, text, form, DM, or quote request enters the SignalOps workflow."
+          "A call, text, form, DM, or quote request enters the Envo workflow."
       },
       {
         label: "2",
@@ -862,7 +862,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "Is SignalOps a CRM?",
         answer:
-          "SignalOps can connect to a CRM, but it is not limited to being one. It is a lead operations layer focused on response, intake, follow-up, routing, and visibility."
+          "Envo can connect to a CRM, but it is not limited to being one. It is a lead operations layer focused on response, intake, follow-up, routing, and visibility."
       },
       {
         question: "Can we use SignalOps before choosing a CRM?",
@@ -872,7 +872,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         question: "What if my team only uses phones and texts?",
         answer:
-          "SignalOps can start there. Calls, texts, missed-call replies, and simple dashboards are often enough for the first version."
+          "Envo can start there. Calls, texts, missed-call replies, and simple dashboards are often enough for the first version."
       },
       {
         question: "Will this create more work for the team?",
@@ -893,7 +893,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         href: "/dashboard",
-        label: "SignalOps dashboard demo",
+        label: "Envo dashboard demo",
         description: "See a lightweight lead pipeline in action."
       }
     ]
@@ -904,10 +904,10 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     eyebrow: "No-CRM lead tracking",
     metaTitle: "No-CRM AI Lead Tracking for Local Businesses",
     metaDescription:
-      "SignalOps helps local businesses track calls, texts, forms, DMs, and quote requests with AI lead management before a full CRM is required.",
+      "Envo helps local businesses track calls, texts, forms, DMs, and quote requests with AI lead management before a full CRM is required.",
     h1: "No-CRM lead tracking for businesses that run through calls and texts.",
     subheadline:
-      "SignalOps helps small teams capture every request, separate urgent leads from routine ones, and keep follow-ups visible even if they are not ready for a formal CRM.",
+      "Envo helps small teams capture every request, separate urgent leads from routine ones, and keep follow-ups visible even if they are not ready for a formal CRM.",
     heroBullets: [
       "Built for businesses that rely on phones, texts, DMs, and simple forms",
       "Track lead status without forcing a full software migration",
@@ -929,7 +929,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     plainEnglishTitle: "What no-CRM lead tracking means",
     plainEnglishBody:
-      "A lot of small businesses are not ready for a full CRM. That does not mean they should keep losing leads in phone logs, texts, and DMs. No-CRM lead tracking means SignalOps creates a simple system around your current workflow: capture the inquiry, collect the right details, apply a status, remind the team, and keep the next step visible.",
+      "A lot of small businesses are not ready for a full CRM. That does not mean they should keep losing leads in phone logs, texts, and DMs. No-CRM lead tracking means Envo creates a simple system around your current workflow: capture the inquiry, collect the right details, apply a status, remind the team, and keep the next step visible.",
     whyTitle: "Why a no-CRM approach can be the right first step",
     whyIntro:
       "The best lead system is the one your team will actually use. For small shops and owner-led businesses, simple can be more valuable than comprehensive.",
@@ -950,9 +950,9 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
           "Texts, notebooks, inboxes, and memory work until the team gets busy. Then opportunities fall through."
       }
     ],
-    solutionTitle: "How SignalOps tracks leads without a CRM",
+    solutionTitle: "How Envo tracks leads without a CRM",
     solutionIntro:
-      "SignalOps can build the first version around calls, texts, forms, DMs, alerts, and a lightweight dashboard.",
+      "Envo can build the first version around calls, texts, forms, DMs, alerts, and a lightweight dashboard.",
     solutionCards: [
       {
         title: "Capture the basics",
@@ -972,7 +972,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         title: "Prepare for CRM later",
         description:
-          "Once the flow works, SignalOps can connect the same structure into a CRM, calendar, or sales tool."
+          "Once the flow works, Envo can connect the same structure into a CRM, calendar, or sales tool."
       }
     ],
     workflowTitle: "Example no-CRM lead tracking workflow",
@@ -987,7 +987,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       },
       {
         label: "2",
-        title: "SignalOps asks for context",
+        title: "Envo asks for context",
         description:
           "The system collects the service need, urgency, location, photos, or appointment preference."
       },
@@ -1029,14 +1029,14 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps really work without a CRM?",
+        question: "Can Envo really work without a CRM?",
         answer:
-          "Yes. SignalOps can start with forms, calls, texts, alerts, and a lightweight lead store. A CRM can be added later if it becomes useful."
+          "Yes. Envo can start with forms, calls, texts, alerts, and a lightweight lead store. A CRM can be added later if it becomes useful."
       },
       {
         question: "Will I still own my lead data?",
         answer:
-          "The system should be set up so leads can be exported or moved into future tools. SignalOps is meant to create structure, not trap your business."
+          "The system should be set up so leads can be exported or moved into future tools. Envo is meant to create structure, not trap your business."
       },
       {
         question: "What happens when the business grows?",
@@ -1053,7 +1053,7 @@ export const SEO_LANDING_PAGES: Record<SeoLandingPageId, SeoLandingPageConfig> =
       {
         href: "/lead-management-for-small-business",
         label: "Small business lead management",
-        description: "See the broader lead management system SignalOps can install."
+        description: "See the broader lead management system Envo can install."
       },
       {
         href: "/missed-call-text-back",

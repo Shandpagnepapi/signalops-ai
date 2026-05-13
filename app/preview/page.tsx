@@ -1,9 +1,15 @@
-import { ArrowRight, ClipboardList, Route, Workflow } from "lucide-react";
+import { ClipboardList, Route, Workflow } from "lucide-react";
+import {
+  EnvoAppIcon,
+  EnvoCtaButton,
+  EnvoDarkCard,
+  EnvoFeaturePill,
+  EnvoFeatureStack,
+  EnvoGlassCard,
+  EnvoLogo,
+  EnvoSection
+} from "@/components/site/envo/envo-brand-system";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
-import { TrackedLink } from "@/components/site/tracked-link";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { SECONDARY_CTA } from "@/lib/constants";
 import {
   breadcrumbJsonLd,
@@ -13,7 +19,7 @@ import {
 } from "@/lib/seo";
 
 const previewDescription =
-  "Tell us how your leads come in and where things slow down. SignalOpsAI maps how Envo would answer, follow up, escalate, and hand off leads for your business.";
+  "Tell us how customer calls, texts, forms, DMs, and follow-ups work today. SignalOpsAI maps how Envo should answer, organize, follow up, and hand off leads for your business.";
 
 export const metadata = createPageMetadata({
   title: "Preview Envo | SignalOpsAI",
@@ -58,95 +64,95 @@ export default function PreviewPage() {
           ])
         ])}
       />
-      <div className="overflow-x-hidden bg-[#100818] pb-24 md:pb-12">
-        <section className="premium-section relative isolate overflow-hidden border-b border-white/10 md:hidden">
-          <div className="surface-grid absolute inset-0 opacity-20" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),linear-gradient(180deg,rgba(6,12,24,0.4),#100818_92%)]" />
-          <div className="relative mx-auto max-w-md px-4 py-9">
-            <Badge className="mb-4 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-              Envo Preview
-            </Badge>
-            <h2 className="text-[2.35rem] font-semibold leading-tight tracking-normal text-white">
-              Preview Envo for your business.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
-              {previewDescription}
-            </p>
-
-            <div className="mt-6 grid grid-cols-3 gap-2">
-              {mobilePreviewOutputs.map((output) => {
-                const Icon = output.icon;
-
-                return (
-                  <div key={output.title} className="glass-card rounded-2xl border border-white/10 bg-white/[0.055] p-2.5">
-                    <Icon className="size-4 text-[#ffb36d]" aria-hidden="true" />
-                    <p className="mt-3 text-[0.7rem] font-semibold leading-4 text-white">{output.title}</p>
-                  </div>
-                );
-              })}
-            </div>
-
-            <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} mt-6 w-full`}>
-              Preview Envo
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
-          </div>
-        </section>
-
-        <section className="premium-section relative isolate hidden overflow-hidden border-b border-white/10 md:block">
-          <div className="surface-grid absolute inset-0 opacity-20" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.22),transparent_34%),radial-gradient(circle_at_78%_12%,rgba(255,179,109,0.16),transparent_30%),linear-gradient(180deg,rgba(6,12,24,0.52),#100818_92%)]" />
-          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.86fr_1.14fr] lg:px-8">
-            <div className="flex flex-col justify-center">
-              <Badge className="mb-5 w-fit border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
-                Envo Preview
-              </Badge>
-              <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
+      <div className="overflow-x-hidden bg-[#071126]">
+        <EnvoSection className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
+          <div className="grid gap-8 py-4 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:py-8">
+            <div>
+              <EnvoLogo size="lg" />
+              <EnvoFeaturePill className="mt-6">Envo Preview</EnvoFeaturePill>
+              <h1 className="mt-5 max-w-4xl text-[2.55rem] font-black leading-[0.95] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
                 Preview Envo for your business.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-[#647084] sm:text-xl">
                 {previewDescription}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#preview-form" className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}>
-                  Preview Envo
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-                <TrackedLink
-                  href={SECONDARY_CTA.href}
-                  eventName={ANALYTICS_EVENTS.demoViewed}
-                  eventProperties={{ location: "preview_hero" }}
-                  className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full border-white/18 bg-white/[0.045] sm:w-auto`}
-                >
+                <EnvoCtaButton href="#preview-form">Preview Envo</EnvoCtaButton>
+                <EnvoCtaButton href={SECONDARY_CTA.href} variant="secondary">
                   {SECONDARY_CTA.label}
-                </TrackedLink>
+                </EnvoCtaButton>
               </div>
             </div>
 
-            <div className="glass-panel cinematic-panel grid gap-4 self-center rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/20 backdrop-blur-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">What you get back</p>
-              <div className="grid gap-3">
-                {mobilePreviewOutputs.map((output) => {
-                  const Icon = output.icon;
+            <EnvoGlassCard className="p-4 sm:p-6">
+              <div className="flex flex-col gap-4 border-b border-[#D8E2F7] pb-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-[#2563EB]">
+                    What you get back
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[#647084]">
+                    A practical map for how Envo should answer, organize, follow up, and hand off.
+                  </p>
+                </div>
+                <EnvoAppIcon className="size-20 shrink-0 rounded-[1.25rem]" />
+              </div>
 
-                  return (
-                    <div key={output.title} className="rounded-2xl border border-white/10 bg-[#17122d]/62 p-4">
-                      <Icon className="mb-3 size-5 text-[#ffb36d]" aria-hidden="true" />
-                      <p className="font-semibold text-white">{output.title}</p>
-                      <p className="mt-1 text-sm leading-6 text-[#ead0df]/68">{output.copy}</p>
+              <div className="mt-5 grid gap-4 lg:grid-cols-[0.88fr_1.12fr]">
+                <EnvoDarkCard className="flex min-h-[17rem] flex-col justify-between p-5">
+                  <EnvoLogo size="md" tone="dark" />
+                  <div>
+                    <p className="text-3xl font-black leading-tight tracking-normal text-white sm:text-4xl">
+                      Smarter conversations.
+                      <br />
+                      Stronger connections.
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {["Lead Map", "Build Plan", "Next Steps"].map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-bold text-[#D7E2F7]"
+                        >
+                          {item}
+                        </span>
+                      ))}
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
+                  </div>
+                </EnvoDarkCard>
 
-        <section id="preview-form" className="mx-auto max-w-4xl px-4 py-8 sm:px-6 md:py-10 lg:px-8">
-          <PreviewRequestForm />
-        </section>
-        <section className="mx-auto max-w-4xl px-4 pb-12 text-center text-xs leading-5 text-[#ead0df]/52 sm:px-6">
-          Built around your lead flow, service area, pricing rules, guardrails, and team handoff. Questions? Email SignalOps anytime.
+                <div className="grid gap-3">
+                  {mobilePreviewOutputs.map((output) => {
+                    const Icon = output.icon;
+
+                    return (
+                      <EnvoGlassCard key={output.title} className="p-4 shadow-[0_14px_42px_rgba(37,99,235,0.1)]">
+                        <div className="flex gap-3">
+                          <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-[#EAF1FF] text-[#2563EB]">
+                            <Icon className="size-5" aria-hidden="true" />
+                          </span>
+                          <div>
+                            <h2 className="text-base font-black text-[#071126]">{output.title}</h2>
+                            <p className="mt-1 text-sm leading-6 text-[#647084]">{output.copy}</p>
+                          </div>
+                        </div>
+                      </EnvoGlassCard>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <EnvoFeatureStack className="mt-4 lg:grid-cols-3" />
+            </EnvoGlassCard>
+          </div>
+        </EnvoSection>
+
+        <EnvoSection id="preview-form" className="border-b border-white/10 bg-[#071126]" tone="dark">
+          <div className="mx-auto max-w-4xl">
+            <PreviewRequestForm />
+          </div>
+        </EnvoSection>
+
+        <section className="mx-auto max-w-4xl px-4 pb-12 pt-2 text-center text-xs leading-5 text-[#D7E2F7]/62 sm:px-6">
+          Built around your lead flow, service area, pricing rules, guardrails, and team handoff. Questions? Email SignalOpsAI anytime.
         </section>
       </div>
     </>

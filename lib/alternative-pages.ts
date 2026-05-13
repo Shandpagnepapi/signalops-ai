@@ -50,13 +50,13 @@ export type AlternativePageConfig = {
 const coreRelatedLinks: AlternativeRelatedLink[] = [
   {
     href: "/preview",
-    label: "Free Preview",
+    label: "Envo Preview",
     description: "Find the places where calls, texts, forms, DMs, and follow-ups are being missed."
   },
   {
     href: "/demo",
     label: "Client demo",
-    description: "See how SignalOps collects details and routes real service-business quote requests."
+    description: "See how Envo collects details and routes real service-business quote requests."
   },
   {
     href: "/how-it-works",
@@ -86,14 +86,14 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "LeadOps",
     targetPhrase: "LeadOps-style AI lead operations",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "LeadOps Alternative for AI Lead Response | SignalOps",
+    metaTitle: "LeadOps Alternative for AI Lead Response | Envo by SignalOpsAI",
     metaDescription:
-      "Compare LeadOps-style AI lead operations with SignalOps, a hands-on AI lead response system for capture, intake, routing, follow-up, and booking.",
+      "Compare LeadOps-style AI lead operations with Envo by SignalOpsAI, an AI Lead Manager for capture, intake, routing, follow-up, and booking handoffs.",
     h1: "LeadOps alternative for AI lead response systems.",
     subheadline:
-      "If you are searching for LeadOps-style lead operations, SignalOps helps small and local businesses build the practical response, intake, routing, and follow-up layer behind every inquiry.",
+      "If you are searching for LeadOps-style lead operations, Envo helps small and local businesses build the practical response, intake, routing, and follow-up layer behind every inquiry.",
     comparisonAngle:
-      "This page is for businesses comparing AI lead operations options. It does not evaluate LeadOps as a company or product; it explains what to look for and how SignalOps approaches the same missed-lead problem.",
+      "This page is for businesses comparing AI lead operations options. It does not evaluate LeadOps as a company or product; it explains what to look for and how Envo approaches the same missed-lead problem.",
     whoFor: [
       {
         title: "Owners with scattered lead sources",
@@ -132,7 +132,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Check the current flow",
         description:
-          "SignalOps starts by finding where inquiries slow down, get answered vaguely, or never receive a second touch."
+          "SignalOpsAI starts by finding where inquiries slow down, get answered vaguely, or never receive a second touch."
       },
       {
         title: "Build the response system",
@@ -176,7 +176,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       },
       {
         label: "2",
-        title: "SignalOps responds",
+        title: "Envo responds",
         description:
           "The system confirms receipt, asks for missing details, and explains the next step."
       },
@@ -205,19 +205,19 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     ],
     faqs: [
       {
-        question: "Is SignalOps affiliated with LeadOps?",
+        question: "Is SignalOpsAI affiliated with LeadOps?",
         answer:
-          "No. SignalOps is not affiliated with LeadOps. This page is for businesses comparing AI lead response and lead management options."
+          "No. SignalOpsAI is not affiliated with LeadOps. This page is for businesses comparing AI lead response and lead management options."
       },
       {
         question: "Is this a direct feature-by-feature comparison?",
         answer:
-          "No. Without verified product details, SignalOps does not make claims about another brand's features. This guide focuses on what buyers should look for in a LeadOps-style system."
+          "No. Without verified product details, SignalOpsAI does not make claims about another brand's features. This guide focuses on what buyers should look for in a LeadOps-style system."
       },
       {
-        question: "What makes SignalOps different from buying software?",
+        question: "What makes Envo different from buying software?",
         answer:
-          "SignalOps is positioned as a hands-on system build: lead flow mapping, message logic, intake rules, integrations, alerts, and follow-up paths."
+          "Envo is positioned as a hands-on system build: lead flow mapping, message logic, intake rules, integrations, alerts, and follow-up paths."
       }
     ],
     relatedLinks: coreRelatedLinks
@@ -228,12 +228,12 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "LeadPilot",
     targetPhrase: "LeadPilot-style lead automation",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "LeadPilot Alternative for Lead Intake & Follow-Up | SignalOps",
+    metaTitle: "LeadPilot Alternative for Lead Intake & Follow-Up | Envo by SignalOpsAI",
     metaDescription:
-      "Looking for a LeadPilot-style lead automation option? SignalOps builds hands-on AI lead intake, follow-up, routing, and booking systems.",
+      "Looking for a LeadPilot-style lead automation option? SignalOpsAI builds Envo hands-on AI lead intake, follow-up, routing, and booking systems.",
     h1: "LeadPilot alternative for lead intake and follow-up.",
     subheadline:
-      "For businesses searching for a lead pilot or lead automation style solution, SignalOps focuses on implementation: the actual intake questions, routing logic, follow-up messages, and handoffs your team will use.",
+      "For businesses searching for a lead pilot or lead automation style solution, Envo focuses on implementation: the actual intake questions, routing logic, follow-up messages, and handoffs your team will use.",
     comparisonAngle:
       "This page does not claim to describe LeadPilot's product. It is a buyer guide for teams comparing lead automation options and deciding whether a hands-on implementation partner is a better fit than a purely self-directed setup.",
     whoFor: [
@@ -274,7 +274,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Map the lead path",
         description:
-          "SignalOps documents what happens from first inquiry to booked appointment, including gaps and handoff points."
+          "SignalOpsAI documents what happens from first inquiry to booked appointment, including gaps and handoff points."
       },
       {
         title: "Write practical messages",
@@ -320,7 +320,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "2",
         title: "Context is collected",
         description:
-          "SignalOps asks the questions your team needs before deciding the next step."
+          "Envo asks the questions your team needs before deciding the next step."
       },
       {
         label: "3",
@@ -349,15 +349,15 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Is SignalOps affiliated with LeadPilot?",
         answer:
-          "No. SignalOps is not affiliated with LeadPilot. This page is for businesses comparing AI lead response and lead management options."
+          "No. SignalOpsAI is not affiliated with LeadPilot. This page is for businesses comparing AI lead response and lead management options."
       },
       {
-        question: "Does SignalOps require a CRM?",
+        question: "Does Envo require a CRM?",
         answer:
-          "No. SignalOps can start with calls, texts, forms, alerts, and a simple dashboard. CRM integration can be added when it helps."
+          "No. Envo can start with calls, texts, forms, alerts, and a simple dashboard. CRM integration can be added when it helps."
       },
       {
-        question: "Can SignalOps collect lead details differently by service?",
+        question: "Can Envo collect lead details differently by service?",
         answer:
           "Yes. Intake logic should change for emergencies, quote requests, maintenance, consultations, commercial work, and routine appointments."
       }
@@ -370,12 +370,12 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "LeadRelay",
     targetPhrase: "LeadRelay-style lead routing automation",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "LeadRelay Alternative for Lead Routing Automation | SignalOps",
+    metaTitle: "LeadRelay Alternative for Lead Routing Automation | Envo by SignalOpsAI",
     metaDescription:
       "Explore SignalOps as a LeadRelay-style alternative for lead routing automation, priority alerts, CRM logging, follow-up, and appointment handoffs.",
     h1: "LeadRelay alternative for lead routing automation.",
     subheadline:
-      "If you are looking for lead routing automation, SignalOps helps turn incoming inquiries into prioritized records, urgent alerts, CRM logs, and follow-up paths your team can trust.",
+      "If you are looking for lead routing automation, Envo helps turn incoming inquiries into prioritized records, urgent alerts, CRM logs, and follow-up paths your team can trust.",
     comparisonAngle:
       "This guide is for businesses comparing lead relay or lead routing style tools. It avoids claims about LeadRelay and instead explains the routing decisions a practical AI lead response system should support.",
     whoFor: [
@@ -416,7 +416,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Define routing rules",
         description:
-          "SignalOps maps who should see which leads and what information they need to act quickly."
+          "SignalOpsAI maps who should see which leads and what information they need to act quickly."
       },
       {
         title: "Prepare CRM and dashboard records",
@@ -462,7 +462,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "2",
         title: "Route is chosen",
         description:
-          "SignalOps decides whether the lead needs an owner alert, sales follow-up, photo request, booking link, or review."
+          "Envo decides whether the lead needs an owner alert, sales follow-up, photo request, booking link, or review."
       },
       {
         label: "3",
@@ -491,7 +491,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Is SignalOps affiliated with LeadRelay?",
         answer:
-          "No. SignalOps is not affiliated with LeadRelay. This page is for businesses comparing AI lead response and lead management options."
+          "No. SignalOpsAI is not affiliated with LeadRelay. This page is for businesses comparing AI lead response and lead management options."
       },
       {
         question: "Can routing rules be changed after launch?",
@@ -499,7 +499,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
           "Yes. Routing should improve as you learn which lead types convert, which ones need faster response, and which ones require staff handoff."
       },
       {
-        question: "Can SignalOps route leads without a CRM?",
+        question: "Can Envo route leads without a CRM?",
         answer:
           "Yes. Routing can start with email, text, dashboard, or owner alerts. CRM logging can be added when the business is ready."
       }
@@ -512,14 +512,14 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "LeadSignal",
     targetPhrase: "LeadSignal-style AI priority sorting",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "LeadSignal Alternative for AI Lead Scoring | SignalOps",
+    metaTitle: "LeadSignal Alternative for AI Lead Scoring | Envo by SignalOpsAI",
     metaDescription:
       "SignalOps is a LeadSignal-style alternative for businesses that need AI priority sorting, summaries, next actions, routing, and follow-up from noisy inquiries.",
     h1: "LeadSignal alternative for AI priority sorting.",
     subheadline:
-      "For teams searching for lead signal or priority sorting tools, SignalOps turns messy inbound activity into a clear priority, summary, tags, and recommended next action.",
+      "For teams searching for lead signal or priority sorting tools, Envo turns messy inbound activity into a clear priority, summary, tags, and recommended next action.",
     comparisonAngle:
-      "This page does not compare against LeadSignal's features. It explains what businesses should look for when they need practical priority sorting and how SignalOps uses priority logic to guide response and follow-up.",
+      "This page does not compare against LeadSignal's features. It explains what businesses should look for when they need practical priority sorting and how Envo uses priority logic to guide response and follow-up.",
     whoFor: [
       {
         title: "Teams with noisy lead activity",
@@ -558,7 +558,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Build service-specific priority rules",
         description:
-          "SignalOps creates priority sorting around your actual offers, margins, urgency levels, service area, and team capacity."
+          "Envo creates priority sorting around your actual offers, margins, urgency levels, service area, and team capacity."
       },
       {
         title: "Write internal sales notes",
@@ -598,7 +598,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "1",
         title: "Signals are extracted",
         description:
-          "SignalOps reads the lead context and identifies service need, urgency, intent, contact details, and missing pieces."
+          "Envo reads the lead context and identifies service need, urgency, intent, contact details, and missing pieces."
       },
       {
         label: "2",
@@ -633,7 +633,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Is SignalOps affiliated with LeadSignal?",
         answer:
-          "No. SignalOps is not affiliated with LeadSignal. This page is for businesses comparing AI lead response and lead management options."
+          "No. SignalOpsAI is not affiliated with LeadSignal. This page is for businesses comparing AI lead response and lead management options."
       },
       {
         question: "Can the priority be customized?",
@@ -654,14 +654,14 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "InboundOps",
     targetPhrase: "InboundOps-style inbound lead management",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "InboundOps Alternative for Inbound Lead Management | SignalOps",
+    metaTitle: "InboundOps Alternative for Inbound Lead Management | Envo by SignalOpsAI",
     metaDescription:
-      "Compare InboundOps-style inbound lead management with SignalOps for missed calls, web forms, DMs, quote requests, booking, routing, and follow-up.",
+      "Compare InboundOps-style inbound lead management with Envo for missed calls, web forms, DMs, quote requests, booking, routing, and follow-up.",
     h1: "InboundOps alternative for inbound lead management.",
     subheadline:
-      "SignalOps helps businesses organize the inbound mess: missed calls, website forms, DMs, emails, quote requests, appointment questions, and follow-ups that need a clear owner.",
+      "Envo helps businesses organize the inbound mess: missed calls, website forms, DMs, emails, quote requests, appointment questions, and follow-ups that need a clear owner.",
     comparisonAngle:
-      "This page is for businesses searching for inbound lead management options. SignalOps is not describing InboundOps' offering; it is outlining what a practical inbound system should handle.",
+      "This page is for businesses searching for inbound lead management options. SignalOpsAI is not describing InboundOps' offering; it is outlining what a practical inbound system should handle.",
     whoFor: [
       {
         title: "Businesses with leads coming from everywhere",
@@ -700,7 +700,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Create an inbound operating layer",
         description:
-          "SignalOps sits around your existing channels and organizes what came in, what was said, and what should happen next."
+          "Envo sits around your existing channels and organizes what came in, what was said, and what should happen next."
       },
       {
         title: "Reduce informal follow-up",
@@ -744,7 +744,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       },
       {
         label: "2",
-        title: "SignalOps captures context",
+        title: "Envo captures context",
         description:
           "The system gathers contact info, service need, urgency, source, and missing details."
       },
@@ -775,12 +775,12 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Is SignalOps affiliated with InboundOps?",
         answer:
-          "No. SignalOps is not affiliated with InboundOps. This page is for businesses comparing AI lead response and lead management options."
+          "No. SignalOpsAI is not affiliated with InboundOps. This page is for businesses comparing AI lead response and lead management options."
       },
       {
-        question: "Can SignalOps handle social DMs?",
+        question: "Can Envo handle social DMs?",
         answer:
-          "SignalOps can design the DM intake and follow-up logic. The exact integration depends on platform access, permissions, and the tools your business uses."
+          "Envo can design the DM intake and follow-up logic. The exact integration depends on platform access, permissions, and the tools your business uses."
       },
       {
         question: "Do we need to change how customers contact us?",
@@ -796,14 +796,14 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
     targetName: "QuoteRelay",
     targetPhrase: "QuoteRelay-style quote intake automation",
     eyebrow: "Ethical alternative guide",
-    metaTitle: "QuoteRelay Alternative for Quote Intake Automation | SignalOps",
+    metaTitle: "QuoteRelay Alternative for Quote Intake Automation | Envo by SignalOpsAI",
     metaDescription:
       "SignalOps is a QuoteRelay-style alternative for quote intake automation across mobile fleet wash, auto shops, detailers, tint shops, wrap shops, contractors, and local services.",
     h1: "QuoteRelay alternative for quote intake automation.",
     subheadline:
-      "For quote-based businesses, SignalOps helps collect the details needed to estimate work, ask for photos when useful, prioritize urgent requests, and follow up when a prospect does not book.",
+      "For quote-based businesses, Envo helps collect the details needed to estimate work, ask for photos when useful, prioritize urgent requests, and follow up when a prospect does not book.",
     comparisonAngle:
-      "This page is for businesses researching quote intake automation. SignalOps does not claim any affiliation with QuoteRelay or make unsupported claims about another product.",
+      "This page is for businesses researching quote intake automation. SignalOpsAI does not claim any affiliation with QuoteRelay or make unsupported claims about another product.",
     whoFor: [
       {
         title: "Quote-heavy local businesses",
@@ -842,7 +842,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         title: "Build quote intake flows",
         description:
-          "SignalOps creates lead forms, instant replies, photo prompts, intake rules, and routing for quote requests."
+          "Envo creates lead forms, instant replies, photo prompts, intake rules, and routing for quote requests."
       },
       {
         title: "Separate routine from urgent",
@@ -888,7 +888,7 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
         label: "2",
         title: "Details are requested",
         description:
-          "SignalOps asks for the specific information needed to quote responsibly."
+          "Envo asks for the specific information needed to quote responsibly."
       },
       {
         label: "3",
@@ -917,17 +917,17 @@ export const ALTERNATIVE_PAGES: Record<AlternativePageId, AlternativePageConfig>
       {
         question: "Is SignalOps affiliated with QuoteRelay?",
         answer:
-          "No. SignalOps is not affiliated with QuoteRelay. This page is for businesses comparing AI lead response and quote intake automation options."
+          "No. SignalOpsAI is not affiliated with QuoteRelay. This page is for businesses comparing AI lead response and quote intake automation options."
       },
       {
-        question: "Can SignalOps ask for photos?",
+        question: "Can Envo ask for photos?",
         answer:
           "Yes. Photo or detail-based intake is a strong fit for mobile fleet wash, auto, detailing, tint, wrap, home services, and other quote-based workflows."
       },
       {
-        question: "Does SignalOps generate the final quote?",
+        question: "Does Envo generate the final quote?",
         answer:
-          "SignalOps can organize the intake and prepare context. Final pricing should stay with the business when judgment, safety, or scope review is required."
+          "Envo can organize the intake and prepare context. Final pricing should stay with the business when judgment, safety, or scope review is required."
       }
     ],
     relatedLinks: coreRelatedLinks

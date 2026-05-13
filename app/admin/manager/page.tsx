@@ -3,9 +3,9 @@ import { listPreviewSubmissionsWithMeta } from "@/lib/preview-store";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "SignalOps Free Preview Queue",
+  title: "SignalOps Envo Preview Queue",
   description:
-    "Internal SignalOps review queue for Free Preview submissions, draft preview reports, proposal drafts, email drafts, and approval statuses.",
+    "Internal SignalOps review queue for Envo Preview submissions, draft preview reports, proposal drafts, email drafts, and approval statuses.",
   path: "/admin/manager",
   noIndex: true
 });

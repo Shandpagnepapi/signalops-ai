@@ -18,7 +18,7 @@ type LeadApiResponse = {
 };
 
 const selectClass =
-  "h-11 w-full min-w-0 rounded-xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-11 w-full min-w-0 rounded-xl border border-white/12 bg-[#0B1024]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 function getServiceLabel(business: DemoBusinessConfig, value: string) {
   return business.form.serviceOptions.find((option) => option.value === value)?.label ?? business.form.serviceOptions[0]?.label ?? "Service request";
@@ -166,25 +166,25 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
   }
 
   return (
-    <Card id="quote" className="scroll-mt-28 border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
+    <Card id="quote" className="scroll-mt-28 border-[#6F4DFF]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">Envo intake demo</Badge>
+            <Badge className="mb-3 border border-[#6F4DFF]/25 bg-[#6F4DFF]/12 text-[#EAF1FF]">Envo intake demo</Badge>
             <CardTitle className="text-2xl">Submit a sample lead</CardTitle>
             <CardDescription>
               The form updates for {business.name}, then shows how Envo packages a lead for handoff.
             </CardDescription>
           </div>
-          <div className="rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 px-3 py-2 text-xs font-medium text-[#ffd7e6]">
+          <div className="rounded-xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 px-3 py-2 text-xs font-medium text-[#D7E8FF]">
                   Envo demo
           </div>
         </div>
       </CardHeader>
       <CardContent>
         <form className="grid gap-4" onSubmit={handleSubmit}>
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Contact</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Contact</p>
             <div className="grid gap-4 md:grid-cols-3">
               <Field label="Name">
                 <Input required value={form.name} onChange={(event) => updateField("name", event.target.value)} />
@@ -198,8 +198,8 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Request details</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Request details</p>
             <div className="grid gap-4">
               <Field label={business.form.locationLabel}>
                 <Input value={form.address} onChange={(event) => updateField("address", event.target.value)} />
@@ -231,8 +231,8 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Routing signals</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Routing signals</p>
             <div className="grid gap-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <Field label={business.form.statusLabel}>
@@ -281,10 +281,10 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
         </form>
 
         {status === "success" && lead ? (
-          <div className="mt-6 rounded-2xl border border-[#ffb36d]/22 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),rgba(255,179,109,0.08)] p-5 shadow-2xl shadow-black/18">
+          <div className="mt-6 rounded-2xl border border-[#6F4DFF]/22 bg-[radial-gradient(circle_at_20%_0%,rgba(50,139,255,0.18),transparent_32%),rgba(111,77,255,0.08)] p-5 shadow-2xl shadow-black/18">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <p className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
+                <p className="flex items-center gap-2 text-sm font-medium text-[#EAF1FF]">
                   <Sparkles className="size-4" aria-hidden="true" />
                   Envo Lead Desk
                 </p>
@@ -309,10 +309,10 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
                 <ResultBlock title="Owner handoff flag" body="This lead should go to the owner with the account context before the final quote path is confirmed." icon="warning" />
               ) : null}
               <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">Suggested tags</p>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#D7E2F7]/58">Suggested tags</p>
                 <div className="flex flex-wrap gap-2">
                   {lead.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-[#f2d9e8]">
+                    <Badge key={tag} variant="outline" className="border-white/15 bg-white/5 text-[#EAF1FF]">
                       {tag}
                     </Badge>
                   ))}
@@ -335,7 +335,7 @@ export function DemoLeadForm({ business }: { business: DemoBusinessConfig }) {
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#EAF1FF]">
       {label}
       {children}
     </label>
@@ -344,8 +344,8 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
-      <dt className="text-xs uppercase tracking-[0.16em] text-[#ead0df]/58">{label}</dt>
+    <div className="rounded-xl border border-white/10 bg-[#0B1024]/74 p-4">
+      <dt className="text-xs uppercase tracking-[0.16em] text-[#D7E2F7]/58">{label}</dt>
       <dd className="mt-2 text-3xl font-semibold text-white md:text-lg">{value}</dd>
     </div>
   );
@@ -361,16 +361,16 @@ function ResultBlock({
   icon?: "warning";
 }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
-      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">
+    <div className="rounded-xl border border-white/10 bg-[#0B1024]/74 p-4">
+      <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#D7E2F7]/58">
         {icon === "warning" ? (
           <AlertTriangle className="size-3.5 text-amber-300" aria-hidden="true" />
         ) : (
-          <CheckCircle2 className="size-3.5 text-[#ffb36d]" aria-hidden="true" />
+          <CheckCircle2 className="size-3.5 text-[#6F4DFF]" aria-hidden="true" />
         )}
         {title}
       </p>
-      <p className="text-sm leading-6 text-[#fff8fb]">{body}</p>
+      <p className="text-sm leading-6 text-[#F8FAFF]">{body}</p>
     </div>
   );
 }

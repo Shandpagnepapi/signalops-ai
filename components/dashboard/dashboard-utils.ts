@@ -63,21 +63,21 @@ export function priorityBadgeClass(priority: LeadPriority) {
   }
 
   if (priority === "cold") {
-    return "border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]";
+    return "border-[#6F4DFF]/25 bg-[#6F4DFF]/12 text-[#EAF1FF]";
   }
 
-  return "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#f2d9e8]";
+  return "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#EAF1FF]";
 }
 
 export function statusBadgeClass(status: DashboardLeadStatus) {
   const classes: Record<DashboardLeadStatus, string> = {
-    new: "border-[#ff9ec0]/25 bg-[#ff6f9c]/12 text-[#ffd7e6]",
-    contacted: "border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]",
+    new: "border-[#8EBBFF]/25 bg-[#328BFF]/12 text-[#D7E8FF]",
+    contacted: "border-[#6F4DFF]/25 bg-[#6F4DFF]/12 text-[#EAF1FF]",
     "needs-details": "border-amber-300/25 bg-amber-400/12 text-amber-100",
     ready: "border-emerald-300/25 bg-emerald-400/12 text-emerald-100",
     booked: "border-violet-300/25 bg-violet-400/12 text-violet-100",
     won: "border-green-300/25 bg-green-400/12 text-green-100",
-    lost: "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#f2d9e8]"
+    lost: "border-[#9c6c93]/35 bg-[#9c6c93]/12 text-[#EAF1FF]"
   };
 
   return classes[status];

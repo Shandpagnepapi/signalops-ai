@@ -30,9 +30,9 @@ import { LeadLeakPreviewBuilder } from "./LeadLeakPreviewBuilder";
 import styles from "./mobile-test-2.module.css";
 
 export const metadata: Metadata = {
-  title: "Mobile Test 2 | SignalOps Lead Leak Scanner",
+  title: "Mobile Test 2 | Envo Preview",
   description:
-    "A premium mobile-first SignalOps test concept that scans local business lead flow for missed calls, slow replies, quote follow-up gaps, and booking handoff leaks.",
+    "A premium mobile-first Envo Preview concept for missed calls, slow replies, quote follow-up gaps, and booking handoff issues.",
   robots: {
     index: false,
     follow: false
@@ -40,11 +40,11 @@ export const metadata: Metadata = {
 };
 
 const scanRows = [
-  ["Lead Flow Scan", "Running", "accent"],
+  ["Lead Flow Map", "Running", "accent"],
   ["Missed Call Risk", "High", "high"],
   ["Quote Follow-Up", "Weak", "weak"],
-  ["Speed-to-Lead", "4.3s with SignalOps", "good"],
-  ["Recovery Opportunity", "+29% more lead conversations", "good"],
+  ["Speed-to-Lead", "Fast Envo reply", "good"],
+  ["Recovery Scenario", "More lead conversations", "good"],
   ["Status", "Preview ready", "accent"]
 ] satisfies Array<[string, string, "accent" | "high" | "weak" | "good"]>;
 
@@ -52,14 +52,14 @@ const leakPoints = [
   {
     leak: "Customer calls while the shop is busy",
     pain: "Missed calls turn into price shoppers before anyone replies.",
-    fix: "AI text-back starts the conversation instantly.",
+    fix: "Envo starts the conversation with a fast text-back.",
     pill: "Recovered in seconds",
     icon: PhoneMissed
   },
   {
     leak: "Website form sits too long",
     pain: "The customer is still comparing options while your form waits.",
-    fix: "SignalOps responds, collects context, and routes the lead.",
+    fix: "Envo responds, collects context, and routes the lead.",
     pill: "Speed restored",
     icon: Inbox
   },
@@ -169,14 +169,14 @@ export default function MobileTestTwoPage() {
 function TopHeader() {
   return (
     <header className={cn(styles.header, "rounded-3xl border px-3 py-3")}>
-      <nav className="flex items-center justify-between gap-3" aria-label="SignalOps lead leak scanner navigation">
+      <nav className="flex items-center justify-between gap-3" aria-label="Envo Preview navigation">
         <div className="flex min-w-0 items-center gap-2.5">
           <Image src="/brand/signalops-logo-mark.svg" alt="" width={34} height={34} />
           <span className={cn(styles.wordmark, "text-base font-black tracking-normal")}>SignalOps</span>
         </div>
         <span className={cn(styles.statusPill, "hidden min-h-9 items-center gap-2 rounded-full border px-3 text-xs font-black sm:inline-flex")}>
           <span className={styles.statusDot} aria-hidden="true" />
-          Lead Leak Scanner
+          Envo Preview
         </span>
         <TrackedLink
           href={PRIMARY_CTA.href}
@@ -184,7 +184,7 @@ function TopHeader() {
           eventProperties={{ location: "mobile_test_2_header" }}
           className={cn(styles.primaryButton, "inline-flex h-10 shrink-0 items-center justify-center rounded-full px-4 text-sm font-black transition")}
         >
-          Scan
+          Preview
         </TrackedLink>
       </nav>
     </header>
@@ -203,7 +203,7 @@ function Hero() {
           Find the leads slipping through your business.
         </h1>
         <p className={cn(styles.heroCopy, "mt-5 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8")}>
-          SignalOps maps your lead flow, finds the slow replies, missed calls, stale quote requests, and forgotten follow-ups, then builds the AI response system to fix them.
+          SignalOpsAI maps your lead flow, finds the slow replies, missed calls, stale quote requests, and forgotten follow-ups, then shapes the Envo setup to handle them.
         </p>
         <div className="mt-6 grid gap-3 sm:max-w-xl sm:grid-cols-[1fr_auto]">
           <TrackedLink
@@ -212,7 +212,7 @@ function Hero() {
             eventProperties={{ location: "mobile_test_2_hero" }}
             className={cn(styles.primaryButton, "inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-5 py-4 text-sm font-black transition")}
           >
-            Run My Free Lead Leak Scan
+            Preview Envo
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
@@ -233,13 +233,13 @@ function Hero() {
 
 function ScanCard() {
   return (
-    <section className={cn(styles.scanCard, styles.scanGrid, "rounded-[2rem] border p-4")} aria-label="Lead Flow Scan status">
+    <section className={cn(styles.scanCard, styles.scanGrid, "rounded-[2rem] border p-4")} aria-label="Envo lead flow map status">
       <div className={styles.scanLine} aria-hidden="true" />
       <div className="relative">
         <div className="flex items-center justify-between gap-3 border-b pb-4" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
           <div>
-            <p className="text-sm font-black text-white">Lead Flow Scan</p>
-            <p className={cn(styles.heroCopy, "mt-1 text-xs")}>Revenue leak diagnostic</p>
+            <p className="text-sm font-black text-white">Lead Flow Map</p>
+            <p className={cn(styles.heroCopy, "mt-1 text-xs")}>Envo Preview snapshot</p>
           </div>
           <span className={cn(styles.miniPill, "rounded-full border px-3 py-1 text-xs font-black")}>
             Running
@@ -270,7 +270,7 @@ function ScanCard() {
             <div>
               <p className="text-sm font-black text-white">Preview ready</p>
               <p className={cn(styles.heroCopy, "mt-1 text-xs leading-5")}>
-                AI response system generated from your leak profile.
+                Envo setup mapped from your lead flow.
               </p>
             </div>
           </div>
@@ -284,9 +284,9 @@ function LeakMap() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8" aria-labelledby="leak-map-title">
       <SectionHeading
-        eyebrow="Lead leak map"
+        eyebrow="Lead flow map"
         title="Every lost lead has a trail."
-        copy="SignalOps turns that trail into a response system: capture, sort, follow up, and hand off."
+        copy="Envo turns that trail into a response system: capture, sort, follow up, and hand off."
       />
       <div className="mt-6 grid gap-3">
         {leakPoints.map((point, index) => (
@@ -355,7 +355,7 @@ function RouteWashExample() {
               <p className="mt-2 text-sm leading-6">We have 28 service vans across two DFW locations. Can you quote biweekly after-hours washing?</p>
             </article>
             <article className={cn(styles.chatAi, "max-w-[92%] rounded-[1.35rem] p-4")}>
-              <p className={cn(styles.speakerMutedLight, "text-xs font-black uppercase")}>SignalOps</p>
+          <p className={cn(styles.speakerMutedLight, "text-xs font-black uppercase")}>Envo</p>
               <p className="mt-2 text-sm leading-6">
                 Send the vehicle mix, service addresses, and preferred wash window. I&apos;ll get the account details ready for a fleet quote.
               </p>
@@ -491,9 +491,9 @@ function PreviewIncludes() {
   return (
     <section className={styles.lightBand} aria-labelledby="preview-includes-title">
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>Free preview</p>
+        <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>Envo Preview</p>
         <h2 id="preview-includes-title" className={cn(styles.lightTitle, "mt-2 max-w-3xl text-3xl font-black leading-tight tracking-normal sm:text-5xl")}>
-          Your free preview shows the system before we build it.
+          Your Envo Preview shows the system before we build it.
         </h2>
         <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-6">
           {previewIncludes.map((item) => {
@@ -541,7 +541,7 @@ function FinalCTA() {
           Run the scan. See the system. Then decide.
         </h2>
         <p className={cn(styles.heroCopy, "mt-4 max-w-2xl text-sm leading-7 sm:text-base")}>
-          Send your business details and SignalOps will generate a personalized AI lead system preview before anything is built.
+          Send your business details and SignalOpsAI will generate a personalized Envo Preview before anything is built.
         </p>
         <div className="mt-6 grid gap-3 sm:max-w-xl sm:grid-cols-[1fr_auto]">
           <TrackedLink
@@ -550,7 +550,7 @@ function FinalCTA() {
             eventProperties={{ location: "mobile_test_2_final" }}
             className={cn(styles.primaryButton, "inline-flex h-12 items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black transition")}
           >
-            Run My Free Lead Leak Scan
+            Preview Envo
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
@@ -560,7 +560,7 @@ function FinalCTA() {
             className={cn(styles.emailButton, "inline-flex h-12 items-center justify-center gap-2 rounded-2xl border px-5 text-sm font-black transition")}
           >
             <Mail className="size-4" aria-hidden="true" />
-            Email SignalOps
+            Email SignalOpsAI
           </TrackedLink>
         </div>
       </div>
@@ -573,7 +573,7 @@ function StickyCTA() {
     <div className={cn(styles.stickyBar, "fixed inset-x-0 bottom-0 z-50 border-t px-3 py-3 backdrop-blur-xl md:hidden")}>
       <div className="mx-auto grid max-w-md grid-cols-[1fr_auto] items-center gap-3">
         <div>
-          <p className="text-xs font-black uppercase text-white">Free Lead Leak Scan</p>
+          <p className="text-xs font-black uppercase text-white">Envo Preview</p>
           <p className={cn(styles.stickySubtext, "text-xs")}>Preview the system first</p>
         </div>
         <TrackedLink

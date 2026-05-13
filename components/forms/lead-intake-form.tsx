@@ -81,7 +81,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
   }
 
   return (
-    <Card className="bg-[#17122d]/75">
+    <Card className="bg-[#0B1024]/75">
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -94,7 +94,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
       <CardContent>
         <form className="grid gap-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Full name
               <Input
                 required
@@ -103,7 +103,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
                 autoComplete="name"
               />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Email
               <Input
                 required
@@ -115,7 +115,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
             </label>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Company
               <Input
                 value={form.company}
@@ -123,7 +123,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
                 autoComplete="organization"
               />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Phone
               <Input
                 value={form.phone}
@@ -133,7 +133,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
             </label>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Monthly lead volume
               <Input
                 type="number"
@@ -142,7 +142,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
                 onChange={(event) => updateField("monthlyLeads", event.target.value)}
               />
             </label>
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Response goal
               <Input
                 value={form.responseGoal}
@@ -150,7 +150,7 @@ export function LeadIntakeForm({ demoClientName = "SignalOps" }: { demoClientNam
               />
             </label>
           </div>
-          <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+          <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
             Context
             <Textarea
               value={form.notes}

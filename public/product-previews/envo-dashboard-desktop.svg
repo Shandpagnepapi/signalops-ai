@@ -2,15 +2,15 @@
   <title id="title">Envo desktop customer lead dashboard preview</title>
   <desc id="desc">Dark glass owner dashboard with lead stages on the left and customer calls, texts, Instagram, and Facebook leads on the right.</desc>
   <defs>
-    <radialGradient id="warmGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(715 355) rotate(22) scale(560 420)">
-      <stop stop-color="#ff6f9c" stop-opacity=".42"/>
-      <stop offset=".48" stop-color="#ff9f75" stop-opacity=".2"/>
-      <stop offset="1" stop-color="#07040f" stop-opacity="0"/>
+    <radialGradient id="envoGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(715 355) rotate(22) scale(560 420)">
+      <stop stop-color="#328BFF" stop-opacity=".42"/>
+      <stop offset=".48" stop-color="#6F4DFF" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#071126" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="shell" x1="110" y1="55" x2="1080" y2="705" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4a4050" stop-opacity=".82"/>
-      <stop offset=".44" stop-color="#201b26" stop-opacity=".9"/>
-      <stop offset="1" stop-color="#121018" stop-opacity=".95"/>
+      <stop stop-color="#17264A" stop-opacity=".82"/>
+      <stop offset=".44" stop-color="#0B1024" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#071126" stop-opacity=".95"/>
     </linearGradient>
     <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#ffffff" stop-opacity=".12"/>
@@ -18,8 +18,8 @@
       <stop offset="1" stop-color="#ffffff" stop-opacity=".025"/>
     </linearGradient>
     <linearGradient id="hot" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#ff5f93"/>
-      <stop offset="1" stop-color="#ff9f60"/>
+      <stop stop-color="#328BFF"/>
+      <stop offset="1" stop-color="#6F4DFF"/>
     </linearGradient>
     <filter id="shadow" x="40" y="0" width="1120" height="760" filterUnits="userSpaceOnUse">
       <feDropShadow dx="0" dy="30" stdDeviation="38" flood-color="#000000" flood-opacity=".45"/>
@@ -29,29 +29,29 @@
     </filter>
   </defs>
 
-  <rect width="1200" height="760" rx="44" fill="#07040f"/>
-  <rect width="1200" height="760" rx="44" fill="url(#warmGlow)"/>
-  <circle cx="850" cy="210" r="170" fill="#ff6f9c" opacity=".18" filter="url(#soft)"/>
-  <circle cx="470" cy="610" r="180" fill="#ffb36d" opacity=".12" filter="url(#soft)"/>
+  <rect width="1200" height="760" rx="44" fill="#071126"/>
+  <rect width="1200" height="760" rx="44" fill="url(#envoGlow)"/>
+  <circle cx="850" cy="210" r="170" fill="#328BFF" opacity=".18" filter="url(#soft)"/>
+  <circle cx="470" cy="610" r="180" fill="#6F4DFF" opacity=".12" filter="url(#soft)"/>
 
   <g filter="url(#shadow)">
     <rect x="72" y="42" width="1056" height="676" rx="38" fill="url(#shell)" stroke="#ffffff" stroke-opacity=".22" stroke-width="2"/>
-    <rect x="96" y="72" width="324" height="616" rx="22" fill="#15131d" fill-opacity=".74" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+    <rect x="96" y="72" width="324" height="616" rx="22" fill="#0B1024" fill-opacity=".74" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
 
     <g font-family="Inter, Segoe UI, Arial, sans-serif">
       <text x="126" y="128" fill="#ffffff" font-size="28" font-weight="800">Envo</text>
-      <text x="126" y="158" fill="#ffbf78" font-size="13" font-weight="800" letter-spacing="3">OWNER INBOX</text>
+      <text x="126" y="158" fill="#BFD3FF" font-size="13" font-weight="800" letter-spacing="3">OWNER INBOX</text>
 
       <g transform="translate(120 196)">
         <rect width="268" height="54" rx="16" fill="url(#card)" stroke="#ffffff" stroke-opacity=".13"/>
         <circle cx="28" cy="27" r="15" fill="url(#hot)"/>
         <text x="24" y="33" fill="#fff" font-size="17" font-weight="900">+</text>
         <text x="56" y="33" fill="#fff" font-size="18" font-weight="800">New lead</text>
-        <rect x="222" y="12" width="34" height="30" rx="10" fill="#e9475f"/>
+        <rect x="222" y="12" width="34" height="30" rx="10" fill="#2563EB"/>
         <text x="233" y="33" fill="#fff" font-size="16" font-weight="900">1</text>
       </g>
 
-      <g fill="#eee8ef" font-size="18">
+      <g fill="#D7E2F7" font-size="18">
         <text x="146" y="291" font-weight="800">Qualifying</text><text x="356" y="291" text-anchor="end" opacity=".78">24</text>
         <text x="146" y="348" opacity=".78">Estimates sent</text><text x="356" y="348" text-anchor="end" opacity=".78">7</text>
         <text x="146" y="405" font-weight="800">Services</text><text x="356" y="405" text-anchor="end" opacity=".78">1</text>
@@ -61,7 +61,7 @@
         <text x="146" y="633" opacity=".75">Lost</text>
       </g>
 
-      <g fill="#ffbe75" font-size="19" font-weight="900">
+      <g fill="#BFD3FF" font-size="19" font-weight="900">
         <text x="119" y="291">2</text>
         <text x="119" y="348">7</text>
         <text x="119" y="405">S</text>
@@ -72,43 +72,43 @@
       </g>
 
       <g transform="translate(464 72)">
-        <rect width="612" height="148" rx="30" fill="#14121a" fill-opacity=".76" stroke="#ffffff" stroke-opacity=".18" stroke-width="1.5"/>
+        <rect width="612" height="148" rx="30" fill="#0B1024" fill-opacity=".76" stroke="#ffffff" stroke-opacity=".18" stroke-width="1.5"/>
         <rect x="32" y="34" width="86" height="80" rx="18" fill="#ffffff" fill-opacity=".11"/>
-        <path d="M61 59c20 32 36 45 55 53" stroke="#f4eef3" stroke-width="5" stroke-linecap="round"/>
+        <path d="M61 59c20 32 36 45 55 53" stroke="#F8FAFF" stroke-width="5" stroke-linecap="round"/>
         <text x="148" y="58" fill="#fff" font-size="28" font-weight="850">Chris Taylor</text>
-        <text x="148" y="91" fill="#eee8ef" font-size="22" opacity=".9">New voicemail</text>
+        <text x="148" y="91" fill="#D7E2F7" font-size="22" opacity=".9">New voicemail</text>
         <polygon points="148,124 148,108 163,116" fill="#8bb4e8"/>
         <rect x="176" y="114" width="420" height="6" rx="3" fill="#ffffff" opacity=".75"/>
         <rect x="176" y="114" width="286" height="6" rx="3" fill="#8bb4e8"/>
         <circle cx="462" cy="117" r="8" fill="#8bb4e8"/>
-        <text x="600" y="123" fill="#eee8ef" font-size="16" text-anchor="end" opacity=".85">0:32</text>
+        <text x="600" y="123" fill="#D7E2F7" font-size="16" text-anchor="end" opacity=".85">0:32</text>
       </g>
 
       <g transform="translate(464 256)">
-        <rect width="612" height="128" rx="30" fill="#14121a" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+        <rect width="612" height="128" rx="30" fill="#0B1024" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
         <rect x="32" y="31" width="74" height="66" rx="15" fill="#ffffff" fill-opacity=".11"/>
-        <rect x="54" y="47" width="31" height="30" rx="2" stroke="#f4eef3" stroke-width="4"/>
+        <rect x="54" y="47" width="31" height="30" rx="2" stroke="#F8FAFF" stroke-width="4"/>
         <text x="136" y="56" fill="#fff" font-size="26" font-weight="850">Alex Harvigston</text>
-        <text x="136" y="91" fill="#eee8ef" font-size="22" opacity=".9">Hi! Can I come test drive a few sedans on your lot this Friday?</text>
+        <text x="136" y="91" fill="#D7E2F7" font-size="22" opacity=".9">Hi! Can I come test drive a few sedans on your lot this Friday?</text>
         <text x="578" y="77" fill="#fff" font-size="38" opacity=".7">›</text>
       </g>
 
       <g transform="translate(464 416)">
-        <rect width="612" height="128" rx="30" fill="#14121a" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+        <rect width="612" height="128" rx="30" fill="#0B1024" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
         <rect x="32" y="31" width="74" height="66" rx="15" fill="#ffffff" fill-opacity=".11"/>
-        <circle cx="69" cy="64" r="22" stroke="#f4eef3" stroke-width="5"/>
-        <circle cx="69" cy="64" r="8" fill="#f4eef3"/>
+        <circle cx="69" cy="64" r="22" stroke="#F8FAFF" stroke-width="5"/>
+        <circle cx="69" cy="64" r="8" fill="#F8FAFF"/>
         <text x="136" y="56" fill="#fff" font-size="25" font-weight="850">Angela Cortez - Instagram</text>
-        <text x="136" y="91" fill="#eee8ef" font-size="22" opacity=".9">Hello there, do you offer financing on new tires?</text>
+        <text x="136" y="91" fill="#D7E2F7" font-size="22" opacity=".9">Hello there, do you offer financing on new tires?</text>
         <text x="578" y="77" fill="#fff" font-size="38" opacity=".7">›</text>
       </g>
 
       <g transform="translate(464 576)">
-        <rect width="612" height="112" rx="30" fill="#14121a" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+        <rect width="612" height="112" rx="30" fill="#0B1024" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
         <rect x="32" y="26" width="74" height="60" rx="15" fill="#ffffff" fill-opacity=".11"/>
-        <text x="60" y="74" fill="#f4eef3" font-size="54" font-weight="900">f</text>
+        <text x="60" y="74" fill="#F8FAFF" font-size="54" font-weight="900">f</text>
         <text x="136" y="53" fill="#fff" font-size="25" font-weight="850">Rosie Sims - Facebook</text>
-        <text x="136" y="84" fill="#eee8ef" font-size="21" opacity=".9">I need an estimate. Can I bring my car in tomorrow morning?</text>
+        <text x="136" y="84" fill="#D7E2F7" font-size="21" opacity=".9">I need an estimate. Can I bring my car in tomorrow morning?</text>
         <text x="578" y="70" fill="#fff" font-size="38" opacity=".7">›</text>
       </g>
     </g>

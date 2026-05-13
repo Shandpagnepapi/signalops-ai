@@ -12,22 +12,22 @@ const routes = [
   },
   {
     path: "/audit",
-    priority: 0.65,
+    priority: 0.66,
     changeFrequency: "monthly"
   },
   {
     path: "/preview",
-    priority: 0.98,
+    priority: 0.99,
     changeFrequency: "monthly"
   },
   {
     path: "/envo",
-    priority: 0.96,
+    priority: 0.98,
     changeFrequency: "monthly"
   },
   {
     path: "/drone",
-    priority: 0.58,
+    priority: 0.62,
     changeFrequency: "monthly"
   },
   {

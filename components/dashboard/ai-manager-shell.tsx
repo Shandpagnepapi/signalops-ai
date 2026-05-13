@@ -173,15 +173,15 @@ export function AiManagerShell({
 
   return (
     <div className="overflow-x-hidden">
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,111,156,0.14),rgba(6,12,24,0))]">
+      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(50,139,255,0.14),rgba(6,12,24,0))]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <Badge className="mb-5 border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
+          <Badge className="mb-5 border border-[#6F4DFF]/25 bg-[#6F4DFF]/10 text-[#EAF1FF]">
             Internal review
           </Badge>
           <h1 className="max-w-4xl text-4xl font-semibold tracking-normal text-white sm:text-5xl">
-            SignalOps Free Preview Queue
+            SignalOps Envo Preview Queue
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-[#ead0df]/76">
+          <p className="mt-4 max-w-3xl text-base leading-7 text-[#D7E2F7]/76">
             Review draft preview reports, proposal drafts, and email drafts before anything prospect-facing is sent.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -190,7 +190,7 @@ export function AiManagerShell({
             <Metric label="Average fit score" value={`${metrics.avgScore}/100`} />
           </div>
           {persistenceWarning ? (
-            <div className="mt-6 rounded-2xl border border-[#ffb36d]/30 bg-[#ffb36d]/10 p-4 text-sm leading-6 text-[#ffe1bd]">
+            <div className="mt-6 rounded-2xl border border-[#6F4DFF]/30 bg-[#6F4DFF]/10 p-4 text-sm leading-6 text-[#EAF1FF]">
               {persistenceWarning}
             </div>
           ) : persistenceEnabled ? (
@@ -216,24 +216,24 @@ export function AiManagerShell({
                 className={cn(
                   "rounded-2xl border p-4 text-left transition",
                   selected?.id === item.id
-                    ? "border-[#ffb36d]/35 bg-[#ffb36d]/10"
+                    ? "border-[#6F4DFF]/35 bg-[#6F4DFF]/10"
                     : "border-white/10 bg-white/[0.035] hover:border-white/18"
                 )}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="font-semibold text-white">{item.businessName}</p>
-                    <p className="mt-1 text-xs text-[#ead0df]/56">{item.industry} - {item.contactName}</p>
+                    <p className="mt-1 text-xs text-[#D7E2F7]/56">{item.industry} - {item.contactName}</p>
                   </div>
                   <Badge variant={item.managerNotes.fitScore >= 80 ? "success" : "outline"}>{item.managerNotes.fitScore}</Badge>
                 </div>
-                <p className="mt-3 text-sm leading-6 text-[#ead0df]/72">{item.managerNotes.prospectSummary}</p>
-                <p className="mt-3 text-xs text-[#ffb36d]">{item.status}</p>
+                <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/72">{item.managerNotes.prospectSummary}</p>
+                <p className="mt-3 text-xs text-[#6F4DFF]">{item.status}</p>
               </button>
             ))}
             {items.length === 0 ? (
-              <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/70">
-                No Free Preview submissions found yet.
+              <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#D7E2F7]/70">
+                No Envo Preview submissions found yet.
               </p>
             ) : null}
           </CardContent>
@@ -241,14 +241,14 @@ export function AiManagerShell({
 
         {selected ? (
           <div className="grid gap-6">
-            <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/8">
+            <Card className="border-[#6F4DFF]/20 bg-[#6F4DFF]/8">
               <CardHeader>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <CardTitle>{selected.businessName}</CardTitle>
                     <CardDescription>{selected.managerNotes.prospectSummary}</CardDescription>
                   </div>
-                  <Badge className="bg-[#17122d] text-[#ffe1bd]">{selected.status}</Badge>
+                  <Badge className="bg-[#0B1024] text-[#EAF1FF]">{selected.status}</Badge>
                 </div>
               </CardHeader>
               <CardContent>
@@ -286,7 +286,7 @@ export function AiManagerShell({
                       Generate a complete copy/paste ChatGPT prompt. The app does not call OpenAI or send customer emails.
                     </CardDescription>
                   </div>
-                  <Badge className="bg-[#17122d] text-emerald-100">{promptStatus.replaceAll("_", " ")}</Badge>
+                  <Badge className="bg-[#0B1024] text-emerald-100">{promptStatus.replaceAll("_", " ")}</Badge>
                 </div>
               </CardHeader>
               <CardContent className="grid gap-5">
@@ -298,8 +298,8 @@ export function AiManagerShell({
                 </div>
 
                 <div className="grid gap-3 lg:grid-cols-[0.82fr_1.18fr]">
-                  <div className="rounded-2xl border border-white/10 bg-[#17122d]/60 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Missing info</p>
+                  <div className="rounded-2xl border border-white/10 bg-[#0B1024]/60 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">Missing info</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {promptClassification?.missingInfo.length ? (
                         promptClassification.missingInfo.map((item) => (
@@ -310,27 +310,27 @@ export function AiManagerShell({
                       )}
                     </div>
                     {promptClassification?.isTestSubmission || promptClassification?.contactAllowed === false ? (
-                      <div className="mt-4 rounded-xl border border-[#ffb36d]/25 bg-[#ffb36d]/10 p-3">
-                        <Badge className="bg-[#ffb36d]/20 text-[#ffe1bd]">TEST / DO NOT CONTACT</Badge>
-                        <p className="mt-3 text-sm leading-6 text-[#ffe1bd]">
+                      <div className="mt-4 rounded-xl border border-[#6F4DFF]/25 bg-[#6F4DFF]/10 p-3">
+                        <Badge className="bg-[#6F4DFF]/20 text-[#EAF1FF]">TEST / DO NOT CONTACT</Badge>
+                        <p className="mt-3 text-sm leading-6 text-[#EAF1FF]">
                           contactAllowed = {String(promptClassification.contactAllowed)}
                         </p>
-                        <p className="mt-2 text-sm leading-6 text-[#ead0df]/74">
+                        <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/74">
                           {promptClassification.testReason ?? "The classifier marked this as internal/test only."}
                         </p>
                       </div>
                     ) : null}
                     {promptClassification ? (
-                      <p className="mt-4 text-sm leading-6 text-[#ead0df]/74">{promptClassification.reasoning}</p>
+                      <p className="mt-4 text-sm leading-6 text-[#D7E2F7]/74">{promptClassification.reasoning}</p>
                     ) : null}
                   </div>
 
-                  <div className="rounded-2xl border border-white/10 bg-[#17122d]/60 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Next action</p>
-                    <p className="mt-3 text-sm leading-6 text-[#f2d9e8]">
+                  <div className="rounded-2xl border border-white/10 bg-[#0B1024]/60 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">Next action</p>
+                    <p className="mt-3 text-sm leading-6 text-[#EAF1FF]">
                       {promptWorkerResult?.nextAction ?? "Click Generate ChatGPT Prompt, paste it into ChatGPT, review the draft output, then update the status manually."}
                     </p>
-                    <p className="mt-3 text-xs leading-5 text-[#ead0df]/54">
+                    <p className="mt-3 text-xs leading-5 text-[#D7E2F7]/54">
                       Prompt worker data is saved with this Supabase submission when persistence is configured.
                     </p>
                   </div>
@@ -367,7 +367,7 @@ export function AiManagerShell({
                   </Button>
                 </div>
 
-                <div className="grid gap-3 rounded-2xl border border-white/10 bg-[#17122d]/60 p-4">
+                <div className="grid gap-3 rounded-2xl border border-white/10 bg-[#0B1024]/60 p-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-sm font-semibold text-white">Internal notes</p>
                     <Button
@@ -383,7 +383,7 @@ export function AiManagerShell({
                     value={internalNotesDraft}
                     onChange={(event) => updateInternalNotesDraft(selected.id, event.target.value)}
                     placeholder="Add private notes for Dillon. Saved to Supabase when configured."
-                    className="min-h-[110px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 text-sm leading-6 text-[#ead0df]/82 outline-none placeholder:text-[#ead0df]/36"
+                    className="min-h-[110px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 text-sm leading-6 text-[#D7E2F7]/82 outline-none placeholder:text-[#D7E2F7]/36"
                   />
                 </div>
 
@@ -394,7 +394,7 @@ export function AiManagerShell({
                 ) : null}
 
                 {actionMessage ? (
-                  <p className="rounded-xl border border-white/10 bg-white/[0.045] px-3 py-2 text-sm text-[#ead0df]/78">
+                  <p className="rounded-xl border border-white/10 bg-white/[0.045] px-3 py-2 text-sm text-[#D7E2F7]/78">
                     {actionMessage}
                   </p>
                 ) : null}
@@ -408,17 +408,17 @@ export function AiManagerShell({
                     <textarea
                       readOnly
                       value={promptWorkerResult.copyPastePrompt}
-                      className="min-h-[360px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#ead0df]/82 outline-none"
+                      className="min-h-[360px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#D7E2F7]/82 outline-none"
                     />
                   </div>
                 ) : null}
 
                 {buildPromptResult ? (
-                  <div className="grid gap-3 rounded-2xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 p-4">
+                  <div className="grid gap-3 rounded-2xl border border-[#6F4DFF]/20 bg-[#6F4DFF]/10 p-4">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
                         <p className="font-semibold text-white">Build Mode Prompt</p>
-                        <p className="mt-1 text-sm leading-6 text-[#ead0df]/72">
+                        <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/72">
                           Use this after payment to plan the client system build.
                         </p>
                       </div>
@@ -434,7 +434,7 @@ export function AiManagerShell({
                     <textarea
                       readOnly
                       value={buildPromptResult.copyPastePrompt}
-                      className="min-h-[260px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#ead0df]/82 outline-none"
+                      className="min-h-[260px] w-full rounded-2xl border border-white/10 bg-[#080b16] p-4 font-mono text-xs leading-5 text-[#D7E2F7]/82 outline-none"
                     />
                   </div>
                 ) : null}
@@ -448,17 +448,17 @@ export function AiManagerShell({
                           key={`${item.type}-${item.createdAt}`}
                           type="button"
                           onClick={() => copyPrompt(item.prompt, "Archived prompt copied")}
-                          className="rounded-xl border border-white/10 bg-[#17122d]/70 p-3 text-left transition hover:border-white/20"
+                          className="rounded-xl border border-white/10 bg-[#0B1024]/70 p-3 text-left transition hover:border-white/20"
                         >
                           <p className="text-sm font-semibold text-white">{item.title}</p>
-                          <p className="mt-1 text-xs text-[#ead0df]/56">
+                          <p className="mt-1 text-xs text-[#D7E2F7]/56">
                             {item.type} - {new Date(item.createdAt).toLocaleString()}
                           </p>
                         </button>
                       ))}
                     </div>
                   ) : (
-                    <p className="mt-2 text-sm leading-6 text-[#ead0df]/66">
+                    <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/66">
                       No prompts generated for this submission yet.
                     </p>
                   )}
@@ -471,8 +471,8 @@ export function AiManagerShell({
                 <dl className="grid gap-3">
                   {submissionDetails.map((item) => (
                     <div key={item.label} className="rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                      <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">{item.label}</dt>
-                      <dd className="mt-1 text-sm leading-6 text-[#f2d9e8]">{item.value || "Not provided"}</dd>
+                      <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">{item.label}</dt>
+                      <dd className="mt-1 text-sm leading-6 text-[#EAF1FF]">{item.value || "Not provided"}</dd>
                     </div>
                   ))}
                 </dl>
@@ -491,7 +491,7 @@ export function AiManagerShell({
                   <div className="grid gap-4 md:grid-cols-3">
                     {selected.previewData.visualDrafts.map((visual) => (
                       <div key={visual.id} className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]">
-                        <div className="aspect-square bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,109,0.22),transparent_34%),linear-gradient(135deg,#120d24,#070b15)]">
+                        <div className="aspect-square bg-[radial-gradient(circle_at_30%_20%,rgba(111,77,255,0.22),transparent_34%),linear-gradient(135deg,#0B1024,#070b15)]">
                           {visual.imageUrl ? (
                             <Image
                               src={visual.imageUrl}
@@ -503,7 +503,7 @@ export function AiManagerShell({
                             />
                           ) : (
                             <div className="flex size-full flex-col items-center justify-center p-5 text-center">
-                              <ImageIcon className="mb-3 size-7 text-[#ffb36d]" aria-hidden="true" />
+                              <ImageIcon className="mb-3 size-7 text-[#6F4DFF]" aria-hidden="true" />
                               <p className="text-sm font-semibold text-white">Visual draft {visual.status.toLowerCase()}</p>
                             </div>
                           )}
@@ -513,7 +513,7 @@ export function AiManagerShell({
                             <p className="text-sm font-semibold text-white">{visual.title}</p>
                             <Badge variant={visual.status === "Generated" ? "success" : "outline"}>{visual.status}</Badge>
                           </div>
-                          <p className="mt-2 text-xs leading-5 text-[#ead0df]/66">{visual.description}</p>
+                          <p className="mt-2 text-xs leading-5 text-[#D7E2F7]/66">{visual.description}</p>
                           {visual.error ? (
                             <p className="mt-2 text-xs leading-5 text-red-100/80">{visual.error}</p>
                           ) : null}
@@ -527,16 +527,16 @@ export function AiManagerShell({
               {report ? (
                 <ManagerCard icon={FileText} title="Preview Report draft">
                   <p className="text-sm font-semibold text-white">{report.title}</p>
-                  <p className="mt-3 text-sm leading-6 text-[#ead0df]/78">{report.executiveSummary}</p>
+                  <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/78">{report.executiveSummary}</p>
                   <ul className="mt-4 grid gap-2">
                     {report.leadFlowFindings.map((finding) => (
-                      <li key={finding} className="flex gap-2 text-sm leading-6 text-[#ead0df]/78">
+                      <li key={finding} className="flex gap-2 text-sm leading-6 text-[#D7E2F7]/78">
                         <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                         {finding}
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-4 rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-6 text-[#ead0df]/78">
+                  <p className="mt-4 rounded-xl border border-white/10 bg-[#0B1024]/70 p-4 text-sm leading-6 text-[#D7E2F7]/78">
                     {report.responseSystemRecommendation}
                   </p>
                 </ManagerCard>
@@ -545,20 +545,20 @@ export function AiManagerShell({
               {proposal ? (
                 <ManagerCard icon={ClipboardList} title="Proposal Draft">
                   <p className="text-sm font-semibold text-white">{proposal.title}</p>
-                  <Badge className="mt-3 bg-[#ffb36d]/14 text-[#ffe1bd]">{proposal.recommendedPackage}</Badge>
-                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Scope</h3>
+                  <Badge className="mt-3 bg-[#6F4DFF]/14 text-[#EAF1FF]">{proposal.recommendedPackage}</Badge>
+                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">Scope</h3>
                   <ul className="mt-3 grid gap-2">
                     {proposal.scope.map((item) => (
-                      <li key={item} className="flex gap-2 text-sm leading-6 text-[#ead0df]/78">
+                      <li key={item} className="flex gap-2 text-sm leading-6 text-[#D7E2F7]/78">
                         <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">Next steps</h3>
+                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">Next steps</h3>
                   <ul className="mt-3 grid gap-2">
                     {proposal.nextSteps.map((item) => (
-                      <li key={item} className="text-sm leading-6 text-[#ead0df]/78">{item}</li>
+                      <li key={item} className="text-sm leading-6 text-[#D7E2F7]/78">{item}</li>
                     ))}
                   </ul>
                 </ManagerCard>
@@ -567,11 +567,11 @@ export function AiManagerShell({
               {emailDraft ? (
                 <ManagerCard icon={Mail} title="Email Draft">
                   <p className="text-sm font-semibold text-white">{emailDraft.subject}</p>
-                  <pre className="mt-3 whitespace-pre-wrap rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-6 text-[#ead0df]/78">
+                  <pre className="mt-3 whitespace-pre-wrap rounded-xl border border-white/10 bg-[#0B1024]/70 p-4 text-sm leading-6 text-[#D7E2F7]/78">
                     {emailDraft.body}
                   </pre>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    <Badge className="bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                    <Badge className="bg-[#328BFF]/14 text-[#D7E8FF]">
                       {emailDraft.approvalStatus}
                     </Badge>
                     {"deliveryStatus" in emailDraft ? (
@@ -585,8 +585,8 @@ export function AiManagerShell({
                 <div className="grid gap-3">
                   {selected.managerNotes.buildPlan.map((phase) => (
                     <div key={phase.phase} className="rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ffb36d]">{phase.phase}</p>
-                      <p className="mt-1 text-sm text-[#f2d9e8]">{phase.work}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6F4DFF]">{phase.phase}</p>
+                      <p className="mt-1 text-sm text-[#EAF1FF]">{phase.work}</p>
                     </div>
                   ))}
                 </div>
@@ -607,8 +607,8 @@ export function AiManagerShell({
                     className={cn(
                       "rounded-full border px-3 py-1.5 text-xs transition",
                       selected.status === status
-                        ? "border-[#ffb36d]/45 bg-[#ffb36d]/14 text-[#ffe1bd]"
-                        : "border-white/10 bg-white/[0.035] text-[#ead0df]/70 hover:border-white/20"
+                        ? "border-[#6F4DFF]/45 bg-[#6F4DFF]/14 text-[#EAF1FF]"
+                        : "border-white/10 bg-white/[0.035] text-[#D7E2F7]/70 hover:border-white/20"
                     )}
                   >
                     {status}
@@ -625,7 +625,7 @@ export function AiManagerShell({
 
 function getPreviewReport(selected: PreviewSubmission) {
   return selected.managerNotes.previewReport ?? {
-    title: `${selected.businessName} Free Preview Report`,
+    title: `${selected.businessName} Envo Preview Report`,
     executiveSummary: selected.managerNotes.prospectSummary,
     leadFlowFindings: selected.previewData.leadFlow,
     responseSystemRecommendation: selected.previewData.recommendedPackage.reason
@@ -669,7 +669,7 @@ function getSubmissionDetails(selected: PreviewSubmission): DetailItem[] {
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">{label}</p>
       <p className="mt-2 text-lg font-semibold text-white">{value}</p>
     </div>
   );
@@ -690,7 +690,7 @@ function ManagerCard({
     <Card className={className}>
       <CardHeader>
         <div className="flex items-center gap-2">
-          <Icon className="size-5 text-[#ffb36d]" aria-hidden="true" />
+          <Icon className="size-5 text-[#6F4DFF]" aria-hidden="true" />
           <CardTitle>{title}</CardTitle>
         </div>
       </CardHeader>

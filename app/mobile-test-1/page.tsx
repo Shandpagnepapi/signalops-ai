@@ -68,7 +68,7 @@ const flowSteps = [
   },
   {
     title: "AI responds",
-    copy: "SignalOps answers in seconds with the right intake path.",
+    copy: "Envo answers in seconds with the right intake path.",
     icon: Bot
   },
   {
@@ -124,7 +124,7 @@ export default function MobileTestOnePage() {
               Every lead answered. Every follow-up handled.
             </h1>
             <p className="mt-4 max-w-xs text-sm leading-6 text-[#cbd5e1] sm:max-w-2xl sm:text-lg sm:leading-8">
-              SignalOps builds AI receptionist and lead response systems that capture, sort, route, follow up, and book local business leads automatically.
+              Envo handles customer calls and leads by capturing, sorting, routing, following up, and handing off local business opportunities.
             </p>
 
             <div className="mt-5 grid max-w-xs gap-2.5 sm:max-w-xl sm:grid-cols-[1fr_auto]">
@@ -135,7 +135,7 @@ export default function MobileTestOnePage() {
                 className="inline-flex h-11 min-w-0 items-center justify-center gap-2 rounded-md bg-white px-4 text-sm font-semibold shadow-2xl shadow-white/10 transition hover:bg-[#dbeafe]"
                 style={{ color: "#05070d" }}
               >
-                <span className="truncate">Get My Free Preview</span>
+                <span className="truncate">Preview Envo</span>
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -192,7 +192,7 @@ function CommandNav() {
             className="inline-flex h-9 min-w-0 items-center justify-center rounded-md bg-white px-2 text-xs font-semibold transition hover:bg-[#dbeafe]"
             style={{ color: "#05070d", fontSize: "0.68rem" }}
           >
-            <span className="whitespace-nowrap">Get Free Preview</span>
+            <span className="whitespace-nowrap">Preview Envo</span>
           </TrackedLink>
         </div>
       </nav>
@@ -350,7 +350,7 @@ function FinalCTA() {
         className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-5 text-sm font-semibold transition hover:bg-[#dbeafe]"
         style={{ color: "#05070d" }}
       >
-        Get My Free Preview
+        Preview Envo
         <ArrowRight className="size-4" aria-hidden="true" />
       </TrackedLink>
       <TrackedLink

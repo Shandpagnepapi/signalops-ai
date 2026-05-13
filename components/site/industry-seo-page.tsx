@@ -28,17 +28,17 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
   return (
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_8%,rgba(255,179,109,0.20),transparent_32%),radial-gradient(circle_at_18%_12%,rgba(255,111,156,0.24),transparent_35%),linear-gradient(180deg,#241331,#100818_88%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_8%,rgba(111,77,255,0.20),transparent_32%),radial-gradient(circle_at_18%_12%,rgba(50,139,255,0.24),transparent_35%),linear-gradient(180deg,#111A3A,#071126_88%)]" />
         <div className="surface-grid absolute inset-0 opacity-20" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.96fr_1.04fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <Badge variant="outline" className="mb-6 border-[#ffb36d]/30 bg-[#ffb36d]/10 text-[#ffe1bd]">
+            <Badge variant="outline" className="mb-6 border-[#6F4DFF]/30 bg-[#6F4DFF]/10 text-[#EAF1FF]">
               {page.eyebrow}
             </Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
               {page.h1}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#f2d9e8] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#EAF1FF] sm:text-lg">
               {page.subheadline}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -60,7 +60,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
                 Generate Tailored Demo
               </TrackedLink>
             </div>
-            <ul className="mt-7 grid gap-3 text-sm leading-6 text-[#ead0df]/78">
+            <ul className="mt-7 grid gap-3 text-sm leading-6 text-[#D7E2F7]/78">
               {page.heroBullets.map((bullet) => (
                 <li key={bullet} className="flex gap-3">
                   <CheckCircle2 className="mt-1 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -70,21 +70,21 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             </ul>
           </div>
 
-          <div className="self-center rounded-2xl border border-white/10 bg-[#17122d]/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
+          <div className="self-center rounded-2xl border border-white/10 bg-[#0B1024]/82 p-4 shadow-2xl shadow-black/25 backdrop-blur sm:p-5">
             <div className="mb-4 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-white">{page.industryName} lead flow</p>
-                <p className="text-xs leading-5 text-[#ead0df]/42">Capture, sort, route, and follow up</p>
+                <p className="text-xs leading-5 text-[#D7E2F7]/42">Capture, sort, route, and follow up</p>
               </div>
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffd7e6]">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#D7E8FF]">
                 <Workflow className="size-5" aria-hidden="true" />
               </div>
             </div>
             <div className="grid gap-3">
               {page.missedLeadProblems.slice(0, 3).map((problem) => (
-                <div key={problem.title} className="rounded-xl border border-white/10 bg-[#211638]/72 p-4">
+                <div key={problem.title} className="rounded-xl border border-white/10 bg-[#152044]/72 p-4">
                   <p className="text-sm font-medium text-white">{problem.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{problem.description}</p>
+                  <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/62">{problem.description}</p>
                 </div>
               ))}
             </div>
@@ -96,17 +96,17 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Example lead flow"
-            title={`How SignalOps handles leads for ${page.industryName.toLowerCase()}`}
+            title={`How Envo handles leads for ${page.industryName.toLowerCase()}`}
             description="This is the practical sequence a customer would experience before your team gets a clean handoff."
           />
           <div className="mt-8 grid gap-4 md:grid-cols-4">
             {exampleLeadFlow.map((step, index) => (
-              <div key={step.title} className="rounded-2xl border border-white/10 bg-[#17122d]/74 p-5">
+              <div key={step.title} className="rounded-2xl border border-white/10 bg-[#0B1024]/74 p-5">
                 <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-white">
                   {index + 1}
                 </div>
                 <h3 className="text-base font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{step.description}</p>
+                <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/62">{step.description}</p>
               </div>
             ))}
           </div>
@@ -117,11 +117,11 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <SectionHeader
           eyebrow="Missed lead problems"
           title={`Where ${page.industryName.toLowerCase()} usually lose leads`}
-          description="SignalOps starts by mapping the real moments where inquiries slow down, get answered vaguely, or never receive a clear follow-up."
+          description="SignalOpsAI starts by mapping the real moments where inquiries slow down, get answered vaguely, or never receive a clear follow-up."
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {page.missedLeadProblems.map((problem) => (
-            <Card key={problem.title} className="bg-[#17122d]/74">
+            <Card key={problem.title} className="bg-[#0B1024]/74">
               <CardHeader>
                 <CardTitle className="text-base">{problem.title}</CardTitle>
                 <CardDescription>{problem.description}</CardDescription>
@@ -131,7 +131,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#17122d]/65">
+      <section className="border-y border-white/10 bg-[#0B1024]/65">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
           <SectionHeader
             eyebrow="Lead sources"
@@ -140,8 +140,8 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           />
           <div className="grid gap-3 sm:grid-cols-2">
             {page.leadSources.map((source) => (
-              <div key={source} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm text-[#ead0df]/78">
-                <PhoneCall className="size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
+              <div key={source} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm text-[#D7E2F7]/78">
+                <PhoneCall className="size-4 shrink-0 text-[#A99BFF]" aria-hidden="true" />
                 <span>{source}</span>
               </div>
             ))}
@@ -168,17 +168,17 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
       </section>
 
       {intakeQuestions.length > 0 ? (
-        <section className="border-y border-white/10 bg-[#17122d]/65">
+        <section className="border-y border-white/10 bg-[#0B1024]/65">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.84fr_1.16fr] lg:px-8">
             <SectionHeader
               eyebrow="Intake questions"
-              title={`Questions SignalOps can ask for ${page.industryName.toLowerCase()}`}
+              title={`Questions Envo can ask for ${page.industryName.toLowerCase()}`}
               description="The questions should match the service, urgency, and team handoff required before quoting or booking."
             />
             <div className="grid gap-3 sm:grid-cols-2">
               {intakeQuestions.map((question) => (
-                <div key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/78">
-                  <ListChecks className="mt-0.5 size-4 shrink-0 text-[#ffca91]" aria-hidden="true" />
+                <div key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#D7E2F7]/78">
+                  <ListChecks className="mt-0.5 size-4 shrink-0 text-[#A99BFF]" aria-hidden="true" />
                   <span>{question}</span>
                 </div>
               ))}
@@ -187,7 +187,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </section>
       ) : null}
 
-      <section className="border-y border-white/10 bg-[linear-gradient(180deg,#160d22,#100818)]">
+      <section className="border-y border-white/10 bg-[linear-gradient(180deg,#071126,#071126)]">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
           <MessageExample
             eyebrow="Example AI instant reply"
@@ -213,12 +213,12 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {followUpExamples.map((example) => (
-              <Card key={example.scenario} className="bg-[#17122d]/74">
+              <Card key={example.scenario} className="bg-[#0B1024]/74">
                 <CardHeader>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D7E8FF]">
                     {example.scenario}
                   </p>
-                  <CardDescription className="text-base leading-7 text-[#ead0df]/78">
+                  <CardDescription className="text-base leading-7 text-[#D7E2F7]/78">
                     {example.message}
                   </CardDescription>
                 </CardHeader>
@@ -232,13 +232,13 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         <SectionHeader
           eyebrow="Priority sorting"
           title="Example priority rules"
-          description="SignalOps uses practical rules to decide who needs a callback, who needs more information, and who should be routed to your team."
+          description="Envo uses practical rules to decide who needs a callback, who needs more information, and who should be routed to your team."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {page.scoringRules.map((rule) => (
-            <Card key={rule.title} className="bg-[#17122d]/74">
+            <Card key={rule.title} className="bg-[#0B1024]/74">
               <CardHeader>
-                <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/14 text-[#D7E8FF]">
                   <SearchCheck className="size-5" aria-hidden="true" />
                 </div>
                 <CardTitle className="text-base">{rule.title}</CardTitle>
@@ -249,18 +249,18 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#17122d]/65">
+      <section className="border-y border-white/10 bg-[#0B1024]/65">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Recommended automations"
-            title={`Useful SignalOps automations for ${page.industryName.toLowerCase()}`}
+            title={`Useful Envo automations for ${page.industryName.toLowerCase()}`}
             description="The first version should focus on the workflows that protect the most revenue with the least extra admin."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {page.automations.map((automation) => (
               <Card key={automation.title} className="bg-white/[0.035]">
                 <CardHeader>
-                  <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ffb36d]/12 text-[#ffe1bd]">
+                  <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#6F4DFF]/12 text-[#EAF1FF]">
                     <BellRing className="size-5" aria-hidden="true" />
                   </div>
                   <CardTitle className="text-base">{automation.title}</CardTitle>
@@ -277,11 +277,11 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
           <SectionHeader
             eyebrow="Dashboard value"
             title={`What ${page.industryName.toLowerCase()} can see in the dashboard`}
-            description="SignalOps gives owners a simple operating view of lead priority, response needs, and follow-up gaps."
+            description="Envo gives owners a simple operating view of lead priority, response needs, and follow-up gaps."
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {dashboardValue.map((item) => (
-              <Card key={item.title} className="bg-[#17122d]/74">
+              <Card key={item.title} className="bg-[#0B1024]/74">
                 <CardHeader>
                   <CardTitle className="text-base">{item.title}</CardTitle>
                   <CardDescription>{item.description}</CardDescription>
@@ -300,32 +300,32 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
         />
         <div className="grid gap-3">
           {page.faqs.map((faq) => (
-            <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#17122d]/76 p-5">
+            <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#0B1024]/76 p-5">
               <summary className="cursor-pointer list-none text-base font-semibold text-white">
                 {faq.question}
               </summary>
-              <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{faq.answer}</p>
+              <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/62">{faq.answer}</p>
             </details>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#17122d]/70">
+      <section className="border-y border-white/10 bg-[#0B1024]/70">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:px-8">
           <SectionHeader
             eyebrow="Next steps"
-            title="Generate a tailored demo or start a project"
-            description="Use the live demo generator for a quick industry-specific preview, or send your lead sources, tools, package interest, and timeline to SignalOps."
+            title="Generate a tailored demo or preview Envo"
+            description="Use the live demo generator for a quick industry-specific Envo preview, or send your lead sources, tools, package interest, and timeline to SignalOpsAI."
           />
           <div className="grid gap-4 sm:grid-cols-3">
             {page.relatedLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#8EBBFF]/35 hover:bg-[#328BFF]/10"
               >
                 <p className="font-semibold text-white">{link.title}</p>
-                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{link.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/62">{link.description}</p>
               </Link>
             ))}
           </div>
@@ -333,16 +333,16 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-              Start a SignalOps project
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#D7E8FF]">
+              Preview Envo
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
               Ask about the package that fits this industry.
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
-              Send your lead flow, current tools, and project goals so SignalOps can scope a done-for-you system.
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#D7E2F7]/78">
+              Send your lead flow, current tools, and project goals so SignalOpsAI can scope a done-for-you Envo system.
             </p>
           </div>
           <TrackedLink
@@ -372,14 +372,14 @@ function MessageExample({
   message: string;
 }) {
   return (
-    <Card className="bg-[#17122d]/76">
+    <Card className="bg-[#0B1024]/76">
       <CardHeader>
-        <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
+        <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/14 text-[#D7E8FF]">
           {icon}
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">{eyebrow}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D7E8FF]">{eyebrow}</p>
         <CardTitle className="text-xl">{scenario}</CardTitle>
-        <CardDescription className="text-base leading-7 text-[#ead0df]/78">
+        <CardDescription className="text-base leading-7 text-[#D7E2F7]/78">
           {message}
         </CardDescription>
       </CardHeader>
@@ -398,9 +398,9 @@ function SectionHeader({
 }) {
   return (
     <div className="max-w-3xl">
-      <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
+      <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-[#ead0df]/78">{description}</p>
+      <p className="mt-4 text-base leading-7 text-[#D7E2F7]/78">{description}</p>
     </div>
   );
 }

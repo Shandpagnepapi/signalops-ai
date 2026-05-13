@@ -55,8 +55,8 @@ export function PreviewResult({
   if (status === "loading") {
     return (
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
-          <CardContent className="flex items-center gap-3 p-6 text-[#ffe1bd]">
+        <Card className="border-[#6F4DFF]/20 bg-[#6F4DFF]/10">
+          <CardContent className="flex items-center gap-3 p-6 text-[#EAF1FF]">
             <Sparkles className="size-5 animate-pulse" aria-hidden="true" />
             Loading your Envo preview...
           </CardContent>
@@ -68,9 +68,9 @@ export function PreviewResult({
   if (!submission) {
     return (
       <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <Badge className="mb-5 bg-[#ff6f9c]/14 text-[#ffd7e6]">Preview unavailable</Badge>
+        <Badge className="mb-5 bg-[#328BFF]/14 text-[#D7E8FF]">Preview unavailable</Badge>
         <h1 className="text-4xl font-semibold tracking-normal text-white">This preview could not be found.</h1>
-        <p className="mt-4 text-[#ead0df]/76">
+        <p className="mt-4 text-[#D7E2F7]/76">
           If you just submitted the form, the preview may still be saving or Supabase persistence may be unavailable. You can generate a new one in under a minute.
         </p>
         <TrackedLink
@@ -93,7 +93,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
   const preview = submission.previewData;
   const emailBody = useMemo(
     () =>
-      `Hi SignalOps, I looked through the Envo preview for ${submission.businessName}.\n\nI have questions about:\n\nBest phone/email:\nPreferred walkthrough time:`,
+      `Hi SignalOpsAI, I looked through the Envo Preview for ${submission.businessName}.\n\nI have questions about:\n\nBest phone/email:\nPreferred walkthrough time:`,
     [submission.businessName]
   );
 
@@ -101,22 +101,22 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.2),transparent_34%),linear-gradient(180deg,rgba(6,12,24,0.52),#100818_92%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.2),transparent_34%),linear-gradient(180deg,rgba(6,12,24,0.52),#071126_92%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
           <div>
-            <Badge className="mb-5 bg-[#ff6f9c]/14 text-[#ffd7e6]">
+            <Badge className="mb-5 bg-[#328BFF]/14 text-[#D7E8FF]">
               Your Envo Preview
             </Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
               {preview.headline}
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[#D7E2F7]/78 sm:text-lg">
               {preview.subheadline}
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
                 href={getEmailHref({
-                  subject: `Book my SignalOps walkthrough for ${submission.businessName}`,
+                  subject: `Book my Envo walkthrough for ${submission.businessName}`,
                   body: emailBody
                 })}
                 eventName={ANALYTICS_EVENTS.contactClicked}
@@ -128,7 +128,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
               </TrackedLink>
               <TrackedLink
                 href={getEmailHref({
-                  subject: `Questions about my SignalOps preview for ${submission.businessName}`,
+                  subject: `Questions about my Envo Preview for ${submission.businessName}`,
                   body: emailBody
                 })}
                 eventName={ANALYTICS_EVENTS.contactClicked}
@@ -141,7 +141,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
             </div>
           </div>
 
-          <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
+          <Card className="border-[#6F4DFF]/20 bg-[#6F4DFF]/10">
             <CardHeader>
               <CardTitle>Recommended setup</CardTitle>
               <CardDescription>Based on your lead sources, volume, bottleneck, and current process.</CardDescription>
@@ -152,7 +152,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
                 <Metric label="Package" value={preview.recommendedPackage.name} />
                 <Metric label="Lead sources" value={String(submission.mainLeadSources.length)} />
               </div>
-              <p className="mt-4 text-sm leading-6 text-[#ead0df]/78">{preview.recommendedPackage.reason}</p>
+              <p className="mt-4 text-sm leading-6 text-[#D7E2F7]/78">{preview.recommendedPackage.reason}</p>
             </CardContent>
           </Card>
         </div>
@@ -161,10 +161,10 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
       <VisualDraftGallery submission={submission} />
 
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
-        <Card className="border-[#ff9ec0]/20 bg-[#17122d]/78">
+        <Card className="border-[#8EBBFF]/20 bg-[#0B1024]/78">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <MessageSquareReply className="size-5 text-[#ffb36d]" aria-hidden="true" />
+              <MessageSquareReply className="size-5 text-[#6F4DFF]" aria-hidden="true" />
               <CardTitle>{preview.receptionistTitle}</CardTitle>
             </div>
             <CardDescription>Sample conversation Envo could start.</CardDescription>
@@ -176,21 +176,21 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
                 className={cn(
                   "rounded-2xl border p-4 text-sm leading-6",
                   message.speaker === "Customer"
-                    ? "border-white/10 bg-white/[0.045] text-[#ead0df]/80"
-                    : "border-[#ffb36d]/20 bg-[#ffb36d]/10 text-[#fff1f7]"
+                    ? "border-white/10 bg-white/[0.045] text-[#D7E2F7]/80"
+                    : "border-[#6F4DFF]/20 bg-[#6F4DFF]/10 text-[#F8FAFF]"
                 )}
               >
-                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-[#ffb36d]">{message.speaker}</p>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-[#6F4DFF]">{message.speaker}</p>
                 {message.message}
               </div>
             ))}
           </CardContent>
         </Card>
 
-        <Card className="border-white/10 bg-[#17122d]/74">
+        <Card className="border-white/10 bg-[#0B1024]/74">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <BarChart3 className="size-5 text-[#ffb36d]" aria-hidden="true" />
+              <BarChart3 className="size-5 text-[#6F4DFF]" aria-hidden="true" />
               <CardTitle>Lead dashboard mockup</CardTitle>
             </div>
             <CardDescription>How new opportunities could be sorted, followed up, and handed off.</CardDescription>
@@ -202,13 +202,13 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
                       <p className="font-semibold text-white">{lead.name}</p>
-                      <p className="mt-1 text-xs text-[#ead0df]/58">{lead.source} - {lead.assignedOwner}</p>
+                      <p className="mt-1 text-xs text-[#D7E2F7]/58">{lead.source} - {lead.assignedOwner}</p>
                     </div>
                     <Badge variant={lead.score >= 80 ? "success" : "outline"}>
                       {lead.score >= 80 ? "Priority" : "Review"}
                     </Badge>
                   </div>
-                  <div className="mt-4 grid gap-2 text-xs text-[#ead0df]/70 sm:grid-cols-4">
+                  <div className="mt-4 grid gap-2 text-xs text-[#D7E2F7]/70 sm:grid-cols-4">
                     <span>Urgency: {lead.urgency}</span>
                     <span>Status: {lead.status}</span>
                     <span>Reply: {lead.lastResponseTime}</span>
@@ -225,7 +225,7 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Route className="size-5 text-[#ffb36d]" aria-hidden="true" />
+              <Route className="size-5 text-[#6F4DFF]" aria-hidden="true" />
               <CardTitle>Lead flow map</CardTitle>
             </div>
           </CardHeader>
@@ -233,10 +233,10 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
             <div className="grid gap-3 md:grid-cols-7">
               {preview.leadFlow.map((step, index) => (
                 <div key={step} className="rounded-2xl border border-white/10 bg-white/[0.045] p-3 text-center">
-                  <div className="mx-auto mb-3 flex size-8 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-sm font-semibold text-white">
+                  <div className="mx-auto mb-3 flex size-8 items-center justify-center rounded-full bg-[linear-gradient(135deg,#328BFF,#6F4DFF)] text-sm font-semibold text-white">
                     {index + 1}
                   </div>
-                  <p className="text-xs leading-5 text-[#f2d9e8]">{step}</p>
+                  <p className="text-xs leading-5 text-[#EAF1FF]">{step}</p>
                 </div>
               ))}
             </div>
@@ -246,15 +246,15 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Clock className="size-5 text-[#ffb36d]" aria-hidden="true" />
+              <Clock className="size-5 text-[#6F4DFF]" aria-hidden="true" />
               <CardTitle>Follow-up timeline</CardTitle>
             </div>
           </CardHeader>
           <CardContent className="grid gap-3">
             {preview.followUpTimeline.map((item) => (
               <div key={item.time} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                <Badge className="h-fit bg-[#ff6f9c]/14 text-[#ffd7e6]">{item.time}</Badge>
-                <p className="text-sm leading-6 text-[#ead0df]/78">{item.action}</p>
+                <Badge className="h-fit bg-[#328BFF]/14 text-[#D7E8FF]">{item.time}</Badge>
+                <p className="text-sm leading-6 text-[#D7E2F7]/78">{item.action}</p>
               </div>
             ))}
           </CardContent>
@@ -262,13 +262,13 @@ function PreviewReport({ submission }: { submission: PublicPreviewSubmission }) 
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-6 px-4 pb-12 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
-        <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
+        <Card className="border-[#6F4DFF]/20 bg-[#6F4DFF]/10">
           <CardHeader>
             <CardTitle>Value snapshot</CardTitle>
             <CardDescription>{preview.valueSnapshot.text}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-xs leading-5 text-[#ffe1bd]">{preview.valueSnapshot.disclaimer}</p>
+            <p className="text-xs leading-5 text-[#EAF1FF]">{preview.valueSnapshot.disclaimer}</p>
           </CardContent>
         </Card>
 
@@ -321,11 +321,11 @@ function VisualDraftGallery({ submission }: { submission: PublicPreviewSubmissio
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">AI visual preview</Badge>
+          <Badge className="mb-3 bg-[#328BFF]/14 text-[#D7E8FF]">AI visual preview</Badge>
           <h2 className="text-2xl font-semibold tracking-normal text-white sm:text-3xl">
             Three draft views of your likely Envo setup.
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-[#ead0df]/72">
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[#D7E2F7]/72">
             Generated from your industry, services, lead sources, bottleneck, and current process. These are concept visuals, not final build screens.
           </p>
         </div>
@@ -334,8 +334,8 @@ function VisualDraftGallery({ submission }: { submission: PublicPreviewSubmissio
 
       <div className="grid gap-4 lg:grid-cols-3">
         {visuals.map((visual) => (
-          <Card key={visual.id} className="overflow-hidden border-white/10 bg-[#17122d]/78">
-            <div className="aspect-square border-b border-white/10 bg-[radial-gradient(circle_at_30%_20%,rgba(255,179,109,0.22),transparent_34%),linear-gradient(135deg,#120d24,#070b15)]">
+          <Card key={visual.id} className="overflow-hidden border-white/10 bg-[#0B1024]/78">
+            <div className="aspect-square border-b border-white/10 bg-[radial-gradient(circle_at_30%_20%,rgba(111,77,255,0.22),transparent_34%),linear-gradient(135deg,#0B1024,#070b15)]">
               {visual.imageUrl ? (
                 <Image
                   src={visual.imageUrl}
@@ -348,9 +348,9 @@ function VisualDraftGallery({ submission }: { submission: PublicPreviewSubmissio
                 />
               ) : (
                 <div className="flex size-full flex-col items-center justify-center p-6 text-center">
-                  <ImageIcon className="mb-4 size-8 text-[#ffb36d]" aria-hidden="true" />
+                  <ImageIcon className="mb-4 size-8 text-[#6F4DFF]" aria-hidden="true" />
                   <p className="text-sm font-semibold text-white">{visual.status === "Failed" ? "Visual draft needs regeneration" : "Visual draft pending"}</p>
-                  <p className="mt-2 text-xs leading-5 text-[#ead0df]/62">
+                  <p className="mt-2 text-xs leading-5 text-[#D7E2F7]/62">
                     The draft record is saved. Image generation will run on new submissions once the image API is available.
                   </p>
                 </div>
@@ -375,7 +375,7 @@ function VisualDraftGallery({ submission }: { submission: PublicPreviewSubmissio
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/46">{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/46">{label}</p>
       <p className="mt-2 text-xl font-semibold text-white">{value}</p>
     </div>
   );

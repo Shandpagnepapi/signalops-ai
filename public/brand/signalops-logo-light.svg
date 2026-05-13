@@ -3,14 +3,14 @@
   <desc id="desc">SignalOps logo for dark backgrounds.</desc>
   <defs>
     <linearGradient id="bolt" x1="25" y1="10" x2="72" y2="85" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffb36d"/>
-      <stop offset="0.46" stop-color="#ff6f9c"/>
-      <stop offset="1" stop-color="#d770ff"/>
+      <stop stop-color="#328BFF"/>
+      <stop offset="0.46" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#6F4DFF"/>
     </linearGradient>
     <linearGradient id="halo" x1="14" y1="8" x2="86" y2="88" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffb36d" stop-opacity="0.28"/>
-      <stop offset="0.58" stop-color="#ff6f9c" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#d770ff" stop-opacity="0.18"/>
+      <stop stop-color="#328BFF" stop-opacity="0.28"/>
+      <stop offset="0.58" stop-color="#2563EB" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#6F4DFF" stop-opacity="0.18"/>
     </linearGradient>
   </defs>
   <g transform="translate(4 0)">
@@ -19,5 +19,5 @@
     <path d="M55.4 11.5 27.8 49.8h18.5l-5.8 34.7 29.8-43.3H51.1l4.3-29.7Z" fill="none" stroke="url(#bolt)" stroke-width="7" stroke-linejoin="round"/>
     <path d="M33.5 21.5c-4.7 2.4-8.7 5.9-11.7 10.2M73.8 62.2c-3.3 5.5-8.2 9.9-14 12.6" stroke="url(#bolt)" stroke-width="3.2" stroke-linecap="round" opacity="0.55"/>
   </g>
-  <text x="112" y="59" fill="#fff8fb" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="760" letter-spacing="0">SignalOps</text>
+  <text x="112" y="59" fill="#F8FAFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="760" letter-spacing="0">SignalOps</text>
 </svg>

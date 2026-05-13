@@ -1,6 +1,6 @@
 export const signalOpsRules = [
-  "SignalOps builds AI lead response systems for local service businesses.",
-  "The main public offer is Free Preview.",
+  "SignalOpsAI trains Envo as an AI Lead Manager for customer calls, texts, forms, DMs, follow-up, and handoffs.",
+  "The main public offer is Envo Preview.",
   "Draft-first always.",
   "Nothing is auto-sent from the app.",
   "Dillon reviews every preview, proposal, and customer-facing email before the customer receives anything.",

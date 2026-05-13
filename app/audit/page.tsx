@@ -56,16 +56,16 @@ const buildSteps = [
   },
   {
     title: "We build and launch",
-    description: "Your lead engine gets installed around the way your business already operates.",
+    description: "Your Envo setup gets installed around the way your business already operates.",
     icon: Route
   }
 ];
 
 const faqs = [
   {
-    question: "What happens after I send project details?",
+    question: "What happens after I send Envo Preview details?",
     answer:
-      "SignalOps reviews your lead flow, package interest, tools, and timeline, then replies with the best next step for scoping the build."
+      "SignalOpsAI reviews your lead flow, package interest, tools, and timeline, then replies with the best next step for scoping the Envo setup."
   },
   {
     question: "Do I need to know which package I want?",
@@ -75,7 +75,7 @@ const faqs = [
   {
     question: "Do I need a CRM?",
     answer:
-      "No. SignalOps can start with calls, texts, forms, DMs, email, spreadsheets, and calendars, then connect a CRM later if it makes sense."
+      "No. Envo can start with calls, texts, forms, DMs, email, spreadsheets, and calendars, then connect a CRM later if it makes sense."
   },
   {
     question: "Can I just email instead?",
@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Will SignalOps send messages without approval?",
     answer:
-      "No. SignalOps helps shape the setup path with you before any live customer-facing workflow is turned on."
+      "No. SignalOpsAI helps shape the Envo setup path with you before any live customer-facing workflow is turned on."
   }
 ];
 
@@ -111,15 +111,15 @@ export default function AuditPage() {
 
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.2),transparent_34%),linear-gradient(180deg,rgba(6,12,24,0.56),#100818_92%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(50,139,255,0.2),transparent_34%),linear-gradient(180deg,rgba(6,12,24,0.56),#071126_92%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex min-w-0 flex-col justify-center">
-            <Badge className="mb-6 w-fit bg-[#ff6f9c]/14 text-[#ffd7e6]">Project intake</Badge>
+            <Badge className="mb-6 w-fit bg-[#328BFF]/14 text-[#D7E8FF]">Envo Preview questionnaire</Badge>
             <h1 className="max-w-xs text-4xl font-semibold leading-tight tracking-normal text-white sm:max-w-3xl sm:text-6xl">
-              Start your SignalOps project.
+              Start your Envo Preview questionnaire.
             </h1>
-            <p className="mt-6 max-w-xs text-base leading-8 text-[#ead0df]/78 sm:max-w-2xl sm:text-lg">
-              Tell us how leads come in, which package you are considering, and what you need built. We will review the details and reply with the best next step.
+            <p className="mt-6 max-w-xs text-base leading-8 text-[#D7E2F7]/78 sm:max-w-2xl sm:text-lg">
+              Tell us how customer calls, texts, forms, and handoffs work today. SignalOpsAI will use it to scope how Envo should answer, organize, follow up, and hand off customers.
             </p>
             <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row">
               <TrackedLink
@@ -128,7 +128,7 @@ export default function AuditPage() {
                 eventProperties={{ location: "project_hero" }}
                 className={`${buttonVariants({ size: "lg" })} w-full sm:w-auto`}
               >
-                Send Project Details
+                Send Questionnaire
                 <ArrowRight className="size-4" aria-hidden="true" />
               </TrackedLink>
               <TrackedLink
@@ -149,7 +149,7 @@ export default function AuditPage() {
                 {SECONDARY_CTA.label}
               </TrackedLink>
             </div>
-            <div className="mt-6 grid max-w-2xl gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
+            <div className="mt-6 grid max-w-2xl gap-3 text-sm text-[#D7E2F7]/78 sm:grid-cols-3">
               {["Starter, Growth, or Custom", "Done-for-you build", "Draft-first messaging"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -159,13 +159,13 @@ export default function AuditPage() {
             </div>
           </div>
 
-          <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-[#17122d]/82 p-5 shadow-2xl shadow-black/25 sm:max-w-none">
-            <p className="text-sm font-semibold text-white">{SITE_CONFIG.name} project snapshot</p>
-            <p className="mt-1 text-sm text-[#ead0df]/42">What we need to scope your lead engine</p>
+          <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-[#0B1024]/82 p-5 shadow-2xl shadow-black/25 sm:max-w-none">
+            <p className="text-sm font-semibold text-white">Envo project snapshot</p>
+            <p className="mt-1 text-sm text-[#D7E2F7]/42">What we need to scope your AI lead manager</p>
             <div className="mt-5 grid gap-3">
               {scopeItems.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                  <Sparkles className="size-4 shrink-0 text-[#ffb36d]" aria-hidden="true" />
+                  <Sparkles className="size-4 shrink-0 text-[#6F4DFF]" aria-hidden="true" />
                   <p className="text-sm font-medium text-white">{item}</p>
                 </div>
               ))}
@@ -178,7 +178,7 @@ export default function AuditPage() {
         <SectionIntro
           eyebrow="Package-first"
           title="Choose the level of system you need today."
-          description="The questionnaire is built to help SignalOps understand whether Starter, Growth, or a Custom is the right fit before we talk build details."
+          description="The questionnaire helps SignalOpsAI understand whether Starter, Growth, or Custom is the right Envo fit before we talk build details."
         />
         <div className="grid w-full max-w-xs gap-3 sm:max-w-none sm:grid-cols-3">
           {[
@@ -186,7 +186,7 @@ export default function AuditPage() {
             ["Growth", "Multiple sources, follow-up, logging, and visibility."],
             ["Custom", "Advanced workflows, routing, dashboards, and integrations."]
           ].map(([title, description]) => (
-            <Card key={title} className="bg-[#17122d]/76">
+            <Card key={title} className="bg-[#0B1024]/76">
               <CardHeader>
                 <CardTitle className="text-base">{title}</CardTitle>
                 <CardDescription>{description}</CardDescription>
@@ -196,21 +196,21 @@ export default function AuditPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#17122d]/70">
+      <section className="border-y border-white/10 bg-[#0B1024]/70">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <SectionIntro
             eyebrow="Build path"
-            title="A simpler way to get from messy lead flow to installed system."
-            description="SignalOps is a done-for-you build service. The goal is to understand your workflow, design the right system, and install it without making your team manage another complicated tool."
+            title="A simpler way to get from messy lead flow to trained Envo setup."
+            description="The goal is to understand your workflow, design the right Envo rules, and install it without making your team manage another complicated tool."
           />
           <div className="mt-8 grid w-full max-w-xs gap-4 sm:max-w-none lg:grid-cols-3">
             {buildSteps.map((step) => {
               const Icon = step.icon;
 
               return (
-                <Card key={step.title} className="bg-[#17122d]/76">
+                <Card key={step.title} className="bg-[#0B1024]/76">
                   <CardHeader>
-                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffc0d5]">
+                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#BFD3FF]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-base">{step.title}</CardTitle>
@@ -226,14 +226,14 @@ export default function AuditPage() {
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <div>
           <SectionIntro
-            eyebrow="Start a project"
-            title="Send the details SignalOps needs to scope the build."
+            eyebrow="Preview Envo"
+            title="Send the details Envo needs before a build plan."
             description="This is short enough to finish quickly, but specific enough to understand your package interest, lead sources, tools, pain points, and timeline."
           />
-          <div className="mt-6 w-full max-w-xs rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-5 sm:max-w-none">
+          <div className="mt-6 w-full max-w-xs rounded-2xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-5 sm:max-w-none">
             <p className="text-sm font-semibold text-white">Prefer email?</p>
-            <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">
-              Send the same project details directly to {SITE_CONFIG.email}. The form and email path both land in the same review process.
+            <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/78">
+              Send the same Envo Preview details directly to {SITE_CONFIG.email}. The form and email path both land in the same review process.
             </p>
             <TrackedLink
               href={getEmailHref()}
@@ -251,7 +251,7 @@ export default function AuditPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#17122d]/70">
+      <section className="border-y border-white/10 bg-[#0B1024]/70">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <SectionIntro
             eyebrow="FAQ"
@@ -260,11 +260,11 @@ export default function AuditPage() {
           />
           <div className="grid w-full max-w-xs gap-3 sm:max-w-none">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#17122d]/76 p-5">
+              <details key={faq.question} className="group rounded-2xl border border-white/10 bg-[#0B1024]/76 p-5">
                 <summary className="cursor-pointer list-none text-base font-semibold text-white">
                   {faq.question}
                 </summary>
-                <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{faq.answer}</p>
+                <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/62">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -272,11 +272,11 @@ export default function AuditPage() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex w-full max-w-xs flex-col gap-6 rounded-2xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-6 sm:max-w-7xl sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">Contact SignalOps</p>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#D7E8FF]">Contact SignalOps</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
-              Ready to scope your lead engine?
+              Ready to scope your Envo build?
             </h2>
           </div>
           <TrackedLink
@@ -285,7 +285,7 @@ export default function AuditPage() {
             eventProperties={{ location: "project_final_cta" }}
             className={buttonVariants({ size: "lg" })}
           >
-            Send Project Details
+            Send Questionnaire
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink
@@ -314,7 +314,7 @@ function SectionIntro({
 }) {
   return (
     <div className="w-full max-w-xs sm:max-w-3xl">
-      <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
+      <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
       <CardDescription className="mt-4 text-base leading-7">{description}</CardDescription>
     </div>

@@ -306,7 +306,7 @@ export function OrbitalProductVisual({
     ];
 
   return (
-    <div className={cn("floating-layer relative min-h-[22rem] overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#07040f]/48 p-3 shadow-2xl shadow-black/34 backdrop-blur-xl sm:min-h-[30rem] sm:rounded-[1.75rem] sm:p-4", className)} style={themeVars(theme, style)}>
+    <div className={cn("floating-layer relative min-h-[22rem] overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#071126]/48 p-3 shadow-2xl shadow-black/34 backdrop-blur-xl sm:min-h-[30rem] sm:rounded-[1.75rem] sm:p-4", className)} style={themeVars(theme, style)}>
       <div className="absolute inset-0 bg-[image:var(--vs-spotlight-gradient)]" />
       <div className="soft-pulse absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--vs-border)] bg-[image:var(--vs-orb-gradient)] shadow-[0_0_78px_var(--vs-glow)] sm:size-52" />
       <div className="absolute left-1/2 top-1/2 size-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.085] sm:size-72" />
@@ -367,9 +367,9 @@ export function MobileDeviceFrame({
   title?: string;
 }) {
   return (
-    <div className={cn("relative mx-auto w-full max-w-sm rounded-[2rem] border border-white/14 bg-[#030208]/92 p-2 shadow-[0_24px_78px_rgba(0,0,0,0.48)] sm:p-2.5", className)} style={themeVars(theme, style)}>
+    <div className={cn("relative mx-auto w-full max-w-sm rounded-[2rem] border border-white/14 bg-[#071126]/94 p-2 shadow-[0_24px_78px_rgba(0,0,0,0.48)] sm:p-2.5", className)} style={themeVars(theme, style)}>
       <div className="mx-auto mb-2 h-1.5 w-16 rounded-full bg-white/12" />
-      <div className="rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.028)),rgba(8,4,16,0.76)] p-3 backdrop-blur-xl sm:p-4">
+      <div className="rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.028)),rgba(11,16,36,0.78)] p-3 backdrop-blur-xl sm:p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.18em] text-[color:var(--vs-accent-3)]">{eyebrow}</p>

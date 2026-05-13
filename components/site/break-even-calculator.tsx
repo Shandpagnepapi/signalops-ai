@@ -110,7 +110,7 @@ export function BreakEvenCalculator({
   return (
     <section
       className={cn(
-        "overflow-hidden rounded-2xl border border-[#ffb36d]/18 bg-[radial-gradient(circle_at_15%_0%,rgba(255,111,156,0.16),transparent_35%),rgba(255,179,109,0.07)] p-5 shadow-2xl shadow-black/18",
+        "overflow-hidden rounded-2xl border border-[#6F4DFF]/18 bg-[radial-gradient(circle_at_15%_0%,rgba(50,139,255,0.16),transparent_35%),rgba(111,77,255,0.07)] p-5 shadow-2xl shadow-black/18",
         className
       )}
       aria-labelledby="break-even-heading"
@@ -118,32 +118,32 @@ export function BreakEvenCalculator({
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-10 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] shadow-lg shadow-pink-950/20">
+            <span className="flex size-10 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#328BFF,#6F4DFF)] shadow-lg shadow-blue-950/20">
               <Calculator className="size-5 text-white" aria-hidden="true" />
             </span>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6F4DFF]">
               Quick value check
             </p>
           </div>
           <h2 id="break-even-heading" className="mt-4 text-2xl font-semibold tracking-normal text-white sm:text-3xl">
-            See how many {unitForms.plural} cover SignalOps.
+            See how many {unitForms.plural} cover Envo.
           </h2>
-          <p className="mt-3 text-sm leading-6 text-[#ead0df]/76">
+          <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/76">
             Put in what one typical service or account is worth. We will translate the package into a simple break-even number, like how many accounts, jobs, or appointments cover the monthly investment.
           </p>
-          <p className="mt-2 text-xs leading-5 text-[#ead0df]/54">
+          <p className="mt-2 text-xs leading-5 text-[#D7E2F7]/54">
             For a fleet wash company, use average monthly account value and type account as the sale label.
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/12 bg-[#17122d]/66 p-4">
+        <div className="rounded-2xl border border-white/12 bg-[#0B1024]/66 p-4">
           <div className="grid gap-3 sm:grid-cols-3">
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8] sm:col-span-1">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF] sm:col-span-1">
               Package
               <select
                 value={selectedPackageName}
                 onChange={(event) => setSelectedPackageName(event.target.value)}
-                className="h-11 rounded-xl border border-white/12 bg-[#17122d]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="h-11 rounded-xl border border-white/12 bg-[#0B1024]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {packageOptions.map((option) => (
                   <option key={option.name} value={option.name}>
@@ -153,62 +153,62 @@ export function BreakEvenCalculator({
               </select>
             </label>
 
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               Average service value
               <input
                 type="number"
                 min="1"
                 value={averageValue}
                 onChange={(event) => setAverageValue(parseCurrencyInput(event.target.value))}
-                className="h-11 rounded-xl border border-white/12 bg-[#17122d]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="h-11 rounded-xl border border-white/12 bg-[#0B1024]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </label>
 
-            <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+            <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
               What to call one sale
               <input
                 value={unitLabel}
                 onChange={(event) => setUnitLabel(event.target.value)}
                 placeholder="job, account, appointment"
-                className="h-11 rounded-xl border border-white/12 bg-[#17122d]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="h-11 rounded-xl border border-white/12 bg-[#0B1024]/80 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </label>
           </div>
 
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-              <div className="flex items-center gap-2 text-[#ffe1bd]">
+              <div className="flex items-center gap-2 text-[#EAF1FF]">
                 <CircleDollarSign className="size-4" aria-hidden="true" />
                 <p className="text-xs font-semibold uppercase tracking-[0.14em]">Monthly support</p>
               </div>
               <p className="mt-3 text-3xl font-semibold text-white">
                 {formatUnitLabel(result.monthlyUnits, unitLabel)}
               </p>
-              <p className="mt-2 text-sm leading-6 text-[#ead0df]/70">
+              <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/70">
                 {formatCurrency(selectedPackage.monthly)} per month at {formatCurrency(result.safeAverageValue)} per {unitForms.singular}.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-              <div className="flex items-center gap-2 text-[#ffd7e6]">
+              <div className="flex items-center gap-2 text-[#D7E8FF]">
                 <TrendingUp className="size-4" aria-hidden="true" />
                 <p className="text-xs font-semibold uppercase tracking-[0.14em]">Setup/build fee</p>
               </div>
               <p className="mt-3 text-3xl font-semibold text-white">
                 {formatUnitLabel(result.setupUnits, unitLabel)}
               </p>
-              <p className="mt-2 text-sm leading-6 text-[#ead0df]/70">
+              <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/70">
                 {formatCurrency(selectedPackage.setup)} starting build fee as a one-time benchmark.
               </p>
             </div>
           </div>
 
-          <div className="mt-4 rounded-xl border border-[#ffb36d]/18 bg-[#ffb36d]/8 p-3 text-sm leading-6 text-[#ffe1bd]">
+          <div className="mt-4 rounded-xl border border-[#6F4DFF]/18 bg-[#6F4DFF]/8 p-3 text-sm leading-6 text-[#EAF1FF]">
             If one {unitForms.singular} is worth {formatCurrency(result.safeAverageValue)}, {selectedPackage.name} needs about{" "}
             <span className="font-semibold text-white">{formatUnitLabel(result.monthlyUnits, unitLabel)} per month</span>{" "}
             to cover monthly support.
           </div>
-          <p className="mt-3 flex gap-2 text-xs leading-5 text-[#ead0df]/52">
+          <p className="mt-3 flex gap-2 text-xs leading-5 text-[#D7E2F7]/52">
             <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
             Break-even math is a simple planning estimate. It does not guarantee revenue, bookings, or profit.
           </p>

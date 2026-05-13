@@ -27,7 +27,7 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
       <CardContent>
         <div className="max-w-full overflow-x-auto">
           <table className="w-full min-w-[1120px] text-left text-sm">
-            <thead className="border-b border-white/10 text-xs uppercase tracking-[0.14em] text-[#ead0df]/42">
+            <thead className="border-b border-white/10 text-xs uppercase tracking-[0.14em] text-[#D7E2F7]/42">
               <tr>
                 <th className="py-3 pr-4 font-medium">Name</th>
                 <th className="py-3 pr-4 font-medium">Source</th>
@@ -41,18 +41,18 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
                 <th className="py-3 font-medium">Created date</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/10 text-[#ead0df]/78">
+            <tbody className="divide-y divide-white/10 text-[#D7E2F7]/78">
               {leads.map((lead) => (
-                <tr key={lead.id} className={cn(selectedLeadId === lead.id && "bg-[#ff6f9c]/8")}>
+                <tr key={lead.id} className={cn(selectedLeadId === lead.id && "bg-[#328BFF]/8")}>
                   <td className="py-4 pr-4 align-top">
                     <button
                       type="button"
                       onClick={() => onSelectLead(lead.id)}
-                      className="text-left font-medium text-white underline-offset-4 hover:text-[#ffc0d5] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="inline-flex min-h-9 items-center rounded-lg text-left font-medium text-white underline-offset-4 hover:text-[#BFD3FF] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {lead.name}
                     </button>
-                    <p className="mt-1 text-xs text-[#ead0df]/42">{lead.phone || lead.email}</p>
+                    <p className="mt-1 text-xs text-[#D7E2F7]/42">{lead.phone || lead.email}</p>
                   </td>
                   <td className="py-4 pr-4 align-top">{lead.source}</td>
                   <td className="py-4 pr-4 align-top">{lead.vehicleTypes}</td>
@@ -64,11 +64,11 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
                     <Badge className={priorityBadgeClass(lead.priority)}>{priorityLabels[lead.priority]}</Badge>
                   </td>
                   <td className="py-4 pr-4 align-top">{urgencyLabels[lead.urgency]}</td>
-                  <td className="max-w-[320px] py-4 pr-4 align-top text-[#ead0df]/62">{lead.recommendedAction}</td>
+                  <td className="max-w-[320px] py-4 pr-4 align-top text-[#D7E2F7]/62">{lead.recommendedAction}</td>
                   <td className="py-4 pr-4 align-top">
                     <Badge className={statusBadgeClass(lead.status)}>{statusLabels[lead.status]}</Badge>
                   </td>
-                  <td className="py-4 align-top text-[#ead0df]/62">{formatDateTime(lead.createdAt)}</td>
+                  <td className="py-4 align-top text-[#D7E2F7]/62">{formatDateTime(lead.createdAt)}</td>
                 </tr>
               ))}
             </tbody>
@@ -76,7 +76,7 @@ export function LeadTable({ leads, selectedLeadId, onSelectLead }: LeadTableProp
         </div>
 
         {leads.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-white/10 p-6 text-sm text-[#ead0df]/62">
+          <div className="rounded-2xl border border-dashed border-white/10 p-6 text-sm text-[#D7E2F7]/62">
             No leads match the current filters.
           </div>
         ) : null}

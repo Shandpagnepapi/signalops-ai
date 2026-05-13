@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT_PLACEHOLDER, PACKAGE_NAMES, PUBLIC_BRAND_NAME, SITE_CONFIG } from "@/lib/constants";
+import { CONTACT_PLACEHOLDER, PACKAGE_NAMES, PRODUCT_FULL_NAME, PRODUCT_NAME, PRODUCT_ROLE, PUBLIC_BRAND_NAME, SITE_CONFIG } from "@/lib/constants";
 
 export type SeoFaq = {
   question: string;
@@ -29,60 +29,60 @@ export const SEO_DEFAULT_IMAGE = "/og/signalops-default.png";
 export const OG_IMAGE_ASSETS = {
   default: {
     path: "/og/signalops-default.png",
-    alt: "SignalOpsAI branded social image for Envo, the AI worker for customer calls and leads."
+    alt: "SignalOpsAI and Envo blue and violet social image for the AI Lead Manager product."
   },
   home: {
     path: "/og/signalops-home.png",
-    alt: "SignalOpsAI homepage social image for Envo, the AI worker for customer calls and leads."
+    alt: "SignalOpsAI homepage social image showing Envo AI Lead Manager and separate Drone Services."
   },
   audit: {
     path: "/og/signalops-audit.png",
-    alt: "SignalOps project inquiry social image."
+    alt: "Envo Preview social image for mapping customer calls, texts, forms, DMs, follow-ups, and handoffs."
   },
   demo: {
     path: "/og/signalops-demo.png",
-    alt: "Envo by SignalOpsAI demo social image showing AI lead intake, priority sorting, and routing."
+    alt: "Envo demo social image showing lead intake, owner handoffs, follow-up, and dashboard workflow."
   },
   roi: {
     path: "/og/signalops-roi.png",
-    alt: "SignalOps ROI calculator social image for missed lead revenue estimates."
+    alt: "Envo ROI calculator social image for estimating possible missed lead recovery scenarios."
   }
 } as const;
 
 export const PAGE_TITLE_TEMPLATES = {
-  home: "Envo AI Worker for Customer Calls and Leads",
+  home: "SignalOpsAI, Envo, and Drone Services",
   preview: "Preview Envo",
-  audit: "Start a Project for AI Lead Response",
+  audit: "Envo Preview Questionnaire",
   demo: "Envo Demo",
-  dashboard: "AI Lead Management Dashboard Demo",
-  howItWorks: "How AI Lead Response Systems Work",
-  liveDemo: "AI Lead Response Live Demo Generator",
-  roi: "AI Lead Response ROI Calculator",
+  dashboard: "Envo Owner Command Center Demo",
+  howItWorks: "How Envo Handles Customer Calls and Leads",
+  liveDemo: "Envo Live Demo Generator",
+  roi: "Envo Lead Response ROI Calculator",
   privacy: "Privacy Policy",
   terms: "Terms of Use"
 } as const;
 
 export const META_DESCRIPTION_TEMPLATES = {
   home:
-    "SignalOpsAI builds Envo, an AI worker trained to your business to handle customer calls, leads, follow-ups, and owner handoffs.",
+    "SignalOpsAI is the parent venture studio for Envo AI lead automation and separate FAA Part 107 Drone Services for small businesses.",
   preview:
-    "Tell us how your leads come in and where things slow down. SignalOpsAI maps how Envo would answer, follow up, escalate, and hand off leads for your business.",
+    "Preview Envo by sharing how customer calls, texts, forms, DMs, and follow-ups work today. SignalOpsAI maps how Envo should answer, organize, and hand off leads.",
   audit:
-    "Start a SignalOps project by sharing your lead sources, tools, package interest, timeline, and follow-up needs for a done-for-you AI lead response system.",
+    "Start an Envo Preview by sharing customer calls, texts, forms, DMs, tools, timeline, follow-up, and owner handoff needs.",
   demo:
-    "See Envo handle a lead. Watch Envo answer, qualify, follow up, and prepare the handoff with AI lead response, quote intake automation, and lead routing automation.",
+    "See Envo handle a lead workflow with customer calls, texts, forms, DMs, follow-up, owner handoffs, and dashboard visibility.",
   dashboard:
-    "Explore a SignalOps AI lead management dashboard demo with priority views, routing status, missed lead recovery, and automated follow-up visibility.",
+    "Explore an Envo owner command center demo with lead stages, customer messages, missed calls, follow-ups, handoffs, and dashboard visibility.",
   howItWorks:
-    "See how SignalOps AI lead response systems capture inquiries, collect lead details, route hot opportunities, book appointments, and trigger follow-up.",
+    "See how Envo captures customer inquiries, organizes key details, routes handoffs, follows up, and keeps the owner in control.",
   liveDemo:
-    "Generate a tailored SignalOps AI lead response demo with lead intake, routing automation, follow-up examples, and appointment booking ideas.",
+    "Generate a tailored Envo demo with lead intake, response examples, follow-up paths, handoffs, dashboard cards, and owner control rules.",
   roi:
-    "Use the SignalOps ROI calculator to estimate missed lead recovery from faster response, AI lead intake, and automated follow-up.",
+    "Use the Envo ROI calculator to estimate possible missed lead recovery scenarios from faster response, cleaner follow-up, and better handoffs.",
   privacy:
-    "Read how SignalOps handles website, analytics, and lead form information submitted through its AI lead response system pages.",
+    "Read how SignalOpsAI handles website, analytics, and lead form information submitted through Envo and Drone Services pages.",
   terms:
-    "Review the terms for using the SignalOps website, demos, AI lead response examples, and service information."
+    "Review the terms for using the SignalOpsAI website, Envo demos, AI lead response examples, and Drone Services information."
 } as const;
 
 export function getSiteUrl() {
@@ -211,6 +211,7 @@ export function organizationJsonLd(): JsonLdObject {
     "@type": "Organization",
     "@id": absoluteUrl("/#organization"),
     name: PUBLIC_BRAND_NAME,
+    alternateName: SITE_CONFIG.brandName,
     url: getSiteUrl(),
     logo: absoluteUrl("/brand/signalops-logo-horizontal.svg"),
     description: SITE_CONFIG.description,
@@ -235,7 +236,8 @@ export function websiteJsonLd(): JsonLdObject {
     "@id": absoluteUrl("/#website"),
     name: PUBLIC_BRAND_NAME,
     url: getSiteUrl(),
-    description: SITE_CONFIG.description,
+    description:
+      "SignalOpsAI publishes Envo AI Lead Manager pages, AI lead automation resources, and separate Drone Services information.",
     publisher: {
       "@id": absoluteUrl("/#organization")
     },
@@ -247,9 +249,10 @@ export function serviceJsonLd(): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": absoluteUrl("/#ai-lead-response-qualification-system"),
-    name: "AI Lead Response & Intake System",
-    serviceType: "AI lead response, intake, routing, follow-up, and appointment booking",
+    "@id": absoluteUrl("/#envo-ai-lead-manager"),
+    name: PRODUCT_FULL_NAME,
+    alternateName: PRODUCT_NAME,
+    serviceType: `${PRODUCT_ROLE}, AI lead response, customer call and text intake, automated follow-up, owner handoffs, and dashboard visibility`,
     url: absoluteUrl("/preview"),
     provider: {
       "@id": absoluteUrl("/#organization")
@@ -263,7 +266,7 @@ export function serviceJsonLd(): JsonLdObject {
       audienceType: "Small and mid-sized local service businesses"
     },
     description:
-      "SignalOpsAI builds Envo, an AI Lead Manager and AI front desk that helps small businesses capture, answer, sort, follow up with, route, and book leads with automated lead follow-up and missed call text back.",
+      "SignalOpsAI builds Envo, an AI Lead Manager trained around a small business to answer customer calls, texts, forms, DMs, organize leads, follow up, route handoffs, and keep the owner in control.",
     offers: PACKAGE_NAMES.map((pkg) => ({
       "@type": "Offer",
       name: pkg.name,
@@ -295,6 +298,7 @@ export function serviceOfferingJsonLd({
     "@type": "Service",
     "@id": absoluteUrl(`${path}#service`),
     name,
+    alternateName: name.includes("Envo") ? PRODUCT_NAME : undefined,
     serviceType,
     url: absoluteUrl(path),
     provider: {
@@ -308,7 +312,9 @@ export function serviceOfferingJsonLd({
       "@type": "BusinessAudience",
       audienceType: "Small and local service businesses"
     },
-    description,
+    description: description.includes("Envo")
+      ? description
+      : `${description} Envo is the AI Lead Manager product from SignalOpsAI for customer calls, texts, forms, DMs, follow-ups, handoffs, and owner dashboards.`,
     offers: PACKAGE_NAMES.map((pkg) => ({
       "@type": "Offer",
       name: pkg.name,
@@ -346,7 +352,7 @@ export function webPageJsonLd({
       "@id": absoluteUrl("/#website")
     },
     about: {
-      "@id": absoluteUrl("/#ai-lead-response-qualification-system")
+      "@id": absoluteUrl("/#envo-ai-lead-manager")
     },
     inLanguage: "en-US"
   };

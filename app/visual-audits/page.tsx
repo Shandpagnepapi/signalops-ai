@@ -76,13 +76,13 @@ export default async function VisualAuditsPage({ searchParams }: VisualAuditsPag
     data = await getVisualAuditData(params.run);
   } catch (error) {
     return (
-      <main className="min-h-screen bg-[#100818] px-4 py-12 text-white">
+      <main className="min-h-screen bg-[#071126] px-4 py-12 text-white">
         <div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-white/[0.05] p-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#ffb36d]">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#6F4DFF]">
             SignalOps visual audits
           </p>
           <h1 className="mt-3 text-3xl font-semibold">No audit manifest found yet.</h1>
-          <p className="mt-4 text-sm leading-6 text-[#ead0df]/72">
+          <p className="mt-4 text-sm leading-6 text-[#D7E2F7]/72">
             Run the cloud visual audit script after the Supabase Storage bucket is ready.
             {error instanceof Error ? ` ${error.message}` : ""}
           </p>
@@ -95,9 +95,9 @@ export default async function VisualAuditsPage({ searchParams }: VisualAuditsPag
   const grouped = groupScreenshots(manifest.screenshots);
 
   return (
-    <main className="min-h-screen bg-[#100818] px-4 py-8 text-white sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[#071126] px-4 py-8 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <section className="rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_0%,rgba(255,111,156,0.18),transparent_30%),rgba(255,255,255,0.045)] p-5 shadow-2xl shadow-black/28 sm:p-7">
+        <section className="rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.18),transparent_30%),rgba(255,255,255,0.045)] p-5 shadow-2xl shadow-black/28 sm:p-7">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300">
@@ -106,28 +106,28 @@ export default async function VisualAuditsPage({ searchParams }: VisualAuditsPag
               <h1 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
                 SignalOps Visual Audit
               </h1>
-              <p className="mt-4 max-w-3xl text-sm leading-6 text-[#ead0df]/72 sm:text-base">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-[#D7E2F7]/72 sm:text-base">
                 Public-page screenshots only. No admin, private, or authenticated pages are captured.
               </p>
             </div>
-            <div className="grid gap-2 rounded-2xl border border-white/10 bg-[#17122d]/64 p-4 text-sm text-[#ead0df]/72">
+            <div className="grid gap-2 rounded-2xl border border-white/10 bg-[#0B1024]/64 p-4 text-sm text-[#D7E2F7]/72">
               <p>
-                <span className="text-[#ead0df]/48">Run:</span>{" "}
+                <span className="text-[#D7E2F7]/48">Run:</span>{" "}
                 <span className="font-mono text-white">{manifest.runId}</span>
               </p>
               <p>
-                <span className="text-[#ead0df]/48">Created:</span>{" "}
+                <span className="text-[#D7E2F7]/48">Created:</span>{" "}
                 <span className="text-white">{formatDate(manifest.createdAt)}</span>
               </p>
               <p>
-                <span className="text-[#ead0df]/48">Base URL:</span>{" "}
+                <span className="text-[#D7E2F7]/48">Base URL:</span>{" "}
                 <a className="text-lime-200 underline-offset-4 hover:underline" href={manifest.baseUrl}>
                   {manifest.baseUrl}
                 </a>
               </p>
               {manifest.commit ? (
                 <p>
-                  <span className="text-[#ead0df]/48">Commit:</span>{" "}
+                  <span className="text-[#D7E2F7]/48">Commit:</span>{" "}
                   <span className="font-mono text-white">{manifest.commit}</span>
                 </p>
               ) : null}
@@ -148,7 +148,7 @@ export default async function VisualAuditsPage({ searchParams }: VisualAuditsPag
                 <Link
                   key={run.runId}
                   href={runHref(params.key ?? "", run.runId)}
-                  className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-semibold text-[#ead0df]/72 transition hover:border-white/20 hover:text-white"
+                  className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-semibold text-[#D7E2F7]/72 transition hover:border-white/20 hover:text-white"
                 >
                   {run.runId}
                 </Link>
@@ -162,14 +162,14 @@ export default async function VisualAuditsPage({ searchParams }: VisualAuditsPag
             <div key={route} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 sm:p-5">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">
                     Route
                   </p>
                   <h2 className="mt-1 font-mono text-xl font-semibold text-white">{route}</h2>
                 </div>
                 <a
                   href={new URL(route, manifest.baseUrl).toString()}
-                  className="rounded-full border border-white/10 bg-[#17122d]/70 px-3 py-2 text-xs font-semibold text-[#ead0df]/72 transition hover:text-white"
+                  className="rounded-full border border-white/10 bg-[#0B1024]/70 px-3 py-2 text-xs font-semibold text-[#D7E2F7]/72 transition hover:text-white"
                 >
                   Open page
                 </a>
@@ -178,13 +178,13 @@ export default async function VisualAuditsPage({ searchParams }: VisualAuditsPag
                 {screenshots.map((screenshot) => (
                   <figure
                     key={`${screenshot.route}-${screenshot.viewport}`}
-                    className="overflow-hidden rounded-2xl border border-white/10 bg-[#17122d]/72"
+                    className="overflow-hidden rounded-2xl border border-white/10 bg-[#0B1024]/72"
                   >
                     <div className="flex items-center justify-between gap-3 border-b border-white/10 px-3 py-2">
                       <figcaption className="text-xs font-semibold text-white">
                         {screenshot.viewport}
                       </figcaption>
-                      <span className="text-xs text-[#ead0df]/52">
+                      <span className="text-xs text-[#D7E2F7]/52">
                         {screenshot.width}x{screenshot.height}
                       </span>
                     </div>

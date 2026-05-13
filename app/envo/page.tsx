@@ -8,7 +8,7 @@ import {
 } from "@/lib/seo";
 
 const description =
-  "Meet Envo, the AI worker trained to your business to organize customer calls, texts, new leads, follow-ups, and handoffs.";
+  "Envo is the AI Lead Manager for small businesses, trained to handle customer calls, texts, forms, DMs, follow-ups, owner handoffs, and dashboard visibility.";
 
 export const metadata = createPageMetadata({
   title: "Envo by SignalOpsAI | AI Lead Manager for Small Businesses",

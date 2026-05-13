@@ -66,12 +66,12 @@ export function LeadLeakPreviewBuilder() {
     <section className={cn(styles.scannerCard, "mx-auto w-full max-w-7xl rounded-[2rem] border p-4 sm:p-6")} aria-labelledby="preview-builder-title">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>Interactive-style scanner</p>
+          <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>Interactive Envo Preview</p>
           <h2 id="preview-builder-title" className="mt-2 text-3xl font-black leading-tight tracking-normal text-white sm:text-5xl">
             Build your preview
           </h2>
           <p className={cn(styles.heroCopy, "mt-3 max-w-2xl text-sm leading-7")}>
-            Pick the business, lead source, and leak. SignalOps turns that into a previewable response system.
+            Pick the business, lead source, and gap. Envo turns that into a previewable response system.
           </p>
         </div>
         <div className={cn(styles.miniPill, "hidden rounded-full border px-3 py-2 text-xs font-black sm:inline-flex")}>
@@ -89,8 +89,8 @@ export function LeadLeakPreviewBuilder() {
         <div className={cn(styles.outputCard, "rounded-[1.5rem] border p-4")}>
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>SignalOps preview output</p>
-              <h3 className="mt-1 text-2xl font-black tracking-normal text-white">{industry} leak system</h3>
+              <p className={cn(styles.sectionEyebrow, "text-xs font-black uppercase")}>Envo preview output</p>
+              <h3 className="mt-1 text-2xl font-black tracking-normal text-white">{industry} lead flow system</h3>
             </div>
             <Radar className={cn(styles.accent, "size-7 shrink-0")} aria-hidden="true" />
           </div>
@@ -115,7 +115,7 @@ export function LeadLeakPreviewBuilder() {
             eventProperties={{ location: "mobile_test_2_builder" }}
             className={cn(styles.primaryButton, "mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black transition")}
           >
-            Run My Free Lead Leak Scan
+            Preview Envo
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
         </div>

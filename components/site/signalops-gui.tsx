@@ -3,7 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { BellRing, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Accent = "emerald" | "pink" | "amber" | "sky" | "lime";
+type Accent = "emerald" | "blue" | "amber" | "sky" | "lime";
 
 const accentClasses: Record<Accent, { text: string; border: string; bg: string; glow: string; fill: string }> = {
   amber: {
@@ -27,12 +27,12 @@ const accentClasses: Record<Accent, { text: string; border: string; bg: string; 
     glow: "shadow-lime-950/18",
     text: "text-lime-100"
   },
-  pink: {
-    bg: "bg-[#ff6f9c]/12",
-    border: "border-[#ff9ec0]/24",
-    fill: "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-white",
-    glow: "shadow-pink-950/20",
-    text: "text-[#ffd7e6]"
+  blue: {
+    bg: "bg-[#328BFF]/12",
+    border: "border-[#8EBBFF]/24",
+    fill: "bg-[linear-gradient(135deg,#328BFF,#6F4DFF)] text-white",
+    glow: "shadow-blue-950/20",
+    text: "text-[#D7E8FF]"
   },
   sky: {
     bg: "bg-sky-300/10",
@@ -44,7 +44,7 @@ const accentClasses: Record<Accent, { text: string; border: string; bg: string; 
 };
 
 export function ProductFrame({
-  accent = "pink",
+  accent = "blue",
   children,
   className,
   eyebrow,
@@ -92,7 +92,7 @@ export function ProductFrame({
 }
 
 export function CommandCard({
-  accent = "pink",
+  accent = "blue",
   children,
   className
 }: {
@@ -144,7 +144,7 @@ export function StatusPill({
 }
 
 export function MetricTile({
-  accent = "pink",
+  accent = "blue",
   className,
   label,
   value
@@ -258,7 +258,7 @@ export function HandoffTimeline({
 }
 
 export function SystemPreviewCard({
-  accent = "pink",
+  accent = "blue",
   copy,
   icon: Icon,
   title
@@ -276,7 +276,7 @@ export function SystemPreviewCard({
         <Icon className="size-5" aria-hidden="true" />
       </div>
       <h3 className="text-base font-semibold tracking-normal text-white">{title}</h3>
-      <p className="mt-2 text-sm leading-6 text-[#ead0df]/72">{copy}</p>
+      <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/72">{copy}</p>
     </article>
   );
 }

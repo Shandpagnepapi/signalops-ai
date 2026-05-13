@@ -60,13 +60,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "roofers",
     industryName: "Roofers",
     path: "/industries/roofers",
-    eyebrow: "SignalOps for roofing companies",
+    eyebrow: "Envo for roofing companies",
     metaTitle: "AI Lead Response for Roofing Companies",
     metaDescription:
-      "SignalOps gives roofing companies AI lead response, speed to lead automation, intake, routing, and follow-up for repairs, storm damage, and inspections.",
+      "Envo gives roofing companies AI lead response, speed to lead automation, intake, routing, and follow-up for repairs, storm damage, and inspections.",
     h1: "AI lead response for roofers who cannot afford slow follow-up.",
     subheadline:
-      "SignalOps helps roofing teams capture calls, forms, storm inquiries, inspection requests, and quote follow-ups before homeowners call the next contractor.",
+      "Envo helps roofing teams capture calls, forms, storm inquiries, inspection requests, and quote follow-ups before homeowners call the next contractor.",
     heroBullets: [
       "Prioritize active leaks, storm damage, and replacement opportunities",
       "Request photos, address, roof type, insurance context, and timeline",
@@ -172,9 +172,9 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps collect emergency roof leak details?",
+        question: "Can Envo collect emergency roof leak details?",
         answer:
-          "Yes. SignalOps can flag active leak language, request key details, and alert a human for urgent review."
+          "Yes. Envo can flag active leak language, request key details, and alert a human for urgent review."
       },
       {
         question: "Can it ask homeowners for roof photos?",
@@ -189,7 +189,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it work with storm campaign landing pages?",
         answer:
-          "Yes. SignalOps can support storm damage forms, missed calls, ad leads, and inspection requests."
+          "Yes. Envo can support storm damage forms, missed calls, ad leads, and inspection requests."
       }
     ],
     relatedLinks: [
@@ -206,7 +206,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate a Roofing Demo",
-        description: "Create a tailored SignalOps preview for a roofing company."
+        description: "Create a tailored Envo Preview for a roofing company."
       }
     ]
   },
@@ -214,13 +214,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "hvac",
     industryName: "HVAC Companies",
     path: "/industries/hvac",
-    eyebrow: "SignalOps for HVAC companies",
+    eyebrow: "Envo for HVAC companies",
     metaTitle: "AI Lead Response for HVAC Companies",
     metaDescription:
-      "SignalOps helps HVAC companies use AI lead response, lead intake, routing automation, and follow-up for emergency, repair, replacement, and maintenance leads.",
+      "Envo helps HVAC companies use AI lead response, lead intake, routing automation, and follow-up for emergency, repair, replacement, and maintenance leads.",
     h1: "AI lead response for HVAC companies that need faster callbacks and cleaner booking.",
     subheadline:
-      "SignalOps helps HVAC teams separate emergency no-heat or no-cool calls from tune-ups, replacement estimates, and general questions so the right leads get handled first.",
+      "Envo helps HVAC teams separate emergency no-heat or no-cool calls from tune-ups, replacement estimates, and general questions so the right leads get handled first.",
     heroBullets: [
       "Flag no-heat, no-cool, and system-down requests",
       "Collect system type, issue, address, timeline, and appointment preference",
@@ -326,19 +326,19 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps separate emergency HVAC leads from routine maintenance?",
+        question: "Can Envo separate emergency HVAC leads from routine maintenance?",
         answer:
           "Yes. The intake and priority rules can flag no-heat, no-cool, and system-down language for faster staff handoff."
       },
       {
         question: "Can this help with HVAC replacement estimates?",
         answer:
-          "Yes. SignalOps can collect system details, timeline, contact info, and follow up if the customer does not book a consultation."
+          "Yes. Envo can collect system details, timeline, contact info, and follow up if the customer does not book a consultation."
       },
       {
         question: "Does it connect to dispatch software?",
         answer:
-          "The architecture is designed for future integrations. SignalOps can start in mock or dashboard mode, then connect to CRM, dispatch, or calendar tools when ready."
+          "The architecture is designed for future integrations. Envo can start in mock or dashboard mode, then connect to CRM, dispatch, or calendar tools when ready."
       },
       {
         question: "Can it work after hours?",
@@ -360,7 +360,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate an HVAC Demo",
-        description: "Build a tailored SignalOps preview for an HVAC company."
+        description: "Build a tailored Envo Preview for an HVAC company."
       }
     ]
   },
@@ -368,13 +368,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "plumbers",
     industryName: "Plumbers",
     path: "/industries/plumbers",
-    eyebrow: "SignalOps for plumbing companies",
+    eyebrow: "Envo for plumbing companies",
     metaTitle: "AI Lead Response for Plumbing Companies",
     metaDescription:
-      "SignalOps helps plumbing companies capture emergency calls, quote requests, and service leads with AI lead response, intake, routing, and follow-up.",
+      "Envo helps plumbing companies capture emergency calls, quote requests, and service leads with AI lead response, intake, routing, and follow-up.",
     h1: "AI lead response for plumbers who need to catch urgent jobs fast.",
     subheadline:
-      "SignalOps helps plumbing teams triage emergency leaks, drain issues, water heater calls, estimates, and routine service requests without losing leads in missed calls or texts.",
+      "Envo helps plumbing teams triage emergency leaks, drain issues, water heater calls, estimates, and routine service requests without losing leads in missed calls or texts.",
     heroBullets: [
       "Flag leaks, no-water issues, sewer backups, and urgent plumbing problems",
       "Collect address, issue type, photos, access notes, and preferred time",
@@ -480,7 +480,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps handle plumbing emergency language?",
+        question: "Can Envo handle plumbing emergency language?",
         answer:
           "It can flag urgent terms like active leak, sewer backup, no water, and water heater failure for human follow-up."
       },
@@ -492,10 +492,10 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it work for small plumbing teams?",
         answer:
-          "Yes. SignalOps is especially useful when the same people are answering calls, doing jobs, quoting work, and following up."
+          "Yes. Envo is especially useful when the same people are answering calls, doing jobs, quoting work, and following up."
       },
       {
-        question: "Does SignalOps dispatch plumbers automatically?",
+        question: "Does Envo dispatch plumbers automatically?",
         answer:
           "Not by default. It can prepare the intake, sort the lead, and route the next step. Dispatch rules should be configured carefully with the business."
       }
@@ -514,7 +514,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate a Plumbing Demo",
-        description: "Create a tailored SignalOps preview for a plumbing company."
+        description: "Create a tailored Envo Preview for a plumbing company."
       }
     ]
   },
@@ -522,13 +522,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "detailers",
     industryName: "Auto Detailers",
     path: "/industries/detailers",
-    eyebrow: "SignalOps for auto detailers",
+    eyebrow: "Envo for auto detailers",
     metaTitle: "AI Lead Response for Auto Detailers",
     metaDescription:
-      "SignalOps helps auto detailers respond to package inquiries, collect quote request details, follow up on photos, and book detailing appointments faster.",
+      "Envo helps auto detailers respond to package inquiries, collect quote request details, follow up on photos, and book detailing appointments faster.",
     h1: "AI lead response for auto detailers that depend on quote requests and booking follow-up.",
     subheadline:
-      "SignalOps helps detailers answer package questions, collect vehicle and condition details, follow up after quotes, and move high-intent customers toward a booked appointment.",
+      "Envo helps detailers answer package questions, collect vehicle and condition details, follow up after quotes, and move high-intent customers toward a booked appointment.",
     heroBullets: [
       "Collect vehicle type, package interest, condition, photos, and timing",
       "Separate maintenance details from correction, ceramic, fleet, and high-value jobs",
@@ -573,7 +573,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The inquiry comes from a DM, missed call, form, or text asking about a detail package."
       },
       {
-        title: "SignalOps asks for context",
+        title: "Envo asks for context",
         description:
           "The system collects vehicle type, condition, package interest, photos if useful, timing, and contact info."
       },
@@ -585,7 +585,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Follow-up moves booking forward",
         description:
-          "If the customer does not book after package options, SignalOps sends a practical next-step reminder."
+          "If the customer does not book after package options, Envo sends a practical next-step reminder."
       }
     ],
     followUpFailures: [
@@ -698,14 +698,14 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps help detailers follow up after quotes?",
+        question: "Can Envo help detailers follow up after quotes?",
         answer:
           "Yes. Quote follow-up is a strong fit for detailers because customers often compare packages and need a clear booking prompt."
       },
       {
         question: "Can it ask for vehicle photos?",
         answer:
-          "Yes. SignalOps can request interior and exterior photos when they help with package recommendation or pricing."
+          "Yes. Envo can request interior and exterior photos when they help with package recommendation or pricing."
       },
       {
         question: "Can it separate ceramic coating leads from basic details?",
@@ -736,7 +736,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See how intake, intake, routing, booking, and follow-up connect."
       }
     ]
@@ -745,13 +745,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "tint-wrap-shops",
     industryName: "Tint and Wrap Shops",
     path: "/industries/tint-wrap-shops",
-    eyebrow: "SignalOps for tint and wrap shops",
+    eyebrow: "Envo for tint and wrap shops",
     metaTitle: "AI Lead Response for Tint Shops and Wrap Shops",
     metaDescription:
-      "SignalOps helps tint and wrap shops automate quote requests, collect vehicle and package details, follow up, and book more appointments.",
+      "Envo helps tint and wrap shops automate quote requests, collect vehicle and package details, follow up, and book more appointments.",
     h1: "AI lead response for tint shops and wrap shops handling quote requests.",
     subheadline:
-      "SignalOps helps tint, wrap, and PPF shops respond to quote requests, collect vehicle and coverage details, route high-value jobs, and follow up when customers do not book.",
+      "Envo helps tint, wrap, and PPF shops respond to quote requests, collect vehicle and coverage details, route high-value jobs, and follow up when customers do not book.",
     heroBullets: [
       "Collect vehicle, service type, coverage, film preference, and desired timing",
       "Prioritize full wraps, PPF, commercial graphics, and ready-to-book leads",
@@ -796,7 +796,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "A customer asks about tint, wrap, PPF, chrome delete, decals, or commercial graphics."
       },
       {
-        title: "SignalOps collects scope",
+        title: "Envo collects scope",
         description:
           "The system asks for vehicle, desired service, coverage, photos if needed, timeline, and contact info."
       },
@@ -808,7 +808,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Quote follow-up starts",
         description:
-          "If the customer does not book after pricing, SignalOps sends a helpful next-step follow-up."
+          "If the customer does not book after pricing, Envo sends a helpful next-step follow-up."
       }
     ],
     followUpFailures: [
@@ -921,9 +921,9 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps collect tint and wrap quote request details?",
+        question: "Can Envo collect tint and wrap quote request details?",
         answer:
-          "Yes. SignalOps can collect vehicle, service type, coverage, film or finish preference, and booking timing."
+          "Yes. Envo can collect vehicle, service type, coverage, film or finish preference, and booking timing."
       },
       {
         question: "Can it handle commercial wrap leads?",
@@ -933,7 +933,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it follow up after a quote?",
         answer:
-          "Yes. SignalOps can follow up when a customer receives pricing but does not book."
+          "Yes. Envo can follow up when a customer receives pricing but does not book."
       },
       {
         question: "Can this work with Instagram DMs?",
@@ -955,11 +955,11 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with AI quote intake and lead intake."
+        description: "See a live Envo demo with AI quote intake and lead intake."
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See the full flow from intake to intake, routing, and follow-up."
       }
     ]
@@ -968,13 +968,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "home-services",
     industryName: "Home Service Businesses",
     path: "/industries/home-services",
-    eyebrow: "SignalOps for home service businesses",
+    eyebrow: "Envo for home service businesses",
     metaTitle: "AI Lead Response for Home Service Businesses",
     metaDescription:
-      "SignalOps helps home service businesses recover missed leads, answer calls and forms faster, sort urgency, route jobs, and follow up after estimates.",
+      "Envo helps home service businesses recover missed leads, answer calls and forms faster, sort urgency, route jobs, and follow up after estimates.",
     h1: "AI lead response for home service businesses and contractors.",
     subheadline:
-      "SignalOps helps contractors and local service teams capture calls, texts, forms, emergency requests, quote leads, and follow-ups before homeowners call the next provider.",
+      "Envo helps contractors and local service teams capture calls, texts, forms, emergency requests, quote leads, and follow-ups before homeowners call the next provider.",
     heroBullets: [
       "Capture emergency and routine requests across calls, texts, forms, and ads",
       "Collect address, issue, urgency, photos, access notes, and appointment timing",
@@ -1019,7 +1019,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The lead comes from a missed call, form, ad, text, or referral asking for repair, service, or an estimate."
       },
       {
-        title: "SignalOps triages urgency",
+        title: "Envo triages urgency",
         description:
           "The system asks about issue type, address, active problem, photos, timeline, and best callback."
       },
@@ -1144,7 +1144,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps work for contractors without a CRM?",
+        question: "Can Envo work for contractors without a CRM?",
         answer:
           "Yes. It can start with calls, texts, forms, owner alerts, and a simple dashboard before a CRM is added."
       },
@@ -1159,7 +1159,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "Yes. Estimate follow-up is one of the most practical ways to recover missed revenue."
       },
       {
-        question: "Does SignalOps replace dispatch?",
+        question: "Does Envo replace dispatch?",
         answer:
           "No. It helps capture, sort, route, and follow up with leads. Dispatch decisions should stay with the business."
       }
@@ -1177,17 +1177,17 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/preview",
-        title: "Free Preview",
+        title: "Envo Preview",
         description: "Find where calls, forms, and follow-ups are being missed."
       },
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with intake, priority routing, and follow-up."
+        description: "See a live Envo demo with intake, priority routing, and follow-up."
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See how missed lead recovery, routing, booking, and follow-up connect."
       }
     ]
@@ -1196,13 +1196,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "med-spas",
     industryName: "Med Spas",
     path: "/industries/med-spas",
-    eyebrow: "SignalOps for med spas",
+    eyebrow: "Envo for med spas",
     metaTitle: "AI Appointment Booking for Med Spas",
     metaDescription:
-      "SignalOps helps med spas respond to consultation requests with AI lead response, intake, appointment booking prompts, and automated follow-up.",
+      "Envo helps med spas respond to consultation requests with AI lead response, intake, appointment booking prompts, and automated follow-up.",
     h1: "AI lead response for med spas that need faster consultation follow-up.",
     subheadline:
-      "SignalOps helps med spas answer new inquiries, collect treatment interest, route sensitive questions to staff, and follow up with prospects who do not book.",
+      "Envo helps med spas answer new inquiries, collect treatment interest, route sensitive questions to staff, and follow up with prospects who do not book.",
     heroBullets: [
       "Respond quickly to consultation, treatment, and pricing inquiries",
       "Collect treatment interest, timing, prior experience, and contact preference",
@@ -1247,7 +1247,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The lead comes from a form, DM, missed call, ad, or promotion landing page."
       },
       {
-        title: "SignalOps collects intent",
+        title: "Envo collects intent",
         description:
           "The system asks for treatment interest, consultation timing, contact preference, and whether they want to book soon."
       },
@@ -1259,7 +1259,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Booking follow-up starts",
         description:
-          "If the prospect does not choose a time, SignalOps sends a concise consultation follow-up."
+          "If the prospect does not choose a time, Envo sends a concise consultation follow-up."
       }
     ],
     followUpFailures: [
@@ -1374,17 +1374,17 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can AI answer medical treatment questions?",
         answer:
-          "SignalOps should be conservative. It can collect context and route questions to staff, but it should not provide medical advice or make treatment promises."
+          "Envo should be conservative. It can collect context and route questions to staff, but it should not provide medical advice or make treatment promises."
       },
       {
-        question: "Can SignalOps help with Instagram and Facebook inquiries?",
+        question: "Can Envo help with Instagram and Facebook inquiries?",
         answer:
           "Yes. Social DMs are a strong use case because many prospects ask questions there before booking."
       },
       {
         question: "Can it follow up after consultations are requested?",
         answer:
-          "Yes. SignalOps can nudge prospects to choose a time, provide missing details, or wait for a staff callback."
+          "Yes. Envo can nudge prospects to choose a time, provide missing details, or wait for a staff callback."
       },
       {
         question: "Will this feel too robotic for a premium med spa?",
@@ -1411,11 +1411,11 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with AI lead intake, priority routing, and follow-up."
+        description: "See a live Envo demo with AI lead intake, priority routing, and follow-up."
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See how response, routing, booking, and follow-up connect."
       }
     ]
@@ -1424,13 +1424,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "insurance-agencies",
     industryName: "Insurance Agencies",
     path: "/industries/insurance-agencies",
-    eyebrow: "SignalOps for insurance agencies",
+    eyebrow: "Envo for insurance agencies",
     metaTitle: "AI Lead Intake for Insurance Agencies",
     metaDescription:
-      "SignalOps helps insurance agencies manage quote requests with AI lead response, lead intake, producer routing, and automated follow-up.",
+      "Envo helps insurance agencies manage quote requests with AI lead response, lead intake, producer routing, and automated follow-up.",
     h1: "AI lead response for insurance agencies that need faster quote follow-up.",
     subheadline:
-      "SignalOps helps agencies organize quote requests, coverage questions, renewal opportunities, and missed calls so producers can focus on ready prospects.",
+      "Envo helps agencies organize quote requests, coverage questions, renewal opportunities, and missed calls so producers can focus on ready prospects.",
     heroBullets: [
       "Capture quote type, timeline, current coverage, and contact preference",
       "Route commercial, personal lines, and urgent policy questions correctly",
@@ -1475,7 +1475,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The lead comes from a form, missed call, referral, email, paid search, or social message."
       },
       {
-        title: "SignalOps collects coverage context",
+        title: "Envo collects coverage context",
         description:
           "The system asks for line of business, location, renewal timing, current coverage if available, and contact preference."
       },
@@ -1487,7 +1487,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Follow-up tracks missing details",
         description:
-          "If documents, renewal dates, or callback times are missing, SignalOps sends practical reminders."
+          "If documents, renewal dates, or callback times are missing, Envo sends practical reminders."
       }
     ],
     followUpFailures: [
@@ -1600,9 +1600,9 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps quote insurance automatically?",
+        question: "Can Envo quote insurance automatically?",
         answer:
-          "No. SignalOps should collect details, route the lead, and support follow-up. Quotes and coverage advice should stay with licensed staff and approved tools."
+          "No. Envo should collect details, route the lead, and support follow-up. Quotes and coverage advice should stay with licensed staff and approved tools."
       },
       {
         question: "Can it separate personal and commercial leads?",
@@ -1617,7 +1617,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can this work with an existing agency CRM?",
         answer:
-          "Yes. SignalOps is designed so CRM logging and webhook integrations can be added when the agency is ready."
+          "Yes. Envo is designed so CRM logging and webhook integrations can be added when the agency is ready."
       }
     ],
     relatedLinks: [
@@ -1634,11 +1634,11 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with priority sorting, routing, and follow-up."
+        description: "See a live Envo demo with priority sorting, routing, and follow-up."
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See how intake, routing, and follow-up connect."
       }
     ]
@@ -1647,13 +1647,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "auto-shops",
     industryName: "Auto Shops",
     path: "/industries/auto-shops",
-    eyebrow: "SignalOps for auto shops",
+    eyebrow: "Envo for auto shops",
     metaTitle: "AI Lead Response for Auto Shops",
     metaDescription:
-      "SignalOps provides AI lead response for auto shops with repair intake, diagnostic lead intake, appointment booking prompts, and lead follow-up automation.",
+      "Envo provides AI lead response for auto shops with repair intake, diagnostic lead intake, appointment booking prompts, and lead follow-up automation.",
     h1: "AI lead response for auto shops that need cleaner intake and faster booking.",
     subheadline:
-      "SignalOps helps repair shops capture vehicle details, symptoms, urgency, service needs, and appointment intent so customers do not get lost between missed calls and busy bays.",
+      "Envo helps repair shops capture vehicle details, symptoms, urgency, service needs, and appointment intent so customers do not get lost between missed calls and busy bays.",
     heroBullets: [
       "Collect year, make, model, symptoms, drivability, and preferred appointment time",
       "Flag urgent safety or drivability concerns for staff handoff",
@@ -1698,7 +1698,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The lead comes from a missed call, appointment form, quote request, text, or Google profile call."
       },
       {
-        title: "SignalOps collects vehicle context",
+        title: "Envo collects vehicle context",
         description:
           "The system asks for year, make, model, symptoms, warning lights, drivability, and preferred appointment time."
       },
@@ -1710,7 +1710,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Appointment follow-up continues",
         description:
-          "If the customer does not book, SignalOps follows up with the next practical scheduling step."
+          "If the customer does not book, Envo follows up with the next practical scheduling step."
       }
     ],
     followUpFailures: [
@@ -1823,7 +1823,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps diagnose car problems?",
+        question: "Can Envo diagnose car problems?",
         answer:
           "No. It can collect symptoms and route the lead, but diagnosis should stay with ready shop staff."
       },
@@ -1840,7 +1840,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it follow up after estimates?",
         answer:
-          "Yes. SignalOps can remind customers about open estimates or appointment options without adding more manual work."
+          "Yes. Envo can remind customers about open estimates or appointment options without adding more manual work."
       }
     ],
     relatedLinks: [
@@ -1862,11 +1862,11 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/demo",
         title: "View Client Demo",
-        description: "See a live SignalOps demo with quote intake and lead intake."
+        description: "See a live Envo demo with quote intake and lead intake."
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See how intake, intake, routing, booking, and follow-up connect."
       },
       {
@@ -1880,13 +1880,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "well-water-service-companies",
     industryName: "Well and Water Service Companies",
     path: "/industries/well-water-service-companies",
-    eyebrow: "SignalOps for well and water service companies",
+    eyebrow: "Envo for well and water service companies",
     metaTitle: "AI Lead Response for Well and Water Service Companies",
     metaDescription:
-      "SignalOps helps well and water service companies capture calls, texts, no-water emergencies, maintenance leads, and commercial requests with AI lead response.",
+      "Envo helps well and water service companies capture calls, texts, no-water emergencies, maintenance leads, and commercial requests with AI lead response.",
     h1: "AI lead response for well and water service companies that run on calls, texts, and follow-up.",
     subheadline:
-      "SignalOps helps small 3-person well and water teams capture emergency no-water issues, routine filter changes, maintenance requests, and occasional large commercial jobs without burying opportunities in text threads.",
+      "Envo helps small 3-person well and water teams capture emergency no-water issues, routine filter changes, maintenance requests, and occasional large commercial jobs without burying opportunities in text threads.",
     heroBullets: [
       "Built for low daily job volume where every missed request matters",
       "Separate emergency no-water calls from routine maintenance and filter changes",
@@ -1992,7 +1992,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps work for a very small well and water company?",
+        question: "Can Envo work for a very small well and water company?",
         answer:
           "Yes. SignalOps is a strong fit when a small team relies on calls and texts and does not have a formal lead system."
       },
@@ -2026,7 +2026,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         href: "/live-demo",
         title: "Generate a Well and Water Demo",
-        description: "Create a tailored SignalOps preview for a well and water service company."
+        description: "Create a tailored Envo Preview for a well and water service company."
       }
     ]
   },
@@ -2034,13 +2034,13 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     id: "mobile-fleet-wash",
     industryName: "Mobile Fleet Wash Companies",
     path: "/industries/mobile-fleet-wash",
-    eyebrow: "SignalOps for mobile fleet wash companies",
+    eyebrow: "Envo for mobile fleet wash companies",
     metaTitle: "AI Lead Response for Mobile Fleet Wash Companies",
     metaDescription:
-      "SignalOps gives mobile fleet wash companies AI lead response and quote intake automation for fleet size, vehicle types, service frequency, route scheduling, and recurring account handoff.",
+      "Envo gives mobile fleet wash companies AI lead response and quote intake automation for fleet size, vehicle types, service frequency, route scheduling, and recurring account handoff.",
     h1: "AI lead response for mobile fleet wash companies that live on quote requests and recurring accounts.",
     subheadline:
-      "SignalOps helps mobile fleet washing teams respond to fleet quote requests, collect account details, route recurring opportunities, and follow up before buyers go cold.",
+      "Envo helps mobile fleet washing teams respond to fleet quote requests, collect account details, route recurring opportunities, and follow up before buyers go cold.",
     heroBullets: [
       "Collect fleet size, vehicle types, locations, frequency, wash window, and site notes",
       "Route recurring account opportunities to the owner with a clear next action",
@@ -2085,7 +2085,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
           "The lead asks about 28 service vans across two DFW locations with biweekly after-hours washing."
       },
       {
-        title: "SignalOps collects account details",
+        title: "Envo collects account details",
         description:
           "The system asks for fleet size, vehicle types, locations, desired frequency, preferred wash window, water access, and site requirements."
       },
@@ -2097,7 +2097,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         title: "Follow-up keeps the quote moving",
         description:
-          "If the customer does not confirm locations or a service window, SignalOps sends a specific next-step follow-up."
+          "If the customer does not confirm locations or a service window, Envo sends a specific next-step follow-up."
       }
     ],
     followUpFailures: [
@@ -2211,7 +2211,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
     ],
     faqs: [
       {
-        question: "Can SignalOps collect fleet wash quote details?",
+        question: "Can Envo collect fleet wash quote details?",
         answer:
           "Yes. It can ask for fleet size, vehicle types, locations, frequency, wash window, water access, and site notes before owner handoff."
       },
@@ -2223,12 +2223,12 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       {
         question: "Can it handle after-hours service questions?",
         answer:
-          "Yes. SignalOps can collect preferred service windows, access notes, and site requirements so the team can review feasibility before quoting."
+          "Yes. Envo can collect preferred service windows, access notes, and site requirements so the team can review feasibility before quoting."
       },
       {
         question: "Can it follow up on fleet quotes?",
         answer:
-          "Yes. SignalOps can remind prospects to confirm vehicle counts, locations, service frequency, and first-service windows."
+          "Yes. Envo can remind prospects to confirm vehicle counts, locations, service frequency, and first-service windows."
       }
     ],
     relatedLinks: [
@@ -2249,7 +2249,7 @@ export const INDUSTRY_SEO_PAGES: Record<IndustryPageId, IndustrySeoPageConfig> =
       },
       {
         href: "/how-it-works",
-        title: "How SignalOps Works",
+        title: "How Envo Works",
         description: "See how intake, priority sorting, routing, booking, and follow-up connect."
       }
     ]

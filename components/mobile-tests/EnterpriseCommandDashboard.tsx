@@ -42,8 +42,8 @@ export function EnterpriseCommandDashboard() {
                 <TrendingUp className="size-4 text-[#7dd3fc]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-sm font-semibold leading-4 text-white">SignalOps Command</p>
-                <p className="mt-1 text-[0.68rem] leading-4 text-white/50">Lead response layer</p>
+                <p className="text-sm font-semibold leading-4 text-white">Envo Command</p>
+                <p className="mt-1 text-[0.68rem] leading-4 text-white/50">AI lead manager</p>
               </div>
             </div>
             <div className="rounded-md border border-emerald-300/20 bg-emerald-300/10 px-2 py-1 text-[0.62rem] font-semibold text-emerald-100">
@@ -67,7 +67,7 @@ export function EnterpriseCommandDashboard() {
             <div className="rounded-md border border-white/10 bg-[#0d1424]/84 p-3">
               <div className="flex items-center justify-between gap-2">
                 <p className="text-xs font-semibold text-white">Hot lead</p>
-                <span className="rounded-md bg-[#fb7185]/14 px-2 py-1 text-[0.62rem] font-semibold text-[#fecdd3]">
+                <span className="rounded-md bg-[#328BFF]/14 px-2 py-1 text-[0.62rem] font-semibold text-[#D7E8FF]">
                   Score 91
                 </span>
               </div>

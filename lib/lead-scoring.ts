@@ -147,7 +147,7 @@ function firstName(name: string) {
 
 function isAuditLead(lead: LeadSubmissionDraft) {
   const text = normalize(`${lead.source} ${lead.serviceNeeded} ${lead.message}`);
-  return text.includes("project inquiry") || text.includes("checkup") || text.includes("missed lead") || text.includes("audit");
+  return text.includes("project inquiry") || text.includes("envo preview") || text.includes("checkup") || text.includes("missed lead") || text.includes("audit");
 }
 
 function isFleetWashLead(lead: LeadSubmissionDraft) {
@@ -203,7 +203,7 @@ function createSummary(lead: LeadSubmissionDraft, accountReviewNeeded: boolean) 
   }
 
   if (isAuditLead(lead)) {
-    return `${lead.name} submitted a SignalOps project inquiry${business}${industry}. The main issue appears to be ${lead.message || "lead response, intake, routing, or follow-up visibility"}.`;
+    return `${lead.name} submitted an Envo Preview request${business}${industry}. The main issue appears to be ${lead.message || "lead response, intake, routing, or follow-up visibility"}.`;
   }
 
   return `${lead.name} submitted ${service}${business}${industry}. Contact is available by ${contact}.`;
@@ -552,7 +552,7 @@ export function scoreLead(lead: LeadSubmissionDraft): LeadScoringResult {
     }
 
     if (auditLead) {
-      return `Thanks ${name}, SignalOps received your project details. We'll review your lead flow, tools, package interest, and timeline, then reply with the best next step.`;
+      return `Thanks ${name}, SignalOpsAI received your Envo Preview details. We'll review your lead flow, tools, package interest, and timeline, then reply with the best next step.`;
     }
 
     return `Thanks ${name}, we received your request. We'll review the details and follow up with the best next step.`;

@@ -493,11 +493,11 @@ export const demoBusinesses = {
         "For a low-volume service team, one missed callback can be the job that would have filled tomorrow or the commercial request that deserved owner attention.",
       points: [
         {
-          title: "Before SignalOps",
+          title: "Before Envo",
           description: "Calls, texts, quotes, and reminders depend on whoever remembers while the crew is already in the field."
         },
         {
-          title: "After SignalOps",
+          title: "After Envo",
           description: "Every request gets captured, classified, tagged, and placed into the right follow-up path."
         }
       ],
@@ -648,7 +648,7 @@ export const demoBusinesses = {
       {
         question: "Do customers need a CRM for this to work?",
         answer:
-          "No. SignalOps can start with calls, texts, forms, and DMs, then create a simple dashboard and follow-up process around the current workflow."
+          "No. Envo can start with calls, texts, forms, and DMs, then create a simple dashboard and follow-up process around the current workflow."
       },
       {
         question: "What happens when a request is vague?",

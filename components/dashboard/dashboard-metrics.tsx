@@ -72,16 +72,16 @@ export function DashboardMetrics({ leads }: DashboardMetricsProps) {
         const Icon = metric.icon;
 
         return (
-          <Card key={metric.label} className="min-h-[142px] bg-[#17122d]/78">
+          <Card key={metric.label} className="min-h-[142px] bg-[#0B1024]/78">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between gap-3">
                 <CardDescription>{metric.label}</CardDescription>
-                <Icon className="size-5 text-[#ffc0d5]" aria-hidden="true" />
+                <Icon className="size-5 text-[#BFD3FF]" aria-hidden="true" />
               </div>
               <CardTitle className="text-3xl">{metric.value}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm leading-5 text-[#ead0df]/62">{metric.note}</p>
+              <p className="text-sm leading-5 text-[#D7E2F7]/62">{metric.note}</p>
             </CardContent>
           </Card>
         );

@@ -27,7 +27,7 @@ export function LocalCloserStickyCTA({
         className="mx-auto flex h-12 max-w-sm items-center justify-center gap-2 rounded-lg px-5 text-base font-black transition"
         style={{ background: "#111827", color: "#ffffff" }}
       >
-        Get Free Preview
+        Preview Envo
         <ArrowRight className="size-4" aria-hidden="true" />
       </TrackedLink>
     </div>

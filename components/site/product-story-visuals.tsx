@@ -188,7 +188,7 @@ export function LeadJourneyVisual({ className = "" }: { className?: string }) {
 export function DashboardSnapshot({ className = "" }: { className?: string }) {
   return (
     <ProductFrame accent="amber" className={className} eyebrow="Command snapshot" title="Example lead operating view.">
-      <TrendingUp className="absolute right-5 top-5 size-6 text-[#ffb36d]" aria-hidden="true" />
+      <TrendingUp className="absolute right-5 top-5 size-6 text-[#6F4DFF]" aria-hidden="true" />
 
       <div className="mt-5 grid grid-cols-3 gap-2">
         {[
@@ -201,8 +201,8 @@ export function DashboardSnapshot({ className = "" }: { className?: string }) {
       </div>
 
       <div className="mt-3 grid gap-3 lg:grid-cols-[1fr_0.9fr]">
-        <div className="rounded-2xl border border-white/10 bg-[#17122d]/62 p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ead0df]/48">Lead sources</p>
+        <div className="rounded-2xl border border-white/10 bg-[#0B1024]/62 p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D7E2F7]/48">Lead sources</p>
           <div className="mt-4 grid gap-2">
             {[
               ["Website form", "42%", "w-[72%]"],
@@ -211,9 +211,9 @@ export function DashboardSnapshot({ className = "" }: { className?: string }) {
               ["Google profile", "13%", "w-[24%]"]
             ].map(([label, value, width]) => (
               <div key={label} className="grid grid-cols-[6.2rem_1fr_2.4rem] items-center gap-2 text-xs">
-                <span className="text-[#ead0df]/62">{label}</span>
+                <span className="text-[#D7E2F7]/62">{label}</span>
                 <span className="h-2 overflow-hidden rounded-full bg-white/8">
-                  <span className={cn("block h-full rounded-full bg-[linear-gradient(90deg,#37f0bd,#ffb36d)]", width)} />
+                  <span className={cn("block h-full rounded-full bg-[linear-gradient(90deg,#37f0bd,#6F4DFF)]", width)} />
                 </span>
                 <span className="text-right font-semibold text-white">{value}</span>
               </div>
@@ -245,7 +245,7 @@ export function BeforeAfterFlow({ className = "" }: { className?: string }) {
     <ProductFrame accent="emerald" className={className} eyebrow="Before / after" title="The business flow gets cleaner.">
       <Workflow className="absolute right-5 top-5 size-6 text-[#37f0bd]" aria-hidden="true" />
       <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
-        <FlowColumn title="Before SignalOps" tone="before" items={beforeItems} />
+        <FlowColumn title="Before Envo" tone="before" items={beforeItems} />
         <div className="hidden items-center justify-center lg:flex">
           <div className="flex size-10 items-center justify-center rounded-full border border-white/12 bg-white/[0.06]">
             <ArrowRight className="size-5 text-[#37f0bd]" aria-hidden="true" />
@@ -271,7 +271,7 @@ function ArtifactCard({
   title: string;
 }) {
   return (
-    <SystemPreviewCard accent={index === 0 ? "emerald" : index === 1 ? "pink" : "amber"} copy={copy} icon={Icon} title={title} />
+    <SystemPreviewCard accent={index === 0 ? "emerald" : index === 1 ? "blue" : "amber"} copy={copy} icon={Icon} title={title} />
   );
 }
 

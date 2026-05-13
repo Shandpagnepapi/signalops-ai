@@ -26,7 +26,7 @@ import {
 
 const metaTitle = "AI Lead Response Alternatives & Lead Management Options | SignalOps";
 const metaDescription =
-  "Compare AI lead response alternatives and lead management options. Learn what to look for in tools like LeadOps-style systems, LeadPilot-style automation, routing, priority sorting, and follow-up.";
+  "Compare AI lead response alternatives with Envo, the AI Lead Manager from SignalOpsAI for customer calls, texts, forms, DMs, follow-up, and handoffs.";
 
 export const metadata = createPageMetadata({
   title: metaTitle,
@@ -144,21 +144,21 @@ export default function AlternativesHubPage() {
       />
       <div className="overflow-x-hidden">
         <section className="relative isolate overflow-hidden border-b border-white/10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(255,111,156,0.28),transparent_34%),radial-gradient(circle_at_82%_18%,rgba(255,179,109,0.18),transparent_32%),linear-gradient(180deg,#241331,#100818_88%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(50,139,255,0.28),transparent_34%),radial-gradient(circle_at_82%_18%,rgba(111,77,255,0.18),transparent_32%),linear-gradient(180deg,#111A3A,#071126_88%)]" />
           <div className="surface-grid absolute inset-0 opacity-20" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[1fr_0.9fr] lg:px-8">
             <div className="flex flex-col justify-center">
-              <Badge variant="outline" className="mb-6 border-[#ffb36d]/30 bg-[#ffb36d]/10 text-[#ffe1bd]">
+              <Badge variant="outline" className="mb-6 border-[#6F4DFF]/30 bg-[#6F4DFF]/10 text-[#EAF1FF]">
                 AI lead response alternatives
               </Badge>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
                 AI lead response alternatives and lead management options.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-[#f2d9e8] sm:text-lg">
-                This hub is for businesses searching for tools like LeadOps-style systems,
-                LeadPilot-style lead automation, lead routing platforms, priority tools, inbound
-                management options, and quote intake automation. SignalOps is not affiliated with
-                those brands.
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#EAF1FF] sm:text-lg">
+                This hub is for businesses comparing tools like LeadOps-style systems,
+                LeadPilot-style automation, lead routing platforms, priority tools, inbound
+                management options, and quote intake automation. SignalOpsAI is not affiliated with
+                those brands; Envo is its own AI Lead Manager product.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
@@ -171,18 +171,18 @@ export default function AlternativesHubPage() {
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </TrackedLink>
                 <Link href="/how-it-works" className={`${buttonVariants({ variant: "outline", size: "lg" })} w-full sm:w-auto`}>
-                  See How SignalOps Works
+                  See How Envo Works
                 </Link>
               </div>
             </div>
 
-            <div className="self-center rounded-2xl border border-white/10 bg-[#17122d]/82 p-5 shadow-2xl shadow-black/25 backdrop-blur">
+            <div className="self-center rounded-2xl border border-white/10 bg-[#0B1024]/82 p-5 shadow-2xl shadow-black/25 backdrop-blur">
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-sm font-semibold text-white">Comparison framework</p>
-                  <p className="text-xs leading-5 text-[#ead0df]/42">Useful buying criteria without fake competitor claims</p>
+                  <p className="text-xs leading-5 text-[#D7E2F7]/42">Useful buying criteria without fake competitor claims</p>
                 </div>
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffd7e6]">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#D7E8FF]">
                   <GitBranch className="size-5" aria-hidden="true" />
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function AlternativesHubPage() {
                 {buyerCriteria.map((item) => (
                   <div key={item.title} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                     <p className="text-sm font-medium text-white">{item.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-[#ead0df]/62">{item.description}</p>
+                    <p className="mt-1 text-sm leading-6 text-[#D7E2F7]/62">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -208,9 +208,9 @@ export default function AlternativesHubPage() {
             {featureCards.map((feature, index) => {
               const Icon = featureIcons[index % featureIcons.length];
               return (
-                <Card key={feature.title} className="bg-[#17122d]/74">
+                <Card key={feature.title} className="bg-[#0B1024]/74">
                   <CardHeader>
-                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/14 text-[#ffd7e6]">
+                    <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/14 text-[#D7E8FF]">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-base">{feature.title}</CardTitle>
@@ -222,7 +222,7 @@ export default function AlternativesHubPage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#17122d]/65">
+        <section className="border-y border-white/10 bg-[#0B1024]/65">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <SectionHeader
               eyebrow="Buying options"
@@ -234,7 +234,7 @@ export default function AlternativesHubPage() {
                 <Card key={card.title} className="bg-white/[0.035]">
                   <CardHeader>
                     <CardTitle>{card.title}</CardTitle>
-                    <CardDescription className="text-base leading-7 text-[#ead0df]/78">
+                    <CardDescription className="text-base leading-7 text-[#D7E2F7]/78">
                       {card.description}
                     </CardDescription>
                   </CardHeader>
@@ -247,12 +247,12 @@ export default function AlternativesHubPage() {
         <section className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
           <SectionHeader
             eyebrow="When SignalOps fits"
-            title="Choose SignalOps when you need the system installed around your actual lead flow"
-            description="SignalOps is positioned for businesses that want response, intake, routing, booking, and follow-up installed as a practical lead operations system."
+            title="Choose Envo when you need the system installed around your actual lead flow"
+            description="Envo is positioned for businesses that want response, intake, routing, booking, and follow-up installed as a practical AI Lead Manager."
           />
           <div className="grid gap-3">
             {fitSignals.map((signal) => (
-              <div key={signal} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#ead0df]/78">
+              <div key={signal} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-[#D7E2F7]/78">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                 <span>{signal}</span>
               </div>
@@ -260,7 +260,7 @@ export default function AlternativesHubPage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[linear-gradient(180deg,#160d22,#100818)]">
+        <section className="border-y border-white/10 bg-[linear-gradient(180deg,#071126,#071126)]">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <SectionHeader
               eyebrow="Alternative guides"
@@ -272,14 +272,14 @@ export default function AlternativesHubPage() {
                 <Link
                   key={page.id}
                   href={page.path}
-                  className="rounded-2xl border border-white/10 bg-[#17122d]/76 p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                  className="rounded-2xl border border-white/10 bg-[#0B1024]/76 p-5 transition hover:border-[#8EBBFF]/35 hover:bg-[#328BFF]/10"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd7e6]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D7E8FF]">
                     {page.targetName}
                   </p>
                   <h3 className="mt-3 text-xl font-semibold text-white">{page.metaTitle}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#ead0df]/62">{page.comparisonAngle}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
+                  <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/62">{page.comparisonAngle}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#EAF1FF]">
                     Read guide
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
@@ -300,27 +300,27 @@ export default function AlternativesHubPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff9ec0]/35 hover:bg-[#ff6f9c]/10"
+                className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#8EBBFF]/35 hover:bg-[#328BFF]/10"
               >
                 <p className="font-semibold text-white">{link.label}</p>
-                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{link.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/62">{link.description}</p>
               </Link>
             ))}
           </div>
         </section>
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#ffd7e6]">
-                Start a SignalOps project
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#D7E8FF]">
+                Preview Envo
               </p>
               <h2 className="mt-2 text-3xl font-semibold tracking-normal text-white">
                 Compare tools, then ask about the build that fits.
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-[#ead0df]/78">
-                SignalOps will review calls, texts, forms, DMs, quote requests, routing, and
-                follow-up, then show what kind of lead response system would actually help.
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-[#D7E2F7]/78">
+                SignalOpsAI will review calls, texts, forms, DMs, quote requests, routing, and
+                follow-up, then show how Envo could help without removing owner control.
               </p>
             </div>
             <TrackedLink
@@ -352,7 +352,7 @@ const relatedPages = [
   {
     href: "/services/ai-lead-response",
     label: "AI lead response system",
-    description: "See the core SignalOps response workflow for local businesses."
+    description: "See the core Envo response workflow for local businesses."
   },
   {
     href: "/services/ai-lead-qualification",
@@ -382,9 +382,9 @@ function SectionHeader({
 }) {
   return (
     <div className="max-w-3xl">
-      <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">{eyebrow}</Badge>
+      <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">{eyebrow}</Badge>
       <h2 className="text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      <p className="mt-4 text-base leading-7 text-[#ead0df]/78">{description}</p>
+      <p className="mt-4 text-base leading-7 text-[#D7E2F7]/78">{description}</p>
     </div>
   );
 }

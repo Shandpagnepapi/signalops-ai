@@ -17,6 +17,7 @@ import {
   Save,
   Sparkles
 } from "lucide-react";
+import { EnvoFeaturePill, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -82,7 +83,7 @@ const initialForm: LiveDemoFormState = {
 };
 
 const selectClass =
-  "h-11 w-full min-w-0 rounded-xl border border-input bg-[#17122d]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-11 w-full min-w-0 rounded-xl border border-input bg-[#0B1024]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 export function LiveDemoGenerator() {
   const [form, setForm] = useState<LiveDemoFormState>(initialForm);
@@ -157,19 +158,20 @@ export function LiveDemoGenerator() {
     <div className="overflow-x-hidden">
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="surface-grid absolute inset-0 opacity-20" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,111,156,0.16),rgba(6,12,24,0)_64%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(50,139,255,0.16),rgba(6,12,24,0)_64%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <Badge variant="outline" className="mb-5 border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
+            <EnvoLogo size="md" tone="dark" />
+            <EnvoFeaturePill className="mb-5 mt-5 border-white/12 bg-white/10 text-[#BFD3FF]" icon={Sparkles}>
               Live prospect demo
-            </Badge>
+            </EnvoFeaturePill>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-6xl">
               Generate a tailored Envo preview in seconds.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#ead0df]/78 sm:text-lg">
-              Enter a business name, industry, services, and lead problem. SignalOps turns it into an Envo mini strategy report you can walk through live.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#D7E2F7]/78 sm:text-lg">
+              Enter a business name, industry, services, and lead problem. Envo turns it into a mini strategy report you can walk through live.
             </p>
-            <div className="mt-6 grid gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
+            <div className="mt-6 grid gap-3 text-sm text-[#D7E2F7]/78 sm:grid-cols-3">
               {[
                 "Industry-specific workflows",
                 "Personalized replies and notes",
@@ -183,11 +185,11 @@ export function LiveDemoGenerator() {
             </div>
           </div>
 
-          <Card className="border-[#ff9ec0]/20 bg-[#17122d]/82">
+          <Card className="border-[#8EBBFF]/20 bg-[#0B1024]/82">
             <CardHeader>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <Badge className="mb-3 bg-[#ff6f9c]/14 text-[#ffd7e6]">Prospect inputs</Badge>
+                  <Badge className="mb-3 bg-[#328BFF]/14 text-[#D7E8FF]">Prospect inputs</Badge>
                   <CardTitle className="text-2xl">Generate a mini strategy demo</CardTitle>
                   <CardDescription>
                     Keep it quick. The goal is a clear preview the prospect can understand right away.
@@ -295,7 +297,7 @@ export function LiveDemoGenerator() {
                   </Field>
                 </div>
 
-                <p className="rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
+                <p className="rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#D7E2F7]/62">
                   Website URL is optional context only. The preview is generated from the details you enter.
                 </p>
 
@@ -355,28 +357,28 @@ function LoadingPreview() {
   ];
 
   return (
-    <section className="border-b border-white/10 bg-[#17122d]/50">
+    <section className="border-b border-white/10 bg-[#0B1024]/50">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <Card className="border-[#ffb36d]/20 bg-[#ffb36d]/10">
+        <Card className="border-[#6F4DFF]/20 bg-[#6F4DFF]/10">
           <CardContent className="p-6">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="flex items-center gap-2 text-sm font-semibold text-[#ffe1bd]">
+                <p className="flex items-center gap-2 text-sm font-semibold text-[#EAF1FF]">
                   <Loader2 className="size-4 animate-spin" aria-hidden="true" />
                   Building the tailored demo
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">
+                <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/78">
                   The system starts with proven industry patterns, then shapes the preview around the prospect.
                 </p>
               </div>
-              <Badge variant="outline" className="border-[#ffb36d]/25 text-[#ffe1bd]">
+              <Badge variant="outline" className="border-[#6F4DFF]/25 text-[#EAF1FF]">
                 Usually a few seconds
               </Badge>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((step) => (
-                <div key={step} className="rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
-                  <p className="text-sm leading-6 text-[#f2d9e8]">{step}</p>
+                <div key={step} className="rounded-xl border border-white/10 bg-[#0B1024]/60 p-4">
+                  <p className="text-sm leading-6 text-[#EAF1FF]">{step}</p>
                 </div>
               ))}
             </div>
@@ -395,7 +397,7 @@ function EmptyState() {
         ["During", "You enter their details and generate a tailored strategy example live."],
         ["After", "They can see the exact response, routing, follow-up, and dashboard logic Envo would run."]
       ].map(([title, body]) => (
-        <Card key={title} className="bg-[#17122d]/72">
+        <Card key={title} className="bg-[#0B1024]/72">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
             <CardDescription>{body}</CardDescription>
@@ -425,13 +427,13 @@ function GeneratedDemoPreview({
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">
+          <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">
             {demo.generatedBy === "ai-enhanced" ? "AI-enhanced strategy" : "Template fallback strategy"}
           </Badge>
           <h2 className="max-w-4xl text-3xl font-semibold tracking-normal text-white sm:text-4xl">
             {demo.installTitle}
           </h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-[#ead0df]/78">{demo.strategySummary}</p>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-[#D7E2F7]/78">{demo.strategySummary}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button type="button" variant="outline" onClick={onCopy}>
@@ -456,15 +458,15 @@ function GeneratedDemoPreview({
       ) : null}
 
       {saveMessage ? (
-        <p className="mb-5 rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-3 text-sm text-[#ffd7e6]">
+        <p className="mb-5 rounded-xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-3 text-sm text-[#D7E8FF]">
           {saveMessage}
         </p>
       ) : null}
 
       <div className="grid gap-6 lg:grid-cols-[1fr_0.78fr]">
-        <Card className="border-[#ff9ec0]/20 bg-[#ff6f9c]/10">
+        <Card className="border-[#8EBBFF]/20 bg-[#328BFF]/10">
           <CardHeader>
-            <Badge className="mb-3 bg-[#17122d] text-[#ffd7e6]">Generated positioning</Badge>
+            <Badge className="mb-3 bg-[#0B1024] text-[#D7E8FF]">Generated positioning</Badge>
             <CardTitle className="text-3xl leading-tight">{demo.headline}</CardTitle>
             <CardDescription className="text-base leading-7">{demo.subheadline}</CardDescription>
           </CardHeader>
@@ -484,8 +486,8 @@ function GeneratedDemoPreview({
           </CardHeader>
           <CardContent>
             <p className="text-3xl font-semibold text-white">{demo.suggestedPackage.name}</p>
-            <p className="mt-1 text-sm font-medium text-[#ffd7e6]">{demo.suggestedPackage.price}</p>
-            <p className="mt-4 text-sm leading-6 text-[#ead0df]/78">{demo.suggestedPackage.reason}</p>
+            <p className="mt-1 text-sm font-medium text-[#D7E8FF]">{demo.suggestedPackage.price}</p>
+            <p className="mt-4 text-sm leading-6 text-[#D7E2F7]/78">{demo.suggestedPackage.reason}</p>
           <TrackedLink
               href={PRIMARY_CTA.href}
               eventName={ANALYTICS_EVENTS.auditCtaClicked}
@@ -497,8 +499,8 @@ function GeneratedDemoPreview({
             </TrackedLink>
             <TrackedLink
               href={getEmailHref({
-                subject: `SignalOps Inquiry for ${demo.businessName}`,
-                body: `Hi SignalOps, I generated a live Envo demo for ${demo.businessName} and want help with lead response and follow-up. Here's a little about my business:`
+                subject: `Envo Inquiry for ${demo.businessName}`,
+                body: `Hi SignalOpsAI, I generated a live Envo demo for ${demo.businessName} and want help with lead response and follow-up. Here's a little about my business:`
               })}
               eventName={ANALYTICS_EVENTS.contactClicked}
               eventProperties={{ location: "live_demo_generated_package", type: "email", businessName: demo.businessName }}
@@ -518,11 +520,11 @@ function GeneratedDemoPreview({
               <div key={`${item.before}-${item.after}`} className="grid gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-4 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.14em] text-amber-100/70">Before</p>
-                  <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{item.before}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/78">{item.before}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-emerald-100/70">After SignalOps</p>
-                  <p className="mt-2 text-sm leading-6 text-[#f2d9e8]">{item.after}</p>
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-emerald-100/70">After Envo</p>
+                  <p className="mt-2 text-sm leading-6 text-[#EAF1FF]">{item.after}</p>
                 </div>
               </div>
             ))}
@@ -532,7 +534,7 @@ function GeneratedDemoPreview({
         <SectionCard icon={Clipboard} title="Suggested lead intake questions">
           <ul className="grid gap-2">
             {demo.leadIntakeQuestions.map((question) => (
-              <li key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-[#f2d9e8]">
+              <li key={question} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-[#EAF1FF]">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
                 {question}
               </li>
@@ -556,7 +558,7 @@ function GeneratedDemoPreview({
                   <p className="font-medium text-white">{rule.label}</p>
                   <Badge variant="outline">{rule.impact}</Badge>
                 </div>
-                <p className="mt-2 text-sm leading-6 text-[#ead0df]/62">{rule.rule}</p>
+                <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/62">{rule.rule}</p>
               </div>
             ))}
           </div>
@@ -567,8 +569,8 @@ function GeneratedDemoPreview({
             {demo.followUpSequence.map((step) => (
               <div key={`${step.timing}-${step.goal}`} className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
                 <p className="text-sm font-semibold text-white">{step.timing}</p>
-                <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{step.message}</p>
-                <p className="mt-2 text-xs leading-5 text-[#ead0df]/42">Goal: {step.goal}</p>
+                <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/78">{step.message}</p>
+                <p className="mt-2 text-xs leading-5 text-[#D7E2F7]/42">Goal: {step.goal}</p>
               </div>
             ))}
           </div>
@@ -579,7 +581,7 @@ function GeneratedDemoPreview({
         <SectionCard icon={BadgeCheck} title="Recommended automations">
           <div className="flex flex-wrap gap-2">
             {demo.recommendedAutomations.map((automation) => (
-              <Badge key={automation} variant="outline" className="border-white/15 bg-white/5 text-[#f2d9e8]">
+              <Badge key={automation} variant="outline" className="border-white/15 bg-white/5 text-[#EAF1FF]">
                 {automation}
               </Badge>
             ))}
@@ -589,10 +591,10 @@ function GeneratedDemoPreview({
         <SectionCard icon={BarChart3} title="Dashboard preview cards">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {demo.dashboardPreviewCards.map((card) => (
-              <div key={`${card.label}-${card.value}`} className="rounded-xl border border-white/10 bg-[#17122d]/70 p-4">
-                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">{card.label}</p>
+              <div key={`${card.label}-${card.value}`} className="rounded-xl border border-white/10 bg-[#0B1024]/70 p-4">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#D7E2F7]/42">{card.label}</p>
                 <p className="mt-3 text-3xl font-semibold text-white">{card.value}</p>
-                <p className="mt-2 text-sm leading-5 text-[#ead0df]/62">{card.note}</p>
+                <p className="mt-2 text-sm leading-5 text-[#D7E2F7]/62">{card.note}</p>
               </div>
             ))}
           </div>
@@ -604,7 +606,7 @@ function GeneratedDemoPreview({
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#EAF1FF]">
       {label}
       {children}
     </label>
@@ -613,8 +615,8 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
-      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">{label}</p>
+    <div className="rounded-xl border border-white/10 bg-[#0B1024]/60 p-4">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#D7E2F7]/42">{label}</p>
       <p className="mt-2 text-sm font-semibold text-white">{value}</p>
     </div>
   );
@@ -633,7 +635,7 @@ function SectionCard({
     <Card>
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-[#ff6f9c]/15 text-[#ffc0d5]">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-[#328BFF]/15 text-[#BFD3FF]">
             <Icon className="size-5" aria-hidden="true" />
           </div>
           <CardTitle>{title}</CardTitle>
@@ -646,7 +648,7 @@ function SectionCard({
 
 function MessageBlock({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-[#17122d]/70 p-4 text-sm leading-7 text-[#fff8fb]">
+    <div className="rounded-xl border border-white/10 bg-[#0B1024]/70 p-4 text-sm leading-7 text-[#F8FAFF]">
       {children}
     </div>
   );

@@ -1,20 +1,20 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">SignalOps logo mark</title>
-  <desc id="desc">A sunset orchid signal bolt mark for SignalOps.</desc>
+  <desc id="desc">A blue violet signal bolt mark for SignalOps.</desc>
   <defs>
     <linearGradient id="bolt" x1="25" y1="10" x2="72" y2="85" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffb36d"/>
-      <stop offset="0.46" stop-color="#ff6f9c"/>
-      <stop offset="1" stop-color="#d770ff"/>
+      <stop stop-color="#328BFF"/>
+      <stop offset="0.46" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#6F4DFF"/>
     </linearGradient>
     <linearGradient id="halo" x1="14" y1="8" x2="86" y2="88" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffb36d" stop-opacity="0.28"/>
-      <stop offset="0.58" stop-color="#ff6f9c" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#d770ff" stop-opacity="0.18"/>
+      <stop stop-color="#328BFF" stop-opacity="0.28"/>
+      <stop offset="0.58" stop-color="#2563EB" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#6F4DFF" stop-opacity="0.18"/>
     </linearGradient>
     <filter id="glow" x="-55%" y="-55%" width="210%" height="210%">
       <feGaussianBlur stdDeviation="5.5" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1 0 1 0 0 .42 0 0 1 0 .68 0 0 0 .42 0"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 .2 0 0 0 0 .55 0 0 0 0 1 0 0 0 .42 0"/>
       <feBlend in="SourceGraphic"/>
     </filter>
   </defs>

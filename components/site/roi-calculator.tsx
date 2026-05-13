@@ -16,7 +16,7 @@ type CalculatorInputs = {
   currentCloseRate: number;
   missedLeadPercentage: number;
   expectedImprovementPercentage: number;
-  monthlySignalOpsCost: number;
+  monthlyEnvoCost: number;
 };
 
 type SuggestedPackage = {
@@ -30,7 +30,7 @@ const initialInputs: CalculatorInputs = {
   currentCloseRate: 28,
   missedLeadPercentage: 20,
   expectedImprovementPercentage: 25,
-  monthlySignalOpsCost: 500
+  monthlyEnvoCost: 500
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -121,11 +121,11 @@ export function RoiCalculator() {
     const estimatedRecoveredRevenue = estimatedRecoveredLeads * closeRate * inputs.averageCustomerValue;
 
     const estimatedRoi =
-      inputs.monthlySignalOpsCost > 0
-        ? ((estimatedRecoveredRevenue - inputs.monthlySignalOpsCost) / inputs.monthlySignalOpsCost) * 100
+      inputs.monthlyEnvoCost > 0
+        ? ((estimatedRecoveredRevenue - inputs.monthlyEnvoCost) / inputs.monthlyEnvoCost) * 100
         : 0;
     const estimatedBreakEvenAccounts =
-      inputs.averageCustomerValue > 0 ? inputs.monthlySignalOpsCost / inputs.averageCustomerValue : 0;
+      inputs.averageCustomerValue > 0 ? inputs.monthlyEnvoCost / inputs.averageCustomerValue : 0;
 
     const suggestedPackage = getSuggestedPackage(inputs, estimatedRecoveredRevenue);
 
@@ -141,19 +141,19 @@ export function RoiCalculator() {
 
   return (
     <div className="overflow-x-hidden">
-      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,111,156,0.14),rgba(6,12,24,0))]">
+      <section className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(50,139,255,0.14),rgba(6,12,24,0))]">
         <div className="surface-grid mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
           <div className="max-w-3xl">
-            <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">ROI calculator</Badge>
+            <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">ROI calculator</Badge>
             <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
               Estimate how much slow response and weak follow-up may be costing you.
             </h1>
-            <p className="mt-4 text-base leading-7 text-[#ead0df]/78">
-              Use conservative inputs to model missed revenue, likely recovered leads, and whether a SignalOps package could make financial sense.
+            <p className="mt-4 text-base leading-7 text-[#D7E2F7]/78">
+              Use conservative inputs to model missed revenue, likely recovered leads, and whether an Envo package could make financial sense.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#ff9ec0]/20 bg-[#17122d]/78 p-5 shadow-2xl shadow-black/20">
+          <div className="rounded-2xl border border-[#8EBBFF]/20 bg-[#0B1024]/78 p-5 shadow-2xl shadow-black/20">
             <p className="text-sm font-semibold text-white">What this estimates</p>
             <div className="mt-4 grid gap-3">
               {[
@@ -163,7 +163,7 @@ export function RoiCalculator() {
               ].map((item) => (
                 <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.035] p-3">
                   <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
-                  <p className="text-sm leading-6 text-[#ead0df]/78">{item}</p>
+                  <p className="text-sm leading-6 text-[#D7E2F7]/78">{item}</p>
                 </div>
               ))}
             </div>
@@ -172,13 +172,13 @@ export function RoiCalculator() {
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
-        <ProductFrame accent="pink" eyebrow="Inputs" title="Business assumptions">
+        <ProductFrame accent="blue" eyebrow="Inputs" title="Business assumptions">
           <div className="mb-6 flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <Calculator className="size-4 text-[#ffc0d5]" aria-hidden="true" />
+              <Calculator className="size-4 text-[#BFD3FF]" aria-hidden="true" />
               <p className="text-sm font-semibold text-white">Use conservative numbers</p>
             </div>
-            <StatusPill accent="pink">Live</StatusPill>
+            <StatusPill accent="blue">Live</StatusPill>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -221,11 +221,11 @@ export function RoiCalculator() {
               onChange={(value) => updateInput("expectedImprovementPercentage", value)}
             />
             <InputField
-              label="Monthly SignalOps cost ($)"
+              label="Monthly Envo cost ($)"
               type="number"
               min={0}
-              value={inputs.monthlySignalOpsCost}
-              onChange={(value) => updateInput("monthlySignalOpsCost", value)}
+              value={inputs.monthlyEnvoCost}
+              onChange={(value) => updateInput("monthlyEnvoCost", value)}
             />
           </div>
         </ProductFrame>
@@ -263,10 +263,10 @@ export function RoiCalculator() {
             />
           </div>
 
-          <div className="mt-5 rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">Suggested package</p>
+          <div className="mt-5 rounded-xl border border-white/10 bg-[#0B1024]/60 p-4">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#D7E2F7]/42">Suggested package</p>
             <p className="mt-2 text-lg font-semibold text-white">{results.suggestedPackage.name}</p>
-            <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{results.suggestedPackage.reason}</p>
+            <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/78">{results.suggestedPackage.reason}</p>
           </div>
 
           <div className="mt-5 rounded-2xl border border-emerald-300/18 bg-emerald-300/10 p-4">
@@ -287,7 +287,7 @@ export function RoiCalculator() {
             </p>
           </div>
 
-          <p className="mt-5 text-sm leading-6 text-[#fff1f7]">
+          <p className="mt-5 text-sm leading-6 text-[#F8FAFF]">
             This calculator is an estimate only. Actual results depend on your offer, market, sales process,
             response quality, and follow-up.
           </p>
@@ -303,8 +303,8 @@ export function RoiCalculator() {
           </TrackedLink>
           <TrackedLink
             href={getEmailHref({
-              subject: "SignalOps ROI Calculator Inquiry",
-              body: "Hi SignalOps, I used the ROI calculator and want help with lead response and follow-up.\n\nBusiness name:\nWebsite:\nIndustry:\nPackage I'm considering:\nWhat I need help with:"
+              subject: "Envo ROI Calculator Inquiry",
+              body: "Hi SignalOpsAI, I used the Envo ROI calculator and want help with lead response and follow-up.\n\nBusiness name:\nWebsite:\nIndustry:\nPackage I'm considering:\nWhat I need help with:"
             })}
             eventName={ANALYTICS_EVENTS.contactClicked}
             eventProperties={{ location: "roi_calculator", type: "email" }}
@@ -321,22 +321,22 @@ export function RoiCalculator() {
       </section>
 
       <section className="mx-auto mb-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-white/10 bg-[#17122d]/68 p-6" aria-labelledby="roi-math">
+        <div className="rounded-2xl border border-white/10 bg-[#0B1024]/68 p-6" aria-labelledby="roi-math">
           <div className="mb-4 flex items-center gap-2">
-            <TrendingUp className="size-4 text-[#ffca91]" aria-hidden="true" />
+            <TrendingUp className="size-4 text-[#A99BFF]" aria-hidden="true" />
             <h2 id="roi-math" className="text-lg font-semibold text-white">
               How the math works
             </h2>
           </div>
-          <p className="text-sm leading-7 text-[#ead0df]/78">
+          <p className="text-sm leading-7 text-[#D7E2F7]/78">
             1) Estimated missed leads = monthly leads x missed lead percentage.
             2) Estimated current missed revenue = estimated missed leads x current close rate x average customer value.
             3) Estimated recovered leads = estimated missed leads x expected improvement percentage.
             4) Estimated recovered revenue = estimated recovered leads x current close rate x average customer value.
-            5) Estimated ROI = (estimated recovered revenue - monthly SignalOps cost) / monthly SignalOps cost.
+            5) Estimated ROI = (estimated recovered revenue - monthly Envo cost) / monthly Envo cost.
           </p>
-          <p className="mt-3 flex gap-2 text-sm leading-6 text-[#ead0df]/62">
-            <Info className="mt-0.5 size-4 shrink-0 text-[#ead0df]/42" aria-hidden="true" />
+          <p className="mt-3 flex gap-2 text-sm leading-6 text-[#D7E2F7]/62">
+            <Info className="mt-0.5 size-4 shrink-0 text-[#D7E2F7]/42" aria-hidden="true" />
             We use your current close rate in both baseline and recovered scenarios to keep the estimate conservative.
           </p>
         </div>
@@ -361,7 +361,7 @@ function InputField({
   onChange: (value: string) => void;
 }) {
   return (
-    <label className="grid gap-2 text-sm font-medium text-[#f2d9e8]">
+    <label className="grid gap-2 text-sm font-medium text-[#EAF1FF]">
       {label}
       <input
         type={type}
@@ -369,7 +369,7 @@ function InputField({
         max={max}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-11 w-full rounded-xl border border-input bg-[#17122d]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="h-11 w-full rounded-xl border border-input bg-[#0B1024]/70 px-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       />
     </label>
   );
@@ -385,8 +385,8 @@ function OutputTile({
   tone?: "neutral" | "positive";
 }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-[#17122d]/60 p-4">
-      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ead0df]/42">{label}</p>
+    <div className="rounded-xl border border-white/10 bg-[#0B1024]/60 p-4">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#D7E2F7]/42">{label}</p>
       <p className={`mt-2 text-2xl font-semibold ${tone === "positive" ? "text-emerald-200" : "text-white"}`}>
         {value}
       </p>

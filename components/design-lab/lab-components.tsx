@@ -141,7 +141,7 @@ function DesignLabShell({
   title: string;
 }) {
   return (
-    <div className="min-h-screen bg-[#05030a] text-white">
+    <div className="min-h-screen bg-[#071126] text-white">
       <section className="premium-section lg:min-h-screen" style={themeStyle(theme)}>
         <AmbientBackground theme={theme} />
         <div className="relative mx-auto max-w-[1450px] px-4 pb-12 pt-4 sm:px-6 sm:pt-5 lg:px-8">
@@ -221,7 +221,7 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
 
   return (
     <DesignLabShell
-      copy="Temporary noindex previews for reviewing the selected SignalOps Warm direction, the Envo Warm product treatment, and any remaining alternate concepts before this lab is deleted."
+      copy="Temporary noindex previews for reviewing the selected SignalOps direction, the Envo Blue product treatment, and any remaining alternate concepts before this lab is deleted."
       eyebrow="Internal visual playground"
       title="Premium glassmorphism reference lab."
     >
@@ -246,15 +246,15 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
           <FloatingBadge icon={Sparkles} theme={visualThemes.currentSignalOps}>Current Site Notes</FloatingBadge>
           <h2 className="mt-5 text-3xl font-black tracking-normal text-white">SignalOps Warm is selected.</h2>
           <p className="mt-4 text-sm leading-7 text-[color:var(--vs-muted)]">
-            This lab is now a temporary reference for the chosen warm production direction. It remains hidden from
+            This lab is now a temporary reference for the chosen production direction. It remains hidden from
             public navigation and marked noindex while final visual decisions are reviewed.
           </p>
         </GlassPanel>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
             "Design lab routes stay noindex and out of public navigation.",
-            "Production pages now use the warm SignalOps studio direction.",
-            "Warm Envo remains the product system for orb, triage, rules, and pricing.",
+            "Production pages now use the navy, blue, and violet SignalOps studio direction.",
+            "Envo Blue is now the product system for orb, triage, rules, and pricing.",
             "Cool SignalOps remains here only as a comparison reference."
           ].map((note) => (
             <RuleCard key={note} copy={note} icon={CheckCircle2} title="Foundation note" theme={visualThemes.envoWarm} />
@@ -270,7 +270,7 @@ export function DesignLabIndex({ referenceImages }: { referenceImages: Reference
 export function StudioLabPage() {
   return (
     <DesignLabShell
-      copy="Two parent-studio homepage directions shown together for comparison: warm cinematic SignalOps and cool technical SignalOps. Envo remains the featured product in both."
+      copy="Two parent-studio homepage directions shown together for comparison: soft cinematic SignalOps and cool technical SignalOps. Envo remains the featured product in both."
       eyebrow="Studio homepage concepts"
       theme={visualThemes.studioWarm}
       title="One studio, two different kinds of signal."
@@ -303,7 +303,7 @@ function StudioConcept({ id, theme }: { id: "cool" | "warm"; theme: VisualTheme 
     <GlassPanel id={id} className="scroll-mt-8 p-5 sm:p-7 lg:p-9" theme={theme}>
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <div>
-          <FloatingBadge theme={theme}>{warm ? "Warm SignalOps Studio" : "Cool SignalOps Studio"}</FloatingBadge>
+          <FloatingBadge theme={theme}>{warm ? "Soft SignalOps Studio" : "Cool SignalOps Studio"}</FloatingBadge>
           <h2 className="mt-5 text-4xl font-black leading-[0.98] tracking-normal text-white sm:text-5xl lg:text-6xl">
             {warm
               ? "AI products with a founder-built, cinematic glow."
@@ -311,7 +311,7 @@ function StudioConcept({ id, theme }: { id: "cool" | "warm"; theme: VisualTheme 
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
             {warm
-              ? "This direction makes SignalOps feel warm, premium, and product-led. Envo is the bright first launch, with future workers orbiting as a growing studio portfolio."
+              ? "This direction makes SignalOps feel polished, premium, and product-led. Envo is the bright first launch, with future workers orbiting as a growing studio portfolio."
               : "This direction makes SignalOps feel more technical and venture-backed. The parent brand owns the system layer, while Envo becomes the first visible agent in a broader AI operations suite."}
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -338,7 +338,7 @@ function StudioConcept({ id, theme }: { id: "cool" | "warm"; theme: VisualTheme 
 export function EnvoLabPage({ referenceImages }: { referenceImages: ReferenceImage[] }) {
   return (
     <DesignLabShell
-      copy="A premium Envo product-page concept using the reusable warm visual system: glass panels, glow buttons, orb visual, lead tiles, guardrails, mobile triage, and pricing cards."
+      copy="A premium Envo product-page concept using the reusable blue and violet visual system: glass panels, glow buttons, orb visual, lead tiles, guardrails, mobile triage, and pricing cards."
       eyebrow="Envo product page concept"
       theme={visualThemes.envoWarm}
       title="Meet Envo, your AI Lead Manager."
@@ -427,7 +427,7 @@ function PricingPreview({ theme }: { theme: VisualTheme }) {
 export function ThemesLabPage() {
   return (
     <DesignLabShell
-      copy="Reusable ingredients for the selected SignalOps Warm / Envo Warm direction: theme tokens, CSS utilities, nav, glass cards, glow buttons, floating badges, pricing cards, owner triage cards, rule cards, lead tiles, mobile frames, product spotlights, trust strips, and ambient backgrounds."
+      copy="Reusable ingredients for the selected SignalOps / Envo Blue direction: theme tokens, CSS utilities, nav, glass cards, glow buttons, floating badges, pricing cards, owner triage cards, rule cards, lead tiles, mobile frames, product spotlights, trust strips, and ambient backgrounds."
       eyebrow="Theme and component system"
       theme={visualThemes.studioWarm}
       title="Every reusable component under the same light."

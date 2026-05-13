@@ -5,13 +5,13 @@ const normalizedSiteUrl =
     : rawSiteUrl;
 
 export const SITE_CONFIG = {
-  brandName: "SignalOps",
-  name: "SignalOps",
-  tagline: "Envo handles customer calls and leads.",
+  brandName: "SignalOpsAI",
+  name: "SignalOpsAI",
+  tagline: "Envo is the AI worker for customer calls and leads.",
   url: normalizedSiteUrl,
   email: "signalopspro@gmail.com",
   description:
-    "SignalOpsAI builds Envo, an AI worker trained to each business to handle customer calls, leads, follow-ups, and owner handoffs."
+    "SignalOpsAI is a venture studio building Envo, an AI Lead Manager trained to handle customer calls, texts, forms, DMs, follow-ups, handoffs, and owner dashboards. SignalOpsAI also offers separate FAA Part 107 Drone Services."
 };
 
 export const PUBLIC_BRAND_NAME = "SignalOpsAI";
@@ -24,14 +24,14 @@ export const PRIMARY_CTA = {
   href: "/preview"
 };
 
-export const OFFER_NAME = "Free Preview";
+export const OFFER_NAME = "Envo Preview";
 
 export const EMAIL_CTA = {
-  label: "Email SignalOps",
+  label: "Email SignalOpsAI",
   shortLabel: "Contact",
-  subject: "Envo by SignalOps Inquiry",
+  subject: "Envo Preview Inquiry",
   body:
-    "Hi SignalOps, I'm interested in Envo, the AI Lead Manager. I'd like help with lead response and follow-up for my business.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
+    "Hi SignalOpsAI, I'm interested in Envo, the AI Lead Manager. I'd like help with customer calls, texts, forms, DMs, follow-up, and owner handoffs for my business.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat package I'm interested in:\nWhat I need help with:\nBest phone/email:\nTimeline:"
 };
 
 export function getEmailHref({
@@ -47,12 +47,12 @@ export function getEmailHref({
 export function getPlanEmailHref(planName: string) {
   const subject =
     planName === "Custom"
-      ? "SignalOps Custom Package Inquiry"
-      : `SignalOps ${planName} Package Inquiry`;
+      ? "Envo Custom Package Inquiry"
+      : `Envo ${planName} Package Inquiry`;
 
   return getEmailHref({
     subject,
-    body: `Hi SignalOps, I'm interested in Envo and the ${planName} package.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat I need help with:\nBest phone/email:\nTimeline:`
+    body: `Hi SignalOpsAI, I'm interested in Envo and the ${planName} package.\n\nBusiness name:\nWebsite:\nIndustry:\nWhat I need help with:\nBest phone/email:\nTimeline:`
   });
 }
 
@@ -68,11 +68,11 @@ export const NAV_LINKS = [
   },
   {
     href: "/drone",
-    label: "Drone"
+    label: "Drone Services"
   },
   {
     href: "/demo",
-    label: "Demo"
+    label: "Envo Demo"
   }
 ];
 
@@ -169,7 +169,7 @@ export const RESOURCE_LINKS = [
   },
   {
     href: "/audit",
-    label: "Project Questionnaire"
+    label: "Envo Preview Questionnaire"
   }
 ];
 
@@ -205,7 +205,7 @@ export const PACKAGE_NAMES = [
     price: "$250/mo",
     summary: "Start Envo on one main lead source.",
     features: [
-      "Project intake and setup plan",
+      "Envo preview and setup plan",
       "Instant reply workflow",
       "Basic intake questions",
       "Owner or rep alerts"
@@ -267,15 +267,15 @@ export const AI_LEAD_ENGINE_FEATURES = [
 export const SIGNALOPS_PROCESS = [
   {
     step: "Scope",
-    description: "Gather package interest, lead sources, tools, timeline, and build priorities."
+    description: "Gather package interest, customer channels, tools, timeline, owner rules, and handoff priorities."
   },
   {
     step: "Map",
-    description: "Define sources, intake questions, routing paths, and handoff logic."
+    description: "Define calls, texts, forms, DMs, intake questions, routing paths, and handoff logic."
   },
   {
     step: "Build",
-    description: "Create the lead engine, messages, priority views, alerts, and dashboard."
+    description: "Train Envo with messages, priority views, follow-up rules, alerts, and owner dashboard views."
   },
   {
     step: "Launch",
@@ -303,17 +303,17 @@ export const MARKETING_FAQS = [
   {
     question: "Is this a chatbot?",
     answer:
-      "Not in the usual sense. SignalOps builds the response and follow-up process behind your forms, calls, ads, DMs, email, CRM rules, and alerts. The goal is faster follow-through, not a floating widget."
+      "Not in the usual sense. Envo is trained around the response and follow-up process behind your calls, texts, forms, ads, DMs, email, CRM rules, and alerts. The goal is faster follow-through, not a floating widget."
   },
   {
     question: "Does it replace my team?",
     answer:
-      "No. It handles the repetitive first response, intake, reminders, and routing so your team can spend more time on the leads that actually need a person."
+      "No. Envo handles repetitive first response, intake, reminders, and routing so your team can spend more time on the leads that actually need a person."
   },
   {
     question: "What tools do you work with?",
     answer:
-      "SignalOps can be designed around the tools you already use, including websites, forms, CRMs, calendars, email, SMS, spreadsheets, and internal notification channels."
+      "SignalOpsAI can train Envo around the tools you already use, including websites, forms, CRMs, calendars, email, SMS, spreadsheets, and internal notification channels."
   },
   {
     question: "How fast can this be installed?",
@@ -323,7 +323,7 @@ export const MARKETING_FAQS = [
   {
     question: "Do I need a CRM?",
     answer:
-      "No, but having one helps. If you do not have a CRM, SignalOps can start with structured lead capture, alerts, follow-up, and reporting while preparing you for a CRM later."
+      "No, but having one helps. If you do not have a CRM, Envo can start with structured lead capture, alerts, follow-up, and reporting while preparing you for a CRM later."
   },
   {
     question: "Can it work with my existing website?",

@@ -292,7 +292,7 @@ export function generatePreviewData(input: PreviewSubmissionInput): PreviewData 
     fitScore,
     painPoints,
     approvalNote:
-      "SignalOps turns the Envo map into a practical build path before setup begins."
+      "SignalOpsAI turns the Envo map into a practical build path before setup begins."
   };
 
   return {
@@ -329,9 +329,9 @@ export function generateManagerDrafts(
     painPointsDetected: previewData.painPoints,
     recommendedPackage,
     previewReport: {
-      title: `${input.businessName} Free Preview Report`,
+      title: `${input.businessName} Envo Preview Report`,
       executiveSummary:
-        `SignalOps should focus on protecting ${input.businessName}'s lead flow across ${sourceSummaryWithOther}, with special attention to ${input.currentProblem.toLowerCase()}.`,
+        `Envo should focus on protecting ${input.businessName}'s lead flow across ${sourceSummaryWithOther}, with special attention to ${input.currentProblem.toLowerCase()}.`,
       leadFlowFindings: [
         `Industry: ${industrySummary}.`,
         `Primary services: ${services}.`,

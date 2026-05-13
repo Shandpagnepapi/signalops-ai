@@ -77,7 +77,7 @@ const initialState: PreviewFormState = {
 };
 
 const selectClass =
-  "h-12 w-full min-w-0 rounded-2xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb36d]/55";
+  "h-12 w-full min-w-0 rounded-2xl border border-white/12 bg-[#0B1024]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F4DFF]/55";
 
 const previewOutputs = [
   {
@@ -229,10 +229,10 @@ export function PreviewRequestForm() {
               const Icon = item.icon;
 
               return (
-                <div key={item.title} className="rounded-2xl border border-white/10 bg-[#17122d]/52 p-4">
+                <div key={item.title} className="rounded-2xl border border-white/10 bg-[#0B1024]/52 p-4">
                   <Icon className="mb-3 size-5 text-emerald-200" aria-hidden="true" />
                   <p className="font-semibold text-white">{item.title}</p>
-                  <p className="mt-1 text-xs leading-5 text-[#ead0df]/68">{item.copy}</p>
+                  <p className="mt-1 text-xs leading-5 text-[#D7E2F7]/68">{item.copy}</p>
                 </div>
               );
             })}
@@ -242,13 +242,13 @@ export function PreviewRequestForm() {
               <Sparkles className="mt-0.5 size-4 shrink-0 text-emerald-300" aria-hidden="true" />
               What happens next
             </p>
-            <p className="mt-2 text-sm leading-6 text-[#ead0df]/76">
+            <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/76">
               SignalOpsAI will use your answers to map how Envo should handle your lead flow, rules, handoffs, and follow-ups.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge variant="outline">Status: {submission.status}</Badge>
               <Badge variant="outline">Request ID: {submission.id.slice(0, 8)}</Badge>
-              <Badge className="bg-[#ff6f9c]/14 text-[#ffd7e6]">Done-for-you path</Badge>
+              <Badge className="bg-[#328BFF]/14 text-[#D7E8FF]">Done-for-you path</Badge>
             </div>
           </div>
         </CardContent>
@@ -257,11 +257,11 @@ export function PreviewRequestForm() {
   }
 
   return (
-    <Card className="glass-panel border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
+    <Card className="glass-panel border-[#6F4DFF]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">
+            <Badge className="mb-3 border border-[#6F4DFF]/25 bg-[#6F4DFF]/12 text-[#EAF1FF]">
               Envo Preview
             </Badge>
             <CardTitle className="text-2xl">Tell us how Envo should handle your leads.</CardTitle>
@@ -269,7 +269,7 @@ export function PreviewRequestForm() {
               SignalOpsAI uses your answers to map how Envo would work inside your business.
             </CardDescription>
           </div>
-          <div className="rounded-xl border border-[#ffb36d]/20 bg-[#ffb36d]/10 px-3 py-2 text-xs font-medium text-[#ffe1bd]">
+          <div className="rounded-xl border border-[#6F4DFF]/20 bg-[#6F4DFF]/10 px-3 py-2 text-xs font-medium text-[#EAF1FF]">
             Done for you
           </div>
         </div>
@@ -370,18 +370,18 @@ export function PreviewRequestForm() {
             </div>
 
             <div className="mt-4">
-              <p className="mb-3 text-sm font-medium text-[#f2d9e8]">Main lead sources</p>
+              <p className="mb-3 text-sm font-medium text-[#EAF1FF]">Main lead sources</p>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {previewLeadSourceOptions.map((source) => (
                   <label
                     key={source}
-                    className="flex min-h-11 cursor-pointer items-center gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm text-[#ead0df]/82 transition hover:border-[#ffb36d]/28 hover:bg-white/[0.055]"
+                    className="flex min-h-11 cursor-pointer items-center gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm text-[#D7E2F7]/82 transition hover:border-[#6F4DFF]/28 hover:bg-white/[0.055]"
                   >
                     <input
                       type="checkbox"
                       checked={form.mainLeadSources.includes(source)}
                       onChange={() => updateLeadSource(source)}
-                      className="size-4 accent-[#ff6f9c]"
+                      className="size-4 accent-[#328BFF]"
                     />
                     {source}
                   </label>
@@ -498,7 +498,7 @@ export function PreviewRequestForm() {
             </div>
           ) : null}
 
-          <Button className="shadow-[0_18px_55px_rgba(255,111,156,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(255,111,156,0.3)]" type="submit" size="lg" disabled={status === "submitting"}>
+          <Button className="shadow-[0_18px_55px_rgba(50,139,255,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_70px_rgba(50,139,255,0.3)]" type="submit" size="lg" disabled={status === "submitting"}>
             {status === "submitting" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             ) : (
@@ -507,7 +507,7 @@ export function PreviewRequestForm() {
             Preview Envo
           </Button>
 
-          <p className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#ead0df]/62">
+          <p className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.035] p-3 text-xs leading-5 text-[#D7E2F7]/62">
             <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-300" aria-hidden="true" />
             Share the messy reality. SignalOpsAI will shape Envo around how your business actually runs.
           </p>
@@ -519,8 +519,8 @@ export function PreviewRequestForm() {
 
 function FormPanel({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-[#17122d]/42 p-3.5 sm:p-4">
-      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">{label}</p>
+    <div className="glass-card rounded-2xl border border-white/10 bg-[#0B1024]/42 p-3.5 sm:p-4">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">{label}</p>
       {children}
     </div>
   );
@@ -534,7 +534,7 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#EAF1FF]">
       {label}
       {children}
     </label>

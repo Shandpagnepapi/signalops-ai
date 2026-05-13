@@ -7,10 +7,10 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[linear-gradient(135deg,#ff6f9c,#ffb36d)] text-primary-foreground shadow-lg shadow-pink-950/25 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl hover:shadow-pink-950/30",
-        secondary: "bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:bg-[#38204d]",
+        default: "bg-[linear-gradient(135deg,#328BFF,#2563EB_46%,#6F4DFF)] text-primary-foreground shadow-lg shadow-blue-950/25 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl hover:shadow-blue-950/30",
+        secondary: "bg-secondary text-secondary-foreground hover:-translate-y-0.5 hover:bg-[#dfe9ff]",
         outline: "border border-border bg-transparent text-foreground hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/8",
-        ghost: "text-[#f2d9e8] hover:bg-white/6 hover:text-white",
+        ghost: "text-[#D7E2F7] hover:bg-white/6 hover:text-white",
         destructive: "bg-destructive text-destructive-foreground hover:bg-red-500"
       },
       size: {

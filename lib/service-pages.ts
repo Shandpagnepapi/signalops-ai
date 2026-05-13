@@ -105,12 +105,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/ai-lead-response",
     targetKeyword: "AI lead response system",
     eyebrow: "AI lead response system",
-    metaTitle: "AI Lead Response System for Local Businesses | SignalOps",
+    metaTitle: "AI Lead Response System for Local Businesses | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps builds AI lead response systems that help local businesses answer leads instantly, sort prospects, route hot opportunities, and follow up.",
+      "SignalOpsAI builds Envo, an AI Lead Manager that helps local businesses answer leads instantly, sort prospects, route hot opportunities, and follow up.",
     h1: "AI lead response system for local businesses.",
     subheadline:
-      "SignalOps helps service businesses answer calls, texts, forms, DMs, and quote requests quickly with useful next steps, clean lead summaries, and staff handoff when needed.",
+      "Envo helps service businesses answer calls, texts, forms, DMs, and quote requests quickly with useful next steps, clean lead summaries, and staff handoff when needed.",
     problemTitle: "Most businesses do not have a lead problem. They have a response problem.",
     problemIntro:
       "A prospect who submits a form or sends a DM is usually still shopping. If the first response is slow, vague, or forgotten, the lead can go cold before anyone has a real sales conversation.",
@@ -131,9 +131,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Vehicle info, photos, address, service type, urgency, and appointment preference can live across forms, texts, DMs, and emails."
       }
     ],
-    solutionTitle: "How SignalOps builds the response layer",
+    solutionTitle: "How Envo supports the response layer",
     solutionIntro:
-      "SignalOps creates a practical first-response system around the channels your business already uses, then routes the lead into intake, booking, or follow-up.",
+      "Envo creates a practical first-response system around the channels your business already uses, then routes the lead into intake, booking, or follow-up.",
     solutionCards: [
       {
         title: "Instant acknowledgement",
@@ -158,7 +158,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     workflowTitle: "Example AI lead response workflow",
     workflowIntro:
-      "This is the basic flow SignalOps installs before adding deeper CRM, calendar, SMS, or reporting integrations.",
+      "This is the basic flow SignalOpsAI trains Envo on before adding deeper CRM, calendar, SMS, or reporting integrations.",
     workflow: [
       {
         label: "1",
@@ -170,7 +170,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "2",
         title: "Response goes out",
         description:
-          "SignalOps confirms the request and asks for the next detail needed to move the conversation forward."
+          "Envo confirms the request and asks for the next detail needed to move the conversation forward."
       },
       {
         label: "3",
@@ -223,12 +223,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "RouteWash Mobile Fleet Care",
         description:
-          "A fleet manager asks about biweekly washing for 28 service vans across two DFW locations. SignalOps collects account details and routes it as a recurring fleet quote opportunity."
+          "A fleet manager asks about biweekly washing for 28 service vans across two DFW locations. Envo collects account details and routes it as a recurring fleet quote opportunity."
       },
       {
         title: "ClearFlow Well & Water",
         description:
-          "A homeowner reports no water. SignalOps flags urgency, requests address and system details, and prepares an owner alert."
+          "A homeowner reports no water. Envo flags urgency, requests address and system details, and prepares an owner alert."
       },
       {
         title: "Local HVAC company",
@@ -240,12 +240,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Is an AI lead response system just a chatbot?",
         answer:
-          "No. A chatbot can be one channel, but SignalOps focuses on the response workflow behind calls, texts, forms, DMs, quote requests, alerts, CRM logs, and follow-up."
+          "No. A chatbot can be one channel, but Envo focuses on the response workflow behind calls, texts, forms, DMs, quote requests, alerts, CRM logs, and follow-up."
       },
       {
-        question: "Can SignalOps work without a CRM?",
+        question: "Can Envo work without a CRM?",
         answer:
-          "Yes. SignalOps can start with calls, texts, forms, owner alerts, and a simple lead dashboard. CRM integration can come later."
+          "Yes. Envo can start with calls, texts, forms, owner alerts, and a simple lead dashboard. CRM integration can come later."
       },
       {
         question: "What happens when AI is unsure?",
@@ -260,12 +260,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/ai-lead-qualification",
     targetKeyword: "AI lead intake",
     eyebrow: "AI lead intake",
-    metaTitle: "AI Lead Intake for Small Business Leads | SignalOps",
+    metaTitle: "AI Lead Intake for Small Business Leads | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps uses AI lead intake to organize small business leads, summarize intent, flag urgency, route priority prospects, and trigger follow-up.",
+      "Envo uses AI lead intake to organize small business leads, summarize intent, flag urgency, route priority prospects, and trigger follow-up.",
     h1: "AI lead intake for small business leads.",
     subheadline:
-      "SignalOps turns messy inquiries into clear lead details, urgency, recommended next action, and staff-handoff flags so your team knows who to call first.",
+      "Envo turns messy inquiries into clear lead details, urgency, recommended next action, and staff-handoff flags so your team knows who to call first.",
     problemTitle: "Not every lead deserves the same response.",
     problemIntro:
       "A ready-to-book customer, a vague price shopper, an urgent repair, and a commercial opportunity all need different handling. When every inquiry is treated the same, strong leads wait too long and weak leads consume too much time.",
@@ -286,9 +286,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Words like shaking, leaking, no water, emergency, today, or deadline should change how quickly a lead is handled."
       }
     ],
-    solutionTitle: "How SignalOps organizes lead intake",
+    solutionTitle: "How Envo organizes lead intake",
     solutionIntro:
-      "SignalOps uses service-specific priority rules and AI summaries to separate priority, routine, needs-details, and staff-handoff leads.",
+      "Envo uses service-specific priority rules and AI summaries to separate priority, routine, needs-details, and staff-handoff leads.",
     solutionCards: [
       {
         title: "Priority",
@@ -323,7 +323,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "2",
-        title: "SignalOps extracts intent",
+        title: "Envo extracts intent",
         description:
           "The system identifies service type, urgency, buying language, missing details, and risk signals."
       },
@@ -378,7 +378,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Large fleet quote request",
         description:
-          "SignalOps flags recurring account potential, recommends owner handoff, and avoids promising final service setup before site requirements are confirmed."
+          "Envo flags recurring account potential, recommends owner handoff, and avoids promising final service setup before site requirements are confirmed."
       },
       {
         title: "Routine filter replacement",
@@ -395,7 +395,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Can AI decide whether a lead is worth pursuing?",
         answer:
-          "It can help organize priority, but final judgment should stay with the business. SignalOps flags uncertainty and routes sensitive cases to staff."
+          "It can help organize priority, but final judgment should stay with the business. Envo flags uncertainty and routes sensitive cases to staff."
       },
       {
         question: "Can priority rules be customized?",
@@ -405,7 +405,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "What if a lead is vague?",
         answer:
-          "SignalOps can ask for missing details and mark the lead lower confidence instead of ignoring it."
+          "Envo can ask for missing details and mark the lead lower confidence instead of ignoring it."
       }
     ],
     relatedLinks: [related.response, related.routing, related.followUp, related.quote]
@@ -415,12 +415,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/automated-lead-follow-up",
     targetKeyword: "automated lead follow-up",
     eyebrow: "Automated lead follow-up",
-    metaTitle: "Automated Lead Follow-Up Systems | SignalOps",
+    metaTitle: "Automated Lead Follow-Up Systems | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps builds automated lead follow-up systems for service businesses that need to recover quote requests, missing details, and unbooked appointments.",
+      "SignalOpsAI builds Envo follow-up workflows for service businesses that need to recover quote requests, missing details, and unbooked appointments.",
     h1: "Automated lead follow-up systems that keep interested prospects moving.",
     subheadline:
-      "SignalOps helps businesses follow up after quote requests, missed calls, form submissions, DMs, and appointments without relying on memory or manual reminders.",
+      "Envo helps businesses follow up after quote requests, missed calls, form submissions, DMs, and appointments without relying on memory or manual reminders.",
     problemTitle: "Most follow-up fails after the first response.",
     problemIntro:
       "A lead may still be interested even if they do not reply immediately. The problem is that missing photos, unbooked estimates, and quiet conversations often get buried in texts, inboxes, or form notifications.",
@@ -441,9 +441,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Estimate follow-up often depends on scrolling through old messages or remembering who sounded interested."
       }
     ],
-    solutionTitle: "How SignalOps automates follow-up",
+    solutionTitle: "How Envo automates follow-up",
     solutionIntro:
-      "SignalOps builds follow-up sequences around lead status, missing details, quote status, appointment readiness, and staff handoff triggers.",
+      "SignalOpsAI builds Envo follow-up sequences around lead status, missing details, quote status, appointment readiness, and staff handoff triggers.",
     solutionCards: [
       {
         title: "Missing-detail reminders",
@@ -480,7 +480,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "2",
         title: "First reply asks for what is missing",
         description:
-          "SignalOps requests the details needed to quote, schedule, or route the lead."
+          "Envo requests the details needed to quote, schedule, or route the lead."
       },
       {
         label: "3",
@@ -533,12 +533,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Fleet wash quote reminder",
         description:
-          "A fleet manager asks for pricing but does not confirm locations or wash window. SignalOps follows up with a short detail request."
+          "A fleet manager asks for pricing but does not confirm locations or wash window. Envo follows up with a short detail request."
       },
       {
         title: "Auto shop estimate follow-up",
         description:
-          "A repair estimate is sent, then SignalOps checks whether the customer wants to schedule or has questions."
+          "A repair estimate is sent, then Envo checks whether the customer wants to schedule or has questions."
       },
       {
         title: "Well service maintenance reminder",
@@ -550,7 +550,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Will automated follow-up feel spammy?",
         answer:
-          "It should not. SignalOps keeps follow-up specific, useful, and limited. The goal is to help the customer complete the next step."
+          "It should not. Envo keeps follow-up specific, useful, and limited. The goal is to help the customer complete the next step."
       },
       {
         question: "Can follow-up stop when someone books?",
@@ -570,12 +570,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/missed-lead-recovery",
     targetKeyword: "missed lead recovery",
     eyebrow: "Missed lead recovery",
-    metaTitle: "Missed Lead Recovery for Local Businesses | SignalOps",
+    metaTitle: "Missed Lead Recovery for Local Businesses | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps helps local businesses recover missed leads from slow replies, missed calls, forgotten follow-ups, unbooked quotes, and incomplete intake.",
+      "Envo helps local businesses recover missed leads from slow replies, missed calls, forgotten follow-ups, unbooked quotes, and incomplete intake.",
     h1: "Missed lead recovery for local businesses.",
     subheadline:
-      "SignalOps finds and fixes the moments where leads get missed, delayed, or forgotten across calls, texts, forms, DMs, quotes, and follow-ups.",
+      "Envo finds and fixes the moments where leads get missed, delayed, or forgotten across calls, texts, forms, DMs, quotes, and follow-ups.",
     problemTitle: "Missed leads are usually process leaks, not mystery losses.",
     problemIntro:
       "A missed lead can be a phone call that was not answered, a form that sat too long, a quote with no follow-up, a DM nobody owned, or a customer who never got a booking link.",
@@ -596,9 +596,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Unbooked quotes and missing-detail leads may still be valuable, but they need a second touch."
       }
     ],
-    solutionTitle: "How SignalOps recovers missed leads",
+    solutionTitle: "How Envo recovers missed leads",
     solutionIntro:
-      "SignalOps combines response, intake, follow-up, routing, and dashboard visibility so fewer opportunities disappear silently.",
+      "Envo combines response, intake, follow-up, routing, and dashboard visibility so fewer opportunities disappear silently.",
     solutionCards: [
       {
         title: "Missed-call text back",
@@ -633,7 +633,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "2",
-        title: "SignalOps responds",
+        title: "Envo responds",
         description:
           "The customer receives a helpful message asking for the next detail or offering a scheduling path."
       },
@@ -688,7 +688,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Missed call from a fleet wash prospect",
         description:
-          "SignalOps texts back asking for fleet size, vehicle types, locations, frequency, and preferred wash window."
+          "Envo texts back asking for fleet size, vehicle types, locations, frequency, and preferred wash window."
       },
       {
         title: "Forgotten HVAC estimate",
@@ -698,7 +698,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Unanswered no-water inquiry",
         description:
-          "SignalOps flags the issue as urgent and routes it for owner review with address and system details requested."
+          "Envo flags the issue as urgent and routes it for owner review with address and system details requested."
       }
     ],
     faqs: [
@@ -708,14 +708,14 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "No. It includes real-time missed-call recovery, slow form response, quote follow-up, and re-engagement of older opportunities."
       },
       {
-        question: "Can SignalOps recover every missed lead?",
+        question: "Can Envo recover every missed lead?",
         answer:
-          "No system can guarantee that. SignalOps improves the process so more leads receive a timely, useful next step."
+          "No system can guarantee that. Envo improves the process so more leads receive a timely, useful next step."
       },
       {
         question: "Where should we start?",
         answer:
-          "Start by sending project details so SignalOps can scope the right response, intake, routing, and follow-up system."
+          "Start by sending Envo Preview details so SignalOpsAI can scope the right response, intake, routing, and follow-up setup."
       }
     ],
     relatedLinks: [related.response, related.followUp, related.routing, related.booking]
@@ -725,12 +725,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/lead-routing-automation",
     targetKeyword: "lead routing automation",
     eyebrow: "Lead routing automation",
-    metaTitle: "Lead Routing Automation for Sales Teams | SignalOps",
+    metaTitle: "Lead Routing Automation for Sales Teams | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps builds lead routing automation that sends priority leads, urgent requests, quote inquiries, and appointment-ready prospects to the right person.",
+      "SignalOpsAI trains Envo with lead routing automation that sends priority leads, urgent requests, quote inquiries, and appointment-ready prospects to the right person.",
     h1: "Lead routing automation for sales teams and busy owners.",
     subheadline:
-      "SignalOps routes leads based on urgency, service type, value, source, missing details, and staff-handoff needs so the right person sees the right opportunity faster.",
+      "Envo routes leads based on urgency, service type, value, source, missing details, and staff-handoff needs so the right person sees the right opportunity faster.",
     problemTitle: "Good leads lose momentum when they go to the wrong place.",
     problemIntro:
       "A high-value commercial request should not sit in a general inbox. An urgent repair should not wait behind routine questions. A quote request missing photos should not go straight to sales without context.",
@@ -751,9 +751,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "A rep may get a notification without the details needed to call intelligently."
       }
     ],
-    solutionTitle: "How SignalOps routes leads",
+    solutionTitle: "How Envo routes leads",
     solutionIntro:
-      "SignalOps creates routing logic around lead quality, urgency, service type, location, team roles, CRM status, and follow-up paths.",
+      "Envo creates routing logic around lead quality, urgency, service type, location, team roles, CRM status, and follow-up paths.",
     solutionCards: [
       {
         title: "Priority lead alerts",
@@ -784,7 +784,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "1",
         title: "Lead is ready for handoff",
         description:
-          "SignalOps sorts service need, urgency, contact info, buying intent, and missing details."
+          "Envo sorts service need, urgency, contact info, buying intent, and missing details."
       },
       {
         label: "2",
@@ -843,7 +843,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Site requirement review",
         description:
-          "SignalOps routes the lead for owner review and avoids promising compliance or final service setup before local site requirements are confirmed."
+          "Envo routes the lead for owner review and avoids promising compliance or final service setup before local site requirements are confirmed."
       },
       {
         title: "Commercial water system inquiry",
@@ -868,7 +868,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "The lead can be routed to the right person with the reason and missing details clearly shown."
       },
       {
-        question: "Can SignalOps route to a CRM?",
+        question: "Can Envo route to a CRM?",
         answer:
           "Yes, when credentials and integrations are configured. It can also start with owner alerts and a lightweight dashboard."
       }
@@ -880,12 +880,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/ai-appointment-booking",
     targetKeyword: "AI appointment booking",
     eyebrow: "AI appointment booking",
-    metaTitle: "AI Appointment Booking for Service Businesses | SignalOps",
+    metaTitle: "AI Appointment Booking for Service Businesses | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps helps service businesses move ready leads toward appointments with AI booking prompts, lead intake, routing, and follow-up.",
+      "Envo helps service businesses move ready leads toward appointments with AI booking prompts, lead intake, routing, and follow-up.",
     h1: "AI appointment booking for service businesses.",
     subheadline:
-      "SignalOps helps ready leads move from inquiry to appointment by collecting scheduling intent, confirming service fit, sending the right next step, and alerting staff when a human should book.",
+      "Envo helps ready leads move from inquiry to appointment by collecting scheduling intent, confirming service fit, sending the right next step, and alerting staff when a human should book.",
     problemTitle: "Appointment-ready leads often stall before the calendar.",
     problemIntro:
       "Many prospects ask for availability but never get a clear booking path. Others need a quote, photos, or staff review before scheduling. Without a process, ready customers get stuck in back-and-forth messages.",
@@ -906,9 +906,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "A customer says they want to book, but the team never closes the loop."
       }
     ],
-    solutionTitle: "How SignalOps supports appointment booking",
+    solutionTitle: "How Envo supports appointment booking",
     solutionIntro:
-      "SignalOps does not blindly book every lead. It collects the right details, confirms preferred timing, and routes the right booking path based on service fit.",
+      "Envo does not blindly book every lead. It collects the right details, confirms preferred timing, and routes the right booking path based on service fit.",
     solutionCards: [
       {
         title: "Booking readiness",
@@ -928,7 +928,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Unbooked follow-up",
         description:
-          "If a customer does not pick a time, SignalOps can follow up with a practical reminder."
+          "If a customer does not pick a time, Envo can follow up with a practical reminder."
       }
     ],
     workflowTitle: "Example AI appointment booking workflow",
@@ -943,7 +943,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "2",
-        title: "SignalOps checks readiness",
+        title: "Envo checks readiness",
         description:
           "The system looks for contact info, service fit, urgency, missing details, and review requirements."
       },
@@ -998,7 +998,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Fleet wash account call",
         description:
-          "SignalOps asks for fleet size, vehicle types, locations, preferred service window, and recurring plan interest."
+          "Envo asks for fleet size, vehicle types, locations, preferred service window, and recurring plan interest."
       },
       {
         title: "Detailing package booking",
@@ -1020,7 +1020,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         question: "Can it work with Calendly or another booking tool?",
         answer:
-          "Yes. SignalOps is built to support booking links and calendar integrations when configured."
+          "Yes. Envo is built to support booking links and calendar integrations when configured."
       },
       {
         question: "Can it prevent unready bookings?",
@@ -1035,12 +1035,12 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     path: "/services/quote-intake-automation",
     targetKeyword: "quote intake automation",
     eyebrow: "Quote intake automation",
-    metaTitle: "Quote Intake Automation for Service Businesses | SignalOps",
+    metaTitle: "Quote Intake Automation for Service Businesses | Envo by SignalOpsAI",
     metaDescription:
-      "SignalOps builds quote intake automation for service businesses that need photos, scope details, urgency, routing, and follow-up before estimates.",
+      "SignalOpsAI trains Envo for quote intake automation for service businesses that need photos, scope details, urgency, routing, and follow-up before estimates.",
     h1: "Quote intake automation for service businesses.",
     subheadline:
-      "SignalOps helps quote-based businesses collect the details needed to estimate work, request photos when useful, route complex jobs, and follow up after estimates.",
+      "Envo helps quote-based businesses collect the details needed to estimate work, request photos when useful, route complex jobs, and follow up after estimates.",
     problemTitle: "Vague quote requests waste time and still go cold.",
     problemIntro:
       "Customers often ask 'How much?' before providing the details needed to quote responsibly. If the business has to manually chase photos, scope, address, vehicle details, or timing, good leads can stall.",
@@ -1061,9 +1061,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
           "Once pricing is sent, the lead may never receive a timely reminder or booking path."
       }
     ],
-    solutionTitle: "How SignalOps automates quote intake",
+    solutionTitle: "How Envo automates quote intake",
     solutionIntro:
-      "SignalOps creates service-specific intake flows that collect the right information before your team follows up, quotes, or books the work.",
+      "Envo creates service-specific intake flows that collect the right information before your team follows up, quotes, or books the work.",
     solutionCards: [
       {
         title: "Dynamic intake questions",
@@ -1098,7 +1098,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       },
       {
         label: "2",
-        title: "SignalOps asks for the right details",
+        title: "Envo asks for the right details",
         description:
           "The system requests photos, service type, location, timeline, symptoms, or project scope based on the business."
       },
@@ -1112,7 +1112,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
         label: "4",
         title: "Quote follow-up starts",
         description:
-          "If the customer does not book after estimate, SignalOps can send practical follow-up."
+          "If the customer does not book after estimate, Envo can send practical follow-up."
       }
     ],
     whoFor: [
@@ -1153,7 +1153,7 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
       {
         title: "Fleet wash recurring quote",
         description:
-          "SignalOps asks for fleet size, vehicle types, locations, water access, after-hours need, and preferred wash cadence."
+          "Envo asks for fleet size, vehicle types, locations, water access, after-hours need, and preferred wash cadence."
       },
       {
         title: "Well pump issue quote",
@@ -1168,9 +1168,9 @@ export const SERVICE_PAGES: Record<ServicePageId, ServicePageConfig> = {
     ],
     faqs: [
       {
-        question: "Can SignalOps generate final prices?",
+        question: "Can Envo generate final prices?",
         answer:
-          "SignalOps can organize intake and prepare context. Final pricing should stay with the business when scope, safety, inspection, or judgment is required."
+          "Envo can organize intake and prepare context. Final pricing should stay with the business when scope, safety, inspection, or judgment is required."
       },
       {
         question: "Can it request photos?",

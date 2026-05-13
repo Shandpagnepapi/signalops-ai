@@ -129,7 +129,7 @@ const flowSteps: FlowStep[] = [
 
 const beforeAfter = [
   {
-    label: "Before SignalOps",
+    label: "Before Envo",
     tone: "warning",
     items: [
       "Leads sit in inboxes, voicemails, and form notifications.",
@@ -139,7 +139,7 @@ const beforeAfter = [
     ]
   },
   {
-    label: "After SignalOps",
+    label: "After Envo",
     tone: "success",
     items: [
       "Every lead gets an instant response and a clear next step.",
@@ -189,14 +189,14 @@ export function HowItWorksDemo() {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
             <div className="space-y-6">
-              <Badge variant="outline" className="border-[#ff9ec0]/25 bg-[#ff6f9c]/10 text-[#ffd7e6]">
+              <Badge variant="outline" className="border-[#8EBBFF]/25 bg-[#328BFF]/10 text-[#D7E8FF]">
                 Envo by SignalOpsAI
               </Badge>
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl">
                   How Envo handles lead work
                 </h1>
-                <p className="max-w-2xl text-base leading-7 text-[#ead0df]/78 sm:text-lg">
+                <p className="max-w-2xl text-base leading-7 text-[#D7E2F7]/78 sm:text-lg">
                   A simple AI lead manager for capturing, responding, sorting,
                   routing, booking, and following up before good opportunities go cold.
                 </p>
@@ -220,7 +220,7 @@ export function HowItWorksDemo() {
                   View Demo
                 </TrackedLink>
               </div>
-              <div className="grid gap-3 text-sm text-[#ead0df]/78 sm:grid-cols-3">
+              <div className="grid gap-3 text-sm text-[#D7E2F7]/78 sm:grid-cols-3">
                 {["No vague autoresponder", "Clear team handoff", "Follow-up that keeps moving"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="size-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -231,11 +231,11 @@ export function HowItWorksDemo() {
             </div>
 
             <Card className="relative overflow-hidden p-5">
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#ff6f9c] via-[#ffb36d] to-[#8d6bff]" />
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#328BFF] via-[#6F4DFF] to-[#8d6bff]" />
               <div className="space-y-5">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
+                    <p className="text-xs font-medium uppercase tracking-normal text-[#D7E2F7]/62">
                       Live intake snapshot
                     </p>
                     <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
@@ -259,8 +259,8 @@ export function HowItWorksDemo() {
                       key={label}
                       className="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-3 py-3"
                     >
-                      <span className="text-sm text-[#ead0df]/62">{label}</span>
-                      <span className="text-right text-sm font-medium text-[#fff8fb]">{value}</span>
+                      <span className="text-sm text-[#D7E2F7]/62">{label}</span>
+                      <span className="text-right text-sm font-medium text-[#F8FAFF]">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -280,7 +280,7 @@ export function HowItWorksDemo() {
           <h2 className="text-3xl font-semibold tracking-normal text-white">
             From first touch to booked appointment
           </h2>
-          <p className="text-sm leading-6 text-[#ead0df]/78 sm:text-base">
+          <p className="text-sm leading-6 text-[#D7E2F7]/78 sm:text-base">
             Envo connects the moments that usually live in separate tools: the inquiry,
             response, intake, routing, booking, follow-up, and reporting.
           </p>
@@ -289,7 +289,7 @@ export function HowItWorksDemo() {
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)]">
           <div className="relative">
             <div
-              className="absolute bottom-8 left-5 top-8 w-px bg-gradient-to-b from-[#ff6f9c]/15 via-[#ffb36d]/35 to-[#8d6bff]/15 lg:left-8 lg:right-8 lg:top-1/2 lg:h-px lg:w-auto lg:-translate-y-1/2 lg:bg-gradient-to-r"
+              className="absolute bottom-8 left-5 top-8 w-px bg-gradient-to-b from-[#328BFF]/15 via-[#6F4DFF]/35 to-[#8d6bff]/15 lg:left-8 lg:right-8 lg:top-1/2 lg:h-px lg:w-auto lg:-translate-y-1/2 lg:bg-gradient-to-r"
               aria-hidden="true"
             />
             <div className="grid gap-3 lg:grid-cols-7">
@@ -305,8 +305,8 @@ export function HowItWorksDemo() {
                     className={cn(
                       "relative z-10 flex min-h-28 w-full items-start gap-3 rounded-2xl border p-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:min-h-44 lg:flex-col",
                       isActive
-                        ? "border-[#ff9ec0]/45 bg-[#ff6f9c]/15 shadow-xl shadow-pink-950/25"
-                        : "border-white/10 bg-[#231434]/88 hover:border-[#ff9ec0]/30 hover:bg-white/5"
+                        ? "border-[#8EBBFF]/45 bg-[#328BFF]/15 shadow-xl shadow-blue-950/25"
+                        : "border-white/10 bg-[#111A3A]/88 hover:border-[#8EBBFF]/30 hover:bg-white/5"
                     )}
                     aria-pressed={isActive}
                   >
@@ -314,20 +314,20 @@ export function HowItWorksDemo() {
                       className={cn(
                         "flex size-10 shrink-0 items-center justify-center rounded-2xl border",
                         isActive
-                          ? "border-[#ffc0d5]/40 bg-[#ff9ec0]/20 text-[#ffd7e6]"
-                          : "border-white/10 bg-white/5 text-[#ead0df]/78"
+                          ? "border-[#BFD3FF]/40 bg-[#8EBBFF]/20 text-[#D7E8FF]"
+                          : "border-white/10 bg-white/5 text-[#D7E2F7]/78"
                       )}
                     >
                       <StepIcon className="size-5" aria-hidden="true" />
                     </span>
                     <span className="min-w-0 space-y-1">
-                      <span className="block text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
+                      <span className="block text-xs font-medium uppercase tracking-normal text-[#D7E2F7]/62">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="block text-sm font-semibold leading-5 text-white">
                         {step.title}
                       </span>
-                      <span className="block text-xs leading-5 text-[#ead0df]/62">{step.eyebrow}</span>
+                      <span className="block text-xs leading-5 text-[#D7E2F7]/62">{step.eyebrow}</span>
                     </span>
                   </button>
                 );
@@ -337,17 +337,17 @@ export function HowItWorksDemo() {
 
           <Card className="p-5">
             <div className="flex items-start gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-[#6F4DFF]/25 bg-[#6F4DFF]/10 text-[#EAF1FF]">
                 <ActiveStepIcon className="size-6" aria-hidden="true" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs font-medium uppercase tracking-normal text-[#ead0df]/62">
+                <p className="text-xs font-medium uppercase tracking-normal text-[#D7E2F7]/62">
                   Step {activeNumber}
                 </p>
                 <h3 className="mt-1 text-2xl font-semibold tracking-normal text-white">
                   {activeStep.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-[#ead0df]/78">{activeStep.description}</p>
+                <p className="mt-2 text-sm leading-6 text-[#D7E2F7]/78">{activeStep.description}</p>
               </div>
             </div>
 
@@ -355,22 +355,22 @@ export function HowItWorksDemo() {
               {activeStep.details.map((detail) => (
                 <div key={detail} className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
                   <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-200" aria-hidden="true" />
-                  <p className="text-sm leading-6 text-[#f2d9e8]">{detail}</p>
+                  <p className="text-sm leading-6 text-[#EAF1FF]">{detail}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 p-4">
-              <p className="text-xs font-medium uppercase tracking-normal text-[#ffd7e6]">
+            <div className="mt-5 rounded-2xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 p-4">
+              <p className="text-xs font-medium uppercase tracking-normal text-[#D7E8FF]">
                 What the owner sees
               </p>
-              <p className="mt-2 text-sm leading-6 text-[#f2d9e8]">{activeStep.ownerView}</p>
+              <p className="mt-2 text-sm leading-6 text-[#EAF1FF]">{activeStep.ownerView}</p>
             </div>
           </Card>
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#17122d]/35">
+      <section className="border-y border-white/10 bg-[#0B1024]/35">
         <div className="mx-auto grid w-full max-w-7xl gap-4 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:px-8">
           {beforeAfter.map((group) => (
             <Card key={group.label} className="p-5">
@@ -388,7 +388,7 @@ export function HowItWorksDemo() {
                       )}
                       aria-hidden="true"
                     />
-                    <p className="text-sm leading-6 text-[#f2d9e8]">{item}</p>
+                    <p className="text-sm leading-6 text-[#EAF1FF]">{item}</p>
                   </div>
                 ))}
               </div>
@@ -400,14 +400,14 @@ export function HowItWorksDemo() {
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="mb-8 grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-end">
           <div className="space-y-3">
-            <Badge variant="outline" className="border-[#ffb36d]/25 bg-[#ffb36d]/10 text-[#ffe1bd]">
+            <Badge variant="outline" className="border-[#6F4DFF]/25 bg-[#6F4DFF]/10 text-[#EAF1FF]">
               Generated operating examples
             </Badge>
             <h2 className="text-3xl font-semibold tracking-normal text-white">
               The useful output your team actually needs
             </h2>
           </div>
-          <p className="text-sm leading-6 text-[#ead0df]/78 sm:text-base">
+          <p className="text-sm leading-6 text-[#D7E2F7]/78 sm:text-base">
             The system is designed to make the next action obvious, not bury your team in generic
             automation noise.
           </p>
@@ -419,11 +419,11 @@ export function HowItWorksDemo() {
 
             return (
               <Card key={example.label} className="p-5">
-                <div className="mb-4 flex size-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#ffd7e6]">
+                <div className="mb-4 flex size-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#D7E8FF]">
                   <ExampleIcon className="size-5" aria-hidden="true" />
                 </div>
                 <h3 className="text-base font-semibold tracking-normal text-white">{example.label}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#ead0df]/78">{example.value}</p>
+                <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/78">{example.value}</p>
               </Card>
             );
           })}
@@ -431,16 +431,16 @@ export function HowItWorksDemo() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#ff6f9c]/18 via-[#231434] to-[#17122d] p-6 sm:p-8">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#328BFF]/18 via-[#111A3A] to-[#0B1024] p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div className="space-y-3">
               <Badge variant="success">Project inquiry</Badge>
               <h2 className="text-3xl font-semibold tracking-normal text-white">
                 See where leads are being missed.
               </h2>
-              <p className="max-w-2xl text-sm leading-6 text-[#ead0df]/78 sm:text-base">
+              <p className="max-w-2xl text-sm leading-6 text-[#D7E2F7]/78 sm:text-base">
                 Tell us how leads come in, what tools you use, and which package you are considering.
-            SignalOps will reply with the best next step for Envo.
+            SignalOpsAI will reply with the best next step for Envo.
               </p>
             </div>
             <TrackedLink

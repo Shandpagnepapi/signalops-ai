@@ -9,7 +9,7 @@ import {
 
 const title = "SignalOpsAI | Envo and Drone Services";
 const description =
-  "SignalOpsAI offers Envo AI lead automation and FAA Part 107 aerial photo and video services for small businesses.";
+  "SignalOpsAI is the parent venture studio for Envo, the AI worker for customer calls and leads, plus separate FAA Part 107 Drone Services.";
 
 export const metadata = createPageMetadata({
   title,

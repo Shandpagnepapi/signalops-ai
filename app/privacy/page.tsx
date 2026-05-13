@@ -90,28 +90,28 @@ export default function PrivacyPage() {
         ])}
       />
       <header className="max-w-3xl">
-        <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">Privacy</Badge>
+        <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">Privacy</Badge>
         <h1 className="text-4xl font-semibold tracking-normal text-white sm:text-5xl">SignalOps Privacy Policy</h1>
         <CardDescription className="mt-4 text-base leading-7">
           This page explains how SignalOps may collect and use information from website visitors and form submissions.
         </CardDescription>
-        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: May 11, 2026</p>
+        <p className="mt-4 text-sm text-[#D7E2F7]/62">Effective date: May 11, 2026</p>
       </header>
 
       <div className="mt-10 space-y-4">
         {privacySections.map((section) => (
-          <Card key={section.title} className="bg-[#17122d]/72">
+          <Card key={section.title} className="bg-[#0B1024]/72">
             <CardHeader>
               <CardTitle>{section.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-sm leading-7 text-[#ead0df]/78">
+                <p key={paragraph} className="text-sm leading-7 text-[#D7E2F7]/78">
                   {paragraph}
                 </p>
               ))}
               {section.bullets ? (
-                <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-[#ead0df]/78">
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-[#D7E2F7]/78">
                   {section.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}

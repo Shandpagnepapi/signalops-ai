@@ -179,7 +179,7 @@ function AppHeader() {
             eventProperties={{ location: "mobile_test_3_header" }}
             className={cn(styles.headerCta, "inline-flex h-10 shrink-0 items-center justify-center rounded-full px-4 text-sm font-black transition sm:hidden")}
           >
-            Free Preview
+            Envo Preview
           </TrackedLink>
         </div>
 
@@ -194,7 +194,7 @@ function AppHeader() {
             eventProperties={{ location: "mobile_test_3_header_desktop" }}
             className={cn(styles.headerCta, "hidden h-10 shrink-0 items-center justify-center rounded-full px-4 text-sm font-black transition sm:inline-flex")}
           >
-            Free Preview
+            Envo Preview
           </TrackedLink>
         </div>
       </nav>
@@ -214,7 +214,7 @@ function Hero() {
           Meet the AI layer that answers leads before they go cold.
         </h1>
         <p className={cn(styles.heroCopy, "mt-5 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8")}>
-          SignalOps builds AI receptionist, intake, follow-up, and booking systems for service businesses that cannot afford missed opportunities.
+          Envo is the AI worker for customer calls and leads, built to answer, organize, follow up, and hand off opportunities for busy service businesses.
         </p>
       </div>
 
@@ -486,7 +486,7 @@ function FinalCTA() {
             eventProperties={{ location: "mobile_test_3_final" }}
             className={cn(styles.primaryButton, "inline-flex h-12 items-center justify-center gap-2 rounded-2xl px-5 text-sm font-black transition")}
           >
-            Get My Free Preview
+            Preview Envo
             <ArrowRight className="size-4" aria-hidden="true" />
           </TrackedLink>
           <TrackedLink

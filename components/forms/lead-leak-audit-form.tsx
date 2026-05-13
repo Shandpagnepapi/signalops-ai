@@ -84,7 +84,7 @@ const timelineOptions = ["ASAP", "This month", "Exploring"];
 const budgetOptions = ["Starter range", "Growth range", "Custom buildout", "Not sure yet"];
 
 const selectClass =
-  "h-11 w-full min-w-0 rounded-xl border border-white/12 bg-[#17122d]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "h-11 w-full min-w-0 rounded-xl border border-white/12 bg-[#0B1024]/74 px-3 text-sm text-white shadow-inner shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 function toggleValue(values: string[], value: string) {
   return values.includes(value) ? values.filter((item) => item !== value) : [...values, value];
@@ -138,7 +138,7 @@ export function LeadLeakAuditForm() {
 
     if (!form.email.trim() || !form.phone.trim()) {
       setStatus("error");
-      setError("Please include both an email and phone number so SignalOps can follow up with next steps.");
+      setError("Please include both an email and phone number so SignalOpsAI can follow up with next steps.");
       return;
     }
 
@@ -149,14 +149,14 @@ export function LeadLeakAuditForm() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          source: "signalops-project-inquiry",
+          source: "envo-preview-questionnaire",
           name: form.name,
           email: form.email,
           phone: form.phone,
           businessName: form.businessName,
           website: form.website,
           industry: form.industry,
-          serviceNeeded: `${form.packageInterest} project inquiry`,
+          serviceNeeded: `${form.packageInterest} Envo Preview request`,
           message: buildProjectMessage(),
           currentTools: form.tools,
           monthlyLeads: Number(form.monthlyLeads) || 0,
@@ -168,7 +168,7 @@ export function LeadLeakAuditForm() {
       const data = (await response.json()) as LeadApiResponse;
 
       if (!response.ok || !data.lead) {
-        throw new Error(data.errors?.join(" ") || data.error || "The project details could not be submitted.");
+        throw new Error(data.errors?.join(" ") || data.error || "The Envo Preview details could not be submitted.");
       }
 
       setLead(data.lead);
@@ -188,27 +188,27 @@ export function LeadLeakAuditForm() {
   }
 
   return (
-    <Card id="audit-form" className="scroll-mt-24 border-[#ffb36d]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
+    <Card id="audit-form" className="scroll-mt-24 border-[#6F4DFF]/22 bg-white/[0.065] shadow-2xl shadow-black/24">
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <Badge className="mb-3 border border-[#ffb36d]/25 bg-[#ffb36d]/12 text-[#ffe1bd]">
-              Project questionnaire
+            <Badge className="mb-3 border border-[#6F4DFF]/25 bg-[#6F4DFF]/12 text-[#EAF1FF]">
+              Envo Preview questionnaire
             </Badge>
-            <CardTitle className="text-2xl">Tell us what you want SignalOps to build.</CardTitle>
+            <CardTitle className="text-2xl">Tell us how Envo should work for your business.</CardTitle>
             <CardDescription>
-              Share your lead sources, tools, package interest, and timeline so we can scope the right lead response system.
+              Share your lead sources, tools, package interest, and timeline so we can scope the right Envo preview and build plan.
             </CardDescription>
           </div>
-          <div className="rounded-xl border border-[#ff9ec0]/20 bg-[#ff6f9c]/10 px-3 py-2 text-xs font-medium text-[#ffd7e6]">
+          <div className="rounded-xl border border-[#8EBBFF]/20 bg-[#328BFF]/10 px-3 py-2 text-xs font-medium text-[#D7E8FF]">
             Build-ready context
           </div>
         </div>
       </CardHeader>
       <CardContent>
         <form className="grid gap-4" onFocus={handleFormStart} onSubmit={handleSubmit}>
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Contact and business</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Contact and business</p>
             <div className="grid gap-4 md:grid-cols-2">
               <Field label="Name">
                 <Input required value={form.name} onChange={(event) => updateField("name", event.target.value)} autoComplete="name" placeholder="Your name" />
@@ -231,8 +231,8 @@ export function LeadLeakAuditForm() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Project fit</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Project fit</p>
             <div className="grid gap-4 md:grid-cols-3">
               <Field label="Industry">
                 <select value={form.industry} onChange={(event) => updateField("industry", event.target.value)} className={selectClass}>
@@ -272,8 +272,8 @@ export function LeadLeakAuditForm() {
             />
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Current workflow</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Current workflow</p>
             <div className="grid gap-4 md:grid-cols-2">
               <Field label="Biggest lead problem right now">
                 <Textarea
@@ -304,8 +304,8 @@ export function LeadLeakAuditForm() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#17122d]/42 p-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb36d]">Build details</p>
+          <div className="rounded-2xl border border-white/10 bg-[#0B1024]/42 p-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F4DFF]">Build details</p>
             <div className="grid gap-4 md:grid-cols-3">
               <Field label="Timeline">
                 <select value={form.timeline} onChange={(event) => updateField("timeline", event.target.value)} className={selectClass}>
@@ -362,27 +362,27 @@ export function LeadLeakAuditForm() {
             ) : (
               <Send className="size-4" aria-hidden="true" />
             )}
-            Send Project Details
+            Send Questionnaire
           </Button>
         </form>
 
         {status === "success" && lead ? (
-          <div className="mt-6 rounded-2xl border border-[#ffb36d]/22 bg-[radial-gradient(circle_at_20%_0%,rgba(255,111,156,0.18),transparent_32%),rgba(255,179,109,0.08)] p-5 shadow-2xl shadow-black/18">
+          <div className="mt-6 rounded-2xl border border-[#6F4DFF]/22 bg-[radial-gradient(circle_at_20%_0%,rgba(50,139,255,0.18),transparent_32%),rgba(111,77,255,0.08)] p-5 shadow-2xl shadow-black/18">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-sm font-medium text-[#ffe1bd]">
+              <div className="flex items-center gap-2 text-sm font-medium text-[#EAF1FF]">
                 <CheckCircle2 className="size-4" aria-hidden="true" />
-                Project details received
+                Envo questionnaire received
               </div>
-              <Badge variant={lead.priority === "hot" ? "warning" : "success"}>SignalOps will review</Badge>
+              <Badge variant={lead.priority === "hot" ? "warning" : "success"}>SignalOpsAI will review</Badge>
             </div>
 
-            <div className="mt-5 rounded-xl border border-white/10 bg-[#17122d]/74 p-4">
-              <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#ead0df]/58">
-                <Sparkles className="size-3.5 text-[#ffb36d]" aria-hidden="true" />
+            <div className="mt-5 rounded-xl border border-white/10 bg-[#0B1024]/74 p-4">
+              <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#D7E2F7]/58">
+                <Sparkles className="size-3.5 text-[#6F4DFF]" aria-hidden="true" />
                 Next step
               </p>
-              <p className="text-sm leading-6 text-[#fff8fb]">
-                Got it - your project details were sent. SignalOps will review your lead flow and reply with the best next step.
+              <p className="text-sm leading-6 text-[#F8FAFF]">
+                Got it - your Envo Preview details were sent. SignalOpsAI will review your lead flow and reply with the best next step.
               </p>
             </div>
 
@@ -411,7 +411,7 @@ export function LeadLeakAuditForm() {
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#f2d9e8]">
+    <label className="grid min-w-0 gap-2 text-sm font-medium text-[#EAF1FF]">
       {label}
       {children}
     </label>
@@ -431,7 +431,7 @@ function OptionGroup({
 }) {
   return (
     <fieldset className="mt-4">
-      <legend className="mb-2 text-sm font-medium text-[#f2d9e8]">{label}</legend>
+      <legend className="mb-2 text-sm font-medium text-[#EAF1FF]">{label}</legend>
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {options.map((option) => {
           const isSelected = selected.includes(option);
@@ -441,15 +441,15 @@ function OptionGroup({
               key={option}
               className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm transition ${
                 isSelected
-                  ? "border-[#ffb36d]/35 bg-[#ffb36d]/12 text-[#ffe1bd]"
-                  : "border-white/10 bg-white/[0.035] text-[#ead0df]/76 hover:border-white/20"
+                  ? "border-[#6F4DFF]/35 bg-[#6F4DFF]/12 text-[#EAF1FF]"
+                  : "border-white/10 bg-white/[0.035] text-[#D7E2F7]/76 hover:border-white/20"
               }`}
             >
               <input
                 type="checkbox"
                 checked={isSelected}
                 onChange={() => onToggle(option)}
-                className="size-4 accent-[#ff6f9c]"
+                className="size-4 accent-[#328BFF]"
               />
               {option}
             </label>

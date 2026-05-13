@@ -27,7 +27,7 @@ import {
 } from "@/lib/seo";
 import { visualThemes } from "@/lib/visual-themes";
 
-const theme = visualThemes.envoWarm;
+const theme = visualThemes.studioCool;
 
 const businessName = "SignalOpsAI Drone Services";
 const phoneDisplay = "770-315-6300";
@@ -239,7 +239,7 @@ function DroneHeroVisual() {
     <GlassPanel className="cinematic-panel p-4 sm:p-6" theme={theme}>
       <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08050d]/58 p-4">
-          <div className="relative min-h-[20rem] rounded-[1.25rem] border border-white/10 bg-[radial-gradient(circle_at_55%_38%,rgba(255,179,109,0.22),transparent_34%),radial-gradient(circle_at_22%_22%,rgba(255,111,156,0.16),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.018))]">
+          <div className="relative min-h-[20rem] rounded-[1.25rem] border border-white/10 bg-[radial-gradient(circle_at_55%_38%,rgba(34,211,238,0.2),transparent_34%),radial-gradient(circle_at_22%_22%,rgba(37,99,235,0.18),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.018))]">
             <div className="absolute inset-5 rounded-[1rem] border border-white/10" />
             <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-white/10 bg-black/28 px-3 py-2 text-xs font-black text-white/72">
               <MapPin className="size-3.5 text-[color:var(--vs-accent-3)]" aria-hidden="true" />

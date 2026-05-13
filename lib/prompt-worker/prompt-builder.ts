@@ -140,7 +140,7 @@ function requestedOutputsText(classification: PromptWorkerClassification) {
   return [
     "Create these outputs in this exact order:",
     "",
-    "# SignalOps Free Preview Output",
+    "# SignalOps Envo Preview Output",
     "",
     "## 1. Internal Summary for Dillon",
     "- Is this a real prospect or test/spam?",
@@ -236,7 +236,7 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
   const input = asSubmissionInput(submission);
   const classification = classifyPreviewIntake(input);
   const template = systemTemplates[classification.recommendedSystemTemplate];
-  const title = `${input.businessName} ChatGPT Free Preview Prompt`;
+  const title = `${input.businessName} ChatGPT Envo Preview Prompt`;
   const summary =
     `${input.businessName} is classified as ${classification.businessType} using ${classification.recommendedSystemTemplate}. Recommended package: ${classification.recommendedPackage}.${classification.isTestSubmission ? " Test/do-not-contact handling required." : ""}`;
   const nextAction =
@@ -247,10 +247,10 @@ export function buildSignalOpsChatPrompt(submission: PreviewSubmission | Preview
       : "Paste this into ChatGPT, review the output, then send manually if approved.";
 
   const copyPastePrompt = [
-    "# SignalOps Free Preview Worker Prompt",
+    "# SignalOps Envo Preview Worker Prompt",
     "",
     "## Role / Context",
-    "You are the SignalOps AI Worker helping Dillon create a draft Free Preview package for a local service business. SignalOps builds AI lead response systems for local service businesses. Your job is to create practical draft materials Dillon can review and manually send.",
+    "You are the SignalOpsAI Envo Preview worker helping Dillon create a draft Envo Preview package for a local service business. SignalOpsAI trains Envo as an AI Lead Manager for customer calls, texts, forms, DMs, follow-up, and handoffs. Your job is to create practical draft materials Dillon can review and manually send.",
     "",
     "## SignalOps Rules",
     lines(signalOpsRules),
@@ -335,7 +335,7 @@ export function buildClientBuildPrompt(
     templateDetailsText(selectedSystemTemplate),
     "",
     "## Approved Preview / Scope Notes",
-    approvedPreview.approvedScope || "No approved scope pasted yet. Use the Free Preview classification and flag missing decisions.",
+    approvedPreview.approvedScope || "No approved scope pasted yet. Use the Envo Preview classification and flag missing decisions.",
     "",
     "## Dillon Notes",
     approvedPreview.approvedNotes || "None provided.",

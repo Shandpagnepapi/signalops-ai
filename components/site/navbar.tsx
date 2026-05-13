@@ -23,12 +23,12 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-[#08040f]/78 px-3 py-3 backdrop-blur-xl sm:px-5">
+    <header className="sticky top-0 z-50 bg-[#071126]/82 px-3 py-3 backdrop-blur-xl sm:px-5">
       <nav
-        className="mx-auto flex max-w-[1450px] items-center justify-between gap-2 rounded-2xl border border-[#ff6f9c]/18 bg-white/[0.052] px-3 py-2.5 shadow-2xl shadow-black/24 backdrop-blur-2xl sm:gap-4 sm:px-5 sm:py-3"
+        className="mx-auto flex max-w-[1450px] items-center justify-between gap-2 rounded-2xl border border-[#BFD3FF]/18 bg-white/[0.06] px-3 py-2.5 shadow-2xl shadow-black/24 backdrop-blur-2xl sm:gap-4 sm:px-5 sm:py-3"
         aria-label="Primary navigation"
       >
-        <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <Link href="/" className="flex min-h-10 shrink-0 items-center gap-2 rounded-xl pr-2 sm:gap-3">
           <Image src="/brand/signalops-logo-mark.svg" alt="" width={30} height={30} className="size-7 sm:size-[34px]" />
           <span className="text-sm font-semibold tracking-normal text-white sm:text-lg">{PUBLIC_BRAND_NAME}</span>
         </Link>
@@ -38,7 +38,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-xl px-3 py-2 text-sm font-semibold text-[#ead0df]/72 transition hover:bg-white/8 hover:text-white"
+              className="rounded-xl px-3 py-2 text-sm font-semibold text-[#D7E2F7]/72 transition hover:bg-white/8 hover:text-white"
             >
               {link.label}
             </Link>

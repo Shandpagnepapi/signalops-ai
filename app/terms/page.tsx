@@ -32,7 +32,7 @@ const termsSections: LegalSection[] = [
   {
     title: "No Guarantee of Specific Business Results",
     paragraphs: [
-      "SignalOps provides systems, workflows, and recommendations designed to improve lead operations.",
+      "SignalOpsAI provides Envo systems, workflows, and recommendations designed to improve lead operations.",
       "SignalOps does not guarantee specific revenue, close rates, appointment volume, or other business outcomes."
     ]
   },
@@ -84,23 +84,23 @@ export default function TermsPage() {
         ])}
       />
       <header className="max-w-3xl">
-        <Badge className="mb-4 bg-[#ff6f9c]/14 text-[#ffd7e6]">Terms</Badge>
+        <Badge className="mb-4 bg-[#328BFF]/14 text-[#D7E8FF]">Terms</Badge>
         <h1 className="text-4xl font-semibold tracking-normal text-white sm:text-5xl">SignalOps Terms of Use</h1>
         <CardDescription className="mt-4 text-base leading-7">
           These terms describe how this website and related demo materials may be used.
         </CardDescription>
-        <p className="mt-4 text-sm text-[#ead0df]/62">Effective date: May 11, 2026</p>
+        <p className="mt-4 text-sm text-[#D7E2F7]/62">Effective date: May 11, 2026</p>
       </header>
 
       <div className="mt-10 space-y-4">
         {termsSections.map((section) => (
-          <Card key={section.title} className="bg-[#17122d]/72">
+          <Card key={section.title} className="bg-[#0B1024]/72">
             <CardHeader>
               <CardTitle>{section.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-sm leading-7 text-[#ead0df]/78">
+                <p key={paragraph} className="text-sm leading-7 text-[#D7E2F7]/78">
                   {paragraph}
                 </p>
               ))}
