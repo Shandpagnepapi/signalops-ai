@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-05-13T03:04:19.614Z",
+  "createdAt": "2026-05-13T03:22:48.434Z",
   "baseUrl": "https://www.signalops.pro",
-  "commitSha": "701b8c5c39bfb140cd8c60e4dc4ec499382cac0b",
-  "workflowRunId": "25775616596",
-  "artifactId": "6960727113",
-  "artifactName": "signalops-visual-audit-25775616596",
-  "artifactUrl": "https://github.com/Shandpagnepapi/signalops-ai/actions/runs/25775616596/artifacts/6960727113",
+  "commitSha": "b7d5fed36181f5c976fce6a1f536949a3b8553ae",
+  "workflowRunId": "25776195385",
+  "artifactId": "6960948397",
+  "artifactName": "signalops-visual-audit-25776195385",
+  "artifactUrl": "https://github.com/Shandpagnepapi/signalops-ai/actions/runs/25776195385/artifacts/6960948397",
   "reviewUrl": "/visual-review",
   "artifactRetentionDays": 30,
   "routes": [
