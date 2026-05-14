@@ -32,7 +32,7 @@ export const OG_IMAGE_ASSETS = {
     alt: "SignalOpsAI and Envo blue and violet social image for the AI Lead Manager product."
   },
   envo: {
-    path: "/brand/envo/envo-og-image.png",
+    path: "/brand/envo/generated/envo-og-image.png",
     alt: "Envo social image with the Envo AI worker logo and the message Your AI worker for customer calls and leads."
   },
   home: {
@@ -40,15 +40,15 @@ export const OG_IMAGE_ASSETS = {
     alt: "SignalOpsAI homepage social image showing Envo AI Lead Manager and separate Drone Services."
   },
   audit: {
-    path: "/brand/envo/envo-og-image.png",
+    path: "/brand/envo/generated/envo-og-image.png",
     alt: "Envo Preview social image for mapping customer calls, texts, forms, DMs, follow-ups, and handoffs."
   },
   demo: {
-    path: "/brand/envo/envo-og-image.png",
+    path: "/brand/envo/generated/envo-og-image.png",
     alt: "Envo demo social image showing lead intake, owner handoffs, follow-up, and dashboard workflow."
   },
   roi: {
-    path: "/brand/envo/envo-og-image.png",
+    path: "/brand/envo/generated/envo-og-image.png",
     alt: "Envo ROI calculator social image for estimating possible missed lead recovery scenarios."
   }
 } as const;

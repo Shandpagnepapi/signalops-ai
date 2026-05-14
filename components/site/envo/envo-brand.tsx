@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
+import { useId, type CSSProperties, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, Bot, Sparkles, UsersRound, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -42,99 +41,6 @@ export const envoFeatureItems = [
   }
 ] as const;
 
-export const envoImageAssets = {
-  appIcon: {
-    src: "/brand/envo/envo-app-icon.png",
-    width: 244,
-    height: 248,
-    alt: "Envo app icon with gradient speech bubble mark."
-  },
-  brandBoard: {
-    src: "/brand/envo/envo-brand-board-reference.png",
-    width: 897,
-    height: 671,
-    alt: "Envo brand board with logo, app icon, dark signature card, feature stack, and logo variations."
-  },
-  dashboardDesktop: {
-    src: "/brand/envo/envo-dashboard-desktop.png",
-    width: 731,
-    height: 596,
-    alt: "Envo owner command center dashboard showing lead stages, customer messages, missed calls, follow-ups, and handoffs."
-  },
-  dashboardMobile: {
-    src: "/brand/envo/envo-dashboard-mobile.png",
-    width: 288,
-    height: 604,
-    alt: "Envo mobile lead manager dashboard showing messages, lead status, follow-up, and handoff controls."
-  },
-  featureStack: {
-    src: "/brand/envo/envo-feature-stack-reference.png",
-    width: 420,
-    height: 280,
-    alt: "Envo feature stack showing Respond Faster, Automate Smarter, and Delight Customers."
-  },
-  leadWorkflow: {
-    src: "/brand/envo/envo-lead-workflow.png",
-    width: 786,
-    height: 522,
-    alt: "Envo lead workflow showing calls, texts, forms, and DMs flowing into Envo for follow-up and handoffs."
-  },
-  logoVariations: {
-    src: "/brand/envo/envo-logo-variations-row.png",
-    width: 407,
-    height: 588,
-    alt: "Envo logo variations on white, pale lavender, dark navy, and black backgrounds."
-  },
-  ownerCommandCenter: {
-    src: "/brand/envo/envo-owner-command-center.png",
-    width: 456,
-    height: 597,
-    alt: "Envo owner command center dashboard with approval mode, human takeover, pricing guardrails, escalation rules, and activity history."
-  },
-  previewCockpit: {
-    src: "/brand/envo/envo-preview-cockpit.png",
-    width: 543,
-    height: 480,
-    alt: "Envo preview cockpit with Lead Map, Envo Build Plan, and Next Steps."
-  },
-  signatureCard: {
-    src: "/brand/envo/envo-signature-card.png",
-    width: 498,
-    height: 267,
-    alt: "Dark navy Envo signature card reading Smarter conversations. Stronger connections."
-  }
-} as const;
-
-type EnvoImageAssetName = keyof typeof envoImageAssets;
-
-export function EnvoAssetImage({
-  alt,
-  asset,
-  className,
-  priority = false,
-  sizes
-}: {
-  alt?: string;
-  asset: EnvoImageAssetName;
-  className?: string;
-  priority?: boolean;
-  sizes?: string;
-}) {
-  const image = envoImageAssets[asset];
-
-  return (
-    <Image
-      src={image.src}
-      alt={alt ?? image.alt}
-      width={image.width}
-      height={image.height}
-      priority={priority}
-      sizes={sizes}
-      className={cn("block h-auto w-full", className)}
-    />
-  );
-}
-
 type EnvoLogoTone = "light" | "dark";
 
 type EnvoLogoProps = {
@@ -147,45 +53,85 @@ type EnvoLogoProps = {
 
 const logoSizes = {
   sm: {
-    mark: "size-8",
-    wordmark: "text-xl",
+    mark: "h-8 w-[2.9rem]",
+    wordmark: "text-2xl",
     gap: "gap-2"
   },
   md: {
-    mark: "size-11",
+    mark: "h-11 w-[4rem]",
     wordmark: "text-3xl",
     gap: "gap-2.5"
   },
   lg: {
-    mark: "size-14",
+    mark: "h-14 w-[5.1rem]",
     wordmark: "text-5xl",
     gap: "gap-3"
   },
   hero: {
-    mark: "size-20 sm:size-28",
+    mark: "h-20 w-[7.4rem] sm:h-28 sm:w-[10.2rem]",
     wordmark: "text-6xl sm:text-8xl",
     gap: "gap-3 sm:gap-5"
   }
 } as const;
 
-const logoImageSizes = {
-  sm: "h-8 w-auto",
-  md: "h-11 w-auto",
-  lg: "h-14 w-auto sm:h-16",
-  hero: "h-20 w-auto sm:h-28"
-} as const;
+function safeId(id: string) {
+  return id.replace(/:/g, "");
+}
+
+export function EnvoMarkSvg({
+  className,
+  monochrome = false
+}: {
+  className?: string;
+  monochrome?: boolean;
+}) {
+  const rawId = useId();
+  const gradientId = safeId(`envo-mark-gradient-${rawId}`);
+  const highlightId = safeId(`envo-mark-highlight-${rawId}`);
+  const glowId = safeId(`envo-mark-glow-${rawId}`);
+  const fill = monochrome ? "currentColor" : `url(#${gradientId})`;
+
+  return (
+    <svg
+      aria-hidden="true"
+      className={cn("block overflow-visible", className)}
+      fill="none"
+      viewBox="0 0 260 180"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id={gradientId} x1="36" x2="222" y1="38" y2="142" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#328BFF" />
+          <stop offset="0.48" stopColor="#2563EB" />
+          <stop offset="1" stopColor="#6F4DFF" />
+        </linearGradient>
+        <linearGradient id={highlightId} x1="92" x2="174" y1="44" y2="136" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#ffffff" stopOpacity="0.9" />
+          <stop offset="1" stopColor="#ffffff" stopOpacity="0.2" />
+        </linearGradient>
+        <filter id={glowId} x="0" y="0" width="260" height="180" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="14" stdDeviation="13" floodColor="#2563EB" floodOpacity="0.2" />
+        </filter>
+      </defs>
+      <g filter={monochrome ? undefined : `url(#${glowId})`} strokeLinecap="round">
+        <path d="M42 70h42" stroke={fill} strokeWidth="14" />
+        <path d="M28 92h54" stroke={fill} strokeWidth="14" opacity="0.82" />
+        <path d="M48 114h36" stroke={fill} strokeWidth="14" opacity="0.66" />
+        <path d="M120 28h48c34 0 60 25 60 57 0 33-26 58-60 58h-26l-42 29v-33c-26-7-44-28-44-54 0-32 27-57 64-57Z" fill={fill} />
+        {!monochrome ? (
+          <path d="M122 35h43c30 0 52 22 52 50 0 29-22 51-52 51h-25l-30 21v-25c-22-6-38-24-38-47 0-28 22-50 50-50Z" fill={`url(#${highlightId})`} opacity="0.14" />
+        ) : null}
+      </g>
+      <g stroke={monochrome ? "#071126" : "#ffffff"} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M118 91c0-20 16-35 37-35 19 0 33 13 33 30 0 4-1 7-2 10h-49" strokeWidth="16" />
+        <path d="M186 116c-8 9-18 13-31 13-22 0-37-15-37-38" strokeWidth="16" />
+      </g>
+    </svg>
+  );
+}
 
 export function EnvoMark({ className }: { className?: string }) {
-  return (
-    <Image
-      aria-hidden="true"
-      alt=""
-      width={260}
-      height={180}
-      className={cn("block", className)}
-      src="/brand/envo/envo-mark-gradient.svg"
-    />
-  );
+  return <EnvoMarkSvg className={className} />;
 }
 
 export function EnvoWordmark({
@@ -220,18 +166,25 @@ export function EnvoLogo({
   }
 
   return (
-    <Image
-      alt="Envo AI worker logo"
-      width={560}
-      height={180}
-      className={cn("block", logoImageSizes[size], className)}
-      src={tone === "dark" ? "/brand/envo/envo-logo-dark.svg" : "/brand/envo/envo-logo-primary.svg"}
-    />
+    <span className={cn("inline-flex items-center", logoSizes[size].gap, className)} aria-label="Envo AI worker logo">
+      <EnvoMark className={cn(logoSizes[size].mark, markClassName)} />
+      <EnvoWordmark tone={tone} className={logoSizes[size].wordmark} />
+    </span>
   );
 }
 
 export function EnvoAppIcon({ className }: { className?: string }) {
-  return <EnvoAssetImage asset="appIcon" className={cn("max-w-[15rem]", className)} />;
+  return (
+    <div
+      className={cn(
+        "relative flex aspect-square w-full max-w-[15rem] items-center justify-center rounded-[26%] border border-white/90 bg-[linear-gradient(145deg,#ffffff,#F7F8FC)] shadow-[0_30px_70px_rgba(7,17,38,0.16),inset_0_1px_0_rgba(255,255,255,0.96)]",
+        className
+      )}
+    >
+      <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_28%_16%,rgba(255,255,255,0.86),transparent_34%),radial-gradient(circle_at_76%_82%,rgba(111,77,255,0.1),transparent_44%)]" />
+      <EnvoMark className="relative h-[54%] w-[72%]" />
+    </div>
+  );
 }
 
 export function EnvoGlassCard({
@@ -271,23 +224,24 @@ export function EnvoDarkCard({
       )}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.24),transparent_30%),radial-gradient(circle_at_88%_16%,rgba(111,77,255,0.2),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.075),transparent)]" />
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-8 -right-6 h-44 w-64 text-[#6F4DFF]/42"
-        fill="none"
-        viewBox="0 0 260 180"
-      >
-        {[0, 18, 36, 54, 72].map((offset) => (
-          <path
-            key={offset}
-            d={`M12 ${170 - offset}C74 ${154 - offset} 88 ${92 - offset} 136 ${76 - offset}C178 ${62 - offset} 210 ${96 - offset} 248 ${34 - offset}`}
-            stroke="currentColor"
-            strokeWidth="1.25"
-          />
-        ))}
-      </svg>
+      <EnvoWaveLines className="absolute -bottom-8 -right-8 h-52 w-72 text-[#6F4DFF]/42" />
       <div className="relative">{children}</div>
     </div>
+  );
+}
+
+export function EnvoWaveLines({ className }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" className={cn("pointer-events-none", className)} fill="none" viewBox="0 0 280 200">
+      {[0, 18, 36, 54, 72, 90].map((offset) => (
+        <path
+          key={offset}
+          d={`M8 ${184 - offset}C72 ${168 - offset} 88 ${100 - offset} 140 ${82 - offset}C182 ${68 - offset} 218 ${104 - offset} 270 ${34 - offset}`}
+          stroke="currentColor"
+          strokeWidth="1.2"
+        />
+      ))}
+    </svg>
   );
 }
 
@@ -455,15 +409,53 @@ export function EnvoSignatureCard({
   title?: string;
 }) {
   return (
-    <EnvoAssetImage
-      alt={`Dark navy Envo signature card reading ${title}`}
-      asset="signatureCard"
+    <EnvoDarkCard
       className={cn(
-        "rounded-[1.55rem] shadow-[0_28px_90px_rgba(7,17,38,0.24)]",
-        compact && "rounded-[1.35rem]",
+        "flex min-h-[16rem] items-center p-7 sm:p-8",
+        compact && "min-h-[12.5rem] rounded-[1.35rem] p-5 sm:p-6",
         className
       )}
-    />
+    >
+      <div>
+        <EnvoLogo size={compact ? "md" : "lg"} tone="dark" />
+        <p className={cn("mt-8 max-w-sm text-2xl font-black leading-tight text-white", compact && "mt-6 text-xl")}>
+          <span className="text-[#328BFF]">{title.split(". ")[0]}.</span>
+          <br />
+          <span>
+            Stronger <span className="text-[#A99BFF]">connections.</span>
+          </span>
+        </p>
+      </div>
+    </EnvoDarkCard>
+  );
+}
+
+export function EnvoLogoVariationsRow({ className }: { className?: string }) {
+  const surfaces = [
+    { className: "bg-white", tone: "light" as const },
+    { className: "bg-[#EEEAFE]", tone: "light" as const },
+    { className: "bg-[#071126]", tone: "dark" as const },
+    { className: "bg-black", tone: "dark" as const, monochrome: true }
+  ];
+
+  return (
+    <div className={cn("grid overflow-hidden rounded-[1.25rem] border border-[#D8E2F7] sm:grid-cols-4", className)}>
+      {surfaces.map((surface, index) => (
+        <div
+          key={`${surface.className}-${index}`}
+          className={cn("flex min-h-28 items-center justify-center p-5", surface.className)}
+        >
+          {surface.monochrome ? (
+            <span className="inline-flex items-center gap-2 text-white" aria-label="Envo AI worker logo">
+              <EnvoMarkSvg className="h-9 w-12 text-white" monochrome />
+              <EnvoWordmark tone="dark" className="text-3xl" />
+            </span>
+          ) : (
+            <EnvoLogo size="md" tone={surface.tone} />
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -479,16 +471,29 @@ export function EnvoBrandBoard({
   return (
     <EnvoGlassCard
       className={cn(
-        "overflow-hidden rounded-[2.2rem] border-[#E2E8F7] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(251,250,247,0.95)_48%,rgba(248,250,255,0.94))] p-0 shadow-[0_30px_100px_rgba(7,17,38,0.13)]",
+        "overflow-hidden rounded-[2.2rem] border-[#E2E8F7] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(251,250,247,0.96)_48%,rgba(248,250,255,0.95))] p-0 shadow-[0_30px_100px_rgba(7,17,38,0.13)]",
         className
       )}
     >
-      <EnvoAssetImage
-        asset="brandBoard"
-        className={cn(!showVariations && "rounded-[2.2rem]")}
-        priority={!compact}
-        sizes={compact ? "(min-width: 1024px) 720px, 100vw" : "(min-width: 1024px) 1100px, 100vw"}
-      />
+      <div className="px-5 py-9 text-center sm:px-8 sm:py-12">
+        <EnvoLogo className="justify-center" size={compact ? "lg" : "hero"} />
+        <p className="mt-5 text-[0.68rem] font-black uppercase tracking-[0.38em] text-[#647084] sm:text-sm">
+          RESPOND FASTER. AUTOMATE SMARTER.
+        </p>
+      </div>
+
+      <div className="border-y border-[#D8E2F7] px-5 py-7 sm:px-8">
+        <div className="grid gap-6 lg:grid-cols-[0.64fr_1.35fr_1fr] lg:items-center">
+          <div className="flex flex-col items-center justify-center gap-4">
+            <EnvoAppIcon className="w-36 sm:w-44" />
+            <p className="text-xs font-black uppercase tracking-normal text-[#647084]">APP ICON</p>
+          </div>
+          <EnvoSignatureCard className="min-h-[18rem]" />
+          <EnvoFeatureStack panel />
+        </div>
+      </div>
+
+      {showVariations ? <EnvoLogoVariationsRow className="rounded-none border-0" /> : null}
     </EnvoGlassCard>
   );
 }
@@ -519,7 +524,7 @@ export function EnvoFeaturePanel({
       <div className="grid gap-4 p-4 sm:p-5">
         <div className={cn("grid gap-4", compact ? "" : "sm:grid-cols-[0.48fr_1fr]")}>
           <div className="flex flex-col items-center justify-center rounded-[1.45rem] border border-[#D8E2F7]/75 bg-white/58 p-4 text-center shadow-[0_18px_54px_rgba(37,99,235,0.08)]">
-            <EnvoAppIcon className="size-24 rounded-[1.55rem]" />
+            <EnvoAppIcon className="w-24" />
             <p className="mt-3 text-[0.68rem] font-black uppercase tracking-normal text-[#647084]">
               APP ICON
             </p>
@@ -531,9 +536,7 @@ export function EnvoFeaturePanel({
             title={title}
           />
         </div>
-        <div className="rounded-[1.45rem] border border-[#D8E2F7]/75 bg-white/58 p-4 shadow-[0_18px_54px_rgba(37,99,235,0.08)]">
-          <EnvoAssetImage asset="featureStack" className="rounded-[1.15rem]" />
-        </div>
+        <EnvoFeatureStack panel />
       </div>
     </EnvoGlassCard>
   );

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "envo:assets": "node scripts/export-envo-assets.mjs",
     "build": "next build",
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",

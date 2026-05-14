@@ -17,7 +17,8 @@ import {
   Save,
   Sparkles
 } from "lucide-react";
-import { EnvoAssetImage, EnvoFeaturePill, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePill, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoPreviewCockpitMockup } from "@/components/site/envo/envo-dashboard-mockups";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -199,12 +200,7 @@ export function LiveDemoGenerator() {
                 </Badge>
               </div>
               <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-2">
-                <EnvoAssetImage
-                  asset="previewCockpit"
-                  alt="Envo preview cockpit with Lead Map, Envo Build Plan, and Next Steps."
-                  className="rounded-xl"
-                  sizes="(min-width: 1024px) 620px, 100vw"
-                />
+                <EnvoPreviewCockpitMockup className="rounded-xl border-white/10 bg-white/95 p-4 shadow-none" />
               </div>
             </CardHeader>
             <CardContent>

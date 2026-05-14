@@ -8,7 +8,8 @@ import {
   Route,
   SearchCheck
 } from "lucide-react";
-import { EnvoAssetImage, EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePanel, EnvoSignatureCard } from "@/components/site/envo/envo-brand-system";
+import { EnvoLeadWorkflowVisual } from "@/components/site/envo/envo-dashboard-mockups";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -90,12 +91,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
           <SectionHeader eyebrow="Workflow" title={page.workflowTitle} description={page.workflowIntro} />
           <div className="mt-8 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <div className="rounded-[1.5rem] border border-white/80 bg-white/76 p-3 shadow-[0_24px_80px_rgba(37,99,235,0.12)]">
-              <EnvoAssetImage
-                asset="leadWorkflow"
-                alt="Envo lead workflow showing calls, texts, forms, and DMs flowing into Envo for follow-up and handoffs."
-                className="rounded-[1.2rem]"
-                sizes="(min-width: 1024px) 560px, 100vw"
-              />
+              <EnvoLeadWorkflowVisual className="rounded-[1.2rem] shadow-none" />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
             {page.workflow.map((step) => (
@@ -194,11 +190,7 @@ export function ServicePage({ page }: { page: ServicePageConfig }) {
               Share your lead sources, current tools, and project goals so SignalOpsAI can scope the right Envo build.
             </p>
           </div>
-          <EnvoAssetImage
-            asset="signatureCard"
-            alt="Dark navy Envo signature card reading Smarter conversations. Stronger connections."
-            className="hidden max-w-[18rem] shrink-0 rounded-[1.25rem] xl:block"
-          />
+          <EnvoSignatureCard className="hidden min-h-[11rem] max-w-[18rem] shrink-0 rounded-[1.25rem] p-5 xl:block" compact />
           <TrackedLink
             href={PRIMARY_CTA.href}
             eventName={ANALYTICS_EVENTS.auditCtaClicked}

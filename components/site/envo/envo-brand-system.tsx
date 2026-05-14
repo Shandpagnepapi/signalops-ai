@@ -2,6 +2,17 @@ import {
   EnvoBrandBoard,
   EnvoSection,
 } from "@/components/site/envo/envo-brand";
+
+export { EnvoAssetShowcase } from "@/components/site/envo/envo-asset-showcase";
+export {
+  EnvoBrandBoardReference,
+  EnvoDashboardDesktopMockup,
+  EnvoDashboardMobileMockup,
+  EnvoLeadWorkflowVisual,
+  EnvoOgImageMockup,
+  EnvoOwnerCommandCenterMockup,
+  EnvoPreviewCockpitMockup
+} from "@/components/site/envo/envo-dashboard-mockups";
 import { cn } from "@/lib/utils";
 
 export function EnvoMiniBrandBoard({ className }: { className?: string }) {
@@ -16,7 +27,6 @@ export function EnvoMiniBrandBoard({ className }: { className?: string }) {
 
 export {
   EnvoAppIcon,
-  EnvoAssetImage,
   EnvoBrandBoard,
   EnvoBrandHero,
   EnvoButton,
@@ -35,6 +45,5 @@ export {
   EnvoSignatureCard,
   EnvoWordmark,
   envoBrandTokens,
-  envoFeatureItems,
-  envoImageAssets
+  envoFeatureItems
 } from "@/components/site/envo/envo-brand";
