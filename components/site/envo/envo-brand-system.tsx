@@ -31,6 +31,7 @@ export {
   EnvoMark,
   EnvoSection,
   EnvoSectionShell,
+  EnvoSignatureCard,
   EnvoWordmark,
   envoBrandTokens,
   envoFeatureItems

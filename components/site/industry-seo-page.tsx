@@ -30,7 +30,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
       <section className="relative isolate overflow-hidden border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_8%,rgba(111,77,255,0.12),transparent_32%),radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.18),transparent_35%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.96fr_1.04fr] lg:px-8">
-          <div className="flex flex-col justify-center">
+          <div className="order-2 flex flex-col justify-center lg:order-1">
             <Badge variant="outline" className="mb-6 w-fit border-[#CBD8F2] bg-white/74 text-[#2563EB]">
               {page.eyebrow}
             </Badge>
@@ -69,7 +69,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             </ul>
           </div>
 
-          <EnvoFeaturePanel className="self-center" />
+          <EnvoFeaturePanel className="order-1 self-center lg:order-2" />
         </div>
       </section>
 

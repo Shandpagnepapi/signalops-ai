@@ -69,17 +69,24 @@ function EnvoDoorwayCard() {
       <div className="pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-[#6F4DFF]/18 blur-3xl" />
 
       <div className="relative">
-        <div className="flex items-start justify-between gap-4">
-          <EnvoLogo size="md" />
-          <EnvoAppIcon className="w-16 shrink-0 rounded-[1.35rem] p-2 sm:w-20" />
+        <div className="text-center">
+          <EnvoLogo className="justify-center" size="lg" />
+          <p className="mt-3 text-xs font-black uppercase tracking-normal text-[#647084]">
+            RESPOND FASTER. AUTOMATE SMARTER.
+          </p>
         </div>
-        <h2 className="mt-8 text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">Envo</h2>
-        <p className="mt-3 text-xl font-black leading-snug text-[#071126]">
-          Your AI worker for customer calls and leads.
-        </p>
-        <p className="mt-4 max-w-lg text-base leading-7 text-[#647084]">
-          Respond faster, automate follow-up, and keep every lead organized.
-        </p>
+        <div className="mt-7 grid gap-5 sm:grid-cols-[8rem_1fr] sm:items-center">
+          <EnvoAppIcon className="mx-auto size-28 rounded-[1.7rem] p-2.5 sm:mx-0" />
+          <div>
+            <h2 className="sr-only">Envo</h2>
+            <p className="text-xl font-black leading-snug text-[#071126]">
+              Your AI worker for customer calls and leads.
+            </p>
+            <p className="mt-4 max-w-lg text-base leading-7 text-[#647084]">
+              Respond faster, automate follow-up, and keep every lead organized.
+            </p>
+          </div>
+        </div>
       </div>
 
       <EnvoCtaButton className="relative mt-7 w-full sm:w-fit" href="/envo">

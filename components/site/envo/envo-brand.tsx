@@ -47,22 +47,30 @@ type EnvoLogoProps = {
   className?: string;
   markClassName?: string;
   showWordmark?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "hero";
   tone?: EnvoLogoTone;
 };
 
 const logoSizes = {
   sm: {
     mark: "size-8",
-    wordmark: "text-xl"
+    wordmark: "text-xl",
+    gap: "gap-2"
   },
   md: {
     mark: "size-11",
-    wordmark: "text-3xl"
+    wordmark: "text-3xl",
+    gap: "gap-2.5"
   },
   lg: {
     mark: "size-14",
-    wordmark: "text-5xl"
+    wordmark: "text-5xl",
+    gap: "gap-3"
+  },
+  hero: {
+    mark: "size-20 sm:size-28",
+    wordmark: "text-6xl sm:text-8xl",
+    gap: "gap-3 sm:gap-5"
   }
 } as const;
 
@@ -121,7 +129,7 @@ export function EnvoWordmark({
   return (
     <span
       className={cn(
-        "font-black tracking-normal",
+        "font-[850] leading-none tracking-normal",
         tone === "dark" ? "text-white" : "text-[#071126]",
         className
       )}
@@ -139,7 +147,7 @@ export function EnvoLogo({
   tone = "light"
 }: EnvoLogoProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span className={cn("inline-flex items-center", logoSizes[size].gap, className)}>
       <EnvoMark className={cn(logoSizes[size].mark, markClassName)} />
       {showWordmark ? <EnvoWordmark className={logoSizes[size].wordmark} tone={tone} /> : null}
     </span>
@@ -150,7 +158,7 @@ export function EnvoAppIcon({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex aspect-square items-center justify-center rounded-[1.7rem] border border-white bg-[linear-gradient(145deg,#FFFFFF,#F7F8FC)] p-3 shadow-[0_22px_56px_rgba(7,17,38,0.16),inset_0_1px_0_rgba(255,255,255,0.95)]",
+        "flex aspect-square items-center justify-center rounded-[1.9rem] border border-white bg-[linear-gradient(145deg,#FFFFFF,#F7F8FC)] p-3 shadow-[0_24px_60px_rgba(7,17,38,0.18),inset_0_1px_0_rgba(255,255,255,0.95)]",
         className
       )}
     >
@@ -171,7 +179,7 @@ export function EnvoGlassCard({
   return (
     <div
       className={cn(
-        "rounded-[1.5rem] border border-white/80 bg-white/72 p-5 text-[#071126] shadow-[0_24px_80px_rgba(37,99,235,0.13)] backdrop-blur-2xl",
+        "rounded-[1.65rem] border border-white/85 bg-white/78 p-5 text-[#071126] shadow-[0_24px_80px_rgba(37,99,235,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl",
         className
       )}
       style={style}
@@ -191,11 +199,11 @@ export function EnvoDarkCard({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[1.5rem] border border-white/12 bg-[#071126] p-5 text-white shadow-[0_28px_90px_rgba(7,17,38,0.28)]",
+        "relative overflow-hidden rounded-[1.65rem] border border-white/12 bg-[#071126] p-5 text-white shadow-[0_28px_90px_rgba(7,17,38,0.3)]",
         className
       )}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.28),transparent_30%),radial-gradient(circle_at_88%_16%,rgba(111,77,255,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.07),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(50,139,255,0.24),transparent_30%),radial-gradient(circle_at_88%_16%,rgba(111,77,255,0.2),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.075),transparent)]" />
       <svg
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-8 -right-6 h-44 w-64 text-[#6F4DFF]/42"
@@ -292,7 +300,7 @@ export function EnvoFeaturePill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-[#CBD8F2] bg-white/74 px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#2563EB] shadow-sm backdrop-blur-xl",
+        "inline-flex items-center gap-2 rounded-full border border-[#CBD8F2] bg-white/74 px-3 py-2 text-xs font-black uppercase tracking-normal text-[#2563EB] shadow-sm backdrop-blur-xl",
         className
       )}
     >
@@ -325,7 +333,7 @@ export function EnvoFeatureItem({
     >
       <span
         className={cn(
-          "flex size-14 shrink-0 items-center justify-center rounded-full shadow-[0_12px_28px_rgba(37,99,235,0.12)]",
+          "flex size-14 shrink-0 items-center justify-center rounded-full shadow-[0_12px_28px_rgba(37,99,235,0.12)] ring-1 ring-white/70",
           item.iconClassName,
           dark && "bg-white/10 text-[#BFD3FF]"
         )}
@@ -333,7 +341,7 @@ export function EnvoFeatureItem({
         <Icon className="size-7" aria-hidden="true" />
       </span>
       <div>
-        <h3 className={cn("text-base font-black", dark ? "text-white" : "text-[#071126]")}>
+        <h3 className={cn("text-base font-black tracking-normal", dark ? "text-white" : "text-[#071126]")}>
           {item.title}
         </h3>
         <p className={cn("mt-1 text-sm leading-6", dark ? "text-[#D7E2F7]/72" : "text-[#647084]")}>
@@ -358,8 +366,8 @@ export function EnvoFeatureStack({
       className={cn(
         panel &&
           (dark
-            ? "rounded-[1.45rem] border border-white/10 bg-white/[0.045] px-4"
-            : "rounded-[1.45rem] border border-[#D8E2F7] bg-white/70 px-4 shadow-[0_18px_54px_rgba(37,99,235,0.1)]"),
+            ? "rounded-[1.55rem] border border-white/10 bg-white/[0.045] px-4"
+            : "rounded-[1.55rem] border border-[#D8E2F7]/75 bg-white/58 px-4 shadow-[0_18px_54px_rgba(37,99,235,0.08)] backdrop-blur-xl"),
         className
       )}
     >
@@ -367,6 +375,37 @@ export function EnvoFeatureStack({
         <EnvoFeatureItem key={item.title} dark={dark} index={index} item={item} />
       ))}
     </div>
+  );
+}
+
+export function EnvoSignatureCard({
+  className,
+  compact = false,
+  title = "Smarter conversations. Stronger connections."
+}: {
+  className?: string;
+  compact?: boolean;
+  title?: string;
+}) {
+  const [firstLine, secondLine = "Stronger connections."] = title.split(". ");
+
+  return (
+    <EnvoDarkCard
+      className={cn(
+        "flex min-h-[15.5rem] flex-col justify-between rounded-[1.55rem] p-6 sm:p-7",
+        compact ? "min-h-[14rem]" : "sm:min-h-[17rem]",
+        className
+      )}
+    >
+      <div className="flex items-center gap-3">
+        <EnvoLogo size={compact ? "sm" : "md"} tone="dark" />
+      </div>
+      <p className="mt-8 text-2xl font-black leading-tight tracking-normal text-white sm:text-3xl">
+        <span className="text-[#328BFF]">{firstLine}.</span>
+        <br />
+        <span className="text-[#A99BFF]">{secondLine}</span>
+      </p>
+    </EnvoDarkCard>
   );
 }
 
@@ -382,45 +421,40 @@ export function EnvoBrandBoard({
   return (
     <EnvoGlassCard
       className={cn(
-        "overflow-hidden rounded-[2rem] bg-[linear-gradient(145deg,rgba(255,255,255,0.96),rgba(248,250,255,0.9)_52%,rgba(238,234,254,0.7))] p-0",
+        "overflow-hidden rounded-[2.2rem] border-[#E2E8F7] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(251,250,247,0.95)_48%,rgba(248,250,255,0.94))] p-0 shadow-[0_30px_100px_rgba(7,17,38,0.13)]",
         className
       )}
     >
-      <div className={cn("px-5 pb-6 pt-7 sm:px-8 sm:pt-9", compact ? "lg:px-7" : "lg:px-10 lg:pt-11")}>
+      <div className={cn("px-5 pb-8 pt-9 sm:px-8 sm:pt-11", compact ? "lg:px-7" : "lg:px-10 lg:pb-10 lg:pt-14")}>
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <EnvoLogo size={compact ? "md" : "lg"} className="justify-center" />
-          <p className="mt-4 text-xs font-black uppercase tracking-[0.32em] text-[#647084] sm:text-sm">
+          <EnvoLogo size={compact ? "lg" : "hero"} className="justify-center" />
+          <p className="mt-4 text-xs font-black uppercase tracking-normal text-[#647084] sm:text-sm">
             RESPOND FASTER. AUTOMATE SMARTER.
           </p>
         </div>
+      </div>
 
+      <div className="border-t border-[#D8E2F7]" />
+
+      <div className={cn("px-5 py-7 sm:px-8", compact ? "lg:px-7" : "lg:px-10 lg:py-9")}>
         <div
           className={cn(
-            "mt-8 grid gap-5 lg:items-center",
-            compact ? "lg:grid-cols-[0.68fr_1.16fr_0.92fr]" : "lg:grid-cols-[0.72fr_1.2fr_0.92fr]"
+            "grid gap-6 lg:items-center",
+            compact ? "lg:grid-cols-[0.64fr_1.08fr_0.96fr]" : "lg:grid-cols-[0.68fr_1.18fr_0.92fr]"
           )}
         >
-          <div className="text-center">
-            <EnvoGlassCard className="mx-auto flex max-w-[13.5rem] items-center justify-center rounded-[2rem] bg-white p-6 shadow-[0_22px_58px_rgba(7,17,38,0.16)]">
-              <EnvoAppIcon className="w-full max-w-[10rem] rounded-[1.65rem]" />
-            </EnvoGlassCard>
-            <p className="mt-4 text-xs font-black uppercase tracking-[0.14em] text-[#647084]">
-              App icon
+          <div className="order-1 text-center">
+            <EnvoAppIcon
+              className={cn("mx-auto rounded-[2rem]", compact ? "size-32 sm:size-36" : "size-40 sm:size-48")}
+            />
+            <p className="mt-4 text-xs font-black uppercase tracking-normal text-[#647084]">
+              APP ICON
             </p>
           </div>
 
-          <EnvoDarkCard className="flex min-h-[16rem] flex-col justify-between rounded-[1.45rem] p-6 sm:p-7">
-            <EnvoLogo size="md" tone="dark" />
-            <div className="mt-8">
-              <p className="text-2xl font-black leading-tight tracking-normal text-white sm:text-3xl">
-                <span className="text-[#328BFF]">Smarter</span> conversations.
-                <br />
-                Stronger <span className="text-[#A99BFF]">connections.</span>
-              </p>
-            </div>
-          </EnvoDarkCard>
+          <EnvoSignatureCard className="order-3 lg:order-2" compact={compact} />
 
-          <EnvoFeatureStack panel />
+          <EnvoFeatureStack className="order-2 lg:order-3" panel />
         </div>
       </div>
 
@@ -457,29 +491,32 @@ export function EnvoFeaturePanel({
   return (
     <EnvoGlassCard
       className={cn(
-        "overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.96),rgba(248,250,255,0.88)_58%,rgba(238,234,254,0.72))] p-4",
+        "overflow-hidden border-[#E2E8F7] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(251,250,247,0.94)_48%,rgba(248,250,255,0.92))] p-0",
         className
       )}
     >
-      <div className="flex flex-col gap-3 border-b border-[#D8E2F7] pb-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <EnvoLogo size="sm" />
-          <p className="mt-2 text-[0.68rem] font-black uppercase tracking-[0.22em] text-[#647084]">
-            RESPOND FASTER. AUTOMATE SMARTER.
-          </p>
-        </div>
-        <EnvoAppIcon className="size-16 shrink-0 rounded-[1.25rem] p-2" />
+      <div className="border-b border-[#D8E2F7] px-5 py-6 text-center">
+        <EnvoLogo className="justify-center" size={compact ? "md" : "lg"} />
+        <p className="mt-3 text-[0.68rem] font-black uppercase tracking-normal text-[#647084]">
+          RESPOND FASTER. AUTOMATE SMARTER.
+        </p>
       </div>
 
-      <div className={cn("mt-4 grid gap-4", compact ? "" : "xl:grid-cols-[0.9fr_1.1fr] xl:items-stretch")}>
-        <EnvoDarkCard className="flex min-h-[13rem] flex-col justify-between rounded-[1.25rem] p-5">
-          <EnvoLogo size="sm" tone="dark" />
-          <p className="mt-8 text-2xl font-black leading-tight tracking-normal text-white">
-            <span className="text-[#328BFF]">{title.split(". ")[0]}.</span>
-            <br />
-            {title.split(". ")[1] ?? "Stronger connections."}
-          </p>
-        </EnvoDarkCard>
+      <div className="grid gap-4 p-4 sm:p-5">
+        <div className={cn("grid gap-4", compact ? "" : "sm:grid-cols-[0.48fr_1fr]")}>
+          <div className="flex flex-col items-center justify-center rounded-[1.45rem] border border-[#D8E2F7]/75 bg-white/58 p-4 text-center shadow-[0_18px_54px_rgba(37,99,235,0.08)]">
+            <EnvoAppIcon className="size-24 rounded-[1.55rem] p-2.5" />
+            <p className="mt-3 text-[0.68rem] font-black uppercase tracking-normal text-[#647084]">
+              APP ICON
+            </p>
+          </div>
+
+          <EnvoSignatureCard
+            className="min-h-[12rem] rounded-[1.45rem] p-5"
+            compact
+            title={title}
+          />
+        </div>
         <EnvoFeatureStack panel />
       </div>
     </EnvoGlassCard>
@@ -500,28 +537,30 @@ export function EnvoBrandHero({
   title?: string;
 }) {
   return (
-    <EnvoSection className={cn("border-b border-[#D8E2F7]", className)}>
-      <div className="grid gap-8 py-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-8">
-        <div>
-          <EnvoLogo size="lg" />
-          <EnvoFeaturePill className="mt-6">{eyebrow}</EnvoFeaturePill>
-          <h1 className="mt-5 max-w-4xl text-[2.65rem] font-black leading-[0.94] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
-            {title}
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[#647084] sm:text-xl">
-            {subtitle}
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            {actions ?? (
-              <>
-                <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
-                <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
-              </>
-            )}
+    <EnvoSection className={cn("border-b border-[#D8E2F7] bg-[#FBFAF7]", className)}>
+      <div className="py-2 lg:py-6">
+        <EnvoBrandBoard className="mx-auto max-w-6xl" showVariations={false} />
+        <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/82 p-5 sm:p-7 lg:p-8">
+          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <EnvoFeaturePill className="w-fit tracking-normal">{eyebrow}</EnvoFeaturePill>
+            <div>
+              <h1 className="max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
+                {title}
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-[#647084] sm:text-xl">
+                {subtitle}
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                {actions ?? (
+                  <>
+                    <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
+                    <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-
-        <EnvoBrandBoard compact showVariations={false} />
+        </EnvoGlassCard>
       </div>
     </EnvoSection>
   );

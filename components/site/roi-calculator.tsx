@@ -144,7 +144,7 @@ export function RoiCalculator() {
     <div className="overflow-x-hidden bg-[#FBFAF7] text-[#071126]">
       <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:px-8">
-          <div className="max-w-3xl">
+          <div className="order-2 max-w-3xl lg:order-1">
             <EnvoLogo size="sm" />
             <Badge className="mb-4 mt-5 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">ROI calculator</Badge>
             <h1 className="text-4xl font-black leading-tight tracking-normal text-[#071126] sm:text-5xl">
@@ -155,7 +155,7 @@ export function RoiCalculator() {
             </p>
           </div>
 
-          <EnvoFeaturePanel className="self-center" />
+          <EnvoFeaturePanel className="order-1 self-center lg:order-2" />
         </div>
       </section>
 

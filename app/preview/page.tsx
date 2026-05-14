@@ -2,7 +2,7 @@ import {
   EnvoBrandBoard,
   EnvoCtaButton,
   EnvoFeaturePill,
-  EnvoLogo,
+  EnvoGlassCard,
   EnvoSection
 } from "@/components/site/envo/envo-brand-system";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
@@ -44,25 +44,27 @@ export default function PreviewPage() {
       />
       <div className="overflow-x-hidden bg-[#071126]">
         <EnvoSection className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
-          <div className="grid gap-8 py-4 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:py-8">
-            <div>
-              <EnvoLogo size="lg" />
-              <EnvoFeaturePill className="mt-6">Envo Preview</EnvoFeaturePill>
-              <h1 className="mt-5 max-w-4xl text-[2.55rem] font-black leading-[0.95] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
-                Preview Envo for your business.
-              </h1>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-[#647084] sm:text-xl">
-                {previewDescription}
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <EnvoCtaButton href="#preview-form">Preview Envo</EnvoCtaButton>
-                <EnvoCtaButton href={SECONDARY_CTA.href} variant="secondary">
-                  {SECONDARY_CTA.label}
-                </EnvoCtaButton>
+          <div className="py-2 lg:py-6">
+            <EnvoBrandBoard className="mx-auto max-w-6xl" showVariations={false} />
+            <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/84 p-5 sm:p-7 lg:p-8">
+              <div className="grid gap-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+                <EnvoFeaturePill className="w-fit">Envo Preview</EnvoFeaturePill>
+                <div>
+                  <h1 className="max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
+                    Preview Envo for your business.
+                  </h1>
+                  <p className="mt-5 max-w-3xl text-base leading-8 text-[#647084] sm:text-xl">
+                    {previewDescription}
+                  </p>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <EnvoCtaButton href="#preview-form">Preview Envo</EnvoCtaButton>
+                    <EnvoCtaButton href={SECONDARY_CTA.href} variant="secondary">
+                      {SECONDARY_CTA.label}
+                    </EnvoCtaButton>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <EnvoBrandBoard compact showVariations={false} />
+            </EnvoGlassCard>
           </div>
         </EnvoSection>
 

@@ -189,7 +189,7 @@ export function HowItWorksDemo() {
       <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
-            <div className="space-y-6">
+            <div className="order-2 space-y-6 lg:order-1">
               <EnvoLogo size="sm" />
               <Badge variant="outline" className="border-[#CBD8F2] bg-white/74 text-[#2563EB]">
                 Envo by SignalOpsAI
@@ -232,7 +232,7 @@ export function HowItWorksDemo() {
               </div>
             </div>
 
-            <EnvoFeaturePanel />
+            <EnvoFeaturePanel className="order-1 lg:order-2" />
           </div>
         </div>
       </section>

@@ -118,28 +118,32 @@ export function EnvoPage() {
 function HeroSection() {
   return (
     <EnvoSection className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
-      <div className="grid gap-8 py-4 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:py-10">
-        <div>
-          <EnvoLogo size="lg" />
-          <EnvoFeaturePill className="mt-6 normal-case tracking-normal">
-            Envo by {PUBLIC_BRAND_NAME}
-          </EnvoFeaturePill>
-          <h1 className="mt-5 max-w-4xl text-[2.75rem] font-black leading-[0.94] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
-            Your AI worker for customer calls and leads.
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[#647084] sm:text-xl">
-            Envo is trained to your business, answers and organizes incoming leads, follows up automatically, and alerts you when a real person needs to step in.
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#647084]">
-            Built for small business lead management, AI lead response, AI appointment booking, automated lead follow-up, missed call text back, AI receptionist, and AI front desk workflows.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
-            <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
+      <div className="py-2 lg:py-6">
+        <EnvoBrandBoard className="mx-auto max-w-6xl" showVariations={false} />
+        <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/84 p-5 sm:p-7 lg:p-8">
+          <div className="grid gap-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+            <div>
+              <EnvoFeaturePill className="normal-case tracking-normal">
+                Envo by {PUBLIC_BRAND_NAME}
+              </EnvoFeaturePill>
+            </div>
+            <div>
+              <h1 className="max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
+                Your AI worker for customer calls and leads.
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-[#647084] sm:text-xl">
+                Envo is trained to your business, answers and organizes incoming leads, follows up automatically, and alerts you when a real person needs to step in.
+              </p>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#647084]">
+                Built for small business lead management, AI lead response, AI appointment booking, automated lead follow-up, missed call text back, AI receptionist, and AI front desk workflows.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
+                <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <EnvoBrandBoard compact />
+        </EnvoGlassCard>
       </div>
     </EnvoSection>
   );
