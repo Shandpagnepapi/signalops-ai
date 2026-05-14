@@ -10,7 +10,7 @@ import {
   SearchCheck,
   XCircle
 } from "lucide-react";
-import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
+import { EnvoAssetImage, EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -117,7 +117,16 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
             title="A simple lead response flow"
             description="The exact setup changes by industry, but the operating pattern should stay clear: capture, sort, route, follow up, and track."
           />
-          <div className="mt-8 grid gap-4 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="rounded-[1.5rem] border border-white/80 bg-white/76 p-3 shadow-[0_24px_80px_rgba(37,99,235,0.12)]">
+              <EnvoAssetImage
+                asset="leadWorkflow"
+                alt="Envo lead workflow showing calls, texts, forms, and DMs flowing into Envo for follow-up and handoffs."
+                className="rounded-[1.2rem]"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
             {page.workflow.map((step) => (
               <div key={step.title} className="rounded-2xl border border-white/10 bg-[#0B1024]/76 p-5">
                 <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-white">
@@ -127,6 +136,7 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
                 <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/62">{step.description}</p>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -209,6 +219,11 @@ export function AlternativePage({ page }: { page: AlternativePageConfig }) {
               quote requests, and follow-ups, then show where Envo could improve response and routing.
             </p>
           </div>
+          <EnvoAssetImage
+            asset="signatureCard"
+            alt="Dark navy Envo signature card reading Smarter conversations. Stronger connections."
+            className="hidden max-w-[18rem] shrink-0 rounded-[1.25rem] xl:block"
+          />
           <TrackedLink
             href={PRIMARY_CTA.href}
             eventName={ANALYTICS_EVENTS.auditCtaClicked}

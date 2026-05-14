@@ -16,6 +16,7 @@ import {
   Workflow
 } from "lucide-react";
 import {
+  EnvoAssetImage,
   EnvoBrandBoard,
   EnvoCtaButton,
   EnvoDarkCard,
@@ -170,17 +171,17 @@ function DashboardPreview() {
           </div>
           <div className="rounded-[1.45rem] border border-white/12 bg-white/7 p-2 shadow-inner shadow-white/5 sm:p-3">
             <Image
-              src="/product-previews/envo-dashboard-desktop.svg"
+              src="/brand/envo/envo-dashboard-desktop.png"
               alt="Envo customer lead dashboard showing lead stages, customer messages, missed calls, follow-ups, owner handoffs, and dashboard status."
-              width={1200}
-              height={760}
+              width={731}
+              height={596}
               className="hidden h-auto w-full rounded-[1.2rem] md:block"
             />
             <Image
-              src="/product-previews/envo-dashboard-mobile.svg"
+              src="/brand/envo/envo-dashboard-mobile.png"
               alt="Envo mobile owner command center showing lead follow-up, message history, and handoff controls."
-              width={430}
-              height={760}
+              width={288}
+              height={604}
               className="mx-auto h-auto max-h-[34rem] w-auto rounded-[1.2rem] md:hidden"
             />
           </div>
@@ -201,6 +202,14 @@ function HowEnvoWorks() {
           copy="Envo is configured first, then works the front line with the same routing and handoff rules your business already trusts."
         />
         <div className="grid gap-4">
+          <EnvoGlassCard className="overflow-hidden p-3">
+            <EnvoAssetImage
+              asset="leadWorkflow"
+              alt="Envo lead workflow showing calls, texts, forms, and DMs flowing into Envo for follow-up and handoffs."
+              className="rounded-[1.25rem]"
+              sizes="(min-width: 1024px) 760px, 100vw"
+            />
+          </EnvoGlassCard>
           {howItWorks.map((step, index) => {
             const Icon = step.icon;
 
@@ -274,10 +283,10 @@ function OwnerControlSection() {
         </div>
         <EnvoDarkCard className="border-white/16 bg-[#0B1024] p-3 sm:p-4">
           <Image
-            src="/product-previews/envo-owner-inbox.svg"
-            alt="Envo owner command center preview showing approval mode, escalation rules, activity history, and human takeover."
-            width={900}
-            height={640}
+            src="/brand/envo/envo-owner-command-center.png"
+            alt="Envo owner command center dashboard with approval mode, human takeover, pricing guardrails, escalation rules, and activity history."
+            width={456}
+            height={597}
             className="h-auto w-full rounded-[1.25rem]"
           />
         </EnvoDarkCard>
@@ -363,17 +372,26 @@ function PricingCard({
 function FinalCta() {
   return (
     <EnvoSection className="bg-[#F8FAFF]">
-      <EnvoGlassCard className="mx-auto max-w-5xl bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(234,241,255,0.82))] p-6 text-center sm:p-8 lg:p-10">
-        <EnvoLogo className="justify-center" size="md" />
-        <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">
-          Ready to preview Envo for your business?
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#647084] sm:text-base">
-          Show us your lead flow and SignalOpsAI will map how Envo should answer, organize, follow up, and hand off customers.
-        </p>
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
-          <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
+      <EnvoGlassCard className="mx-auto max-w-6xl bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(234,241,255,0.82))] p-5 sm:p-7 lg:p-8">
+        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <EnvoAssetImage
+            asset="signatureCard"
+            className="mx-auto max-w-xl rounded-[1.4rem]"
+            sizes="(min-width: 1024px) 520px, 100vw"
+          />
+          <div className="text-center lg:text-left">
+            <EnvoLogo className="mx-auto lg:mx-0" size="md" />
+            <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">
+              Ready to preview Envo for your business?
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#647084] sm:text-base">
+              Show us your lead flow and SignalOpsAI will map how Envo should answer, organize, follow up, and hand off customers.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+              <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
+              <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
+            </div>
+          </div>
         </div>
       </EnvoGlassCard>
     </EnvoSection>

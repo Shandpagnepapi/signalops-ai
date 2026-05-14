@@ -76,7 +76,7 @@ function EnvoDoorwayCard() {
           </p>
         </div>
         <div className="mt-7 grid gap-5 sm:grid-cols-[8rem_1fr] sm:items-center">
-          <EnvoAppIcon className="mx-auto size-28 rounded-[1.7rem] p-2.5 sm:mx-0" />
+          <EnvoAppIcon className="mx-auto size-28 rounded-[1.7rem] sm:mx-0" />
           <div>
             <h2 className="sr-only">Envo</h2>
             <p className="text-xl font-black leading-snug text-[#071126]">

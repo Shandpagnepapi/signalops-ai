@@ -1,5 +1,5 @@
 import {
-  EnvoBrandBoard,
+  EnvoAssetImage,
   EnvoCtaButton,
   EnvoFeaturePill,
   EnvoGlassCard,
@@ -45,7 +45,15 @@ export default function PreviewPage() {
       <div className="overflow-x-hidden bg-[#071126]">
         <EnvoSection className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
           <div className="py-2 lg:py-6">
-            <EnvoBrandBoard className="mx-auto max-w-6xl" showVariations={false} />
+            <EnvoGlassCard className="mx-auto max-w-6xl overflow-hidden bg-white/84 p-3 sm:p-4">
+              <EnvoAssetImage
+                asset="previewCockpit"
+                alt="Envo preview cockpit with Lead Map, Envo Build Plan, and Next Steps."
+                className="rounded-[1.45rem]"
+                priority
+                sizes="(min-width: 1024px) 1080px, 100vw"
+              />
+            </EnvoGlassCard>
             <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/84 p-5 sm:p-7 lg:p-8">
               <div className="grid gap-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
                 <EnvoFeaturePill className="w-fit">Envo Preview</EnvoFeaturePill>

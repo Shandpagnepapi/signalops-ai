@@ -15,7 +15,7 @@ import {
   SearchCheck,
   type LucideIcon
 } from "lucide-react";
-import { EnvoFeaturePanel, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoAssetImage, EnvoFeaturePanel, EnvoGlassCard, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -232,13 +232,24 @@ export function HowItWorksDemo() {
               </div>
             </div>
 
-            <EnvoFeaturePanel className="order-1 lg:order-2" />
+            <EnvoGlassCard className="order-1 overflow-hidden p-3 lg:order-2">
+              <EnvoAssetImage
+                asset="leadWorkflow"
+                alt="Envo lead workflow showing calls, texts, forms, and DMs flowing into Envo for follow-up and handoffs."
+                className="rounded-[1.35rem]"
+                priority
+                sizes="(min-width: 1024px) 620px, 100vw"
+              />
+            </EnvoGlassCard>
           </div>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <SignalOpsCommandLayer />
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <SignalOpsCommandLayer />
+          <EnvoFeaturePanel />
+        </div>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

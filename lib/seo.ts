@@ -31,23 +31,49 @@ export const OG_IMAGE_ASSETS = {
     path: "/og/signalops-default.png",
     alt: "SignalOpsAI and Envo blue and violet social image for the AI Lead Manager product."
   },
+  envo: {
+    path: "/brand/envo/envo-og-image.png",
+    alt: "Envo social image with the Envo AI worker logo and the message Your AI worker for customer calls and leads."
+  },
   home: {
     path: "/og/signalops-home.png",
     alt: "SignalOpsAI homepage social image showing Envo AI Lead Manager and separate Drone Services."
   },
   audit: {
-    path: "/og/signalops-audit.png",
+    path: "/brand/envo/envo-og-image.png",
     alt: "Envo Preview social image for mapping customer calls, texts, forms, DMs, follow-ups, and handoffs."
   },
   demo: {
-    path: "/og/signalops-demo.png",
+    path: "/brand/envo/envo-og-image.png",
     alt: "Envo demo social image showing lead intake, owner handoffs, follow-up, and dashboard workflow."
   },
   roi: {
-    path: "/og/signalops-roi.png",
+    path: "/brand/envo/envo-og-image.png",
     alt: "Envo ROI calculator social image for estimating possible missed lead recovery scenarios."
   }
 } as const;
+
+const ENVO_OG_PATHS = new Set([
+  "/envo",
+  "/preview",
+  "/live-demo",
+  "/demo",
+  "/dashboard",
+  "/audit",
+  "/how-it-works",
+  "/roi-calculator",
+  "/alternatives",
+  "/ai-lead-response",
+  "/missed-call-text-back",
+  "/ai-follow-up-automation",
+  "/ai-lead-qualification",
+  "/lead-management-for-small-business",
+  "/no-crm-lead-tracking"
+]);
+
+function isEnvoOgPath(path: string) {
+  return ENVO_OG_PATHS.has(path) || path.startsWith("/services/") || path.startsWith("/industries/") || path.startsWith("/alternatives/");
+}
 
 export const PAGE_TITLE_TEMPLATES = {
   home: "SignalOpsAI, Envo, and Drone Services",
@@ -110,14 +136,16 @@ export function createPageMetadata({
   title,
   description,
   path,
-  image = SEO_DEFAULT_IMAGE,
-  imageAlt = OG_IMAGE_ASSETS.default.alt,
+  image,
+  imageAlt,
   type = "website",
   noIndex = false,
   absoluteTitle = false
 }: PageMetadataOptions): Metadata {
   const canonical = createCanonical(path);
-  const imageUrl = absoluteUrl(image);
+  const resolvedImage = image ?? (isEnvoOgPath(path) ? OG_IMAGE_ASSETS.envo.path : SEO_DEFAULT_IMAGE);
+  const resolvedImageAlt = imageAlt ?? (isEnvoOgPath(path) ? OG_IMAGE_ASSETS.envo.alt : OG_IMAGE_ASSETS.default.alt);
+  const imageUrl = absoluteUrl(resolvedImage);
   const socialTitle = absoluteTitle ? title : formatPageTitle(title);
   const robots = noIndex
     ? {
@@ -146,7 +174,7 @@ export function createPageMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: imageAlt
+          alt: resolvedImageAlt
         }
       ],
       locale: "en_US",
@@ -159,7 +187,7 @@ export function createPageMetadata({
       images: [
         {
           url: imageUrl,
-          alt: imageAlt
+          alt: resolvedImageAlt
         }
       ]
     },

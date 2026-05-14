@@ -10,7 +10,7 @@ import {
   PhoneCall,
   SearchCheck
 } from "lucide-react";
-import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
+import { EnvoAssetImage, EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -80,7 +80,16 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
             title={`How Envo handles leads for ${page.industryName.toLowerCase()}`}
             description="This is the practical sequence a customer would experience before your team gets a clean handoff."
           />
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
+          <div className="mt-8 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="rounded-[1.5rem] border border-white/80 bg-white/76 p-3 shadow-[0_24px_80px_rgba(37,99,235,0.12)]">
+              <EnvoAssetImage
+                asset="leadWorkflow"
+                alt="Envo lead workflow showing calls, texts, forms, and DMs flowing into Envo for follow-up and handoffs."
+                className="rounded-[1.2rem]"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
             {exampleLeadFlow.map((step, index) => (
               <div key={step.title} className="rounded-2xl border border-white/10 bg-[#0B1024]/74 p-5">
                 <div className="mb-5 flex size-10 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-white">
@@ -90,6 +99,7 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
                 <p className="mt-3 text-sm leading-6 text-[#D7E2F7]/62">{step.description}</p>
               </div>
             ))}
+            </div>
           </div>
         </section>
       ) : null}
@@ -326,6 +336,11 @@ export function IndustrySeoPage({ page }: { page: IndustrySeoPageConfig }) {
               Send your lead flow, current tools, and project goals so SignalOpsAI can scope a done-for-you Envo system.
             </p>
           </div>
+          <EnvoAssetImage
+            asset="signatureCard"
+            alt="Dark navy Envo signature card reading Smarter conversations. Stronger connections."
+            className="hidden max-w-[18rem] shrink-0 rounded-[1.25rem] xl:block"
+          />
           <TrackedLink
             href={PRIMARY_CTA.href}
             eventName={ANALYTICS_EVENTS.auditCtaClicked}

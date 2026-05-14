@@ -17,7 +17,7 @@ import {
   Save,
   Sparkles
 } from "lucide-react";
-import { EnvoFeaturePill, EnvoFeatureStack, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoAssetImage, EnvoFeaturePill, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -198,7 +198,14 @@ export function LiveDemoGenerator() {
                   {demo?.generatedBy === "ai-enhanced" ? "AI-enhanced" : "Template-ready"}
                 </Badge>
               </div>
-              <EnvoFeatureStack className="mt-5" panel />
+              <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-2">
+                <EnvoAssetImage
+                  asset="previewCockpit"
+                  alt="Envo preview cockpit with Lead Map, Envo Build Plan, and Next Steps."
+                  className="rounded-xl"
+                  sizes="(min-width: 1024px) 620px, 100vw"
+                />
+              </div>
             </CardHeader>
             <CardContent>
               <form className="grid gap-4" onSubmit={handleSubmit}>

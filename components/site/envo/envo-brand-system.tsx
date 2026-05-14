@@ -16,6 +16,7 @@ export function EnvoMiniBrandBoard({ className }: { className?: string }) {
 
 export {
   EnvoAppIcon,
+  EnvoAssetImage,
   EnvoBrandBoard,
   EnvoBrandHero,
   EnvoButton,
@@ -34,5 +35,6 @@ export {
   EnvoSignatureCard,
   EnvoWordmark,
   envoBrandTokens,
-  envoFeatureItems
+  envoFeatureItems,
+  envoImageAssets
 } from "@/components/site/envo/envo-brand";
