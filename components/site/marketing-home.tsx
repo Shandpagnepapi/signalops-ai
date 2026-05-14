@@ -1,38 +1,29 @@
-import { Camera, Zap } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Camera, Zap } from "lucide-react";
 import {
   EnvoAppIcon,
-  EnvoCtaButton,
-  EnvoGlassCard,
   EnvoLogo
 } from "@/components/site/envo/envo-brand-system";
-import {
-  AmbientBackground,
-  GlassCard,
-  GlowButton
-} from "@/components/site/visual-system";
 import { getEmailHref, PUBLIC_BRAND_NAME } from "@/lib/constants";
-import { visualThemes } from "@/lib/visual-themes";
-
-const theme = visualThemes.envoWarm;
-const droneTheme = visualThemes.studioCool;
 
 export function MarketingHome() {
   return (
-    <div className="overflow-hidden bg-[#071126] text-white">
-      <section className="premium-section min-h-[100svh]">
-        <AmbientBackground intensity="strong" theme={theme} />
-        <div className="relative mx-auto flex min-h-[100svh] max-w-[1120px] flex-col px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
-          <div className="flex flex-1 flex-col items-center justify-center gap-6 py-6 sm:gap-8">
+    <main className="relative isolate min-h-[100svh] overflow-hidden bg-[#071126] text-white">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_-10%,rgba(50,139,255,0.24),transparent_34%),radial-gradient(circle_at_12%_72%,rgba(111,77,255,0.16),transparent_30%),linear-gradient(180deg,#071126_0%,#0B1024_100%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-white/20" />
+
+      <section className="mx-auto flex min-h-[100svh] max-w-[1040px] flex-col px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+        <div className="flex flex-1 flex-col items-center justify-center gap-7 py-8 sm:gap-9">
             <header className="mx-auto text-center">
-              <div className="mx-auto flex w-fit items-center gap-3 rounded-[1.15rem] border border-white/12 bg-white/[0.06] px-4 py-3 shadow-2xl shadow-black/24 backdrop-blur-2xl">
-                <span className="flex size-9 items-center justify-center rounded-2xl border border-white/12 bg-[linear-gradient(135deg,#328BFF,#2563EB_48%,#6F4DFF)] text-white shadow-[0_0_32px_rgba(50,139,255,0.28)]">
+              <div className="mx-auto flex w-fit items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.06] px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-2xl">
+                <span className="flex size-9 items-center justify-center rounded-xl border border-white/12 bg-[linear-gradient(135deg,#328BFF,#2563EB_48%,#6F4DFF)] text-white shadow-[0_0_32px_rgba(50,139,255,0.28)]">
                   <Zap className="size-5" aria-hidden="true" />
                 </span>
-                <h1 className="text-xl font-black tracking-normal text-white sm:text-2xl">
+                <h1 className="text-xl font-black text-white sm:text-2xl">
                   {PUBLIC_BRAND_NAME}
                 </h1>
               </div>
-              <p className="mt-4 text-lg font-semibold leading-7 text-[#F8FAFF] sm:text-xl">
+              <p className="mt-4 text-lg font-semibold leading-7 text-[#F8FAFF]">
                 Choose what you need.
               </p>
             </header>
@@ -41,9 +32,9 @@ export function MarketingHome() {
               <EnvoDoorwayCard />
               <DroneDoorwayCard />
             </div>
-          </div>
+        </div>
 
-          <footer className="flex flex-wrap items-center justify-center gap-1 pb-1 text-xs font-bold text-white/48 sm:gap-2">
+        <footer className="flex flex-wrap items-center justify-center gap-1 pb-1 text-xs font-bold text-white/48 sm:gap-2">
             <a className="inline-flex min-h-9 items-center rounded-full px-3 transition hover:bg-white/8 hover:text-white" href={getEmailHref()}>
               Contact
             </a>
@@ -55,52 +46,54 @@ export function MarketingHome() {
             <a className="inline-flex min-h-9 items-center rounded-full px-3 transition hover:bg-white/8 hover:text-white" href="/terms">
               Terms
             </a>
-          </footer>
-        </div>
+        </footer>
       </section>
-    </div>
+    </main>
   );
 }
 
 function EnvoDoorwayCard() {
   return (
-    <EnvoGlassCard className="relative isolate flex min-h-[24rem] flex-col justify-between overflow-hidden rounded-[1.65rem] bg-[linear-gradient(145deg,rgba(248,250,255,0.98),rgba(238,234,254,0.9))] p-5 shadow-[0_34px_110px_rgba(37,99,235,0.22)] sm:rounded-[2rem] sm:p-6">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(50,139,255,0.22),transparent_32%),radial-gradient(circle_at_86%_12%,rgba(111,77,255,0.18),transparent_34%)]" />
-      <div className="pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-[#6F4DFF]/18 blur-3xl" />
-
-      <div className="relative">
-        <div className="text-center">
-          <EnvoLogo className="justify-center" size="lg" />
-          <p className="mt-3 text-xs font-black uppercase tracking-normal text-[#647084]">
-            RESPOND FASTER. AUTOMATE SMARTER.
-          </p>
+    <Link
+      className="group relative isolate flex min-h-[19rem] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-white/70 bg-[#FBFAF7] p-5 text-[#071126] shadow-[0_28px_90px_rgba(37,99,235,0.22)] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_110px_rgba(37,99,235,0.28)] focus-visible:ring-4 focus-visible:ring-[#328BFF]/45 sm:min-h-[21rem] sm:p-6"
+      href="/envo"
+    >
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_0%,rgba(50,139,255,0.16),transparent_34%),radial-gradient(circle_at_90%_8%,rgba(111,77,255,0.13),transparent_30%)]" />
+      <div>
+        <div className="flex items-start justify-between gap-4">
+          <EnvoLogo size="md" />
+          <EnvoAppIcon className="size-14 rounded-[1.15rem] shadow-[0_18px_38px_rgba(7,17,38,0.16)] sm:size-16" />
         </div>
-        <div className="mt-7 grid gap-5 sm:grid-cols-[8rem_1fr] sm:items-center">
-          <EnvoAppIcon className="mx-auto size-28 rounded-[1.7rem] sm:mx-0" />
-          <div>
-            <h2 className="sr-only">Envo</h2>
-            <p className="text-xl font-black leading-snug text-[#071126]">
-              Your AI worker for customer calls and leads.
-            </p>
-            <p className="mt-4 max-w-lg text-base leading-7 text-[#647084]">
-              Respond faster, automate follow-up, and keep every lead organized.
-            </p>
-          </div>
+
+        <div className="mt-8">
+          <h2 className="text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">
+            Envo
+          </h2>
+          <p className="mt-4 text-xl font-black leading-snug text-[#071126]">
+            Your AI worker for customer calls and leads.
+          </p>
+          <p className="mt-4 max-w-md text-base leading-7 text-[#647084]">
+            Respond faster, automate follow-up, and keep every lead organized.
+          </p>
         </div>
       </div>
 
-      <EnvoCtaButton className="relative mt-7 w-full sm:w-fit" href="/envo">
+      <span className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#328BFF,#2563EB_48%,#6F4DFF)] px-5 text-sm font-black text-white shadow-[0_18px_40px_rgba(37,99,235,0.32)] transition group-hover:shadow-[0_22px_48px_rgba(37,99,235,0.42)] sm:w-fit">
         Enter Envo
-      </EnvoCtaButton>
-    </EnvoGlassCard>
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </span>
+    </Link>
   );
 }
 
 function DroneDoorwayCard() {
   return (
-    <GlassCard className="flex min-h-[24rem] flex-col justify-between p-5 sm:p-6" hover theme={droneTheme}>
+    <Link
+      className="group flex min-h-[19rem] flex-col justify-between rounded-[1.75rem] border border-white/12 bg-white/[0.07] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] outline-none backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.09] focus-visible:ring-4 focus-visible:ring-white/24 sm:min-h-[21rem] sm:p-6"
+      href="/drone"
+    >
       <div>
-        <div className="flex items-start justify-between gap-5">
+        <div className="flex items-start justify-between gap-4">
           <div>
             <h2 className="text-4xl font-black tracking-normal text-white sm:text-5xl">
               Drone Services
@@ -109,17 +102,18 @@ function DroneDoorwayCard() {
               FAA Part 107 aerial photo and video in Birmingham, AL.
             </p>
           </div>
-          <div className="flex size-14 shrink-0 items-center justify-center rounded-[1.2rem] border border-white/12 bg-white/[0.06] text-[color:var(--vs-accent-3)] shadow-[0_0_32px_var(--vs-glow)]">
+          <div className="flex size-14 shrink-0 items-center justify-center rounded-[1.15rem] border border-white/12 bg-white/[0.08] text-[#D8E5FF] shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:size-16">
             <Camera className="size-6" aria-hidden="true" />
           </div>
         </div>
-        <p className="mt-5 text-sm leading-7 text-[color:var(--vs-muted)] sm:text-base">
+        <p className="mt-5 max-w-md text-base leading-7 text-[#CFD8EA]">
           Real estate, property, construction, local business, land, event, and vehicle visuals.
         </p>
       </div>
-      <GlowButton className="mt-7 w-full sm:w-fit" href="/drone" icon={false} theme={droneTheme} variant="secondary">
+      <span className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/16 bg-white/[0.08] px-5 text-sm font-black text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition group-hover:bg-white/[0.12] sm:w-fit">
         View Drone Services
-      </GlowButton>
-    </GlassCard>
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </span>
+    </Link>
   );
 }
