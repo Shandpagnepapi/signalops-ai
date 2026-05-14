@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import {
   EnvoAppIcon,
   EnvoFeatureStack,
@@ -117,6 +118,8 @@ export function EnvoAssetShowcase() {
           </p>
         </header>
 
+        <LogoComparison />
+
         <div className="grid gap-10">
           {showcaseItems.map((item) => (
             <section key={item.name} className="overflow-x-auto rounded-[1.5rem] border border-[#D8E2F7] bg-white p-5 shadow-[0_18px_64px_rgba(7,17,38,0.08)]">
@@ -135,6 +138,118 @@ export function EnvoAssetShowcase() {
             </section>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function LogoComparison() {
+  return (
+    <section className="mb-10 rounded-[1.5rem] border border-[#D8E2F7] bg-white p-5 shadow-[0_18px_64px_rgba(7,17,38,0.08)]">
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 className="text-xl font-black">Logo comparison</h2>
+          <p className="mt-1 text-sm text-[#647084]">Reference crop beside the generated SVG mark and logo assets.</p>
+        </div>
+        <code className="rounded-full bg-[#EAF1FF] px-3 py-1 text-xs font-black text-[#2563EB]">
+          /brand/envo/generated
+        </code>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <ComparisonTile label="Reference crop">
+          <Image
+            alt="Reference Envo speech bubble e mark crop"
+            className="h-32 w-auto object-contain"
+            height={125}
+            src="/brand/envo/reference/envo-mark-reference.png"
+            width={185}
+          />
+        </ComparisonTile>
+        <ComparisonTile label="New SVG mark">
+          <Image
+            alt="New Envo gradient mark SVG"
+            className="h-32 w-auto object-contain"
+            height={180}
+            src="/brand/envo/generated/envo-mark-gradient.svg"
+            unoptimized
+            width={260}
+          />
+        </ComparisonTile>
+        <ComparisonTile label="Primary logo SVG">
+          <Image
+            alt="New Envo primary logo SVG"
+            className="h-24 w-full object-contain"
+            height={180}
+            src="/brand/envo/generated/envo-logo-primary.svg"
+            unoptimized
+            width={680}
+          />
+        </ComparisonTile>
+        <ComparisonTile dark label="Dark logo SVG">
+          <Image
+            alt="New Envo dark logo SVG"
+            className="h-24 w-full object-contain"
+            height={180}
+            src="/brand/envo/generated/envo-logo-dark.svg"
+            unoptimized
+            width={680}
+          />
+        </ComparisonTile>
+      </div>
+
+      <div className="mt-4 grid gap-4 sm:grid-cols-3">
+        <ComparisonTile label="Mark at 96px">
+          <Image
+            alt="New Envo mark at 96 pixels"
+            className="size-24 object-contain"
+            height={180}
+            src="/brand/envo/generated/envo-mark-gradient.svg"
+            unoptimized
+            width={260}
+          />
+        </ComparisonTile>
+        <ComparisonTile label="Mark at 48px">
+          <Image
+            alt="New Envo mark at 48 pixels"
+            className="size-12 object-contain"
+            height={180}
+            src="/brand/envo/generated/envo-mark-gradient.svg"
+            unoptimized
+            width={260}
+          />
+        </ComparisonTile>
+        <ComparisonTile label="Mark at 24px">
+          <Image
+            alt="New Envo mark at 24 pixels"
+            className="size-6 object-contain"
+            height={180}
+            src="/brand/envo/generated/envo-mark-gradient.svg"
+            unoptimized
+            width={260}
+          />
+        </ComparisonTile>
+      </div>
+    </section>
+  );
+}
+
+function ComparisonTile({
+  children,
+  dark = false,
+  label
+}: {
+  children: ReactNode;
+  dark?: boolean;
+  label: string;
+}) {
+  return (
+    <div className={dark ? "rounded-[1.25rem] bg-[#071126] p-4" : "rounded-[1.25rem] bg-[#F8FAFF] p-4"}>
+      <p className={dark ? "mb-3 text-xs font-black uppercase tracking-[0.16em] text-white/70" : "mb-3 text-xs font-black uppercase tracking-[0.16em] text-[#647084]"}>
+        {label}
+      </p>
+      <div className={dark ? "flex min-h-36 items-center justify-center rounded-[1rem] border border-white/10 bg-[#071126] p-5" : "flex min-h-36 items-center justify-center rounded-[1rem] border border-white/80 bg-white/80 p-5"}>
+        {children}
       </div>
     </div>
   );

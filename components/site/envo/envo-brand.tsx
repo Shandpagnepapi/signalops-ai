@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { useId, type CSSProperties, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, Bot, Sparkles, UsersRound, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -74,64 +75,19 @@ const logoSizes = {
   }
 } as const;
 
-function safeId(id: string) {
-  return id.replace(/:/g, "");
-}
-
-export function EnvoMarkSvg({
-  className,
-  monochrome = false
-}: {
-  className?: string;
-  monochrome?: boolean;
-}) {
-  const rawId = useId();
-  const gradientId = safeId(`envo-mark-gradient-${rawId}`);
-  const highlightId = safeId(`envo-mark-highlight-${rawId}`);
-  const glowId = safeId(`envo-mark-glow-${rawId}`);
-  const fill = monochrome ? "currentColor" : `url(#${gradientId})`;
-
-  return (
-    <svg
-      aria-hidden="true"
-      className={cn("block overflow-visible", className)}
-      fill="none"
-      viewBox="0 0 260 180"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id={gradientId} x1="36" x2="222" y1="38" y2="142" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#328BFF" />
-          <stop offset="0.48" stopColor="#2563EB" />
-          <stop offset="1" stopColor="#6F4DFF" />
-        </linearGradient>
-        <linearGradient id={highlightId} x1="92" x2="174" y1="44" y2="136" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#ffffff" stopOpacity="0.9" />
-          <stop offset="1" stopColor="#ffffff" stopOpacity="0.2" />
-        </linearGradient>
-        <filter id={glowId} x="0" y="0" width="260" height="180" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
-          <feDropShadow dx="0" dy="14" stdDeviation="13" floodColor="#2563EB" floodOpacity="0.2" />
-        </filter>
-      </defs>
-      <g filter={monochrome ? undefined : `url(#${glowId})`} strokeLinecap="round">
-        <path d="M42 70h42" stroke={fill} strokeWidth="14" />
-        <path d="M28 92h54" stroke={fill} strokeWidth="14" opacity="0.82" />
-        <path d="M48 114h36" stroke={fill} strokeWidth="14" opacity="0.66" />
-        <path d="M120 28h48c34 0 60 25 60 57 0 33-26 58-60 58h-26l-42 29v-33c-26-7-44-28-44-54 0-32 27-57 64-57Z" fill={fill} />
-        {!monochrome ? (
-          <path d="M122 35h43c30 0 52 22 52 50 0 29-22 51-52 51h-25l-30 21v-25c-22-6-38-24-38-47 0-28 22-50 50-50Z" fill={`url(#${highlightId})`} opacity="0.14" />
-        ) : null}
-      </g>
-      <g stroke={monochrome ? "#071126" : "#ffffff"} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M118 91c0-20 16-35 37-35 19 0 33 13 33 30 0 4-1 7-2 10h-49" strokeWidth="16" />
-        <path d="M186 116c-8 9-18 13-31 13-22 0-37-15-37-38" strokeWidth="16" />
-      </g>
-    </svg>
-  );
-}
-
 export function EnvoMark({ className }: { className?: string }) {
-  return <EnvoMarkSvg className={className} />;
+  return (
+    <Image
+      alt=""
+      aria-hidden="true"
+      className={cn("block select-none object-contain", className)}
+      draggable={false}
+      height={180}
+      src="/brand/envo/generated/envo-mark-gradient.svg"
+      unoptimized
+      width={260}
+    />
+  );
 }
 
 export function EnvoWordmark({
@@ -435,7 +391,7 @@ export function EnvoLogoVariationsRow({ className }: { className?: string }) {
     { className: "bg-white", tone: "light" as const },
     { className: "bg-[#EEEAFE]", tone: "light" as const },
     { className: "bg-[#071126]", tone: "dark" as const },
-    { className: "bg-black", tone: "dark" as const, monochrome: true }
+    { className: "bg-black", tone: "dark" as const }
   ];
 
   return (
@@ -445,14 +401,7 @@ export function EnvoLogoVariationsRow({ className }: { className?: string }) {
           key={`${surface.className}-${index}`}
           className={cn("flex min-h-28 items-center justify-center p-5", surface.className)}
         >
-          {surface.monochrome ? (
-            <span className="inline-flex items-center gap-2 text-white" aria-label="Envo AI worker logo">
-              <EnvoMarkSvg className="h-9 w-12 text-white" monochrome />
-              <EnvoWordmark tone="dark" className="text-3xl" />
-            </span>
-          ) : (
-            <EnvoLogo size="md" tone={surface.tone} />
-          )}
+          <EnvoLogo size="md" tone={surface.tone} />
         </div>
       ))}
     </div>

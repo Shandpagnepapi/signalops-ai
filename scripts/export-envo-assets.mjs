@@ -22,63 +22,41 @@ const pngAssets = [
   "envo-og-image"
 ];
 
+function markDefs(gradientId) {
+  return `<linearGradient id="${gradientId}" x1="34" x2="214" y1="42" y2="142" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#328BFF"/>
+      <stop offset="0.52" stop-color="#4D63F6"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>`;
+}
+
+function markBody(gradientId) {
+  const gradient = `url(#${gradientId})`;
+  return `<path d="M108 128c8 7 20 11 35 12l-50 31c-6 4-12-2-10-9l14-38c3 2 7 3 11 4Z" fill="${gradient}"/>
+  <g stroke="${gradient}" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37 59h27" stroke-width="13"/>
+    <path d="M17 87h47" stroke-width="13" opacity="0.8"/>
+    <path d="M39 114h27" stroke-width="13" opacity="0.68"/>
+    <path d="M211 45h-80c-34 0-55 19-55 46s22 49 57 49h76" stroke-width="34"/>
+    <path d="M131 92h78" stroke-width="34"/>
+  </g>`;
+}
+
 const markSvg = `<svg aria-label="Envo AI worker mark" fill="none" viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="envo-mark-gradient" x1="36" x2="222" y1="38" y2="142" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#328BFF"/>
-      <stop offset="0.48" stop-color="#2563EB"/>
-      <stop offset="1" stop-color="#6F4DFF"/>
-    </linearGradient>
-    <linearGradient id="envo-mark-highlight" x1="92" x2="174" y1="44" y2="136" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0.2"/>
-    </linearGradient>
-    <filter id="envo-mark-shadow" x="0" y="0" width="260" height="180" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#2563EB" flood-opacity="0.2"/>
-    </filter>
+    ${markDefs("envo-mark-gradient")}
   </defs>
-  <g filter="url(#envo-mark-shadow)" stroke-linecap="round">
-    <path d="M42 70h42" stroke="url(#envo-mark-gradient)" stroke-width="14"/>
-    <path d="M28 92h54" stroke="url(#envo-mark-gradient)" stroke-width="14" opacity="0.82"/>
-    <path d="M48 114h36" stroke="url(#envo-mark-gradient)" stroke-width="14" opacity="0.66"/>
-    <path d="M120 28h48c34 0 60 25 60 57 0 33-26 58-60 58h-26l-42 29v-33c-26-7-44-28-44-54 0-32 27-57 64-57Z" fill="url(#envo-mark-gradient)"/>
-    <path d="M122 35h43c30 0 52 22 52 50 0 29-22 51-52 51h-25l-30 21v-25c-22-6-38-24-38-47 0-28 22-50 50-50Z" fill="url(#envo-mark-highlight)" opacity="0.14"/>
-  </g>
-  <g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M118 91c0-20 16-35 37-35 19 0 33 13 33 30 0 4-1 7-2 10h-49" stroke-width="16"/>
-    <path d="M186 116c-8 9-18 13-31 13-22 0-37-15-37-38" stroke-width="16"/>
-  </g>
+  ${markBody("envo-mark-gradient")}
 </svg>`;
 
 function logoSvg({ dark = false } = {}) {
   const wordmark = dark ? "#ffffff" : "#071126";
   return `<svg aria-label="Envo AI worker logo" fill="none" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="envo-logo-gradient" x1="36" x2="222" y1="38" y2="142" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#328BFF"/>
-      <stop offset="0.48" stop-color="#2563EB"/>
-      <stop offset="1" stop-color="#6F4DFF"/>
-    </linearGradient>
-    <linearGradient id="envo-logo-highlight" x1="92" x2="174" y1="44" y2="136" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0.2"/>
-    </linearGradient>
-    <filter id="envo-logo-shadow" x="0" y="0" width="260" height="180" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#2563EB" flood-opacity="0.2"/>
-    </filter>
+    ${markDefs("envo-logo-gradient")}
   </defs>
-  <g filter="url(#envo-logo-shadow)" stroke-linecap="round">
-    <path d="M42 70h42" stroke="url(#envo-logo-gradient)" stroke-width="14"/>
-    <path d="M28 92h54" stroke="url(#envo-logo-gradient)" stroke-width="14" opacity="0.82"/>
-    <path d="M48 114h36" stroke="url(#envo-logo-gradient)" stroke-width="14" opacity="0.66"/>
-    <path d="M120 28h48c34 0 60 25 60 57 0 33-26 58-60 58h-26l-42 29v-33c-26-7-44-28-44-54 0-32 27-57 64-57Z" fill="url(#envo-logo-gradient)"/>
-    <path d="M122 35h43c30 0 52 22 52 50 0 29-22 51-52 51h-25l-30 21v-25c-22-6-38-24-38-47 0-28 22-50 50-50Z" fill="url(#envo-logo-highlight)" opacity="0.14"/>
-  </g>
-  <g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M118 91c0-20 16-35 37-35 19 0 33 13 33 30 0 4-1 7-2 10h-49" stroke-width="16"/>
-    <path d="M186 116c-8 9-18 13-31 13-22 0-37-15-37-38" stroke-width="16"/>
-  </g>
-  <text x="270" y="122" fill="${wordmark}" font-family="Inter, ui-rounded, Avenir Next, Segoe UI, Arial, sans-serif" font-size="96" font-weight="850" letter-spacing="-2">Envo</text>
+  ${markBody("envo-logo-gradient")}
+  <text x="280" y="122" fill="${wordmark}" font-family="Inter, ui-rounded, Avenir Next, Segoe UI, Arial, sans-serif" font-size="96" font-weight="850" letter-spacing="-2">Envo</text>
 </svg>`;
 }
 
