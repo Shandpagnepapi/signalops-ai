@@ -6,11 +6,13 @@
       <stop offset="1" stop-color="#7C3AED"/>
     </linearGradient>
   </defs>
+  <g fill="url(#envo-mark-gradient)">
+    <rect height="11" opacity="0.95" rx="5.5" width="26" x="31" y="52"/>
+    <rect height="11" opacity="0.76" rx="5.5" width="42" x="14" y="84"/>
+    <rect height="11" opacity="0.62" rx="5.5" width="23" x="35" y="115"/>
+  </g>
   <path d="M108 128c8 7 20 11 35 12l-50 31c-6 4-12-2-10-9l14-38c3 2 7 3 11 4Z" fill="url(#envo-mark-gradient)"/>
   <g stroke="url(#envo-mark-gradient)" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M37 59h27" stroke-width="13"/>
-    <path d="M17 87h47" stroke-width="13" opacity="0.8"/>
-    <path d="M39 114h27" stroke-width="13" opacity="0.68"/>
     <path d="M211 45h-80c-34 0-55 19-55 46s22 49 57 49h76" stroke-width="34"/>
     <path d="M131 92h78" stroke-width="34"/>
   </g>
