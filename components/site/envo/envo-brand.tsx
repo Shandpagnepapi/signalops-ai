@@ -450,7 +450,7 @@ export function EnvoBrandBoard({
 export function EnvoFeaturePanel({
   className,
   compact = false,
-  title = "Smarter conversations. Stronger connections."
+  title = "Lead flow, organized."
 }: {
   className?: string;
   compact?: boolean;
@@ -459,31 +459,21 @@ export function EnvoFeaturePanel({
   return (
     <EnvoGlassCard
       className={cn(
-        "overflow-hidden border-[#E2E8F7] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(251,250,247,0.94)_48%,rgba(248,250,255,0.92))] p-0",
+        "overflow-hidden border-[#E2E8F7] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(251,250,247,0.94)_48%,rgba(248,250,255,0.92))] p-5 sm:p-6",
         className
       )}
     >
-      <div className="border-b border-[#D8E2F7] px-5 py-6 text-center">
-        <EnvoLogo className="justify-center" size={compact ? "md" : "lg"} />
-        <p className="mt-3 text-[0.68rem] font-black uppercase tracking-normal text-[#647084]">
-          RESPOND FASTER. AUTOMATE SMARTER.
-        </p>
-      </div>
-
-      <div className="grid gap-4 p-4 sm:p-5">
-        <div className={cn("grid gap-4", compact ? "" : "sm:grid-cols-[0.48fr_1fr]")}>
-          <div className="flex flex-col items-center justify-center rounded-[1.45rem] border border-[#D8E2F7]/75 bg-white/58 p-4 text-center shadow-[0_18px_54px_rgba(37,99,235,0.08)]">
-            <EnvoAppIcon className="w-24" />
-            <p className="mt-3 text-[0.68rem] font-black uppercase tracking-normal text-[#647084]">
-              APP ICON
-            </p>
-          </div>
-
-          <EnvoSignatureCard
-            className="rounded-[1.45rem]"
-            compact
-            title={title}
-          />
+      <div className="grid gap-5">
+        <div className="rounded-[1.45rem] border border-[#D8E2F7]/75 bg-white/72 p-5 shadow-[0_18px_54px_rgba(37,99,235,0.08)]">
+          <p className="text-[0.68rem] font-black uppercase tracking-[0.22em] text-[#2563EB]">
+            Respond faster. Automate smarter.
+          </p>
+          <h3 className={cn("mt-3 font-black leading-tight tracking-normal text-[#071126]", compact ? "text-2xl" : "text-3xl")}>
+            {title}
+          </h3>
+          <p className="mt-3 text-sm leading-6 text-[#647084]">
+            Capture the request, ask for the right details, route the handoff, and keep follow-up moving.
+          </p>
         </div>
         <EnvoFeatureStack panel />
       </div>
@@ -507,12 +497,12 @@ export function EnvoBrandHero({
   return (
     <EnvoSection className={cn("border-b border-[#D8E2F7] bg-[#FBFAF7]", className)}>
       <div className="py-2 lg:py-6">
-        <EnvoBrandBoard className="mx-auto max-w-6xl" showVariations={false} />
-        <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/82 p-5 sm:p-7 lg:p-8">
-          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-            <EnvoFeaturePill className="w-fit tracking-normal">{eyebrow}</EnvoFeaturePill>
+        <EnvoGlassCard className="mx-auto max-w-6xl bg-white/82 p-5 sm:p-7 lg:p-8">
+          <div className="grid gap-7 lg:grid-cols-[1fr_0.86fr] lg:items-center">
             <div>
-              <h1 className="max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
+              <EnvoLogo size="md" />
+              <EnvoFeaturePill className="mt-6 w-fit tracking-normal">{eyebrow}</EnvoFeaturePill>
+              <h1 className="mt-5 max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
                 {title}
               </h1>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[#647084] sm:text-xl">
@@ -527,6 +517,7 @@ export function EnvoBrandHero({
                 )}
               </div>
             </div>
+            <EnvoFeaturePanel compact />
           </div>
         </EnvoGlassCard>
       </div>

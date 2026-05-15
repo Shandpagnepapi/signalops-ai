@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { EnvoFeatureStack, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { Badge } from "@/components/ui/badge";
 import { demoBusinessOptions, demoBusinesses, type DemoBusinessKey } from "@/lib/demo-businesses";
 import { RouteWashDemoSite } from "./routewash-site";
@@ -18,8 +17,7 @@ export function DemoBusinessSwitcher() {
         <div className="relative mx-auto max-w-[1500px]">
           <div className="mb-4 grid gap-4 rounded-[1.75rem] border border-[#D8E2F7] bg-white/78 p-3.5 shadow-[0_20px_70px_rgba(37,99,235,0.12)] backdrop-blur-2xl sm:p-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)_minmax(240px,0.55fr)] lg:items-center">
             <div>
-              <EnvoLogo size="sm" />
-              <Badge className="mb-2 mt-3 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">Envo by SignalOpsAI demo</Badge>
+              <Badge className="mb-2 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">Envo by SignalOpsAI demo</Badge>
               <p className="text-sm text-[#647084]">
                 See Envo handle a lead. Watch Envo answer, qualify, follow up, and prepare the handoff.
               </p>
@@ -39,7 +37,6 @@ export function DemoBusinessSwitcher() {
               </select>
               <ChevronDown className="pointer-events-none absolute bottom-3.5 right-4 size-4 text-[#6F4DFF]" aria-hidden="true" />
             </label>
-            <EnvoFeatureStack panel />
           </div>
 
           <RouteWashDemoSite business={business} />

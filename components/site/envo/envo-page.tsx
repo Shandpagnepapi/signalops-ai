@@ -15,15 +15,13 @@ import {
   Workflow
 } from "lucide-react";
 import {
-  EnvoBrandBoard,
   EnvoCtaButton,
   EnvoDarkCard,
+  EnvoFeatureStack,
   EnvoFeaturePill,
   EnvoGlassCard,
   EnvoLogo,
-  EnvoMark,
   EnvoSection,
-  EnvoSignatureCard
 } from "@/components/site/envo/envo-brand-system";
 import {
   EnvoDashboardDesktopMockup,
@@ -124,21 +122,21 @@ export function EnvoPage() {
 function HeroSection() {
   return (
     <EnvoSection className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
-      <div className="py-2 lg:py-6">
-        <EnvoBrandBoard className="mx-auto max-w-6xl" showVariations={false} />
-        <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/84 p-5 sm:p-7 lg:p-8">
-          <div className="grid gap-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+      <div className="py-4 lg:py-8">
+        <EnvoGlassCard className="mx-auto max-w-6xl bg-white/84 p-5 sm:p-7 lg:p-8">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <EnvoFeaturePill className="normal-case tracking-normal">
-                Envo by {PUBLIC_BRAND_NAME}
+              <div>
+                <EnvoLogo size="md" />
+              </div>
+              <EnvoFeaturePill className="mt-7 normal-case tracking-normal">
+                Built by {PUBLIC_BRAND_NAME}
               </EnvoFeaturePill>
-            </div>
-            <div>
-              <h1 className="max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
+              <h1 className="mt-5 max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
                 Your AI worker for customer calls and leads.
               </h1>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[#647084] sm:text-xl">
-                Envo is trained to your business, answers and organizes incoming leads, follows up automatically, and alerts you when a real person needs to step in.
+                Trained to your business, it answers and organizes incoming leads, follows up automatically, and alerts you when a real person needs to step in.
               </p>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-[#647084]">
                 Built for small business lead management, AI lead response, AI appointment booking, automated lead follow-up, missed call text back, AI receptionist, and AI front desk workflows.
@@ -147,6 +145,17 @@ function HeroSection() {
                 <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
                 <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
               </div>
+            </div>
+            <div className="grid gap-4">
+              <EnvoDarkCard className="p-5">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#8EBBFF]">
+                  Owner command center
+                </p>
+                <p className="mt-4 text-3xl font-black leading-tight text-white">
+                  Calls, texts, forms, DMs, follow-ups, and handoffs in one calm view.
+                </p>
+              </EnvoDarkCard>
+              <EnvoFeatureStack panel />
             </div>
           </div>
         </EnvoGlassCard>
@@ -326,7 +335,6 @@ function PricingCard({
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between gap-3">
             <p className="text-lg font-black text-white">{name}</p>
-            <EnvoMark className="size-9" />
           </div>
           <p className="mt-5 text-4xl font-black tracking-normal text-white">{price}</p>
           <p className="mt-4 text-sm leading-6 text-[#D7E2F7]">{summary}</p>
@@ -351,21 +359,17 @@ function FinalCta() {
   return (
     <EnvoSection className="bg-[#F8FAFF]">
       <EnvoGlassCard className="mx-auto max-w-6xl bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(234,241,255,0.82))] p-5 sm:p-7 lg:p-8">
-        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <EnvoSignatureCard className="mx-auto w-full max-w-xl" />
-          <div className="text-center lg:text-left">
-            <EnvoLogo className="mx-auto lg:mx-0" size="md" />
-            <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">
+        <div className="text-center">
+            <h2 className="mx-auto max-w-3xl text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">
               Ready to preview Envo for your business?
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#647084] sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#647084] sm:text-base">
               Show us your lead flow and SignalOpsAI will map how Envo should answer, organize, follow up, and hand off customers.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <EnvoCtaButton href="/preview">Preview Envo</EnvoCtaButton>
               <EnvoCtaButton href="/demo" variant="secondary">View Demo</EnvoCtaButton>
             </div>
-          </div>
         </div>
       </EnvoGlassCard>
     </EnvoSection>

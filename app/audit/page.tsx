@@ -7,7 +7,7 @@ import {
   Workflow
 } from "lucide-react";
 import { LeadLeakAuditForm } from "@/components/forms/lead-leak-audit-form";
-import { EnvoFeaturePanel, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePanel } from "@/components/site/envo/envo-brand-system";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -103,9 +103,8 @@ export default function AuditPage() {
       <section className="relative isolate overflow-hidden border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(50,139,255,0.18),transparent_34%),radial-gradient(circle_at_82%_14%,rgba(111,77,255,0.12),transparent_32%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div className="order-2 flex min-w-0 flex-col justify-center lg:order-1">
-            <EnvoLogo size="md" />
-            <Badge className="mb-6 mt-5 w-fit border border-[#CBD8F2] bg-white/74 text-[#2563EB]">Envo Preview questionnaire</Badge>
+          <div className="flex min-w-0 flex-col justify-center">
+            <Badge className="mb-6 w-fit border border-[#CBD8F2] bg-white/74 text-[#2563EB]">Envo Preview questionnaire</Badge>
             <h1 className="max-w-xs text-4xl font-black leading-tight tracking-normal text-[#071126] sm:max-w-3xl sm:text-6xl">
               Start your Envo Preview questionnaire.
             </h1>
@@ -150,7 +149,7 @@ export default function AuditPage() {
             </div>
           </div>
 
-          <EnvoFeaturePanel className="order-1 w-full max-w-xs sm:max-w-none lg:order-2" />
+          <EnvoFeaturePanel className="w-full max-w-xs sm:max-w-none" />
         </div>
       </section>
 

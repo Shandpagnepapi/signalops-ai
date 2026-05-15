@@ -22,6 +22,7 @@ const intentionallyNonIndexableRoutes = new Set([
   "/visual-review"
 ]);
 const allowedNonPageInternalPaths = new Set(["/sitemap.xml", "/robots.txt", "/design-lab/studio"]);
+const staticAssetPathPattern = /\.(?:avif|gif|ico|jpeg|jpg|png|svg|webp)$/i;
 
 const failures = [];
 const warnings = [];
@@ -191,6 +192,10 @@ function normalizeInternalPath(href) {
   const normalized = withoutQuery.replace(/\/$/, "") || "/";
 
   if (normalized.startsWith("/_next") || normalized.startsWith("/api/")) {
+    return "";
+  }
+
+  if (staticAssetPathPattern.test(normalized)) {
     return "";
   }
 

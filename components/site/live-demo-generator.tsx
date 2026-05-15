@@ -17,7 +17,7 @@ import {
   Save,
   Sparkles
 } from "lucide-react";
-import { EnvoFeaturePill, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePill } from "@/components/site/envo/envo-brand-system";
 import { EnvoPreviewCockpitMockup } from "@/components/site/envo/envo-dashboard-mockups";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
@@ -161,8 +161,7 @@ export function LiveDemoGenerator() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(50,139,255,0.18),transparent_34%),radial-gradient(circle_at_82%_14%,rgba(111,77,255,0.12),transparent_32%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div className="flex flex-col justify-center">
-            <EnvoLogo size="md" />
-            <EnvoFeaturePill className="mb-5 mt-5" icon={Sparkles}>
+            <EnvoFeaturePill className="mb-5" icon={Sparkles}>
               Live prospect demo
             </EnvoFeaturePill>
             <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#071126] sm:text-6xl">

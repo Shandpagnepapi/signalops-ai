@@ -1,9 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, Camera, Zap } from "lucide-react";
-import {
-  EnvoAppIcon,
-  EnvoLogo
-} from "@/components/site/envo/envo-brand-system";
 import { getEmailHref, PUBLIC_BRAND_NAME } from "@/lib/constants";
 
 export function MarketingHome() {
@@ -13,7 +9,7 @@ export function MarketingHome() {
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-white/20" />
 
       <section className="mx-auto flex min-h-[100svh] max-w-[1040px] flex-col px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
-        <div className="flex flex-1 flex-col items-center justify-center gap-7 py-8 sm:gap-9">
+        <div className="flex flex-1 flex-col items-center justify-center gap-5 py-6 sm:gap-8 sm:py-8">
             <header className="mx-auto text-center">
               <div className="mx-auto flex w-fit items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.06] px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-2xl">
                 <span className="flex size-9 items-center justify-center rounded-xl border border-white/12 bg-[linear-gradient(135deg,#328BFF,#2563EB_48%,#6F4DFF)] text-white shadow-[0_0_32px_rgba(50,139,255,0.28)]">
@@ -28,7 +24,7 @@ export function MarketingHome() {
               </p>
             </header>
 
-            <div className="grid w-full gap-4 md:grid-cols-2 lg:gap-5">
+            <div className="grid w-full gap-3.5 md:grid-cols-2 lg:gap-5">
               <EnvoDoorwayCard />
               <DroneDoorwayCard />
             </div>
@@ -55,30 +51,25 @@ export function MarketingHome() {
 function EnvoDoorwayCard() {
   return (
     <Link
-      className="group relative isolate flex min-h-[19rem] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-white/70 bg-[#FBFAF7] p-5 text-[#071126] shadow-[0_28px_90px_rgba(37,99,235,0.22)] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_110px_rgba(37,99,235,0.28)] focus-visible:ring-4 focus-visible:ring-[#328BFF]/45 sm:min-h-[21rem] sm:p-6"
+      className="group relative isolate flex min-h-[15.5rem] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-white/70 bg-[#FBFAF7] p-5 text-[#071126] shadow-[0_28px_90px_rgba(37,99,235,0.22)] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_110px_rgba(37,99,235,0.28)] focus-visible:ring-4 focus-visible:ring-[#328BFF]/45 sm:min-h-[18rem] sm:p-6"
       href="/envo"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_0%,rgba(50,139,255,0.16),transparent_34%),radial-gradient(circle_at_90%_8%,rgba(111,77,255,0.13),transparent_30%)]" />
       <div>
-        <div className="flex items-start justify-between gap-4">
-          <EnvoLogo size="md" />
-          <EnvoAppIcon className="size-14 rounded-[1.15rem] shadow-[0_18px_38px_rgba(7,17,38,0.16)] sm:size-16" />
-        </div>
-
-        <div className="mt-8">
-          <h2 className="text-4xl font-black tracking-normal text-[#071126] sm:text-5xl">
+        <div>
+          <h2 className="text-3xl font-black tracking-normal text-[#071126] sm:text-5xl">
             Envo
           </h2>
-          <p className="mt-4 text-xl font-black leading-snug text-[#071126]">
+          <p className="mt-3 text-lg font-black leading-snug text-[#071126] sm:text-xl">
             Your AI worker for customer calls and leads.
           </p>
-          <p className="mt-4 max-w-md text-base leading-7 text-[#647084]">
+          <p className="mt-3 max-w-md text-sm leading-6 text-[#647084] sm:text-base sm:leading-7">
             Respond faster, automate follow-up, and keep every lead organized.
           </p>
         </div>
       </div>
 
-      <span className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#328BFF,#2563EB_48%,#6F4DFF)] px-5 text-sm font-black text-white shadow-[0_18px_40px_rgba(37,99,235,0.32)] transition group-hover:shadow-[0_22px_48px_rgba(37,99,235,0.42)] sm:w-fit">
+      <span className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#328BFF,#2563EB_48%,#6F4DFF)] px-5 text-sm font-black text-white shadow-[0_18px_40px_rgba(37,99,235,0.32)] transition group-hover:shadow-[0_22px_48px_rgba(37,99,235,0.42)] sm:min-h-12 sm:w-fit">
         Enter Envo
         <ArrowRight className="size-4" aria-hidden="true" />
       </span>
@@ -89,16 +80,16 @@ function EnvoDoorwayCard() {
 function DroneDoorwayCard() {
   return (
     <Link
-      className="group flex min-h-[19rem] flex-col justify-between rounded-[1.75rem] border border-white/12 bg-white/[0.07] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] outline-none backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.09] focus-visible:ring-4 focus-visible:ring-white/24 sm:min-h-[21rem] sm:p-6"
+      className="group flex min-h-[15.5rem] flex-col justify-between rounded-[1.75rem] border border-white/12 bg-white/[0.07] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.24)] outline-none backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:bg-white/[0.09] focus-visible:ring-4 focus-visible:ring-white/24 sm:min-h-[18rem] sm:p-6"
       href="/drone"
     >
       <div>
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h2 className="text-4xl font-black tracking-normal text-white sm:text-5xl">
+            <h2 className="text-3xl font-black tracking-normal text-white sm:text-5xl">
               Drone Services
             </h2>
-            <p className="mt-3 text-lg font-black leading-snug text-white sm:text-xl">
+            <p className="mt-3 text-base font-black leading-snug text-white sm:text-xl">
               FAA Part 107 aerial photo and video in Birmingham, AL.
             </p>
           </div>
@@ -106,11 +97,11 @@ function DroneDoorwayCard() {
             <Camera className="size-6" aria-hidden="true" />
           </div>
         </div>
-        <p className="mt-5 max-w-md text-base leading-7 text-[#CFD8EA]">
+        <p className="mt-4 max-w-md text-sm leading-6 text-[#CFD8EA] sm:text-base sm:leading-7">
           Real estate, property, construction, local business, land, event, and vehicle visuals.
         </p>
       </div>
-      <span className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/16 bg-white/[0.08] px-5 text-sm font-black text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition group-hover:bg-white/[0.12] sm:w-fit">
+      <span className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-white/16 bg-white/[0.08] px-5 text-sm font-black text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition group-hover:bg-white/[0.12] sm:min-h-12 sm:w-fit">
         View Drone Services
         <ArrowRight className="size-4" aria-hidden="true" />
       </span>

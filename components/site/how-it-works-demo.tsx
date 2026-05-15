@@ -15,7 +15,7 @@ import {
   SearchCheck,
   type LucideIcon
 } from "lucide-react";
-import { EnvoFeaturePanel, EnvoGlassCard, EnvoLogo } from "@/components/site/envo/envo-brand-system";
+import { EnvoFeaturePanel, EnvoGlassCard } from "@/components/site/envo/envo-brand-system";
 import { EnvoLeadWorkflowVisual } from "@/components/site/envo/envo-dashboard-mockups";
 import { TrackedLink } from "@/components/site/tracked-link";
 import { Badge } from "@/components/ui/badge";
@@ -190,8 +190,7 @@ export function HowItWorksDemo() {
       <section className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center">
-            <div className="order-2 space-y-6 lg:order-1">
-              <EnvoLogo size="sm" />
+            <div className="space-y-6">
               <Badge variant="outline" className="border-[#CBD8F2] bg-white/74 text-[#2563EB]">
                 Envo by SignalOpsAI
               </Badge>
@@ -233,7 +232,7 @@ export function HowItWorksDemo() {
               </div>
             </div>
 
-            <EnvoGlassCard className="order-1 overflow-hidden p-3 lg:order-2">
+            <EnvoGlassCard className="overflow-hidden p-3">
               <EnvoLeadWorkflowVisual className="rounded-[1.35rem] shadow-none" />
             </EnvoGlassCard>
           </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { EnvoFeatureStack, EnvoLogo } from "@/components/site/envo/envo-brand-system";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { routeWashDashboardLeads } from "@/lib/mock-data";
@@ -34,8 +33,7 @@ export function DashboardShell() {
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.58fr)] lg:items-end">
             <div className="min-w-0">
-              <EnvoLogo size="sm" />
-              <Badge className="mb-4 mt-4 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">RouteWash Mobile Fleet Care portal demo</Badge>
+              <Badge className="mb-4 border border-[#CBD8F2] bg-white/74 text-[#2563EB]">RouteWash Mobile Fleet Care portal demo</Badge>
               <h1 className="max-w-xs text-3xl font-black tracking-normal text-[#071126] sm:max-w-none sm:text-4xl">
                 Lead pipeline dashboard for RouteWash Mobile Fleet Care
               </h1>
@@ -46,11 +44,10 @@ export function DashboardShell() {
             </div>
             <div>
               <div className="mb-3 flex flex-wrap gap-2">
-                <Badge variant="success">Demo data only</Badge>
-                <Badge variant="outline">DFW fleet wash</Badge>
-                <Badge variant="outline">No live messages sent</Badge>
+                <Badge className="border border-emerald-200 bg-emerald-50 text-emerald-800">Demo data only</Badge>
+                <Badge className="border border-[#CBD8F2] bg-white/80 text-[#2563EB]">DFW fleet wash</Badge>
+                <Badge className="border border-[#CBD8F2] bg-white/80 text-[#2563EB]">No live messages sent</Badge>
               </div>
-              <EnvoFeatureStack panel />
             </div>
           </div>
         </div>
