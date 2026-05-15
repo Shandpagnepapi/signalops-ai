@@ -43,6 +43,7 @@ export const envoFeatureItems = [
 ] as const;
 
 type EnvoLogoTone = "light" | "dark";
+export type EnvoMarkVariantName = "a" | "b" | "c" | "d";
 
 type EnvoLogoProps = {
   className?: string;
@@ -124,6 +125,120 @@ export function EnvoLogo({
   return (
     <span className={cn("inline-flex items-center", logoSizes[size].gap, className)} aria-label="Envo AI worker logo">
       <EnvoMark className={cn(logoSizes[size].mark, markClassName)} />
+      <EnvoWordmark tone={tone} className={logoSizes[size].wordmark} />
+    </span>
+  );
+}
+
+type EnvoMarkVariantProps = {
+  className?: string;
+  idPrefix?: string;
+  variant: EnvoMarkVariantName;
+};
+
+function EnvoMarkBase({
+  accent,
+  className,
+  idPrefix
+}: {
+  accent: ReactNode;
+  className?: string;
+  idPrefix: string;
+}) {
+  const gradientId = `${idPrefix}-gradient`;
+
+  return (
+    <svg
+      aria-hidden="true"
+      className={cn("block select-none", className)}
+      fill="none"
+      viewBox="0 0 260 180"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id={gradientId} x1="34" x2="214" y1="42" y2="142" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#328BFF" />
+          <stop offset="0.52" stopColor="#4D63F6" />
+          <stop offset="1" stopColor="#7C3AED" />
+        </linearGradient>
+      </defs>
+      <g style={{ "--envo-lab-gradient": `url(#${gradientId})` } as CSSProperties}>
+        {accent}
+        <path
+          d="M108 128c8 7 20 11 35 12l-50 31c-6 4-12-2-10-9l14-38c3 2 7 3 11 4Z"
+          fill={`url(#${gradientId})`}
+        />
+        <g stroke={`url(#${gradientId})`} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M211 45h-80c-34 0-55 19-55 46s22 49 57 49h76" strokeWidth="34" />
+          <path d="M131 92h78" strokeWidth="34" />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+function EnvoVariantAccent({ gradientId, variant }: { gradientId: string; variant: EnvoMarkVariantName }) {
+  const stroke = `url(#${gradientId})`;
+
+  if (variant === "a") {
+    return (
+      <g stroke={stroke} strokeLinecap="round">
+        <path d="M33 59h24" strokeWidth="11" />
+        <path d="M13 88h38" strokeWidth="11" opacity="0.82" />
+        <path d="M35 116h21" strokeWidth="11" opacity="0.68" />
+      </g>
+    );
+  }
+
+  if (variant === "b") {
+    return (
+      <g fill={stroke}>
+        <rect height="11" opacity="0.95" rx="5.5" width="26" x="31" y="52" />
+        <rect height="11" opacity="0.76" rx="5.5" width="42" x="14" y="84" />
+        <rect height="11" opacity="0.62" rx="5.5" width="23" x="35" y="115" />
+      </g>
+    );
+  }
+
+  if (variant === "c") {
+    return (
+      <g fill={stroke} stroke={stroke} strokeLinecap="round">
+        <circle cx="25" cy="61" opacity="0.88" r="5.5" stroke="none" />
+        <path d="M37 88h24" strokeWidth="10.5" />
+        <path d="M18 116h34" strokeWidth="10.5" opacity="0.72" />
+      </g>
+    );
+  }
+
+  return (
+    <g fill={stroke} stroke={stroke} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M31 88h23" strokeWidth="9.5" />
+      <circle cx="18" cy="75" opacity="0.58" r="4.8" stroke="none" />
+      <circle cx="22" cy="104" opacity="0.5" r="3.8" stroke="none" />
+      <path d="M47 61v9M42.5 65.5h9" opacity="0.72" strokeWidth="4.5" />
+    </g>
+  );
+}
+
+export function EnvoMarkVariant({ className, idPrefix, variant }: EnvoMarkVariantProps) {
+  const prefix = idPrefix ?? `envo-mark-variant-${variant}`;
+  const gradientId = `${prefix}-gradient`;
+
+  return <EnvoMarkBase accent={<EnvoVariantAccent gradientId={gradientId} variant={variant} />} className={className} idPrefix={prefix} />;
+}
+
+export function EnvoLogoVariant({
+  className,
+  markClassName,
+  size = "md",
+  tone = "light",
+  variant
+}: Omit<EnvoLogoProps, "showWordmark"> & {
+  variant: EnvoMarkVariantName;
+}) {
+  return (
+    <span className={cn("inline-flex items-center", logoSizes[size].gap, className)} aria-label={`Envo logo variant ${variant.toUpperCase()}`}>
+      <EnvoMarkVariant className={cn(logoSizes[size].mark, markClassName)} idPrefix={`envo-logo-variant-${variant}-${size}`} variant={variant} />
       <EnvoWordmark tone={tone} className={logoSizes[size].wordmark} />
     </span>
   );

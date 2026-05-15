@@ -39,11 +39,14 @@ export {
   EnvoGlassCard,
   EnvoHeroSection,
   EnvoLogo,
+  EnvoLogoVariant,
   EnvoMark,
+  EnvoMarkVariant,
   EnvoSection,
   EnvoSectionShell,
   EnvoSignatureCard,
   EnvoWordmark,
   envoBrandTokens,
-  envoFeatureItems
+  envoFeatureItems,
+  type EnvoMarkVariantName
 } from "@/components/site/envo/envo-brand";
