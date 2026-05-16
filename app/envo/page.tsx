@@ -1,4 +1,5 @@
-import { EnvoPage as EnvoProductLandingPage } from "@/components/site/envo/envo-page";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { ShuffleEnvoPage } from "@/components/site/envo/shuffle-envo-page";
 import {
   breadcrumbJsonLd,
   createPageMetadata,
@@ -8,7 +9,19 @@ import {
 } from "@/lib/seo";
 
 const description =
-  "Envo is the AI Lead Manager for small businesses, trained to handle customer calls, texts, forms, DMs, follow-ups, owner handoffs, and dashboard visibility.";
+  "Envo is the AI Lead Manager for small businesses, trained to answer calls, texts, and forms, collect lead details, follow up, support booking, and keep every opportunity organized.";
+
+const envoBody = DM_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-envo-body"
+});
+
+const envoHeading = Space_Grotesk({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-envo-heading"
+});
 
 export const metadata = createPageMetadata({
   title: "Envo by SignalOpsAI | AI Lead Manager for Small Businesses",
@@ -42,7 +55,9 @@ export default function EnvoPage() {
           ])
         ])}
       />
-      <EnvoProductLandingPage />
+      <div className={`${envoBody.variable} ${envoHeading.variable}`}>
+        <ShuffleEnvoPage />
+      </div>
     </>
   );
 }

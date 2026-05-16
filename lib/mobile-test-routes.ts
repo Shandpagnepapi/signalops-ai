@@ -11,6 +11,10 @@ export function isDesignLabRoute(pathname: string | null) {
   return pathname === "/design-lab" || Boolean(pathname?.startsWith("/design-lab/"));
 }
 
+export function isStandaloneProductRoute(pathname: string | null) {
+  return pathname === "/envo";
+}
+
 export function shouldHidePublicChrome(pathname: string | null) {
-  return isMobileTestRoute(pathname) || isDesignLabRoute(pathname);
+  return isMobileTestRoute(pathname) || isDesignLabRoute(pathname) || isStandaloneProductRoute(pathname);
 }
