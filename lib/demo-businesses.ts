@@ -384,7 +384,7 @@ export const demoBusinesses = {
         status: "yes",
         mobile: "yes",
         photoNote: "Water access is available at both locations. Current provider is inconsistent on timing.",
-        description: "We need biweekly washing for service vans without slowing down daily routes.",
+        description: "We need biweekly washing for service vans without disrupting daily routes.",
         preferredTime: "After-hours on weeknights"
       }
     },
