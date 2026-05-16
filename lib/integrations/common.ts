@@ -7,6 +7,7 @@ export type IntegrationMode = "mock" | "configured" | "live";
 export type IntegrationAction =
   | "customer_reply"
   | "owner_alert"
+  | "preview_owner_alert"
   | "crm_webhook"
   | "booking_link"
   | "follow_up_sequence";

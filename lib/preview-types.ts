@@ -215,6 +215,9 @@ export type PreviewSubmission = PreviewSubmissionInput & {
   managerNotes: PreviewManagerNotes;
   status: PreviewSubmissionStatus;
   ownerApproved: boolean;
+  isTestSubmission: boolean;
+  contactAllowed: boolean;
+  testReason?: string | null;
   promptWorkerResult?: PromptWorkerResult;
   promptStatus?: PromptWorkerStatus;
   internalNotes?: string;
@@ -238,4 +241,7 @@ export type PublicPreviewSubmission = Omit<
   | "customerEmailSentAt"
   | "markedPaidAt"
   | "markedLostAt"
+  | "isTestSubmission"
+  | "contactAllowed"
+  | "testReason"
 >;

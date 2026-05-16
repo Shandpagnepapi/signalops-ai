@@ -40,6 +40,10 @@ function describeTimelineEvent(result: IntegrationResult) {
     return `Owner alert ${statusLabel}`;
   }
 
+  if (result.action === "preview_owner_alert") {
+    return `Preview alert ${statusLabel}`;
+  }
+
   if (result.action === "crm_webhook") {
     return `CRM log ${statusLabel}`;
   }

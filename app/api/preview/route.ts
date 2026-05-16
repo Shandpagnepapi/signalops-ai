@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendPreviewOwnerAlert } from "@/lib/integrations/email";
 import { createPreviewSubmission, getPreviewSubmissionById } from "@/lib/preview-store";
 import { toPublicPreviewSubmission } from "@/lib/public-preview";
 import {
@@ -218,6 +219,7 @@ export async function POST(request: Request) {
   }
 
   const submission = await createPreviewSubmission(input);
+  await sendPreviewOwnerAlert(submission);
   const receipt = {
     id: submission.id,
     businessName: submission.businessName,

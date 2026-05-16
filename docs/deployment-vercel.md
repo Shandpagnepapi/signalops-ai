@@ -51,6 +51,7 @@ In Vercel project settings, open `Environment Variables` and add variables from 
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_DEMO_CLIENT_NAME`
 - `OWNER_ALERT_EMAIL`
+- `OWNER_ALERT_FROM_EMAIL`
 - `EMAIL_DELIVERY_MODE`
 
 For the current launch:
@@ -58,6 +59,7 @@ For the current launch:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.signalops.pro
 OWNER_ALERT_EMAIL=signalopspro@gmail.com
+OWNER_ALERT_FROM_EMAIL=
 EMAIL_DELIVERY_MODE=draft
 ```
 
@@ -106,10 +108,10 @@ Important:
 
 - Calendar: `CALENDLY_URL`, `CALENDLY_ROUTING_URL`
 - Notifications: `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER`, `RESEND_API_KEY`
-- Alerts: `OWNER_ALERT_EMAIL`, `OWNER_ALERT_PHONE`
+- Alerts: `OWNER_ALERT_EMAIL`, `OWNER_ALERT_FROM_EMAIL`, `OWNER_ALERT_PHONE`
 - CRM/Webhooks: `GHL_WEBHOOK_URL`, `CRM_WEBHOOK_URL`
 
-Email replies must remain draft-only unless live sending is explicitly approved. The current email integration prepares reviewable drafts and does not send customer emails automatically, even when provider keys are present.
+Owner alert emails send through Resend when `RESEND_API_KEY`, `OWNER_ALERT_EMAIL`, and a verified sender in `OWNER_ALERT_FROM_EMAIL` or `RESEND_FROM_EMAIL` are configured. Customer replies must remain draft-only unless live sending is explicitly approved; the current integration prepares reviewable customer drafts and does not email customers automatically.
 
 ## 5) Create and Test a Preview Deployment
 

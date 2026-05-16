@@ -200,10 +200,13 @@ Client-facing email is currently:
 
 ```bash
 OWNER_ALERT_EMAIL=signalopspro@gmail.com
+OWNER_ALERT_FROM_EMAIL=
 EMAIL_DELIVERY_MODE=draft
 ```
 
-SignalOps is intentionally draft-only for email replies. Even if `RESEND_API_KEY` is configured later, the current integration layer prepares draft/review output and does not send customer emails automatically. Do not change this behavior unless the owner explicitly approves live sending.
+Owner alert emails send through Resend when `RESEND_API_KEY`, `OWNER_ALERT_EMAIL`, and a valid sender in `OWNER_ALERT_FROM_EMAIL` or `RESEND_FROM_EMAIL` are configured. The alert sets the customer email as `reply_to` when available, so Dillon can reply from the inbox instead of working through the site.
+
+SignalOps is intentionally draft-only for customer replies. Even if `RESEND_API_KEY` is configured, the integration layer prepares customer draft/review output and does not email customers automatically. Demo, test, example.com, 555-number, and do-not-contact submissions are skipped for owner alerts.
 
 ### AI Intake / Priority Setup
 

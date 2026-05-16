@@ -191,7 +191,13 @@ function toLegacyPreviewInsert(submission: PreviewSubmission): PreviewInsert {
 function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
   const managerNotes = (row.manager_notes ?? {}) as PreviewManagerNotes;
   const submissionDetails = managerNotes.submissionDetails;
-  const promptClassification = managerNotes.promptClassification ?? (isNonEmptyRecord(row.classification_json) ? row.classification_json : undefined);
+  const promptClassification = (managerNotes.promptClassification ??
+    (isNonEmptyRecord(row.classification_json) ? row.classification_json : undefined)) as
+    | PreviewManagerNotes["promptClassification"]
+    | undefined;
+  const isTestSubmission = row.is_test_submission === true || promptClassification?.isTestSubmission === true;
+  const contactAllowed = row.contact_allowed !== false && promptClassification?.contactAllowed !== false;
+  const testReason = safeString(row.test_reason) || promptClassification?.testReason || null;
 
   return {
     id: row.id,
@@ -215,7 +221,7 @@ function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
     previewData: row.preview_data as PreviewData,
     managerNotes: {
       ...managerNotes,
-      promptClassification: promptClassification as PreviewManagerNotes["promptClassification"],
+      promptClassification,
       promptStatus: (row.prompt_status as PreviewManagerNotes["promptStatus"]) ?? managerNotes.promptStatus,
       internalNotes: safeString(row.internal_notes) || managerNotes.internalNotes,
       selectedPackage: (safeString(row.selected_package) as PreviewManagerNotes["selectedPackage"]) || managerNotes.selectedPackage,
@@ -228,6 +234,9 @@ function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
     },
     status: safeStatus(row.status),
     ownerApproved: Boolean(row.owner_approved),
+    isTestSubmission,
+    contactAllowed,
+    testReason,
     promptWorkerResult: managerNotes.promptWorkerResult,
     promptStatus: (row.prompt_status as PreviewSubmission["promptStatus"]) ?? managerNotes.promptStatus ?? "not_generated",
     internalNotes: safeString(row.internal_notes) || managerNotes.internalNotes || "",
@@ -240,6 +249,10 @@ function toPreviewSubmission(row: PreviewRow): PreviewSubmission {
     markedPaidAt: row.marked_paid_at ?? managerNotes.markedPaidAt,
     markedLostAt: row.marked_lost_at ?? managerNotes.markedLostAt
   };
+}
+
+function isVisiblePreviewSubmission(submission: PreviewSubmission) {
+  return !submission.isTestSubmission && submission.contactAllowed !== false;
 }
 
 function rememberMockSubmission(submission: PreviewSubmission) {
@@ -457,13 +470,13 @@ async function listSupabasePreviews() {
     .from("preview_submissions")
     .select("*")
     .order("created_at", { ascending: false })
-    .limit(50);
+    .limit(200);
 
   if (error) {
     throw error;
   }
 
-  return (data ?? []).map(toPreviewSubmission);
+  return (data ?? []).map(toPreviewSubmission).filter(isVisiblePreviewSubmission).slice(0, 50);
 }
 
 export async function createPreviewSubmission(input: PreviewSubmissionInput) {
@@ -487,6 +500,9 @@ export async function createPreviewSubmission(input: PreviewSubmissionInput) {
     managerNotes,
     status: "Needs Review",
     ownerApproved: false,
+    isTestSubmission: promptClassification.isTestSubmission,
+    contactAllowed: promptClassification.contactAllowed,
+    testReason: promptClassification.testReason,
     promptStatus: "not_generated",
     internalNotes: "",
     selectedPackage: promptClassification.recommendedPackage,
@@ -520,21 +536,21 @@ export async function getPreviewSubmissionById(id: string) {
 
 export async function listPreviewSubmissions() {
   if (!isSupabaseConfigured()) {
-    return getStore();
+    return getStore().filter(isVisiblePreviewSubmission);
   }
 
   try {
     return await listSupabasePreviews();
   } catch (error) {
     warnAndUseMock(error);
-    return getStore();
+    return getStore().filter(isVisiblePreviewSubmission);
   }
 }
 
 export async function listPreviewSubmissionsWithMeta() {
   if (!isSupabaseConfigured()) {
     return {
-      submissions: getStore(),
+      submissions: getStore().filter(isVisiblePreviewSubmission),
       persistenceEnabled: false,
       warning:
         "Supabase is not configured. Admin workflow persistence is disabled. Data will not sync across devices."
@@ -552,7 +568,7 @@ export async function listPreviewSubmissionsWithMeta() {
     warnAndUseMockAdmin(error);
 
     return {
-      submissions: getStore(),
+      submissions: getStore().filter(isVisiblePreviewSubmission),
       persistenceEnabled: false,
       warning:
         `Supabase admin persistence is unavailable. Data will not sync across devices. ${message}`
