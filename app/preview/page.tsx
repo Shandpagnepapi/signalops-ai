@@ -1,12 +1,5 @@
-import {
-  EnvoCtaButton,
-  EnvoFeaturePill,
-  EnvoGlassCard,
-  EnvoSection
-} from "@/components/site/envo/envo-brand-system";
-import { EnvoPreviewCockpitMockup } from "@/components/site/envo/envo-dashboard-mockups";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import { PreviewRequestForm } from "@/components/site/preview-request-form";
-import { SECONDARY_CTA } from "@/lib/constants";
 import {
   breadcrumbJsonLd,
   createPageMetadata,
@@ -15,7 +8,19 @@ import {
 } from "@/lib/seo";
 
 const previewDescription =
-  "Tell us how customer calls, texts, forms, DMs, and follow-ups work today. SignalOpsAI maps how Envo should answer, organize, follow up, and hand off leads for your business.";
+  "Tell SignalOpsAI how leads move through your business so Envo can be mapped around your calls, forms, follow-ups, rules, and handoffs.";
+
+const envoBody = DM_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-envo-body"
+});
+
+const envoHeading = Space_Grotesk({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-envo-heading"
+});
 
 export const metadata = createPageMetadata({
   title: "Preview Envo | SignalOpsAI",
@@ -42,42 +47,33 @@ export default function PreviewPage() {
           ])
         ])}
       />
-      <div className="overflow-x-hidden bg-[#071126]">
-        <EnvoSection className="border-b border-[#D8E2F7] bg-[#FBFAF7]">
-          <div className="py-2 lg:py-6">
-            <EnvoGlassCard className="mx-auto max-w-6xl overflow-hidden bg-white/84 p-3 sm:p-4">
-              <EnvoPreviewCockpitMockup className="rounded-[1.45rem] shadow-none" />
-            </EnvoGlassCard>
-            <EnvoGlassCard className="mx-auto mt-7 max-w-6xl bg-white/84 p-5 sm:p-7 lg:p-8">
-              <div className="grid gap-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
-                <EnvoFeaturePill className="w-fit">Envo Preview</EnvoFeaturePill>
-                <div>
-                  <h1 className="max-w-4xl text-[2.45rem] font-black leading-[0.98] tracking-normal text-[#071126] sm:text-6xl lg:text-7xl">
-                    Preview Envo for your business.
-                  </h1>
-                  <p className="mt-5 max-w-3xl text-base leading-8 text-[#647084] sm:text-xl">
-                    {previewDescription}
-                  </p>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <EnvoCtaButton href="#preview-form">Preview Envo</EnvoCtaButton>
-                    <EnvoCtaButton href={SECONDARY_CTA.href} variant="secondary">
-                      {SECONDARY_CTA.label}
-                    </EnvoCtaButton>
-                  </div>
-                </div>
-              </div>
-            </EnvoGlassCard>
-          </div>
-        </EnvoSection>
+      <div
+        className={`${envoBody.variable} ${envoHeading.variable} envo-shuffle relative isolate min-h-screen overflow-x-hidden bg-zinc-950 font-body text-zinc-100`}
+      >
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_-12%,rgba(50,139,255,0.34),transparent_32%),radial-gradient(circle_at_18%_22%,rgba(111,77,255,0.2),transparent_30%),radial-gradient(circle_at_86%_88%,rgba(52,199,89,0.14),transparent_30%),linear-gradient(180deg,#050814_0%,#071126_46%,#030611_100%)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.2] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(circle_at_50%_20%,black,transparent_72%)]" />
+        <div className="pointer-events-none absolute right-0 top-0 -z-10 h-[32rem] w-[32rem] translate-x-1/4 rounded-full bg-[#328BFF]/14 blur-[90px]" />
+        <div className="pointer-events-none absolute bottom-24 left-0 -z-10 h-[30rem] w-[30rem] -translate-x-1/4 rounded-full bg-[#6F4DFF]/16 blur-[90px]" />
 
-        <EnvoSection id="preview-form" className="border-b border-white/10 bg-[#071126]" tone="dark">
+        <section className="relative px-4 pb-12 pt-16 text-center sm:px-6 sm:pb-14 sm:pt-20 lg:px-8 lg:pb-16 lg:pt-24">
+          <div className="mx-auto max-w-4xl">
+            <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Map out your business.
+              <br />
+              <span className="bg-[linear-gradient(135deg,#8EBBFF,#328BFF_42%,#A99BFF)] bg-clip-text text-transparent">
+                We&apos;ll build the AI.
+              </span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg md:leading-8">
+              Tell us how leads currently flow through your business. We&apos;ll use this information to construct a custom mockup demonstrating exactly how Envo will answer, organize, and follow up for you.
+            </p>
+          </div>
+        </section>
+
+        <section className="px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
           <div className="mx-auto max-w-4xl">
             <PreviewRequestForm />
           </div>
-        </EnvoSection>
-
-        <section className="mx-auto max-w-4xl px-4 pb-12 pt-2 text-center text-xs leading-5 text-[#D7E2F7]/62 sm:px-6">
-          Built around your lead flow, service area, pricing rules, guardrails, and team handoff. Questions? Email SignalOpsAI anytime.
         </section>
       </div>
     </>

@@ -12,7 +12,7 @@ export function isDesignLabRoute(pathname: string | null) {
 }
 
 export function isStandaloneProductRoute(pathname: string | null) {
-  return pathname === "/envo";
+  return pathname === "/envo" || pathname === "/preview" || pathname === "/demo";
 }
 
 export function shouldHidePublicChrome(pathname: string | null) {

@@ -1,3 +1,4 @@
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import { DemoBusinessSwitcher } from "@/components/demo/demo-business-switcher";
 import { demoBusinesses } from "@/lib/demo-businesses";
 import {
@@ -18,6 +19,18 @@ export const metadata = createPageMetadata({
   image: OG_IMAGE_ASSETS.demo.path,
   imageAlt: OG_IMAGE_ASSETS.demo.alt,
   absoluteTitle: true
+});
+
+const envoBody = DM_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-envo-body"
+});
+
+const envoHeading = Space_Grotesk({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-envo-heading"
 });
 
 export default function DemoPage() {
@@ -46,7 +59,9 @@ export default function DemoPage() {
           ])
         ])}
       />
-      <DemoBusinessSwitcher />
+      <div className={`${envoBody.variable} ${envoHeading.variable}`}>
+        <DemoBusinessSwitcher />
+      </div>
     </>
   );
 }
